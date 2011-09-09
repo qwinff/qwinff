@@ -1,0 +1,197 @@
+#include "presets.h"
+#include "ffmpeginterface.h"
+#include <QMultiMap>
+#include <QXmlStreamReader>
+#include <QFile>
+
+struct Presets::Private
+{
+    QMultiMap<QString, Preset> presets; ///< map extension to presets
+
+    bool parseXmlFile(QFile& file);
+    bool parsePreset(QXmlStreamReader& xml);
+    bool readElementData(QXmlStreamReader& xml, Preset& target);
+    void removeUnavailablePresets();
+};
+
+bool Presets::Private::parseXmlFile(QFile &file)
+{
+    Q_ASSERT_X(file.isOpen(), "parse xml file", "file is not opened");
+    QXmlStreamReader xml(&file);
+
+    presets.clear();
+
+    int level = 0; // depth of current tag
+    QString top_level_tag; // name of the tag at level 0
+    while (!xml.atEnd() && !xml.hasError()) {
+        QXmlStreamReader::TokenType token = xml.readNext();
+
+        if (token == QXmlStreamReader::StartDocument) {
+            continue;   // skip StartDocument token
+        } else if (token == QXmlStreamReader::StartElement) {
+
+            if (level == 0) {
+                top_level_tag = xml.name().toString();
+                ++level;
+            } else if (level == 1 && top_level_tag == "presets") {
+                if (!parsePreset(xml))
+                    return false;
+            }
+
+        } else if (token == QXmlStreamReader::EndElement) {
+            --level;
+        }
+    }
+
+    if (xml.hasError()) {
+        return false;
+    }
+
+    removeUnavailablePresets();
+
+    return true;
+}
+
+bool Presets::Private::parsePreset(QXmlStreamReader &xml)
+{
+    if (xml.tokenType() != QXmlStreamReader::StartElement)
+        return false;
+
+    QString tag_name = xml.name().toString();
+    Preset preset;
+
+    xml.readNext();
+
+    while (xml.tokenType() != QXmlStreamReader::EndElement
+           || xml.name() != tag_name) {
+        if (xml.tokenType() == QXmlStreamReader::StartElement) {
+            if (!readElementData(xml, preset)) return false;
+        }
+        xml.readNext();
+    }
+
+    // Add preset to the multimap. Use extension as the key.
+    if (!preset.extension.isEmpty())
+        presets.insert(preset.extension, preset);
+
+    return true;
+}
+
+bool Presets::Private::readElementData(QXmlStreamReader &xml, Preset& target)
+{
+    if (xml.tokenType() != QXmlStreamReader::StartElement)
+        return false;
+    QString property_name = xml.name().toString();
+
+    xml.readNext();
+
+    if (xml.tokenType() != QXmlStreamReader::Characters)
+        return true; // empty content
+
+    QString property_value = xml.text().toString().trimmed();
+
+    if (property_name == "label") {
+        target.label = property_value;
+    } else if (property_name == "params") {
+        target.parameters = property_value;
+    } else if (property_name == "extension") {
+        target.extension = property_value;
+    } else if (property_name == "category") {
+        target.category = property_value;
+    }
+
+    return true;
+}
+
+void Presets::Private::removeUnavailablePresets()
+{
+    FFmpegInterface ffmpeg_interface;
+    QSet<QString> audio_decoders, video_decoders, subtitle_decoders;
+
+    if (!ffmpeg_interface.getAudioEncoders(audio_decoders))
+        return;
+    if (!ffmpeg_interface.getVideoEncoders(video_decoders))
+        return;
+    if (!ffmpeg_interface.getSubtitleEncoders(subtitle_decoders))
+        return;
+
+    QRegExp audio_codec_pattern("-acodec\\s+([^ ]+)");
+    QRegExp video_codec_pattern("-vcodec\\s+([^ ]+)");
+    QRegExp subtitle_codec_pattern("-scodec\\s+([^ ]+)");
+
+    QMultiMap<QString, Preset>::iterator it = presets.begin();
+    while (it!=presets.end()) {
+        bool remove = false;
+        QString& params = it.value().parameters;
+
+        // Check unavailable audio presets
+        if (audio_codec_pattern.indexIn(params) != -1) {
+            if (!audio_decoders.contains(audio_codec_pattern.cap(1))) {
+                remove = true;
+            }
+        }
+
+        // Check unavailable video presets
+        if (!remove && video_codec_pattern.indexIn(params) != -1) {
+            if (!video_decoders.contains(video_codec_pattern.cap(1))) {
+                remove = true;
+            }
+        }
+
+        // Check unavailable subtitle presets
+        if (!remove && subtitle_codec_pattern.indexIn(params) != -1) {
+            if (!subtitle_decoders.contains(subtitle_codec_pattern.cap(1))) {
+                remove = true;
+            }
+        }
+
+        if (remove) // remove the preset if any of the codecs are unavailable
+            presets.erase(it++);
+        else
+            ++it;
+    }
+}
+
+Presets::Presets(QObject *parent) :
+    QObject(parent), p(new Private)
+{
+}
+
+Presets::~Presets()
+{
+}
+
+bool Presets::readFromFile(const QString &filename)
+{
+    QFile xmlfile(filename);
+    if (!xmlfile.open(QIODevice::ReadOnly | QIODevice::Text))
+        return false;
+
+    bool ret = p->parseXmlFile(xmlfile);
+
+    xmlfile.close();
+    return ret;
+}
+
+bool Presets::readFromFile(const char *filename)
+{
+    return readFromFile(QString(filename));
+}
+
+bool Presets::getPresets(QList<Preset> &target)
+{
+    target.clear();
+    target = p->presets.values();
+    return true;
+}
+
+bool Presets::getPresets(const QString &extension, QList<Preset> &target)
+{
+    target = p->presets.values(extension);
+    return true;
+}
+
+bool Presets::getPresets(const char *extension, QList<Preset> &target)
+{
+    return getPresets(QString(extension), target);
+}
