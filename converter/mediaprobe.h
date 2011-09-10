@@ -31,7 +31,26 @@ public:
      */
     void stop();
 
+    /*! Returns whether the previous probing process has an error.
+     *  For example, if the file is not recognized by ffprobe, the
+     *  function returns false. If ffprobe has recognized the file
+     *  and successfully extracts information from it, the function
+     *  returns true.
+     */
     bool error() const;
+
+    /*! Returns the **hour** part of the duration */
+    int hours() const;
+
+    /*! Returns the **minutes** part of the duration
+     *  The value is within 0 and 59(inclusive)
+     */
+    int minutes() const;
+
+    /*! Returns the **seconds** part of the duration
+     *  The value is within 0.0 and 60.0(non-inclusive)
+     */
+    double seconds() const;
 
     double mediaDuration() const;
     double mediaStartTime() const;

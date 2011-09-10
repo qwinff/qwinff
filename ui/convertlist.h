@@ -7,6 +7,7 @@
 #include "converter/conversionparameters.h"
 
 class MediaConverter;
+class MediaProbe;
 
 class ConvertList : public QTreeWidget
 {
@@ -23,7 +24,14 @@ public:
     };
 
     explicit ConvertList(QWidget *parent = 0);
-    void addTask(const ConversionParameters &param);
+
+    /*! Append a task to the list
+     * @param param the conversion parameter including the source and destination filename.
+     * @return If the function succeeds, it returns true.
+     *  Otherwise, it returns false.
+     */
+    bool addTask(const ConversionParameters &param);
+
     void removeTask(int index);
 
 signals:
@@ -50,6 +58,7 @@ private:
     int prev_index;
     void init_treewidget(QTreeWidget*);
     MediaConverter *m_converter;
+    MediaProbe *m_probe;
     Task *m_current_task;
     bool is_busy;
     unsigned int m_progress_column_index;

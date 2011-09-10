@@ -1,6 +1,7 @@
 #include "convertlist.h"
 #include "progressbar.h"
 #include "converter/mediaconverter.h"
+#include "converter/mediaprobe.h"
 #include <QTreeWidget>
 #include <QHBoxLayout>
 #include <QHeaderView>
@@ -15,6 +16,7 @@ ConvertList::ConvertList(QWidget *parent) :
     QTreeWidget(parent),
     prev_index(0),
     m_converter(new MediaConverter(this)),
+    m_probe(new MediaProbe(this)),
     m_current_task(0),
     is_busy(false)
 {
@@ -25,8 +27,15 @@ ConvertList::ConvertList(QWidget *parent) :
             this, SLOT(progress_refreshed(int)));
 }
 
-void ConvertList::addTask(const ConversionParameters& param)
+bool ConvertList::addTask(const ConversionParameters& param)
 {
+    // get source file information
+    m_probe->start(param.source);
+    if (!m_probe->wait() || m_probe->error()) {
+        // failed to get media information immediately
+        return false;
+    }
+
     TaskPtr task(new Task());
     task->param = param;
     task->status = Task::QUEUED;
@@ -35,7 +44,13 @@ void ConvertList::addTask(const ConversionParameters& param)
     m_tasks.push_back(task);
 
     QStringList columns;
-    columns << param.source << param.destination << QString("%1").arg(task->id) << "";
+    columns << param.source                           // source file
+            << param.destination                      // destination file
+            << QString().sprintf("%02d:%02d:%02.0f"   // duration
+                        , m_probe->hours()            //    hours
+                        , m_probe->minutes()          //    minutes
+                        , m_probe->seconds())         //    seconds
+            << "";                                    // progress
 
     QTreeWidgetItem *item = new QTreeWidgetItem(this, columns);
     task->listitem = item;
@@ -48,6 +63,8 @@ void ConvertList::addTask(const ConversionParameters& param)
     // Set each tooltip to the content of the field.
     for (int i=0; i<item->columnCount(); i++)
         item->setToolTip(i, item->text(i));
+
+    return true;
 }
 
 void ConvertList::removeTask(int index)

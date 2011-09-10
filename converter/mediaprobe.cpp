@@ -286,6 +286,21 @@ bool MediaProbe::error() const
 
 // Media Information
 
+int MediaProbe::hours() const
+{
+    return int(p->metainfo.duration) / 3600;
+}
+
+int MediaProbe::minutes() const
+{
+    return (int(p->metainfo.duration) % 3600) / 60;
+}
+
+double MediaProbe::seconds() const
+{
+    return p->metainfo.duration - hours()*3600 - minutes()*60;
+}
+
 double MediaProbe::mediaDuration() const
 {
     return p->metainfo.duration;
