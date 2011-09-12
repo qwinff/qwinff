@@ -7,6 +7,9 @@
 struct Presets::Private
 {
     QMultiMap<QString, Preset> presets; ///< map extension to presets
+    unsigned int m_prev_id;
+
+    Private() : m_prev_id(0) { }
 
     bool parseXmlFile(QFile& file);
     bool parsePreset(QXmlStreamReader& xml);
@@ -71,8 +74,10 @@ bool Presets::Private::parsePreset(QXmlStreamReader &xml)
     }
 
     // Add preset to the multimap. Use extension as the key.
-    if (!preset.extension.isEmpty())
+    if (!preset.extension.isEmpty()) {
+        preset.id = ++m_prev_id; // assign an id to preset
         presets.insert(preset.extension, preset);
+    }
 
     return true;
 }
@@ -176,6 +181,34 @@ bool Presets::readFromFile(const QString &filename)
 bool Presets::readFromFile(const char *filename)
 {
     return readFromFile(QString(filename));
+}
+
+bool Presets::getExtensions(QList<QString> &target) const
+{
+    QList<Preset> presets = p->presets.values();
+    target.clear();
+
+    QList<Preset>::iterator it = presets.begin();
+    QString extension("");
+    for (; it!=presets.end(); ++it) {
+        if (extension != it->extension) { // new extension appears
+            extension = it->extension;
+            target.push_back(extension);
+        }
+    }
+    return true;
+}
+
+bool Presets::findPresetById(unsigned int id, Preset &target) const
+{
+    QMultiMap<QString, Preset>::iterator it = p->presets.begin();
+    for (; it!=p->presets.end(); ++it) {
+        if (it->id == id) {
+            target = *it;
+            return true;
+        }
+    }
+    return false;
 }
 
 bool Presets::getPresets(QList<Preset> &target)

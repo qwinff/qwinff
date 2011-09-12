@@ -8,6 +8,7 @@
 class Preset
 {
 public:
+    unsigned int id;
     QString extension;
     QString label;
     QString category;
@@ -23,6 +24,10 @@ public:
 
     bool readFromFile(const QString& filename);
     bool readFromFile(const char *filename);
+
+    bool getExtensions(QList<QString>& target) const;
+
+    bool findPresetById(unsigned int id, Preset& target) const;
 
     /*! Clear %target and write all presets to it.
      * @param target the list to be written to

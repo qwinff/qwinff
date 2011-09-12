@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "convertlist.h"
+#include "addtaskwizard.h"
 #include <QHBoxLayout>
 #include <QMessageBox>
 #include <QFileDialog>
@@ -56,6 +57,15 @@ void MainWindow::all_tasks_finished()
 void MainWindow::on_pushButton_clicked()
 {
     ConversionParameters param;
+
+    AddTaskWizard wizard;
+    //wizard.setParent(this);
+    //wizard.setModal(true);
+
+    //wizard.show();
+    wizard.exec();
+
+    return;
     QString src = QFileDialog::getOpenFileName(this, tr("Select a file"),
                                                QDir::homePath());
     if (src.isEmpty()) return;
