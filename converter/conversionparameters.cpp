@@ -130,7 +130,9 @@ QStringList ConversionParameters::toFFmpegOptionList() const
 
     /* ==== Additional Options ==== */
     if (!ffmpeg_options.isEmpty()) {
-        list.append(ffmpeg_options);
+        QList<QString> additional_options =
+                ffmpeg_options.split(" ", QString::SkipEmptyParts);
+        list.append(additional_options);
     }
 
     /* ==== Audio/Video Options ==== */
