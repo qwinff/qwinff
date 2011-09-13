@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Wizard</string>
   </property>
-  <widget class="QWizardPage" name="wizardPage1">
+  <widget class="QWizardPage" name="wizardPageSelectFiles">
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
      <widget class="QLabel" name="lblSelectFiles">

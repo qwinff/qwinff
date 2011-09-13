@@ -1,6 +1,6 @@
 #include "mediaconverter.h"
 #include "ffmpeginterface.h"
-#include <iostream>
+#include <QDebug>
 
 #define TIMEOUT 1000
 
@@ -35,6 +35,8 @@ bool MediaConverter::start(ConversionParameters& param)
         QStringList list;
         m_pConv->setReadChannel(m_proc);
         m_pConv->fillParameterList(param, list);
+
+        qDebug() << list;
 
         m_proc.start(m_pConv->executableName(), list);
         return m_proc.waitForStarted(TIMEOUT);

@@ -5,6 +5,7 @@
 
 #include <QMessageBox>
 #include <QFileDialog>
+#include <QDebug>
 #include <cassert>
 
 AddTaskWizard::AddTaskWizard(QWidget *parent) :
@@ -26,16 +27,76 @@ AddTaskWizard::AddTaskWizard(QWidget *parent) :
             , this, SLOT(preset_selected(int)));
     connect(ui->btnEditPreset, SIGNAL(clicked())
             , this, SLOT(edit_preset_clicked()));
+    connect(ui->btnBrowseOutputPath, SIGNAL(clicked())
+            , this, SLOT(set_output_path_clicked()));
+    connect(this, SIGNAL(accepted())
+            , this, SLOT(all_finished()));
 
     ui->lstFiles->setSelectionMode(QAbstractItemView::ExtendedSelection);
 
     load_extensions("presets.xml");
     ui->txtOutputPath->setText(QDir::homePath());
+
 }
 
 AddTaskWizard::~AddTaskWizard()
 {
     delete ui;
+}
+
+const QList<ConversionParameters>&
+AddTaskWizard::getConversionParameters() const
+{
+    return m_params;
+}
+
+bool AddTaskWizard::validateCurrentPage()
+{
+    switch (currentId()) {
+    case 0: // Select input files
+        // check if the list is empty
+        if (ui->lstFiles->count() != 0) { // complete
+            return true;
+        } else {
+            QMessageBox::information(this, this->windowTitle()
+                                     , tr("Please select at least one file.")
+                                     , QMessageBox::Ok);
+            return false;
+        }
+        break;
+    case 1: // Select conversion parameters
+        // check if output directory exists
+        QDir output_dir(ui->txtOutputPath->text());
+        if (output_dir.exists()) {
+            return true;
+        } else { // The folder doesn't exist.
+            // Prompt the user to create new folder.
+            QMessageBox::StandardButton reply =
+                    QMessageBox::warning(this, this->windowTitle()
+                                 , tr("Folder does not exist. Create a new folder?")
+                                 , QMessageBox::Yes | QMessageBox::No);
+
+            if (reply == QMessageBox::Yes) {
+                // The user chooses to create folder.
+                qDebug() << "Try to create folder " << output_dir.path();
+                bool succeed = QDir().mkpath(output_dir.path());
+                if (!succeed) { // failed to create folder
+                    QMessageBox::critical(this, this->windowTitle()
+                                          , tr("Failed to create folder. "
+                                               "Please select another folder")
+                                          , QMessageBox::Ok);
+                }
+                return succeed;
+            }
+            else {
+                return false;
+            }
+
+        }
+        return true;
+        break;
+    }
+    return true;
 }
 
 void AddTaskWizard::add_files_clicked()
@@ -71,9 +132,14 @@ void AddTaskWizard::edit_preset_clicked()
 
 void AddTaskWizard::set_output_path_clicked()
 {
-
+    ui->txtOutputPath->setText(
+                QFileDialog::getExistingDirectory(this, tr("Select Directory")
+                        , ui->txtOutputPath->text())
+                );
 }
 
+// When the user selects an extension, insert all possible presets
+// into the preset combobox.
 void AddTaskWizard::load_presets(int index)
 {
     if (index == -1) return;
@@ -99,6 +165,34 @@ void AddTaskWizard::preset_selected(int index)
         return; // assert false
     }
     *m_current_param = ConversionParameters::fromFFmpegParameters(preset.parameters);
+}
+
+// This function is executed when the users presses "Finish"
+void AddTaskWizard::all_finished()
+{
+    const int size = ui->lstFiles->count();
+    m_params.clear();
+
+    // all files share the same settings
+    ConversionParameters param(*m_current_param);
+
+    for (int i=0; i<size; i++) {
+
+        QString input_filename = ui->lstFiles->item(i)->text();
+        QString input_file_basename = QFileInfo(input_filename).completeBaseName();
+        param.source = input_filename;
+
+        // copy output filename to the parameter
+        QDir output_dir(ui->txtOutputPath->text());
+        const int ext_index = ui->cbExtension->currentIndex();
+        param.destination =
+                output_dir.absoluteFilePath(input_file_basename)   // filename
+                + '.'
+                + ui->cbExtension->itemData(ext_index).toString(); // extension
+
+        m_params.append(param);
+    }
+
 }
 
 void AddTaskWizard::load_extensions(const char *file)

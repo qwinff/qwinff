@@ -20,6 +20,14 @@ public:
     explicit AddTaskWizard(QWidget *parent = 0);
     ~AddTaskWizard();
 
+    /*! Returns conversion parameters for all files
+     *  including input/output filenames.
+     */
+    const QList<ConversionParameters>& getConversionParameters() const;
+
+protected:
+    bool validateCurrentPage();
+
 private slots:
     void add_files_clicked();
     void remove_files_clicked();
@@ -27,13 +35,16 @@ private slots:
     void set_output_path_clicked();
     void load_presets(int);
     void preset_selected(int);
+    void all_finished();
 
 private:
     Ui::AddTaskWizard *ui;
     QString m_prev_path;
     Presets *m_presets;
+    QList<ConversionParameters> m_params;
     QScopedPointer<ConversionParameters> m_current_param;
     void load_extensions(const char *);
+
 };
 
 #endif // ADDTASKWIZARD_H

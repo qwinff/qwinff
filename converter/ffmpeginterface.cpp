@@ -1,7 +1,7 @@
 #include "ffmpeginterface.h"
 #include <QRegExp>
 #include <QTextStream>
-#include <iostream>
+#include <QDebug>
 
 #define TIMEOUT 3000
 
@@ -155,6 +155,8 @@ void FFmpegInterface::fillParameterList(const ConversionParameters &param, QStri
 
 void FFmpegInterface::parseProcessOutput(const QString &data)
 {
+    qDebug() << data;
+
     // split incoming data by [end of line] or [carriage return]
     QStringList lines(data.split(QRegExp("[\r\n]"), QString::KeepEmptyParts));
 

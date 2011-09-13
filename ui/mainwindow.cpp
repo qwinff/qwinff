@@ -59,14 +59,18 @@ void MainWindow::on_pushButton_clicked()
     ConversionParameters param;
 
     AddTaskWizard wizard;
-    //wizard.setParent(this);
-    //wizard.setModal(true);
 
-    //wizard.show();
-    wizard.exec();
+    if (wizard.exec() == QDialog::Accepted) {
+        // Add all input files to the list.
+        const QList<ConversionParameters> &params = wizard.getConversionParameters();
+        QList<ConversionParameters>::const_iterator it = params.begin();
+        for (; it!=params.end(); ++it) {
+            m_list->addTask(*it);
+        }
+    }
 
     return;
-    QString src = QFileDialog::getOpenFileName(this, tr("Select a file"),
+    /*QString src = QFileDialog::getOpenFileName(this, tr("Select a file"),
                                                QDir::homePath());
     if (src.isEmpty()) return;
 
@@ -78,6 +82,7 @@ void MainWindow::on_pushButton_clicked()
     param.source = src;
     param.destination = dest;
     m_list->addTask(param);
+    */
 }
 
 void MainWindow::on_pushButton_2_clicked()
