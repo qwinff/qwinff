@@ -79,6 +79,21 @@ void ConvertList::removeTask(int index)
     }
 }
 
+bool ConvertList::isBusy() const
+{
+    return is_busy;
+}
+
+bool ConvertList::isEmpty() const
+{
+    return topLevelItemCount() == 0;
+}
+
+int ConvertList::count() const
+{
+    return topLevelItemCount();
+}
+
 // Public Slots
 
 void ConvertList::start()

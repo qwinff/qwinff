@@ -18,17 +18,23 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_clicked();
     void start_conversion();
     void stop_conversion();
     void task_finished(int);
     void all_tasks_finished();
 
-    void on_pushButton_2_clicked();
+    // Menu Events
+    void slotAddFiles();
+    void slotExit();
+    void slotMenuConvert();
+    void slotStartConversion();
+    void slotStopConversion();
+    void slotSetConversionParameters();
 
 private:
     Ui::MainWindow *ui;
     ConvertList *m_list;
+    void add_files();
 };
 
 #endif // MAINWINDOW_H

@@ -34,6 +34,10 @@ public:
 
     void removeTask(int index);
 
+    bool isBusy() const;
+    bool isEmpty() const;
+    int count() const;
+
 signals:
     void start_conversion(int index, ConversionParameters param);
     void task_finished(int);
