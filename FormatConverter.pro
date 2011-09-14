@@ -45,3 +45,9 @@ FORMS    += \
 
 RESOURCES += \
     images.qrc
+
+unix {
+    DEFINES += DATA_PATH=$(DATA_PATH)
+    DEFINES += DOC_PATH=$(DOC_PATH)
+    DEFINES += TRANSLATION_PATH=$(TRANSLATION_PATH)
+}

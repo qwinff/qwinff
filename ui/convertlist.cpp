@@ -73,7 +73,7 @@ bool ConvertList::addTask(const ConversionParameters& param)
 
 void ConvertList::removeTask(int index)
 {
-    if (m_tasks[index].data() != m_current_task) { // not the running task
+    if (m_tasks[index]->status != Task::RUNNING) { // not a running task
         m_tasks.remove(index);
         delete takeTopLevelItem(index);
     } else { // the task is being executed

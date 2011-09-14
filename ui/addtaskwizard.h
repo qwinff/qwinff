@@ -39,10 +39,10 @@ protected:
     bool validateCurrentPage();
 
 private slots:
-    void add_files_clicked();
-    void remove_files_clicked();
-    void edit_preset_clicked();
-    void set_output_path_clicked();
+    void add_files();
+    void remove_files();
+    void edit_preset();
+    void browse_output_path();
     void load_presets(int);
     void preset_selected(int);
     void all_finished();
@@ -53,8 +53,9 @@ private:
     Presets *m_presets;
     QList<ConversionParameters> m_params;
     QScopedPointer<ConversionParameters> m_current_param;
-    void load_extensions(const char *);
-
+    bool load_extensions(const char *);
+    void load_settings();
+    void save_settings();
 };
 
 #endif // ADDTASKWIZARD_H

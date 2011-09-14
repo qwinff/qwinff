@@ -6,7 +6,11 @@
 #include <QMessageBox>
 #include <QFileDialog>
 #include <QDebug>
+#include <QSettings>
 #include <cassert>
+
+#define PAGEID_SELECTFILES 0
+#define PAGEID_PARAMS 1
 
 AddTaskWizard::AddTaskWizard(QWidget *parent) :
     QWizard(parent),
@@ -18,17 +22,17 @@ AddTaskWizard::AddTaskWizard(QWidget *parent) :
     m_prev_path = QDir::homePath();
 
     connect(ui->btnAdd, SIGNAL(clicked())
-            , this, SLOT(add_files_clicked()));
+            , this, SLOT(add_files()));
     connect(ui->btnRemove, SIGNAL(clicked())
-            , this, SLOT(remove_files_clicked()));
+            , this, SLOT(remove_files()));
     connect(ui->cbExtension, SIGNAL(currentIndexChanged(int))
             , this, SLOT(load_presets(int)));
     connect(ui->cbPreset, SIGNAL(currentIndexChanged(int))
             , this, SLOT(preset_selected(int)));
     connect(ui->btnEditPreset, SIGNAL(clicked())
-            , this, SLOT(edit_preset_clicked()));
+            , this, SLOT(edit_preset()));
     connect(ui->btnBrowseOutputPath, SIGNAL(clicked())
-            , this, SLOT(set_output_path_clicked()));
+            , this, SLOT(browse_output_path()));
     connect(this, SIGNAL(accepted())
             , this, SLOT(all_finished()));
 
@@ -36,6 +40,8 @@ AddTaskWizard::AddTaskWizard(QWidget *parent) :
 
     load_extensions("presets.xml");
     ui->txtOutputPath->setText(QDir::homePath());
+
+    load_settings();
 
 }
 
@@ -54,8 +60,8 @@ int AddTaskWizard::exec_openfile()
 {
     ui->lstFiles->clear();
 
-    if (startId() == 0) { // popup select file dialog
-        add_files_clicked();
+    if (startId() == PAGEID_SELECTFILES) { // popup select file dialog
+        add_files();
         if (ui->lstFiles->count() == 0)
             return QWizard::Rejected;
     }
@@ -70,9 +76,10 @@ int AddTaskWizard::exec(QList<QUrl> &files)
         ui->lstFiles->addItem(url.path());
     }
 
-    setStartId(1);
+    int prev_id = startId();
+    setStartId(PAGEID_PARAMS);
     int ret = QWizard::exec();
-    setStartId(0);
+    setStartId(prev_id);
 
     return ret;
 }
@@ -126,24 +133,38 @@ bool AddTaskWizard::validateCurrentPage()
     return true;
 }
 
-void AddTaskWizard::add_files_clicked()
+void AddTaskWizard::add_files()
 {
     QStringList files = QFileDialog::getOpenFileNames(this, tr("Select files"),
                                   m_prev_path,  // default path
                                   QString()    // TODO: filter
                                   );
     if (!files.isEmpty()) {
+        QStringList incorrect_files; // Record files that are not valid for conversion.
+
         foreach (QString file, files) {
-            QListWidgetItem *item = new QListWidgetItem(file);
-            item->setToolTip(file);
-            ui->lstFiles->addItem(item);
+            if (QFileInfo(file).isFile()) {       // The file exists.
+                QListWidgetItem *item = new QListWidgetItem(file);
+                item->setToolTip(file);
+                ui->lstFiles->addItem(item);
+            } else if (QFileInfo(file).isDir()) { // The filename is a directory.
+                incorrect_files.append(file);
+            } else {                              // The file does not exist.
+                incorrect_files.append(file);
+            }
+        }
+
+        if (!incorrect_files.isEmpty()) {
+            QMessageBox::warning(this, this->windowTitle(),
+                         tr("Cannot find the following files:") + "\n\n"
+                          + incorrect_files.join("\n"), QMessageBox::Ok);
         }
     } else {
         // no file selected
     }
 }
 
-void AddTaskWizard::remove_files_clicked()
+void AddTaskWizard::remove_files()
 {
     QList<QListWidgetItem*> items = ui->lstFiles->selectedItems();
     QList<QListWidgetItem*>::iterator it = items.begin();
@@ -152,14 +173,14 @@ void AddTaskWizard::remove_files_clicked()
     }
 }
 
-void AddTaskWizard::edit_preset_clicked()
+void AddTaskWizard::edit_preset()
 {
     ConversionParameterDialog dialog(this->parentWidget());
     dialog.setGeometry(this->x(), this->y(), dialog.width(), dialog.height());
     dialog.exec(*m_current_param);
 }
 
-void AddTaskWizard::set_output_path_clicked()
+void AddTaskWizard::browse_output_path()
 {
     ui->txtOutputPath->setText(
                 QFileDialog::getExistingDirectory(this, tr("Select Directory")
@@ -202,9 +223,10 @@ void AddTaskWizard::all_finished()
     const int size = ui->lstFiles->count();
     m_params.clear();
 
-    // all files share the same settings
+    // All files share the same settings.
     ConversionParameters param(*m_current_param);
 
+    // Write conversion parameters to m_params.
     for (int i=0; i<size; i++) {
 
         QString input_filename = ui->lstFiles->item(i)->text();
@@ -222,14 +244,15 @@ void AddTaskWizard::all_finished()
         m_params.append(param);
     }
 
+    save_settings();
 }
 
-void AddTaskWizard::load_extensions(const char *file)
+bool AddTaskWizard::load_extensions(const char *file)
 {
     if (!m_presets->readFromFile(file)) {
         QMessageBox::critical(this, this->windowTitle(),
                               tr("Failed to load preset file."));
-        return;
+        return false;
     }
 
     // update extension combo bar
@@ -241,5 +264,44 @@ void AddTaskWizard::load_extensions(const char *file)
         ui->cbExtension->addItem(*it, QVariant(*it));
     }
 
+    return true;
+}
 
+void AddTaskWizard::load_settings()
+{
+    QSettings settings;
+
+    // output path textbox
+    QString output_path = settings.value("addtaskwizard/output_path").toString();
+    if (output_path.isEmpty()) {
+        output_path = QDir::homePath();
+    }
+    ui->txtOutputPath->setText(output_path);
+
+    // extension combobox
+    QString ext = settings.value("addtaskwizard/extension").toString();
+    for (int i=0; i<ui->cbExtension->count(); i++) {
+        if (ui->cbExtension->itemText(i) == ext) {
+            ui->cbExtension->setCurrentIndex(i);
+            break;
+        }
+    }
+
+    // preset combobox
+    QApplication::processEvents();
+    QString preset = settings.value("addtaskwizard/preset").toString();
+    for (int i=0; i<ui->cbPreset->count(); i++) {
+        if (ui->cbPreset->itemText(i) == preset) {
+            ui->cbPreset->setCurrentIndex(i);
+            break;
+        }
+    }
+}
+
+void AddTaskWizard::save_settings()
+{
+    QSettings settings;
+    settings.setValue("addtaskwizard/output_path", ui->txtOutputPath->text());
+    settings.setValue("addtaskwizard/extension", ui->cbExtension->currentText());
+    settings.setValue("addtaskwizard/preset", ui->cbPreset->currentText());
 }

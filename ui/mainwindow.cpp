@@ -5,6 +5,7 @@
 #include <QHBoxLayout>
 #include <QMessageBox>
 #include <QFileDialog>
+#include <QApplication>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -18,27 +19,11 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(m_list, SIGNAL(task_finished(int)),
             this, SLOT(task_finished(int)));
+    connect(m_list, SIGNAL(all_tasks_finished()),
+            this, SLOT(all_tasks_finished()));
 
-    /* === Menu Events === */
-
-    // File
-    connect(ui->actionAddFiles, SIGNAL(triggered()),
-            this, SLOT(slotAddFiles()));
-    connect(ui->actionExit, SIGNAL(triggered()),
-            this, SLOT(slotExit()));
-
-    // Convert
-    connect(ui->menuConvert, SIGNAL(aboutToShow()),
-            this, SLOT(slotMenuConvert()));
-    connect(ui->actionStartConversion, SIGNAL(triggered()),
-            this, SLOT(slotStartConversion()));
-    connect(ui->actionStopConversion, SIGNAL(triggered()),
-            this, SLOT(slotStopConversion()));
-    connect(ui->actionSetParameters, SIGNAL(triggered()),
-            this, SLOT(slotSetConversionParameters()));
-
-    // hide actionSetParameters because the function is incomplete.
-    ui->actionSetParameters->setVisible(false);
+    setup_menus();
+    setup_toolbar();
 }
 
 MainWindow::~MainWindow()
@@ -71,7 +56,8 @@ void MainWindow::task_finished(int /*exitcode*/)
 
 void MainWindow::all_tasks_finished()
 {
-
+    QMessageBox::information(this, this->windowTitle(),
+                             tr("All tasks has finished."), QMessageBox::Ok);
 }
 
 // Menu Events
@@ -139,4 +125,36 @@ void MainWindow::add_files()
             m_list->addTask(*it);
         }
     }
+}
+
+void MainWindow::setup_menus()
+{
+    /* === Menu Events === */
+
+    // File
+    connect(ui->actionAddFiles, SIGNAL(triggered()),
+            this, SLOT(slotAddFiles()));
+    connect(ui->actionExit, SIGNAL(triggered()),
+            this, SLOT(slotExit()));
+
+    // Convert
+    connect(ui->menuConvert, SIGNAL(aboutToShow()),
+            this, SLOT(slotMenuConvert()));
+    connect(ui->actionStartConversion, SIGNAL(triggered()),
+            this, SLOT(slotStartConversion()));
+    connect(ui->actionStopConversion, SIGNAL(triggered()),
+            this, SLOT(slotStopConversion()));
+    connect(ui->actionSetParameters, SIGNAL(triggered()),
+            this, SLOT(slotSetConversionParameters()));
+
+    // hide actionSetParameters because the function is incomplete.
+    ui->actionSetParameters->setVisible(false);
+}
+
+void MainWindow::setup_toolbar()
+{
+    QToolBar *toolbar = ui->toolBar;
+    toolbar->addAction(ui->actionAddFiles);
+    toolbar->addAction(ui->actionStartConversion);
+    toolbar->addAction(ui->actionStopConversion);
 }

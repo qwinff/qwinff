@@ -7,5 +7,9 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
+    // register QSettings information
+    QCoreApplication::setOrganizationName("mediaformatconverter");
+    QCoreApplication::setApplicationName("mediaformatconverter");
+
     return a.exec();
 }

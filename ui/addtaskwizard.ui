@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Wizard</string>
+   <string>Add Tasks</string>
   </property>
   <widget class="QWizardPage" name="wizardPageSelectFiles">
    <layout class="QVBoxLayout" name="verticalLayout_2">

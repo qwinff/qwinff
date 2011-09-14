@@ -35,6 +35,8 @@ private:
     Ui::MainWindow *ui;
     ConvertList *m_list;
     void add_files();
+    void setup_menus();
+    void setup_toolbar();
 };
 
 #endif // MAINWINDOW_H
