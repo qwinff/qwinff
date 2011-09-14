@@ -2,5 +2,9 @@
     <qresource prefix="/actions">
         <file>icons/add.png</file>
         <file>icons/remove.png</file>
+        <file>icons/clear.png</file>
+        <file>icons/convert.png</file>
+        <file>icons/play.png</file>
+        <file>icons/settings.png</file>
     </qresource>
 </RCC>
