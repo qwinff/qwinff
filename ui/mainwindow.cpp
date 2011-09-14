@@ -131,7 +131,7 @@ void MainWindow::add_files()
 
     AddTaskWizard wizard;
 
-    if (wizard.exec() == QDialog::Accepted) {
+    if (wizard.exec_openfile() == QDialog::Accepted) {
         // Add all input files to the list.
         const QList<ConversionParameters> &params = wizard.getConversionParameters();
         QList<ConversionParameters>::const_iterator it = params.begin();

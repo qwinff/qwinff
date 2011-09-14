@@ -2,12 +2,15 @@
 #include "progressbar.h"
 #include "converter/mediaconverter.h"
 #include "converter/mediaprobe.h"
+#include "addtaskwizard.h"
 #include <QTreeWidget>
 #include <QHBoxLayout>
 #include <QHeaderView>
 #include <QKeyEvent>
 #include <QMessageBox>
+#include <QUrl>
 #include <QDebug>
+#include <QFileInfo>
 #include <cassert>
 
 /*! The column containing the progress bar */
@@ -25,6 +28,8 @@ ConvertList::ConvertList(QWidget *parent) :
             , this, SLOT(task_finished_slot(int)));
     connect(m_converter, SIGNAL(progressRefreshed(int)),
             this, SLOT(progress_refreshed(int)));
+
+    setAcceptDrops(true); // enable drag/drop functions
 }
 
 bool ConvertList::addTask(const ConversionParameters& param)
@@ -44,13 +49,13 @@ bool ConvertList::addTask(const ConversionParameters& param)
     m_tasks.push_back(task);
 
     QStringList columns;
-    columns << param.source                           // source file
-            << param.destination                      // destination file
-            << QString().sprintf("%02d:%02d:%02.0f"   // duration
-                        , m_probe->hours()            //    hours
-                        , m_probe->minutes()          //    minutes
-                        , m_probe->seconds())         //    seconds
-            << "";                                    // progress
+    columns << QFileInfo(param.source).fileName()       // source file
+            << QFileInfo(param.destination).fileName()  // destination file
+            << QString().sprintf("%02d:%02d:%02.0f"     // duration
+                        , m_probe->hours()              //    hours
+                        , m_probe->minutes()            //    minutes
+                        , m_probe->seconds())           //    seconds
+            << "";                                      // progress
 
     QTreeWidgetItem *item = new QTreeWidgetItem(this, columns);
     task->listitem = item;
@@ -60,9 +65,8 @@ bool ConvertList::addTask(const ConversionParameters& param)
     setItemWidget(item, m_progress_column_index, new ProgressBar());
     itemWidget(item, m_progress_column_index)->adjustSize();
 
-    // Set each tooltip to the content of the field.
-    for (int i=0; i<item->columnCount(); i++)
-        item->setToolTip(i, item->text(i));
+    item->setToolTip(/*source index*/ 0, param.source);
+    item->setToolTip(/*destination index*/ 1, param.destination);
 
     return true;
 }
@@ -182,6 +186,38 @@ void ConvertList::keyPressEvent(QKeyEvent *event)
     }
 }
 
+void ConvertList::dragEnterEvent(QDragEnterEvent *event)
+{
+    if (event->mimeData()->hasUrls())
+        event->acceptProposedAction();
+}
+
+void ConvertList::dragMoveEvent(QDragMoveEvent *event)
+{
+    if (event->mimeData()->hasUrls())
+        event->acceptProposedAction();
+}
+
+void ConvertList::dragLeaveEvent(QDragLeaveEvent *event)
+{
+    event->accept();
+}
+
+void ConvertList::dropEvent(QDropEvent *event)
+{
+    const QMimeData *mimeData = event->mimeData();
+    if (mimeData->hasUrls()) {
+        QList<QUrl> urlList = mimeData->urls();
+        AddTaskWizard wizard;
+        wizard.exec(urlList);
+
+        const QList<ConversionParameters> &paramList = wizard.getConversionParameters();
+        foreach (ConversionParameters param, paramList) {
+            addTask(param);
+        }
+    }
+}
+
 // Initialize the QTreeWidget listing files.
 void ConvertList::init_treewidget(QTreeWidget *w)
 {
@@ -198,7 +234,7 @@ void ConvertList::init_treewidget(QTreeWidget *w)
     m_progress_column_index = 3;
 
     w->setHeaderLabels(columnTitle);
-    w->header()->setMovable(false); // disable title drag-drop reordering
+    //w->header()->setMovable(false); // disable title drag-drop reordering
 
     w->setRootIsDecorated(false);
     w->setUniformRowHeights(true);

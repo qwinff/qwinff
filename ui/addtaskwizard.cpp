@@ -50,6 +50,33 @@ AddTaskWizard::getConversionParameters() const
     return m_params;
 }
 
+int AddTaskWizard::exec_openfile()
+{
+    ui->lstFiles->clear();
+
+    if (startId() == 0) { // popup select file dialog
+        add_files_clicked();
+        if (ui->lstFiles->count() == 0)
+            return QWizard::Rejected;
+    }
+    return QWizard::exec();
+}
+
+int AddTaskWizard::exec(QList<QUrl> &files)
+{
+    ui->lstFiles->clear();
+
+    foreach (QUrl url, files) {
+        ui->lstFiles->addItem(url.path());
+    }
+
+    setStartId(1);
+    int ret = QWizard::exec();
+    setStartId(0);
+
+    return ret;
+}
+
 bool AddTaskWizard::validateCurrentPage()
 {
     switch (currentId()) {
@@ -106,8 +133,10 @@ void AddTaskWizard::add_files_clicked()
                                   QString()    // TODO: filter
                                   );
     if (!files.isEmpty()) {
-        for (int i=0; i<files.size(); i++) {
-            ui->lstFiles->addItem(files[i]);
+        foreach (QString file, files) {
+            QListWidgetItem *item = new QListWidgetItem(file);
+            item->setToolTip(file);
+            ui->lstFiles->addItem(item);
         }
     } else {
         // no file selected

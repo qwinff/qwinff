@@ -53,6 +53,10 @@ private slots:
 
 protected:
     void keyPressEvent(QKeyEvent *event);
+    void dragEnterEvent(QDragEnterEvent *event);
+    void dragMoveEvent(QDragMoveEvent *event);
+    void dragLeaveEvent(QDragLeaveEvent *event);
+    void dropEvent(QDropEvent *event);
 
 private:
     Q_DISABLE_COPY(ConvertList)

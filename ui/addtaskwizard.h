@@ -2,6 +2,7 @@
 #define ADDTASKWIZARD_H
 
 #include <QWizard>
+#include <QUrl>
 #include <QScopedPointer>
 
 namespace Ui {
@@ -24,6 +25,15 @@ public:
      *  including input/output filenames.
      */
     const QList<ConversionParameters>& getConversionParameters() const;
+
+    /*! Popup open file dialog on the file selection page.
+     */
+    int exec_openfile();
+
+    /*! Popup without asking the user to select files.
+     *  @param files files to convert
+     */
+    int exec(QList<QUrl>& files);
 
 protected:
     bool validateCurrentPage();
