@@ -20,7 +20,7 @@ public:
      * @return If the process is successfully started, the function returns true
      *  Otherwise, the function returns false.
      */
-    bool start(ConversionParameters &param);
+    bool start(ConversionParameters param);
 
     void stop();
     double progress();
@@ -41,6 +41,9 @@ private:
     QProcess m_proc;
     ConversionParameters m_convParam;
     ConverterInterface *m_pConv;
+    QString m_outputFileName;
+    QString m_tmpFileName;
+    bool m_stopped;
 };
 
 #endif // MEDIACONVERTER_H

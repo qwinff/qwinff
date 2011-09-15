@@ -1,6 +1,8 @@
 #include "mediaconverter.h"
 #include "ffmpeginterface.h"
 #include <QDebug>
+#include <QFile>
+#include <QFileInfo>
 
 #define TIMEOUT 1000
 
@@ -25,10 +27,22 @@ MediaConverter::~MediaConverter()
 
 // public methods
 
-bool MediaConverter::start(ConversionParameters& param)
+bool MediaConverter::start(ConversionParameters param)
 {
     if (m_proc.state() == QProcess::NotRunning) {
+        m_stopped = false;
+
         emit progressRefreshed(0);
+
+        // Save output filename.
+        m_outputFileName = param.destination;
+
+        // Generate temporary file name.
+        m_tmpFileName = m_outputFileName + "." + QString::number(qrand()) +
+                ".temp." + QFileInfo(m_outputFileName).suffix();
+
+        // Output to temporary file.
+        param.destination = m_tmpFileName;
 
         m_pConv->reset();
 
@@ -47,6 +61,7 @@ bool MediaConverter::start(ConversionParameters& param)
 void MediaConverter::stop()
 {
     if (m_proc.state() == QProcess::Running) {
+        m_stopped = true;
         m_proc.kill();
         m_proc.waitForFinished();
     }
@@ -66,7 +81,21 @@ void MediaConverter::readProcessOutput()
 
 void MediaConverter::convertProgressFinished(int exitcode, QProcess::ExitStatus)
 {
-    emit progressRefreshed(100); // 100% finished
+    QFile output_file(m_outputFileName);
+    QFile tmp_file(m_tmpFileName);
+
+    if (exitcode == 0 && tmp_file.exists() && !m_stopped) { // succeed
+        output_file.remove();              // Remove original file if it exists.
+        tmp_file.rename(m_outputFileName); // Rename tmpfile to outputfile.
+    } else { // failed
+        tmp_file.remove(); // Remove tmpfile if conversion failed.
+    }
+
+    if (exitcode == 0 && !m_stopped)
+        emit progressRefreshed(100); // 100% finished
+    else
+        emit progressRefreshed(0);
+
     emit finished(exitcode);
 }
 
