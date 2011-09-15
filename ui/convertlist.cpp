@@ -135,34 +135,37 @@ void ConvertList::start()
 
 void ConvertList::stop()
 {
-    if (is_busy) {
-        // cancel current task
-        is_busy = false;
+    if (m_current_task) {
+        progress_refreshed(0);
         m_current_task->status = Task::QUEUED;
         m_current_task = 0;
     }
+    is_busy = false;
+    m_converter->stop();
 }
 
 // Private Slots
 void ConvertList::task_finished_slot(int exitcode)
 {
-    m_current_task->status = (exitcode == 0)
-            ? Task::FINISHED
-            : Task::FAILED;
+    if (m_current_task) {
 
-    if (exitcode) { // conversion failed
-        ProgressBar *widget
-                = (ProgressBar*)itemWidget(m_current_task->listitem, m_progress_column_index);
-        widget->setValue(0);
-        m_current_task->listitem->setText(m_progress_column_index, tr("Failed"));
+        m_current_task->status = (exitcode == 0)
+                ? Task::FINISHED
+                : Task::FAILED;
+
+        if (exitcode) { // conversion failed
+            ProgressBar *widget
+                    = (ProgressBar*)itemWidget(m_current_task->listitem, m_progress_column_index);
+            widget->setValue(0);
+            m_current_task->listitem->setText(m_progress_column_index, tr("Failed"));
+        }
+
+        m_current_task = 0;
+        emit task_finished(exitcode);
+
+        is_busy = false;
+        this->start(); // start next task
     }
-
-    m_current_task = 0;
-
-    emit task_finished(exitcode);
-
-    is_busy = false;
-    this->start(); // start next task
 }
 
 void ConvertList::progress_refreshed(int percentage)

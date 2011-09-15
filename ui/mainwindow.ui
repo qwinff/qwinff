@@ -73,6 +73,10 @@
    </property>
   </action>
   <action name="actionExit">
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/actions/icons/exit.png</normaloff>:/actions/icons/exit.png</iconset>
+   </property>
    <property name="text">
     <string>E&amp;xit</string>
    </property>
@@ -96,6 +100,10 @@
    </property>
   </action>
   <action name="actionStopConversion">
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/actions/icons/stop.png</normaloff>:/actions/icons/stop.png</iconset>
+   </property>
    <property name="text">
     <string>Stop</string>
    </property>

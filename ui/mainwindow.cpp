@@ -6,11 +6,14 @@
 #include <QMessageBox>
 #include <QFileDialog>
 #include <QApplication>
+#include <QSettings>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    QSettings settings;
+
     ui->setupUi(this);
 
     m_list = new ConvertList();
@@ -24,21 +27,16 @@ MainWindow::MainWindow(QWidget *parent) :
 
     setup_menus();
     setup_toolbar();
+
+    restoreGeometry(settings.value("mainwindow/geometry").toByteArray());
+    restoreState(settings.value("mainwindow/state").toByteArray());
+
+    refresh_action_states();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
-}
-
-void MainWindow::start_conversion()
-{
-
-}
-
-void MainWindow::stop_conversion()
-{
-
 }
 
 void MainWindow::task_finished(int /*exitcode*/)
@@ -58,6 +56,7 @@ void MainWindow::all_tasks_finished()
 {
     QMessageBox::information(this, this->windowTitle(),
                              tr("All tasks has finished."), QMessageBox::Ok);
+    refresh_action_states();
 }
 
 // Menu Events
@@ -74,18 +73,7 @@ void MainWindow::slotExit()
 
 void MainWindow::slotMenuConvert()
 {
-    // Hide actionSetParameters if no item in m_list is selected.
-    bool hide_SetParameters = !m_list->selectedItems().isEmpty();
-
-    // Hide actionStartConversion if the conversion is in progress.
-    bool hide_StartConversion = m_list->isBusy();
-
-    // Hide actionStopConversion if nothing is being converted.
-    bool hide_StopConversion = !m_list->isBusy();
-
-    ui->actionSetParameters->setDisabled(hide_SetParameters);
-    ui->actionStartConversion->setDisabled(hide_StartConversion);
-    ui->actionStopConversion->setDisabled(hide_StopConversion);
+    refresh_action_states();
 }
 
 void MainWindow::slotStartConversion()
@@ -96,16 +84,29 @@ void MainWindow::slotStartConversion()
     } else {
         m_list->start();
     }
+
+    refresh_action_states();
 }
 
 void MainWindow::slotStopConversion()
 {
     m_list->stop();
+
+    refresh_action_states();
 }
 
 void MainWindow::slotSetConversionParameters()
 {
 
+}
+
+// Events
+
+void MainWindow::closeEvent(QCloseEvent *)
+{
+    QSettings settings;
+    settings.setValue("mainwindow/geometry", saveGeometry());
+    settings.setValue("mainwindow/state", saveState());
 }
 
 // Private Methods
@@ -157,4 +158,21 @@ void MainWindow::setup_toolbar()
     toolbar->addAction(ui->actionAddFiles);
     toolbar->addAction(ui->actionStartConversion);
     toolbar->addAction(ui->actionStopConversion);
+}
+
+// Hide unused actions
+void MainWindow::refresh_action_states()
+{
+    // Hide actionSetParameters if no item in m_list is selected.
+    bool hide_SetParameters = !m_list->selectedItems().isEmpty();
+
+    // Hide actionStartConversion if the conversion is in progress.
+    bool hide_StartConversion = m_list->isBusy();
+
+    // Hide actionStopConversion if nothing is being converted.
+    bool hide_StopConversion = !m_list->isBusy();
+
+    ui->actionSetParameters->setDisabled(hide_SetParameters);
+    ui->actionStartConversion->setDisabled(hide_StartConversion);
+    ui->actionStopConversion->setDisabled(hide_StopConversion);
 }

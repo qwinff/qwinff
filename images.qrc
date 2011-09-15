@@ -6,5 +6,7 @@
         <file>icons/play.png</file>
         <file>icons/settings.png</file>
         <file>icons/start.png</file>
+        <file>icons/stop.png</file>
+        <file>icons/exit.png</file>
     </qresource>
 </RCC>

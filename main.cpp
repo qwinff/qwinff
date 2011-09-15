@@ -3,13 +3,16 @@
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
+    // Create Application.
+    QApplication app(argc, argv);
 
-    // register QSettings information
+    // Register QSettings information.
     QCoreApplication::setOrganizationName("mediaformatconverter");
     QCoreApplication::setApplicationName("mediaformatconverter");
 
-    return a.exec();
+    // Create main window.
+    MainWindow window;
+    window.show();
+
+    return app.exec();
 }

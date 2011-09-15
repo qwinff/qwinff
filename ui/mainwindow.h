@@ -18,8 +18,6 @@ public:
     ~MainWindow();
 
 private slots:
-    void start_conversion();
-    void stop_conversion();
     void task_finished(int);
     void all_tasks_finished();
 
@@ -31,12 +29,16 @@ private slots:
     void slotStopConversion();
     void slotSetConversionParameters();
 
+protected:
+    void closeEvent(QCloseEvent *);
+
 private:
     Ui::MainWindow *ui;
     ConvertList *m_list;
     void add_files();
     void setup_menus();
     void setup_toolbar();
+    void refresh_action_states();
 };
 
 #endif // MAINWINDOW_H

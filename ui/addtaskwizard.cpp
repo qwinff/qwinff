@@ -43,10 +43,16 @@ AddTaskWizard::AddTaskWizard(QWidget *parent) :
 
     load_settings();
 
+    QSettings settings;
+    // Load Geometry
+    restoreGeometry(settings.value("addtaskwizard/geometry").toByteArray());
 }
 
 AddTaskWizard::~AddTaskWizard()
 {
+    QSettings settings;
+    // Save Geometry
+    settings.setValue("addtaskwizard/geometry", saveGeometry());
     delete ui;
 }
 
@@ -296,6 +302,7 @@ void AddTaskWizard::load_settings()
             break;
         }
     }
+
 }
 
 void AddTaskWizard::save_settings()
