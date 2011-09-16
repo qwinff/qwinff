@@ -13,6 +13,15 @@ public:
     QString label;
     QString category;
     QString parameters;
+
+    /*! Sorting requires less-than operator.
+     *  For convenience, the less-than relation is defined as comparing
+     *  the ids of the presets.
+     */
+    bool operator <(const Preset& other) const
+    {
+        return id < other.id;
+    }
 };
 
 class Presets : public QObject

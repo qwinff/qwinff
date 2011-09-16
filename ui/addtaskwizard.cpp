@@ -206,13 +206,13 @@ void AddTaskWizard::load_presets(int index)
     if (index == -1) return;
 
     QString extension = ui->cbExtension->itemData(index).toString();
-    QList<Preset> presets;
+    QList<Preset> presetList;
 
     ui->cbPreset->clear();
-    if (m_presets->getPresets(extension, presets)) {
-        QList<Preset>::iterator it = presets.begin();
-        for (; it!=presets.end(); ++it) {
-            ui->cbPreset->addItem(it->label, it->id);
+    if (m_presets->getPresets(extension, presetList)) {
+        qSort(presetList);  // Sort the presets by the order in the xml file.
+        foreach (Preset preset, presetList) {
+            ui->cbPreset->addItem(preset.label, preset.id);
         }
     }
 }
