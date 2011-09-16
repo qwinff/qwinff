@@ -41,6 +41,7 @@
     <addaction name="actionStopConversion"/>
     <addaction name="separator"/>
     <addaction name="actionSetParameters"/>
+    <addaction name="actionOpenOutputFolder"/>
    </widget>
    <widget class="QMenu" name="menuAbout">
     <property name="title">
@@ -137,6 +138,15 @@
    </property>
    <property name="text">
     <string>About Qt</string>
+   </property>
+  </action>
+  <action name="actionOpenOutputFolder">
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/actions/icons/open_folder.png</normaloff>:/actions/icons/open_folder.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open Output Folder</string>
    </property>
   </action>
  </widget>

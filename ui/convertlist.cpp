@@ -152,6 +152,16 @@ int ConvertList::count() const
     return topLevelItemCount();
 }
 
+const ConversionParameters* ConvertList::getCurrentIndexParameter() const
+{
+    const int index = currentIndex().row();
+    if (index >= 0 && index < m_tasks.size()) {
+        return &m_tasks[index]->param;
+    } else {
+        return 0;
+    }
+}
+
 // Public Slots
 
 void ConvertList::start()

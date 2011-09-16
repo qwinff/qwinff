@@ -44,6 +44,11 @@ public:
     bool isEmpty() const;
     int count() const;
 
+    /*! Returns the pointer to the conversion parameter of the currently selected item.
+     *  @return If the function fails, it returns NULL.
+     */
+    const ConversionParameters* getCurrentIndexParameter() const;
+
 signals:
     void start_conversion(int index, ConversionParameters param);
     void task_finished(int);

@@ -28,7 +28,10 @@ private slots:
     void slotStartConversion();
     void slotStopConversion();
     void slotSetConversionParameters();
+    void slotOpenOutputFolder();
     void slotAboutQt();
+
+    void slotListContextMenu(QPoint);
 
 protected:
     void closeEvent(QCloseEvent *);

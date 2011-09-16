@@ -5,6 +5,7 @@
 #include <QHBoxLayout>
 #include <QMessageBox>
 #include <QFileDialog>
+#include <QDesktopServices>
 #include <QApplication>
 #include <QSettings>
 
@@ -24,6 +25,9 @@ MainWindow::MainWindow(QWidget *parent) :
             this, SLOT(task_finished(int)));
     connect(m_list, SIGNAL(all_tasks_finished()),
             this, SLOT(all_tasks_finished()));
+    connect(m_list, SIGNAL(customContextMenuRequested(QPoint)),
+            this, SLOT(slotListContextMenu(QPoint)));
+    m_list->setContextMenuPolicy(Qt::CustomContextMenu);
 
     setup_menus();
     setup_toolbar();
@@ -100,9 +104,34 @@ void MainWindow::slotSetConversionParameters()
 
 }
 
+// Open the output folder of the file.
+void MainWindow::slotOpenOutputFolder()
+{
+    const ConversionParameters *param = m_list->getCurrentIndexParameter();
+    if (param) {
+        QString folder_path = QFileInfo(param->destination).path();
+        if (QFileInfo(folder_path).exists()) {
+            QDesktopServices::openUrl(QUrl(folder_path));
+        }
+    }
+}
+
 void MainWindow::slotAboutQt()
 {
     QMessageBox::aboutQt(this);
+}
+
+void MainWindow::slotListContextMenu(QPoint /*pos*/)
+{
+    refresh_action_states();
+
+    QMenu menu(this);
+    menu.addAction(ui->actionOpenOutputFolder);
+    menu.addSeparator();
+    menu.addAction(ui->actionStartConversion);
+    menu.addAction(ui->actionStopConversion);
+
+    menu.exec(QCursor::pos());
 }
 
 // Events
@@ -149,10 +178,13 @@ void MainWindow::setup_menus()
             this, SLOT(slotStopConversion()));
     connect(ui->actionSetParameters, SIGNAL(triggered()),
             this, SLOT(slotSetConversionParameters()));
+    connect(ui->actionOpenOutputFolder, SIGNAL(triggered()),
+            this, SLOT(slotOpenOutputFolder()));
 
-    // Aboput
+    // About
     connect(ui->actionAboutQt, SIGNAL(triggered()),
             this, SLOT(slotAboutQt()));
+
 
     // hide actionSetParameters because the function is incomplete.
     ui->actionSetParameters->setVisible(false);
@@ -178,7 +210,11 @@ void MainWindow::refresh_action_states()
     // Hide actionStopConversion if nothing is being converted.
     bool hide_StopConversion = !m_list->isBusy();
 
+    // Show actionOpenOutputFolder only if 1 file is selected.
+    bool hide_OpenFolder = (m_list->selectedItems().size() != 1);
+
     ui->actionSetParameters->setDisabled(hide_SetParameters);
     ui->actionStartConversion->setDisabled(hide_StartConversion);
     ui->actionStopConversion->setDisabled(hide_StopConversion);
+    ui->actionOpenOutputFolder->setDisabled(hide_OpenFolder);
 }
