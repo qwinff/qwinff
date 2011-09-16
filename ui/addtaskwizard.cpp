@@ -19,7 +19,6 @@ AddTaskWizard::AddTaskWizard(QWidget *parent) :
     m_current_param(new ConversionParameters)
 {
     ui->setupUi(this);
-    m_prev_path = QDir::homePath();
 
     connect(ui->btnAdd, SIGNAL(clicked())
             , this, SLOT(add_files()));
@@ -153,6 +152,8 @@ void AddTaskWizard::add_files()
                 QListWidgetItem *item = new QListWidgetItem(file);
                 item->setToolTip(file);
                 ui->lstFiles->addItem(item);
+
+                m_prev_path = QFileInfo(file).path(); // save file path
             } else if (QFileInfo(file).isDir()) { // The filename is a directory.
                 incorrect_files.append(file);
             } else {                              // The file does not exist.
@@ -165,6 +166,11 @@ void AddTaskWizard::add_files()
                          tr("Cannot find the following files:") + "\n\n"
                           + incorrect_files.join("\n"), QMessageBox::Ok);
         }
+
+        // Save open file path.
+        QSettings settings;
+        settings.setValue("addtaskwizard/openfilepath", m_prev_path);
+
     } else {
         // no file selected
     }
@@ -303,6 +309,12 @@ void AddTaskWizard::load_settings()
             ui->cbPreset->setCurrentIndex(i);
             break;
         }
+    }
+
+    // open file dialog default path
+    m_prev_path = settings.value("addtaskwizard/openfilepath").toString();
+    if (m_prev_path.isEmpty()) {
+        m_prev_path = QDir::homePath();
     }
 
 }
