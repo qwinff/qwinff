@@ -14,6 +14,8 @@
 #include <QProgressDialog>
 #include <cassert>
 
+#define MIN_DURATION 100 // Minimum duration(milliseconds) to show progress dialog.
+
 /*! The column containing the progress bar */
 
 ConvertList::ConvertList(QWidget *parent) :
@@ -73,18 +75,47 @@ bool ConvertList::addTask(const ConversionParameters& param)
     return true;
 }
 
-int ConvertList::addTasks(const QList<ConversionParameters> &paramList, bool showProgress)
+int ConvertList::addTasks(const QList<ConversionParameters> &paramList)
 {
     const int file_count = paramList.size();
     int success_count = 0;
 
+    // Record the files that are not recognized by the converter.
+    QList<QString> failed_files;
+
+    // Create progress dialog.
+    QProgressDialog dlgProgress(QString(""),
+                                tr("Cancel"),
+                                0, file_count,  /* min/max */
+                                this);
+    dlgProgress.setWindowModality(Qt::WindowModal);
+    dlgProgress.setMinimumDuration(MIN_DURATION);
+
+    int progress_count = 0;
     QList<ConversionParameters>::const_iterator it = paramList.begin();
     for (; it!=paramList.end(); ++it) {
-        if (addTask(*it))
+
+        // Indicate the current progress.
+        dlgProgress.setLabelText(tr("Adding files (%1/%2)")
+                                 .arg(progress_count).arg(file_count));
+
+        // Update progress dialog.
+        dlgProgress.setValue(progress_count++);
+
+        // Check if the user has canceled the operation.
+        if (dlgProgress.wasCanceled())
+            break;
+
+        if (addTask(*it)) // This step takes the most of the time.
             success_count++;
+        else
+            failed_files.push_back(it->source); // Record failed files.
+
     }
 
-    if (success_count != file_count) { // Some files are incorrect.
+    dlgProgress.setValue(file_count); // Terminate the progress indicator.
+
+    if (!failed_files.isEmpty()) { // Some files are incorrect.
 
     }
 
@@ -207,9 +238,28 @@ void ConvertList::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_Delete) { // Remove all selected items.
         QList<QTreeWidgetItem*> itemList = selectedItems();
+
+        QProgressDialog dlgProgress(tr("Removing files..."),
+                                    tr("Cancel"),
+                                    0, itemList.count(),
+                                    this);
+        dlgProgress.setWindowModality(Qt::WindowModal);
+        dlgProgress.setMinimumDuration(MIN_DURATION);
+
+        int progress_count = 0;
         foreach (QTreeWidgetItem *item, itemList) {
+            // Update the progress value.
+            dlgProgress.setValue(++progress_count);
+
+            // Check if the user has canceled the operation.
+            if (dlgProgress.wasCanceled())
+                break;
+
             removeTask(indexOfTopLevelItem(item));
         }
+
+        dlgProgress.setValue(itemList.size());
+
     } else {
         QTreeWidget::keyPressEvent(event);
     }
