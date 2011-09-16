@@ -172,10 +172,9 @@ void AddTaskWizard::add_files()
 
 void AddTaskWizard::remove_files()
 {
-    QList<QListWidgetItem*> items = ui->lstFiles->selectedItems();
-    QList<QListWidgetItem*>::iterator it = items.begin();
-    for (; it!=items.end(); ++it) {
-        ui->lstFiles->takeItem(ui->lstFiles->row(*it));
+    QList<QListWidgetItem*> itemList = ui->lstFiles->selectedItems();
+    foreach (QListWidgetItem *item, itemList) {
+        ui->lstFiles->takeItem(ui->lstFiles->row(item));
     }
 }
 

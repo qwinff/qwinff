@@ -42,8 +42,15 @@
     <addaction name="separator"/>
     <addaction name="actionSetParameters"/>
    </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>About</string>
+    </property>
+    <addaction name="actionAboutQt"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuConvert"/>
+   <addaction name="menuAbout"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QToolBar" name="toolBar">
@@ -69,7 +76,7 @@
     <string>Add files for conversion.</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+A</string>
+    <string>Ctrl+N</string>
    </property>
   </action>
   <action name="actionExit">
@@ -121,6 +128,15 @@
    </property>
    <property name="statusTip">
     <string>Edit conversion parameters of selected files</string>
+   </property>
+  </action>
+  <action name="actionAboutQt">
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/app/icons/qt.png</normaloff>:/app/icons/qt.png</iconset>
+   </property>
+   <property name="text">
+    <string>About Qt</string>
    </property>
   </action>
  </widget>

@@ -30,6 +30,7 @@ ConvertList::ConvertList(QWidget *parent) :
             this, SLOT(progress_refreshed(int)));
 
     setAcceptDrops(true); // enable drag/drop functions
+    setSelectionMode(QAbstractItemView::ExtendedSelection);
 }
 
 bool ConvertList::addTask(const ConversionParameters& param)
@@ -73,11 +74,14 @@ bool ConvertList::addTask(const ConversionParameters& param)
 
 void ConvertList::removeTask(int index)
 {
+    qDebug() << "ConvertList::removeTask(), index=" << index;
     if (m_tasks[index]->status != Task::RUNNING) { // not a running task
         m_tasks.remove(index);
         delete takeTopLevelItem(index);
-    } else { // the task is being executed
-        QMessageBox::critical(this, tr("Converter")
+    } else { // The task is being executed.
+
+        if (false)  // Silently ignore the event.
+            QMessageBox::warning(this, tr("Converter")
                               , tr("Cannot remove a task while it is in progress.")
                               , QMessageBox::Ok);
     }
@@ -182,8 +186,11 @@ void ConvertList::progress_refreshed(int percentage)
 
 void ConvertList::keyPressEvent(QKeyEvent *event)
 {
-    if (event->key() == Qt::Key_Delete) {
-        removeTask(this->currentIndex().row());
+    if (event->key() == Qt::Key_Delete) { // Remove all selected items.
+        QList<QTreeWidgetItem*> itemList = selectedItems();
+        foreach (QTreeWidgetItem *item, itemList) {
+            removeTask(indexOfTopLevelItem(item));
+        }
     } else {
         QTreeWidget::keyPressEvent(event);
     }

@@ -9,4 +9,7 @@
         <file>icons/stop.png</file>
         <file>icons/exit.png</file>
     </qresource>
+    <qresource prefix="/app">
+        <file>icons/qt.png</file>
+    </qresource>
 </RCC>

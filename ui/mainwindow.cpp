@@ -100,6 +100,11 @@ void MainWindow::slotSetConversionParameters()
 
 }
 
+void MainWindow::slotAboutQt()
+{
+    QMessageBox::aboutQt(this);
+}
+
 // Events
 
 void MainWindow::closeEvent(QCloseEvent *)
@@ -147,6 +152,10 @@ void MainWindow::setup_menus()
             this, SLOT(slotStopConversion()));
     connect(ui->actionSetParameters, SIGNAL(triggered()),
             this, SLOT(slotSetConversionParameters()));
+
+    // Aboput
+    connect(ui->actionAboutQt, SIGNAL(triggered()),
+            this, SLOT(slotAboutQt()));
 
     // hide actionSetParameters because the function is incomplete.
     ui->actionSetParameters->setVisible(false);

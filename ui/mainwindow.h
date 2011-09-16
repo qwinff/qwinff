@@ -28,6 +28,7 @@ private slots:
     void slotStartConversion();
     void slotStopConversion();
     void slotSetConversionParameters();
+    void slotAboutQt();
 
 protected:
     void closeEvent(QCloseEvent *);
