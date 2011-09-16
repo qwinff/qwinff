@@ -160,7 +160,7 @@ void AddTaskWizard::add_files()
             }
         }
 
-        if (!incorrect_files.isEmpty()) {
+        if (!incorrect_files.isEmpty()) { // TODO: Use a messagebox with a textbox.
             QMessageBox::warning(this, this->windowTitle(),
                          tr("Cannot find the following files:") + "\n\n"
                           + incorrect_files.join("\n"), QMessageBox::Ok);
@@ -236,9 +236,11 @@ void AddTaskWizard::all_finished()
 
         QString input_filename = ui->lstFiles->item(i)->text();
         QString input_file_basename = QFileInfo(input_filename).completeBaseName();
+
+        // Fill in input filename.
         param.source = input_filename;
 
-        // copy output filename to the parameter
+        // Fill in output filename.
         QDir output_dir(ui->txtOutputPath->text());
         const int ext_index = ui->cbExtension->currentIndex();
         param.destination =
@@ -246,6 +248,7 @@ void AddTaskWizard::all_finished()
                 + '.'
                 + ui->cbExtension->itemData(ext_index).toString(); // extension
 
+        // Save the configuration for the file.
         m_params.append(param);
     }
 

@@ -125,11 +125,8 @@ void MainWindow::add_files()
 
     if (wizard.exec_openfile() == QDialog::Accepted) {
         // Add all input files to the list.
-        const QList<ConversionParameters> &params = wizard.getConversionParameters();
-        QList<ConversionParameters>::const_iterator it = params.begin();
-        for (; it!=params.end(); ++it) {
-            m_list->addTask(*it);
-        }
+        const QList<ConversionParameters> &paramList = wizard.getConversionParameters();
+        m_list->addTasks(paramList);
     }
 }
 

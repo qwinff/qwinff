@@ -32,6 +32,13 @@ public:
      */
     bool addTask(const ConversionParameters &param);
 
+    /*! Append a list of tasks to the list
+     * @param paramList the list of conversion parameters
+     * @param showProgress Optionally popup a QProgressDialog to indicate the progress.
+     * @return the number of successfully added tasks.
+     */
+    int addTasks(const QList<ConversionParameters>& paramList, bool showProgress = true);
+
     void removeTask(int index);
 
     bool isBusy() const;

@@ -30,7 +30,8 @@ public:
      */
     int exec_openfile();
 
-    /*! Popup without asking the user to select files.
+    /*! Fill in the files and execute the wizard.
+     *  The wizard will skip the file-selecting page.
      *  @param files files to convert
      */
     int exec(QList<QUrl>& files);

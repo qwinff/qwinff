@@ -11,6 +11,7 @@
 #include <QUrl>
 #include <QDebug>
 #include <QFileInfo>
+#include <QProgressDialog>
 #include <cassert>
 
 /*! The column containing the progress bar */
@@ -70,6 +71,24 @@ bool ConvertList::addTask(const ConversionParameters& param)
     item->setToolTip(/*destination index*/ 1, param.destination);
 
     return true;
+}
+
+int ConvertList::addTasks(const QList<ConversionParameters> &paramList, bool showProgress)
+{
+    const int file_count = paramList.size();
+    int success_count = 0;
+
+    QList<ConversionParameters>::const_iterator it = paramList.begin();
+    for (; it!=paramList.end(); ++it) {
+        if (addTask(*it))
+            success_count++;
+    }
+
+    if (success_count != file_count) { // Some files are incorrect.
+
+    }
+
+    return success_count;
 }
 
 void ConvertList::removeTask(int index)
@@ -213,18 +232,20 @@ void ConvertList::dragLeaveEvent(QDragLeaveEvent *event)
     event->accept();
 }
 
+// The user drops files into the area.
 void ConvertList::dropEvent(QDropEvent *event)
 {
     const QMimeData *mimeData = event->mimeData();
     if (mimeData->hasUrls()) {
         QList<QUrl> urlList = mimeData->urls();
         AddTaskWizard wizard;
+
+        // Fill in the filenames and execute the wizard.
+        // The wizard will skip the file-selecting page.
         wizard.exec(urlList);
 
         const QList<ConversionParameters> &paramList = wizard.getConversionParameters();
-        foreach (ConversionParameters param, paramList) {
-            addTask(param);
-        }
+        addTasks(paramList);
     }
 }
 
