@@ -21,12 +21,15 @@ public:
     void parseProcessOutput(const QString& data);
     double progress() const;
 
-    bool getAudioEncoders(QList<QString>& target) const;
-    bool getAudioEncoders(QSet<QString>& target) const;
-    bool getVideoEncoders(QList<QString>& target) const;
-    bool getVideoEncoders(QSet<QString>& target) const;
-    bool getSubtitleEncoders(QList<QString>& target) const;
-    bool getSubtitleEncoders(QSet<QString>& target) const;
+    static bool getAudioEncoders(QList<QString>& target);
+    static bool getAudioEncoders(QSet<QString>& target);
+    static bool getVideoEncoders(QList<QString>& target);
+    static bool getVideoEncoders(QSet<QString>& target);
+    static bool getSubtitleEncoders(QList<QString>& target);
+    static bool getSubtitleEncoders(QSet<QString>& target);
+    static QString getFFmpegVersion();
+
+    static void refreshFFmpegInformation();
 
 signals:
     void progressRefreshed(double percentage);

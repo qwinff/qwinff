@@ -110,15 +110,14 @@ bool Presets::Private::readElementData(QXmlStreamReader &xml, Preset& target)
 
 void Presets::Private::removeUnavailablePresets()
 {
-    FFmpegInterface ffmpeg_interface;
-    QSet<QString> audio_decoders, video_decoders, subtitle_decoders;
+    QSet<QString> audio_encoders, video_encoders, subtitle_encoders;
 
-    if (!ffmpeg_interface.getAudioEncoders(audio_decoders))
-        return;
-    if (!ffmpeg_interface.getVideoEncoders(video_decoders))
-        return;
-    if (!ffmpeg_interface.getSubtitleEncoders(subtitle_decoders))
-        return;
+    if (!FFmpegInterface::getAudioEncoders(audio_encoders))
+        Q_ASSERT(audio_encoders.isEmpty());
+    if (!FFmpegInterface::getVideoEncoders(video_encoders))
+        Q_ASSERT(video_encoders.isEmpty());
+    if (!FFmpegInterface::getSubtitleEncoders(subtitle_encoders))
+        Q_ASSERT(subtitle_encoders.isEmpty());
 
     QRegExp audio_codec_pattern("-acodec\\s+([^ ]+)");
     QRegExp video_codec_pattern("-vcodec\\s+([^ ]+)");
@@ -131,21 +130,21 @@ void Presets::Private::removeUnavailablePresets()
 
         // Check unavailable audio presets
         if (audio_codec_pattern.indexIn(params) != -1) {
-            if (!audio_decoders.contains(audio_codec_pattern.cap(1))) {
+            if (!audio_encoders.contains(audio_codec_pattern.cap(1))) {
                 remove = true;
             }
         }
 
         // Check unavailable video presets
         if (!remove && video_codec_pattern.indexIn(params) != -1) {
-            if (!video_decoders.contains(video_codec_pattern.cap(1))) {
+            if (!video_encoders.contains(video_codec_pattern.cap(1))) {
                 remove = true;
             }
         }
 
         // Check unavailable subtitle presets
         if (!remove && subtitle_codec_pattern.indexIn(params) != -1) {
-            if (!subtitle_decoders.contains(subtitle_codec_pattern.cap(1))) {
+            if (!subtitle_encoders.contains(subtitle_codec_pattern.cap(1))) {
                 remove = true;
             }
         }

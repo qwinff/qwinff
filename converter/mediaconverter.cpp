@@ -50,7 +50,7 @@ bool MediaConverter::start(ConversionParameters param)
         m_pConv->setReadChannel(m_proc);
         m_pConv->fillParameterList(param, list);
 
-        qDebug() << list;
+        qDebug() << m_pConv->executableName() << list.join(" ");
 
         m_proc.start(m_pConv->executableName(), list);
         return m_proc.waitForStarted(TIMEOUT);
