@@ -21,12 +21,13 @@ void ProgressBar::setValue(unsigned int value)
 void ProgressBar::paintEvent(QPaintEvent*)
 {
     QPainter painter(this);
+    QPen pen;
 
     //if (m_percentage >= 0)
     {
         if (m_percentage > 0) {
             // draw progress bar
-            QRect rect_progress(0, 0, (width()*m_percentage/100 - 1), height()-1);
+            QRect rect_progress(0, 0, (width()*m_percentage/100)-1, height()-1);
             QLinearGradient gradient(0, 0, 0, rect_progress.bottom());
             gradient.setColorAt(0, COLOR_MARGIN);
             gradient.setColorAt(0.5, COLOR_CENTER);
@@ -37,7 +38,7 @@ void ProgressBar::paintEvent(QPaintEvent*)
         }
 
         // Restore the pen such that the text can be rendered.
-        painter.setPen(QPainter().pen());
+        painter.setPen(pen);
 
         // draw percentage text
         QRect rect_region(0, 0, width()-1, height()-1);
