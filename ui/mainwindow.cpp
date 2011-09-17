@@ -8,6 +8,7 @@
 #include <QDesktopServices>
 #include <QApplication>
 #include <QSettings>
+#include <QCloseEvent>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -136,8 +137,19 @@ void MainWindow::slotListContextMenu(QPoint /*pos*/)
 
 // Events
 
-void MainWindow::closeEvent(QCloseEvent *)
+void MainWindow::closeEvent(QCloseEvent *event)
 {
+    if (m_list->isBusy()) {
+        int reply = QMessageBox::warning(this, this->windowTitle(),
+                             tr("Conversion is still in progress. Abort?"),
+                             QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+        if (reply == QMessageBox::No) {
+            event->ignore();
+            return;
+        }
+    }
+
+    m_list->stop();
     QSettings settings;
     settings.setValue("mainwindow/geometry", saveGeometry());
     settings.setValue("mainwindow/state", saveState());

@@ -20,7 +20,7 @@ void ProgressBar::paintEvent(QPaintEvent*)
 {
     QPainter painter(this);
 
-    if (m_percentage >= 0)
+    //if (m_percentage >= 0)
     {
         if (m_percentage > 0) {
             // draw progress bar
