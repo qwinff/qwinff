@@ -25,8 +25,17 @@ void ProgressBar::paintEvent(QPaintEvent*)
         if (m_percentage > 0) {
             // draw progress bar
             QRect rect_progress(0, 0, (width()*m_percentage/100 - 1), height()-1);
-            painter.fillRect(rect_progress, QColor(0,0,255));
+            QLinearGradient gradient(0, 0, 0, rect_progress.bottom());
+            gradient.setColorAt(0, QColor(200,220,255));
+            gradient.setColorAt(0.5, QColor(150,200,220));
+            gradient.setColorAt(1, QColor(200,220,255));
+            painter.setBrush(gradient);
+            painter.setPen(Qt::NoPen);  // Don't draw the border.
+            painter.drawRect(rect_progress);
         }
+
+        // Restore the pen such that the text can be rendered.
+        painter.setPen(QPainter().pen());
 
         // draw percentage text
         QRect rect_region(0, 0, width()-1, height()-1);
