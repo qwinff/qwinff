@@ -279,7 +279,7 @@ bool AddTaskWizard::load_extensions(const char *file)
     QList<QString>::iterator it = extensions.begin();
     ui->cbExtension->clear();
     for (; it!=extensions.end(); ++it) {
-        ui->cbExtension->addItem(*it, QVariant(*it));
+        ui->cbExtension->addItem(it->toUpper(), QVariant(*it));
     }
 
     return true;
