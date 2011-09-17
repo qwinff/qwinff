@@ -10,8 +10,10 @@ ProgressBar::ProgressBar(QWidget *parent) :
 
 void ProgressBar::setValue(unsigned int value)
 {
-    m_percentage = (value <= 100) ? value : 100;
-    this->repaint();
+    if (value != m_percentage) {
+        m_percentage = (value <= 100) ? value : 100;
+        this->repaint();
+    }
 }
 
 void ProgressBar::paintEvent(QPaintEvent*)
