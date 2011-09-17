@@ -84,6 +84,7 @@ int ConvertList::addTasks(const QList<ConversionParameters> &paramList)
     QStringList failed_files;
 
     // Create progress dialog.
+    /* Translators: *//*: Cancel the operation of adding new tasks */
     QProgressDialog dlgProgress(QString(""),
                                 tr("Cancel"),
                                 0, file_count,  /* min/max */
@@ -96,6 +97,9 @@ int ConvertList::addTasks(const QList<ConversionParameters> &paramList)
     for (; it!=paramList.end(); ++it) {
 
         // Indicate the current progress.
+        /*: This text is the progress indicator of adding multiple tasks.
+            %1 is the number of files that are already added.
+            %2 is the total number of files. */
         dlgProgress.setLabelText(tr("Adding files (%1/%2)")
                                  .arg(progress_count).arg(file_count));
 
@@ -226,6 +230,7 @@ void ConvertList::task_finished_slot(int exitcode)
             ProgressBar *widget
                     = (ProgressBar*)itemWidget(m_current_task->listitem, m_progress_column_index);
             widget->setValue(0);
+            /*: The text to be displayed on the progress bar when a conversion fails */
             m_current_task->listitem->setText(m_progress_column_index, tr("Failed"));
         }
 
@@ -254,6 +259,7 @@ void ConvertList::keyPressEvent(QKeyEvent *event)
     if (event->key() == Qt::Key_Delete) { // Remove all selected items.
         QList<QTreeWidgetItem*> itemList = selectedItems();
 
+        /*: Remove files from the tasklist */
         QProgressDialog dlgProgress(tr("Removing files..."),
                                     tr("Cancel"),
                                     0, itemList.count(),
@@ -322,9 +328,13 @@ void ConvertList::init_treewidget(QTreeWidget *w)
     w->setColumnCount(4);
 
     QStringList columnTitle;
+    /*: label of the "input file" field */
     columnTitle.append(tr("Input"));
+    /*: label of the "output file" field */
     columnTitle.append(tr("Output"));
+    /*: label of the "media duration (length)" field */
     columnTitle.append(tr("Duration"));
+    /*: label of the "progress" field. */
     columnTitle.append(tr("Progress"));
 
     m_progress_column_index = 3;

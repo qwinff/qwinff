@@ -46,6 +46,10 @@ FORMS    += \
 RESOURCES += \
     images.qrc
 
+TRANSLATIONS += \
+    formatconverter_zh_TW.ts \
+    formatconverter_zh_CN.ts
+
 unix {
     DEFINES += DATA_PATH=$(DATA_PATH)
     DEFINES += DOC_PATH=$(DOC_PATH)

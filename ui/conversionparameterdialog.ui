@@ -59,21 +59,6 @@
                 <property name="editable">
                  <bool>true</bool>
                 </property>
-                <item>
-                 <property name="text">
-                  <string>44100</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>22050</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>11025</string>
-                 </property>
-                </item>
                </widget>
               </item>
               <item>

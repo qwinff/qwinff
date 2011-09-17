@@ -121,7 +121,7 @@ bool AddTaskWizard::validateCurrentPage()
                 if (!succeed) { // failed to create folder
                     QMessageBox::critical(this, this->windowTitle()
                                           , tr("Failed to create folder. "
-                                               "Please select another folder")
+                                               "Please select another output folder")
                                           , QMessageBox::Ok);
                 }
                 return succeed;
@@ -139,7 +139,8 @@ bool AddTaskWizard::validateCurrentPage()
 
 void AddTaskWizard::add_files()
 {
-    QStringList files = QFileDialog::getOpenFileNames(this, tr("Select files"),
+    /*: This text is the title of an openfile dialog. */
+    QStringList files = QFileDialog::getOpenFileNames(this, tr("Select Files"),
                                   m_prev_path,  // default path
                                   QString()    // TODO: filter
                                   );
@@ -195,6 +196,7 @@ void AddTaskWizard::edit_preset()
 
 void AddTaskWizard::browse_output_path()
 {
+    /*: This text is the title of an open directory dialog. */
     ui->txtOutputPath->setText(
                 QFileDialog::getExistingDirectory(this, tr("Select Directory")
                         , ui->txtOutputPath->text())
