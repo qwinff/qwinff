@@ -81,7 +81,7 @@ int ConvertList::addTasks(const QList<ConversionParameters> &paramList)
     int success_count = 0;
 
     // Record the files that are not recognized by the converter.
-    QList<QString> failed_files;
+    QStringList failed_files;
 
     // Create progress dialog.
     QProgressDialog dlgProgress(QString(""),
@@ -116,7 +116,12 @@ int ConvertList::addTasks(const QList<ConversionParameters> &paramList)
     dlgProgress.setValue(file_count); // Terminate the progress indicator.
 
     if (!failed_files.isEmpty()) { // Some files are incorrect.
-
+        QMessageBox msgBox;
+        msgBox.setText(tr("Some files are not recognized by the converter."));
+        msgBox.setDetailedText(failed_files.join("\n"));
+        msgBox.setStandardButtons(QMessageBox::Ok);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.exec();
     }
 
     return success_count;

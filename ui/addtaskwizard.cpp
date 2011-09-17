@@ -98,8 +98,7 @@ bool AddTaskWizard::validateCurrentPage()
             return true;
         } else {
             QMessageBox::information(this, this->windowTitle()
-                                     , tr("Please select at least one file.")
-                                     , QMessageBox::Ok);
+                                     , tr("Please select at least one file."));
             return false;
         }
         break;
@@ -161,10 +160,13 @@ void AddTaskWizard::add_files()
             }
         }
 
-        if (!incorrect_files.isEmpty()) { // TODO: Use a messagebox with a textbox.
-            QMessageBox::warning(this, this->windowTitle(),
-                         tr("Cannot find the following files:") + "\n\n"
-                          + incorrect_files.join("\n"), QMessageBox::Ok);
+        if (!incorrect_files.isEmpty()) {
+            QMessageBox msgBox;
+            msgBox.setText(tr("Some files could not be found."));
+            msgBox.setDetailedText(incorrect_files.join("\n"));
+            msgBox.setStandardButtons(QMessageBox::Ok);
+            msgBox.setIcon(QMessageBox::Warning);
+            msgBox.exec();
         }
 
         // Save open file path.
