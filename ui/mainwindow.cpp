@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "convertlist.h"
 #include "addtaskwizard.h"
+#include "converter/ffmpeginterface.h"
 #include <QHBoxLayout>
 #include <QMessageBox>
 #include <QFileDialog>
@@ -9,6 +10,7 @@
 #include <QApplication>
 #include <QSettings>
 #include <QCloseEvent>
+#include <QTimer>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -37,6 +39,11 @@ MainWindow::MainWindow(QWidget *parent) :
     restoreState(settings.value("mainwindow/state").toByteArray());
 
     refresh_action_states();
+
+    if (!check_execute_conditions()) {
+        // Close the window immediately after it has started.
+        QTimer::singleShot(0, this, SLOT(close()));
+    }
 }
 
 MainWindow::~MainWindow()
@@ -156,6 +163,16 @@ void MainWindow::closeEvent(QCloseEvent *event)
 }
 
 // Private Methods
+
+/* Check if necessary external programs exist.
+   (1) Check ffmpeg
+*/
+bool MainWindow::check_execute_conditions()
+{
+    if (!FFmpegInterface::hasFFmpeg())
+        return false;
+    return true;
+}
 
 // Popup wizard to add tasks.
 void MainWindow::add_files()

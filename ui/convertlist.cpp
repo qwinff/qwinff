@@ -140,7 +140,7 @@ void ConvertList::removeTask(int index)
     } else { // The task is being executed.
 
         if (false)  // Silently ignore the event.
-            QMessageBox::warning(this, tr("Converter")
+            QMessageBox::warning(this, tr("Remove Task")
                               , tr("Cannot remove a task while it is in progress.")
                               , QMessageBox::Ok);
     }

@@ -39,6 +39,7 @@ protected:
 private:
     Ui::MainWindow *ui;
     ConvertList *m_list;
+    bool check_execute_conditions();
     void add_files();
     void setup_menus();
     void setup_toolbar();

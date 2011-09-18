@@ -271,6 +271,12 @@ QString FFmpegInterface::getFFmpegVersion()
     return info::ffmpeg_version;
 }
 
+bool FFmpegInterface::hasFFmpeg()
+{
+    info::read_ffmpeg_info();
+    return info::ffmpeg_exist;
+}
+
 void FFmpegInterface::refreshFFmpegInformation()
 {
     info::is_encoders_read = false;
