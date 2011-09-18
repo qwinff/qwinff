@@ -22,7 +22,8 @@ SOURCES += main.cpp \
     converter/ffmpeginterface.cpp \
     converter/converterinterface.cpp \
     converter/conversionparameters.cpp \
-    ui/addtaskwizard.cpp
+    ui/addtaskwizard.cpp \
+    ui/aboutffmpegdialog.cpp
 
 HEADERS  += \
     ui/progressbar.h \
@@ -36,12 +37,14 @@ HEADERS  += \
     converter/ffmpeginterface.h \
     converter/converterinterface.h \
     converter/conversionparameters.h \
-    ui/addtaskwizard.h
+    ui/addtaskwizard.h \
+    ui/aboutffmpegdialog.h
 
 FORMS    += \
     ui/conversionparameterdialog.ui \
     ui/addtaskwizard.ui \
-    ui/mainwindow.ui
+    ui/mainwindow.ui \
+    ui/aboutffmpegdialog.ui
 
 RESOURCES += \
     images.qrc

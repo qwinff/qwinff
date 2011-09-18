@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "convertlist.h"
 #include "addtaskwizard.h"
+#include "aboutffmpegdialog.h"
 #include "converter/ffmpeginterface.h"
 #include <QHBoxLayout>
 #include <QMessageBox>
@@ -129,6 +130,11 @@ void MainWindow::slotAboutQt()
     QMessageBox::aboutQt(this);
 }
 
+void MainWindow::slotAboutFFmpeg()
+{
+    AboutFFmpegDialog().exec();
+}
+
 void MainWindow::slotListContextMenu(QPoint /*pos*/)
 {
     refresh_action_states();
@@ -213,6 +219,8 @@ void MainWindow::setup_menus()
     // About
     connect(ui->actionAboutQt, SIGNAL(triggered()),
             this, SLOT(slotAboutQt()));
+    connect(ui->actionAboutFFmpeg, SIGNAL(triggered()),
+            this, SLOT(slotAboutFFmpeg()));
 
 
     // hide actionSetParameters because the function is incomplete.

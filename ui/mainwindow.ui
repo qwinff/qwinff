@@ -48,6 +48,7 @@
      <string>About</string>
     </property>
     <addaction name="actionAboutQt"/>
+    <addaction name="actionAboutFFmpeg"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuConvert"/>
@@ -147,6 +148,11 @@
    </property>
    <property name="text">
     <string>Open Output Folder</string>
+   </property>
+  </action>
+  <action name="actionAboutFFmpeg">
+   <property name="text">
+    <string>About FFmpeg</string>
    </property>
   </action>
  </widget>

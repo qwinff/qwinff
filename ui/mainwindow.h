@@ -30,6 +30,7 @@ private slots:
     void slotSetConversionParameters();
     void slotOpenOutputFolder();
     void slotAboutQt();
+    void slotAboutFFmpeg();
 
     void slotListContextMenu(QPoint);
 
