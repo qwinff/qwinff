@@ -9,6 +9,8 @@
 #include <QSettings>
 #include <cassert>
 
+#define NUM_RECENT_PATHS 5
+
 #define PAGEID_SELECTFILES 0
 #define PAGEID_PARAMS 1
 
@@ -38,7 +40,9 @@ AddTaskWizard::AddTaskWizard(QWidget *parent) :
     ui->lstFiles->setSelectionMode(QAbstractItemView::ExtendedSelection);
 
     load_extensions("presets.xml");
-    ui->txtOutputPath->setText(QDir::homePath());
+    ui->cbOutputPath->setEditText(QDir::homePath());
+
+    ui->cbOutputPath->setEditable(true);
 
     load_settings();
 
@@ -104,7 +108,7 @@ bool AddTaskWizard::validateCurrentPage()
         break;
     case 1: // Select conversion parameters
         // check if output directory exists
-        QDir output_dir(ui->txtOutputPath->text());
+        QDir output_dir(ui->cbOutputPath->currentText());
         if (output_dir.exists()) {
             return true;
         } else { // The folder doesn't exist.
@@ -197,9 +201,9 @@ void AddTaskWizard::edit_preset()
 void AddTaskWizard::browse_output_path()
 {
     /*: This text is the title of an open directory dialog. */
-    ui->txtOutputPath->setText(
+    ui->cbOutputPath->setEditText(
                 QFileDialog::getExistingDirectory(this, tr("Select Directory")
-                        , ui->txtOutputPath->text())
+                        , ui->cbOutputPath->currentText())
                 );
 }
 
@@ -240,6 +244,9 @@ void AddTaskWizard::all_finished()
 
     // All files share the same settings.
     ConversionParameters param(*m_current_param);
+    QDir output_dir(ui->cbOutputPath->currentText());
+    const int ext_index = ui->cbExtension->currentIndex();
+    QString ext = ui->cbExtension->itemData(ext_index).toString();
 
     // Write conversion parameters to m_params.
     for (int i=0; i<size; i++) {
@@ -251,12 +258,10 @@ void AddTaskWizard::all_finished()
         param.source = input_filename;
 
         // Fill in output filename.
-        QDir output_dir(ui->txtOutputPath->text());
-        const int ext_index = ui->cbExtension->currentIndex();
         param.destination =
                 output_dir.absoluteFilePath(input_file_basename)   // filename
                 + '.'
-                + ui->cbExtension->itemData(ext_index).toString(); // extension
+                + ext; // extension
 
         // Save the configuration for the file.
         m_params.append(param);
@@ -289,13 +294,6 @@ void AddTaskWizard::load_settings()
 {
     QSettings settings;
 
-    // output path textbox
-    QString output_path = settings.value("addtaskwizard/output_path").toString();
-    if (output_path.isEmpty()) {
-        output_path = QDir::homePath();
-    }
-    ui->txtOutputPath->setText(output_path);
-
     // extension combobox
     QString ext = settings.value("addtaskwizard/extension").toString();
     for (int i=0; i<ui->cbExtension->count(); i++) {
@@ -316,17 +314,36 @@ void AddTaskWizard::load_settings()
     }
 
     // open file dialog default path
-    m_prev_path = settings.value("addtaskwizard/openfilepath").toString();
-    if (m_prev_path.isEmpty()) {
-        m_prev_path = QDir::homePath();
+    m_prev_path = settings.value("addtaskwizard/openfilepath"
+                                 , QDir::homePath()).toString();
+
+    // Load recent output paths.
+    QStringList recent_paths = settings.value("addtaskwizard/recentpaths").toStringList();
+    ui->cbOutputPath->clear();
+    ui->cbOutputPath->addItems(recent_paths);
+    if (ui->cbOutputPath->count() == 0) {
+        ui->cbOutputPath->addItem(QDir::homePath());
     }
+    ui->cbOutputPath->setCurrentIndex(0); // Select the most recent path.
 
 }
 
 void AddTaskWizard::save_settings()
 {
     QSettings settings;
-    settings.setValue("addtaskwizard/output_path", ui->txtOutputPath->text());
     settings.setValue("addtaskwizard/extension", ui->cbExtension->currentText());
     settings.setValue("addtaskwizard/preset", ui->cbPreset->currentText());
+
+    // Save recent output paths
+    QStringList recent_paths;
+    recent_paths.push_back(ui->cbOutputPath->currentText()); // Save current text.
+    for (int i=0; i<ui->cbOutputPath->count(); i++) {
+        recent_paths.push_back(ui->cbOutputPath->itemText(i));
+    }
+    recent_paths.removeDuplicates();
+    if (recent_paths.size() > NUM_RECENT_PATHS) {
+        // Make the list contain at most NUM_RECENT_PATHS items.
+        recent_paths = recent_paths.mid(0, NUM_RECENT_PATHS);
+    }
+    settings.setValue("addtaskwizard/recentpaths", recent_paths);
 }
