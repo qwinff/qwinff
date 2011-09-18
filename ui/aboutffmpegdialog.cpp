@@ -7,8 +7,12 @@ AboutFFmpegDialog::AboutFFmpegDialog(QWidget *parent) :
     ui(new Ui::AboutFFmpegDialog)
 {
     ui->setupUi(this);
-    ui->txtFFmpegVersionInfo->setText(FFmpegInterface::getFFmpegVersion());
+
+    ui->txtFFmpegVersionInfo->setText(FFmpegInterface::getFFmpegVersionInfo());
     ui->txtFFmpegVersionInfo->setReadOnly(true);
+
+    ui->txtFFmpegCodecInfo->setText(FFmpegInterface::getFFmpegCodecInfo());
+    ui->txtFFmpegCodecInfo->setReadOnly(true);
 }
 
 AboutFFmpegDialog::~AboutFFmpegDialog()

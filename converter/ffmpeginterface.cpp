@@ -19,6 +19,7 @@ namespace info {
     QAtomicInt is_encoders_read(false);
     volatile bool ffmpeg_exist = false;
     QString ffmpeg_version;
+    QString ffmpeg_codec_info;
     QList<QString> audio_encoders;
     QList<QString> video_encoders;
     QList<QString> subtitle_encoders;
@@ -33,6 +34,8 @@ namespace info {
     {
         if (!is_encoders_read.testAndSetAcquire(false, true))
             return; // Skip the operation if the information was already read.
+
+        qDebug() << "Read FFmpeg Information";
 
         QProcess ffmpeg_process;
         QStringList parameters;
@@ -60,16 +63,23 @@ namespace info {
         const int AV_INDEX = 1;
         const int CODEC_NAME_INDEX = 2;
 
+        ffmpeg_codec_info.clear();
         while (ffmpeg_process.canReadLine()) {
-            if (pattern.indexIn(ffmpeg_process.readLine()) != -1) {
+            QString line(ffmpeg_process.readLine());
+            ffmpeg_codec_info.append(line);
+
+            if (pattern.indexIn(line) != -1) {
                 QString av = pattern.cap(AV_INDEX);
                 QString codec = pattern.cap(CODEC_NAME_INDEX);
 
                 if (av == "A") { // audio encoder
+                    qDebug() << "Audio Codec: " + codec;
                     audio_encoders.push_back(codec);
                 } else if (av == "V") { // video encoder
+                    qDebug() << "Video Codec: " + codec;
                     video_encoders.push_back(codec);
                 } else if (av == "S") { // subtitle encoder
+                    qDebug() << "Subtitle Codec: " + codec;
                     subtitle_encoders.push_back(codec);
                 }
             }
@@ -265,10 +275,16 @@ bool FFmpegInterface::getSubtitleEncoders(QList<QString> &target)
     return true;
 }
 
-QString FFmpegInterface::getFFmpegVersion()
+QString FFmpegInterface::getFFmpegVersionInfo()
 {
     info::read_ffmpeg_info();
     return info::ffmpeg_version;
+}
+
+QString FFmpegInterface::getFFmpegCodecInfo()
+{
+    info::read_ffmpeg_info();
+    return info::ffmpeg_codec_info;
 }
 
 bool FFmpegInterface::hasFFmpeg()

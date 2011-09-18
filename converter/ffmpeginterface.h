@@ -27,7 +27,8 @@ public:
     static bool getVideoEncoders(QSet<QString>& target);
     static bool getSubtitleEncoders(QList<QString>& target);
     static bool getSubtitleEncoders(QSet<QString>& target);
-    static QString getFFmpegVersion();
+    static QString getFFmpegVersionInfo();
+    static QString getFFmpegCodecInfo();
     static bool hasFFmpeg();
 
     static void refreshFFmpegInformation();
