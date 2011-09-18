@@ -242,11 +242,12 @@ void AddTaskWizard::all_finished()
     const int size = ui->lstFiles->count();
     m_params.clear();
 
-    // All files share the same settings.
+    // This variable is reused in the loop.
+    // Only "source" and "destination" should be modified in the loop.
     ConversionParameters param(*m_current_param);
-    QDir output_dir(ui->cbOutputPath->currentText());
+    const QDir output_dir(ui->cbOutputPath->currentText());
     const int ext_index = ui->cbExtension->currentIndex();
-    QString ext = ui->cbExtension->itemData(ext_index).toString();
+    const QString ext = ui->cbExtension->itemData(ext_index).toString();
 
     // Write conversion parameters to m_params.
     for (int i=0; i<size; i++) {
@@ -281,10 +282,9 @@ bool AddTaskWizard::load_extensions(const char *file)
     // update extension combo bar
     QList<QString> extensions;
     m_presets->getExtensions(extensions);
-    QList<QString>::iterator it = extensions.begin();
     ui->cbExtension->clear();
-    for (; it!=extensions.end(); ++it) {
-        ui->cbExtension->addItem(it->toUpper(), QVariant(*it));
+    foreach (QString ext, extensions) {
+        ui->cbExtension->addItem(ext.toUpper(), QVariant(ext));
     }
 
     return true;
@@ -295,8 +295,9 @@ void AddTaskWizard::load_settings()
     QSettings settings;
 
     // extension combobox
-    QString ext = settings.value("addtaskwizard/extension").toString();
-    for (int i=0; i<ui->cbExtension->count(); i++) {
+    const QString ext = settings.value("addtaskwizard/extension").toString();
+    const int cbext_size = ui->cbExtension->count();
+    for (int i=0; i<cbext_size; i++) {
         if (ui->cbExtension->itemText(i) == ext) {
             ui->cbExtension->setCurrentIndex(i);
             break;
@@ -305,8 +306,9 @@ void AddTaskWizard::load_settings()
 
     // preset combobox
     QApplication::processEvents();
-    QString preset = settings.value("addtaskwizard/preset").toString();
-    for (int i=0; i<ui->cbPreset->count(); i++) {
+    const QString preset = settings.value("addtaskwizard/preset").toString();
+    const int cbpreset_size = ui->cbPreset->count();
+    for (int i=0; i<cbpreset_size; i++) {
         if (ui->cbPreset->itemText(i) == preset) {
             ui->cbPreset->setCurrentIndex(i);
             break;
