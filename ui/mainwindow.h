@@ -24,7 +24,7 @@ private slots:
     // Menu Events
     void slotAddFiles();
     void slotExit();
-    void slotMenuConvert();
+    void slotRemoveSelectedItems();
     void slotStartConversion();
     void slotStopConversion();
     void slotSetConversionParameters();
@@ -33,6 +33,8 @@ private slots:
     void slotAboutFFmpeg();
 
     void slotListContextMenu(QPoint);
+
+    void refresh_action_states();
 
 protected:
     void closeEvent(QCloseEvent *);
@@ -44,7 +46,6 @@ private:
     void add_files();
     void setup_menus();
     void setup_toolbar();
-    void refresh_action_states();
 };
 
 #endif // MAINWINDOW_H

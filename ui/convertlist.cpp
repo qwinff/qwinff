@@ -217,6 +217,33 @@ void ConvertList::stop()
     m_converter->stop();
 }
 
+void ConvertList::removeSelectedItems()
+{
+    QList<QTreeWidgetItem*> itemList = selectedItems();
+
+    /*: Remove files from the tasklist */
+    QProgressDialog dlgProgress(tr("Removing files..."),
+                                tr("Cancel"),
+                                0, itemList.count(),
+                                this);
+    dlgProgress.setWindowModality(Qt::WindowModal);
+    dlgProgress.setMinimumDuration(MIN_DURATION);
+
+    int progress_count = 0;
+    foreach (QTreeWidgetItem *item, itemList) {
+        // Update the progress value.
+        dlgProgress.setValue(++progress_count);
+
+        // Check if the user has canceled the operation.
+        if (dlgProgress.wasCanceled())
+            break;
+
+        removeTask(indexOfTopLevelItem(item));
+    }
+
+    dlgProgress.setValue(itemList.size());
+}
+
 // Private Slots
 void ConvertList::task_finished_slot(int exitcode)
 {
@@ -257,30 +284,7 @@ void ConvertList::progress_refreshed(int percentage)
 void ConvertList::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_Delete) { // Remove all selected items.
-        QList<QTreeWidgetItem*> itemList = selectedItems();
-
-        /*: Remove files from the tasklist */
-        QProgressDialog dlgProgress(tr("Removing files..."),
-                                    tr("Cancel"),
-                                    0, itemList.count(),
-                                    this);
-        dlgProgress.setWindowModality(Qt::WindowModal);
-        dlgProgress.setMinimumDuration(MIN_DURATION);
-
-        int progress_count = 0;
-        foreach (QTreeWidgetItem *item, itemList) {
-            // Update the progress value.
-            dlgProgress.setValue(++progress_count);
-
-            // Check if the user has canceled the operation.
-            if (dlgProgress.wasCanceled())
-                break;
-
-            removeTask(indexOfTopLevelItem(item));
-        }
-
-        dlgProgress.setValue(itemList.size());
-
+        removeSelectedItems();
     } else {
         QTreeWidget::keyPressEvent(event);
     }

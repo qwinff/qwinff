@@ -84,9 +84,9 @@ void MainWindow::slotExit()
     this->close();
 }
 
-void MainWindow::slotMenuConvert()
+void MainWindow::slotRemoveSelectedItems()
 {
-    refresh_action_states();
+    m_list->removeSelectedItems();
 }
 
 void MainWindow::slotStartConversion()
@@ -141,6 +141,8 @@ void MainWindow::slotListContextMenu(QPoint /*pos*/)
 
     QMenu menu(this);
     menu.addAction(ui->actionOpenOutputFolder);
+    menu.addSeparator();
+    menu.addAction(ui->actionRemoveSelectedItems);
     menu.addSeparator();
     menu.addAction(ui->actionStartConversion);
     menu.addAction(ui->actionStopConversion);
@@ -204,9 +206,15 @@ void MainWindow::setup_menus()
     connect(ui->actionExit, SIGNAL(triggered()),
             this, SLOT(slotExit()));
 
+    // Edit
+    connect(ui->menuEdit, SIGNAL(aboutToShow()),
+            this, SLOT(refresh_action_states()));
+    connect(ui->actionRemoveSelectedItems, SIGNAL(triggered()),
+            this, SLOT(slotRemoveSelectedItems()));
+
     // Convert
     connect(ui->menuConvert, SIGNAL(aboutToShow()),
-            this, SLOT(slotMenuConvert()));
+            this, SLOT(refresh_action_states()));
     connect(ui->actionStartConversion, SIGNAL(triggered()),
             this, SLOT(slotStartConversion()));
     connect(ui->actionStopConversion, SIGNAL(triggered()),
@@ -238,8 +246,10 @@ void MainWindow::setup_toolbar()
 // Hide unused actions
 void MainWindow::refresh_action_states()
 {
+    int selected_file_count = m_list->selectedItems().size();
+
     // Hide actionSetParameters if no item in m_list is selected.
-    bool hide_SetParameters = !m_list->selectedItems().isEmpty();
+    bool hide_SetParameters = (selected_file_count == 0);
 
     // Hide actionStartConversion if the conversion is in progress.
     bool hide_StartConversion = m_list->isBusy();
@@ -248,10 +258,14 @@ void MainWindow::refresh_action_states()
     bool hide_StopConversion = !m_list->isBusy();
 
     // Show actionOpenOutputFolder only if 1 file is selected.
-    bool hide_OpenFolder = (m_list->selectedItems().size() != 1);
+    bool hide_OpenFolder = (selected_file_count != 1);
+
+    // Hide actionRemoveSelectedItems if no file is selected.
+    bool hide_RemoveSelectedItems = (selected_file_count == 0);
 
     ui->actionSetParameters->setDisabled(hide_SetParameters);
     ui->actionStartConversion->setDisabled(hide_StartConversion);
     ui->actionStopConversion->setDisabled(hide_StopConversion);
     ui->actionOpenOutputFolder->setDisabled(hide_OpenFolder);
+    ui->actionRemoveSelectedItems->setDisabled(hide_RemoveSelectedItems);
 }

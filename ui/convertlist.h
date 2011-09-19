@@ -57,6 +57,7 @@ signals:
 public slots:
     void start();
     void stop();
+    void removeSelectedItems();
 
 private slots:
     void task_finished_slot(int);
