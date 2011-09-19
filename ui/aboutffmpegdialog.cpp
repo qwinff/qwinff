@@ -13,6 +13,7 @@ AboutFFmpegDialog::AboutFFmpegDialog(QWidget *parent) :
 
     ui->txtFFmpegCodecInfo->setText(FFmpegInterface::getFFmpegCodecInfo());
     ui->txtFFmpegCodecInfo->setReadOnly(true);
+
 }
 
 AboutFFmpegDialog::~AboutFFmpegDialog()

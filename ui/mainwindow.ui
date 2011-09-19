@@ -151,6 +151,10 @@
    </property>
   </action>
   <action name="actionAboutFFmpeg">
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/app/icons/ffmpeg.png</normaloff>:/app/icons/ffmpeg.png</iconset>
+   </property>
    <property name="text">
     <string>About FFmpeg</string>
    </property>
