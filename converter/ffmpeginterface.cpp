@@ -7,7 +7,7 @@
 #define TIMEOUT 3000   // timeout before force-terminating ffmpeg
 
 namespace {
-const char ffmpeg_command[] = "ffmpeg";
+QString ffmpeg_executable("ffmpeg");
 namespace patterns {
     const char progress[]
         = "size=\\s*([0-9]+)kB\\s+time=\\s*([0-9]+\\.[0-9]+)\\s+bitrate=\\s*([0-9]+\\.[0-9]+)kbits/s";
@@ -43,8 +43,8 @@ namespace info {
 
         ffmpeg_process.setReadChannel(QProcess::StandardOutput);
 
-        qDebug() << ffmpeg_command << parameters.join(" ");
-        ffmpeg_process.start(QString(ffmpeg_command), parameters);
+        qDebug() << ffmpeg_executable << parameters.join(" ");
+        ffmpeg_process.start(ffmpeg_executable, parameters);
 
         // Wait until ffmpeg has started.
         if (!ffmpeg_process.waitForStarted()) {
@@ -89,8 +89,8 @@ namespace info {
         parameters.clear();
         parameters.push_back(QString("-version"));
 
-        qDebug() << ffmpeg_command << parameters.join(" ");
-        ffmpeg_process.start(QString(ffmpeg_command), parameters);
+        qDebug() << ffmpeg_executable << parameters.join(" ");
+        ffmpeg_process.start(ffmpeg_executable, parameters);
 
         ffmpeg_process.waitForStarted();
         ffmpeg_process.waitForFinished(TIMEOUT);
@@ -175,7 +175,7 @@ FFmpegInterface::~FFmpegInterface()
 // virtual functions
 QString FFmpegInterface::executableName() const
 {
-    return QString(ffmpeg_command);
+    return ffmpeg_executable;
 }
 
 void FFmpegInterface::reset()
@@ -228,6 +228,11 @@ void FFmpegInterface::parseProcessOutput(const QString &data)
 double FFmpegInterface::progress() const
 {
     return p->progress;
+}
+
+void FFmpegInterface::setFFmpegExecutable(const QString &filename)
+{
+    ffmpeg_executable = filename;
 }
 
 bool FFmpegInterface::getAudioEncoders(QList<QString> &target)

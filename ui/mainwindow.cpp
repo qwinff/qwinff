@@ -177,8 +177,12 @@ void MainWindow::closeEvent(QCloseEvent *event)
 */
 bool MainWindow::check_execute_conditions()
 {
-    if (!FFmpegInterface::hasFFmpeg())
+    if (!FFmpegInterface::hasFFmpeg()) {
+        QMessageBox::critical(this, tr("FFmpeg Error"),
+                              tr("FFmpeg not found. "
+                                 "The application will quit now."));
         return false;
+    }
     return true;
 }
 
