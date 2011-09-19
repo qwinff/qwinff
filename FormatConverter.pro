@@ -23,7 +23,8 @@ SOURCES += main.cpp \
     converter/converterinterface.cpp \
     converter/conversionparameters.cpp \
     ui/addtaskwizard.cpp \
-    ui/aboutffmpegdialog.cpp
+    ui/aboutffmpegdialog.cpp \
+    ui/paths.cpp
 
 HEADERS  += \
     ui/progressbar.h \
@@ -38,7 +39,8 @@ HEADERS  += \
     converter/converterinterface.h \
     converter/conversionparameters.h \
     ui/addtaskwizard.h \
-    ui/aboutffmpegdialog.h
+    ui/aboutffmpegdialog.h \
+    ui/paths.h
 
 FORMS    += \
     ui/conversionparameterdialog.ui \
@@ -54,7 +56,7 @@ TRANSLATIONS += \
     formatconverter_zh_CN.ts
 
 unix {
-    DEFINES += DATA_PATH=$(DATA_PATH)
-    DEFINES += DOC_PATH=$(DOC_PATH)
-    DEFINES += TRANSLATION_PATH=$(TRANSLATION_PATH)
+    #DEFINES += DATA_PATH=$(DATA_PATH)
+    #DEFINES += DOC_PATH=$(DOC_PATH)
+    #DEFINES += TRANSLATION_PATH=$(TRANSLATION_PATH)
 }

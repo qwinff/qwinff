@@ -1,8 +1,12 @@
 #include <QtGui/QApplication>
 #include "ui/mainwindow.h"
+#include "ui/paths.h"
 
 int main(int argc, char *argv[])
 {
+
+    Paths::setAppPath(QCoreApplication::applicationDirPath());
+
     // Create Application.
     QApplication app(argc, argv);
 
