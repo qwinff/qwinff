@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <presets>
-	
-	<!-- MPEG4 -->
+  
+  <!-- MPEG4 -->
   <BlackberryCurvefs>
     <label>Blackberry Curve Fullscreen</label>
     <params>-f mp4 -vcodec mpeg4 -b 400k -r 24 -s 320x240 -aspect 4:3 -acodec libfaac -ar 22050 -ac 2 -ab 48kb</params>
@@ -749,19 +749,19 @@
     <category>Mobile Phones</category>
   </MP3GP320x240stereo169L> 
 
-	
+  
   <!-- RealVideo -->
   <RealVideoVersion1>
-	  <label>RealVideo 1.0</label>
-	  <params>-ar 44100 -ab 128kb -vcodec rv10</params>
-	  <extension>rm</extension>
-	  <category>RealMedia</category>
+    <label>RealVideo 1.0</label>
+    <params>-ar 44100 -ab 128kb -vcodec rv10</params>
+    <extension>rm</extension>
+    <category>RealMedia</category>
   </RealVideoVersion1>
   <RealVideoVersion2>
-	  <label>RealVideo 2.0</label>
-	  <params>-ar 44100 -ab 128kb -vcodec rv20</params>
-	  <extension>rm</extension>
-	  <category>RealMedia</category>
+    <label>RealVideo 2.0</label>
+    <params>-ar 44100 -ab 128kb -vcodec rv20</params>
+    <extension>rm</extension>
+    <category>RealMedia</category>
   </RealVideoVersion2>
 
 </presets>
