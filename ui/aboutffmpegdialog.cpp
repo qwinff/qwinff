@@ -8,11 +8,10 @@ AboutFFmpegDialog::AboutFFmpegDialog(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->txtFFmpegVersionInfo->setText(FFmpegInterface::getFFmpegVersionInfo());
-    ui->txtFFmpegVersionInfo->setReadOnly(true);
+    ui->lblVersionInfo->setText(FFmpegInterface::getFFmpegVersionInfo());
 
-    ui->txtFFmpegCodecInfo->setText(FFmpegInterface::getFFmpegCodecInfo());
-    ui->txtFFmpegCodecInfo->setReadOnly(true);
+    ui->txtCodecInfo->setText(FFmpegInterface::getFFmpegCodecInfo());
+    ui->txtCodecInfo->setReadOnly(true);
 
 }
 
