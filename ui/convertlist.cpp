@@ -16,24 +16,69 @@
 
 #define MIN_DURATION 100 // Minimum duration(milliseconds) to show progress dialog.
 
-/*! The column containing the progress bar */
+
+class ConvertList::ListEventFilter : public QObject
+{
+public:
+    ListEventFilter(QWidget *parent) : QObject(parent), m_parent(parent) { }
+
+    // Propagate events from the list to its parent.
+    bool eventFilter(QObject */*object*/, QEvent *event)
+    {
+        ConvertList *parent = static_cast<ConvertList*>(m_parent);
+        switch (event->type()) {
+        case QEvent::KeyPress:
+            return parent->list_keyPressEvent(static_cast<QKeyEvent*>(event));
+        case QEvent::DragEnter:
+            parent->list_dragEnterEvent(static_cast<QDragEnterEvent*>(event));
+            return true;
+        case QEvent::DragMove:
+            parent->list_dragMoveEvent(static_cast<QDragMoveEvent*>(event));
+            return true;
+        case QEvent::DragLeave:
+            parent->list_dragLeaveEvent(static_cast<QDragLeaveEvent*>(event));
+        case QEvent::Drop:
+            parent->list_dropEvent(static_cast<QDropEvent*>(event));
+            return true;
+        default:
+            break;
+        }
+        return false;
+    }
+
+private:
+    QWidget *m_parent;
+};
 
 ConvertList::ConvertList(QWidget *parent) :
-    QTreeWidget(parent),
+    QWidget(parent),
+    m_list(new QTreeWidget(this)),
+    m_listEventFilter(new ListEventFilter(this)),
     prev_index(0),
     m_converter(new MediaConverter(this)),
     m_probe(new MediaProbe(this)),
     m_current_task(0),
     is_busy(false)
 {
-    init_treewidget(this);
+    QLayout *layout = new QHBoxLayout(this);
+    this->setLayout(layout);
+
+    init_treewidget(m_list);
+    layout->addWidget(m_list);
+
     connect(m_converter, SIGNAL(finished(int))
             , this, SLOT(task_finished_slot(int)));
     connect(m_converter, SIGNAL(progressRefreshed(int)),
             this, SLOT(progress_refreshed(int)));
 
-    setAcceptDrops(true); // enable drag/drop functions
-    setSelectionMode(QAbstractItemView::ExtendedSelection);
+    m_list->setAcceptDrops(true); // enable drag/drop functions
+    m_list->setSelectionMode(QAbstractItemView::ExtendedSelection);
+    m_list->installEventFilter(m_listEventFilter);
+}
+
+ConvertList::~ConvertList()
+{
+
 }
 
 bool ConvertList::addTask(const ConversionParameters& param)
@@ -61,13 +106,13 @@ bool ConvertList::addTask(const ConversionParameters& param)
                         , m_probe->seconds())           //    seconds
             << "";                                      // progress
 
-    QTreeWidgetItem *item = new QTreeWidgetItem(this, columns);
+    QTreeWidgetItem *item = new QTreeWidgetItem(m_list, columns);
     task->listitem = item;
 
     // Add a progress bar widget to the list item
-    addTopLevelItem(item);
-    setItemWidget(item, m_progress_column_index, new ProgressBar());
-    itemWidget(item, m_progress_column_index)->adjustSize();
+    m_list->addTopLevelItem(item);
+    m_list->setItemWidget(item, m_progress_column_index, new ProgressBar());
+    m_list->itemWidget(item, m_progress_column_index)->adjustSize();
 
     item->setToolTip(/*source index*/ 0, param.source);
     item->setToolTip(/*destination index*/ 1, param.destination);
@@ -136,7 +181,7 @@ void ConvertList::removeTask(int index)
     qDebug() << "ConvertList::removeTask(), index=" << index;
     if (m_tasks[index]->status != Task::RUNNING) { // not a running task
         m_tasks.remove(index);
-        delete takeTopLevelItem(index);
+        delete m_list->takeTopLevelItem(index);
     } else { // The task is being executed.
 
         if (false)  // Silently ignore the event.
@@ -153,17 +198,22 @@ bool ConvertList::isBusy() const
 
 bool ConvertList::isEmpty() const
 {
-    return topLevelItemCount() == 0;
+    return m_list->topLevelItemCount() == 0;
 }
 
 int ConvertList::count() const
 {
-    return topLevelItemCount();
+    return m_list->topLevelItemCount();
+}
+
+int ConvertList::selectedCount() const
+{
+    return m_list->selectedItems().size();
 }
 
 const ConversionParameters* ConvertList::getCurrentIndexParameter() const
 {
-    const int index = currentIndex().row();
+    const int index = m_list->currentIndex().row();
     if (index >= 0 && index < m_tasks.size()) {
         return &m_tasks[index]->param;
     } else {
@@ -219,7 +269,7 @@ void ConvertList::stop()
 
 void ConvertList::removeSelectedItems()
 {
-    remove_items(selectedItems());
+    remove_items(m_list->selectedItems());
 }
 
 void ConvertList::removeCompletedItems()
@@ -253,7 +303,7 @@ void ConvertList::task_finished_slot(int exitcode)
 
         if (exitcode) { // conversion failed
             ProgressBar *widget
-                    = (ProgressBar*)itemWidget(m_current_task->listitem, m_progress_column_index);
+                    = (ProgressBar*)m_list->itemWidget(m_current_task->listitem, m_progress_column_index);
             widget->setValue(0);
             /*: The text to be displayed on the progress bar when a conversion fails */
             m_current_task->listitem->setText(m_progress_column_index, tr("Failed"));
@@ -272,41 +322,42 @@ void ConvertList::progress_refreshed(int percentage)
     if (m_current_task) {
         qDebug() << "Progress Refreshed: " << percentage << "%";
         ProgressBar *widget
-                = (ProgressBar*)itemWidget(m_current_task->listitem, m_progress_column_index);
+                = (ProgressBar*)m_list->itemWidget(m_current_task->listitem, m_progress_column_index);
         widget->setValue(percentage);
     }
 }
 
 // Events
 
-void ConvertList::keyPressEvent(QKeyEvent *event)
+bool ConvertList::list_keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_Delete) { // Remove all selected items.
         removeSelectedItems();
+        return true; // processed
     } else {
-        QTreeWidget::keyPressEvent(event);
+        return false; // not processed
     }
 }
 
-void ConvertList::dragEnterEvent(QDragEnterEvent *event)
+void ConvertList::list_dragEnterEvent(QDragEnterEvent *event)
 {
     if (event->mimeData()->hasUrls())
         event->acceptProposedAction();
 }
 
-void ConvertList::dragMoveEvent(QDragMoveEvent *event)
+void ConvertList::list_dragMoveEvent(QDragMoveEvent *event)
 {
     if (event->mimeData()->hasUrls())
         event->acceptProposedAction();
 }
 
-void ConvertList::dragLeaveEvent(QDragLeaveEvent *event)
+void ConvertList::list_dragLeaveEvent(QDragLeaveEvent *event)
 {
     event->accept();
 }
 
 // The user drops files into the area.
-void ConvertList::dropEvent(QDropEvent *event)
+void ConvertList::list_dropEvent(QDropEvent *event)
 {
     const QMimeData *mimeData = event->mimeData();
     if (mimeData->hasUrls()) {
@@ -370,7 +421,7 @@ void ConvertList::remove_items(const QList<QTreeWidgetItem *>& itemList)
         if (dlgProgress.wasCanceled())
             break;
 
-        removeTask(indexOfTopLevelItem(item));
+        removeTask(m_list->indexOfTopLevelItem(item));
     }
 
     dlgProgress.setValue(itemList.size());

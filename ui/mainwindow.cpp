@@ -249,7 +249,7 @@ void MainWindow::setup_toolbar()
 // Hide unused actions
 void MainWindow::refresh_action_states()
 {
-    int selected_file_count = m_list->selectedItems().size();
+    int selected_file_count = m_list->selectedCount();
 
     // Hide actionSetParameters if no item in m_list is selected.
     bool hide_SetParameters = (selected_file_count == 0);

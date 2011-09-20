@@ -1,15 +1,17 @@
 #ifndef CONVERTLIST_H
 #define CONVERTLIST_H
 
-#include <QTreeWidget>
+#include <QWidget>
 #include <QVector>
 #include <QSharedPointer>
 #include "converter/conversionparameters.h"
 
 class MediaConverter;
 class MediaProbe;
+class QTreeWidget;
+class QTreeWidgetItem;
 
-class ConvertList : public QTreeWidget
+class ConvertList : public QWidget
 {
     Q_OBJECT
 public:
@@ -24,6 +26,7 @@ public:
     };
 
     explicit ConvertList(QWidget *parent = 0);
+    ~ConvertList();
 
     /*! Append a task to the list
      * @param param the conversion parameter including the source and destination filename.
@@ -43,6 +46,7 @@ public:
     bool isBusy() const;
     bool isEmpty() const;
     int count() const;
+    int selectedCount() const;
 
     /*! Returns the pointer to the conversion parameter of the currently selected item.
      *  @return If the function fails, it returns NULL.
@@ -66,16 +70,21 @@ private slots:
     void progress_refreshed(int);
 
 protected:
-    void keyPressEvent(QKeyEvent *event);
-    void dragEnterEvent(QDragEnterEvent *event);
-    void dragMoveEvent(QDragMoveEvent *event);
-    void dragLeaveEvent(QDragLeaveEvent *event);
-    void dropEvent(QDropEvent *event);
+    bool list_keyPressEvent(QKeyEvent *event);
+    void list_dragEnterEvent(QDragEnterEvent *event);
+    void list_dragMoveEvent(QDragMoveEvent *event);
+    void list_dragLeaveEvent(QDragLeaveEvent *event);
+    void list_dropEvent(QDropEvent *event);
 
 private:
     Q_DISABLE_COPY(ConvertList)
 
+    class ListEventFilter;
+    friend class ListEventFilter;
     typedef QSharedPointer<Task> TaskPtr;
+
+    QTreeWidget *m_list;
+    ListEventFilter *m_listEventFilter;
     QVector<TaskPtr> m_tasks;
     int prev_index;
     void init_treewidget(QTreeWidget*);
