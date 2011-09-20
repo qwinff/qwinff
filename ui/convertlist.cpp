@@ -20,25 +20,24 @@
 class ConvertList::ListEventFilter : public QObject
 {
 public:
-    ListEventFilter(QWidget *parent) : QObject(parent), m_parent(parent) { }
+    ListEventFilter(ConvertList *parent) : QObject(parent), m_parent(parent) { }
 
     // Propagate events from the list to its parent.
     bool eventFilter(QObject */*object*/, QEvent *event)
     {
-        ConvertList *parent = static_cast<ConvertList*>(m_parent);
         switch (event->type()) {
         case QEvent::KeyPress:
-            return parent->list_keyPressEvent(static_cast<QKeyEvent*>(event));
+            return m_parent->list_keyPressEvent(static_cast<QKeyEvent*>(event));
         case QEvent::DragEnter:
-            parent->list_dragEnterEvent(static_cast<QDragEnterEvent*>(event));
+            m_parent->list_dragEnterEvent(static_cast<QDragEnterEvent*>(event));
             return true;
         case QEvent::DragMove:
-            parent->list_dragMoveEvent(static_cast<QDragMoveEvent*>(event));
+            m_parent->list_dragMoveEvent(static_cast<QDragMoveEvent*>(event));
             return true;
         case QEvent::DragLeave:
-            parent->list_dragLeaveEvent(static_cast<QDragLeaveEvent*>(event));
+            m_parent->list_dragLeaveEvent(static_cast<QDragLeaveEvent*>(event));
         case QEvent::Drop:
-            parent->list_dropEvent(static_cast<QDropEvent*>(event));
+            m_parent->list_dropEvent(static_cast<QDropEvent*>(event));
             return true;
         default:
             break;
@@ -47,7 +46,7 @@ public:
     }
 
 private:
-    QWidget *m_parent;
+    ConvertList *m_parent;
 };
 
 ConvertList::ConvertList(QWidget *parent) :
@@ -71,8 +70,13 @@ ConvertList::ConvertList(QWidget *parent) :
     connect(m_converter, SIGNAL(progressRefreshed(int)),
             this, SLOT(progress_refreshed(int)));
 
-    m_list->setAcceptDrops(true); // enable drag/drop functions
+    // enable drag/drop functions
+    m_list->setAcceptDrops(true);
+
+    // allow selecting multiple items
     m_list->setSelectionMode(QAbstractItemView::ExtendedSelection);
+
+    // Propagate events from the QTreeWidget to ConvertList.
     m_list->installEventFilter(m_listEventFilter);
 }
 
