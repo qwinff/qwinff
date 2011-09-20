@@ -271,9 +271,10 @@ void AddTaskWizard::all_finished()
             // Fill in output filename.
             param.destination =
                     output_dir.absoluteFilePath(input_file_basename)   // filename
-                    + str_index
-                    + '.'
-                    + ext; // extension
+                    + str_index                                        // index
+                    + '.'                                              // point
+                    + ext;                                             // extension
+
             ++filename_index;
         } while (QFileInfo(param.destination).exists()); // If file(n) exists, try file(n+1).
 

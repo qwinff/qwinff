@@ -3,6 +3,7 @@
 #include <QDebug>
 #include <QFile>
 #include <QFileInfo>
+#include <QCoreApplication>
 
 #define TIMEOUT 1000
 
@@ -37,9 +38,12 @@ bool MediaConverter::start(ConversionParameters param)
         // Save output filename.
         m_outputFileName = param.destination;
 
-        // Generate temporary file name.
-        m_tmpFileName = m_outputFileName + "." + QString::number(qrand()) +
-                ".temp." + QFileInfo(m_outputFileName).suffix();
+        do {
+            // Generate temporary file name.
+            m_tmpFileName = QString("%1-%2-temp-%3.%4").arg(m_outputFileName)
+                    .arg(qrand()).arg(QCoreApplication::applicationPid())
+                    .arg(QFileInfo(m_outputFileName).suffix());
+        } while (QFileInfo(m_tmpFileName).exists()); // Regenerate if exists.
 
         // Output to temporary file.
         param.destination = m_tmpFileName;
