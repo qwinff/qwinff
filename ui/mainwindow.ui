@@ -52,6 +52,8 @@
      <string>Edit</string>
     </property>
     <addaction name="actionRemoveSelectedItems"/>
+    <addaction name="actionRemoveCompletedItems"/>
+    <addaction name="actionClearList"/>
     <addaction name="separator"/>
     <addaction name="actionOpenOutputFolder"/>
     <addaction name="actionSetParameters"/>
@@ -147,6 +149,9 @@
    <property name="text">
     <string>About Qt</string>
    </property>
+   <property name="statusTip">
+    <string>About Qt</string>
+   </property>
   </action>
   <action name="actionOpenOutputFolder">
    <property name="icon">
@@ -165,6 +170,9 @@
    <property name="text">
     <string>About FFmpeg</string>
    </property>
+   <property name="statusTip">
+    <string>About FFmpeg</string>
+   </property>
   </action>
   <action name="actionRemoveSelectedItems">
    <property name="icon">
@@ -173,6 +181,39 @@
    </property>
    <property name="text">
     <string>Remove Selected Items</string>
+   </property>
+   <property name="statusTip">
+    <string>Remove all selected items in the list.</string>
+   </property>
+  </action>
+  <action name="actionRemoveCompletedItems">
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/actions/icons/remove_completed.png</normaloff>:/actions/icons/remove_completed.png</iconset>
+   </property>
+   <property name="text">
+    <string>Remove Completed Items</string>
+   </property>
+   <property name="toolTip">
+    <string>Remove Completed Items</string>
+   </property>
+   <property name="statusTip">
+    <string>Remove all completed items in the list.</string>
+   </property>
+  </action>
+  <action name="actionClearList">
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/actions/icons/clear.png</normaloff>:/actions/icons/clear.png</iconset>
+   </property>
+   <property name="text">
+    <string>Clear List</string>
+   </property>
+   <property name="toolTip">
+    <string>Clear List</string>
+   </property>
+   <property name="statusTip">
+    <string>Remove all items in the list.</string>
    </property>
   </action>
  </widget>

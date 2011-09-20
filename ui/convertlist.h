@@ -58,6 +58,8 @@ public slots:
     void start();
     void stop();
     void removeSelectedItems();
+    void removeCompletedItems();
+    void clear();
 
 private slots:
     void task_finished_slot(int);
@@ -82,6 +84,7 @@ private:
     Task *m_current_task;
     bool is_busy;
     unsigned int m_progress_column_index;
+    void remove_items(const QList<QTreeWidgetItem*>& itemList);
 };
 
 #endif // CONVERTLIST_H

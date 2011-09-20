@@ -24,7 +24,6 @@ private slots:
     // Menu Events
     void slotAddFiles();
     void slotExit();
-    void slotRemoveSelectedItems();
     void slotStartConversion();
     void slotStopConversion();
     void slotSetConversionParameters();

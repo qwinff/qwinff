@@ -219,29 +219,27 @@ void ConvertList::stop()
 
 void ConvertList::removeSelectedItems()
 {
-    QList<QTreeWidgetItem*> itemList = selectedItems();
+    remove_items(selectedItems());
+}
 
-    /*: Remove files from the tasklist */
-    QProgressDialog dlgProgress(tr("Removing files..."),
-                                tr("Cancel"),
-                                0, itemList.count(),
-                                this);
-    dlgProgress.setWindowModality(Qt::WindowModal);
-    dlgProgress.setMinimumDuration(MIN_DURATION);
-
-    int progress_count = 0;
-    foreach (QTreeWidgetItem *item, itemList) {
-        // Update the progress value.
-        dlgProgress.setValue(++progress_count);
-
-        // Check if the user has canceled the operation.
-        if (dlgProgress.wasCanceled())
-            break;
-
-        removeTask(indexOfTopLevelItem(item));
+void ConvertList::removeCompletedItems()
+{
+    QList<QTreeWidgetItem*> itemList;
+    foreach (TaskPtr task, m_tasks) {
+        if (task->status == Task::FINISHED) {
+            itemList.push_back(task->listitem);
+        }
     }
+    remove_items(itemList);
+}
 
-    dlgProgress.setValue(itemList.size());
+void ConvertList::clear()
+{
+    QList<QTreeWidgetItem*> itemList;
+    foreach (TaskPtr task, m_tasks) {
+        itemList.push_back(task->listitem);
+    }
+    remove_items(itemList);
 }
 
 // Private Slots
@@ -349,4 +347,31 @@ void ConvertList::init_treewidget(QTreeWidget *w)
     w->setRootIsDecorated(false);
     w->setUniformRowHeights(true);
 
+}
+
+// Remove items in the list.
+// A progress dialog is shown if the operation takes time longer than MIN_DURATION.
+void ConvertList::remove_items(const QList<QTreeWidgetItem *>& itemList)
+{
+    /*: Remove files from the tasklist */
+    QProgressDialog dlgProgress(tr("Removing files..."),
+                                tr("Cancel"),
+                                0, itemList.count(),
+                                this);
+    dlgProgress.setWindowModality(Qt::WindowModal);
+    dlgProgress.setMinimumDuration(MIN_DURATION);
+
+    int progress_count = 0;
+    foreach (QTreeWidgetItem *item, itemList) {
+        // Update the progress value.
+        dlgProgress.setValue(++progress_count);
+
+        // Check if the user has canceled the operation.
+        if (dlgProgress.wasCanceled())
+            break;
+
+        removeTask(indexOfTopLevelItem(item));
+    }
+
+    dlgProgress.setValue(itemList.size());
 }

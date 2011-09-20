@@ -9,6 +9,7 @@
         <file>icons/stop.png</file>
         <file>icons/exit.png</file>
         <file>icons/open_folder.png</file>
+        <file>icons/remove_completed.png</file>
     </qresource>
     <qresource prefix="/app">
         <file>icons/qt.png</file>

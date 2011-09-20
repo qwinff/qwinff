@@ -84,11 +84,6 @@ void MainWindow::slotExit()
     this->close();
 }
 
-void MainWindow::slotRemoveSelectedItems()
-{
-    m_list->removeSelectedItems();
-}
-
 void MainWindow::slotStartConversion()
 {
     if (m_list->isEmpty()) {
@@ -214,7 +209,11 @@ void MainWindow::setup_menus()
     connect(ui->menuEdit, SIGNAL(aboutToShow()),
             this, SLOT(refresh_action_states()));
     connect(ui->actionRemoveSelectedItems, SIGNAL(triggered()),
-            this, SLOT(slotRemoveSelectedItems()));
+            m_list, SLOT(removeSelectedItems()));
+    connect(ui->actionRemoveCompletedItems, SIGNAL(triggered()),
+            m_list, SLOT(removeCompletedItems()));
+    connect(ui->actionClearList, SIGNAL(triggered()),
+            m_list, SLOT(clear()));
 
     // Convert
     connect(ui->menuConvert, SIGNAL(aboutToShow()),
