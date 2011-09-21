@@ -121,6 +121,8 @@ bool ConvertList::addTask(const ConversionParameters& param)
     item->setToolTip(/*source index*/ 0, param.source);
     item->setToolTip(/*destination index*/ 1, param.destination);
 
+    qDebug() << QString("Added: \"%1\" -> \"%2\"").arg(param.source).arg(param.destination);
+
     return true;
 }
 
@@ -159,10 +161,13 @@ int ConvertList::addTasks(const QList<ConversionParameters> &paramList)
         if (dlgProgress.wasCanceled())
             break;
 
-        if (addTask(*it)) // This step takes the most of the time.
+        if (addTask(*it)) { // This step takes the most of the time.
             success_count++;
-        else
+        }
+        else {
             failed_files.push_back(it->source); // Record failed files.
+            qDebug() << QString("Failed to add file: %1").arg(it->source);
+        }
 
     }
 

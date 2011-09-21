@@ -13,15 +13,16 @@
 #include <QCloseEvent>
 #include <QTimer>
 
-MainWindow::MainWindow(QWidget *parent) :
+MainWindow::MainWindow(QWidget *parent, const QStringList& fileList) :
     QMainWindow(parent),
-    ui(new Ui::MainWindow)
+    ui(new Ui::MainWindow),
+    m_list(new ConvertList(this)),
+    m_argv_input_files(fileList)
 {
     QSettings settings;
 
     ui->setupUi(this);
 
-    m_list = new ConvertList();
     this->centralWidget()->layout()->addWidget(m_list);
     m_list->adjustSize();
 
@@ -44,12 +45,21 @@ MainWindow::MainWindow(QWidget *parent) :
     if (!check_execute_conditions()) {
         // Close the window immediately after it has started.
         QTimer::singleShot(0, this, SLOT(close()));
+    } else {
+        QTimer::singleShot(0, this, SLOT(window_ready()));
     }
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::window_ready()
+{
+    if (!m_argv_input_files.isEmpty()) {
+        add_files(m_argv_input_files);
+    }
 }
 
 void MainWindow::task_finished(int /*exitcode*/)
@@ -184,11 +194,26 @@ bool MainWindow::check_execute_conditions()
 // Popup wizard to add tasks.
 void MainWindow::add_files()
 {
-    ConversionParameters param;
-
     AddTaskWizard wizard;
 
     if (wizard.exec_openfile() == QDialog::Accepted) {
+        // Add all input files to the list.
+        const QList<ConversionParameters> &paramList = wizard.getConversionParameters();
+        m_list->addTasks(paramList);
+    }
+}
+
+void MainWindow::add_files(const QStringList &fileList)
+{
+    QList<QUrl> urlList;
+
+    foreach (QString file, fileList) {
+        urlList.push_back(QUrl(file));
+    }
+
+    AddTaskWizard wizard;
+
+    if (wizard.exec(urlList) == QDialog::Accepted) {
         // Add all input files to the list.
         const QList<ConversionParameters> &paramList = wizard.getConversionParameters();
         m_list->addTasks(paramList);

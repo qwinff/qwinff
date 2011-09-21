@@ -1,5 +1,6 @@
 #include "paths.h"
 #include <QDir>
+#include <QDebug>
 
 namespace {
     QString app_path;
@@ -8,6 +9,7 @@ namespace {
 void Paths::setAppPath(const QString &path)
 {
     app_path = path;
+    qDebug() << "Set application path: " << app_path;
 }
 
 QString Paths::appPath()
