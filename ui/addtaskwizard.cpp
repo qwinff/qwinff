@@ -1,7 +1,9 @@
 #include "addtaskwizard.h"
 #include "ui_addtaskwizard.h"
+
 #include "converter/presets.h"
 #include "conversionparameterdialog.h"
+#include "extensions.h"
 
 #include <QMessageBox>
 #include <QFileDialog>
@@ -143,11 +145,16 @@ bool AddTaskWizard::validateCurrentPage()
 
 void AddTaskWizard::add_files()
 {
+    Extensions exts;
     /*: This text is the title of an openfile dialog. */
     QStringList files = QFileDialog::getOpenFileNames(this, tr("Select Files"),
-                                  m_prev_path,  // default path
-                                  QString()    // TODO: filter
-                                  );
+              m_prev_path,  // default path
+              tr("Multimedia") + exts.multimedia().forFilter() + ";;" +
+              tr("Video") + exts.video().forFilter() + ";;" +
+              tr("Audio") + exts.audio().forFilter() + ";;" +
+              tr("All files") + " (*)"
+              );
+
     if (!files.isEmpty()) {
         QStringList incorrect_files; // Record files that are not valid for conversion.
 
