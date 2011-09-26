@@ -12,6 +12,7 @@
 #include <QDebug>
 #include <QFileInfo>
 #include <QProgressDialog>
+#include <QSettings>
 #include <cassert>
 
 #define MIN_DURATION 100 // Minimum duration(milliseconds) to show progress dialog.
@@ -78,11 +79,15 @@ ConvertList::ConvertList(QWidget *parent) :
 
     // Propagate events from the QTreeWidget to ConvertList.
     m_list->installEventFilter(m_listEventFilter);
+
+    QSettings settings;
+    m_list->header()->restoreState(settings.value("convertlist/header_state").toByteArray());
 }
 
 ConvertList::~ConvertList()
 {
-
+    QSettings settings;
+    settings.setValue("convertlist/header_state", m_list->header()->saveState());
 }
 
 bool ConvertList::addTask(const ConversionParameters& param)
