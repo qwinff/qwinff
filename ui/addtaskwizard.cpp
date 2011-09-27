@@ -316,25 +316,13 @@ void AddTaskWizard::load_settings()
     QSettings settings;
 
     // extension combobox
-    const QString ext = settings.value("addtaskwizard/extension").toString();
-    const int cbext_size = ui->cbExtension->count();
-    for (int i=0; i<cbext_size; i++) {
-        if (ui->cbExtension->itemText(i) == ext) {
-            ui->cbExtension->setCurrentIndex(i);
-            break;
-        }
-    }
+    const int ext_index = settings.value("addtaskwizard/extension").toInt();
+    ui->cbExtension->setCurrentIndex(ext_index);
 
     // preset combobox
     QApplication::processEvents();
-    const QString preset = settings.value("addtaskwizard/preset").toString();
-    const int cbpreset_size = ui->cbPreset->count();
-    for (int i=0; i<cbpreset_size; i++) {
-        if (ui->cbPreset->itemText(i) == preset) {
-            ui->cbPreset->setCurrentIndex(i);
-            break;
-        }
-    }
+    const int preset_index = settings.value("addtaskwizard/preset").toInt();
+    ui->cbPreset->setCurrentIndex(preset_index);
 
     // open file dialog default path
     m_prev_path = settings.value("addtaskwizard/openfilepath"
@@ -354,8 +342,8 @@ void AddTaskWizard::load_settings()
 void AddTaskWizard::save_settings()
 {
     QSettings settings;
-    settings.setValue("addtaskwizard/extension", ui->cbExtension->currentText());
-    settings.setValue("addtaskwizard/preset", ui->cbPreset->currentText());
+    settings.setValue("addtaskwizard/extension", ui->cbExtension->currentIndex());
+    settings.setValue("addtaskwizard/preset", ui->cbPreset->currentIndex());
 
     // Save recent output paths
     QStringList recent_paths;

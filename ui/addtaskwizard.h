@@ -50,7 +50,7 @@ private slots:
 
 private:
     Ui::AddTaskWizard *ui;
-    QString m_prev_path;
+    QString m_prev_path; //!< the most recently opened path of the file dialog.
     Presets *m_presets;
     QList<ConversionParameters> m_params;
     QScopedPointer<ConversionParameters> m_current_param;
