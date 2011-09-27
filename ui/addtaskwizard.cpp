@@ -24,6 +24,7 @@ AddTaskWizard::AddTaskWizard(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    // setup signals/slots
     connect(ui->btnAdd, SIGNAL(clicked())
             , this, SLOT(add_files()));
     connect(ui->btnRemove, SIGNAL(clicked())
@@ -216,11 +217,11 @@ void AddTaskWizard::browse_output_path()
 
 // When the user selects an extension, insert all possible presets
 // into the preset combobox.
-void AddTaskWizard::load_presets(int index)
+void AddTaskWizard::load_presets(int ext_index)
 {
-    if (index == -1) return;
+    if (ext_index == -1) return;
 
-    QString extension = ui->cbExtension->itemData(index).toString();
+    QString extension = ui->cbExtension->itemData(ext_index).toString();
     QList<Preset> presetList;
 
     ui->cbPreset->clear();
@@ -230,6 +231,10 @@ void AddTaskWizard::load_presets(int index)
             ui->cbPreset->addItem(preset.label, preset.id);
         }
     }
+
+    // Restore the last used preset of the extension.
+    if (ext_index >= 0 && ext_index < m_ext_preset.size())
+        ui->cbPreset->setCurrentIndex(m_ext_preset[ext_index].toInt());
 }
 
 void AddTaskWizard::preset_selected(int index)
@@ -319,10 +324,14 @@ void AddTaskWizard::load_settings()
     const int ext_index = settings.value("addtaskwizard/extension").toInt();
     ui->cbExtension->setCurrentIndex(ext_index);
 
-    // preset combobox
-    QApplication::processEvents();
-    const int preset_index = settings.value("addtaskwizard/preset").toInt();
-    ui->cbPreset->setCurrentIndex(preset_index);
+    m_ext_preset = settings.value("addtaskwizard/selected_presets").toList().toVector();
+    m_ext_preset.resize(ui->cbExtension->count());
+    if (ext_index >= 0 && ext_index < m_ext_preset.size()) {
+        // preset combobox
+        QApplication::processEvents();
+        const int preset_index = m_ext_preset[ext_index].toInt();
+        ui->cbPreset->setCurrentIndex(preset_index);
+    }
 
     // open file dialog default path
     m_prev_path = settings.value("addtaskwizard/openfilepath"
@@ -337,13 +346,21 @@ void AddTaskWizard::load_settings()
     }
     ui->cbOutputPath->setCurrentIndex(0); // Select the most recent path.
 
+
 }
 
 void AddTaskWizard::save_settings()
 {
     QSettings settings;
     settings.setValue("addtaskwizard/extension", ui->cbExtension->currentIndex());
-    settings.setValue("addtaskwizard/preset", ui->cbPreset->currentIndex());
+
+    const int ext_index = ui->cbExtension->currentIndex();
+    const int preset_index = ui->cbPreset->currentIndex();
+    if (ext_index >= 0 && ext_index < m_ext_preset.size())
+        m_ext_preset[ext_index] = preset_index;
+
+    // the last used preset of each extension
+    settings.setValue("addtaskwizard/selected_presets", m_ext_preset.toList());
 
     // Save recent output paths
     QStringList recent_paths;

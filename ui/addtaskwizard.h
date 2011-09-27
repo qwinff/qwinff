@@ -54,6 +54,7 @@ private:
     Presets *m_presets;
     QList<ConversionParameters> m_params;
     QScopedPointer<ConversionParameters> m_current_param;
+    QVector<QVariant> m_ext_preset; //!< the mapping between extension and the last selected preset.
     bool load_extensions(const char *);
     void load_settings();
     void save_settings();
