@@ -207,31 +207,31 @@
   <!-- MPEG Layer 3 -->
   <mp3_192k>
     <label>MP3 (Very Good Quality)</label>
-    <params>-acodec libmp3lame -ab 192kb -ac 2 -ar 44100</params>
+    <params>-acodec libmp3lame -ab 192kb -ac 2 -ar 44100 -vn</params>
     <extension>mp3</extension>
     <category>Audio</category>
   </mp3_192k>
   <mp3_160k>
     <label>MP3 (Good Quality)</label>
-    <params>-acodec libmp3lame -ab 160kb -ac 2 -ar 44100</params>
+    <params>-acodec libmp3lame -ab 160kb -ac 2 -ar 44100 -vn</params>
     <extension>mp3</extension>
     <category>Audio</category>
   </mp3_160k>
   <mp3_128k>
     <label>MP3 (Fair Quality)</label>
-    <params>-acodec libmp3lame -ab 128kb -ac 2 -ar 44100</params>
+    <params>-acodec libmp3lame -ab 128kb -ac 2 -ar 44100 -vn</params>
     <extension>mp3</extension>
     <category>Audio</category>
   </mp3_128k>
   <mp3m>
     <label>MP3 for Mobile Phones (Mono)</label>
-    <params>-acodec libmp3lame -ab 32kb -ac 1 -ar 22050</params>
+    <params>-acodec libmp3lame -ab 32kb -ac 1 -ar 22050 -vn</params>
     <extension>mp3</extension>
     <category>Mobile Phones</category>
   </mp3m>  
   <blackberrymp3>
     <label>Blackberry Music</label>
-    <params>-acodec libmp3lame -ab 160kb -ac 2 -ar 44100</params>
+    <params>-acodec libmp3lame -ab 160kb -ac 2 -ar 44100 -vn</params>
     <extension>mp3</extension>
     <category>Blackberry</category>
   </blackberrymp3>  

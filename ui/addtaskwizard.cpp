@@ -26,19 +26,19 @@ AddTaskWizard::AddTaskWizard(QWidget *parent) :
 
     // setup signals/slots
     connect(ui->btnAdd, SIGNAL(clicked())
-            , this, SLOT(add_files()));
+            , this, SLOT(slotAddFilesToList()));
     connect(ui->btnRemove, SIGNAL(clicked())
-            , this, SLOT(remove_files()));
+            , this, SLOT(slotRemoveFilesFromList()));
     connect(ui->cbExtension, SIGNAL(currentIndexChanged(int))
-            , this, SLOT(load_presets(int)));
+            , this, SLOT(slotExtensionSelected(int)));
     connect(ui->cbPreset, SIGNAL(currentIndexChanged(int))
-            , this, SLOT(preset_selected(int)));
+            , this, SLOT(slotPresetSelected(int)));
     connect(ui->btnEditPreset, SIGNAL(clicked())
-            , this, SLOT(edit_preset()));
+            , this, SLOT(slotEditPresetButton()));
     connect(ui->btnBrowseOutputPath, SIGNAL(clicked())
-            , this, SLOT(browse_output_path()));
+            , this, SLOT(slotBrowseOutputPathButton()));
     connect(this, SIGNAL(accepted())
-            , this, SLOT(all_finished()));
+            , this, SLOT(slotFinished()));
 
     ui->lstFiles->setSelectionMode(QAbstractItemView::ExtendedSelection);
 
@@ -73,7 +73,7 @@ int AddTaskWizard::exec_openfile()
     ui->lstFiles->clear();
 
     if (startId() == PAGEID_SELECTFILES) { // popup select file dialog
-        add_files();
+        slotAddFilesToList();
         if (ui->lstFiles->count() == 0)
             return QWizard::Rejected;
     }
@@ -144,7 +144,7 @@ bool AddTaskWizard::validateCurrentPage()
     return true;
 }
 
-void AddTaskWizard::add_files()
+void AddTaskWizard::slotAddFilesToList()
 {
     Extensions exts;
     /*: This text is the title of an openfile dialog. */
@@ -191,7 +191,7 @@ void AddTaskWizard::add_files()
     }
 }
 
-void AddTaskWizard::remove_files()
+void AddTaskWizard::slotRemoveFilesFromList()
 {
     QList<QListWidgetItem*> itemList = ui->lstFiles->selectedItems();
     foreach (QListWidgetItem *item, itemList) {
@@ -199,14 +199,14 @@ void AddTaskWizard::remove_files()
     }
 }
 
-void AddTaskWizard::edit_preset()
+void AddTaskWizard::slotEditPresetButton()
 {
     ConversionParameterDialog dialog(this->parentWidget());
     dialog.setGeometry(this->x(), this->y(), dialog.width(), dialog.height());
     dialog.exec(*m_current_param);
 }
 
-void AddTaskWizard::browse_output_path()
+void AddTaskWizard::slotBrowseOutputPathButton()
 {
     /*: This text is the title of an open directory dialog. */
     ui->cbOutputPath->setEditText(
@@ -217,7 +217,7 @@ void AddTaskWizard::browse_output_path()
 
 // When the user selects an extension, insert all possible presets
 // into the preset combobox.
-void AddTaskWizard::load_presets(int ext_index)
+void AddTaskWizard::slotExtensionSelected(int ext_index)
 {
     if (ext_index == -1) return;
 
@@ -237,7 +237,7 @@ void AddTaskWizard::load_presets(int ext_index)
         ui->cbPreset->setCurrentIndex(m_ext_preset[ext_index].toInt());
 }
 
-void AddTaskWizard::preset_selected(int index)
+void AddTaskWizard::slotPresetSelected(int index)
 {
     if (index == -1) return;
     int id = ui->cbPreset->itemData(index).toUInt();
@@ -249,7 +249,7 @@ void AddTaskWizard::preset_selected(int index)
 }
 
 // This function is executed when the users presses "Finish"
-void AddTaskWizard::all_finished()
+void AddTaskWizard::slotFinished()
 {
     const int size = ui->lstFiles->count();
     m_params.clear();

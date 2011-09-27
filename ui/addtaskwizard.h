@@ -40,13 +40,13 @@ protected:
     bool validateCurrentPage();
 
 private slots:
-    void add_files();
-    void remove_files();
-    void edit_preset();
-    void browse_output_path();
-    void load_presets(int);
-    void preset_selected(int);
-    void all_finished();
+    void slotAddFilesToList();
+    void slotRemoveFilesFromList();
+    void slotEditPresetButton();
+    void slotBrowseOutputPathButton();
+    void slotExtensionSelected(int);
+    void slotPresetSelected(int);
+    void slotFinished();
 
 private:
     Ui::AddTaskWizard *ui;
