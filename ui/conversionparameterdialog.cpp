@@ -15,7 +15,6 @@ ConversionParameterDialog::ConversionParameterDialog(QWidget *parent) :
     ui(new Ui::ConversionParameterDialog)
 {
     ui->setupUi(this);
-    this->setWindowFlags(Qt::MSWindowsFixedSizeDialogHint);
 
     // Setup audio sample rate selection
     ui->cbAudioSampleRate->addItem("44100");

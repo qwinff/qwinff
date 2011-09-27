@@ -17,7 +17,8 @@ public:
     ~ConversionParameterDialog();
 
     /*! This function blocks until the dialog is closed.
-     * @return If the user presses OK, the function returns true.
+     *  @param param If the user presses OK, the modified parameter is written back.
+     *  @return If the user presses OK, the function returns true.
      *  Otherwise, it returns false.
      */
     bool exec(ConversionParameters& param);

@@ -59,10 +59,33 @@ signals:
     void all_tasks_finished();
 
 public slots:
+
+    /*! Start the conversion progress.
+     *  If another task is being processed, the function does nothing.
+     */
     void start();
+
+    /*! Stop the conversion progress
+     */
     void stop();
+
+    /*! Remove all selected tasks but quietly ignore tasks in progress.
+     */
     void removeSelectedItems();
+
+    /*! Remove all tasks marked as completed.
+     */
     void removeCompletedItems();
+
+    /*! Popup edit-parameter dialog.
+     *  The parameter of the first selected task will be used as the default
+     *  configuration. If the user presses OK in the dialog, all selected
+     *  tasks will be set to the same parameter.
+     */
+    void editSelectedParameters();
+
+    /*! Remove all tasks but quietly ignore tasks that are in progress.
+     */
     void clear();
 
 private slots:

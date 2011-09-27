@@ -115,7 +115,9 @@ void MainWindow::slotStopConversion()
 
 void MainWindow::slotSetConversionParameters()
 {
-
+    if (m_list->selectedCount() > 0) {
+        m_list->editSelectedParameters();
+    }
 }
 
 // Open the output folder of the file.
@@ -151,6 +153,8 @@ void MainWindow::slotListContextMenu(QPoint /*pos*/)
     menu.addSeparator();
     menu.addAction(ui->actionStartConversion);
     menu.addAction(ui->actionStopConversion);
+    menu.addSeparator();
+    menu.addAction(ui->actionSetParameters);
 
     menu.exec(QCursor::pos());
 }
@@ -258,9 +262,6 @@ void MainWindow::setup_menus()
     connect(ui->actionAboutFFmpeg, SIGNAL(triggered()),
             this, SLOT(slotAboutFFmpeg()));
 
-
-    // hide actionSetParameters because the function is incomplete.
-    ui->actionSetParameters->setVisible(false);
 }
 
 void MainWindow::setup_toolbar()

@@ -2,6 +2,7 @@
 #include "progressbar.h"
 #include "converter/mediaconverter.h"
 #include "converter/mediaprobe.h"
+#include "ui/conversionparameterdialog.h"
 #include "addtaskwizard.h"
 #include <QTreeWidget>
 #include <QHBoxLayout>
@@ -295,6 +296,27 @@ void ConvertList::removeCompletedItems()
         }
     }
     remove_items(itemList);
+}
+
+void ConvertList::editSelectedParameters()
+{
+    QList<QTreeWidgetItem*> itemList = m_list->selectedItems();
+
+    if (itemList.isEmpty())
+        return;
+
+    // the index of the first selected item
+    const int sel_begin = m_list->indexOfTopLevelItem(itemList[0]);
+    ConversionParameters param = m_tasks[sel_begin]->param;
+
+    ConversionParameterDialog dialog(this->parentWidget());
+
+    if (dialog.exec(param)) {
+        foreach (QTreeWidgetItem* item, itemList) {
+            const int index = m_list->indexOfTopLevelItem(item);
+            m_tasks[index]->param = param;
+        }
+    }
 }
 
 void ConvertList::clear()
