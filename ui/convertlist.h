@@ -123,7 +123,6 @@ private:
     MediaProbe *m_probe;
     Task *m_current_task;
     bool is_busy;
-    unsigned int m_progress_column_index;
     void reset_item(int index);
     void remove_items(const QList<QTreeWidgetItem*>& itemList);
 };

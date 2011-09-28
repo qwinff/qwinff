@@ -39,6 +39,7 @@
     </property>
     <addaction name="actionStartConversion"/>
     <addaction name="actionStopConversion"/>
+    <addaction name="separator"/>
     <addaction name="actionRetry"/>
     <addaction name="actionRetryAll"/>
    </widget>

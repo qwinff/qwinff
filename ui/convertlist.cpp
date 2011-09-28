@@ -18,6 +18,14 @@
 
 #define MIN_DURATION 100 // Minimum duration(milliseconds) to show progress dialog.
 
+enum ConvertListColumns
+{
+    COL_SOURCE,
+    COL_DESTINATION,
+    COL_DURATION,
+    COL_PROGRESS,
+    COL_COUNT
+};
 
 class ConvertList::ListEventFilter : public QObject
 {
@@ -108,24 +116,27 @@ bool ConvertList::addTask(const ConversionParameters& param)
     m_tasks.push_back(task);
 
     QStringList columns;
-    columns << QFileInfo(param.source).fileName()       // source file
-            << QFileInfo(param.destination).fileName()  // destination file
-            << QString().sprintf("%02d:%02d:%02.0f"     // duration
-                        , m_probe->hours()              //    hours
-                        , m_probe->minutes()            //    minutes
-                        , m_probe->seconds())           //    seconds
-            << "";                                      // progress
+    for (int i=0; i<COL_COUNT; i++)
+        columns.append(QString());
+
+    columns[COL_SOURCE] = QFileInfo(param.source).fileName(); // source file
+    columns[COL_DESTINATION] = QFileInfo(param.destination).fileName(); // destination file
+    columns[COL_DURATION] = QString().sprintf("%02d:%02d:%02.0f"   // duration
+                  , m_probe->hours()              //    hours
+                  , m_probe->minutes()            //    minutes
+                  , m_probe->seconds());          //    seconds
+
 
     QTreeWidgetItem *item = new QTreeWidgetItem(m_list, columns);
     task->listitem = item;
 
     // Add a progress bar widget to the list item
     m_list->addTopLevelItem(item);
-    m_list->setItemWidget(item, m_progress_column_index, new ProgressBar());
-    m_list->itemWidget(item, m_progress_column_index)->adjustSize();
+    m_list->setItemWidget(item, COL_PROGRESS, new ProgressBar());
+    m_list->itemWidget(item, COL_PROGRESS)->adjustSize();
 
-    item->setToolTip(/*source index*/ 0, param.source);
-    item->setToolTip(/*destination index*/ 1, param.destination);
+    item->setToolTip(COL_SOURCE, param.source);
+    item->setToolTip(COL_DESTINATION, param.destination);
 
     qDebug() << QString("Added: \"%1\" -> \"%2\"").arg(param.source).arg(param.destination);
 
@@ -360,10 +371,10 @@ void ConvertList::task_finished_slot(int exitcode)
 
         if (exitcode) { // conversion failed
             ProgressBar *widget
-                    = (ProgressBar*)m_list->itemWidget(m_current_task->listitem, m_progress_column_index);
+                    = (ProgressBar*)m_list->itemWidget(m_current_task->listitem, COL_PROGRESS);
             widget->setValue(0);
             /*: The text to be displayed on the progress bar when a conversion fails */
-            m_current_task->listitem->setText(m_progress_column_index, tr("Failed"));
+            m_current_task->listitem->setText(COL_PROGRESS, tr("Failed"));
         }
 
         m_current_task = 0;
@@ -379,7 +390,7 @@ void ConvertList::progress_refreshed(int percentage)
     if (m_current_task) {
         qDebug() << "Progress Refreshed: " << percentage << "%";
         ProgressBar *widget
-                = (ProgressBar*)m_list->itemWidget(m_current_task->listitem, m_progress_column_index);
+                = (ProgressBar*)m_list->itemWidget(m_current_task->listitem, COL_PROGRESS);
         widget->setValue(percentage);
     }
 }
@@ -438,16 +449,14 @@ void ConvertList::init_treewidget(QTreeWidget *w)
     w->setColumnCount(4);
 
     QStringList columnTitle;
-    /*: label of the "input file" field */
-    columnTitle.append(tr("Input"));
-    /*: label of the "output file" field */
-    columnTitle.append(tr("Output"));
-    /*: label of the "media duration (length)" field */
-    columnTitle.append(tr("Duration"));
-    /*: label of the "progress" field. */
-    columnTitle.append(tr("Progress"));
+    for (int i=0; i<COL_COUNT; i++) {
+        columnTitle.append(QString());
+    }
 
-    m_progress_column_index = 3;
+    columnTitle[COL_SOURCE] = tr("Input");
+    columnTitle[COL_DESTINATION] = tr("Output");
+    columnTitle[COL_DURATION] = tr("Duration");
+    columnTitle[COL_PROGRESS] = tr("Progress");
 
     w->setHeaderLabels(columnTitle);
     //w->header()->setMovable(false); // disable title drag-drop reordering
@@ -464,9 +473,9 @@ void ConvertList::reset_item(int index)
         TaskPtr task = m_tasks[index];
         if (task->status != Task::RUNNING) {
             task->status = Task::QUEUED;
-            task->listitem->setText(m_progress_column_index, QString());
+            task->listitem->setText(COL_PROGRESS, QString());
             ProgressBar *progressBar =
-                    (ProgressBar*)m_list->itemWidget(task->listitem, m_progress_column_index);
+                    (ProgressBar*)m_list->itemWidget(task->listitem, COL_PROGRESS);
             progressBar->setValue(0);
         }
     }
