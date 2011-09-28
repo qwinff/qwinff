@@ -245,8 +245,8 @@ bool MediaProbe::start(const QString& filename)
     if (p->ffprobe_proc.state() == QProcess::NotRunning) {
         QStringList list;
 
-        list.push_back("-show_format");
-        list.push_back("-convert_tags");
+        //list.push_back("-show_format");
+        //list.push_back("-convert_tags");
         list.push_back(filename);
 
         p->ffprobe_proc.setReadChannel(QProcess::StandardError);
