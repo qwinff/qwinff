@@ -1,5 +1,6 @@
 #include "mediaconverter.h"
 #include "ffmpeginterface.h"
+#include "ui/filepathoperations.h"
 #include <QDebug>
 #include <QFile>
 #include <QFileInfo>
@@ -38,12 +39,8 @@ bool MediaConverter::start(ConversionParameters param)
         // Save output filename.
         m_outputFileName = param.destination;
 
-        do {
-            // Generate temporary file name.
-            m_tmpFileName = QString("%1-%2-temp-%3.%4").arg(m_outputFileName)
-                    .arg(qrand()).arg(QCoreApplication::applicationPid())
-                    .arg(QFileInfo(m_outputFileName).suffix());
-        } while (QFileInfo(m_tmpFileName).exists()); // Regenerate if exists.
+        // Generate temporary output filename.
+        m_tmpFileName = FilePathOperations::GenerateTempFileName(m_outputFileName);
 
         // Output to temporary file.
         param.destination = m_tmpFileName;

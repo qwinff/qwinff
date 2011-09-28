@@ -25,7 +25,8 @@ SOURCES += main.cpp \
     ui/addtaskwizard.cpp \
     ui/aboutffmpegdialog.cpp \
     ui/paths.cpp \
-    ui/extensions.cpp
+    ui/extensions.cpp \
+    ui/filepathoperations.cpp
 
 HEADERS  += \
     ui/progressbar.h \
@@ -42,7 +43,8 @@ HEADERS  += \
     ui/addtaskwizard.h \
     ui/aboutffmpegdialog.h \
     ui/paths.h \
-    ui/extensions.h
+    ui/extensions.h \
+    ui/filepathoperations.h
 
 FORMS    += \
     ui/conversionparameterdialog.ui \

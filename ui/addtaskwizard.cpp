@@ -5,6 +5,7 @@
 #include "conversionparameterdialog.h"
 #include "extensions.h"
 #include "paths.h"
+#include "filepathoperations.h"
 
 #include <QMessageBox>
 #include <QFileDialog>
@@ -272,24 +273,8 @@ void AddTaskWizard::slotFinished()
         param.source = input_filename;
 
         // Generate output filename.
-        int filename_index = 1;
-        do {
-            // The index part of the file
-            QString str_index("");
-            if (filename_index > 1) {
-                // If the index is larger than 1, append -index to the filename.
-                str_index = QString("-%1").arg(filename_index);
-            }
-
-            // Fill in output filename.
-            param.destination =
-                    output_dir.absoluteFilePath(input_file_basename)   // filename
-                    + str_index                                        // index
-                    + '.'                                              // point
-                    + ext;                                             // extension
-
-            ++filename_index;
-        } while (QFileInfo(param.destination).exists()); // If file(n) exists, try file(n+1).
+        param.destination = FilePathOperations::GenerateUniqueFileName
+                (output_dir, input_file_basename, ext);
 
         // Save the configuration for the file.
         m_params.append(param);
