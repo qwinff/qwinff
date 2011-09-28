@@ -9,7 +9,10 @@ namespace {
 void Paths::setAppPath(const QString &path)
 {
     app_path = path;
-    qDebug() << "Set application path: " << app_path;
+    qDebug() << "Set application path: " + app_path;
+    qDebug() << "Application Path: " + app_path;
+    qDebug() << "Data Path: " + dataPath();
+    qDebug() << "translationPath: " + translationPath();
 }
 
 QString Paths::appPath()

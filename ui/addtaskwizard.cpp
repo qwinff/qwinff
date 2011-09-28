@@ -4,6 +4,7 @@
 #include "converter/presets.h"
 #include "conversionparameterdialog.h"
 #include "extensions.h"
+#include "paths.h"
 
 #include <QMessageBox>
 #include <QFileDialog>
@@ -42,7 +43,7 @@ AddTaskWizard::AddTaskWizard(QWidget *parent) :
 
     ui->lstFiles->setSelectionMode(QAbstractItemView::ExtendedSelection);
 
-    load_extensions("presets.xml");
+    load_extensions(QDir(Paths::dataPath()).absoluteFilePath("presets.xml"));
     ui->cbOutputPath->setEditText(QDir::homePath());
 
     ui->cbOutputPath->setEditable(true);
@@ -297,7 +298,7 @@ void AddTaskWizard::slotFinished()
     save_settings();
 }
 
-bool AddTaskWizard::load_extensions(const char *file)
+bool AddTaskWizard::load_extensions(const QString& file)
 {
     if (!m_presets->readFromFile(file)) {
         QMessageBox::critical(this, this->windowTitle(),

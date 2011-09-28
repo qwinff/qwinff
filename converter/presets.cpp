@@ -3,6 +3,7 @@
 #include <QMultiMap>
 #include <QXmlStreamReader>
 #include <QFile>
+#include <QDebug>
 
 struct Presets::Private
 {
@@ -170,6 +171,8 @@ bool Presets::readFromFile(const QString &filename)
     QFile xmlfile(filename);
     if (!xmlfile.open(QIODevice::ReadOnly | QIODevice::Text))
         return false;
+
+    qDebug() << "Read XML preset file " + filename;
 
     bool ret = p->parseXmlFile(xmlfile);
 
