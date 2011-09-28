@@ -341,6 +341,8 @@ void ConvertList::retrySelectedItems()
         const int index = m_list->indexOfTopLevelItem(item);
         reset_item(index);
     }
+
+    start();
 }
 
 void ConvertList::retryAll()
@@ -349,6 +351,8 @@ void ConvertList::retryAll()
     for (int i=0; i<list_size; i++) {
         reset_item(i);
     }
+
+    start();
 }
 
 void ConvertList::clear()

@@ -151,9 +151,6 @@ void MainWindow::slotListContextMenu(QPoint /*pos*/)
     menu.addSeparator();
     menu.addAction(ui->actionRemoveSelectedItems);
     menu.addSeparator();
-    menu.addAction(ui->actionStartConversion);
-    menu.addAction(ui->actionStopConversion);
-    menu.addSeparator();
     menu.addAction(ui->actionRetry);
     menu.addAction(ui->actionRetryAll);
     menu.addSeparator();
@@ -260,8 +257,12 @@ void MainWindow::setup_menus()
             this, SLOT(slotStopConversion()));
     connect(ui->actionRetry, SIGNAL(triggered()),
             m_list, SLOT(retrySelectedItems()));
+    connect(ui->actionRetry, SIGNAL(triggered()),
+            this, SLOT(refresh_action_states()));
     connect(ui->actionRetryAll, SIGNAL(triggered()),
             m_list, SLOT(retryAll()));
+    connect(ui->actionRetryAll, SIGNAL(triggered()),
+            this, SLOT(refresh_action_states()));
 
     // About
     connect(ui->actionAboutQt, SIGNAL(triggered()),
