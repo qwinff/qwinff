@@ -2,6 +2,24 @@
 <presets>
   
   <!-- MPEG4 -->
+  <MPEG4VideoHQ>
+    <label>MPEG-4 H.264 video (high quality)</label>
+    <params>-crf 35.0 -vcodec libx264 -vpre hq -acodec libfaac -ar 48000 -ab 128kb -coder 1 -flags +loop -cmp +chroma -partitions +parti4x4+partp8x8+partb8x8 -me_method hex -subq 6 -me_range 16 -g 250 -keyint_min 25 -sc_threshold 40 -i_qfactor 0.71 -b_strategy 1 -threads 0</params>
+    <extension>mp4</extension>
+    <category>MPEG-4</category>
+  </MPEG4VideoHQ>
+  <MPEG4VideoVHQ>
+    <label>MPEG-4 H.264 video (very high quality)</label>
+    <params>-crf 25.0 -vcodec libx264 -vpre hq -acodec libfaac -ar 48000 -ab 160kb -coder 1 -flags +loop -cmp +chroma -partitions +parti4x4+partp8x8+partb8x8 -me_method hex -subq 6 -me_range 16 -g 250 -keyint_min 25 -sc_threshold 40 -i_qfactor 0.71 -b_strategy 1 -threads 0</params>
+    <extension>mp4</extension>
+    <category>MPEG-4</category>
+  </MPEG4VideoVHQ>
+  <MPEG4VideoSHQ>
+    <label>MPEG-4 H.264 video (super high quality)</label>
+    <params>-crf 15.0 -vcodec libx264 -vpre max -acodec libfaac -ar 48000 -ab 192kb -coder 1 -flags +loop -cmp +chroma -partitions +parti4x4+partp8x8+partb8x8 -me_method hex -subq 6 -me_range 16 -g 250 -keyint_min 25 -sc_threshold 40 -i_qfactor 0.71 -b_strategy 1 -threads 0</params>
+    <extension>mp4</extension>
+    <category>MPEG-4</category>
+  </MPEG4VideoSHQ>
   <BlackberryCurvefs>
     <label>Blackberry Curve Fullscreen</label>
     <params>-f mp4 -vcodec mpeg4 -b 400k -r 24 -s 320x240 -aspect 4:3 -acodec libfaac -ar 22050 -ac 2 -ab 48kb</params>
@@ -176,25 +194,6 @@
     <extension>mp4</extension>
     <category>Nokia</category>
   </NokiaN73N81N95FS>
-   <MPEG4VideoHQ>
-    <label>MPEG-4 H.264 video (high quality)</label>
-    <params>-crf 35.0 -vcodec libx264 -acodec libfaac -ar 48000 -ab 128kb -coder 1 -flags +loop -cmp +chroma -partitions +parti4x4+partp8x8+partb8x8 -me_method hex -subq 6 -me_range 16 -g 250 -keyint_min 25 -sc_threshold 40 -i_qfactor 0.71 -b_strategy 1 -threads 0</params>
-    <extension>mp4</extension>
-    <category>MPEG-4</category>
-  </MPEG4VideoHQ>
-  <MPEG4VideoVHQ>
-    <label>MPEG-4 H.264 video (very high quality)</label>
-    <params>-crf 25.0 -vcodec libx264 -acodec libfaac -ar 48000 -ab 160kb -coder 1 -flags +loop -cmp +chroma -partitions +parti4x4+partp8x8+partb8x8 -me_method hex -subq 6 -me_range 16 -g 250 -keyint_min 25 -sc_threshold 40 -i_qfactor 0.71 -b_strategy 1 -threads 0</params>
-    <extension>mp4</extension>
-    <category>MPEG-4</category>
-  </MPEG4VideoVHQ>
-  <MPEG4VideoSHQ>
-    <label>MPEG-4 H.264 video (super high quality)</label>
-    <params>-crf 15.0 -vcodec libx264 -acodec libfaac -ar 48000 -ab 192kb -coder 1 -flags +loop -cmp +chroma -partitions +parti4x4+partp8x8+partb8x8 -me_method hex -subq 6 -me_range 16 -g 250 -keyint_min 25 -sc_threshold 40 -i_qfactor 0.71 -b_strategy 1 -threads 0</params>
-    <extension>mp4</extension>
-    <category>MPEG-4</category>
-  </MPEG4VideoSHQ>
-
 
   <!-- Wave Audio -->
   <CDWavStereo>
