@@ -319,6 +319,27 @@ void ConvertList::editSelectedParameters()
     }
 }
 
+void ConvertList::retrySelectedItems()
+{
+    QList<QTreeWidgetItem*> itemList = m_list->selectedItems();
+
+    if (itemList.isEmpty())
+        return;
+
+    foreach (QTreeWidgetItem* item, itemList) {
+        const int index = m_list->indexOfTopLevelItem(item);
+        reset_item(index);
+    }
+}
+
+void ConvertList::retryAll()
+{
+    const int list_size = m_list->topLevelItemCount();
+    for (int i=0; i<list_size; i++) {
+        reset_item(i);
+    }
+}
+
 void ConvertList::clear()
 {
     QList<QTreeWidgetItem*> itemList;
@@ -434,6 +455,21 @@ void ConvertList::init_treewidget(QTreeWidget *w)
     w->setRootIsDecorated(false);
     w->setUniformRowHeights(true);
 
+}
+
+// Reset the item to the queued state.
+void ConvertList::reset_item(int index)
+{
+    if (index >= 0 && index < m_tasks.size()) {
+        TaskPtr task = m_tasks[index];
+        if (task->status != Task::RUNNING) {
+            task->status = Task::QUEUED;
+            task->listitem->setText(m_progress_column_index, QString());
+            ProgressBar *progressBar =
+                    (ProgressBar*)m_list->itemWidget(task->listitem, m_progress_column_index);
+            progressBar->setValue(0);
+        }
+    }
 }
 
 // Remove items in the list.

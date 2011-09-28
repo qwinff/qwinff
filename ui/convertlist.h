@@ -84,6 +84,14 @@ public slots:
      */
     void editSelectedParameters();
 
+    /*! Mark selected items as queued so that they will be converted again.
+     *  If the converter is idle, start converting those items.
+     *  Otherwise, the items are simply marked as queued.
+     */
+    void retrySelectedItems();
+
+    void retryAll();
+
     /*! Remove all tasks but quietly ignore tasks that are in progress.
      */
     void clear();
@@ -116,6 +124,7 @@ private:
     Task *m_current_task;
     bool is_busy;
     unsigned int m_progress_column_index;
+    void reset_item(int index);
     void remove_items(const QList<QTreeWidgetItem*>& itemList);
 };
 

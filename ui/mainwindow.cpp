@@ -154,6 +154,9 @@ void MainWindow::slotListContextMenu(QPoint /*pos*/)
     menu.addAction(ui->actionStartConversion);
     menu.addAction(ui->actionStopConversion);
     menu.addSeparator();
+    menu.addAction(ui->actionRetry);
+    menu.addAction(ui->actionRetryAll);
+    menu.addSeparator();
     menu.addAction(ui->actionSetParameters);
 
     menu.exec(QCursor::pos());
@@ -243,6 +246,10 @@ void MainWindow::setup_menus()
             m_list, SLOT(removeCompletedItems()));
     connect(ui->actionClearList, SIGNAL(triggered()),
             m_list, SLOT(clear()));
+    connect(ui->actionSetParameters, SIGNAL(triggered()),
+            this, SLOT(slotSetConversionParameters()));
+    connect(ui->actionOpenOutputFolder, SIGNAL(triggered()),
+            this, SLOT(slotOpenOutputFolder()));
 
     // Convert
     connect(ui->menuConvert, SIGNAL(aboutToShow()),
@@ -251,10 +258,10 @@ void MainWindow::setup_menus()
             this, SLOT(slotStartConversion()));
     connect(ui->actionStopConversion, SIGNAL(triggered()),
             this, SLOT(slotStopConversion()));
-    connect(ui->actionSetParameters, SIGNAL(triggered()),
-            this, SLOT(slotSetConversionParameters()));
-    connect(ui->actionOpenOutputFolder, SIGNAL(triggered()),
-            this, SLOT(slotOpenOutputFolder()));
+    connect(ui->actionRetry, SIGNAL(triggered()),
+            m_list, SLOT(retrySelectedItems()));
+    connect(ui->actionRetryAll, SIGNAL(triggered()),
+            m_list, SLOT(retryAll()));
 
     // About
     connect(ui->actionAboutQt, SIGNAL(triggered()),
@@ -292,9 +299,14 @@ void MainWindow::refresh_action_states()
     // Hide actionRemoveSelectedItems if no file is selected.
     bool hide_RemoveSelectedItems = (selected_file_count == 0);
 
+    bool hide_Retry = (selected_file_count == 0);
+    bool hide_RetryAll = (m_list->isEmpty());
+
     ui->actionSetParameters->setDisabled(hide_SetParameters);
     ui->actionStartConversion->setDisabled(hide_StartConversion);
     ui->actionStopConversion->setDisabled(hide_StopConversion);
     ui->actionOpenOutputFolder->setDisabled(hide_OpenFolder);
     ui->actionRemoveSelectedItems->setDisabled(hide_RemoveSelectedItems);
+    ui->actionRetry->setDisabled(hide_Retry);
+    ui->actionRetryAll->setDisabled(hide_RetryAll);
 }

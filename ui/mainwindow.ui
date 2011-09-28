@@ -39,6 +39,8 @@
     </property>
     <addaction name="actionStartConversion"/>
     <addaction name="actionStopConversion"/>
+    <addaction name="actionRetry"/>
+    <addaction name="actionRetryAll"/>
    </widget>
    <widget class="QMenu" name="menuAbout">
     <property name="title">
@@ -214,6 +216,33 @@
    </property>
    <property name="statusTip">
     <string>Remove all items in the list.</string>
+   </property>
+  </action>
+  <action name="actionRetry">
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/actions/icons/retry.png</normaloff>:/actions/icons/retry.png</iconset>
+   </property>
+   <property name="text">
+    <string>Retry</string>
+   </property>
+   <property name="toolTip">
+    <string>Retry</string>
+   </property>
+   <property name="statusTip">
+    <string>Retry selected tasks.</string>
+   </property>
+  </action>
+  <action name="actionRetryAll">
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/actions/icons/retry_all.png</normaloff>:/actions/icons/retry_all.png</iconset>
+   </property>
+   <property name="text">
+    <string>Retry All</string>
+   </property>
+   <property name="statusTip">
+    <string>Retry all tasks.</string>
    </property>
   </action>
  </widget>
