@@ -30,6 +30,14 @@ QString FilePathOperations::GenerateUniqueFileName(const QDir& output_dir, const
     return result;
 }
 
+QString FilePathOperations::GenerateUniqueFileName(const QString &filename)
+{
+    QDir dir = QFileInfo(filename).dir();
+    QString basename = QFileInfo(filename).completeBaseName();
+    QString ext = QFileInfo(filename).suffix();
+    return GenerateUniqueFileName(dir, basename, ext);
+}
+
 QString FilePathOperations::GenerateTempFileName(const QString& filename)
 {
     QString result;
