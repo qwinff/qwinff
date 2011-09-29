@@ -11,6 +11,19 @@ QString ffmpeg_executable("ffmpeg");
 namespace patterns {
     const char progress[]
         = "size=\\s*([0-9]+)kB\\s+time=\\s*([0-9]+\\.[0-9]+)\\s+bitrate=\\s*([0-9]+\\.[0-9]+)kbits/s";
+    enum Progress_1_Fields {
+        PROG_1_TIME = 2
+    };
+
+    const char progress2[] // another possible format where time is represented as hh:mm:ss
+        = "size=\\s*([0-9]+)kB\\s+time=\\s*([0-9][0-9]):([0-9][0-9]):([0-9][0-9](\\.[0-9][0-9]?)?)\\s+"
+          "bitrate=\\s*([0-9]+\\.[0-9]+)kbits/s";
+    enum Progress_2_Fields {
+        PROG_2_HR = 2,
+        PROG_2_MIN,
+        PROG_2_SEC
+    };
+
     const char duration[]
         = "Duration:\\s+([0-9][0-9]):([0-9][0-9]):([0-9][0-9](\\.[0-9][0-9]?)?)";
 } // namespace patterns
@@ -108,6 +121,7 @@ struct FFmpegInterface::Private
     double progress;
     QString stringBuffer;
     QRegExp progress_pattern;
+    QRegExp progress_pattern_2;
     QRegExp duration_pattern;
 
     bool encoders_read;
@@ -117,6 +131,7 @@ struct FFmpegInterface::Private
 
     Private() : duration(0), progress(0)
       , progress_pattern(patterns::progress)
+      , progress_pattern_2(patterns::progress2)
       , duration_pattern(patterns::duration)
       , encoders_read(false) { }
 
@@ -133,12 +148,24 @@ bool FFmpegInterface::Private::check_progress(const QString& line)
     QRegExp& pattern = progress_pattern;
     int index = pattern.indexIn(line);
     if (index != -1) {
-        const double t = pattern.cap(2).toFloat();
+        const double t = pattern.cap(patterns::PROG_1_TIME).toDouble();
 
         // calculate progress
         progress = (t / duration) * 100;
 
         return true;
+    } else { // try another pattern
+        QRegExp& alternate_pattern = progress_pattern_2;
+        if (alternate_pattern.indexIn(line) != -1) {
+            const int hour = alternate_pattern.cap(patterns::PROG_2_HR).toInt();
+            const int min = alternate_pattern.cap(patterns::PROG_2_MIN).toInt();
+            const double sec = alternate_pattern.cap(patterns::PROG_2_SEC).toDouble();
+            const double t = hour*3600 + min*60 + sec;
+
+            progress = (t / duration) * 100;
+
+            return true;
+        }
     }
     return false;
 }
