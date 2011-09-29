@@ -87,7 +87,7 @@ int AddTaskWizard::exec(QList<QUrl> &files)
     ui->lstFiles->clear();
 
     foreach (QUrl url, files) {
-        ui->lstFiles->addItem(url.path());
+        ui->lstFiles->addItem(url.toLocalFile());
     }
 
     int prev_id = startId();

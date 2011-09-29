@@ -102,8 +102,14 @@ ConvertList::~ConvertList()
 bool ConvertList::addTask(const ConversionParameters& param)
 {
     // get source file information
+    qDebug() << "Probe media file: " << param.source;
     m_probe->start(param.source);
+
     if (!m_probe->wait() || m_probe->error()) {
+        if (m_probe->error())
+            qDebug() << "Failed to get media information";
+        else
+            qDebug() << "FFprobe timeout";
         // failed to get media information immediately
         return false;
     }
@@ -419,7 +425,8 @@ void ConvertList::list_dragEnterEvent(QDragEnterEvent *event)
 
 void ConvertList::list_dragMoveEvent(QDragMoveEvent *event)
 {
-    if (event->mimeData()->hasUrls())
+    const QMimeData *mimeData = event->mimeData();
+    if (mimeData && mimeData->hasUrls())
         event->acceptProposedAction();
 }
 
@@ -432,7 +439,7 @@ void ConvertList::list_dragLeaveEvent(QDragLeaveEvent *event)
 void ConvertList::list_dropEvent(QDropEvent *event)
 {
     const QMimeData *mimeData = event->mimeData();
-    if (mimeData->hasUrls()) {
+    if (mimeData && mimeData->hasUrls()) {
         QList<QUrl> urlList = mimeData->urls();
         AddTaskWizard wizard;
 
