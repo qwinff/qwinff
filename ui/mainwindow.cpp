@@ -303,6 +303,8 @@ void MainWindow::refresh_action_states()
     bool hide_Retry = (selected_file_count == 0);
     bool hide_RetryAll = (m_list->isEmpty());
 
+    bool hide_ClearList = (m_list->isEmpty());
+
     ui->actionSetParameters->setDisabled(hide_SetParameters);
     ui->actionStartConversion->setDisabled(hide_StartConversion);
     ui->actionStopConversion->setDisabled(hide_StopConversion);
@@ -310,4 +312,5 @@ void MainWindow::refresh_action_states()
     ui->actionRemoveSelectedItems->setDisabled(hide_RemoveSelectedItems);
     ui->actionRetry->setDisabled(hide_Retry);
     ui->actionRetryAll->setDisabled(hide_RetryAll);
+    ui->actionClearList->setDisabled(hide_ClearList);
 }
