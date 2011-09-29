@@ -145,7 +145,7 @@ QStringList ConversionParameters::toFFmpegOptionList() const
         // audio bitrate in kb/s
         if (audio_bitrate > 0) {
             list.append("-ab");
-            list.append(QString("%1kb").arg(audio_bitrate));
+            list.append(QString("%1k").arg(audio_bitrate));
         }
 
         // audio sample rate in hz
@@ -186,7 +186,7 @@ QStringList ConversionParameters::toFFmpegOptionList() const
         // video bitrate
         if (video_bitrate > 0) {
             list.append("-b");
-            list.append(QString("%1kb").arg(video_bitrate));
+            list.append(QString("%1k").arg(video_bitrate));
         }
 
         // video dimensions
