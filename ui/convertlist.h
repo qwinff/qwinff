@@ -10,6 +10,7 @@ class MediaConverter;
 class MediaProbe;
 class QTreeWidget;
 class QTreeWidgetItem;
+class ProgressBar;
 
 class ConvertList : public QWidget
 {
@@ -125,6 +126,8 @@ private:
     bool is_busy;
     void reset_item(int index);
     void remove_items(const QList<QTreeWidgetItem*>& itemList);
+    ProgressBar* progressBar(Task*);
+    ProgressBar* progressBar(const Task&);
 };
 
 #endif // CONVERTLIST_H

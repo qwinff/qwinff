@@ -15,12 +15,16 @@ public:
       */
     void setValue(unsigned int value);
 
+    void setActive(bool active);
+    bool isActive() const;
+
 signals:
 
 public slots:
 
 private:
     unsigned int m_percentage;
+    bool m_active;
     void paintEvent(QPaintEvent*);
 
 };

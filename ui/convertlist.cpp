@@ -276,6 +276,8 @@ void ConvertList::start()
             task.status = Task::RUNNING;
             m_current_task = &task;
 
+            progressBar(task)->setActive(true);
+
             m_converter->start(task.param);
             emit start_conversion(i, task.param);
 
@@ -293,6 +295,7 @@ void ConvertList::stop()
     if (m_current_task) {
         progress_refreshed(0);
         m_current_task->status = Task::QUEUED;
+        progressBar(m_current_task)->setActive(false);
         m_current_task = 0;
     }
     is_busy = false;
@@ -379,14 +382,15 @@ void ConvertList::task_finished_slot(int exitcode)
                 ? Task::FINISHED
                 : Task::FAILED;
 
+        ProgressBar *prog = progressBar(m_current_task);
+
         if (exitcode) { // conversion failed
-            ProgressBar *widget
-                    = (ProgressBar*)m_list->itemWidget(m_current_task->listitem, COL_PROGRESS);
-            widget->setValue(0);
+            prog->setValue(0);
             /*: The text to be displayed on the progress bar when a conversion fails */
             m_current_task->listitem->setText(COL_PROGRESS, tr("Failed"));
         }
 
+        prog->setActive(false);
         m_current_task = 0;
         emit task_finished(exitcode);
 
@@ -399,9 +403,7 @@ void ConvertList::progress_refreshed(int percentage)
 {
     if (m_current_task) {
         qDebug() << "Progress Refreshed: " << percentage << "%";
-        ProgressBar *widget
-                = (ProgressBar*)m_list->itemWidget(m_current_task->listitem, COL_PROGRESS);
-        widget->setValue(percentage);
+        progressBar(m_current_task)->setValue(percentage);
     }
 }
 
@@ -485,9 +487,9 @@ void ConvertList::reset_item(int index)
         if (task->status != Task::RUNNING) {
             task->status = Task::QUEUED;
             task->listitem->setText(COL_PROGRESS, QString());
-            ProgressBar *progressBar =
-                    (ProgressBar*)m_list->itemWidget(task->listitem, COL_PROGRESS);
-            progressBar->setValue(0);
+            ProgressBar *prog = progressBar(*task);
+            prog->setValue(0);
+            prog->setActive(false);
         }
     }
 }
@@ -517,4 +519,14 @@ void ConvertList::remove_items(const QList<QTreeWidgetItem *>& itemList)
     }
 
     dlgProgress.setValue(itemList.size());
+}
+
+ProgressBar* ConvertList::progressBar(Task *task)
+{
+    return (ProgressBar*)m_list->itemWidget(task->listitem, COL_PROGRESS);
+}
+
+ProgressBar* ConvertList::progressBar(const Task &task)
+{
+    return (ProgressBar*)m_list->itemWidget(task.listitem, COL_PROGRESS);
 }
