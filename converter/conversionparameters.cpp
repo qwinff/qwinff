@@ -88,6 +88,15 @@ int fillArgument(QStringList& args, int index, ConversionParameters& result) {
 }
 }
 
+void ConversionParameters::copyConfigurationFrom(const ConversionParameters &src)
+{
+    QString orig_src = source;
+    QString orig_dest = destination;
+    *this = src;
+    source = orig_src;
+    destination = orig_dest;
+}
+
 ConversionParameters
 ConversionParameters::fromFFmpegParameters(const QString &params_str)
 {

@@ -37,6 +37,11 @@ public:
     //QString mencoder_ovc; // output video codec
     //QString mencoder_of;  // output format
 
+    /*! Copy all fields except source and destination files from src
+     *  @param src the source to copy from
+     */
+    void copyConfigurationFrom(const ConversionParameters& src);
+
     /*! Generate a ConversionParameters from ffmpeg command line options.
         This function ignores input and output file options. */
     static ConversionParameters fromFFmpegParameters(const QString& params_str);

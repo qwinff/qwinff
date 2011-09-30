@@ -331,7 +331,7 @@ void ConvertList::editSelectedParameters()
     if (dialog.exec(param)) {
         foreach (QTreeWidgetItem* item, itemList) {
             const int index = m_list->indexOfTopLevelItem(item);
-            m_tasks[index]->param = param;
+            m_tasks[index]->param.copyConfigurationFrom(param);
         }
     }
 }
