@@ -127,7 +127,7 @@ void MainWindow::slotOpenOutputFolder()
     if (param) {
         QString folder_path = QFileInfo(param->destination).path();
         if (QFileInfo(folder_path).exists()) {
-            QDesktopServices::openUrl(QUrl(folder_path));
+            QDesktopServices::openUrl(QUrl::fromLocalFile(folder_path));
         }
     }
 }
@@ -212,7 +212,7 @@ void MainWindow::add_files(const QStringList &fileList)
     QList<QUrl> urlList;
 
     foreach (QString file, fileList) {
-        urlList.push_back(QUrl(file));
+        urlList.push_back(QUrl::fromLocalFile(file));
     }
 
     AddTaskWizard wizard;
