@@ -11,6 +11,7 @@ class MediaProbe;
 class QTreeWidget;
 class QTreeWidgetItem;
 class ProgressBar;
+class Presets;
 
 class ConvertList : public QWidget
 {
@@ -26,7 +27,7 @@ public:
         QTreeWidgetItem *listitem;
     };
 
-    explicit ConvertList(QWidget *parent = 0);
+    explicit ConvertList(Presets *presets, QWidget *parent = 0);
     ~ConvertList();
 
     /*! Append a task to the list
@@ -124,6 +125,7 @@ private:
     MediaProbe *m_probe;
     Task *m_current_task;
     bool is_busy;
+    Presets *m_presets;
     void reset_item(int index);
     void remove_items(const QList<QTreeWidgetItem*>& itemList);
     ProgressBar* progressBar(Task*);

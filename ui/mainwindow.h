@@ -9,6 +9,8 @@ namespace Ui {
     class MainWindow;
 }
 
+class Presets;
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -45,6 +47,7 @@ protected:
 
 private:
     Ui::MainWindow *ui;
+    Presets *m_presets; //!< the preset loader that lives throughout the program
     ConvertList *m_list;
     const QStringList m_argv_input_files;
     bool check_execute_conditions();

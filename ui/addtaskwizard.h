@@ -18,7 +18,8 @@ class AddTaskWizard : public QWizard
     Q_OBJECT
 
 public:
-    explicit AddTaskWizard(QWidget *parent = 0);
+    explicit AddTaskWizard(Presets *presets, QWidget *parent = 0);
+
     ~AddTaskWizard();
 
     /*! Returns conversion parameters for all files
@@ -56,7 +57,7 @@ private:
     QScopedPointer<ConversionParameters> m_current_param;
     QVector<QVariant> m_ext_preset; //!< the mapping between extension and the last selected preset.
     int m_cbpreset_index; //!< saves the index of the preset combobox
-    bool load_extensions(const QString&);
+    bool load_extensions();
     void load_settings();
     void save_settings();
 };

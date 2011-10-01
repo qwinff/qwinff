@@ -60,7 +60,7 @@ private:
     ConvertList *m_parent;
 };
 
-ConvertList::ConvertList(QWidget *parent) :
+ConvertList::ConvertList(Presets *presets, QWidget *parent) :
     QWidget(parent),
     m_list(new QTreeWidget(this)),
     m_listEventFilter(new ListEventFilter(this)),
@@ -68,7 +68,8 @@ ConvertList::ConvertList(QWidget *parent) :
     m_converter(new MediaConverter(this)),
     m_probe(new MediaProbe(this)),
     m_current_task(0),
-    is_busy(false)
+    is_busy(false),
+    m_presets(presets)
 {
     QLayout *layout = new QHBoxLayout(this);
     this->setLayout(layout);
@@ -444,7 +445,7 @@ void ConvertList::list_dropEvent(QDropEvent *event)
     const QMimeData *mimeData = event->mimeData();
     if (mimeData && mimeData->hasUrls()) {
         QList<QUrl> urlList = mimeData->urls();
-        AddTaskWizard wizard;
+        AddTaskWizard wizard(m_presets);
 
         // Fill in the filenames and execute the wizard.
         // The wizard will skip the file-selecting page.

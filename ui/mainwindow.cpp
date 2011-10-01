@@ -3,8 +3,10 @@
 #include "convertlist.h"
 #include "addtaskwizard.h"
 #include "aboutffmpegdialog.h"
+#include "paths.h"
 #include "converter/ffmpeginterface.h"
 #include "converter/mediaprobe.h"
+#include "converter/presets.h"
 #include <QHBoxLayout>
 #include <QMessageBox>
 #include <QFileDialog>
@@ -17,7 +19,8 @@
 MainWindow::MainWindow(QWidget *parent, const QStringList& fileList) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
-    m_list(new ConvertList(this)),
+    m_presets(new Presets(this)),
+    m_list(new ConvertList(m_presets, this)),
     m_argv_input_files(fileList)
 {
     QSettings settings;
@@ -185,6 +188,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
 /* Check if necessary external programs exist.
    (1) Check ffmpeg
    (2) Check ffprobe
+   (3) Load presets
 */
 bool MainWindow::check_execute_conditions()
 {
@@ -206,13 +210,24 @@ bool MainWindow::check_execute_conditions()
     }
     probe.stop();
 
+    // load presets
+    // The presets are loaded once and shared between objects
+    // that need the information.
+    if (!m_presets->readFromFile
+            (QDir(Paths::dataPath()).absoluteFilePath("presets.xml"))) {
+        QMessageBox::critical(this, this->windowTitle(),
+                              tr("Failed to load preset file. "
+                                 "The application will quit now."));
+        return false;
+    }
+
     return true;
 }
 
 // Popup wizard to add tasks.
 void MainWindow::add_files()
 {
-    AddTaskWizard wizard;
+    AddTaskWizard wizard(m_presets);
 
     if (wizard.exec_openfile() == QDialog::Accepted) {
         // Add all input files to the list.
@@ -229,7 +244,7 @@ void MainWindow::add_files(const QStringList &fileList)
         urlList.push_back(QUrl::fromLocalFile(file));
     }
 
-    AddTaskWizard wizard;
+    AddTaskWizard wizard(m_presets);
 
     if (wizard.exec(urlList) == QDialog::Accepted) {
         // Add all input files to the list.

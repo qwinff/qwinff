@@ -18,10 +18,10 @@
 #define PAGEID_SELECTFILES 0
 #define PAGEID_PARAMS 1
 
-AddTaskWizard::AddTaskWizard(QWidget *parent) :
+AddTaskWizard::AddTaskWizard(Presets *presets, QWidget *parent) :
     QWizard(parent),
     ui(new Ui::AddTaskWizard),
-    m_presets(new Presets(this)),
+    m_presets(presets),
     m_current_param(new ConversionParameters)
 {
     ui->setupUi(this);
@@ -44,7 +44,7 @@ AddTaskWizard::AddTaskWizard(QWidget *parent) :
 
     ui->lstFiles->setSelectionMode(QAbstractItemView::ExtendedSelection);
 
-    load_extensions(QDir(Paths::dataPath()).absoluteFilePath("presets.xml"));
+    load_extensions();
     ui->cbOutputPath->setEditText(QDir::homePath());
 
     ui->cbOutputPath->setEditable(true);
@@ -286,14 +286,8 @@ void AddTaskWizard::slotFinished()
     save_settings();
 }
 
-bool AddTaskWizard::load_extensions(const QString& file)
+bool AddTaskWizard::load_extensions()
 {
-    if (!m_presets->readFromFile(file)) {
-        QMessageBox::critical(this, this->windowTitle(),
-                              tr("Failed to load preset file."));
-        return false;
-    }
-
     // update extension combo bar
     QList<QString> extensions;
     m_presets->getExtensions(extensions);
