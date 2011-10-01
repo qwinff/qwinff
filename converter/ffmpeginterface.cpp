@@ -37,22 +37,11 @@ namespace info {
     QList<QString> video_encoders;
     QList<QString> subtitle_encoders;
 
-    /* Read FFmpeg information.
-     *  (1) Check available encoder from "ffmpeg -codec" command.
-     *  (2) Read ffmpeg version information by "ffmpeg -version" command.
-     * Once the information is correctly read, it never
-     * execute ffmpeg to acquire the information again.
-    */
-    void read_ffmpeg_info()
+    bool read_ffmpeg_codecs(const char *flag)
     {
-        if (!is_encoders_read.testAndSetAcquire(false, true))
-            return; // Skip the operation if the information was already read.
-
-        qDebug() << "Read FFmpeg Information";
-
         QProcess ffmpeg_process;
         QStringList parameters;
-        parameters.push_back(QString("-codecs"));
+        parameters.push_back(QString(flag));
 
         ffmpeg_process.setReadChannel(QProcess::StandardOutput);
 
@@ -62,13 +51,13 @@ namespace info {
         // Wait until ffmpeg has started.
         if (!ffmpeg_process.waitForStarted()) {
             is_encoders_read = false; // allow retry when failed
-            return;
+            return false;
         }
 
         // Wait until ffmpeg has finished.
         if (!ffmpeg_process.waitForFinished(TIMEOUT)) {
             is_encoders_read = false; // allow retry when failed
-            return;
+            return false;
         }
 
         // Find all available encoders
@@ -98,8 +87,13 @@ namespace info {
             }
         }
 
-        // Read ffmpeg version.
-        parameters.clear();
+        return true;
+    }
+
+    bool read_ffmpeg_version()
+    {
+        QProcess ffmpeg_process;
+        QStringList parameters;
         parameters.push_back(QString("-version"));
 
         qDebug() << ffmpeg_executable << parameters.join(" ");
@@ -108,6 +102,28 @@ namespace info {
         ffmpeg_process.waitForStarted();
         ffmpeg_process.waitForFinished(TIMEOUT);
         ffmpeg_version = QString(ffmpeg_process.readAll());
+
+        return true;
+    }
+
+    /* Read FFmpeg information.
+     *  (1) Check available encoder from "ffmpeg -codec" command.
+     *  (2) Read ffmpeg version information by "ffmpeg -version" command.
+     * Once the information is correctly read, it never
+     * execute ffmpeg to acquire the information again.
+    */
+    void read_ffmpeg_info()
+    {
+        if (!is_encoders_read.testAndSetAcquire(false, true))
+            return; // Skip the operation if the information was already read.
+
+        qDebug() << "Read FFmpeg Information";
+
+        if (!read_ffmpeg_codecs("-codecs") && !read_ffmpeg_codecs("-formats"))
+            return;
+
+        if (!read_ffmpeg_version())
+            return;
 
         ffmpeg_exist = true;
     }
