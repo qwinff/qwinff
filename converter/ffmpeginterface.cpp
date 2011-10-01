@@ -58,6 +58,10 @@ namespace info {
             return false;
         }
 
+        if (ffmpeg_process.exitCode() != 0) {
+            return false; // error
+        }
+
         // Find all available encoders
         QRegExp pattern("[ D]E([ VAS])[ S][ D][ T]\\s+([^ ]+)\\s*(.*)$");
         const int AV_INDEX = 1;
@@ -105,7 +109,7 @@ namespace info {
     }
 
     /* Read FFmpeg information.
-     *  (1) Check available encoder from "ffmpeg -codec" command.
+     *  (1) Check available encoder from "ffmpeg -codecs" and "ffmpeg -formats".
      *  (2) Read ffmpeg version information by "ffmpeg -version" command.
      * Once the information is correctly read, it never
      * execute ffmpeg to acquire the information again.
