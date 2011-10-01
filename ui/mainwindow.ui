@@ -35,7 +35,7 @@
    </widget>
    <widget class="QMenu" name="menuConvert">
     <property name="title">
-     <string>Convert</string>
+     <string>&amp;Convert</string>
     </property>
     <addaction name="actionStartConversion"/>
     <addaction name="actionStopConversion"/>
@@ -45,14 +45,14 @@
    </widget>
    <widget class="QMenu" name="menuAbout">
     <property name="title">
-     <string>About</string>
+     <string>&amp;About</string>
     </property>
     <addaction name="actionAboutQt"/>
     <addaction name="actionAboutFFmpeg"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
-     <string>Edit</string>
+     <string>&amp;Edit</string>
     </property>
     <addaction name="actionRemoveSelectedItems"/>
     <addaction name="actionRemoveCompletedItems"/>
@@ -111,7 +111,7 @@
      <normaloff>:/actions/icons/start.png</normaloff>:/actions/icons/start.png</iconset>
    </property>
    <property name="text">
-    <string>Start</string>
+    <string>&amp;Start</string>
    </property>
    <property name="statusTip">
     <string>Start conversion process.</string>
@@ -126,7 +126,7 @@
      <normaloff>:/actions/icons/stop.png</normaloff>:/actions/icons/stop.png</iconset>
    </property>
    <property name="text">
-    <string>Stop</string>
+    <string>S&amp;top</string>
    </property>
    <property name="statusTip">
     <string>Stop conversion process.</string>
@@ -138,7 +138,7 @@
      <normaloff>:/actions/icons/settings.png</normaloff>:/actions/icons/settings.png</iconset>
    </property>
    <property name="text">
-    <string>Set Parameters</string>
+    <string>Set &amp;Parameters</string>
    </property>
    <property name="iconText">
     <string extracomment="Edit output file parameters.">Set Parameters</string>
@@ -153,7 +153,7 @@
      <normaloff>:/app/icons/qt.png</normaloff>:/app/icons/qt.png</iconset>
    </property>
    <property name="text">
-    <string>About Qt</string>
+    <string>About &amp;Qt</string>
    </property>
    <property name="statusTip">
     <string>About Qt</string>
@@ -165,7 +165,7 @@
      <normaloff>:/actions/icons/open_folder.png</normaloff>:/actions/icons/open_folder.png</iconset>
    </property>
    <property name="text">
-    <string>Open Output Folder</string>
+    <string>&amp;Open Output Folder</string>
    </property>
   </action>
   <action name="actionAboutFFmpeg">
@@ -174,7 +174,7 @@
      <normaloff>:/app/icons/ffmpeg.png</normaloff>:/app/icons/ffmpeg.png</iconset>
    </property>
    <property name="text">
-    <string>About FFmpeg</string>
+    <string>About &amp;FFmpeg</string>
    </property>
    <property name="statusTip">
     <string>About FFmpeg</string>
@@ -186,7 +186,7 @@
      <normaloff>:/actions/icons/remove.png</normaloff>:/actions/icons/remove.png</iconset>
    </property>
    <property name="text">
-    <string>Remove Selected Items</string>
+    <string>&amp;Remove Selected Items</string>
    </property>
    <property name="statusTip">
     <string>Remove all selected items in the list.</string>
@@ -198,7 +198,7 @@
      <normaloff>:/actions/icons/remove_completed.png</normaloff>:/actions/icons/remove_completed.png</iconset>
    </property>
    <property name="text">
-    <string>Remove Completed Items</string>
+    <string>R&amp;emove Completed Items</string>
    </property>
    <property name="toolTip">
     <string>Remove Completed Items</string>
@@ -213,7 +213,7 @@
      <normaloff>:/actions/icons/clear.png</normaloff>:/actions/icons/clear.png</iconset>
    </property>
    <property name="text">
-    <string>Clear List</string>
+    <string>&amp;Clear List</string>
    </property>
    <property name="toolTip">
     <string>Clear List</string>
@@ -228,7 +228,7 @@
      <normaloff>:/actions/icons/retry.png</normaloff>:/actions/icons/retry.png</iconset>
    </property>
    <property name="text">
-    <string>Retry</string>
+    <string>&amp;Retry</string>
    </property>
    <property name="toolTip">
     <string>Retry</string>
@@ -243,7 +243,7 @@
      <normaloff>:/actions/icons/retry_all.png</normaloff>:/actions/icons/retry_all.png</iconset>
    </property>
    <property name="text">
-    <string>Retry All</string>
+    <string>Retry &amp;All</string>
    </property>
    <property name="statusTip">
     <string>Retry all tasks.</string>
