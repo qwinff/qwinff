@@ -56,8 +56,8 @@ RESOURCES += \
     images.qrc
 
 TRANSLATIONS += \
-    translations/formatconverter_zh_TW.ts \
-    translations/formatconverter_zh_CN.ts
+    translations/qwinff_zh_TW.ts \
+    translations/qwinff_zh_CN.ts
 
 unix {
     DEFINES += DATA_PATH=$(DATA_PATH)
