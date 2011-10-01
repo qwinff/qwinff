@@ -3,7 +3,7 @@
 #include <QStringList>
 #include <QRegExp>
 
-#define TIMEOUT 1000
+#define TIMEOUT 3000
 #define SECONDS_PER_HOUR 3600
 #define SECONDS_PER_MINUTE 60
 

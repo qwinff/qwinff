@@ -6,7 +6,7 @@
 #include <QFileInfo>
 #include <QCoreApplication>
 
-#define TIMEOUT 1000
+#define TIMEOUT 3000
 
 MediaConverter::MediaConverter(QObject *parent) :
     QObject(parent)
