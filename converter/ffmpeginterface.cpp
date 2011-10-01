@@ -50,13 +50,11 @@ namespace info {
 
         // Wait until ffmpeg has started.
         if (!ffmpeg_process.waitForStarted()) {
-            is_encoders_read = false; // allow retry when failed
             return false;
         }
 
         // Wait until ffmpeg has finished.
         if (!ffmpeg_process.waitForFinished(TIMEOUT)) {
-            is_encoders_read = false; // allow retry when failed
             return false;
         }
 
@@ -119,8 +117,10 @@ namespace info {
 
         qDebug() << "Read FFmpeg Information";
 
-        if (!read_ffmpeg_codecs("-codecs") && !read_ffmpeg_codecs("-formats"))
+        if (!read_ffmpeg_codecs("-codecs") && !read_ffmpeg_codecs("-formats")) {
+            is_encoders_read = false; // allow retry when failed
             return;
+        }
 
         if (!read_ffmpeg_version())
             return;
