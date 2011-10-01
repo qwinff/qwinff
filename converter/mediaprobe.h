@@ -21,10 +21,10 @@ public:
 
     /*! Block until the process has finished or until msecs milliseconds has passed.
      * @param msecs timeout
-     * @return If the function exits because the process has finished, the functionr returns true.
+     * @return If the function exits because the process has finished, the function returns true.
      *  Otherwise, it returns false.
      */
-    bool wait(int msecs = 1000);
+    bool wait(int msecs = 3000);
 
     /*! Force the probe to stop.
      * The function will block until the probe is stopped.
