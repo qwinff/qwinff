@@ -4,6 +4,7 @@
 #include "addtaskwizard.h"
 #include "aboutffmpegdialog.h"
 #include "converter/ffmpeginterface.h"
+#include "converter/mediaprobe.h"
 #include <QHBoxLayout>
 #include <QMessageBox>
 #include <QFileDialog>
@@ -183,15 +184,28 @@ void MainWindow::closeEvent(QCloseEvent *event)
 
 /* Check if necessary external programs exist.
    (1) Check ffmpeg
+   (2) Check ffprobe
 */
 bool MainWindow::check_execute_conditions()
 {
+    // check ffmpeg
     if (!FFmpegInterface::hasFFmpeg()) {
         QMessageBox::critical(this, tr("FFmpeg Error"),
                               tr("FFmpeg not found. "
                                  "The application will quit now."));
         return false;
     }
+
+    // check ffprobe
+    MediaProbe probe;
+    if (!probe.start("")) { // The probe failed to start.
+        QMessageBox::critical(this, tr("FFprobe Error"),
+                              tr("FFprobe not found. "
+                                 "The application will quit now."));
+        return false;
+    }
+    probe.stop();
+
     return true;
 }
 
