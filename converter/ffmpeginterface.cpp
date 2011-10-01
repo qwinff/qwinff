@@ -4,7 +4,12 @@
 #include <QDebug>
 #include <QAtomicInt>
 
-#define TIMEOUT 3000   // timeout before force-terminating ffmpeg
+// timeout before force-terminating ffmpeg
+#ifdef OPERATION_TIMEOUT
+#   define TIMEOUT OPERATION_TIMEOUT
+#else
+#   define TIMEOUT 3000
+#endif
 
 namespace {
 QString ffmpeg_executable("ffmpeg");
@@ -49,7 +54,7 @@ namespace info {
         ffmpeg_process.start(ffmpeg_executable, parameters);
 
         // Wait until ffmpeg has started.
-        if (!ffmpeg_process.waitForStarted()) {
+        if (!ffmpeg_process.waitForStarted(TIMEOUT)) {
             return false;
         }
 
@@ -101,7 +106,7 @@ namespace info {
         qDebug() << ffmpeg_executable << parameters.join(" ");
         ffmpeg_process.start(ffmpeg_executable, parameters);
 
-        ffmpeg_process.waitForStarted();
+        ffmpeg_process.waitForStarted(TIMEOUT);
         ffmpeg_process.waitForFinished(TIMEOUT);
         ffmpeg_version = QString(ffmpeg_process.readAll());
 

@@ -64,3 +64,6 @@ unix {
     DEFINES += DOC_PATH=$(DOC_PATH)
     DEFINES += TRANSLATION_PATH=$(TRANSLATION_PATH)
 }
+
+# External Short Blocking Operation Timeout
+DEFINES += OPERATION_TIMEOUT=30000

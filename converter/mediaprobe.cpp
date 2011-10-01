@@ -3,7 +3,11 @@
 #include <QStringList>
 #include <QRegExp>
 
-#define TIMEOUT 3000
+#ifdef OPERATION_TIMEOUT
+#   define TIMEOUT OPERATION_TIMEOUT
+#else
+#   define TIMEOUT 3000
+#endif
 #define SECONDS_PER_HOUR 3600
 #define SECONDS_PER_MINUTE 60
 
@@ -275,7 +279,7 @@ void MediaProbe::stop()
 {
     if (p->ffprobe_proc.state() == QProcess::Running) {
         p->ffprobe_proc.kill();
-        p->ffprobe_proc.waitForFinished();
+        p->ffprobe_proc.waitForFinished(-1); // wait indefinitely
     }
 }
 

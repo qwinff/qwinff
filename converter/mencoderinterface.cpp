@@ -5,7 +5,11 @@
 #include <QTextStream>
 #include <iostream>
 
-#define TIMEOUT 3000
+#ifdef OPERATION_TIMEOUT
+#   define TIMEOUT OPERATION_TIMEOUT
+#else
+#   define TIMEOUT 3000
+#endif
 
 namespace {
 const char mencoder_executable_name[] = "mencoder";

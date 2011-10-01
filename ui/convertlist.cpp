@@ -16,6 +16,7 @@
 #include <QSettings>
 #include <cassert>
 
+#define TIMEOUT 3000
 #define MIN_DURATION 100 // Minimum duration(milliseconds) to show progress dialog.
 
 enum ConvertListColumns
@@ -105,7 +106,7 @@ bool ConvertList::addTask(const ConversionParameters& param)
     qDebug() << "Probe media file: " << param.source;
     m_probe->start(param.source);
 
-    if (!m_probe->wait() || m_probe->error()) {
+    if (!m_probe->wait(TIMEOUT) || m_probe->error()) {
         if (m_probe->error())
             qDebug() << "Failed to get media information";
         else

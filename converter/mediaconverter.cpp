@@ -6,7 +6,11 @@
 #include <QFileInfo>
 #include <QCoreApplication>
 
-#define TIMEOUT 3000
+#ifdef OPERATION_TIMEOUT
+#   define TIMEOUT OPERATION_TIMEOUT
+#else
+#   define TIMEOUT 3000
+#endif
 
 MediaConverter::MediaConverter(QObject *parent) :
     QObject(parent)
@@ -64,7 +68,7 @@ void MediaConverter::stop()
     if (m_proc.state() == QProcess::Running) {
         m_stopped = true;
         m_proc.kill();
-        m_proc.waitForFinished();
+        m_proc.waitForFinished(-1); // wait indefinitely
     }
 }
 
