@@ -31,9 +31,5 @@ QString Paths::dataPath()
 
 QString Paths::translationPath()
 {
-#ifdef TRANSLATION_PATH
-    return QString(TRANSLATION_PATH);
-#else
-    return QDir(app_path).absoluteFilePath("translation");
-#endif
+    return QDir(dataPath()).absoluteFilePath("translations");
 }

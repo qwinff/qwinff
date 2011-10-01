@@ -140,6 +140,9 @@
    <property name="text">
     <string>Set Parameters</string>
    </property>
+   <property name="iconText">
+    <string extracomment="Edit output file parameters.">Set Parameters</string>
+   </property>
    <property name="statusTip">
     <string>Edit conversion parameters of selected files</string>
    </property>
