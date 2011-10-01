@@ -205,7 +205,10 @@ void AddTaskWizard::slotEditPresetButton()
 {
     ConversionParameterDialog dialog(this->parentWidget());
     dialog.setGeometry(this->x(), this->y(), dialog.width(), dialog.height());
-    dialog.exec(*m_current_param);
+    if (dialog.exec(*m_current_param)) {
+        m_cbpreset_index = ui->cbPreset->currentIndex();
+        ui->cbPreset->setCurrentIndex(-1); // select no item
+    }
 }
 
 void AddTaskWizard::slotBrowseOutputPathButton()
@@ -307,15 +310,22 @@ void AddTaskWizard::load_settings()
     QSettings settings;
 
     // extension combobox
-    const int ext_index = settings.value("addtaskwizard/extension").toInt();
+    int ext_index = settings.value("addtaskwizard/extension").toInt();
+    if (ext_index < 0 || ext_index >= ui->cbExtension->count())
+        ext_index = 0;
     ui->cbExtension->setCurrentIndex(ext_index);
 
     m_ext_preset = settings.value("addtaskwizard/selected_presets").toList().toVector();
     m_ext_preset.resize(ui->cbExtension->count());
+
     if (ext_index >= 0 && ext_index < m_ext_preset.size()) {
         // preset combobox
         QApplication::processEvents();
-        const int preset_index = m_ext_preset[ext_index].toInt();
+
+        int preset_index = m_ext_preset[ext_index].toInt();
+        if (preset_index < 0 || preset_index >= ui->cbPreset->count())
+            preset_index = 0;
+
         ui->cbPreset->setCurrentIndex(preset_index);
     }
 
@@ -341,7 +351,11 @@ void AddTaskWizard::save_settings()
     settings.setValue("addtaskwizard/extension", ui->cbExtension->currentIndex());
 
     const int ext_index = ui->cbExtension->currentIndex();
-    const int preset_index = ui->cbPreset->currentIndex();
+    int preset_index = ui->cbPreset->currentIndex();
+
+    if (preset_index < 0) // The user has edited the preset, so no preset is selected.
+        preset_index = m_cbpreset_index; // Save the last selected preset instead.
+
     if (ext_index >= 0 && ext_index < m_ext_preset.size())
         m_ext_preset[ext_index] = preset_index;
 

@@ -55,6 +55,7 @@ private:
     QList<ConversionParameters> m_params;
     QScopedPointer<ConversionParameters> m_current_param;
     QVector<QVariant> m_ext_preset; //!< the mapping between extension and the last selected preset.
+    int m_cbpreset_index; //!< saves the index of the preset combobox
     bool load_extensions(const QString&);
     void load_settings();
     void save_settings();
