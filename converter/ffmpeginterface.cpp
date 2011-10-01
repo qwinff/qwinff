@@ -121,6 +121,11 @@ namespace info {
 
         qDebug() << "Read FFmpeg Information";
 
+        /* Older versions of ffmpeg has no "-codecs" flag and report all
+         * supported codecs by "-formats". Recent versions report codecs
+         * by "-codecs" flag, so we check "-codecs" first. If ffmpeg
+         * returns an error, retry with flag "-formats".
+         */
         if (!read_ffmpeg_codecs("-codecs") && !read_ffmpeg_codecs("-formats")) {
             is_encoders_read = false; // allow retry when failed
             return;
