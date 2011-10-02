@@ -130,7 +130,7 @@ bool AddTaskWizard::validateCurrentPage()
                 if (!succeed) { // failed to create folder
                     QMessageBox::critical(this, this->windowTitle()
                                           , tr("Failed to create folder. "
-                                               "Please select another output folder")
+                                               "Please select another output folder.")
                                           , QMessageBox::Ok);
                 }
                 return succeed;
