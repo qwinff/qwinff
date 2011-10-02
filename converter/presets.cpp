@@ -187,14 +187,14 @@ bool Presets::readFromFile(const char *filename)
 
 bool Presets::getExtensions(QList<QString> &target) const
 {
-    QList<Preset> presets = p->presets.values();
-    target.clear();
+    QList<Preset> presetList = p->presets.values();
+    qSort(presetList); // sort presets by id
 
-    QList<Preset>::iterator it = presets.begin();
+    target.clear();
     QString extension("");
-    for (; it!=presets.end(); ++it) {
-        if (extension != it->extension) { // new extension appears
-            extension = it->extension;
+    foreach (Preset preset, presetList) {
+        if (extension != preset.extension) { // new extension appears
+            extension = preset.extension;
             target.push_back(extension);
         }
     }
