@@ -14,6 +14,7 @@
 #include <QFileInfo>
 #include <QProgressDialog>
 #include <QSettings>
+#include <QMenu>
 #include <cassert>
 
 #define TIMEOUT 3000
@@ -82,6 +83,11 @@ ConvertList::ConvertList(Presets *presets, QWidget *parent) :
     connect(m_converter, SIGNAL(progressRefreshed(int)),
             this, SLOT(progress_refreshed(int)));
 
+    // Propagate context menu event.
+    m_list->setContextMenuPolicy(Qt::CustomContextMenu);
+    connect(m_list, SIGNAL(customContextMenuRequested(QPoint))
+            , this, SIGNAL(customContextMenuRequested(QPoint)));
+
     // enable drag/drop functions
     m_list->setAcceptDrops(true);
 
@@ -92,7 +98,11 @@ ConvertList::ConvertList(Presets *presets, QWidget *parent) :
     m_list->installEventFilter(m_listEventFilter);
 
     QSettings settings;
-    m_list->header()->restoreState(settings.value("convertlist/header_state").toByteArray());
+    QHeaderView *header = m_list->header();
+    header->restoreState(settings.value("convertlist/header_state").toByteArray());
+    header->setContextMenuPolicy(Qt::CustomContextMenu);
+    connect(header, SIGNAL(customContextMenuRequested(QPoint)),
+            this, SLOT(slotHeaderContextMenu(QPoint)));
 }
 
 ConvertList::~ConvertList()
@@ -407,6 +417,33 @@ void ConvertList::progress_refreshed(int percentage)
         qDebug() << "Progress Refreshed: " << percentage << "%";
         progressBar(m_current_task)->setValue(percentage);
     }
+}
+
+void ConvertList::slotHeaderContextMenu(QPoint)
+{
+    const int header_count = m_list->header()->count();
+    QMenu menu;
+
+    // Construct the menu and uncheck hidden items.
+    for (int i=0; i<header_count; i++) {
+        QString title = m_list->headerItem()->text(i);
+        QAction *action = new QAction(title, &menu);
+        action->setCheckable(true);
+        action->setChecked(!m_list->isColumnHidden(i));
+        action->setData(i); // save the column index
+        menu.addAction(action);
+    }
+
+    connect(&menu, SIGNAL(triggered(QAction*)),
+            this, SLOT(slotHeaderContextMenuTriggered(QAction*)));
+
+    menu.exec(QCursor::pos());
+}
+
+void ConvertList::slotHeaderContextMenuTriggered(QAction *action)
+{
+    const int column_index = action->data().toInt();
+    m_list->setColumnHidden(column_index, !action->isChecked());
 }
 
 // Events

@@ -59,6 +59,7 @@ signals:
     void start_conversion(int index, ConversionParameters param);
     void task_finished(int);
     void all_tasks_finished();
+    void customContextMenuRequested(const QPoint &pos);
 
 public slots:
 
@@ -101,6 +102,8 @@ public slots:
 private slots:
     void task_finished_slot(int);
     void progress_refreshed(int);
+    void slotHeaderContextMenu(QPoint);
+    void slotHeaderContextMenuTriggered(QAction*);
 
 protected:
     bool list_keyPressEvent(QKeyEvent *event);

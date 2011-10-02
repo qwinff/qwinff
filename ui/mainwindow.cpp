@@ -150,7 +150,7 @@ void MainWindow::slotListContextMenu(QPoint /*pos*/)
 {
     refresh_action_states();
 
-    QMenu menu(this);
+    QMenu menu;
     menu.addAction(ui->actionOpenOutputFolder);
     menu.addSeparator();
     menu.addAction(ui->actionRemoveSelectedItems);
