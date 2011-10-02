@@ -419,19 +419,57 @@ void ConvertList::progress_refreshed(int percentage)
     }
 }
 
-void ConvertList::slotHeaderContextMenu(QPoint)
+void ConvertList::slotHeaderContextMenu(QPoint point)
 {
     const int header_count = m_list->header()->count();
+    const int current_column = m_list->header()->logicalIndexAt(point);
+
+    // Count visible columns.
+    int visible_column_count = 0, visible_column_index = 0;
+    for (int i=0; i<header_count; i++) {
+        if (!m_list->isColumnHidden(i)) {
+            ++visible_column_count;
+            visible_column_index = i;
+        }
+    }
+
     QMenu menu;
 
-    // Construct the menu and uncheck hidden items.
+    // Add the item under the mouse to the list
+    if (current_column >= 0 && visible_column_count > 1) {
+        QAction *action = new QAction(&menu);
+        QString column_text = m_list->headerItem()->text(current_column);
+        /*: Hide a column in the list. For example, the text maybe 'Hide "Duration"'.
+            The two \" are quotation marks in English,
+            you may replace it with local quotation marks. */
+        QString action_text = tr("Hide \"%1\"").arg(column_text);
+        action->setText(action_text);
+        action->setData(current_column);
+        action->setCheckable(false);
+        action->setChecked(false);
+        menu.addAction(action);
+    }
+
+    QAction *actionRestore = new QAction(&menu);
+    actionRestore->setText(tr("Restore All Columns"));
+    actionRestore->setData(-1);
+    connect(actionRestore, SIGNAL(triggered()),
+            this, SLOT(slotRestoreListHeaders()));
+    menu.addAction(actionRestore);
+
+    menu.addSeparator();
+
+    // Construct the rest of the menu and uncheck hidden items.
     for (int i=0; i<header_count; i++) {
         QString title = m_list->headerItem()->text(i);
         QAction *action = new QAction(title, &menu);
         action->setCheckable(true);
         action->setChecked(!m_list->isColumnHidden(i));
         action->setData(i); // save the column index
-        menu.addAction(action);
+
+        // not allow user to hide the last column
+        if (visible_column_count > 1 || visible_column_index != i)
+            menu.addAction(action);
     }
 
     connect(&menu, SIGNAL(triggered(QAction*)),
@@ -443,7 +481,18 @@ void ConvertList::slotHeaderContextMenu(QPoint)
 void ConvertList::slotHeaderContextMenuTriggered(QAction *action)
 {
     const int column_index = action->data().toInt();
-    m_list->setColumnHidden(column_index, !action->isChecked());
+    if (column_index >= 0)
+        m_list->setColumnHidden(column_index, !action->isChecked());
+}
+
+void ConvertList::slotRestoreListHeaders()
+{
+    const int column_count = m_list->columnCount();
+    QHeaderView *header = m_list->header();
+    for (int i=0; i<column_count; i++) { // Restore all sections.
+        m_list->showColumn(i);
+        header->resizeSection(i, header->defaultSectionSize());
+    }
 }
 
 // Events

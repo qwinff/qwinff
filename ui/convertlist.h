@@ -104,6 +104,7 @@ private slots:
     void progress_refreshed(int);
     void slotHeaderContextMenu(QPoint);
     void slotHeaderContextMenuTriggered(QAction*);
+    void slotRestoreListHeaders();
 
 protected:
     bool list_keyPressEvent(QKeyEvent *event);
