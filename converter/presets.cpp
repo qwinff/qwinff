@@ -8,6 +8,13 @@
 struct Presets::Private
 {
     QMultiMap<QString, Preset> presets; ///< map extension to presets
+
+    /*! @brief Store the previously assigned id
+     *  Each preset is assigned a unique id to indicate the order it is read.
+     *  This id is later used in sorting presets.
+     *  When a new preset is read from the file, increment m_prev_id and assign
+     *  it to the new preset, i.e. preset.id = ++m_prev_id;
+     */
     unsigned int m_prev_id;
 
     Private() : m_prev_id(0) { }
