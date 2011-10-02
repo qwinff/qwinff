@@ -547,7 +547,7 @@ void ConvertList::init_treewidget(QTreeWidget *w)
 {
     assert(w != 0);
 
-    w->setColumnCount(4);
+    w->setColumnCount(COL_COUNT);
 
     QStringList columnTitle;
     for (int i=0; i<COL_COUNT; i++) {
