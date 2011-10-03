@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QVector>
 #include <QSharedPointer>
+#include <QSet>
 #include "converter/conversionparameters.h"
 
 class MediaConverter;
@@ -35,7 +36,7 @@ public:
      * @return If the function succeeds, it returns true.
      *  Otherwise, it returns false.
      */
-    bool addTask(const ConversionParameters &param);
+    bool addTask(ConversionParameters param);
 
     /*! Append a list of tasks to the list
      * @param paramList the list of conversion parameters
@@ -130,6 +131,7 @@ private:
     Task *m_current_task;
     bool is_busy;
     Presets *m_presets;
+    QSet<QString> m_outputFileNames;
     void reset_item(int index);
     void remove_items(const QList<QTreeWidgetItem*>& itemList);
     ProgressBar* progressBar(Task*);

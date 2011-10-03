@@ -2,6 +2,7 @@
 #include "progressbar.h"
 #include "converter/mediaconverter.h"
 #include "converter/mediaprobe.h"
+#include "converter/filepathoperations.h"
 #include "ui/conversionparameterdialog.h"
 #include "addtaskwizard.h"
 #include <QTreeWidget>
@@ -111,7 +112,7 @@ ConvertList::~ConvertList()
     settings.setValue("convertlist/header_state", m_list->header()->saveState());
 }
 
-bool ConvertList::addTask(const ConversionParameters& param)
+bool ConvertList::addTask(ConversionParameters param)
 {
     // get source file information
     qDebug() << "Probe media file: " << param.source;
@@ -125,6 +126,14 @@ bool ConvertList::addTask(const ConversionParameters& param)
         // failed to get media information immediately
         return false;
     }
+
+    /* Ensure unique output filename.
+       If the destination filename already exists either on disk
+       or in the ConvertList, rename it to prevent overwritting
+       completed tasks.  */
+    param.destination =
+            FilePathOperations::GenerateUniqueFileName(param.destination, m_outputFileNames);
+    m_outputFileNames.insert(param.destination); // Record the filename for future reference.
 
     TaskPtr task(new Task());
     task->param = param;
@@ -224,6 +233,7 @@ void ConvertList::removeTask(int index)
 {
     qDebug() << "ConvertList::removeTask(), index=" << index;
     if (m_tasks[index]->status != Task::RUNNING) { // not a running task
+        m_outputFileNames.remove(m_tasks[index]->param.destination);
         m_tasks.remove(index);
         delete m_list->takeTopLevelItem(index);
     } else { // The task is being executed.

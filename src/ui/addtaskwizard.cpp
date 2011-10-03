@@ -2,7 +2,6 @@
 #include "ui_addtaskwizard.h"
 
 #include "converter/presets.h"
-#include "converter/filepathoperations.h"
 #include "conversionparameterdialog.h"
 #include "extensions.h"
 #include "paths.h"
