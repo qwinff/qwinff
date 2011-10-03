@@ -260,7 +260,7 @@ int ConvertList::selectedCount() const
 
 int ConvertList::elapsedTime() const
 {
-    return is_busy ? 0 : m_startTime.elapsed();
+    return is_busy ? m_startTime.elapsed() : 0;
 }
 
 const ConversionParameters* ConvertList::getCurrentIndexParameter() const
