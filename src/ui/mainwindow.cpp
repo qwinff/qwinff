@@ -9,6 +9,7 @@
 #include "converter/presets.h"
 #include <QHBoxLayout>
 #include <QMessageBox>
+#include <QLabel>
 #include <QFileDialog>
 #include <QDesktopServices>
 #include <QApplication>
@@ -21,7 +22,8 @@ MainWindow::MainWindow(QWidget *parent, const QStringList& fileList) :
     ui(new Ui::MainWindow),
     m_presets(new Presets(this)),
     m_list(new ConvertList(m_presets, this)),
-    m_argv_input_files(fileList)
+    m_argv_input_files(fileList),
+    m_elapsedTimeLabel(new QLabel(this))
 {
     QSettings settings;
 
@@ -40,11 +42,14 @@ MainWindow::MainWindow(QWidget *parent, const QStringList& fileList) :
 
     setup_menus();
     setup_toolbar();
+    setup_statusbar();
 
     restoreGeometry(settings.value("mainwindow/geometry").toByteArray());
     restoreState(settings.value("mainwindow/state").toByteArray());
 
     refresh_action_states();
+
+    startTimer(1000); // Call the timer event every second.
 
     if (!check_execute_conditions()) {
         // Close the window immediately after it has started.
@@ -52,6 +57,7 @@ MainWindow::MainWindow(QWidget *parent, const QStringList& fileList) :
     } else {
         QTimer::singleShot(0, this, SLOT(window_ready()));
     }
+
 }
 
 MainWindow::~MainWindow()
@@ -183,6 +189,13 @@ void MainWindow::closeEvent(QCloseEvent *event)
     settings.setValue("mainwindow/state", saveState());
 }
 
+void MainWindow::timerEvent(QTimerEvent *)
+{
+    if (m_list->isBusy()) { // update elapsed time
+
+    }
+}
+
 // Private Methods
 
 /* Check if necessary external programs exist.
@@ -307,6 +320,11 @@ void MainWindow::setup_toolbar()
     toolbar->addAction(ui->actionAddFiles);
     toolbar->addAction(ui->actionStartConversion);
     toolbar->addAction(ui->actionStopConversion);
+}
+
+void MainWindow::setup_statusbar()
+{
+    ui->statusBar->addPermanentWidget(m_elapsedTimeLabel);
 }
 
 // Hide unused actions

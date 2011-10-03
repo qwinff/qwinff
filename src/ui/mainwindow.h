@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTime>
 
 class ConvertList;
 
@@ -10,6 +11,7 @@ namespace Ui {
 }
 
 class Presets;
+class QLabel;
 
 class MainWindow : public QMainWindow
 {
@@ -41,6 +43,7 @@ private slots:
     void slotListContextMenu(QPoint);
 
     void refresh_action_states();
+    void timerEvent(QTimerEvent *); ///< 1-second timer event
 
 protected:
     void closeEvent(QCloseEvent *);
@@ -50,11 +53,13 @@ private:
     Presets *m_presets; //!< the preset loader that lives throughout the program
     ConvertList *m_list;
     const QStringList m_argv_input_files;
+    QLabel *m_elapsedTimeLabel;
     bool check_execute_conditions();
     void add_files();
     void add_files(const QStringList& files);
     void setup_menus();
     void setup_toolbar();
+    void setup_statusbar();
 };
 
 #endif // MAINWINDOW_H
