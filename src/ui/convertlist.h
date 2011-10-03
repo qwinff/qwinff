@@ -129,6 +129,7 @@ private:
     MediaProbe *m_probe;
     Task *m_current_task;
     bool is_busy;
+    bool run_next; ///< run next task regardless of the value of is_busy
     Presets *m_presets;
     void reset_item(int index);
     void remove_items(const QList<QTreeWidgetItem*>& itemList);

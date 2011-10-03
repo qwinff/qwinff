@@ -70,6 +70,7 @@ ConvertList::ConvertList(Presets *presets, QWidget *parent) :
     m_probe(new MediaProbe(this)),
     m_current_task(0),
     is_busy(false),
+    run_next(false),
     m_presets(presets)
 {
     QLayout *layout = new QHBoxLayout(this);
@@ -269,8 +270,10 @@ const ConversionParameters* ConvertList::getCurrentIndexParameter() const
 
 void ConvertList::start()
 {
-    if (is_busy)
+    if (is_busy && !run_next)
         return;
+
+    run_next = false;
 
     const int task_count = m_tasks.size();
 
@@ -406,7 +409,7 @@ void ConvertList::task_finished_slot(int exitcode)
         m_current_task = 0;
         emit task_finished(exitcode);
 
-        is_busy = false;
+        run_next = true;
         this->start(); // start next task
     }
 }
