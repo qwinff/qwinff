@@ -104,6 +104,8 @@ ConvertList::ConvertList(Presets *presets, QWidget *parent) :
     header->setContextMenuPolicy(Qt::CustomContextMenu);
     connect(header, SIGNAL(customContextMenuRequested(QPoint)),
             this, SLOT(slotHeaderContextMenu(QPoint)));
+
+    m_startTime.start();
 }
 
 ConvertList::~ConvertList()
@@ -256,6 +258,11 @@ int ConvertList::selectedCount() const
     return m_list->selectedItems().size();
 }
 
+int ConvertList::elapsedTime() const
+{
+    return is_busy ? 0 : m_startTime.elapsed();
+}
+
 const ConversionParameters* ConvertList::getCurrentIndexParameter() const
 {
     const int index = m_list->currentIndex().row();
@@ -274,6 +281,10 @@ void ConvertList::start()
         return;
 
     run_next = false;
+
+    if (!is_busy) { // new session: start timing
+        m_startTime.restart();
+    }
 
     const int task_count = m_tasks.size();
 

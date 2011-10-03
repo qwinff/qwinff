@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QVector>
+#include <QTime>
 #include <QSharedPointer>
 #include "converter/conversionparameters.h"
 
@@ -49,6 +50,11 @@ public:
     bool isEmpty() const;
     int count() const;
     int selectedCount() const;
+
+    /*! Get the elapsed time of the session (in milliseconds).
+     *  If the converter is idle, the function returns 0.
+     */
+    int elapsedTime() const;
 
     /*! Returns the pointer to the conversion parameter of the currently selected item.
      *  @return If the function fails, it returns NULL.
@@ -131,6 +137,7 @@ private:
     bool is_busy;
     bool run_next; ///< run next task regardless of the value of is_busy
     Presets *m_presets;
+    QTime m_startTime;
     void reset_item(int index);
     void remove_items(const QList<QTreeWidgetItem*>& itemList);
     ProgressBar* progressBar(Task*);
