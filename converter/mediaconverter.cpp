@@ -1,6 +1,6 @@
 #include "mediaconverter.h"
 #include "ffmpeginterface.h"
-#include "ui/filepathoperations.h"
+#include "filepathoperations.h"
 #include <QDebug>
 #include <QFile>
 #include <QFileInfo>

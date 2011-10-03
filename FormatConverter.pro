@@ -26,7 +26,7 @@ SOURCES += main.cpp \
     ui/aboutffmpegdialog.cpp \
     ui/paths.cpp \
     ui/extensions.cpp \
-    ui/filepathoperations.cpp
+    converter/filepathoperations.cpp
 
 HEADERS  += \
     ui/progressbar.h \
@@ -44,7 +44,7 @@ HEADERS  += \
     ui/aboutffmpegdialog.h \
     ui/paths.h \
     ui/extensions.h \
-    ui/filepathoperations.h
+    converter/filepathoperations.h
 
 FORMS    += \
     ui/conversionparameterdialog.ui \
