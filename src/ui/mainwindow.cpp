@@ -192,7 +192,15 @@ void MainWindow::closeEvent(QCloseEvent *event)
 void MainWindow::timerEvent(QTimerEvent *)
 {
     if (m_list->isBusy()) { // update elapsed time
+        int total_seconds = m_list->elapsedTime() / 1000;
+        int hours = total_seconds / 3600;
+        int minutes = (total_seconds / 60) % 60;
+        int seconds = total_seconds % 60;
 
+        m_elapsedTimeLabel->setText(
+                    tr("Elapsed Time: %1h %2m %3s")
+                    .arg(hours).arg(minutes).arg(seconds)
+                    );
     }
 }
 
