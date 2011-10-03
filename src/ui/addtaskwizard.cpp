@@ -276,8 +276,7 @@ void AddTaskWizard::slotFinished()
         param.source = input_filename;
 
         // Generate output filename.
-        param.destination = FilePathOperations::GenerateUniqueFileName
-                (output_dir, input_file_basename, ext);
+        param.destination = output_dir.absoluteFilePath(input_file_basename + "." + ext);
 
         // Save the configuration for the file.
         m_params.append(param);
