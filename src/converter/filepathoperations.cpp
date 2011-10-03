@@ -6,7 +6,7 @@ FilePathOperations::FilePathOperations()
 }
 
 QString FilePathOperations::GenerateUniqueFileName(const QDir& output_dir, const QString& input_file_basename
-                               , const QString& ext)
+                               , const QString& ext, const QSet<QString>& extra)
 {
     int filename_index = 1;
     QString result;
@@ -26,16 +26,17 @@ QString FilePathOperations::GenerateUniqueFileName(const QDir& output_dir, const
                 + ext;                                             // extension
 
         ++filename_index;
-    } while (QFileInfo(result).exists()); // If file(n) exists, try file(n+1).
+    } while (QFileInfo(result).exists()
+             || extra.contains(result)); // If file(n) exists, try file(n+1).
     return result;
 }
 
-QString FilePathOperations::GenerateUniqueFileName(const QString &filename)
+QString FilePathOperations::GenerateUniqueFileName(const QString &filename, const QSet<QString>& extra)
 {
     QDir dir = QFileInfo(filename).dir();
     QString basename = QFileInfo(filename).completeBaseName();
     QString ext = QFileInfo(filename).suffix();
-    return GenerateUniqueFileName(dir, basename, ext);
+    return GenerateUniqueFileName(dir, basename, ext, extra);
 }
 
 QString FilePathOperations::GenerateTempFileName(const QString& filename)
