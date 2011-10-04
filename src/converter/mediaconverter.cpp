@@ -86,12 +86,11 @@ void MediaConverter::readProcessOutput()
 
 void MediaConverter::convertProgressFinished(int exitcode, QProcess::ExitStatus)
 {
-    m_outputFileName = FilePathOperations::GenerateUniqueFileName(m_outputFileName);
     QFile output_file(m_outputFileName);
     QFile tmp_file(m_tmpFileName);
 
     if (exitcode == 0 && tmp_file.exists() && !m_stopped) { // succeed
-        qDebug() << "Rename " << m_tmpFileName << " to " << m_outputFileName;
+        output_file.remove();
         if (!tmp_file.rename(m_outputFileName)) // Rename tmpfile to outputfile.
             exitcode = -1; // If the rename fails, return a negative exitcode.
     } else { // failed

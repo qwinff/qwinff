@@ -2,7 +2,6 @@
 #include "ui_addtaskwizard.h"
 
 #include "converter/presets.h"
-#include "converter/filepathoperations.h"
 #include "conversionparameterdialog.h"
 #include "extensions.h"
 #include "paths.h"
@@ -276,8 +275,7 @@ void AddTaskWizard::slotFinished()
         param.source = input_filename;
 
         // Generate output filename.
-        param.destination = FilePathOperations::GenerateUniqueFileName
-                (output_dir, input_file_basename, ext);
+        param.destination = output_dir.absoluteFilePath(input_file_basename + "." + ext);
 
         // Save the configuration for the file.
         m_params.append(param);

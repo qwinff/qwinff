@@ -175,11 +175,14 @@ Presets::~Presets()
 
 bool Presets::readFromFile(const QString &filename)
 {
+    qDebug() << "Reading preset file: " << filename;
     QFile xmlfile(filename);
-    if (!xmlfile.open(QIODevice::ReadOnly | QIODevice::Text))
+    if (!xmlfile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        qDebug() << "Failed to read preset file: " << filename;
         return false;
+    }
 
-    qDebug() << "Read XML preset file " + filename;
+    qDebug() << "Finished reading preset file.";
 
     bool ret = p->parseXmlFile(xmlfile);
 
