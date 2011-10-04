@@ -189,6 +189,8 @@ void MainWindow::closeEvent(QCloseEvent *event)
    (1) Check ffmpeg
    (2) Check ffprobe
    (3) Load presets
+   This function should return true if all the conditions are met
+   and return false if any of the conditions fails.
 */
 bool MainWindow::check_execute_conditions()
 {
