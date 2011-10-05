@@ -191,6 +191,12 @@ bool ConvertList::addTask(ConversionParameters param)
     item->setToolTip(COL_SOURCE, param.source);
     item->setToolTip(COL_DESTINATION, param.destination);
 
+    for (int i=0; i<COL_COUNT; i++) {
+        if (i!=COL_SOURCE && i!=COL_DESTINATION && i!=COL_PROGRESS) {
+            item->setToolTip(i, columns[i]);
+        }
+    }
+
     qDebug() << QString("Added: \"%1\" -> \"%2\"").arg(param.source).arg(param.destination);
 
     return true;
