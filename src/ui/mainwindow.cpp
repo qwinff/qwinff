@@ -336,6 +336,8 @@ void MainWindow::setup_toolbar()
     toolbar->addSeparator();
     toolbar->addAction(ui->actionRetry);
     toolbar->addAction(ui->actionRetryAll);
+    toolbar->addSeparator();
+    toolbar->addAction(ui->actionOpenOutputFolder);
 }
 
 void MainWindow::setup_statusbar()
