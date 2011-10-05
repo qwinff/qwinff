@@ -660,10 +660,12 @@ void ConvertList::fill_list_fields(ConversionParameters &param, MediaProbe &prob
                   , probe.seconds());          //    seconds
 
     // Audio Information
-    columns[COL_AUDIO_SAMPLE_RATE] = QString::number(probe.audioSampleRate());
-    columns[COL_AUDIO_BITRATE] = QString::number(probe.audioBitRate());
-    columns[COL_AUDIO_CHANNELS] = QString::number(probe.audioChannels());
-    columns[COL_AUDIO_CODEC] = probe.audioCodec();
+    if (probe.hasAudio()) {
+        columns[COL_AUDIO_SAMPLE_RATE] = QString::number(probe.audioSampleRate());
+        columns[COL_AUDIO_BITRATE] = QString::number(probe.audioBitRate());
+        columns[COL_AUDIO_CHANNELS] = QString::number(probe.audioChannels());
+        columns[COL_AUDIO_CODEC] = probe.audioCodec();
+    }
 }
 
 // Reset the item to the queued state.
