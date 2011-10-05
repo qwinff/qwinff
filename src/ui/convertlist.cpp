@@ -21,11 +21,35 @@
 #define TIMEOUT 3000
 #define MIN_DURATION 100 // Minimum duration(milliseconds) to show progress dialog.
 
+/* This enum defines the columns of the list.
+   The last item is always COL_COUNT, which is used to identify
+   how many columns there are. To add a new item, just follow the
+   following steps:
+
+     (1) Add a new enumeration constant to ConvertListColumns before
+         COL_COUNT.
+
+     (2) Search for the function "init_treewidget_fill_column_titles"
+         and fill in the title of the new field there. Read the
+         instruction before the function body for details.
+
+     (3) Search for the function "init_treewidget_columns_visibility"
+         and set the default visibility of the field.
+
+     (4) Search for the function "fill_list_fields". This function is
+         called when a new task is being added to the list. Fill in
+         the field according to the parameter and the probing result.
+
+ */
 enum ConvertListColumns
 {
     COL_SOURCE,
     COL_DESTINATION,
     COL_DURATION,
+    COL_AUDIO_SAMPLE_RATE,
+    COL_AUDIO_BITRATE,
+    COL_AUDIO_CHANNELS,
+    COL_AUDIO_CODEC,
     COL_PROGRESS,
     COL_COUNT
 };
@@ -593,17 +617,28 @@ void ConvertList::init_treewidget_fill_column_titles(QStringList &columnTitle)
     columnTitle[COL_SOURCE] = tr("Source");
     columnTitle[COL_DESTINATION] = tr("Destination");
     columnTitle[COL_DURATION] = tr("Duration");
+
+    // Audio Information
+    columnTitle[COL_AUDIO_SAMPLE_RATE] = /*: Audio */ tr("Sample Rate");
+    columnTitle[COL_AUDIO_BITRATE] = tr("Audio Bitrate");
+    columnTitle[COL_AUDIO_CHANNELS] = /*: Audio */ tr("Channels");
+    columnTitle[COL_AUDIO_CODEC] = tr("Audio Codec");
+
     columnTitle[COL_PROGRESS] = tr("Progress");
 }
 
 /* Set the default visibility of each field.
    This configuration will be overriden by user settings.
    For example, to make the duration field invisible by default, write
-   w->setColumnHidden(COL_DURATION, true);
+   w->hideColumn(COL_DURATION, true);
 */
 void ConvertList::init_treewidget_columns_visibility(QTreeWidget *w)
 {
-
+    // Audio Information
+    w->hideColumn(COL_AUDIO_SAMPLE_RATE);
+    w->hideColumn(COL_AUDIO_BITRATE);
+    w->hideColumn(COL_AUDIO_CHANNELS);
+    w->hideColumn(COL_AUDIO_CODEC);
 }
 
 /* Fill in the columns of the list according to the conversion parameter
@@ -623,6 +658,12 @@ void ConvertList::fill_list_fields(ConversionParameters &param, MediaProbe &prob
                   , probe.hours()              //    hours
                   , probe.minutes()            //    minutes
                   , probe.seconds());          //    seconds
+
+    // Audio Information
+    columns[COL_AUDIO_SAMPLE_RATE] = QString::number(probe.audioSampleRate());
+    columns[COL_AUDIO_BITRATE] = QString::number(probe.audioBitRate());
+    columns[COL_AUDIO_CHANNELS] = QString::number(probe.audioChannels());
+    columns[COL_AUDIO_CODEC] = probe.audioCodec();
 }
 
 // Reset the item to the queued state.
