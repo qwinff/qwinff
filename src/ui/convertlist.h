@@ -140,11 +140,11 @@ private:
     QSet<QString> m_outputFileNames;
     QTime m_startTime;
     void init_treewidget(QTreeWidget*);
-    void init_treewidget_fill_column_titles(QStringList &columnTitle);
-    void fill_list_fields(ConversionParameters &param, MediaProbe &probe,
-                           QStringList &columns);
+    void init_treewidget_fill_column_titles(QStringList&);
+    void init_treewidget_columns_visibility(QTreeWidget*);
+    void fill_list_fields(ConversionParameters&, MediaProbe&, QStringList&);
     void reset_item(int index);
-    void remove_items(const QList<QTreeWidgetItem*>& itemList);
+    void remove_items(const QList<QTreeWidgetItem*>&);
     ProgressBar* progressBar(Task*);
     ProgressBar* progressBar(const Task&);
 };

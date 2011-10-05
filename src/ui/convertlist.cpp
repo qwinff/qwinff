@@ -581,14 +581,29 @@ void ConvertList::init_treewidget(QTreeWidget *w)
     w->setRootIsDecorated(false);
     w->setUniformRowHeights(true);
 
+    init_treewidget_columns_visibility(w);
 }
 
+/* Fill in the column titles of each field.
+   Use the COL_* macros as the index.
+   Example: columnTitle[COL_SOURCE] = tr("Source");
+*/
 void ConvertList::init_treewidget_fill_column_titles(QStringList &columnTitle)
 {
-    columnTitle[COL_SOURCE] = tr("Input");
-    columnTitle[COL_DESTINATION] = tr("Output");
+    columnTitle[COL_SOURCE] = tr("Source");
+    columnTitle[COL_DESTINATION] = tr("Destination");
     columnTitle[COL_DURATION] = tr("Duration");
     columnTitle[COL_PROGRESS] = tr("Progress");
+}
+
+/* Set the default visibility of each field.
+   This configuration will be overriden by user settings.
+   For example, to make the duration field invisible by default, write
+   w->setColumnHidden(COL_DURATION, true);
+*/
+void ConvertList::init_treewidget_columns_visibility(QTreeWidget *w)
+{
+
 }
 
 /* Fill in the columns of the list according to the conversion parameter
