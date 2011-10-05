@@ -50,6 +50,10 @@ enum ConvertListColumns
     COL_AUDIO_BITRATE,
     COL_AUDIO_CHANNELS,
     COL_AUDIO_CODEC,
+    COL_VIDEO_SIZE,
+    COL_VIDEO_BITRATE,
+    COL_VIDEO_FRAMERATE,
+    COL_VIDEO_CODEC,
     COL_PROGRESS,
     COL_COUNT
 };
@@ -624,6 +628,12 @@ void ConvertList::init_treewidget_fill_column_titles(QStringList &columnTitle)
     columnTitle[COL_AUDIO_CHANNELS] = /*: Audio */ tr("Channels");
     columnTitle[COL_AUDIO_CODEC] = tr("Audio Codec");
 
+    // Video Information
+    columnTitle[COL_VIDEO_SIZE] = /*: Dimensions */ tr("Size");
+    columnTitle[COL_VIDEO_BITRATE] = tr("Video Bitrate");
+    columnTitle[COL_VIDEO_FRAMERATE] = /*: Video */ tr("Framerate");
+    columnTitle[COL_VIDEO_CODEC] = tr("Video Codec");
+
     columnTitle[COL_PROGRESS] = tr("Progress");
 }
 
@@ -639,6 +649,11 @@ void ConvertList::init_treewidget_columns_visibility(QTreeWidget *w)
     w->hideColumn(COL_AUDIO_BITRATE);
     w->hideColumn(COL_AUDIO_CHANNELS);
     w->hideColumn(COL_AUDIO_CODEC);
+    // Video Information
+    w->hideColumn(COL_VIDEO_SIZE);
+    w->hideColumn(COL_VIDEO_BITRATE);
+    w->hideColumn(COL_VIDEO_FRAMERATE);
+    w->hideColumn(COL_VIDEO_CODEC);
 }
 
 /* Fill in the columns of the list according to the conversion parameter
@@ -661,10 +676,19 @@ void ConvertList::fill_list_fields(ConversionParameters &param, MediaProbe &prob
 
     // Audio Information
     if (probe.hasAudio()) {
-        columns[COL_AUDIO_SAMPLE_RATE] = QString::number(probe.audioSampleRate());
-        columns[COL_AUDIO_BITRATE] = QString::number(probe.audioBitRate());
+        columns[COL_AUDIO_SAMPLE_RATE] = tr("%1 Hz").arg(probe.audioSampleRate());
+        columns[COL_AUDIO_BITRATE] = tr("%1 kb/s").arg(probe.audioBitRate());
         columns[COL_AUDIO_CHANNELS] = QString::number(probe.audioChannels());
         columns[COL_AUDIO_CODEC] = probe.audioCodec();
+    }
+
+    // Video Information
+    if (probe.hasVideo()) {
+        columns[COL_VIDEO_SIZE] = QString("%1x%2")
+                .arg(probe.videoWidth()).arg(probe.videoHeight());
+        columns[COL_VIDEO_BITRATE] = tr("%1 kb/s").arg(probe.videoBitRate());
+        columns[COL_VIDEO_FRAMERATE] = tr("%1 fps").arg(probe.videoBitRate());
+        columns[COL_VIDEO_CODEC] = probe.videoCodec();
     }
 }
 
