@@ -330,6 +330,9 @@ void MainWindow::setup_toolbar()
     toolbar->addAction(ui->actionAddFiles);
     toolbar->addAction(ui->actionStartConversion);
     toolbar->addAction(ui->actionStopConversion);
+    toolbar->addSeparator();
+    toolbar->addAction(ui->actionRetry);
+    toolbar->addAction(ui->actionRetryAll);
 }
 
 void MainWindow::setup_statusbar()
