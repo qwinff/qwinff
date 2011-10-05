@@ -131,7 +131,6 @@ private:
     ListEventFilter *m_listEventFilter;
     QVector<TaskPtr> m_tasks;
     int prev_index;
-    void init_treewidget(QTreeWidget*);
     MediaConverter *m_converter;
     MediaProbe *m_probe;
     Task *m_current_task;
@@ -140,6 +139,10 @@ private:
     Presets *m_presets;
     QSet<QString> m_outputFileNames;
     QTime m_startTime;
+    void init_treewidget(QTreeWidget*);
+    void init_treewidget_fill_column_titles(QStringList &columnTitle);
+    void fill_list_fields(ConversionParameters &param, MediaProbe &probe,
+                           QStringList &columns);
     void reset_item(int index);
     void remove_items(const QList<QTreeWidgetItem*>& itemList);
     ProgressBar* progressBar(Task*);

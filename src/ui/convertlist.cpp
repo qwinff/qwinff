@@ -149,13 +149,7 @@ bool ConvertList::addTask(ConversionParameters param)
     for (int i=0; i<COL_COUNT; i++)
         columns.append(QString());
 
-    columns[COL_SOURCE] = QFileInfo(param.source).fileName(); // source file
-    columns[COL_DESTINATION] = QFileInfo(param.destination).fileName(); // destination file
-    columns[COL_DURATION] = QString().sprintf("%02d:%02d:%02.0f"   // duration
-                  , m_probe->hours()              //    hours
-                  , m_probe->minutes()            //    minutes
-                  , m_probe->seconds());          //    seconds
-
+    fill_list_fields(param, *m_probe, columns);
 
     QTreeWidgetItem *item = new QTreeWidgetItem(m_list, columns);
     task->listitem = item;
@@ -578,10 +572,8 @@ void ConvertList::init_treewidget(QTreeWidget *w)
         columnTitle.append(QString());
     }
 
-    columnTitle[COL_SOURCE] = tr("Input");
-    columnTitle[COL_DESTINATION] = tr("Output");
-    columnTitle[COL_DURATION] = tr("Duration");
-    columnTitle[COL_PROGRESS] = tr("Progress");
+    // Set column titles.
+    init_treewidget_fill_column_titles(columnTitle);
 
     w->setHeaderLabels(columnTitle);
     //w->header()->setMovable(false); // disable title drag-drop reordering
@@ -589,6 +581,33 @@ void ConvertList::init_treewidget(QTreeWidget *w)
     w->setRootIsDecorated(false);
     w->setUniformRowHeights(true);
 
+}
+
+void ConvertList::init_treewidget_fill_column_titles(QStringList &columnTitle)
+{
+    columnTitle[COL_SOURCE] = tr("Input");
+    columnTitle[COL_DESTINATION] = tr("Output");
+    columnTitle[COL_DURATION] = tr("Duration");
+    columnTitle[COL_PROGRESS] = tr("Progress");
+}
+
+/* Fill in the columns of the list according to the conversion parameter
+   and the probing results. QStringList columns will be filled with empty
+   items in advanced and the MediaProbe probe will be ready for reading.
+   Just write available information to the corresponding fields.
+   Use the COL_* macros as the array index.
+   Example: columns[COL_SOURCE] = param.source;
+*/
+void ConvertList::fill_list_fields(ConversionParameters &param, MediaProbe &probe,
+                                    QStringList &columns)
+
+{
+    columns[COL_SOURCE] = QFileInfo(param.source).fileName(); // source file
+    columns[COL_DESTINATION] = QFileInfo(param.destination).fileName(); // destination file
+    columns[COL_DURATION] = QString().sprintf("%02d:%02d:%02.0f"   // duration
+                  , probe.hours()              //    hours
+                  , probe.minutes()            //    minutes
+                  , probe.seconds());          //    seconds
 }
 
 // Reset the item to the queued state.
