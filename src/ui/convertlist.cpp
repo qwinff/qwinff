@@ -192,8 +192,11 @@ bool ConvertList::addTask(ConversionParameters param)
     item->setToolTip(COL_DESTINATION, param.destination);
 
     for (int i=0; i<COL_COUNT; i++) {
-        if (i!=COL_SOURCE && i!=COL_DESTINATION && i!=COL_PROGRESS) {
-            item->setToolTip(i, columns[i]);
+        if (i!=COL_SOURCE && i!=COL_DESTINATION && i!=COL_PROGRESS
+                && !columns[i].isEmpty()) {
+            item->setToolTip(i, tr("%1: %2")
+                             .arg(m_list->headerItem()->text(i))
+                             .arg(columns[i]));
         }
     }
 
