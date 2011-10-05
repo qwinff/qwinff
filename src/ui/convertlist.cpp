@@ -46,11 +46,12 @@ enum ConvertListColumns
     COL_SOURCE,
     COL_DESTINATION,
     COL_DURATION,
+    COL_FILE_SIZE,
     COL_AUDIO_SAMPLE_RATE,
     COL_AUDIO_BITRATE,
     COL_AUDIO_CHANNELS,
     COL_AUDIO_CODEC,
-    COL_VIDEO_SIZE,
+    COL_VIDEO_DIMENSIONS,
     COL_VIDEO_BITRATE,
     COL_VIDEO_FRAMERATE,
     COL_VIDEO_CODEC,
@@ -621,6 +622,7 @@ void ConvertList::init_treewidget_fill_column_titles(QStringList &columnTitle)
     columnTitle[COL_SOURCE] = tr("Source");
     columnTitle[COL_DESTINATION] = tr("Destination");
     columnTitle[COL_DURATION] = tr("Duration");
+    columnTitle[COL_FILE_SIZE] = tr("File Size");
 
     // Audio Information
     columnTitle[COL_AUDIO_SAMPLE_RATE] = /*: Audio */ tr("Sample Rate");
@@ -629,7 +631,7 @@ void ConvertList::init_treewidget_fill_column_titles(QStringList &columnTitle)
     columnTitle[COL_AUDIO_CODEC] = tr("Audio Codec");
 
     // Video Information
-    columnTitle[COL_VIDEO_SIZE] = /*: Dimensions */ tr("Size");
+    columnTitle[COL_VIDEO_DIMENSIONS] = tr("Dimensions");
     columnTitle[COL_VIDEO_BITRATE] = tr("Video Bitrate");
     columnTitle[COL_VIDEO_FRAMERATE] = /*: Video */ tr("Framerate");
     columnTitle[COL_VIDEO_CODEC] = tr("Video Codec");
@@ -644,13 +646,14 @@ void ConvertList::init_treewidget_fill_column_titles(QStringList &columnTitle)
 */
 void ConvertList::init_treewidget_columns_visibility(QTreeWidget *w)
 {
+    w->hideColumn(COL_FILE_SIZE);
     // Audio Information
     w->hideColumn(COL_AUDIO_SAMPLE_RATE);
     w->hideColumn(COL_AUDIO_BITRATE);
     w->hideColumn(COL_AUDIO_CHANNELS);
     w->hideColumn(COL_AUDIO_CODEC);
     // Video Information
-    w->hideColumn(COL_VIDEO_SIZE);
+    w->hideColumn(COL_VIDEO_DIMENSIONS);
     w->hideColumn(COL_VIDEO_BITRATE);
     w->hideColumn(COL_VIDEO_FRAMERATE);
     w->hideColumn(COL_VIDEO_CODEC);
@@ -673,6 +676,8 @@ void ConvertList::fill_list_fields(ConversionParameters &param, MediaProbe &prob
                   , probe.hours()              //    hours
                   , probe.minutes()            //    minutes
                   , probe.seconds());          //    seconds
+    // File Size
+    columns[COL_FILE_SIZE] = to_human_readable_size_1024(QFileInfo(param.source).size());
 
     // Audio Information
     if (probe.hasAudio()) {
@@ -684,7 +689,7 @@ void ConvertList::fill_list_fields(ConversionParameters &param, MediaProbe &prob
 
     // Video Information
     if (probe.hasVideo()) {
-        columns[COL_VIDEO_SIZE] = QString("%1x%2")
+        columns[COL_VIDEO_DIMENSIONS] = QString("%1x%2")
                 .arg(probe.videoWidth()).arg(probe.videoHeight());
         columns[COL_VIDEO_BITRATE] = tr("%1 kb/s").arg(probe.videoBitRate());
         columns[COL_VIDEO_FRAMERATE] = tr("%1 fps").arg(probe.videoBitRate());
@@ -742,4 +747,23 @@ ProgressBar* ConvertList::progressBar(Task *task)
 ProgressBar* ConvertList::progressBar(const Task &task)
 {
     return (ProgressBar*)m_list->itemWidget(task.listitem, COL_PROGRESS);
+}
+
+// Convert bytes to human readable form such as
+// "10 KiB" instead of "102400 Bytes".
+QString ConvertList::to_human_readable_size_1024(qint64 nBytes)
+{
+    float num = nBytes;
+    QStringList list;
+    list << tr("KiB") << tr("MiB") << tr("GiB") << tr("TiB");
+
+    QStringListIterator i(list);
+    QString /*: Bytes */ unit(tr("B"));
+
+    while(num >= 1024.0 && i.hasNext()) {
+        unit = i.next();
+        num /= 1024.0;
+    }
+
+    return QString().setNum(num,'f',2)+" "+unit;
 }

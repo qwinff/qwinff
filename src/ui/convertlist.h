@@ -147,6 +147,7 @@ private:
     void remove_items(const QList<QTreeWidgetItem*>&);
     ProgressBar* progressBar(Task*);
     ProgressBar* progressBar(const Task&);
+    QString to_human_readable_size_1024(qint64 nBytes);
 };
 
 #endif // CONVERTLIST_H
