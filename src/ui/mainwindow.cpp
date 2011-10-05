@@ -38,6 +38,9 @@ MainWindow::MainWindow(QWidget *parent, const QStringList& fileList) :
             this, SLOT(all_tasks_finished()));
     connect(m_list, SIGNAL(customContextMenuRequested(QPoint)),
             this, SLOT(slotListContextMenu(QPoint)));
+    connect(m_list, SIGNAL(itemSelectionChanged()),
+            this, SLOT(refresh_action_states()));
+
     m_list->setContextMenuPolicy(Qt::CustomContextMenu);
 
     setup_menus();

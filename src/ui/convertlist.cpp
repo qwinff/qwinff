@@ -113,6 +113,8 @@ ConvertList::ConvertList(Presets *presets, QWidget *parent) :
             , this, SLOT(task_finished_slot(int)));
     connect(m_converter, SIGNAL(progressRefreshed(int)),
             this, SLOT(progress_refreshed(int)));
+    connect(m_list, SIGNAL(itemSelectionChanged()),
+            this, SIGNAL(itemSelectionChanged()));
 
     // Propagate context menu event.
     m_list->setContextMenuPolicy(Qt::CustomContextMenu);
