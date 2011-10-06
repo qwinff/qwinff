@@ -1,6 +1,10 @@
 #include "conversionparameters.h"
+#include "mediaprobe.h"
 #include <QStringList>
+#include <QDebug>
 #include <cassert>
+
+#define TIMEOUT 3000
 
 namespace {
 int fillArgument(QStringList& args, int index, ConversionParameters& result) {
@@ -128,6 +132,14 @@ ConversionParameters::fromFFmpegParameters(const char *params_str)
 // convert
 QStringList ConversionParameters::toFFmpegOptionList() const
 {
+    MediaProbe probe;
+
+    if (audio_keep_bitrate || audio_keep_sample_rate) {
+        // Probe the bitrate of the input file and apply the value to output.
+        probe.start(source);
+        probe.wait(TIMEOUT);
+    }
+
     QStringList list;
 
     // overwrite if file exists
@@ -154,13 +166,27 @@ QStringList ConversionParameters::toFFmpegOptionList() const
         // audio bitrate in kb/s
         if (audio_bitrate > 0) {
             list.append("-ab");
-            list.append(QString("%1k").arg(audio_bitrate));
+
+            int bitrate = audio_bitrate;
+            if (audio_keep_bitrate && !probe.error() && probe.audioBitRate() != 0) {
+                bitrate = probe.audioBitRate(); // apply probed bitrate
+                qDebug() << "Apply probed bitrate: " + QString::number(bitrate);
+            }
+
+            list.append(QString("%1k").arg(bitrate));
         }
 
         // audio sample rate in hz
         if (audio_sample_rate > 0) {
             list.append("-ar");
-            list.append(QString("%1").arg(audio_sample_rate));
+
+            int sample_rate = audio_sample_rate;
+            if (audio_keep_sample_rate && !probe.error() && probe.audioSampleRate() != 0) {
+                sample_rate = probe.audioSampleRate();
+                qDebug() << "Apply probed sample rate: " + QString::number(sample_rate);
+            }
+
+            list.append(QString("%1").arg(sample_rate));
         }
 
         // audio channels
