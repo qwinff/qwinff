@@ -48,6 +48,7 @@ private slots:
     void slotExtensionSelected(int);
     void slotPresetSelected(int);
     void slotFinished();
+    void slotAutoAdjustAudioBitrate(bool);
 
 private:
     Ui::AddTaskWizard *ui;

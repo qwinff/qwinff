@@ -38,6 +38,8 @@ AddTaskWizard::AddTaskWizard(Presets *presets, QWidget *parent) :
             , this, SLOT(slotEditPresetButton()));
     connect(ui->btnBrowseOutputPath, SIGNAL(clicked())
             , this, SLOT(slotBrowseOutputPathButton()));
+    connect(ui->chkAutoAdjustBitrate, SIGNAL(toggled(bool))
+            , this, SLOT(slotAutoAdjustAudioBitrate(bool)));
     connect(this, SIGNAL(accepted())
             , this, SLOT(slotFinished()));
 
@@ -219,6 +221,10 @@ void AddTaskWizard::slotBrowseOutputPathButton()
                 );
 }
 
+void AddTaskWizard::slotAutoAdjustAudioBitrate(bool checked){
+    m_current_param->audio_auto_bitrate = checked;
+}
+
 // When the user selects an extension, insert all possible presets
 // into the preset combobox.
 void AddTaskWizard::slotExtensionSelected(int ext_index)
@@ -310,6 +316,8 @@ void AddTaskWizard::load_settings()
     m_ext_preset = settings.value("addtaskwizard/selected_presets").toList().toVector();
     m_ext_preset.resize(ui->cbExtension->count());
 
+    ui->chkAutoAdjustBitrate->setChecked(settings.value("addtaskwizard/auto_audio_bitrate").toBool());
+
     if (ext_index >= 0 && ext_index < m_ext_preset.size()) {
         // preset combobox
         QApplication::processEvents();
@@ -350,6 +358,8 @@ void AddTaskWizard::save_settings()
 
     if (ext_index >= 0 && ext_index < m_ext_preset.size())
         m_ext_preset[ext_index] = preset_index;
+
+    settings.setValue("addtaskwizard/auto_audio_bitrate", ui->chkAutoAdjustBitrate->isChecked());
 
     // the last used preset of each extension
     settings.setValue("addtaskwizard/selected_presets", m_ext_preset.toList());
