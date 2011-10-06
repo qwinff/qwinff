@@ -46,6 +46,8 @@ void ConversionParameterDialog::read_fields(const ConversionParameters& param)
     // Audio Options
     ui->chkDisableAudio->setChecked(param.disable_audio);
 
+    ui->chkAutoAdjustBitrate->setChecked(param.audio_auto_bitrate);
+
     if (param.audio_bitrate)
         ui->spinAudioBitrate->setValue(param.audio_bitrate);
     else
@@ -97,6 +99,7 @@ void ConversionParameterDialog::write_fields(ConversionParameters& param)
 
     // Audio Options
     param.disable_audio = ui->chkDisableAudio->isChecked();
+    param.audio_auto_bitrate = ui->chkAutoAdjustBitrate->isChecked();
     param.audio_sample_rate = ui->cbAudioSampleRate->currentText().toInt();
     param.audio_bitrate = ui->spinAudioBitrate->value();
     param.audio_channels = ui->spinChannels->value();
