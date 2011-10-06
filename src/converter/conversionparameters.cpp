@@ -134,7 +134,7 @@ QStringList ConversionParameters::toFFmpegOptionList() const
 {
     MediaProbe probe;
 
-    if (audio_keep_bitrate || audio_keep_sample_rate) {
+    if (audio_auto_bitrate || audio_keep_sample_rate) {
         // Probe the bitrate of the input file and apply the value to output.
         probe.start(source);
         probe.wait(TIMEOUT);
@@ -168,8 +168,13 @@ QStringList ConversionParameters::toFFmpegOptionList() const
             list.append("-ab");
 
             int bitrate = audio_bitrate;
-            if (audio_keep_bitrate && !probe.error() && probe.audioBitRate() != 0) {
-                bitrate = probe.audioBitRate(); // apply probed bitrate
+            if (audio_auto_bitrate && !probe.error()) {
+                const int probed_bitrate = probe.audioBitRate();
+
+                // Apply probed bitrate if the target bitrate is bigger.
+                if (probed_bitrate > 0 && probed_bitrate < bitrate)
+                    bitrate = probe.audioBitRate();
+
                 qDebug() << "Apply probed bitrate: " + QString::number(bitrate);
             }
 
