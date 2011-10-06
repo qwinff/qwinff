@@ -407,9 +407,9 @@
   <tabstop>chkDisableAudio</tabstop>
   <tabstop>cbAudioSampleRate</tabstop>
   <tabstop>spinAudioBitrate</tabstop>
+  <tabstop>chkAutoAdjustBitrate</tabstop>
   <tabstop>spinChannels</tabstop>
   <tabstop>spinVolume</tabstop>
-  <tabstop>chkDisableVideo</tabstop>
   <tabstop>spinWidth</tabstop>
   <tabstop>spinHeight</tabstop>
   <tabstop>spinVideoBitrate</tabstop>
@@ -422,6 +422,7 @@
   <tabstop>txtFFmpegOptions</tabstop>
   <tabstop>tabWidget</tabstop>
   <tabstop>buttonBox</tabstop>
+  <tabstop>chkDisableVideo</tabstop>
  </tabstops>
  <resources/>
  <connections>

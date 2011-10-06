@@ -197,14 +197,15 @@
   </widget>
  </widget>
  <tabstops>
-  <tabstop>lstFiles</tabstop>
-  <tabstop>btnAdd</tabstop>
-  <tabstop>btnRemove</tabstop>
   <tabstop>cbExtension</tabstop>
   <tabstop>cbPreset</tabstop>
   <tabstop>btnEditPreset</tabstop>
+  <tabstop>chkAutoAdjustBitrate</tabstop>
   <tabstop>cbOutputPath</tabstop>
   <tabstop>btnBrowseOutputPath</tabstop>
+  <tabstop>btnAdd</tabstop>
+  <tabstop>btnRemove</tabstop>
+  <tabstop>lstFiles</tabstop>
  </tabstops>
  <resources>
   <include location="../images.qrc"/>
