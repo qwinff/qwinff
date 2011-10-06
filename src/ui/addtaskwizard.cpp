@@ -215,10 +215,10 @@ void AddTaskWizard::slotEditPresetButton()
 void AddTaskWizard::slotBrowseOutputPathButton()
 {
     /*: This text is the title of an open directory dialog. */
-    ui->cbOutputPath->setEditText(
-                QFileDialog::getExistingDirectory(this, tr("Select Directory")
-                        , ui->cbOutputPath->currentText())
-                );
+    QString selected_path = QFileDialog::getExistingDirectory(this, tr("Select Directory")
+                                        , ui->cbOutputPath->currentText());
+    if (!selected_path.isEmpty())
+        ui->cbOutputPath->setEditText(selected_path);
 }
 
 void AddTaskWizard::slotAutoAdjustAudioBitrate(bool checked){
