@@ -144,7 +144,7 @@
     <string extracomment="Edit output file parameters.">Set Parameters</string>
    </property>
    <property name="statusTip">
-    <string>Edit conversion parameters of selected files</string>
+    <string>Edit conversion parameters of selected files.</string>
    </property>
   </action>
   <action name="actionAboutQt">
@@ -166,6 +166,9 @@
    </property>
    <property name="text">
     <string>&amp;Open Output Folder</string>
+   </property>
+   <property name="statusTip">
+    <string>Open output folder of the first selected file.</string>
    </property>
   </action>
   <action name="actionAboutFFmpeg">
