@@ -376,7 +376,7 @@ void MainWindow::refresh_action_states()
     bool hide_StopConversion = !m_list->isBusy();
 
     // Show actionOpenOutputFolder only if 1 file is selected.
-    bool hide_OpenFolder = (selected_file_count != 1);
+    bool hide_OpenFolder = (selected_file_count <= 0);
 
     // Hide actionRemoveSelectedItems if no file is selected.
     bool hide_RemoveSelectedItems = (selected_file_count == 0);
