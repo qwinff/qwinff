@@ -43,7 +43,9 @@ private slots:
     void slotListContextMenu(QPoint);
 
     void refresh_action_states();
-    void timerEvent(QTimerEvent *); ///< 1-second timer event
+    void timerEvent(); ///< 1-second timer event
+    void conversion_started();
+    void conversion_stopped();
 
 protected:
     void closeEvent(QCloseEvent *);
@@ -54,6 +56,7 @@ private:
     ConvertList *m_list;
     const QStringList m_argv_input_files;
     QLabel *m_elapsedTimeLabel;
+    QTimer *m_timer;
     bool check_execute_conditions();
     void add_files();
     void add_files(const QStringList& files);

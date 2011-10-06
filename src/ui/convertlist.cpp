@@ -328,6 +328,7 @@ void ConvertList::start()
 
     if (!is_busy) { // new session: start timing
         m_startTime.restart();
+        emit started();
     }
 
     const int task_count = m_tasks.size();
@@ -358,6 +359,7 @@ void ConvertList::start()
     // no task is executed
     this->stop();
     emit all_tasks_finished();
+    emit stopped();
 }
 
 void ConvertList::stop()
@@ -367,6 +369,7 @@ void ConvertList::stop()
         m_current_task->status = Task::QUEUED;
         progressBar(m_current_task)->setActive(false);
         m_current_task = 0;
+        emit stopped();
     }
     is_busy = false;
     m_converter->stop();

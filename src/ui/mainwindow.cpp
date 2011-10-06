@@ -23,7 +23,8 @@ MainWindow::MainWindow(QWidget *parent, const QStringList& fileList) :
     m_presets(new Presets(this)),
     m_list(new ConvertList(m_presets, this)),
     m_argv_input_files(fileList),
-    m_elapsedTimeLabel(new QLabel(this))
+    m_elapsedTimeLabel(new QLabel(this)),
+    m_timer(new QTimer(this))
 {
     QSettings settings;
 
@@ -40,6 +41,12 @@ MainWindow::MainWindow(QWidget *parent, const QStringList& fileList) :
             this, SLOT(slotListContextMenu(QPoint)));
     connect(m_list, SIGNAL(itemSelectionChanged()),
             this, SLOT(refresh_action_states()));
+    connect(m_timer, SIGNAL(timeout()),
+            this, SLOT(timerEvent()));
+    connect(m_list, SIGNAL(started()),
+            this, SLOT(conversion_started()));
+    connect(m_list, SIGNAL(stopped()),
+            this, SLOT(conversion_stopped()));
 
     m_list->setContextMenuPolicy(Qt::CustomContextMenu);
 
@@ -51,8 +58,6 @@ MainWindow::MainWindow(QWidget *parent, const QStringList& fileList) :
     restoreState(settings.value("mainwindow/state").toByteArray());
 
     refresh_action_states();
-
-    startTimer(1000); // Call the timer event every second.
 
     if (!check_execute_conditions()) {
         // Close the window immediately after it has started.
@@ -192,7 +197,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
     settings.setValue("mainwindow/state", saveState());
 }
 
-void MainWindow::timerEvent(QTimerEvent *)
+void MainWindow::timerEvent()
 {
     if (m_list->isBusy()) { // update elapsed time
         int total_seconds = m_list->elapsedTime() / 1000;
@@ -205,6 +210,17 @@ void MainWindow::timerEvent(QTimerEvent *)
                     .arg(hours).arg(minutes).arg(seconds)
                     );
     }
+}
+
+void MainWindow::conversion_started()
+{
+    m_elapsedTimeLabel->clear();
+    m_timer->start(1000);
+}
+
+void MainWindow::conversion_stopped()
+{
+    m_timer->stop();
 }
 
 // Private Methods

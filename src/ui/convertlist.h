@@ -68,6 +68,8 @@ signals:
     void all_tasks_finished();
     void customContextMenuRequested(const QPoint &pos);
     void itemSelectionChanged();
+    void started();
+    void stopped();
 
 public slots:
 
