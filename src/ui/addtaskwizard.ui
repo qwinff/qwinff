@@ -171,6 +171,9 @@
         </item>
         <item row="2" column="1">
          <widget class="QCheckBox" name="chkAutoAdjustBitrate">
+          <property name="toolTip">
+           <string>Auto adjust output bitrate to reduce output file size.</string>
+          </property>
           <property name="text">
            <string>Auto Adjust Audio Bitrate</string>
           </property>
