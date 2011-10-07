@@ -15,9 +15,25 @@ public:
      * @param filename the name of the file to probe
      * @return If the process is started successfully, the function returns true.
      *  Otherwise, it returns false.
+     * @note This function does not block until the process has finished.
+     *       run() is the blocking alternative to this function.
+     * @see run()
      */
     bool start(const QString& filename);
     bool start(const char* filename);
+
+    /*! Start the probing process and block until the process has finished.
+     * @param filename the file to probe
+     * @param timeout timeout value in milliseconds
+     * @return If the probing is successful, the function returns true.
+     *  Otherwise, it returns false.
+     * @note This function returns false when either the probing process
+     *       cannot be started (usually because ffprobe not installed correctly)
+     *       or the probed file is not recognized by ffprobe; so one cannot
+     *       distinguish these two only by looking at the return value of this
+     *       function.
+     */
+    bool run(const QString& filename, int timeout = 3000);
 
     /*! Block until the process has finished or until msecs milliseconds has passed.
      * @param msecs timeout

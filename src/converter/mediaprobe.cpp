@@ -265,6 +265,11 @@ bool MediaProbe::start(const char *filename)
     return start(QString(filename));
 }
 
+bool MediaProbe::run(const QString &filename, int timeout)
+{
+    return start(filename) && wait(timeout) && !error();
+}
+
 // Wait for the process to finish.
 bool MediaProbe::wait(int msecs)
 {
