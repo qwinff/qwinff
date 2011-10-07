@@ -243,14 +243,12 @@ bool MainWindow::check_execute_conditions()
     }
 
     // check ffprobe
-    MediaProbe probe;
-    if (!probe.start("")) { // The probe failed to start.
+    if (!MediaProbe::available()) { // The probe failed to start.
         QMessageBox::critical(this, tr("FFprobe Error"),
                               tr("FFprobe not found. "
                                  "The application will quit now."));
         return false;
     }
-    probe.stop();
 
     // load presets
     // The presets are loaded once and shared between objects

@@ -11,6 +11,9 @@ public:
     explicit MediaProbe(QObject *parent = 0);
     virtual ~MediaProbe();
 
+    /*! Determine whether the probing program (ffprobe) is available. */
+    static bool available();
+
     /*! Start the probe on a file.
      * @param filename the name of the file to probe
      * @return If the process is started successfully, the function returns true.

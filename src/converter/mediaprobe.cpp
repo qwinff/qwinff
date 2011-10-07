@@ -240,7 +240,18 @@ MediaProbe::MediaProbe(QObject *parent) :
 
 MediaProbe::~MediaProbe()
 {
+    stop();
+}
 
+bool MediaProbe::available()
+{
+    MediaProbe probe;
+
+    // Try to start the probe to see if the probing program is available.
+    if (!probe.start(""))
+        return false;
+
+    return true;
 }
 
 // Start ffprobe process.
