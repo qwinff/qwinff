@@ -136,8 +136,7 @@ QStringList ConversionParameters::toFFmpegOptionList() const
 
     if (audio_auto_bitrate || audio_keep_sample_rate) {
         // Probe the bitrate of the input file and apply the value to output.
-        probe.start(source);
-        probe.wait(TIMEOUT);
+        probe.run(source, TIMEOUT);
     }
 
     QStringList list;

@@ -150,9 +150,8 @@ bool ConvertList::addTask(ConversionParameters param)
 {
     // get source file information
     qDebug() << "Probe media file: " << param.source;
-    m_probe->start(param.source);
 
-    if (!m_probe->wait(TIMEOUT) || m_probe->error()) {
+    if (!m_probe->run(param.source, TIMEOUT)) {
         if (m_probe->error())
             qDebug() << "Failed to get media information";
         else
