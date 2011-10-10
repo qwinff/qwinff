@@ -2,7 +2,7 @@
 #include "progressbar.h"
 #include "converter/mediaconverter.h"
 #include "converter/mediaprobe.h"
-#include "converter/filepathoperations.h"
+#include "services/filepathoperations.h"
 #include "ui/conversionparameterdialog.h"
 #include "addtaskwizard.h"
 #include <QTreeWidget>

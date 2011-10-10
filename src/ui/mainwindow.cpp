@@ -3,7 +3,7 @@
 #include "convertlist.h"
 #include "addtaskwizard.h"
 #include "aboutffmpegdialog.h"
-#include "paths.h"
+#include "services/paths.h"
 #include "converter/ffmpeginterface.h"
 #include "converter/mediaprobe.h"
 #include "converter/presets.h"

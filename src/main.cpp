@@ -4,7 +4,7 @@
 #include <QTranslator>
 #include <QDir>
 #include "ui/mainwindow.h"
-#include "ui/paths.h"
+#include "services/paths.h"
 #include "converter/ffmpeginterface.h"
 
 int main(int argc, char *argv[])

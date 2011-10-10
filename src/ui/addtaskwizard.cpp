@@ -3,8 +3,8 @@
 
 #include "converter/presets.h"
 #include "conversionparameterdialog.h"
-#include "extensions.h"
-#include "paths.h"
+#include "services/extensions.h"
+#include "services/paths.h"
 
 #include <QMessageBox>
 #include <QFileDialog>
