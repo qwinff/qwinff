@@ -38,8 +38,6 @@ AddTaskWizard::AddTaskWizard(Presets *presets, QWidget *parent) :
             , this, SLOT(slotEditPresetButton()));
     connect(ui->btnBrowseOutputPath, SIGNAL(clicked())
             , this, SLOT(slotBrowseOutputPathButton()));
-    connect(ui->chkAutoAdjustBitrate, SIGNAL(toggled(bool))
-            , this, SLOT(slotAutoAdjustAudioBitrate(bool)));
     connect(this, SIGNAL(accepted())
             , this, SLOT(slotFinished()));
 
@@ -206,6 +204,9 @@ void AddTaskWizard::slotEditPresetButton()
 {
     ConversionParameterDialog dialog(this->parentWidget());
     dialog.setGeometry(this->x(), this->y(), dialog.width(), dialog.height());
+
+    m_current_param->audio_auto_bitrate = ui->chkAutoAdjustBitrate->isChecked();
+
     if (dialog.exec(*m_current_param)) {
         m_cbpreset_index = ui->cbPreset->currentIndex();
         ui->cbPreset->setCurrentIndex(-1); // select no item
@@ -219,10 +220,6 @@ void AddTaskWizard::slotBrowseOutputPathButton()
                                         , ui->cbOutputPath->currentText());
     if (!selected_path.isEmpty())
         ui->cbOutputPath->setEditText(selected_path);
-}
-
-void AddTaskWizard::slotAutoAdjustAudioBitrate(bool checked){
-    m_current_param->audio_auto_bitrate = checked;
 }
 
 // When the user selects an extension, insert all possible presets
@@ -270,6 +267,8 @@ void AddTaskWizard::slotFinished()
     const QDir output_dir(ui->cbOutputPath->currentText());
     const int ext_index = ui->cbExtension->currentIndex();
     const QString ext = ui->cbExtension->itemData(ext_index).toString();
+
+    param.audio_auto_bitrate = ui->chkAutoAdjustBitrate->isChecked();
 
     // Write conversion parameters to m_params.
     for (int i=0; i<size; i++) {
