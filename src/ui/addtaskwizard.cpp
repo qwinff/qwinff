@@ -315,7 +315,8 @@ void AddTaskWizard::load_settings()
     m_ext_preset = settings.value("addtaskwizard/selected_presets").toList().toVector();
     m_ext_preset.resize(ui->cbExtension->count());
 
-    ui->chkAutoAdjustBitrate->setChecked(settings.value("addtaskwizard/auto_audio_bitrate").toBool());
+    ui->chkAutoAdjustBitrate->setChecked(
+          settings.value("addtaskwizard/auto_audio_bitrate", true).toBool());
 
     if (ext_index >= 0 && ext_index < m_ext_preset.size()) {
         // preset combobox
