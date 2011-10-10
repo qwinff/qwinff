@@ -152,6 +152,7 @@
     <extension>mp4</extension>
     <category>MPEG-4</category>
   </x264HQWS>
+  <!--
   <android1>
     <label>Google Android compatible video</label>
     <params>-s 480x320 -vcodec mpeg4 -acodec libfaac -ac 1 -ar 16000 -r 13 -ab 32000 -aspect 3:2</params>
@@ -176,6 +177,7 @@
     <extension>mp4</extension>
     <category>Google Android</category>
   </android4>
+  -->
   <walkmanXviDFS>
     <label>Xvid walkman (4:3)</label>
     <params>-r 29.97 -vcodec libxvid -s 320x240 -aspect 4:3 -maxrate 1500k -b 1250k -qmin 3 -qmax 5 -bufsize 4096 -mbd 2 -cmp 2 -subcmp 2 -g 300 -acodec libfaac -ar 48000 -ab 80k -ac 2</params>
