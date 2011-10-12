@@ -350,7 +350,8 @@ void ConvertList::start()
 
             progressBar(task)->setActive(true);
 
-            task.param.threads = settings.value("options/threads", 0).toInt();
+            task.param.threads = settings.value("options/threads", 1).toInt();
+            qDebug() << "Threads: " + QString::number(task.param.threads);
 
             m_converter->start(task.param);
             emit start_conversion(i, task.param);

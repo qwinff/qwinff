@@ -159,7 +159,8 @@ QStringList ConversionParameters::toFFmpegOptionList() const
     }
 
     if (threads >= 2) {
-        list.append(QString("-threads %1").arg(threads));
+        list.append("-threads");
+        list.append(QString::number(threads));
     }
 
     /* ==== Audio/Video Options ==== */

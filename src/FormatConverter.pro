@@ -26,7 +26,8 @@ SOURCES += main.cpp \
     ui/aboutffmpegdialog.cpp \
     services/paths.cpp \
     services/extensions.cpp \
-    services/filepathoperations.cpp
+    services/filepathoperations.cpp \
+    ui/optionsdialog.cpp
 
 HEADERS  += \
     ui/progressbar.h \
@@ -44,13 +45,15 @@ HEADERS  += \
     ui/aboutffmpegdialog.h \
     services/paths.h \
     services/extensions.h \
-    services/filepathoperations.h
+    services/filepathoperations.h \
+    ui/optionsdialog.h
 
 FORMS    += \
     ui/conversionparameterdialog.ui \
     ui/addtaskwizard.ui \
     ui/mainwindow.ui \
-    ui/aboutffmpegdialog.ui
+    ui/aboutffmpegdialog.ui \
+    ui/optionsdialog.ui
 
 RESOURCES += \
     images.qrc
@@ -65,3 +68,6 @@ unix {
 
 # External Short Blocking Operation Timeout
 DEFINES += OPERATION_TIMEOUT=30000
+
+OTHER_FILES += \
+    settings.txt

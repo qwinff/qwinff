@@ -30,6 +30,7 @@
      <string>&amp;File</string>
     </property>
     <addaction name="actionAddFiles"/>
+    <addaction name="actionOptions"/>
     <addaction name="separator"/>
     <addaction name="actionExit"/>
    </widget>
@@ -250,6 +251,11 @@
    </property>
    <property name="statusTip">
     <string>Retry all tasks.</string>
+   </property>
+  </action>
+  <action name="actionOptions">
+   <property name="text">
+    <string>Options</string>
    </property>
   </action>
  </widget>

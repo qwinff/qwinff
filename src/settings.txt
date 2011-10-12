@@ -1,0 +1,18 @@
+Following are QSettings values used in the project.
+
+[options]
+
+key: options/threads
+type: int
+default: 1
+description: how many threads to use in conversion
+files: convertlist.cpp optionsdialog.cpp
+
+
+[addtaskwizard]
+
+key: addtaskwizard/openfilepath
+type: string
+default: <home directory>
+description: the current directory of the open-file dialog.
+files: addtaskwizard.cpp

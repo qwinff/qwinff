@@ -3,6 +3,7 @@
 #include "convertlist.h"
 #include "addtaskwizard.h"
 #include "aboutffmpegdialog.h"
+#include "optionsdialog.h"
 #include "services/paths.h"
 #include "converter/ffmpeginterface.h"
 #include "converter/mediaprobe.h"
@@ -105,6 +106,12 @@ void MainWindow::all_tasks_finished()
 void MainWindow::slotAddFiles()
 {
     add_files();
+}
+
+void MainWindow::slotOptions()
+{
+    OptionsDialog dialog;
+    dialog.exec();
 }
 
 void MainWindow::slotExit()
@@ -300,6 +307,8 @@ void MainWindow::setup_menus()
     // File
     connect(ui->actionAddFiles, SIGNAL(triggered()),
             this, SLOT(slotAddFiles()));
+    connect(ui->actionOptions, SIGNAL(triggered()),
+            this, SLOT(slotOptions()));
     connect(ui->actionExit, SIGNAL(triggered()),
             this, SLOT(slotExit()));
 
