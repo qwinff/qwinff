@@ -28,7 +28,7 @@ bool OptionsDialog::exec()
 void OptionsDialog::read_fields()
 {
     QSettings settings;
-    ui->spinThreads->setValue(settings.value("options/threads", 1).toInt());
+    ui->spinThreads->setValue(settings.value("options/threads", DEFAULT_THREAD_COUNT).toInt());
 }
 
 void OptionsDialog::write_fields()

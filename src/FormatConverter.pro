@@ -68,6 +68,7 @@ unix {
 
 # External Short Blocking Operation Timeout
 DEFINES += OPERATION_TIMEOUT=30000
+DEFINES += DEFAULT_THREAD_COUNT=4
 
 OTHER_FILES += \
     settings.txt

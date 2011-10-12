@@ -4,7 +4,7 @@ Following are QSettings values used in the project.
 
 key: options/threads
 type: int
-default: 1
+default: 4 (define DEFAULT_THREAD_COUNT)
 description: how many threads to use in conversion
 files: convertlist.cpp optionsdialog.cpp
 
