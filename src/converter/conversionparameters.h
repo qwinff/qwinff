@@ -10,6 +10,7 @@ public:
     /* Generic Options */
     QString source;       ///< name of source file
     QString destination;  ///< name of destination file
+    int threads; ///< how many threads to use in conversion
 
     bool disable_audio;
     int audio_bitrate;
@@ -61,6 +62,8 @@ public:
     {
         source.clear();
         destination.clear();
+        threads = 0;
+
         disable_audio = false;
         audio_auto_bitrate = audio_keep_sample_rate = false;
         audio_bitrate = 0;

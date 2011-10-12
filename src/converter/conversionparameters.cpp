@@ -7,7 +7,7 @@
 #define TIMEOUT 3000
 
 namespace {
-int fillArgument(QStringList& args, int index, ConversionParameters& result) {
+int parseFFmpegArguments(QStringList& args, int index, ConversionParameters& result) {
     int used_arg_count = 0;
     try {
         QString& arg = args[index];
@@ -47,6 +47,9 @@ int fillArgument(QStringList& args, int index, ConversionParameters& result) {
         if (arg[0] == '-') {
 
             CHECK_OPTION_BEGIN;
+
+            // Threads
+            CHECK_OPTION_2_CONVERT("-threads", threads, toInt);
 
             // Audio Options
             CHECK_OPTION_1("-an", disable_audio, true);
@@ -108,7 +111,7 @@ ConversionParameters::fromFFmpegParameters(const QString &params_str)
     QStringList args = params_str.split(" ", QString::SkipEmptyParts);
 
     for (int i=0; i<args.size();) {
-        int used_arg_count = fillArgument(args, i, result);
+        int used_arg_count = parseFFmpegArguments(args, i, result);
 
         if (used_arg_count) {
             for (int k=0; k<used_arg_count; k++)
@@ -153,6 +156,10 @@ QStringList ConversionParameters::toFFmpegOptionList() const
         QList<QString> additional_options =
                 ffmpeg_options.split(" ", QString::SkipEmptyParts);
         list.append(additional_options);
+    }
+
+    if (threads >= 2) {
+        list.append(QString("-threads %1").arg(threads));
     }
 
     /* ==== Audio/Video Options ==== */
