@@ -341,12 +341,16 @@ void ConvertList::start()
         // execute the first queued task in the list and return
         Task& task = *m_tasks[i];
         if (task.status == Task::QUEUED) {
+            QSettings settings;
+
             // start the task
             is_busy = true;
             task.status = Task::RUNNING;
             m_current_task = &task;
 
             progressBar(task)->setActive(true);
+
+            task.param.threads = settings.value("options/threads", 0).toInt();
 
             m_converter->start(task.param);
             emit start_conversion(i, task.param);
