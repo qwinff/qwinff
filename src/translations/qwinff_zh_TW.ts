@@ -502,7 +502,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../ui/mainwindow.ui" line="91"/>
         <source>Add files for conversion.</source>
-        <translation>新增要轉換檔檔案</translation>
+        <translation>新增要轉換的檔案</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="94"/>
