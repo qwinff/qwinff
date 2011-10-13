@@ -2,7 +2,6 @@
 # Build Parameters
 # Edit these parameters to comply with your system policy.
 PREFIX=/usr/share
-DATA_PATH=$(PREFIX)/qwinff
 
 ###############################
 
@@ -11,6 +10,7 @@ PROJECT_ROOT=$(PWD)
 SRC_DIR=$(PROJECT_ROOT)/src
 BUILD_DIR=$(PROJECT_ROOT)/build
 BIN_DIR=$(PROJECT_ROOT)/bin
+DATA_PATH=$(PREFIX)/qwinff
 
 # Tools
 QMAKE=qmake
@@ -26,7 +26,7 @@ QMAKE_DEFS= DESTDIR=$(BIN_DIR) \
 DEFS= DATA_PATH=\\\"$(DATA_PATH)\\\"
 
 release:
-	cd $(SRC_DIR) && $(QMAKE) $(QMAKE_DEFS) *.pro && $(DEFS) make
+	cd $(SRC_DIR) && $(QMAKE) $(QMAKE_DEFS) qwinff.pro && $(DEFS) make
 
 clean:
 	rm -rf $(BIN_DIR)/*

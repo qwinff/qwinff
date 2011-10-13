@@ -6,7 +6,7 @@
 
 QT       += core gui
 
-TARGET = FormatConverter
+TARGET = qwinff
 TEMPLATE = app
 
 
@@ -15,6 +15,9 @@ SOURCES += main.cpp \
     ui/mainwindow.cpp \
     ui/convertlist.cpp \
     ui/conversionparameterdialog.cpp \
+    ui/addtaskwizard.cpp \
+    ui/aboutffmpegdialog.cpp \
+    ui/optionsdialog.cpp \
     converter/presets.cpp \
     converter/mencoderinterface.cpp \
     converter/mediaprobe.cpp \
@@ -22,18 +25,18 @@ SOURCES += main.cpp \
     converter/ffmpeginterface.cpp \
     converter/converterinterface.cpp \
     converter/conversionparameters.cpp \
-    ui/addtaskwizard.cpp \
-    ui/aboutffmpegdialog.cpp \
     services/paths.cpp \
     services/extensions.cpp \
-    services/filepathoperations.cpp \
-    ui/optionsdialog.cpp
+    services/filepathoperations.cpp
 
 HEADERS  += \
     ui/progressbar.h \
     ui/mainwindow.h \
     ui/convertlist.h \
     ui/conversionparameterdialog.h \
+    ui/addtaskwizard.h \
+    ui/aboutffmpegdialog.h \
+    ui/optionsdialog.h \
     converter/presets.h \
     converter/mencoderinterface.h \
     converter/mediaprobe.h \
@@ -41,12 +44,9 @@ HEADERS  += \
     converter/ffmpeginterface.h \
     converter/converterinterface.h \
     converter/conversionparameters.h \
-    ui/addtaskwizard.h \
-    ui/aboutffmpegdialog.h \
     services/paths.h \
     services/extensions.h \
-    services/filepathoperations.h \
-    ui/optionsdialog.h
+    services/filepathoperations.h
 
 FORMS    += \
     ui/conversionparameterdialog.ui \
