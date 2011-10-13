@@ -12,6 +12,7 @@
         <file>icons/remove_completed.png</file>
         <file>icons/retry.png</file>
         <file>icons/retry_all.png</file>
+        <file>icons/configure.png</file>
     </qresource>
     <qresource prefix="/app">
         <file>icons/qt.png</file>

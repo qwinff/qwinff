@@ -254,7 +254,14 @@
    </property>
   </action>
   <action name="actionOptions">
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/actions/icons/configure.png</normaloff>:/actions/icons/configure.png</iconset>
+   </property>
    <property name="text">
+    <string>&amp;Options</string>
+   </property>
+   <property name="statusTip">
     <string>Options</string>
    </property>
   </action>
