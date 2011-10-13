@@ -22,7 +22,7 @@ files: mainwindow.cpp
 
 key: options/threads
 type: integer
-default: 4 (define DEFAULT_THREAD_COUNT)
+default: 4 (defined by DEFAULT_THREAD_COUNT)
 description: how many threads to use in conversion
 files: convertlist.cpp optionsdialog.cpp
 
