@@ -195,6 +195,7 @@ bool ConvertList::addTask(ConversionParameters param)
     for (int i=0; i<COL_COUNT; i++) {
         if (i!=COL_SOURCE && i!=COL_DESTINATION && i!=COL_PROGRESS
                 && !columns[i].isEmpty()) {
+			   /*: FieldName: Value */
             item->setToolTip(i, tr("%1: %2")
                              .arg(m_list->headerItem()->text(i))
                              .arg(columns[i]));
