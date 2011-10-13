@@ -13,8 +13,8 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
 
     // Register QSettings information.
-    app.setOrganizationName("mediaformatconverter");
-    app.setApplicationName("mediaformatconverter");
+    app.setOrganizationName("qwinff");
+    app.setApplicationName("qwinff");
 
     FFmpegInterface::setFFmpegExecutable("ffmpeg");
     Paths::setAppPath(app.applicationDirPath());
