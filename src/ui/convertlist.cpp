@@ -736,7 +736,7 @@ void ConvertList::reset_item(int index)
 void ConvertList::remove_items(const QList<QTreeWidgetItem *>& itemList)
 {
     /*: Remove files from the tasklist */
-    QProgressDialog dlgProgress(tr("Removing files..."),
+    QProgressDialog dlgProgress(tr("Removing tasks..."),
                                 tr("Cancel"),
                                 0, itemList.count(),
                                 this);
