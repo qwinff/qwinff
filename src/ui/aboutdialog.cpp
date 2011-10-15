@@ -12,7 +12,10 @@ AboutDialog::AboutDialog(QWidget *parent) :
 
     info->setText(
          "<b>QWinFF</b> &copy; 2011 Timothy Lin &lt;lzh9102@gmail.com&gt;<br><br>"
+         + tr("An intuitive GUI frontend to FFmpeg.")
+         + "<br><br>"
          // TODO: add version info
+         /*: Qt version */
          + tr("Compiled with Qt %1").arg(QT_VERSION_STR)
 
          );
