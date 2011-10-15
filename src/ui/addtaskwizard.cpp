@@ -53,6 +53,9 @@ AddTaskWizard::AddTaskWizard(Presets *presets, QWidget *parent) :
     QSettings settings;
     // Load Geometry
     restoreGeometry(settings.value("addtaskwizard/geometry").toByteArray());
+
+    // Hide "auto adjust bitrate" checkbox.
+    ui->chkAutoAdjustBitrate->setVisible(false);
 }
 
 AddTaskWizard::~AddTaskWizard()
@@ -211,6 +214,8 @@ void AddTaskWizard::slotEditPresetButton()
         m_cbpreset_index = ui->cbPreset->currentIndex();
         ui->cbPreset->setCurrentIndex(-1); // select no item
     }
+
+    ui->chkAutoAdjustBitrate->setChecked(m_current_param->audio_auto_bitrate);
 }
 
 void AddTaskWizard::slotBrowseOutputPathButton()
