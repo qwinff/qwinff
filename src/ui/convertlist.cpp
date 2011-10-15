@@ -559,6 +559,9 @@ void ConvertList::slotRestoreListHeaders()
         m_list->showColumn(i);
         header->resizeSection(i, header->defaultSectionSize());
     }
+
+    // Restore default value.
+    init_treewidget_columns_visibility(m_list);
 }
 
 // Events
