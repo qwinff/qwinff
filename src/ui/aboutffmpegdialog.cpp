@@ -8,10 +8,40 @@ AboutFFmpegDialog::AboutFFmpegDialog(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->lblVersionInfo->setText(FFmpegInterface::getFFmpegVersionInfo());
+    QTextBrowser *info = ui->txtInfo;
+    QTextBrowser *codecinfo = ui->txtCodecInfo;
 
-    ui->txtCodecInfo->setText(FFmpegInterface::getFFmpegCodecInfo());
-    ui->txtCodecInfo->setReadOnly(true);
+    info->setText(
+         /*: ffmpeg description */
+         tr("FFmpeg is a complete, cross-platform solution to record, "
+            "convert and stream audio and video. It includes "
+            "libavcodec - the leading audio/video codec library.")
+         + "<br><br>"
+         + tr("FFmpeg is free software licensed under the LGPL or GPL.")
+         + "<br><br>"
+         /*: visit ffmpeg website */
+         + tr("Please visit %1 for more information.")
+                .arg("<a href=\"http://ffmpeg.org\">http://ffmpeg.org</a>")
+         + "<br><br>"
+         + FFmpegInterface::getFFmpegVersionInfo().replace("\n", "<br>")
+         );
+
+    info->setOpenExternalLinks(true);
+
+    info->setFrameShape(QTextBrowser::NoFrame);
+    codecinfo->setFrameShape(QTextBrowser::NoFrame);
+
+    ui->tabFFmpeg->setAutoFillBackground(true);
+    ui->tabCodecs->setAutoFillBackground(true);
+
+    QPalette p = info->palette();
+    p.setColor(QPalette::Base, ui->tabFFmpeg->palette().color(QPalette::Window));
+
+    info->setPalette(p);
+    codecinfo->setPalette(p);
+
+    codecinfo->setText(FFmpegInterface::getFFmpegCodecInfo());
+    codecinfo->setReadOnly(true);
 
 }
 
