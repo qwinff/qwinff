@@ -27,7 +27,7 @@ QMAKE_DEFS= DESTDIR=$(BIN_DIR) \
 
 DEFS= DATA_PATH=\\\"$(DATA_PATH)\\\"
 
-bin/qwinff:
+release:
 	+cd $(SRC_DIR) && $(QMAKE) $(QMAKE_DEFS) qwinff.pro && $(DEFS) make
 	-cd src && $(LRELEASE) qwinff.pro
 
