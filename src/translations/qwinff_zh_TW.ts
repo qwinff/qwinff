@@ -525,7 +525,7 @@
     <message>
         <location filename="../ui/mainwindow.ui" line="92"/>
         <source>Add files for conversion.</source>
-        <translation>新增要轉換的檔案</translation>
+        <translation>加入要轉換的檔案</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="95"/>
