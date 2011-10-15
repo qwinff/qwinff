@@ -50,6 +50,7 @@
     </property>
     <addaction name="actionAboutQt"/>
     <addaction name="actionAboutFFmpeg"/>
+    <addaction name="actionAbout"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
@@ -263,6 +264,14 @@
    </property>
    <property name="statusTip">
     <string>Options</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About Q&amp;WinFF</string>
+   </property>
+   <property name="statusTip">
+    <string>About This Program</string>
    </property>
   </action>
  </widget>

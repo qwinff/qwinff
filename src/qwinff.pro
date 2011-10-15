@@ -27,7 +27,8 @@ SOURCES += main.cpp \
     converter/conversionparameters.cpp \
     services/paths.cpp \
     services/extensions.cpp \
-    services/filepathoperations.cpp
+    services/filepathoperations.cpp \
+    ui/aboutdialog.cpp
 
 HEADERS  += \
     ui/progressbar.h \
@@ -46,14 +47,16 @@ HEADERS  += \
     converter/conversionparameters.h \
     services/paths.h \
     services/extensions.h \
-    services/filepathoperations.h
+    services/filepathoperations.h \
+    ui/aboutdialog.h
 
 FORMS    += \
     ui/conversionparameterdialog.ui \
     ui/addtaskwizard.ui \
     ui/mainwindow.ui \
     ui/aboutffmpegdialog.ui \
-    ui/optionsdialog.ui
+    ui/optionsdialog.ui \
+    ui/aboutdialog.ui
 
 RESOURCES += \
     images.qrc

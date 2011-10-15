@@ -4,6 +4,7 @@
 #include "addtaskwizard.h"
 #include "aboutffmpegdialog.h"
 #include "optionsdialog.h"
+#include "aboutdialog.h"
 #include "services/paths.h"
 #include "converter/ffmpeginterface.h"
 #include "converter/mediaprobe.h"
@@ -165,6 +166,11 @@ void MainWindow::slotAboutQt()
 void MainWindow::slotAboutFFmpeg()
 {
     AboutFFmpegDialog().exec();
+}
+
+void MainWindow::slotAbout()
+{
+    AboutDialog().exec();
 }
 
 void MainWindow::slotListContextMenu(QPoint /*pos*/)
@@ -347,6 +353,8 @@ void MainWindow::setup_menus()
             this, SLOT(slotAboutQt()));
     connect(ui->actionAboutFFmpeg, SIGNAL(triggered()),
             this, SLOT(slotAboutFFmpeg()));
+    connect(ui->actionAbout, SIGNAL(triggered()),
+            this, SLOT(slotAbout()));
 
 }
 
