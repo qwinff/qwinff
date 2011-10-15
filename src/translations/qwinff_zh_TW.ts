@@ -520,7 +520,7 @@
     <message>
         <location filename="../ui/mainwindow.ui" line="89"/>
         <source>&amp;Add Files</source>
-        <translation>新增檔案(&amp;A)</translation>
+        <translation>加入檔案(&amp;A)</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="92"/>
