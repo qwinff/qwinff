@@ -23,7 +23,6 @@ QMAKE_DEFS= DESTDIR=$(BIN_DIR) \
             MOC_DIR=$(BUILD_DIR)/moc \
             RCC_DIR=$(BUILD_DIR)/rcc \
             UI_DIR=$(BUILD_DIR)/ui \
-            DATA_PATH=$(DATA_PATH)
 
 DEFS= DATA_PATH=\\\"$(DATA_PATH)\\\"
 
