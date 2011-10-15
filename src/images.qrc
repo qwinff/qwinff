@@ -18,5 +18,8 @@
         <file>icons/qt.png</file>
         <file>icons/ffmpeg.png</file>
         <file>icons/ffmpeg_large.png</file>
+        <file>icons/qwinff.png</file>
+        <file>icons/qwinff_small.png</file>
+        <file>icons/banner.png</file>
     </qresource>
 </RCC>

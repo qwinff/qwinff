@@ -8,26 +8,29 @@ AboutDialog::AboutDialog(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QTextBrowser *info = ui->txtInfo;
+    QLabel *info = ui->lblInfo;
 
     info->setText(
          "<b>QWinFF</b> &copy; 2011 Timothy Lin &lt;lzh9102@gmail.com&gt;<br><br>"
          + tr("An intuitive GUI frontend to FFmpeg.")
          + "<br><br>"
          // TODO: add version info
+         + tr("Programming: %1").arg("Timothy Lin") + "<br>"
+         + tr("Logo Design: %1").arg("KuanYui") + "<br><br>"
          /*: Qt version */
          + tr("Compiled with Qt %1").arg(QT_VERSION_STR)
+         + "<br><br>"
+         + tr("FFmpeg presets are taken from WinFF.")
 
          );
 
-    info->setFrameShape(QTextBrowser::NoFrame);
+    // Make the window size fixed.
+    this->adjustSize();
+    this->setMinimumWidth(this->width());
+    this->setMinimumHeight(this->height());
+    this->setMaximumWidth(this->width());
+    this->setMaximumHeight(this->height());
 
-    ui->tabInfo->setAutoFillBackground(true);
-
-    QPalette p = info->palette();
-    p.setColor(QPalette::Base, ui->tabInfo->palette().color(QPalette::Window));
-
-    info->setPalette(p);
 }
 
 AboutDialog::~AboutDialog()
