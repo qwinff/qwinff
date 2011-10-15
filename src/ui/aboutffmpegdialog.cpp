@@ -41,7 +41,6 @@ AboutFFmpegDialog::AboutFFmpegDialog(QWidget *parent) :
     codecinfo->setPalette(p);
 
     codecinfo->setText(FFmpegInterface::getFFmpegCodecInfo());
-    codecinfo->setReadOnly(true);
 
 }
 
