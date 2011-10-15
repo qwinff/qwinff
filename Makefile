@@ -36,7 +36,7 @@ clean:
 	rm -rf $(BUILD_DIR)/*
 	cd $(SRC_DIR) && make clean && rm Makefile
 
-install: bin/qwinff
+install:
 	-install -d $(PREFIX)/bin/
 	install -m 755 bin/qwinff $(PREFIX)/bin/
 	-install -d $(DATA_PATH)
