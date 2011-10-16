@@ -48,7 +48,8 @@ HEADERS  += \
     services/paths.h \
     services/extensions.h \
     services/filepathoperations.h \
-    ui/aboutdialog.h
+    ui/aboutdialog.h \
+    version.h
 
 FORMS    += \
     ui/conversionparameterdialog.ui \
