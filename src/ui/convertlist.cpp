@@ -78,6 +78,7 @@ public:
             return true;
         case QEvent::DragLeave:
             m_parent->list_dragLeaveEvent(static_cast<QDragLeaveEvent*>(event));
+            return true;
         case QEvent::Drop:
             m_parent->list_dropEvent(static_cast<QDropEvent*>(event));
             return true;
