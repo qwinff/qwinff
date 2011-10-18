@@ -9,20 +9,43 @@
         <translation>關於QWinFF</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.ui" line="24"/>
         <source>Info</source>
-        <translation>資訊</translation>
+        <translation type="obsolete">資訊</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="15"/>
         <source>An intuitive GUI frontend to FFmpeg.</source>
-        <translation>簡單易用的FFmpeg圖形介面</translation>
+        <translation type="obsolete">簡單易用的FFmpeg圖形介面</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="19"/>
+        <location filename="../ui/aboutdialog.cpp" line="16"/>
+        <source>Version: %1</source>
+        <translation>版本: %1</translation>
+    </message>
+    <message>
+        <location filename="../ui/aboutdialog.cpp" line="18"/>
+        <source>QWinFF is a gui frontend for FFmpeg.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../ui/aboutdialog.cpp" line="20"/>
+        <source>Programming: %1</source>
+        <translation>程式設計：%1</translation>
+    </message>
+    <message>
+        <location filename="../ui/aboutdialog.cpp" line="21"/>
+        <source>Logo Design: %1</source>
+        <translation>Logo 設計：%1</translation>
+    </message>
+    <message>
+        <location filename="../ui/aboutdialog.cpp" line="23"/>
         <source>Compiled with Qt %1</source>
         <extracomment>Qt version</extracomment>
         <translation>Qt版本：%1</translation>
+    </message>
+    <message>
+        <location filename="../ui/aboutdialog.cpp" line="25"/>
+        <source>FFmpeg presets were taken from WinFF.</source>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -123,53 +146,53 @@
         <translation>自動調整聲音位元率</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="109"/>
+        <location filename="../ui/addtaskwizard.cpp" line="112"/>
         <source>Please select at least one file.</source>
         <translation>請至少選擇一個檔案</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="122"/>
+        <location filename="../ui/addtaskwizard.cpp" line="125"/>
         <source>Folder does not exist. Create a new folder?</source>
         <translation>資料夾不存在。要建立新的資料夾嗎？</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="131"/>
+        <location filename="../ui/addtaskwizard.cpp" line="134"/>
         <source>Failed to create folder. Please select another output folder.</source>
         <translation>建立資料夾失敗。請選擇另一個輸出資料夾。</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="152"/>
+        <location filename="../ui/addtaskwizard.cpp" line="155"/>
         <source>Select Files</source>
         <extracomment>This text is the title of an openfile dialog.</extracomment>
         <translation>選擇檔案</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="154"/>
+        <location filename="../ui/addtaskwizard.cpp" line="157"/>
         <source>Multimedia</source>
         <translation>多媒體</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="155"/>
+        <location filename="../ui/addtaskwizard.cpp" line="158"/>
         <source>Video</source>
         <translation>影片</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="156"/>
+        <location filename="../ui/addtaskwizard.cpp" line="159"/>
         <source>Audio</source>
         <translation>聲音</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="157"/>
+        <location filename="../ui/addtaskwizard.cpp" line="160"/>
         <source>All files</source>
         <translation>所有檔案</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="179"/>
+        <location filename="../ui/addtaskwizard.cpp" line="182"/>
         <source>Some files could not be found.</source>
         <translation>無法找到其中的一些檔案</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="219"/>
+        <location filename="../ui/addtaskwizard.cpp" line="224"/>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
         <translation>選擇資料夾</translation>
@@ -318,168 +341,168 @@
 <context>
     <name>ConvertList</name>
     <message>
-        <location filename="../ui/convertlist.cpp" line="199"/>
+        <location filename="../ui/convertlist.cpp" line="200"/>
         <source>%1: %2</source>
         <extracomment>FieldName: Value</extracomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="221"/>
-        <location filename="../ui/convertlist.cpp" line="740"/>
+        <location filename="../ui/convertlist.cpp" line="222"/>
+        <location filename="../ui/convertlist.cpp" line="744"/>
         <source>Cancel</source>
         <extracomment>Cancel the operation of adding new tasks</extracomment>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="235"/>
+        <location filename="../ui/convertlist.cpp" line="236"/>
         <source>Adding files (%1/%2)</source>
         <extracomment>This text is the progress indicator of adding multiple tasks. %1 is the number of files that are already added. %2 is the total number of files.</extracomment>
         <translation>正在新增檔案 (%1/%2)</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="259"/>
+        <location filename="../ui/convertlist.cpp" line="260"/>
         <source>Some files are not recognized by the converter.</source>
         <translation>有一些檔案無法辨識</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="279"/>
+        <location filename="../ui/convertlist.cpp" line="280"/>
         <source>Remove Task</source>
         <translation>移除任務</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="280"/>
+        <location filename="../ui/convertlist.cpp" line="281"/>
         <source>Cannot remove a task while it is in progress.</source>
         <translation>無法移除正在進行的任務</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="468"/>
+        <location filename="../ui/convertlist.cpp" line="469"/>
         <source>Failed</source>
         <extracomment>The text to be displayed on the progress bar when a conversion fails</extracomment>
         <translation>失敗</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="511"/>
+        <location filename="../ui/convertlist.cpp" line="512"/>
         <source>Hide &quot;%1&quot;</source>
         <extracomment>Hide a column in the list. For example, the text maybe &apos;Hide &quot;Duration&quot;&apos;. The two &quot; are quotation marks in English, you may replace it with local quotation marks.</extracomment>
         <translation>隱藏 &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="520"/>
+        <location filename="../ui/convertlist.cpp" line="521"/>
         <source>Restore All Columns</source>
         <translation>回復所有欄位</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="641"/>
+        <location filename="../ui/convertlist.cpp" line="645"/>
         <source>Source</source>
         <translation>來源</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="642"/>
+        <location filename="../ui/convertlist.cpp" line="646"/>
         <source>Destination</source>
         <translation>輸出</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="643"/>
+        <location filename="../ui/convertlist.cpp" line="647"/>
         <source>Duration</source>
         <translation>長度</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="644"/>
+        <location filename="../ui/convertlist.cpp" line="648"/>
         <source>File Size</source>
         <translation>檔案大小</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="647"/>
+        <location filename="../ui/convertlist.cpp" line="651"/>
         <source>Sample Rate</source>
         <extracomment>Audio</extracomment>
         <translation>取樣率</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="648"/>
+        <location filename="../ui/convertlist.cpp" line="652"/>
         <source>Audio Bitrate</source>
         <translation>聲音位元率</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="649"/>
+        <location filename="../ui/convertlist.cpp" line="653"/>
         <source>Channels</source>
         <extracomment>Audio</extracomment>
         <translation>聲道</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="650"/>
+        <location filename="../ui/convertlist.cpp" line="654"/>
         <source>Audio Codec</source>
         <translation>聲音編碼器</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="653"/>
+        <location filename="../ui/convertlist.cpp" line="657"/>
         <source>Dimensions</source>
         <translation>影像尺寸</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="654"/>
+        <location filename="../ui/convertlist.cpp" line="658"/>
         <source>Video Bitrate</source>
         <translation>影像位元率</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="655"/>
+        <location filename="../ui/convertlist.cpp" line="659"/>
         <source>Framerate</source>
         <extracomment>Video</extracomment>
         <translation>影格率</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="656"/>
+        <location filename="../ui/convertlist.cpp" line="660"/>
         <source>Video Codec</source>
         <translation>影像編碼器</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="658"/>
+        <location filename="../ui/convertlist.cpp" line="662"/>
         <source>Progress</source>
         <translation>進度</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="703"/>
+        <location filename="../ui/convertlist.cpp" line="707"/>
         <source>%1 Hz</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="704"/>
-        <location filename="../ui/convertlist.cpp" line="713"/>
+        <location filename="../ui/convertlist.cpp" line="708"/>
+        <location filename="../ui/convertlist.cpp" line="717"/>
         <source>%1 kb/s</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="714"/>
+        <location filename="../ui/convertlist.cpp" line="718"/>
         <source>%1 fps</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="739"/>
+        <location filename="../ui/convertlist.cpp" line="743"/>
         <source>Removing tasks...</source>
         <extracomment>Remove files from the tasklist</extracomment>
         <translation>正在移除任務</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="777"/>
+        <location filename="../ui/convertlist.cpp" line="781"/>
         <source>KiB</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="777"/>
+        <location filename="../ui/convertlist.cpp" line="781"/>
         <source>MiB</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="777"/>
+        <location filename="../ui/convertlist.cpp" line="781"/>
         <source>GiB</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="777"/>
+        <location filename="../ui/convertlist.cpp" line="781"/>
         <source>TiB</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="780"/>
+        <location filename="../ui/convertlist.cpp" line="784"/>
         <source>B</source>
         <extracomment>Bytes</extracomment>
         <translation></translation>
@@ -493,208 +516,208 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="30"/>
+        <location filename="../ui/mainwindow.ui" line="34"/>
         <source>&amp;File</source>
         <translation>檔案(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="39"/>
+        <location filename="../ui/mainwindow.ui" line="43"/>
         <source>&amp;Convert</source>
         <translation>轉換(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="49"/>
+        <location filename="../ui/mainwindow.ui" line="53"/>
         <source>&amp;About</source>
         <translation>關於(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="57"/>
+        <location filename="../ui/mainwindow.ui" line="61"/>
         <source>&amp;Edit</source>
         <translation>編輯(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="74"/>
+        <location filename="../ui/mainwindow.ui" line="78"/>
         <source>toolBar</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="89"/>
+        <location filename="../ui/mainwindow.ui" line="93"/>
         <source>&amp;Add Files</source>
         <translation>加入檔案(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="92"/>
+        <location filename="../ui/mainwindow.ui" line="96"/>
         <source>Add files for conversion.</source>
         <translation>加入要轉換的檔案</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="95"/>
+        <location filename="../ui/mainwindow.ui" line="99"/>
         <source>Ctrl+N</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="104"/>
+        <location filename="../ui/mainwindow.ui" line="108"/>
         <source>E&amp;xit</source>
         <translation>離開(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="107"/>
+        <location filename="../ui/mainwindow.ui" line="111"/>
         <source>Exit the program.</source>
         <translation>離開此程式</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="116"/>
+        <location filename="../ui/mainwindow.ui" line="120"/>
         <source>&amp;Start</source>
         <translation>開始(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="119"/>
+        <location filename="../ui/mainwindow.ui" line="123"/>
         <source>Start conversion process.</source>
         <translation>開始轉換</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="122"/>
+        <location filename="../ui/mainwindow.ui" line="126"/>
         <source>F9</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="131"/>
+        <location filename="../ui/mainwindow.ui" line="135"/>
         <source>S&amp;top</source>
         <translation>停止(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="134"/>
+        <location filename="../ui/mainwindow.ui" line="138"/>
         <source>Stop conversion process.</source>
         <translation>停止轉換</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="143"/>
+        <location filename="../ui/mainwindow.ui" line="147"/>
         <source>Set &amp;Parameters</source>
         <translation>設定轉換參數(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="146"/>
+        <location filename="../ui/mainwindow.ui" line="150"/>
         <source>Set Parameters</source>
         <extracomment>Edit output file parameters.</extracomment>
         <translation>設定轉換參數</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="149"/>
+        <location filename="../ui/mainwindow.ui" line="153"/>
         <source>Edit conversion parameters of selected files.</source>
         <translation>編輯選取檔案的轉換參數</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="158"/>
+        <location filename="../ui/mainwindow.ui" line="162"/>
         <source>About &amp;Qt</source>
         <translation>關於&amp;Qt</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="161"/>
+        <location filename="../ui/mainwindow.ui" line="165"/>
         <source>About Qt</source>
         <translation>關於Qt</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="170"/>
+        <location filename="../ui/mainwindow.ui" line="174"/>
         <source>&amp;Open Output Folder</source>
         <translation>開啟輸出資料夾(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="173"/>
+        <location filename="../ui/mainwindow.ui" line="177"/>
         <source>Open output folder of the first selected file.</source>
         <translation>開啟第一個選取檔案的輸出資料夾</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="182"/>
+        <location filename="../ui/mainwindow.ui" line="186"/>
         <source>About &amp;FFmpeg</source>
         <translation>關於&amp;FFmpeg</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="185"/>
+        <location filename="../ui/mainwindow.ui" line="189"/>
         <source>About FFmpeg</source>
         <translation>關於FFmpeg</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="194"/>
+        <location filename="../ui/mainwindow.ui" line="198"/>
         <source>&amp;Remove Selected Items</source>
         <translation>移除選取的項目</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="197"/>
+        <location filename="../ui/mainwindow.ui" line="201"/>
         <source>Remove all selected items in the list.</source>
         <translation>移除清單中所有選取的項目</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="206"/>
+        <location filename="../ui/mainwindow.ui" line="210"/>
         <source>R&amp;emove Completed Items</source>
         <translation>移除已完成的項目</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="209"/>
+        <location filename="../ui/mainwindow.ui" line="213"/>
         <source>Remove Completed Items</source>
         <translation>移除已完成的項目</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="212"/>
+        <location filename="../ui/mainwindow.ui" line="216"/>
         <source>Remove all completed items in the list.</source>
         <translation>移除清單中所有已完成的項目</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="221"/>
+        <location filename="../ui/mainwindow.ui" line="225"/>
         <source>&amp;Clear List</source>
         <translation>清除清單(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="224"/>
+        <location filename="../ui/mainwindow.ui" line="228"/>
         <source>Clear List</source>
         <translation>清除清單</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="227"/>
+        <location filename="../ui/mainwindow.ui" line="231"/>
         <source>Remove all items in the list.</source>
         <translation>移除清單中所有項目</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="236"/>
+        <location filename="../ui/mainwindow.ui" line="240"/>
         <source>&amp;Retry</source>
         <translation>重試(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="239"/>
+        <location filename="../ui/mainwindow.ui" line="243"/>
         <source>Retry</source>
         <translation>重試</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="242"/>
+        <location filename="../ui/mainwindow.ui" line="246"/>
         <source>Retry selected tasks.</source>
         <translation>重試選取的檔案</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="251"/>
+        <location filename="../ui/mainwindow.ui" line="255"/>
         <source>Retry &amp;All</source>
         <translation>全部重試(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="254"/>
+        <location filename="../ui/mainwindow.ui" line="258"/>
         <source>Retry all tasks.</source>
         <translation>重試所有的任務</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="263"/>
+        <location filename="../ui/mainwindow.ui" line="267"/>
         <source>&amp;Options</source>
         <translation>選項(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="266"/>
+        <location filename="../ui/mainwindow.ui" line="270"/>
         <source>Options</source>
         <translation>選項</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="271"/>
+        <location filename="../ui/mainwindow.ui" line="279"/>
         <source>About Q&amp;WinFF</source>
         <translation type="unfinished">關於Q&amp;WinFF</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="274"/>
+        <location filename="../ui/mainwindow.ui" line="282"/>
         <source>About This Program</source>
         <translation>關於這個程式</translation>
     </message>

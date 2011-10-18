@@ -9,19 +9,34 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.ui" line="24"/>
-        <source>Info</source>
+        <location filename="../ui/aboutdialog.cpp" line="16"/>
+        <source>Version: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="15"/>
-        <source>An intuitive GUI frontend to FFmpeg.</source>
+        <location filename="../ui/aboutdialog.cpp" line="18"/>
+        <source>QWinFF is a gui frontend for FFmpeg.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="19"/>
+        <location filename="../ui/aboutdialog.cpp" line="20"/>
+        <source>Programming: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/aboutdialog.cpp" line="21"/>
+        <source>Logo Design: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/aboutdialog.cpp" line="23"/>
         <source>Compiled with Qt %1</source>
         <extracomment>Qt version</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/aboutdialog.cpp" line="25"/>
+        <source>FFmpeg presets were taken from WinFF.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -123,53 +138,53 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="109"/>
+        <location filename="../ui/addtaskwizard.cpp" line="112"/>
         <source>Please select at least one file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="122"/>
+        <location filename="../ui/addtaskwizard.cpp" line="125"/>
         <source>Folder does not exist. Create a new folder?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="131"/>
+        <location filename="../ui/addtaskwizard.cpp" line="134"/>
         <source>Failed to create folder. Please select another output folder.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="152"/>
+        <location filename="../ui/addtaskwizard.cpp" line="155"/>
         <source>Select Files</source>
         <extracomment>This text is the title of an openfile dialog.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="154"/>
+        <location filename="../ui/addtaskwizard.cpp" line="157"/>
         <source>Multimedia</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="155"/>
+        <location filename="../ui/addtaskwizard.cpp" line="158"/>
         <source>Video</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="156"/>
+        <location filename="../ui/addtaskwizard.cpp" line="159"/>
         <source>Audio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="157"/>
+        <location filename="../ui/addtaskwizard.cpp" line="160"/>
         <source>All files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="179"/>
+        <location filename="../ui/addtaskwizard.cpp" line="182"/>
         <source>Some files could not be found.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="219"/>
+        <location filename="../ui/addtaskwizard.cpp" line="224"/>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
         <translation type="unfinished"></translation>
@@ -318,168 +333,168 @@
 <context>
     <name>ConvertList</name>
     <message>
-        <location filename="../ui/convertlist.cpp" line="199"/>
+        <location filename="../ui/convertlist.cpp" line="200"/>
         <source>%1: %2</source>
         <extracomment>FieldName: Value</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="221"/>
-        <location filename="../ui/convertlist.cpp" line="740"/>
+        <location filename="../ui/convertlist.cpp" line="222"/>
+        <location filename="../ui/convertlist.cpp" line="744"/>
         <source>Cancel</source>
         <extracomment>Cancel the operation of adding new tasks</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="235"/>
+        <location filename="../ui/convertlist.cpp" line="236"/>
         <source>Adding files (%1/%2)</source>
         <extracomment>This text is the progress indicator of adding multiple tasks. %1 is the number of files that are already added. %2 is the total number of files.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="259"/>
+        <location filename="../ui/convertlist.cpp" line="260"/>
         <source>Some files are not recognized by the converter.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="279"/>
+        <location filename="../ui/convertlist.cpp" line="280"/>
         <source>Remove Task</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="280"/>
+        <location filename="../ui/convertlist.cpp" line="281"/>
         <source>Cannot remove a task while it is in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="468"/>
+        <location filename="../ui/convertlist.cpp" line="469"/>
         <source>Failed</source>
         <extracomment>The text to be displayed on the progress bar when a conversion fails</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="511"/>
+        <location filename="../ui/convertlist.cpp" line="512"/>
         <source>Hide &quot;%1&quot;</source>
         <extracomment>Hide a column in the list. For example, the text maybe &apos;Hide &quot;Duration&quot;&apos;. The two &quot; are quotation marks in English, you may replace it with local quotation marks.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="520"/>
+        <location filename="../ui/convertlist.cpp" line="521"/>
         <source>Restore All Columns</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="641"/>
+        <location filename="../ui/convertlist.cpp" line="645"/>
         <source>Source</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="642"/>
+        <location filename="../ui/convertlist.cpp" line="646"/>
         <source>Destination</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="643"/>
+        <location filename="../ui/convertlist.cpp" line="647"/>
         <source>Duration</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="644"/>
+        <location filename="../ui/convertlist.cpp" line="648"/>
         <source>File Size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="647"/>
+        <location filename="../ui/convertlist.cpp" line="651"/>
         <source>Sample Rate</source>
         <extracomment>Audio</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="648"/>
+        <location filename="../ui/convertlist.cpp" line="652"/>
         <source>Audio Bitrate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="649"/>
+        <location filename="../ui/convertlist.cpp" line="653"/>
         <source>Channels</source>
         <extracomment>Audio</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="650"/>
+        <location filename="../ui/convertlist.cpp" line="654"/>
         <source>Audio Codec</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="653"/>
+        <location filename="../ui/convertlist.cpp" line="657"/>
         <source>Dimensions</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="654"/>
+        <location filename="../ui/convertlist.cpp" line="658"/>
         <source>Video Bitrate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="655"/>
+        <location filename="../ui/convertlist.cpp" line="659"/>
         <source>Framerate</source>
         <extracomment>Video</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="656"/>
+        <location filename="../ui/convertlist.cpp" line="660"/>
         <source>Video Codec</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="658"/>
+        <location filename="../ui/convertlist.cpp" line="662"/>
         <source>Progress</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="703"/>
+        <location filename="../ui/convertlist.cpp" line="707"/>
         <source>%1 Hz</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="704"/>
-        <location filename="../ui/convertlist.cpp" line="713"/>
+        <location filename="../ui/convertlist.cpp" line="708"/>
+        <location filename="../ui/convertlist.cpp" line="717"/>
         <source>%1 kb/s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="714"/>
+        <location filename="../ui/convertlist.cpp" line="718"/>
         <source>%1 fps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="739"/>
+        <location filename="../ui/convertlist.cpp" line="743"/>
         <source>Removing tasks...</source>
         <extracomment>Remove files from the tasklist</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="777"/>
+        <location filename="../ui/convertlist.cpp" line="781"/>
         <source>KiB</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="777"/>
+        <location filename="../ui/convertlist.cpp" line="781"/>
         <source>MiB</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="777"/>
+        <location filename="../ui/convertlist.cpp" line="781"/>
         <source>GiB</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="777"/>
+        <location filename="../ui/convertlist.cpp" line="781"/>
         <source>TiB</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="780"/>
+        <location filename="../ui/convertlist.cpp" line="784"/>
         <source>B</source>
         <extracomment>Bytes</extracomment>
         <translation type="unfinished"></translation>
@@ -493,208 +508,208 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="30"/>
+        <location filename="../ui/mainwindow.ui" line="34"/>
         <source>&amp;File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="39"/>
+        <location filename="../ui/mainwindow.ui" line="43"/>
         <source>&amp;Convert</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="49"/>
+        <location filename="../ui/mainwindow.ui" line="53"/>
         <source>&amp;About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="57"/>
+        <location filename="../ui/mainwindow.ui" line="61"/>
         <source>&amp;Edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="74"/>
+        <location filename="../ui/mainwindow.ui" line="78"/>
         <source>toolBar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="89"/>
+        <location filename="../ui/mainwindow.ui" line="93"/>
         <source>&amp;Add Files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="92"/>
+        <location filename="../ui/mainwindow.ui" line="96"/>
         <source>Add files for conversion.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="95"/>
+        <location filename="../ui/mainwindow.ui" line="99"/>
         <source>Ctrl+N</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="104"/>
+        <location filename="../ui/mainwindow.ui" line="108"/>
         <source>E&amp;xit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="107"/>
+        <location filename="../ui/mainwindow.ui" line="111"/>
         <source>Exit the program.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="116"/>
+        <location filename="../ui/mainwindow.ui" line="120"/>
         <source>&amp;Start</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="119"/>
+        <location filename="../ui/mainwindow.ui" line="123"/>
         <source>Start conversion process.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="122"/>
+        <location filename="../ui/mainwindow.ui" line="126"/>
         <source>F9</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="131"/>
+        <location filename="../ui/mainwindow.ui" line="135"/>
         <source>S&amp;top</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="134"/>
+        <location filename="../ui/mainwindow.ui" line="138"/>
         <source>Stop conversion process.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="143"/>
+        <location filename="../ui/mainwindow.ui" line="147"/>
         <source>Set &amp;Parameters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="146"/>
+        <location filename="../ui/mainwindow.ui" line="150"/>
         <source>Set Parameters</source>
         <extracomment>Edit output file parameters.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="149"/>
+        <location filename="../ui/mainwindow.ui" line="153"/>
         <source>Edit conversion parameters of selected files.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="158"/>
+        <location filename="../ui/mainwindow.ui" line="162"/>
         <source>About &amp;Qt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="161"/>
+        <location filename="../ui/mainwindow.ui" line="165"/>
         <source>About Qt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="170"/>
+        <location filename="../ui/mainwindow.ui" line="174"/>
         <source>&amp;Open Output Folder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="173"/>
+        <location filename="../ui/mainwindow.ui" line="177"/>
         <source>Open output folder of the first selected file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="182"/>
+        <location filename="../ui/mainwindow.ui" line="186"/>
         <source>About &amp;FFmpeg</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="185"/>
+        <location filename="../ui/mainwindow.ui" line="189"/>
         <source>About FFmpeg</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="194"/>
+        <location filename="../ui/mainwindow.ui" line="198"/>
         <source>&amp;Remove Selected Items</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="197"/>
+        <location filename="../ui/mainwindow.ui" line="201"/>
         <source>Remove all selected items in the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="206"/>
+        <location filename="../ui/mainwindow.ui" line="210"/>
         <source>R&amp;emove Completed Items</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="209"/>
+        <location filename="../ui/mainwindow.ui" line="213"/>
         <source>Remove Completed Items</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="212"/>
+        <location filename="../ui/mainwindow.ui" line="216"/>
         <source>Remove all completed items in the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="221"/>
+        <location filename="../ui/mainwindow.ui" line="225"/>
         <source>&amp;Clear List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="224"/>
+        <location filename="../ui/mainwindow.ui" line="228"/>
         <source>Clear List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="227"/>
+        <location filename="../ui/mainwindow.ui" line="231"/>
         <source>Remove all items in the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="236"/>
+        <location filename="../ui/mainwindow.ui" line="240"/>
         <source>&amp;Retry</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="239"/>
+        <location filename="../ui/mainwindow.ui" line="243"/>
         <source>Retry</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="242"/>
+        <location filename="../ui/mainwindow.ui" line="246"/>
         <source>Retry selected tasks.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="251"/>
+        <location filename="../ui/mainwindow.ui" line="255"/>
         <source>Retry &amp;All</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="254"/>
+        <location filename="../ui/mainwindow.ui" line="258"/>
         <source>Retry all tasks.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="263"/>
+        <location filename="../ui/mainwindow.ui" line="267"/>
         <source>&amp;Options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="266"/>
+        <location filename="../ui/mainwindow.ui" line="270"/>
         <source>Options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="271"/>
+        <location filename="../ui/mainwindow.ui" line="279"/>
         <source>About Q&amp;WinFF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="274"/>
+        <location filename="../ui/mainwindow.ui" line="282"/>
         <source>About This Program</source>
         <translation type="unfinished"></translation>
     </message>
