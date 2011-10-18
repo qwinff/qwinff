@@ -1,7 +1,7 @@
 
 # Build Parameters
 # Edit these parameters to comply with your system policy.
-PREFIX=/usr/local
+PREFIX=/usr
 
 ###############################
 
