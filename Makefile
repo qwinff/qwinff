@@ -1,9 +1,14 @@
 
 # Build Parameters
-# Edit these parameters to comply with your system policy.
+# You can change these parameters to customize the build.
+
+# Installation Prefix
 PREFIX=/usr
+# Version ID String (displayed after the version string in the about dialog)
+VIDSTR=
 
 ###############################
+# Variables here are not meant to be changed.
 
 # Paths
 PROJECT_ROOT=$(PWD)
