@@ -24,7 +24,8 @@ QMAKE_DEFS= DESTDIR=$(BIN_DIR) \
             RCC_DIR=$(BUILD_DIR)/rcc \
             UI_DIR=$(BUILD_DIR)/ui
 
-DEFS= DATA_PATH=\\\"$(DATA_PATH)\\\"
+DEFS= DATA_PATH=\\\"$(DATA_PATH)\\\" \
+      VERSION_ID_STRING=\\\"$(VIDSTR)\\\"
 
 release:
 	+cd $(SRC_DIR) && $(QMAKE) $(QMAKE_DEFS) qwinff.pro && $(DEFS) make

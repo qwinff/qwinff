@@ -15,7 +15,7 @@ AboutDialog::AboutDialog(QWidget *parent) :
          "<b>QWinFF</b> &copy; 2011 Timothy Lin &lt;lzh9102@gmail.com&gt;<br>"
          + tr("Version: %1").arg(VERSION_STRING)
 #ifdef VERSION_ID_STRING
-         + QString(" %1").arg(VERSION_ID_STRING)
+         + QString(" %1").arg(QString(VERSION_ID_STRING))
 #endif
          + "<br><br>"
          + tr("QWinFF is a gui frontend for FFmpeg.")
