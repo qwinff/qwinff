@@ -63,8 +63,7 @@ RESOURCES += \
     images.qrc
 
 TRANSLATIONS += \
-    translations/qwinff_zh_TW.ts \
-    translations/qwinff_zh_CN.ts
+    translations/qwinff_zh_TW.ts
 
 unix {
     DEFINES += DATA_PATH=$(DATA_PATH)
