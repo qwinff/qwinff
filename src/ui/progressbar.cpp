@@ -7,7 +7,7 @@
 #define COLOR_BORDER QColor(100,150,160)
 
 ProgressBar::ProgressBar(QWidget *parent) :
-    QWidget(parent), m_percentage(0), m_active(false)
+    QWidget(parent), m_percentage(0), m_active(false), m_show_text(false)
 {
 }
 
@@ -17,6 +17,14 @@ void ProgressBar::setValue(unsigned int value)
         m_percentage = (value <= 100) ? value : 100;
         this->repaint();
     }
+    m_show_text = false;
+}
+
+void ProgressBar::showText(const QString &str)
+{
+    m_show_text = true;
+    m_text = str;
+    this->repaint();
 }
 
 void ProgressBar::setActive(bool active)
@@ -54,10 +62,13 @@ void ProgressBar::paintEvent(QPaintEvent*)
         // Restore the pen such that the text can be rendered.
         painter.setPen(pen);
 
-        // draw percentage text
         QRect rect_region(0, 0, width()-1, height()-1);
-        painter.drawText(rect_region, QString("%1\%").arg(m_percentage)
-                         , QTextOption(Qt::AlignCenter));
+        if (!m_show_text) { // show percentage
+            painter.drawText(rect_region, QString("%1\%").arg(m_percentage)
+                             , QTextOption(Qt::AlignCenter));
+        } else { // show custom text
+            painter.drawText(rect_region, m_text, QTextOption(Qt::AlignCenter));
+        }
 
         if (m_active) {
             pen.setColor(COLOR_BORDER);

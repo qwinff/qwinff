@@ -17,6 +17,9 @@ AboutDialog::AboutDialog(QWidget *parent) :
 #ifdef VERSION_ID_STRING
          + QString(" %1").arg(QString(VERSION_ID_STRING))
 #endif
+         + "<br>"
+         /*: Qt version */
+         + tr("Compiled with Qt %1").arg(QT_VERSION_STR)
          + "<br><br>"
          + tr("QWinFF is a gui frontend for FFmpeg.")
          + "<br><br>"
@@ -25,9 +28,6 @@ AboutDialog::AboutDialog(QWidget *parent) :
          + tr("This program is free software; you can redistribute it and/or modify it "
               "under the terms of the GNU General Public License version 2 or later.")
          +"<br><br>"
-         /*: Qt version */
-         + tr("Compiled with Qt %1").arg(QT_VERSION_STR)
-         + "<br><br>"
          + tr("FFmpeg presets were taken from WinFF.")
          + "<br><br>"
          /* TODO: add project page information */

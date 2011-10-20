@@ -466,7 +466,7 @@ void ConvertList::task_finished_slot(int exitcode)
         if (exitcode) { // conversion failed
             prog->setValue(0);
             /*: The text to be displayed on the progress bar when a conversion fails */
-            m_current_task->listitem->setText(COL_PROGRESS, tr("Failed"));
+            prog->showText(tr("Failed"));
         }
 
         prog->setActive(false);
@@ -727,7 +727,6 @@ void ConvertList::reset_item(int index)
         TaskPtr task = m_tasks[index];
         if (task->status != Task::RUNNING) {
             task->status = Task::QUEUED;
-            task->listitem->setText(COL_PROGRESS, QString());
             ProgressBar *prog = progressBar(*task);
             prog->setValue(0);
             prog->setActive(false);

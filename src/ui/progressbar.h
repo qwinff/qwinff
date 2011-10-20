@@ -15,6 +15,13 @@ public:
       */
     void setValue(unsigned int value);
 
+    /*!
+      @brief Show the string on the progress bar.
+      @param str string to display
+      @note The string will be displayed until the next value update.
+      */
+    void showText(const QString& str);
+
     void setActive(bool active);
     bool isActive() const;
 
@@ -25,6 +32,8 @@ public slots:
 private:
     unsigned int m_percentage;
     bool m_active;
+    bool m_show_text;
+    QString m_text;
     void paintEvent(QPaintEvent*);
 
 };
