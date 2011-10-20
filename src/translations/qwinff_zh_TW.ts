@@ -24,7 +24,7 @@
     <message>
         <location filename="../ui/aboutdialog.cpp" line="24"/>
         <source>QWinFF is a gui frontend for FFmpeg.</source>
-        <translation></translation>
+        <translation>FFmpeg影音轉檔器前端介面</translation>
     </message>
     <message>
         <location filename="../ui/aboutdialog.cpp" line="26"/>
@@ -50,7 +50,7 @@
     <message>
         <location filename="../ui/aboutdialog.cpp" line="31"/>
         <source>FFmpeg presets were taken from WinFF.</source>
-        <translation></translation>
+        <translation>FFmpeg的預設參數來自WinFF專案</translation>
     </message>
 </context>
 <context>
