@@ -14,28 +14,33 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="18"/>
+        <location filename="../ui/aboutdialog.cpp" line="24"/>
         <source>QWinFF is a gui frontend for FFmpeg.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="20"/>
+        <location filename="../ui/aboutdialog.cpp" line="26"/>
         <source>Programming: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="21"/>
+        <location filename="../ui/aboutdialog.cpp" line="27"/>
         <source>Logo Design: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="23"/>
+        <location filename="../ui/aboutdialog.cpp" line="28"/>
+        <source>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License version 2 or 3.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/aboutdialog.cpp" line="22"/>
         <source>Compiled with Qt %1</source>
         <extracomment>Qt version</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="25"/>
+        <location filename="../ui/aboutdialog.cpp" line="31"/>
         <source>FFmpeg presets were taken from WinFF.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -340,7 +345,7 @@
     </message>
     <message>
         <location filename="../ui/convertlist.cpp" line="222"/>
-        <location filename="../ui/convertlist.cpp" line="744"/>
+        <location filename="../ui/convertlist.cpp" line="746"/>
         <source>Cancel</source>
         <extracomment>Cancel the operation of adding new tasks</extracomment>
         <translation type="unfinished"></translation>
@@ -373,128 +378,134 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="512"/>
+        <location filename="../ui/convertlist.cpp" line="472"/>
+        <source>Finished</source>
+        <extracomment>The text to be displayed on the progress bar when a conversion finishes</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/convertlist.cpp" line="515"/>
         <source>Hide &quot;%1&quot;</source>
         <extracomment>Hide a column in the list. For example, the text maybe &apos;Hide &quot;Duration&quot;&apos;. The two &quot; are quotation marks in English, you may replace it with local quotation marks.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="521"/>
+        <location filename="../ui/convertlist.cpp" line="524"/>
         <source>Restore All Columns</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="645"/>
+        <location filename="../ui/convertlist.cpp" line="648"/>
         <source>Source</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="646"/>
+        <location filename="../ui/convertlist.cpp" line="649"/>
         <source>Destination</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="647"/>
+        <location filename="../ui/convertlist.cpp" line="650"/>
         <source>Duration</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="648"/>
+        <location filename="../ui/convertlist.cpp" line="651"/>
         <source>File Size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="651"/>
+        <location filename="../ui/convertlist.cpp" line="654"/>
         <source>Sample Rate</source>
         <extracomment>Audio</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="652"/>
+        <location filename="../ui/convertlist.cpp" line="655"/>
         <source>Audio Bitrate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="653"/>
+        <location filename="../ui/convertlist.cpp" line="656"/>
         <source>Channels</source>
         <extracomment>Audio</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="654"/>
+        <location filename="../ui/convertlist.cpp" line="657"/>
         <source>Audio Codec</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="657"/>
+        <location filename="../ui/convertlist.cpp" line="660"/>
         <source>Dimensions</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="658"/>
+        <location filename="../ui/convertlist.cpp" line="661"/>
         <source>Video Bitrate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="659"/>
+        <location filename="../ui/convertlist.cpp" line="662"/>
         <source>Framerate</source>
         <extracomment>Video</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="660"/>
+        <location filename="../ui/convertlist.cpp" line="663"/>
         <source>Video Codec</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="662"/>
+        <location filename="../ui/convertlist.cpp" line="665"/>
         <source>Progress</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="707"/>
+        <location filename="../ui/convertlist.cpp" line="710"/>
         <source>%1 Hz</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="708"/>
-        <location filename="../ui/convertlist.cpp" line="717"/>
+        <location filename="../ui/convertlist.cpp" line="711"/>
+        <location filename="../ui/convertlist.cpp" line="720"/>
         <source>%1 kb/s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="718"/>
+        <location filename="../ui/convertlist.cpp" line="721"/>
         <source>%1 fps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="743"/>
+        <location filename="../ui/convertlist.cpp" line="745"/>
         <source>Removing tasks...</source>
         <extracomment>Remove files from the tasklist</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="781"/>
+        <location filename="../ui/convertlist.cpp" line="783"/>
         <source>KiB</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="781"/>
+        <location filename="../ui/convertlist.cpp" line="783"/>
         <source>MiB</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="781"/>
+        <location filename="../ui/convertlist.cpp" line="783"/>
         <source>GiB</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="781"/>
+        <location filename="../ui/convertlist.cpp" line="783"/>
         <source>TiB</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="784"/>
+        <location filename="../ui/convertlist.cpp" line="786"/>
         <source>B</source>
         <extracomment>Bytes</extracomment>
         <translation type="unfinished"></translation>

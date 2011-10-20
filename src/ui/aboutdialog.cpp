@@ -26,7 +26,7 @@ AboutDialog::AboutDialog(QWidget *parent) :
          + tr("Programming: %1").arg("Timothy Lin") + "<br>"
          + tr("Logo Design: %1").arg("KuanYui") + "<br><br>"
          + tr("This program is free software; you can redistribute it and/or modify it "
-              "under the terms of the GNU General Public License version 2 or later.")
+              "under the terms of the GNU General Public License version 2 or 3.")
          +"<br><br>"
          + tr("FFmpeg presets were taken from WinFF.")
          + "<br><br>"
