@@ -467,6 +467,9 @@ void ConvertList::task_finished_slot(int exitcode)
             prog->setValue(0);
             /*: The text to be displayed on the progress bar when a conversion fails */
             prog->showText(tr("Failed"));
+        } else {
+            /*: The text to be displayed on the progress bar when a conversion finishes */
+            prog->showText(tr("Finished"));
         }
 
         prog->setActive(false);
