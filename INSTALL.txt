@@ -3,7 +3,13 @@ This document explains how to build and install QWinFF.
 QWinFF needs ffmpeg and ffprobe at runtime.
 
 1) Generic Compilation and Installation on Unix-like Systems
--------------------------------------------------------------
+2) Changing Installation Path
+3) Build on Windows
+
+------------------------------
+
+1) Generic Compilation and Installation on Unix-like Systems
+
 You need Qt 4.3 or greater to compile QWinFF.
 
 Be sure you have installed the Qt4 development package. Its name maybe
@@ -23,9 +29,10 @@ make QMAKE=qmake-qt4
 or
 make QMAKE=/usr/share/qt4/bin/qmake
 
+------------------------------
 
 2) Changing Installation Path
-------------------------------
+
 By default, QWinFF will be installed to /usr/local. You can change it by
 using PREFIX.
 
@@ -42,3 +49,29 @@ Some output formats may require additional packages to be installed.
 For example, non-free media formats are not supported by default in
 Debian and Ubuntu. Please search for information about how to enable
 these features by keywords like "ffmpeg non-free" or "ffmpeg mp3".
+
+------------------------------
+
+3) Build on Windows
+
+You must install Qt4 SDK to build QWinFF.
+
+Extract the source code to a directory.
+
+Enter Qt4 console from the start menu entry and cd to the directory containing
+the extracted source code.
+
+Type "windows_build.bat"
+
+If the build was successful,  the output files will be copied to
+windows_release\
+
+Copy necessary Qt DLLs to windows_release\
+If you are using mingw, the DLLs are QtCore4.dll, QtGui4.dll and 
+libgcc_s_dw2-1.dll, which can be found in
+<QtSDK>\Desktop\Qt\4.x.x\mingw\bin.
+
+Download FFmpeg static binaries and copy ffmpeg.exe and ffprobe.exe to
+windows_release\ffmpeg
+
+Now you can execute QWinFF by clicking on the executable file.
