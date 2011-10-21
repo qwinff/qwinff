@@ -75,6 +75,8 @@ win32 {
     # If FFMPEG_IN_DATA_PATH is set, QWinFF searches for FFmpeg executables
     # in <datapath>/ffmpeg/ instead of PATH.
     DEFINES += FFMPEG_IN_DATA_PATH
+    # Application Icon
+    RC_FILE = appicon.rc
 }
 
 # This string is shown in the about box.
@@ -86,3 +88,4 @@ DEFINES += DEFAULT_THREAD_COUNT=4
 
 OTHER_FILES += \
     settings.txt
+
