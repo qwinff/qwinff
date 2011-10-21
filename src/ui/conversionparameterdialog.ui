@@ -19,6 +19,10 @@
   <property name="windowTitle">
    <string>Conversion Parameters</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../images.qrc">
+    <normaloff>:/app/icons/qwinff_small.png</normaloff>:/app/icons/qwinff_small.png</iconset>
+  </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -424,7 +428,9 @@
   <tabstop>buttonBox</tabstop>
   <tabstop>chkDisableVideo</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../images.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonBox</sender>

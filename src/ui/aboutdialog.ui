@@ -6,12 +6,16 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>415</width>
+    <width>418</width>
     <height>292</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>About QWinFF</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../images.qrc">
+    <normaloff>:/app/icons/qwinff_small.png</normaloff>:/app/icons/qwinff_small.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
