@@ -66,9 +66,18 @@ TRANSLATIONS += \
     translations/qwinff_zh_TW.ts
 
 unix {
+    # If DATA_PATH is set, QWinFF searches data in DATA_PATH
+    # Otherwise, it uses the executable path as data path.
     DEFINES += DATA_PATH=$(DATA_PATH)
 }
 
+win32 {
+    # If FFMPEG_IN_DATA_PATH is set, QWinFF searches for FFmpeg executables
+    # in <datapath>/ffmpeg/ instead of PATH.
+    DEFINES += FFMPEG_IN_DATA_PATH
+}
+
+# This string is shown in the about box.
 DEFINES += VERSION_ID_STRING=$(VERSION_ID_STRING)
 
 # External Short Blocking Operation Timeout

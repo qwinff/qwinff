@@ -6,6 +6,7 @@
 #include "ui/mainwindow.h"
 #include "services/paths.h"
 #include "converter/ffmpeginterface.h"
+#include "converter/mediaprobe.h"
 
 int main(int argc, char *argv[])
 {
@@ -16,8 +17,15 @@ int main(int argc, char *argv[])
     app.setOrganizationName("qwinff");
     app.setApplicationName("qwinff");
 
-    FFmpegInterface::setFFmpegExecutable("ffmpeg");
     Paths::setAppPath(app.applicationDirPath());
+
+#ifdef FFMPEG_IN_DATA_PATH // Search FFmpeg in <datapath>/ffmpeg/
+    FFmpegInterface::setFFmpegExecutable(Paths::dataFileName("ffmpeg/ffmpeg"));
+    MediaProbe::setFFprobeExecutable(Paths::dataFileName("ffmpeg/ffprobe"));
+#else // Search FFmpeg in environment variables
+    FFmpegInterface::setFFmpegExecutable("ffmpeg");
+    MediaProbe::setFFprobeExecutable("ffprobe");
+#endif
 
     // Construct a string list containing all input filenames.
     QStringList inputFiles(app.arguments());

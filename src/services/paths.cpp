@@ -29,6 +29,11 @@ QString Paths::dataPath()
 #endif
 }
 
+QString Paths::dataFileName(const QString &filename)
+{
+    return QDir(dataPath()).absoluteFilePath(filename);
+}
+
 QString Paths::translationPath()
 {
     return QDir(dataPath()).absoluteFilePath("translations");

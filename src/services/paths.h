@@ -10,6 +10,7 @@ public:
     static QString appPath();
 
     static QString dataPath();
+    static QString dataFileName(const QString& filename);
     static QString translationPath();
 };
 

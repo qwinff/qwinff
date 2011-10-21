@@ -12,7 +12,7 @@
 #define SECONDS_PER_MINUTE 60
 
 namespace {
-const char ffprobe_executable[] = "ffprobe";
+QString ffprobe_executable("ffprobe");
 
 namespace patterns {
 
@@ -241,6 +241,11 @@ MediaProbe::MediaProbe(QObject *parent) :
 MediaProbe::~MediaProbe()
 {
     stop();
+}
+
+void MediaProbe::setFFprobeExecutable(const QString &filename)
+{
+    ffprobe_executable = filename;
 }
 
 bool MediaProbe::available()
