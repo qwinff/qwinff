@@ -48,6 +48,9 @@ install:
 	install -m 644 src/presets.xml $(DATA_PATH)
 	-install -d $(TRANSLATION_PATH)
 	-install -m 644 src/translations/*.qm $(TRANSLATION_PATH)
+	-install -d $(PREFIX)/share/man/man1
+	install -m 644 man/qwinff.1 $(PREFIX)/share/man/man1/
+	gzip -9 -f $(PREFIX)/share/man/man1/qwinff.1
 	
 uninstall:
 	-rm -f $(PREFIX)/bin/qwinff
@@ -55,3 +58,4 @@ uninstall:
 	-rm -f $(TRANSLATION_PATH)/*.qm
 	-rmdir $(TRANSLATION_PATH)
 	-rmdir $(DATA_PATH)
+	-rm -f $(PREFIX)/share/man/man1/qwinff.1.gz
