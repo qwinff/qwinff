@@ -18,6 +18,7 @@
 #include <QLocale>
 #include <QTranslator>
 #include <QDir>
+#include <QSettings>
 #include "ui/mainwindow.h"
 #include "services/paths.h"
 #include "converter/ffmpeginterface.h"
@@ -30,7 +31,13 @@ int main(int argc, char *argv[])
 
     // Register QSettings information.
     app.setOrganizationName("qwinff");
+#ifdef PORTABLE_APP // Portable App: Save settings in qwinff.ini.
+    QSettings::setDefaultFormat(QSettings::IniFormat);
+    QSettings::setPath(QSettings::IniFormat, QSettings::UserScope
+                       , app.applicationDirPath());
+#else // Save settings in default location.
     app.setApplicationName("qwinff");
+#endif
 
     Paths::setAppPath(app.applicationDirPath());
 
