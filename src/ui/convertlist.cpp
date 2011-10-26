@@ -183,8 +183,7 @@ bool ConvertList::addTask(ConversionParameters param)
        or in the ConvertList, rename it to prevent overwritting
        completed tasks.  */
     param.destination =
-            FilePathOperations::GenerateUniqueFileName(param.destination, m_outputFileNames);
-    m_outputFileNames.insert(param.destination); // Record the filename for future reference.
+            FilePathOperations::GenerateUniqueFileName(param.destination, get_output_filenames());
 
     TaskPtr task(new Task());
     task->param = param;
@@ -288,7 +287,6 @@ void ConvertList::removeTask(int index)
 {
     qDebug() << "ConvertList::removeTask(), index=" << index;
     if (m_tasks[index]->status != Task::RUNNING) { // not a running task
-        m_outputFileNames.remove(m_tasks[index]->param.destination);
         m_tasks.remove(index);
         delete m_list->takeTopLevelItem(index);
     } else { // The task is being executed.
@@ -695,6 +693,15 @@ void ConvertList::list_dropEvent(QDropEvent *event)
     }
 }
 
+QSet<QString>& ConvertList::get_output_filenames()
+{
+    m_outputFileNames.clear();
+    foreach (TaskPtr task, m_tasks) {
+        m_outputFileNames.insert(task->param.destination);
+    }
+    return m_outputFileNames;
+}
+
 // Initialize the QTreeWidget listing files.
 void ConvertList::init_treewidget(QTreeWidget *w)
 {
@@ -885,7 +892,7 @@ void ConvertList::change_output_file(int index, const QString &new_file
 
     if (new_file == orig_file) return;
 
-    if ((QFileInfo(new_file).exists() || m_outputFileNames.contains(new_file))
+    if ((QFileInfo(new_file).exists() || get_output_filenames().contains(new_file))
             && overwrite != QMessageBox::YesToAll) {
         QMessageBox::StandardButtons flags = QMessageBox::Yes | QMessageBox::No;
         if (show_all_buttons) {
@@ -895,14 +902,13 @@ void ConvertList::change_output_file(int index, const QString &new_file
         // Ask the user whether to force using the file name.
         overwrite = QMessageBox::warning(this, tr("File Exists"),
                           tr("%1 already exists on disk or in the task list. "
+                             "Using this filename may overwrite the existing file."
                              "Still use this name as the output filename?").arg(new_file)
                           , flags);
         if (overwrite != QMessageBox::Yes && overwrite != QMessageBox::YesToAll)
             return;
     }
 
-    m_outputFileNames.remove(orig_file);
-    m_outputFileNames.insert(new_file);
     param.destination = new_file;
 
     // Update item text

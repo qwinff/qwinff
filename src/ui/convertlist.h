@@ -167,8 +167,11 @@ private:
     bool is_busy;
     bool run_next; ///< run next task regardless of the value of is_busy
     Presets *m_presets;
-    QSet<QString> m_outputFileNames;
     QTime m_startTime;
+
+    QSet<QString>& get_output_filenames(); ///< returns the set of output filenames.
+    QSet<QString> m_outputFileNames; ///< this variable should only be accessed by get_output_filenames().
+
     void init_treewidget(QTreeWidget*);
     void init_treewidget_fill_column_titles(QStringList&);
     void init_treewidget_columns_visibility(QTreeWidget*);
