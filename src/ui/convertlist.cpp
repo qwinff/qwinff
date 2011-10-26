@@ -460,34 +460,42 @@ void ConvertList::changeSelectedOutputFile()
     if (!name.isEmpty() && name != orig_name) {
         QString orig_file = param.destination;
         QString file = QDir(dir).absoluteFilePath(name + "." + ext);
-
-        if (QFileInfo(file).exists() || m_outputFileNames.contains(file)) {
-            // The file name already exists.
-            // Ask the user whether to force using the file name.
-            int reply = QMessageBox::warning(this, tr("File Exists"),
-                              tr("The file already exists on disk or in the task list. "
-                                 "Still use this name as the output filename?")
-                              , QMessageBox::Yes | QMessageBox::No);
-            if (reply != QMessageBox::Yes)
-                return;
-        }
-
-        m_outputFileNames.remove(orig_file);
-        m_outputFileNames.insert(file);
-        param.destination = file;
-
-        // Update item text
-        item->setText(COL_DESTINATION, QFileInfo(file).fileName());
-        item->setToolTip(COL_DESTINATION, file);
-
-        qDebug() << "Output filename changed: " + orig_file + " => " + file;
+        QMessageBox::StandardButtons overwrite = QMessageBox::No;
+        change_output_file(index, file, overwrite, false);
     }
-
 }
 
 void ConvertList::changeSelectedOutputDirectory()
 {
+    QList<QTreeWidgetItem*> itemList = m_list->selectedItems();
 
+    if (itemList.isEmpty()) // No item is selected.
+        return;
+
+    QTreeWidgetItem *item = itemList[0];
+
+    // Get the index of the first selected item.
+    int index = m_list->indexOfTopLevelItem(item);
+
+    ConversionParameters &param = m_tasks[index]->param;
+
+    QString orig_path = QFileInfo(param.destination).path();
+
+    QString path = QFileDialog::getExistingDirectory(this, tr("Output Directory")
+                                     , orig_path);
+
+    if (!path.isEmpty()) {
+        // Apply the output path to all selected items
+        QMessageBox::StandardButtons overwrite = QMessageBox::No;
+        foreach (item, itemList) {
+            index = m_list->indexOfTopLevelItem(item);
+            QString orig_file = m_tasks[index]->param.destination;
+            QString name = QFileInfo(orig_file).fileName();
+            QString file = QDir(path).absoluteFilePath(name);
+
+            change_output_file(index, file, overwrite, true);
+        }
+    }
 }
 
 void ConvertList::retrySelectedItems()
@@ -863,4 +871,44 @@ QString ConvertList::to_human_readable_size_1024(qint64 nBytes)
     }
 
     return QString().setNum(num,'f',2)+" "+unit;
+}
+
+void ConvertList::change_output_file(int index, const QString &new_file
+        , QMessageBox::StandardButtons &overwrite, bool show_all_buttons)
+{
+    if (overwrite == QMessageBox::NoToAll) return;
+
+    ConversionParameters &param = m_tasks[index]->param;
+    QTreeWidgetItem *item = m_tasks[index]->listitem;
+
+    QString orig_file = param.destination;
+
+    if (new_file == orig_file) return;
+
+    if ((QFileInfo(new_file).exists() || m_outputFileNames.contains(new_file))
+            && overwrite != QMessageBox::YesToAll) {
+        QMessageBox::StandardButtons flags = QMessageBox::Yes | QMessageBox::No;
+        if (show_all_buttons) {
+            flags |= QMessageBox::YesToAll | QMessageBox::NoToAll;
+        }
+        // The file name already exists.
+        // Ask the user whether to force using the file name.
+        overwrite = QMessageBox::warning(this, tr("File Exists"),
+                          tr("%1 already exists on disk or in the task list. "
+                             "Still use this name as the output filename?").arg(new_file)
+                          , flags);
+        if (overwrite != QMessageBox::Yes && overwrite != QMessageBox::YesToAll)
+            return;
+    }
+
+    m_outputFileNames.remove(orig_file);
+    m_outputFileNames.insert(new_file);
+    param.destination = new_file;
+
+    // Update item text
+    item->setText(COL_DESTINATION, QFileInfo(new_file).fileName());
+    item->setToolTip(COL_DESTINATION, new_file);
+
+    qDebug() << "Output filename changed: " + orig_file + " => " + new_file;
+
 }

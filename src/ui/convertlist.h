@@ -21,6 +21,7 @@
 #include <QTime>
 #include <QSharedPointer>
 #include <QSet>
+#include <QMessageBox>
 #include "converter/conversionparameters.h"
 
 class MediaConverter;
@@ -118,6 +119,9 @@ public slots:
      *   file will be changed.
      */
     void changeSelectedOutputFile();
+
+    /*! Popup a directory selection dialog to change the output directory.
+     */
     void changeSelectedOutputDirectory();
 
     /*! Mark selected items as queued so that they will be converted again.
@@ -174,6 +178,8 @@ private:
     ProgressBar* progressBar(Task*);
     ProgressBar* progressBar(const Task&);
     QString to_human_readable_size_1024(qint64 nBytes);
+    void change_output_file(int index, const QString& new_file
+            , QMessageBox::StandardButtons &overwrite, bool show_all_buttons);
 };
 
 #endif // CONVERTLIST_H

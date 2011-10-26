@@ -67,6 +67,7 @@
     <addaction name="actionOpenOutputFolder"/>
     <addaction name="actionSetParameters"/>
     <addaction name="actionChangeOutputFilename"/>
+    <addaction name="actionChangeOutputDirectory"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
@@ -286,6 +287,11 @@
   <action name="actionChangeOutputFilename">
    <property name="text">
     <string>Change Output &amp;Filename</string>
+   </property>
+  </action>
+  <action name="actionChangeOutputDirectory">
+   <property name="text">
+    <string>Change Output &amp;Directory</string>
    </property>
   </action>
  </widget>

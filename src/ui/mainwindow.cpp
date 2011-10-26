@@ -200,6 +200,8 @@ void MainWindow::slotListContextMenu(QPoint /*pos*/)
     menu.addAction(ui->actionRetry);
     menu.addAction(ui->actionRetryAll);
     menu.addSeparator();
+    menu.addAction(ui->actionChangeOutputFilename);
+    menu.addAction(ui->actionChangeOutputDirectory);
     menu.addAction(ui->actionSetParameters);
 
     menu.exec(QCursor::pos());
@@ -348,6 +350,8 @@ void MainWindow::setup_menus()
             this, SLOT(slotOpenOutputFolder()));
     connect(ui->actionChangeOutputFilename, SIGNAL(triggered()),
             m_list, SLOT(changeSelectedOutputFile()));
+    connect(ui->actionChangeOutputDirectory, SIGNAL(triggered()),
+            m_list, SLOT(changeSelectedOutputDirectory()));
 
     // Convert
     connect(ui->menuConvert, SIGNAL(aboutToShow()),
@@ -418,6 +422,9 @@ void MainWindow::refresh_action_states()
 
     bool hide_ClearList = (m_list->isEmpty());
 
+    bool hide_ChangeOutputFilename = m_list->selectedCount() != 1;
+    bool hide_ChangeOutputDirectory = m_list->selectedCount() <= 0;
+
     ui->actionSetParameters->setDisabled(hide_SetParameters);
     ui->actionStartConversion->setDisabled(hide_StartConversion);
     ui->actionStopConversion->setDisabled(hide_StopConversion);
@@ -426,4 +433,6 @@ void MainWindow::refresh_action_states()
     ui->actionRetry->setDisabled(hide_Retry);
     ui->actionRetryAll->setDisabled(hide_RetryAll);
     ui->actionClearList->setDisabled(hide_ClearList);
+    ui->actionChangeOutputFilename->setDisabled(hide_ChangeOutputFilename);
+    ui->actionChangeOutputDirectory->setDisabled(hide_ChangeOutputDirectory);
 }
