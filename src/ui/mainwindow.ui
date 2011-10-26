@@ -288,10 +288,16 @@
    <property name="text">
     <string>Change Output &amp;Filename</string>
    </property>
+   <property name="statusTip">
+    <string>Change the output filename of the selected item.</string>
+   </property>
   </action>
   <action name="actionChangeOutputDirectory">
    <property name="text">
     <string>Change Output &amp;Directory</string>
+   </property>
+   <property name="statusTip">
+    <string>Change the output directory of the selected items.</string>
    </property>
   </action>
  </widget>
