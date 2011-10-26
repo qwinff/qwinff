@@ -170,10 +170,10 @@ private:
 
     /** this variable should only be accessed by the output_filename_set* functions */
     QSet<QString> m_outputFileNames;
-    void output_filename_set_add(const QString& filename);
-    void output_filename_set_remove(const QString& filename);
-    void output_filename_set_rebuild();
-    QSet<QString>& output_filename_set();
+    void output_filenames_add(const QString& filename);
+    void output_filenames_remove(const QString& filename);
+    void output_filenames_rebuild();
+    QSet<QString>& output_filenames();
 
     QTime m_startTime;
     void init_treewidget(QTreeWidget*);
