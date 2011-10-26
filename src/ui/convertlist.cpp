@@ -183,7 +183,8 @@ bool ConvertList::addTask(ConversionParameters param)
        or in the ConvertList, rename it to prevent overwritting
        completed tasks.  */
     param.destination =
-            FilePathOperations::GenerateUniqueFileName(param.destination, get_output_filenames());
+            FilePathOperations::GenerateUniqueFileName(param.destination, output_filename_set());
+    output_filename_set_add(param.destination); // Record the filename for future reference.
 
     TaskPtr task(new Task());
     task->param = param;
@@ -287,6 +288,7 @@ void ConvertList::removeTask(int index)
 {
     qDebug() << "ConvertList::removeTask(), index=" << index;
     if (m_tasks[index]->status != Task::RUNNING) { // not a running task
+        output_filename_set_remove(m_tasks[index]->param.destination);
         m_tasks.remove(index);
         delete m_list->takeTopLevelItem(index);
     } else { // The task is being executed.
@@ -693,14 +695,31 @@ void ConvertList::list_dropEvent(QDropEvent *event)
     }
 }
 
-QSet<QString>& ConvertList::get_output_filenames()
+// Functions to access m_outputFileNames
+
+void ConvertList::output_filename_set_add(const QString& filename)
+{
+    m_outputFileNames.insert(filename);
+}
+
+void ConvertList::output_filename_set_remove(const QString &filename)
+{
+    m_outputFileNames.remove(filename);
+}
+
+void ConvertList::output_filename_set_rebuild()
 {
     m_outputFileNames.clear();
     foreach (TaskPtr task, m_tasks) {
         m_outputFileNames.insert(task->param.destination);
     }
+}
+
+QSet<QString>& ConvertList::output_filename_set()
+{
     return m_outputFileNames;
 }
+
 
 // Initialize the QTreeWidget listing files.
 void ConvertList::init_treewidget(QTreeWidget *w)
@@ -892,7 +911,7 @@ void ConvertList::change_output_file(int index, const QString &new_file
 
     if (new_file == orig_file) return;
 
-    if ((QFileInfo(new_file).exists() || get_output_filenames().contains(new_file))
+    if ((QFileInfo(new_file).exists() || output_filename_set().contains(new_file))
             && overwrite != QMessageBox::YesToAll) {
         QMessageBox::StandardButtons flags = QMessageBox::Yes | QMessageBox::No;
         if (show_all_buttons) {
@@ -902,7 +921,6 @@ void ConvertList::change_output_file(int index, const QString &new_file
         // Ask the user whether to force using the file name.
         overwrite = QMessageBox::warning(this, tr("File Exists"),
                           tr("%1 already exists on disk or in the task list. "
-                             "Using this filename may overwrite the existing file."
                              "Still use this name as the output filename?").arg(new_file)
                           , flags);
         if (overwrite != QMessageBox::Yes && overwrite != QMessageBox::YesToAll)
@@ -911,6 +929,9 @@ void ConvertList::change_output_file(int index, const QString &new_file
 
     param.destination = new_file;
 
+    // Rebuild the set of all output filenames in the list.
+    output_filename_set_rebuild();
+
     // Update item text
     item->setText(COL_DESTINATION, QFileInfo(new_file).fileName());
     item->setToolTip(COL_DESTINATION, new_file);
@@ -918,3 +939,4 @@ void ConvertList::change_output_file(int index, const QString &new_file
     qDebug() << "Output filename changed: " + orig_file + " => " + new_file;
 
 }
+

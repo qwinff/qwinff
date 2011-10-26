@@ -167,11 +167,15 @@ private:
     bool is_busy;
     bool run_next; ///< run next task regardless of the value of is_busy
     Presets *m_presets;
+
+    /** this variable should only be accessed by the output_filename_set* functions */
+    QSet<QString> m_outputFileNames;
+    void output_filename_set_add(const QString& filename);
+    void output_filename_set_remove(const QString& filename);
+    void output_filename_set_rebuild();
+    QSet<QString>& output_filename_set();
+
     QTime m_startTime;
-
-    QSet<QString>& get_output_filenames(); ///< returns the set of output filenames.
-    QSet<QString> m_outputFileNames; ///< this variable should only be accessed by get_output_filenames().
-
     void init_treewidget(QTreeWidget*);
     void init_treewidget_fill_column_titles(QStringList&);
     void init_treewidget_columns_visibility(QTreeWidget*);
@@ -183,6 +187,7 @@ private:
     QString to_human_readable_size_1024(qint64 nBytes);
     void change_output_file(int index, const QString& new_file
             , QMessageBox::StandardButtons &overwrite, bool show_all_buttons);
+
 };
 
 #endif // CONVERTLIST_H
