@@ -31,6 +31,8 @@
 #include <QProgressDialog>
 #include <QSettings>
 #include <QMenu>
+#include <QFileDialog>
+#include <QInputDialog>
 #include <cassert>
 
 #define TIMEOUT 3000
@@ -431,6 +433,61 @@ void ConvertList::editSelectedParameters()
             m_tasks[index]->param.copyConfigurationFrom(param);
         }
     }
+}
+
+void ConvertList::changeSelectedOutputFile()
+{
+    QList<QTreeWidgetItem*> itemList = m_list->selectedItems();
+
+    if (itemList.isEmpty()) // No item is selected.
+        return;
+
+    QTreeWidgetItem *item = itemList[0];
+
+    // Get the index of the first selected item.
+    const int index = m_list->indexOfTopLevelItem(item);
+
+    ConversionParameters &param = m_tasks[index]->param;
+
+    QString orig_name = QFileInfo(param.destination).completeBaseName();
+    QString dir = QFileInfo(param.destination).path();
+    QString ext = QFileInfo(param.destination).suffix();
+
+    QString name = QInputDialog::getText(this, tr("New File Name")
+                , tr("Please input the new name for the output file.")
+                , QLineEdit::Normal, orig_name);
+
+    if (!name.isEmpty() && name != orig_name) {
+        QString orig_file = param.destination;
+        QString file = QDir(dir).absoluteFilePath(name + "." + ext);
+
+        if (QFileInfo(file).exists() || m_outputFileNames.contains(file)) {
+            // The file name already exists.
+            // Ask the user whether to force using the file name.
+            int reply = QMessageBox::warning(this, tr("File Exists"),
+                              tr("The file already exists on disk or in the task list. "
+                                 "Still use this name as the output filename?")
+                              , QMessageBox::Yes | QMessageBox::No);
+            if (reply != QMessageBox::Yes)
+                return;
+        }
+
+        m_outputFileNames.remove(orig_file);
+        m_outputFileNames.insert(file);
+        param.destination = file;
+
+        // Update item text
+        item->setText(COL_DESTINATION, QFileInfo(file).fileName());
+        item->setToolTip(COL_DESTINATION, file);
+
+        qDebug() << "Output filename changed: " + orig_file + " => " + file;
+    }
+
+}
+
+void ConvertList::changeSelectedOutputDirectory()
+{
+
 }
 
 void ConvertList::retrySelectedItems()

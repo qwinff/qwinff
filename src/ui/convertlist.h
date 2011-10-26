@@ -112,6 +112,14 @@ public slots:
      */
     void editSelectedParameters();
 
+    /*! Popup a input box to change the output filename
+     *  of the **first** selected file.
+     *  @warning If multiple files are selected, only the first
+     *   file will be changed.
+     */
+    void changeSelectedOutputFile();
+    void changeSelectedOutputDirectory();
+
     /*! Mark selected items as queued so that they will be converted again.
      *  If the converter is idle, start converting those items.
      *  Otherwise, the items are simply marked as queued.

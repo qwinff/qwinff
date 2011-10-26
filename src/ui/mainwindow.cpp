@@ -346,6 +346,8 @@ void MainWindow::setup_menus()
             this, SLOT(slotSetConversionParameters()));
     connect(ui->actionOpenOutputFolder, SIGNAL(triggered()),
             this, SLOT(slotOpenOutputFolder()));
+    connect(ui->actionChangeOutputFilename, SIGNAL(triggered()),
+            m_list, SLOT(changeSelectedOutputFile()));
 
     // Convert
     connect(ui->menuConvert, SIGNAL(aboutToShow()),

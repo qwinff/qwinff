@@ -66,6 +66,7 @@
     <addaction name="separator"/>
     <addaction name="actionOpenOutputFolder"/>
     <addaction name="actionSetParameters"/>
+    <addaction name="actionChangeOutputFilename"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
@@ -280,6 +281,11 @@
    </property>
    <property name="statusTip">
     <string>About This Program</string>
+   </property>
+  </action>
+  <action name="actionChangeOutputFilename">
+   <property name="text">
+    <string>Change Output &amp;Filename</string>
    </property>
   </action>
  </widget>
