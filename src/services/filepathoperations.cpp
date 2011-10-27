@@ -21,7 +21,7 @@ FilePathOperations::FilePathOperations()
 }
 
 QString FilePathOperations::GenerateUniqueFileName(const QDir& output_dir, const QString& input_file_basename
-                               , const QString& ext, const QSet<QString>& extra)
+                               , const QString& ext, const QHash<QString, int>& extra)
 {
     int filename_index = 1;
     QString result;
@@ -46,7 +46,7 @@ QString FilePathOperations::GenerateUniqueFileName(const QDir& output_dir, const
     return result;
 }
 
-QString FilePathOperations::GenerateUniqueFileName(const QString &filename, const QSet<QString>& extra)
+QString FilePathOperations::GenerateUniqueFileName(const QString &filename, const QHash<QString, int>& extra)
 {
     QDir dir = QFileInfo(filename).dir();
     QString basename = QFileInfo(filename).completeBaseName();

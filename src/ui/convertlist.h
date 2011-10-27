@@ -20,7 +20,7 @@
 #include <QVector>
 #include <QTime>
 #include <QSharedPointer>
-#include <QSet>
+#include <QHash>
 #include <QMessageBox>
 #include "converter/conversionparameters.h"
 
@@ -169,11 +169,10 @@ private:
     Presets *m_presets;
 
     /** this variable should only be accessed by the output_filename_set* functions */
-    QSet<QString> m_outputFileNames;
-    void output_filenames_add(const QString& filename);
-    void output_filenames_remove(const QString& filename);
-    void output_filenames_rebuild();
-    QSet<QString>& output_filenames();
+    QHash<QString, int> m_outputFileNames;
+    void output_filenames_push(const QString& filename);
+    void output_filenames_pop(const QString& filename);
+    QHash<QString, int>& output_filenames();
 
     QTime m_startTime;
     void init_treewidget(QTreeWidget*);

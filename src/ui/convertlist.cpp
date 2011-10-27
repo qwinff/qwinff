@@ -184,7 +184,7 @@ bool ConvertList::addTask(ConversionParameters param)
        completed tasks.  */
     param.destination =
             FilePathOperations::GenerateUniqueFileName(param.destination, output_filenames());
-    output_filenames_add(param.destination); // Record the filename for future reference.
+    output_filenames_push(param.destination); // Record the filename for future reference.
 
     TaskPtr task(new Task());
     task->param = param;
@@ -288,7 +288,7 @@ void ConvertList::removeTask(int index)
 {
     qDebug() << "ConvertList::removeTask(), index=" << index;
     if (m_tasks[index]->status != Task::RUNNING) { // not a running task
-        output_filenames_remove(m_tasks[index]->param.destination);
+        output_filenames_pop(m_tasks[index]->param.destination);
         m_tasks.remove(index);
         delete m_list->takeTopLevelItem(index);
     } else { // The task is being executed.
@@ -439,7 +439,7 @@ void ConvertList::changeSelectedOutputFile()
 {
     QList<QTreeWidgetItem*> itemList = m_list->selectedItems();
 
-    if (itemList.isEmpty()) // No item is selected.
+    if (itemList.size() != 1)
         return;
 
     QTreeWidgetItem *item = itemList[0];
@@ -697,25 +697,26 @@ void ConvertList::list_dropEvent(QDropEvent *event)
 
 // Functions to access m_outputFileNames
 
-void ConvertList::output_filenames_add(const QString& filename)
+void ConvertList::output_filenames_push(const QString& filename)
 {
-    m_outputFileNames.insert(filename);
-}
-
-void ConvertList::output_filenames_remove(const QString &filename)
-{
-    m_outputFileNames.remove(filename);
-}
-
-void ConvertList::output_filenames_rebuild()
-{
-    m_outputFileNames.clear();
-    foreach (TaskPtr task, m_tasks) {
-        m_outputFileNames.insert(task->param.destination);
+    if (m_outputFileNames.contains(filename)) {
+        ++m_outputFileNames[filename];
+    } else {
+        m_outputFileNames.insert(filename, 1);
     }
 }
 
-QSet<QString>& ConvertList::output_filenames()
+void ConvertList::output_filenames_pop(const QString &filename)
+{
+    int count = m_outputFileNames.value(filename, 0);
+    if (count > 1) {
+        --m_outputFileNames[filename];
+    } else if (count == 1) {
+        m_outputFileNames.remove(filename);
+    }
+}
+
+QHash<QString, int>& ConvertList::output_filenames()
 {
     return m_outputFileNames;
 }
@@ -899,6 +900,7 @@ QString ConvertList::to_human_readable_size_1024(qint64 nBytes)
     return QString().setNum(num,'f',2)+" "+unit;
 }
 
+/* Change the output file of the task to new_file. */
 void ConvertList::change_output_file(int index, const QString &new_file
         , QMessageBox::StandardButtons &overwrite, bool show_all_buttons)
 {
@@ -930,7 +932,8 @@ void ConvertList::change_output_file(int index, const QString &new_file
     param.destination = new_file;
 
     // Rebuild the set of all output filenames in the list.
-    output_filenames_rebuild();
+    output_filenames_pop(orig_file);
+    output_filenames_push(new_file);
 
     // Update item text
     item->setText(COL_DESTINATION, QFileInfo(new_file).fileName());
