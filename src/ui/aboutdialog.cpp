@@ -47,8 +47,8 @@ AboutDialog::AboutDialog(QWidget *parent) :
          + "<br><br>"
          + tr("QWinFF is a gui frontend for FFmpeg.")
          + "<br><br>"
-         + tr("Programming: %1").arg("Timothy Lin") + "<br>"
-         + tr("Logo Design: %1").arg("KuanYui") + "<br><br>"
+         + tr("Programming: %1").arg("Timothy Lin &lt;lzh9102@gmail.com&gt;") + "<br>"
+         + tr("Logo Design: %1").arg("KuanYui &lt;azazabc123@gmail.com&gt;") + "<br><br>"
          + tr("This program is free software; you can redistribute it and/or modify it "
               "under the terms of the GNU General Public License version 2 or 3.")
          + "<br><br>"
