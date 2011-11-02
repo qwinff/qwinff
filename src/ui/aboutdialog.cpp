@@ -18,6 +18,13 @@
 #include "version.h"
 #include <QtGlobal>
 
+namespace {
+QString url(QString lnk)
+{
+    return QString("<a href=\"%1\">%1</a>").arg(lnk);
+}
+}
+
 AboutDialog::AboutDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::AboutDialog)
@@ -25,6 +32,8 @@ AboutDialog::AboutDialog(QWidget *parent) :
     ui->setupUi(this);
 
     QLabel *info = ui->lblInfo;
+
+    info->setOpenExternalLinks(true);
 
     info->setText(
          "<b>QWinFF</b> &copy; 2011 Timothy Lin &lt;lzh9102@gmail.com&gt;<br>"
@@ -42,7 +51,9 @@ AboutDialog::AboutDialog(QWidget *parent) :
          + tr("Logo Design: %1").arg("KuanYui") + "<br><br>"
          + tr("This program is free software; you can redistribute it and/or modify it "
               "under the terms of the GNU General Public License version 2 or 3.")
-         +"<br><br>"
+         + "<br><br>"
+         + tr("QWinFF Project Page: %1").arg(url("http://code.google.com/p/qwinff/"))
+         + "<br>"
          + tr("FFmpeg presets were taken from WinFF.")
          + "<br><br>"
          /* TODO: add project page information */
