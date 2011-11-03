@@ -755,7 +755,7 @@
     <message>
         <location filename="../ui/mainwindow.ui" line="281"/>
         <source>About Q&amp;WinFF</source>
-        <translation type="unfinished">作為輸出檔案作為輸出檔案關於Q&amp;WinFF</translation>
+        <translation>關於Q&amp;WinFF</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="284"/>
