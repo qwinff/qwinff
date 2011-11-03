@@ -387,17 +387,17 @@
     <message>
         <location filename="../ui/convertlist.cpp" line="456"/>
         <source>New File Name</source>
-        <translation type="unfinished"></translation>
+        <translation>新的檔案名稱</translation>
     </message>
     <message>
         <location filename="../ui/convertlist.cpp" line="457"/>
         <source>Please input the new name for the output file.</source>
-        <translation type="unfinished"></translation>
+        <translation>請輸出新的檔案名稱</translation>
     </message>
     <message>
         <location filename="../ui/convertlist.cpp" line="484"/>
         <source>Output Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>輸出資料夾</translation>
     </message>
     <message>
         <location filename="../ui/convertlist.cpp" line="549"/>
@@ -541,12 +541,12 @@
     <message>
         <location filename="../ui/convertlist.cpp" line="924"/>
         <source>File Exists</source>
-        <translation type="unfinished"></translation>
+        <translation>檔案已存在</translation>
     </message>
     <message>
         <location filename="../ui/convertlist.cpp" line="925"/>
         <source>%1 already exists on disk or in the task list. Still use this name as the output filename?</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 已經存在。確定還要用這個名稱作為輸出檔案嗎？</translation>
     </message>
 </context>
 <context>
@@ -755,7 +755,7 @@
     <message>
         <location filename="../ui/mainwindow.ui" line="281"/>
         <source>About Q&amp;WinFF</source>
-        <translation type="unfinished">關於Q&amp;WinFF</translation>
+        <translation type="unfinished">作為輸出檔案作為輸出檔案關於Q&amp;WinFF</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="284"/>
