@@ -31,7 +31,7 @@ AboutDialog::AboutDialog(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QLabel *info = ui->lblInfo;
+    QTextBrowser *info = ui->txtInfo;
 
     info->setOpenExternalLinks(true);
 
@@ -53,15 +53,19 @@ AboutDialog::AboutDialog(QWidget *parent) :
               "under the terms of the GNU General Public License version 2 or 3.")
          + "<br><br>"
          + tr("QWinFF Project Page: %1").arg(url("http://code.google.com/p/qwinff/"))
-         + "<br>"
+         + "<br><br>"
          + tr("FFmpeg presets were taken from WinFF.")
          + "<br><br>"
-         /* TODO: add project page information */
          );
 
     // Constraint the width of text area to the width of the banner.
     info->setMaximumWidth(ui->lblBanner->pixmap()->width());
-    info->setWordWrap(true);
+
+    // Set the background color of the textbox to the color of the window.
+    QPalette p = info->palette();
+    p.setColor(QPalette::Base, this->palette().color(QPalette::Window));
+    info->setPalette(p);
+    info->setFrameShape(QTextBrowser::NoFrame);  // Hide textbox border.
 
     // Make the window size fixed.
     this->adjustSize();
