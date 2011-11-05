@@ -335,8 +335,9 @@ void AddTaskWizard::load_settings()
     m_ext_preset = settings.value("addtaskwizard/selected_presets").toList().toVector();
     m_ext_preset.resize(ui->cbExtension->count());
 
-    ui->chkAutoAdjustBitrate->setChecked(
-          settings.value("addtaskwizard/auto_audio_bitrate", true).toBool());
+    //ui->chkAutoAdjustBitrate->setChecked(
+    //      settings.value("addtaskwizard/auto_audio_bitrate", false).toBool());
+    ui->chkAutoAdjustBitrate->setChecked(false);
 
     if (ext_index >= 0 && ext_index < m_ext_preset.size()) {
         // preset combobox
@@ -379,7 +380,7 @@ void AddTaskWizard::save_settings()
     if (ext_index >= 0 && ext_index < m_ext_preset.size())
         m_ext_preset[ext_index] = preset_index;
 
-    settings.setValue("addtaskwizard/auto_audio_bitrate", ui->chkAutoAdjustBitrate->isChecked());
+    //settings.setValue("addtaskwizard/auto_audio_bitrate", ui->chkAutoAdjustBitrate->isChecked());
 
     // the last used preset of each extension
     settings.setValue("addtaskwizard/selected_presets", m_ext_preset.toList());
