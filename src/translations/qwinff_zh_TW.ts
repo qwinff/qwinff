@@ -9,6 +9,16 @@
         <translation>關於QWinFF</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.ui" line="41"/>
+        <source>Information</source>
+        <translation>資訊</translation>
+    </message>
+    <message>
+        <location filename="../ui/aboutdialog.ui" line="51"/>
+        <source>Translators</source>
+        <translation>翻譯者</translation>
+    </message>
+    <message>
         <source>Info</source>
         <translation type="obsolete">資訊</translation>
     </message>
@@ -17,43 +27,48 @@
         <translation type="obsolete">簡單易用的FFmpeg圖形介面</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="40"/>
+        <location filename="../ui/aboutdialog.cpp" line="41"/>
         <source>Version: %1</source>
         <translation>版本: %1</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="48"/>
+        <location filename="../ui/aboutdialog.cpp" line="49"/>
         <source>QWinFF is a gui frontend for FFmpeg.</source>
         <translation>FFmpeg影音轉檔器前端介面</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="50"/>
+        <location filename="../ui/aboutdialog.cpp" line="51"/>
         <source>Programming: %1</source>
         <translation>程式設計：%1</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="51"/>
+        <location filename="../ui/aboutdialog.cpp" line="52"/>
         <source>Logo Design: %1</source>
         <translation>Logo 設計：%1</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="52"/>
+        <location filename="../ui/aboutdialog.cpp" line="53"/>
         <source>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License version 2 or 3.</source>
         <translation>這個程式是自由軟體，你可以在GNU授權條款(第二或第三版)下修改及散佈此軟體。</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="46"/>
+        <location filename="../ui/aboutdialog.cpp" line="96"/>
+        <source>Japanese</source>
+        <translation>日文</translation>
+    </message>
+    <message>
+        <location filename="../ui/aboutdialog.cpp" line="47"/>
         <source>Compiled with Qt %1</source>
         <extracomment>Qt version</extracomment>
         <translation>Qt編譯版本：%1</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="55"/>
+        <location filename="../ui/aboutdialog.cpp" line="56"/>
         <source>QWinFF Project Page: %1</source>
         <translation>QWinFF專案首頁: %1</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="57"/>
+        <location filename="../ui/aboutdialog.cpp" line="58"/>
         <source>FFmpeg presets were taken from WinFF.</source>
         <translation>FFmpeg的預設參數來自WinFF專案</translation>
     </message>

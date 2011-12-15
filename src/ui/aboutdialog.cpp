@@ -32,6 +32,7 @@ AboutDialog::AboutDialog(QWidget *parent) :
     ui->setupUi(this);
 
     QTextBrowser *info = ui->txtInfo;
+    QTextBrowser *translators = ui->txtTranslators;
 
     info->setOpenExternalLinks(true);
 
@@ -57,15 +58,21 @@ AboutDialog::AboutDialog(QWidget *parent) :
          + tr("FFmpeg presets were taken from WinFF.")
          + "<br><br>"
          );
+    translators->setHtml(getTranslators());
+    //translators->setText(getTranslators());
 
     // Constraint the width of text area to the width of the banner.
-    info->setMaximumWidth(ui->lblBanner->pixmap()->width());
+    //info->setMaximumWidth(ui->lblBanner->pixmap()->width());
 
     // Set the background color of the textbox to the color of the window.
     QPalette p = info->palette();
     p.setColor(QPalette::Base, this->palette().color(QPalette::Window));
+
     info->setPalette(p);
     info->setFrameShape(QTextBrowser::NoFrame);  // Hide textbox border.
+
+    translators->setPalette(p);
+    translators->setFrameShape(QTextBrowser::NoFrame);
 
     // Make the window size fixed.
     this->adjustSize();
@@ -74,9 +81,36 @@ AboutDialog::AboutDialog(QWidget *parent) :
     this->setMaximumWidth(this->width());
     this->setMaximumHeight(this->height());
 
+    ui->tabInfo->setAutoFillBackground(true);
+    ui->tabTranslators->setAutoFillBackground(true);
 }
 
 AboutDialog::~AboutDialog()
 {
     delete ui;
+}
+
+QString AboutDialog::getTranslators()
+{
+    return QString(
+        trad(tr("Japanese"), "Tilt <tiltstr@gmail.com>")
+        );
+}
+
+QString AboutDialog::trad(const QString& lang, const QString& author)
+{
+    return trad(lang, QStringList() << author);
+}
+
+QString AboutDialog::trad(const QString& lang, const QStringList& authors)
+{
+    QString s = "<ul>";
+    for (int n = 0; n < authors.count(); n++) {
+        QString author = authors[n];
+        s += "<li>"+ author.replace("<", "&lt;").replace(">", "&gt;")
+                + "</li>";
+    }
+    s+= "</ul>";
+
+    return QString("<b>%1</b>: %2").arg(lang).arg(s);
 }

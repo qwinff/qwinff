@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>418</width>
-    <height>292</height>
+    <width>426</width>
+    <height>339</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -29,7 +29,34 @@
     </widget>
    </item>
    <item>
-    <widget class="QTextBrowser" name="txtInfo"/>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="tabPosition">
+      <enum>QTabWidget::South</enum>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tabInfo">
+      <attribute name="title">
+       <string>Information</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QTextBrowser" name="txtInfo"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabTranslators">
+      <attribute name="title">
+       <string>Translators</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QTextBrowser" name="txtTranslators"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
    </item>
    <item>
     <widget class="QDialogButtonBox" name="buttonBox">
