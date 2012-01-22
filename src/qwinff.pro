@@ -28,7 +28,10 @@ SOURCES += main.cpp \
     services/paths.cpp \
     services/extensions.cpp \
     services/filepathoperations.cpp \
-    ui/aboutdialog.cpp
+    ui/aboutdialog.cpp \
+    services/notification.cpp \
+    services/notificationservice-qt.cpp \
+    services/notificationservice-notifysend.cpp
 
 HEADERS  += \
     ui/progressbar.h \
@@ -49,7 +52,11 @@ HEADERS  += \
     services/extensions.h \
     services/filepathoperations.h \
     ui/aboutdialog.h \
-    version.h
+    version.h \
+    services/notification.h \
+    services/notificationservice.h \
+    services/notificationservice-qt.h \
+    services/notificationservice-notifysend.h
 
 FORMS    += \
     ui/conversionparameterdialog.ui \
@@ -89,4 +96,13 @@ DEFINES += DEFAULT_THREAD_COUNT=4
 
 OTHER_FILES += \
     settings.txt
+
+
+
+
+
+
+
+
+
 

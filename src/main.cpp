@@ -23,6 +23,7 @@
 #include "services/paths.h"
 #include "converter/ffmpeginterface.h"
 #include "converter/mediaprobe.h"
+#include "services/notification.h"
 
 int main(int argc, char *argv[])
 {
@@ -61,6 +62,11 @@ int main(int argc, char *argv[])
     qDebug() << "Translation file: " + translation_basename + locale + ".qm";
     translator.load(translation_basename + locale);
     app.installTranslator(&translator);
+
+    // Setup notification
+    Notification::init();
+
+    Notification::send("title", "message");
 
     // Create main window.
     MainWindow window(0, inputFiles);
