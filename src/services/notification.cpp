@@ -45,9 +45,9 @@ void Notification::send(QString title, QString message)
     notify_service[m_type]->send(title, message);
 }
 
-void Notification::send(QString title, QString message, QString image)
+void Notification::send(QString title, QString message, int level)
 {
     if (m_type < 0 || m_type >= END_OF_TYPE)
         return;
-    notify_service[m_type]->send(title, message, image);
+    notify_service[m_type]->send(title, message, level);
 }

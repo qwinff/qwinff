@@ -2,6 +2,7 @@
 #define NOTIFICATION_H
 
 #include <QString>
+#include "notificationservice.h"
 
 class Notification
 {
@@ -30,7 +31,7 @@ public:
 
     static void send(QString title, QString message);
 
-    static void send(QString title, QString message, QString image);
+    static void send(QString title, QString message, int level);
 private:
     static NotificationType m_type;
 };

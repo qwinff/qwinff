@@ -14,7 +14,7 @@ public:
 
     virtual void send(QString title, QString message);
 
-    virtual void send(QString title, QString message, QString image);
+    virtual void send(QString title, QString message, int level);
 
     virtual bool serviceAvailable() const;
 

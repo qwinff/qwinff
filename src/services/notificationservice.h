@@ -3,9 +3,20 @@
 
 #include <QString>
 
+class NotifyLevel
+{
+public:
+    enum {
+        INFO = 0,
+        WARNING,
+        CRITICAL
+    };
+};
+
 class NotificationService
 {
 public:
+
     /** Send notification
      */
     virtual void send(QString title, QString message) = 0;
@@ -13,7 +24,7 @@ public:
     /** Send notification with an image
      *  @param image the path of the image
      */
-    virtual void send(QString title, QString message, QString image) = 0;
+    virtual void send(QString title, QString message, int level) = 0;
 
     /** Determine whether the notification service is available.
      */

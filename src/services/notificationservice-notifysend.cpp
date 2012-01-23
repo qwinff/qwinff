@@ -15,10 +15,10 @@ NotificationService_NotifySend::~NotificationService_NotifySend()
 
 void NotificationService_NotifySend::send(QString title, QString message)
 {
-    send(title, message, "");
+    send(title, message, NotifyLevel::INFO);
 }
 
-void NotificationService_NotifySend::send(QString title, QString message, QString image)
+void NotificationService_NotifySend::send(QString title, QString message, int level)
 {
     /* notify-send usage:
         notify-send [OPTION...] <SUMMARY> [BODY] - create a notification
@@ -34,12 +34,23 @@ void NotificationService_NotifySend::send(QString title, QString message, QStrin
     QProcess proc;
     QStringList options;
 
-    if (!image.isEmpty()) { // assign an icon
-        options.append("-i");
-        options.append(image);
+    // add icon
+    options.append("-i");
+    switch (level) {
+    case NotifyLevel::INFO:
+        options.append("dialog-information");
+        break;
+    case NotifyLevel::WARNING:
+        options.append("dialog-warning");
+        break;
+    case NotifyLevel::CRITICAL:
+        options.append("dialog-error");
+        break;
+    default: // no icon
+        options.pop_back();
     }
 
-    options.append("<b>" + title + "</b>");
+    options.append(title);
     options.append(message);
 
     proc.start(NOTIFY_SEND_EXECUTABLE, options);
