@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
 
     // Setup notification
     Notification::init();
-    Notification::setType(Notification::TYPE_QT);
+    Notification::setType(Notification::TYPE_NOTIFY_SEND);
 
     // Create main window.
     MainWindow window(0, inputFiles);

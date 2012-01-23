@@ -21,6 +21,7 @@
 #include "optionsdialog.h"
 #include "aboutdialog.h"
 #include "services/paths.h"
+#include "services/notification.h"
 #include "converter/ffmpeginterface.h"
 #include "converter/mediaprobe.h"
 #include "converter/presets.h"
@@ -112,8 +113,7 @@ void MainWindow::task_finished(int /*exitcode*/)
 
 void MainWindow::all_tasks_finished()
 {
-    QMessageBox::information(this, this->windowTitle(),
-                             tr("All tasks has finished."), QMessageBox::Ok);
+    Notification::send("QWinFF", tr("All tasks has finished."), NotifyLevel::INFO);
     refresh_action_states();
 }
 
