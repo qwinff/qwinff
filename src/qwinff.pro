@@ -30,9 +30,7 @@ SOURCES += main.cpp \
     services/filepathoperations.cpp \
     ui/aboutdialog.cpp \
     services/notification.cpp \
-    services/notificationservice-qt.cpp \
-    services/notificationservice-notifysend.cpp \
-    services/notificationservice-libnotify.cpp
+    services/notificationservice-qt.cpp
 
 HEADERS  += \
     ui/progressbar.h \
@@ -56,9 +54,7 @@ HEADERS  += \
     version.h \
     services/notification.h \
     services/notificationservice.h \
-    services/notificationservice-qt.h \
-    services/notificationservice-notifysend.h \
-    services/notificationservice-libnotify.h
+    services/notificationservice-qt.h
 
 FORMS    += \
     ui/conversionparameterdialog.ui \
@@ -76,6 +72,11 @@ TRANSLATIONS += \
     translations/qwinff_ja_JP.ts
 
 unix {
+    # Linux desktop notification
+    HEADERS += \
+        services/notificationservice-libnotify.h
+    SOURCES += \
+        services/notificationservice-libnotify.cpp
     # If DATA_PATH is set, QWinFF searches data in DATA_PATH
     # Otherwise, it uses the executable path as data path.
     DEFINES += DATA_PATH=$(DATA_PATH)
@@ -101,15 +102,3 @@ DEFINES += DEFAULT_THREAD_COUNT=4
 
 OTHER_FILES += \
     settings.txt
-
-
-
-
-
-
-
-
-
-
-
-

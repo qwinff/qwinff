@@ -1,7 +1,23 @@
+/*  This file is part of QWinFF, a media converter GUI.
+
+    QWinFF is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 2 or 3 of the License.
+
+    QWinFF is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with QWinFF.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
 #include "notification.h"
 #include "notificationservice-qt.h"
-#include "notificationservice-notifysend.h"
-#include "notificationservice-libnotify.h"
+#ifdef Q_WS_X11
+ #include "notificationservice-libnotify.h"
+#endif
 #include <QSharedPointer>
 
 namespace {
@@ -16,12 +32,11 @@ void Notification::init()
         notify_service.push_back(QSharedPointer<NotificationService>(0));
 
     notify_service[TYPE_MSGBOX]
-            = QSharedPointer<NotificationService>(new NotificationService_Qt());
-    notify_service[TYPE_NOTIFY_SEND]
-            = QSharedPointer<NotificationService>(new NotificationService_NotifySend());
+            = QSharedPointer<NotificationService>(new NotificationService_qt());
+#ifdef Q_WS_X11 // libnotify is for X11 desktop
     notify_service[TYPE_LIBNOTIFY]
             = QSharedPointer<NotificationService>(new NotificationService_libnotify());
-
+#endif
     m_type = TYPE_MSGBOX;
 }
 
@@ -29,7 +44,10 @@ bool Notification::serviceAvailable(NotificationType type)
 {
     if (type < 0 || type >= END_OF_TYPE)
         return false;
-    return notify_service[type]->serviceAvailable();
+    NotificationService *service = notify_service[type].data();
+    if (!service)
+        return false;
+    return service->serviceAvailable();
 }
 
 bool Notification::setType(NotificationType type)
