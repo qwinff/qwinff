@@ -1,6 +1,7 @@
 #include "notification.h"
 #include "notificationservice-qt.h"
 #include "notificationservice-notifysend.h"
+#include "notificationservice-libnotify.h"
 #include <QSharedPointer>
 
 namespace {
@@ -14,10 +15,14 @@ void Notification::init()
     for (int i=0; i<END_OF_TYPE; i++)
         notify_service.push_back(QSharedPointer<NotificationService>(0));
 
-    notify_service[TYPE_QT] = QSharedPointer<NotificationService>(new NotificationService_Qt());
-    notify_service[TYPE_NOTIFY_SEND] = QSharedPointer<NotificationService>(new NotificationService_NotifySend());
+    notify_service[TYPE_MSGBOX]
+            = QSharedPointer<NotificationService>(new NotificationService_Qt());
+    notify_service[TYPE_NOTIFY_SEND]
+            = QSharedPointer<NotificationService>(new NotificationService_NotifySend());
+    notify_service[TYPE_LIBNOTIFY]
+            = QSharedPointer<NotificationService>(new NotificationService_libnotify());
 
-    m_type = TYPE_QT;
+    m_type = TYPE_MSGBOX;
 }
 
 bool Notification::serviceAvailable(NotificationType type)
@@ -33,7 +38,7 @@ bool Notification::setType(NotificationType type)
         m_type = type;
         return true;
     } else {
-        m_type = TYPE_QT;
+        m_type = TYPE_MSGBOX;
         return false;
     }
 }
