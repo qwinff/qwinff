@@ -10,10 +10,9 @@ QWinFF needs ffmpeg and ffprobe at runtime.
 
 1) Generic Compilation and Installation on Unix-like Systems
 
-You need Qt 4.3 or greater to compile QWinFF.
-
-Be sure you have installed the Qt4 development package. Its name maybe
-libqt4-dev, qt4-devel or similar.
+Be sure you have installed the libraries required to build QWinFF:
+	- Qt 4.3 or later
+	- libnotify
 
 Decompress the source code; open a console and enter the directory.
 
