@@ -34,6 +34,7 @@
 #include <QSettings>
 #include <QCloseEvent>
 #include <QTimer>
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent, const QStringList& fileList) :
     QMainWindow(parent),
@@ -281,15 +282,8 @@ bool MainWindow::check_execute_conditions()
     }
 
     // load presets
-    // The presets are loaded once and shared between objects
-    // that need the information.
-    if (!m_presets->readFromFile
-            (QDir(Paths::dataPath()).absoluteFilePath("presets.xml"))) {
-        QMessageBox::critical(this, this->windowTitle(),
-                              tr("Failed to load preset file. "
-                                 "The application will quit now."));
+    if (!load_presets())
         return false;
-    }
 
     return true;
 }
@@ -395,6 +389,36 @@ void MainWindow::setup_toolbar()
 void MainWindow::setup_statusbar()
 {
     ui->statusBar->addPermanentWidget(m_elapsedTimeLabel);
+}
+
+bool MainWindow::load_presets()
+{
+    // The default preset file is located in <datapath>/presets.xml
+    QString default_preset_file = QDir(Paths::dataPath()).absoluteFilePath("presets.xml");
+    // Each user has his/her own preset file located in ${HOME}/.qwinff/presets.xml
+    QString local_preset_file = QDir(QDir::homePath()).absoluteFilePath(".qwinff/presets.xml");
+
+    // If there's no preset file in the home directory, then copy the default preset file.
+    if (!QFile(local_preset_file).exists()) {
+        if (!QFile::copy(default_preset_file, local_preset_file)) {
+            QMessageBox::critical(this, this->windowTitle(),
+                                  tr("Failed to create preset file: %1").arg(local_preset_file) + "\n"
+                                  + tr("The application will quit now"));
+            return false;
+        }
+        qDebug() << QString("Created preset file: %1").arg(local_preset_file);
+    }
+
+    // Load the preset file from the user's home directory
+    // The presets are loaded once and shared between objects
+    // that need the information.
+    if (!m_presets->readFromFile(local_preset_file)) {
+        QMessageBox::critical(this, this->windowTitle(),
+                              tr("Failed to load preset file. "
+                                 "The application will quit now."));
+        return false;
+    }
+    return true;
 }
 
 // Hide unused actions

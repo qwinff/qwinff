@@ -80,6 +80,7 @@ private:
     void setup_menus();
     void setup_toolbar();
     void setup_statusbar();
+    bool load_presets();
 };
 
 #endif // MAINWINDOW_H
