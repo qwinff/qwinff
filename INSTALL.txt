@@ -10,7 +10,7 @@ QWinFF needs ffmpeg and ffprobe at runtime.
 
 1) Generic Compilation and Installation on Unix-like Systems
 
-Be sure you have installed the libraries required to build QWinFF:
+Be sure you have installed the following libraries in order to build QWinFF:
 	- Qt 4.3 or later
 	- libnotify
 
