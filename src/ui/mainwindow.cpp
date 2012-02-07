@@ -395,6 +395,8 @@ bool MainWindow::load_presets()
 {
     // The default preset file is located in <datapath>/presets.xml
     QString default_preset_file = QDir(Paths::dataPath()).absoluteFilePath("presets.xml");
+
+#ifndef PORTABLE_APP
     // Each user has his/her own preset file located in ${HOME}/.qwinff/presets.xml
     QString local_preset_file = QDir(QDir::homePath()).absoluteFilePath(".qwinff/presets.xml");
 
@@ -408,6 +410,9 @@ bool MainWindow::load_presets()
         }
         qDebug() << QString("Created preset file: %1").arg(local_preset_file);
     }
+#else // PORTABLE_APP
+    QString local_preset_file = default_preset_file;
+#endif
 
     // Load the preset file from the user's home directory
     // The presets are loaded once and shared between objects

@@ -1,3 +1,9 @@
+Version 0.1.1:
+ (2012-02-07)
+  - Use libnotify for desktop notification.
+  - Separate preset file for each user.
+  - Save program settings and the user preset file in ~/.qwinff/
+
 Version 0.1.0:
  (2011-11-05)
   - Disable the auto adjust bitrate option by default as it causes problems sometimes.
