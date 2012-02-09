@@ -3,6 +3,7 @@ Version 0.1.1:
   - Use libnotify for desktop notification.
   - Separate preset file for each user.
   - Save program settings and the user preset file in ~/.qwinff/
+  - Added Japanese translation.
 
 Version 0.1.0:
  (2011-11-05)

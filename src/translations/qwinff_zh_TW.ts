@@ -798,47 +798,57 @@
         <translation>修改選取檔案的輸出資料夾</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="116"/>
+        <location filename="../ui/mainwindow.cpp" line="117"/>
         <source>All tasks has finished.</source>
         <translation>所有的檔案都已轉換完成</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="142"/>
+        <location filename="../ui/mainwindow.cpp" line="143"/>
         <source>Nothing to convert.</source>
         <translation>沒有要轉換的檔案</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="216"/>
+        <location filename="../ui/mainwindow.cpp" line="217"/>
         <source>Conversion is still in progress. Abort?</source>
         <translation>檔案還在轉換中。確定要離開嗎？</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="239"/>
+        <location filename="../ui/mainwindow.cpp" line="240"/>
         <source>Elapsed Time: %1h %2m %3s</source>
         <translation>經過時間: %1 時 %2 分 %3 秒</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="269"/>
+        <location filename="../ui/mainwindow.cpp" line="270"/>
         <source>FFmpeg Error</source>
         <translation>FFmpeg錯誤</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="270"/>
+        <location filename="../ui/mainwindow.cpp" line="271"/>
         <source>FFmpeg not found. The application will quit now.</source>
         <translation>找不到FFmpeg，程式將立刻結束。</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="277"/>
+        <location filename="../ui/mainwindow.cpp" line="278"/>
         <source>FFprobe Error</source>
         <translation>FFprobe錯誤</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="278"/>
+        <location filename="../ui/mainwindow.cpp" line="279"/>
         <source>FFprobe not found. The application will quit now.</source>
         <translation>找不到FFprobe，程式將立刻結束。</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="289"/>
+        <location filename="../ui/mainwindow.cpp" line="407"/>
+        <source>Failed to create preset file: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="408"/>
+        <source>The application will quit now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="422"/>
         <source>Failed to load preset file. The application will quit now.</source>
         <translation>無法載入設定檔，程式將立刻結束。</translation>
     </message>
