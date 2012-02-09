@@ -52,9 +52,15 @@ void NotificationService_libnotify::send(QString title, QString message, int lev
         icon = "";
     }
 
+#ifdef NOTIFY_CHECK_VERSION && NOTIFY_CHECK_VERSION(0, 7, 0)
     NotifyNotification *msg
             = notify_notification_new(title.toLocal8Bit().data()
                                       , message.toLocal8Bit().data(), icon);
+#else
+    NotifyNotification *msg
+            = notify_notification_new(title.toLocal8Bit().data()
+                                      , message.toLocal8Bit().data(), icon, 0);
+#endif
     notify_notification_show(msg, 0);
 }
 
