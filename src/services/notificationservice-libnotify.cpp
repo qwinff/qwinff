@@ -52,6 +52,7 @@ void NotificationService_libnotify::send(QString title, QString message, int lev
         icon = "";
     }
 
+/* In older libnotify, notify_notification_new() takes 4 arguments. */
 #ifdef NOTIFY_CHECK_VERSION
 #if NOTIFY_CHECK_VERSION(0, 7, 0)
     NotifyNotification *msg
