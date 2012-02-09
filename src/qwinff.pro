@@ -82,7 +82,7 @@ unix {
     DEFINES += DATA_PATH=$(DATA_PATH)
     # pkgconfig
     CONFIG += link_pkgconfig
-    PKGCONFIG = libnotify
+    PKGCONFIG = libnotify gtk+-2.0
 }
 
 win32 {

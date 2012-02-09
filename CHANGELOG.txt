@@ -1,3 +1,7 @@
+Version 0.1.2:
+  - Explicit link with gtk+-2.0. (libnotify can be used with either gtk2 or gtk3)
+  - Fixed compilation error with older libnotify versions.
+
 Version 0.1.1:
  (2012-02-07)
   - Use libnotify for desktop notification.
