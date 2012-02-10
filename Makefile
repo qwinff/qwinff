@@ -45,24 +45,24 @@ release:
 clean:
 	rm -rf $(BIN_DIR)/*
 	rm -rf $(BUILD_DIR)/*
-	cd $(SRC_DIR) && make clean && rm Makefile
+	-cd $(SRC_DIR) && make clean && rm Makefile
 
 install:
-	-install -d $(PREFIX)/bin/
-	install -m 755 bin/qwinff $(PREFIX)/bin/
-	-install -d $(DATA_PATH)
-	install -m 644 src/presets.xml $(DATA_PATH)
-	-install -d $(TRANSLATION_PATH)
-	-install -m 644 src/translations/*.qm $(TRANSLATION_PATH)
-	-install -d $(PREFIX)/share/man/man1
-	install -m 644 man/qwinff.1 $(PREFIX)/share/man/man1/
-	gzip -9 -f $(PREFIX)/share/man/man1/qwinff.1
+	-install -d $(DESTDIR)$(PREFIX)/bin/
+	install -m 755 bin/qwinff $(DESTDIR)$(PREFIX)/bin/
+	-install -d $(DESTDIR)$(DATA_PATH)
+	install -m 644 src/presets.xml $(DESTDIR)$(DATA_PATH)
+	-install -d $(DESTDIR)$(TRANSLATION_PATH)
+	-install -m 644 src/translations/*.qm $(DESTDIR)$(TRANSLATION_PATH)
+	-install -d $(DESTDIR)$(PREFIX)/share/man/man1
+	install -m 644 man/qwinff.1 $(DESTDIR)$(PREFIX)/share/man/man1/
+	gzip -9 -f $(DESTDIR)$(PREFIX)/share/man/man1/qwinff.1
 	
 uninstall:
-	-rm -f $(PREFIX)/bin/qwinff
-	-rm -f $(DATA_PATH)/presets.xml
-	-rm -f $(TRANSLATION_PATH)/*.qm
-	-rmdir $(TRANSLATION_PATH)
-	-rmdir $(DATA_PATH)
-	-rm -f $(PREFIX)/share/man/man1/qwinff.1.gz
-	-rm -f $(PREFIX)/share/applications/qwinff.desktop
+	-rm -f $(DESTDIR)$(PREFIX)/bin/qwinff
+	-rm -f $(DESTDIR)$(DATA_PATH)/presets.xml
+	-rm -f $(DESTDIR)$(TRANSLATION_PATH)/*.qm
+	-rmdir $(DESTDIR)$(TRANSLATION_PATH)
+	-rmdir $(DESTDIR)$(DATA_PATH)
+	-rm -f $(DESTDIR)$(PREFIX)/share/man/man1/qwinff.1.gz
+	-rm -f $(DESTDIR)$(PREFIX)/share/applications/qwinff.desktop
