@@ -32,6 +32,12 @@ QMAKE_DEFS= DESTDIR=$(BIN_DIR) \
 DEFS= DATA_PATH=\\\"$(DATA_PATH)\\\" \
       VERSION_ID_STRING=\\\"$(VIDSTR)\\\"
 
+USE_LIBNOTIFY=1
+
+ifneq ($(USE_LIBNOTIFY),0)
+	QMAKE_DEFS += CONFIG+=libnotify
+endif
+
 release:
 	+cd $(SRC_DIR) && $(QMAKE) $(QMAKE_DEFS) qwinff.pro && $(DEFS) make
 	-cd src && $(LRELEASE) qwinff.pro

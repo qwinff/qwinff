@@ -72,17 +72,20 @@ TRANSLATIONS += \
     translations/qwinff_ja_JP.ts
 
 unix {
-    # Linux desktop notification
-    HEADERS += \
-        services/notificationservice-libnotify.h
-    SOURCES += \
-        services/notificationservice-libnotify.cpp
     # If DATA_PATH is set, QWinFF searches data in DATA_PATH
     # Otherwise, it uses the executable path as data path.
     DEFINES += DATA_PATH=$(DATA_PATH)
-    # pkgconfig
-    CONFIG += link_pkgconfig
-    PKGCONFIG = libnotify gtk+-2.0
+    libnotify {
+        # Linux desktop notification
+        HEADERS += \
+            services/notificationservice-libnotify.h
+        SOURCES += \
+            services/notificationservice-libnotify.cpp
+        # pkgconfig
+        CONFIG += link_pkgconfig
+        PKGCONFIG = libnotify gtk+-2.0
+        DEFINES += USE_LIBNOTIFY
+    }
 }
 
 win32 {

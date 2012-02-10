@@ -12,11 +12,13 @@ QWinFF needs ffmpeg and ffprobe at runtime.
 
 Be sure you have installed the following libraries in order to build QWinFF:
 	- Qt 4.3 or later
-	- libnotify
+	- libnotify and gtk2 (can be disabled by USE_LIBNOTIFY=0)
 
-Decompress the source code; open a console and enter the directory.
+Decompress the source code; open a terminal and enter the directory.
 
 Type "make".
+If you don't want to compile with libnotify and gtk library,
+type "make USE_LIBNOTIFY=0" instead.
 
 If everything is ok, you may type "make install" to install it.
 This will install QWinFF in /usr/local.
