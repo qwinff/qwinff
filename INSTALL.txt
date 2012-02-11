@@ -4,7 +4,8 @@ QWinFF needs ffmpeg and ffprobe at runtime.
 
 1) Generic Compilation and Installation on Unix-like Systems
 2) Changing Installation Path
-3) Build on Windows
+3) Compiling with libnotify
+4) Build on Windows
 
 ------------------------------
 
@@ -12,13 +13,11 @@ QWinFF needs ffmpeg and ffprobe at runtime.
 
 Be sure you have installed the following libraries in order to build QWinFF:
 	- Qt 4.3 or later
-	- libnotify and gtk2 (can be disabled by USE_LIBNOTIFY=0)
+	- libnotify and gtk2 (only when compiled with USE_LIBNOTIFY=1)
 
 Decompress the source code; open a terminal and enter the directory.
 
 Type "make".
-If you don't want to compile with libnotify and gtk library,
-type "make USE_LIBNOTIFY=0" instead.
 
 If everything is ok, you may type "make install" to install it.
 This will install QWinFF in /usr/local.
@@ -53,7 +52,30 @@ these features by keywords like "ffmpeg non-free" or "ffmpeg mp3".
 
 ------------------------------
 
-3) Build on Windows
+3) Compiling with libnotify
+
+QWinFF provides 3 kinds of notification types:
+  - libnotify
+  - notify-send command-line utility
+  - Qt MessageBox
+
+If libnotify is enabled, libnotify will be used. Otherwise, QWinFF will
+look for the notify-send utility. If notify-send is available on the
+system, it will be used. If neither of them are available, QWinFF will
+fallback to Qt MessageBox. Qt MessageBox is always available since it only
+requires Qt.
+
+If you want to compile with libnotify, type "make USE_LIBNOTIFY=1"
+instead of "make". Compiling with libnotify also requires gtk2 headers.
+
+Note that libnotify 0.7+ is not compatible with its older versions
+(0.5.x, 0.6.x). QWinFF will compile with both APIs, but if you compile
+it with libnotify 0.7, it will only work with libnotify runtime 0.7,
+and vice versa.
+
+------------------------------
+
+4) Build on Windows
 
 You must install Qt4 SDK to build QWinFF.
 

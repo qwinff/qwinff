@@ -15,6 +15,7 @@
 
 #include "notification.h"
 #include "notificationservice-qt.h"
+#include "notificationservice-notifysend.h"
 #if defined(Q_WS_X11) && defined(USE_LIBNOTIFY)
  #include "notificationservice-libnotify.h"
 #endif
@@ -37,6 +38,8 @@ void Notification::init()
     notify_service[TYPE_LIBNOTIFY]
             = QSharedPointer<NotificationService>(new NotificationService_libnotify());
 #endif
+    notify_service[TYPE_NOTIFYSEND]
+            = QSharedPointer<NotificationService>(new NotificationService_NotifySend());
     m_type = TYPE_MSGBOX;
 }
 

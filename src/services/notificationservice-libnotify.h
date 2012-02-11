@@ -33,6 +33,8 @@ public:
 
     virtual bool serviceAvailable() const;
 
+    static QString getVersion();
+
 private:
     bool m_success;
 };

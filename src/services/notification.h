@@ -25,6 +25,7 @@ public:
     enum NotificationType {
         TYPE_MSGBOX = 0, ///< use non-blocking message box
         TYPE_LIBNOTIFY, ///< use libnotify which doesn't require the command-line utility
+        TYPE_NOTIFYSEND, ///< use the notify-send command line utility
         END_OF_TYPE
     };
 

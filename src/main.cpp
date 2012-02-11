@@ -72,7 +72,8 @@ int main(int argc, char *argv[])
 
     // Setup notification
     Notification::init();
-    Notification::setType(Notification::TYPE_LIBNOTIFY);
+    if (!Notification::setType(Notification::TYPE_LIBNOTIFY))
+        Notification::setType(Notification::TYPE_NOTIFYSEND);
 
     // Create main window.
     MainWindow window(0, inputFiles);

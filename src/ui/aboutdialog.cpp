@@ -17,6 +17,9 @@
 #include "ui_aboutdialog.h"
 #include "version.h"
 #include <QtGlobal>
+#if defined(Q_WS_X11) && defined(USE_LIBNOTIFY)
+ #include "services/notificationservice-libnotify.h"
+#endif
 
 namespace {
 QString url(QString lnk)
@@ -45,6 +48,10 @@ AboutDialog::AboutDialog(QWidget *parent) :
          + "<br>"
          /*: Qt version */
          + tr("Compiled with Qt %1").arg(QT_VERSION_STR)
+#if defined(Q_WS_X11) && defined(USE_LIBNOTIFY) /* libnotify version */
+                + "<br>" + tr("Compiled with libnotify %1")
+                .arg(NotificationService_libnotify::getVersion())
+#endif
          + "<br><br>"
          + tr("QWinFF is a gui frontend for FFmpeg.")
          + "<br><br>"

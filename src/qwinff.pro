@@ -30,7 +30,8 @@ SOURCES += main.cpp \
     services/filepathoperations.cpp \
     ui/aboutdialog.cpp \
     services/notification.cpp \
-    services/notificationservice-qt.cpp
+    services/notificationservice-qt.cpp \
+    services/notificationservice-notifysend.cpp
 
 HEADERS  += \
     ui/progressbar.h \
@@ -54,7 +55,8 @@ HEADERS  += \
     version.h \
     services/notification.h \
     services/notificationservice.h \
-    services/notificationservice-qt.h
+    services/notificationservice-qt.h \
+    services/notificationservice-notifysend.h
 
 FORMS    += \
     ui/conversionparameterdialog.ui \

@@ -76,3 +76,13 @@ bool NotificationService_libnotify::serviceAvailable() const
 {
     return m_success;
 }
+
+QString NotificationService_libnotify::getVersion()
+{
+#if defined(NOTIFY_VERSION_MAJOR) && defined(NOTIFY_VERSION_MINOR) && defined(NOTIFY_VERSION_MICRO)
+    return QString("%1.%2.%3").arg(NOTIFY_VERSION_MAJOR)
+            .arg(NOTIFY_VERSION_MINOR).arg(NOTIFY_VERSION_MICRO);
+#else
+    return QString("");
+#endif
+}
