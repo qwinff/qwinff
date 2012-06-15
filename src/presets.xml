@@ -635,13 +635,13 @@
   <!-- OGG Audio -->
   <ogg1>
     <label>OGG</label>
-    <params>-acodec libvorbis -aq 60 -vn -ac 2</params>
+    <params>-acodec libvorbis -vn -ac 2</params>
     <extension>ogg</extension>
     <category>Audio</category>
   </ogg1>
   <ogg1>
     <label>OGG Mono</label>
-    <params>-acodec libvorbis -aq 60 -vn -ac 1</params>
+    <params>-acodec libvorbis -vn -ac 1</params>
     <extension>ogg</extension>
     <category>Audio</category>
   </ogg1>
