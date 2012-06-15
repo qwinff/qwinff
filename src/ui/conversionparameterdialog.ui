@@ -361,6 +361,65 @@
          </item>
         </layout>
        </widget>
+       <widget class="QWidget" name="tab">
+        <attribute name="title">
+         <string>Time</string>
+        </attribute>
+        <layout class="QVBoxLayout" name="verticalLayout_9">
+         <item>
+          <widget class="QGroupBox" name="groupBegin">
+           <property name="title">
+            <string>Begin Time</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_7">
+            <item>
+             <widget class="QCheckBox" name="chkFromBegin">
+              <property name="text">
+               <string>From Begin</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTimeEdit" name="timeBegin">
+              <property name="currentSection">
+               <enum>QDateTimeEdit::HourSection</enum>
+              </property>
+              <property name="displayFormat">
+               <string notr="true">hh:mm:ss</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="groupEnd">
+           <property name="title">
+            <string>End Time</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_8">
+            <item>
+             <widget class="QCheckBox" name="chkToEnd">
+              <property name="text">
+               <string>To End</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTimeEdit" name="timeEnd">
+              <property name="currentSection">
+               <enum>QDateTimeEdit::HourSection</enum>
+              </property>
+              <property name="displayFormat">
+               <string notr="true">hh:mm:ss</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
        <widget class="QWidget" name="tab_advanced">
         <attribute name="title">
          <string>Advanced</string>
@@ -424,7 +483,6 @@
   <tabstop>spinCropRight</tabstop>
   <tabstop>spinCropBottom</tabstop>
   <tabstop>txtFFmpegOptions</tabstop>
-  <tabstop>tabWidget</tabstop>
   <tabstop>buttonBox</tabstop>
   <tabstop>chkDisableVideo</tabstop>
  </tabstops>

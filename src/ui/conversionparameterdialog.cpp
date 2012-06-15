@@ -35,6 +35,18 @@ ConversionParameterDialog::ConversionParameterDialog(QWidget *parent) :
     ui->cbAudioSampleRate->addItem("44100");
     ui->cbAudioSampleRate->addItem("22050");
     ui->cbAudioSampleRate->addItem("11025");
+
+    ui->timeBegin->setSelectedSection(QDateTimeEdit::SecondSection);
+    ui->timeEnd->setSelectedSection(QDateTimeEdit::SecondSection);
+
+    connect(ui->chkFromBegin, SIGNAL(toggled(bool)),
+            ui->timeBegin, SLOT(setDisabled(bool)));
+    connect(ui->chkToEnd, SIGNAL(toggled(bool)),
+            ui->timeEnd, SLOT(setDisabled(bool)));
+    connect(ui->chkToEnd, SIGNAL(toggled(bool)),
+            this, SLOT(update_endtime()));
+    connect(ui->timeBegin, SIGNAL(timeChanged(QTime)),
+            this, SLOT(update_endtime()));
 }
 
 ConversionParameterDialog::~ConversionParameterDialog()
@@ -50,6 +62,11 @@ bool ConversionParameterDialog::exec(ConversionParameters& param)
         write_fields(param);
     }
     return accepted;
+}
+
+void ConversionParameterDialog::update_endtime()
+{
+    ui->timeEnd->setMinimumTime(ui->timeBegin->time().addSecs(1));
 }
 
 // read the fields from the ConversionParameters
@@ -102,9 +119,27 @@ void ConversionParameterDialog::read_fields(const ConversionParameters& param)
     ui->spinCropLeft->setValue(param.video_crop_left);
     ui->spinCropRight->setValue(param.video_crop_right);
 
+    // Time Options
+    if (param.time_begin > 0) {
+        ui->chkFromBegin->setChecked(false);
+        ui->timeBegin->setTime(QTime().addSecs(param.time_begin));
+    } else {
+        ui->chkFromBegin->setChecked(true);
+        ui->timeBegin->setTime(QTime());
+    }
+    if (param.time_duration > 0) {
+        ui->chkToEnd->setChecked(false);
+        ui->timeEnd->setTime(QTime().addSecs(param.time_begin + param.time_duration));
+    } else {
+        ui->chkToEnd->setChecked(true);
+        ui->timeEnd->setTime(QTime());
+    }
+
     // Subtitle Options
     //ui->chkDisableSubtitle->setChecked(param.disable_subtitle);
 }
+
+#define QTIME_TO_SECS(t) ((t.hour()) * 3600 + (t.minute()) * 60 + (t.second()))
 
 // write the fields to the ConversionParameters
 void ConversionParameterDialog::write_fields(ConversionParameters& param)
@@ -133,5 +168,15 @@ void ConversionParameterDialog::write_fields(ConversionParameters& param)
     param.video_crop_bottom = ui->spinCropBottom->value();
     param.video_crop_left = ui->spinCropLeft->value();
     param.video_crop_right = ui->spinCropRight->value();
+
+    // Time Options
+    if (ui->chkFromBegin->isChecked())
+        param.time_begin = 0;
+    else
+        param.time_begin = QTIME_TO_SECS(ui->timeBegin->time());
+    if (ui->chkToEnd->isChecked()) // ffmpeg accepts duration, not end time
+        param.time_duration = 0;
+    else
+        param.time_duration = QTIME_TO_SECS(ui->timeEnd->time()) - param.time_begin;
 
 }

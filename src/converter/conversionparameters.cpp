@@ -48,11 +48,18 @@ int parseFFmpegArguments(QStringList& args, int index, ConversionParameters& res
 // absorb options like "-option value" where "value" has numeric meaning
 // convertmethod is the corresponding conversion method of QString
 // set result.property to the converted value of the next token
-#define CHECK_OPTION_2_CONVERT(argument, property, convertmethod) \
+#define CHECK_OPTION_2_METHOD(argument, property, convertmethod) \
     else if (arg == argument) do { \
         QString nextarg = args[index+1]; \
         nextarg.replace(QRegExp("[a-z]"), ""); /* remove units */ \
         result.property = nextarg.convertmethod(); \
+        used_arg_count = 2; } while (0)
+
+#define CHECK_OPTION_2_FUNCTION(argument, property, convertfunction) \
+    else if (arg == argument) do { \
+        QString nextarg = args[index+1]; \
+        nextarg.replace(QRegExp("[a-z]"), ""); /* remove units */ \
+        result.property = convertfunction(nextarg); \
         used_arg_count = 2; } while (0)
 
 #define CHECK_OPTION_END do { } while (0)
@@ -64,24 +71,26 @@ int parseFFmpegArguments(QStringList& args, int index, ConversionParameters& res
             CHECK_OPTION_BEGIN;
 
             // Threads
-            CHECK_OPTION_2_CONVERT("-threads", threads, toInt);
+            CHECK_OPTION_2_METHOD("-threads", threads, toInt);
 
             // Audio Options
             CHECK_OPTION_1("-an", disable_audio, true);
-            CHECK_OPTION_2_CONVERT("-ab", audio_bitrate, toInt);
-            CHECK_OPTION_2_CONVERT("-ar", audio_sample_rate, toInt);
-            CHECK_OPTION_2_CONVERT("-ac", audio_channels, toInt);
-            CHECK_OPTION_2_CONVERT("-vol", audio_volume, toInt);
+            CHECK_OPTION_2_METHOD("-ab", audio_bitrate, toInt);
+            CHECK_OPTION_2_METHOD("-ar", audio_sample_rate, toInt);
+            CHECK_OPTION_2_METHOD("-ac", audio_channels, toInt);
+            CHECK_OPTION_2_METHOD("-vol", audio_volume, toInt);
 
             // Video Options
             CHECK_OPTION_1("-vn", disable_video, true);
             CHECK_OPTION_1("-sameq", video_same_quality, true);
             CHECK_OPTION_1("-deinterlace", video_deinterlace, true);
-            CHECK_OPTION_2_CONVERT("-b", video_bitrate, toInt);
-            CHECK_OPTION_2_CONVERT("-croptop", video_crop_top, toInt);
-            CHECK_OPTION_2_CONVERT("-cropbottom", video_crop_bottom, toInt);
-            CHECK_OPTION_2_CONVERT("-cropleft", video_crop_left, toInt);
-            CHECK_OPTION_2_CONVERT("-cropright", video_crop_right, toInt);
+            CHECK_OPTION_2_METHOD("-b", video_bitrate, toInt);
+            CHECK_OPTION_2_METHOD("-croptop", video_crop_top, toInt);
+            CHECK_OPTION_2_METHOD("-cropbottom", video_crop_bottom, toInt);
+            CHECK_OPTION_2_METHOD("-cropleft", video_crop_left, toInt);
+            CHECK_OPTION_2_METHOD("-cropright", video_crop_right, toInt);
+
+            /* TODO: add begin time and duration */
 
             // width and height are in the same parameter (for example: "-s 800x600")
             CHECK_OPTION("-s") {
@@ -105,7 +114,8 @@ int parseFFmpegArguments(QStringList& args, int index, ConversionParameters& res
 #undef CHECK_OPTION_BEGIN
 #undef CHECK_OPTION_1
 #undef CHECK_OPTION_2
-#undef CHECK_OPTION_2_CONVERT
+#undef CHECK_OPTION_2_METHOD
+#undef CHECK_OPTION_2_FUNCTION
 #undef CHECK_OPTION_END
 }
 }
@@ -277,6 +287,21 @@ QStringList ConversionParameters::toFFmpegOptionList() const
             list.append(QString("%1").arg(video_crop_right));
         }
 
+    }
+
+    // Time Options
+    /* -ss time_begin
+        When used as an output option, ffmpeg decodes but discards input
+        until timestamp reaches time_begin */
+    if (time_begin > 0) {
+        list.append("-ss");
+        list.append(QString("%1").arg(time_begin));
+    }
+    /* -t time_duration
+        Stop writing the output after its duration reaches time_duration */
+    if (time_duration > 0) {
+        list.append("-t");
+        list.append(QString("%1").arg(time_duration));
     }
 
     // destination file

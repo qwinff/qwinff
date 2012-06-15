@@ -38,6 +38,9 @@ public:
      */
     bool exec(ConversionParameters& param);
 
+private slots:
+    void update_endtime();
+
 private:
     Ui::ConversionParameterDialog *ui;
     void read_fields(const ConversionParameters& param);

@@ -43,6 +43,8 @@ public:
     int video_height;
     int video_crop_top, video_crop_bottom, video_crop_left, video_crop_right;
 
+    unsigned int time_begin, time_duration;
+
     /* FFmpeg Specific Options */
     /*! Additional options passed to the ffmpeg transcoder.
         These options will be overriden by other specific options. */
@@ -53,7 +55,7 @@ public:
     //QString mencoder_ovc; // output video codec
     //QString mencoder_of;  // output format
 
-    /*! Copy all fields except source and destination files from src
+    /*! Copy all fields except source, destination files from src
      *  @param src the source to copy from
      */
     void copyConfigurationFrom(const ConversionParameters& src);
@@ -93,6 +95,8 @@ public:
         video_crop_top = video_crop_bottom = video_crop_left = video_crop_right = 0;
 
         video_width = video_height = 0;
+
+        time_begin = time_duration = 0;
 
         ffmpeg_options.clear();
     }
