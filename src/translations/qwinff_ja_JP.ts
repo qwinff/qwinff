@@ -691,14 +691,6 @@
         <source>Conversion is still in progress. Abort?</source>
         <translation>変換処理を実行中です、中断しますか?</translation>
     </message>
-    <message>
-        <source>Failed to create preset file: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The application will quit now</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>OptionsDialog</name>

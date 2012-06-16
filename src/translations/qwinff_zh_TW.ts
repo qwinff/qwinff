@@ -355,27 +355,27 @@
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="366"/>
         <source>Time</source>
-        <translation type="unfinished"></translation>
+        <translation>時間</translation>
     </message>
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="372"/>
         <source>Begin Time</source>
-        <translation type="unfinished"></translation>
+        <translation>開始時間</translation>
     </message>
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="378"/>
         <source>From Begin</source>
-        <translation type="unfinished"></translation>
+        <translation>從檔案開頭開始</translation>
     </message>
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="398"/>
         <source>End Time</source>
-        <translation type="unfinished"></translation>
+        <translation>結束時間</translation>
     </message>
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="404"/>
         <source>To End</source>
-        <translation type="unfinished"></translation>
+        <translation>到檔案結尾</translation>
     </message>
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="425"/>
@@ -866,16 +866,6 @@
         <location filename="../ui/mainwindow.cpp" line="279"/>
         <source>FFprobe not found. The application will quit now.</source>
         <translation>找不到FFprobe，程式將立刻結束。</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.cpp" line="407"/>
-        <source>Failed to create preset file: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.cpp" line="408"/>
-        <source>The application will quit now</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.cpp" line="422"/>
