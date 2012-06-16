@@ -52,6 +52,10 @@
         <source>Japanese</source>
         <translation>日本語</translation>
     </message>
+    <message>
+        <source>Compiled with libnotify %1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutFFmpegDialog</name>
@@ -279,6 +283,26 @@
     </message>
     <message>
         <source>Deinterlace</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Begin Time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>From Begin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End Time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To End</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

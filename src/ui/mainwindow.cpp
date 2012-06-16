@@ -397,19 +397,19 @@ bool MainWindow::load_presets()
     QString default_preset_file = QDir(Paths::dataPath()).absoluteFilePath("presets.xml");
 
 #ifndef PORTABLE_APP
-    // Each user has his/her own preset file located in ${HOME}/.qwinff/presets.xml
-    QString local_preset_file = QDir(QDir::homePath()).absoluteFilePath(".qwinff/presets.xml");
-
-    // If there's no preset file in the home directory, then copy the default preset file.
-    if (!QFile(local_preset_file).exists()) {
-        if (!QFile::copy(default_preset_file, local_preset_file)) {
-            QMessageBox::critical(this, this->windowTitle(),
-                                  tr("Failed to create preset file: %1").arg(local_preset_file) + "\n"
-                                  + tr("The application will quit now"));
-            return false;
+    // rename local preset file created by older versions of qwinff
+    // operation: mv ~/.qwinff/presets.xml ~/.qwinff/presets.xml.old
+    QString local_preset_file_old = QDir(QDir::homePath()).absoluteFilePath(".qwinff/presets.xml");
+    if (QFile(local_preset_file_old).exists()) {
+        QFile::remove(local_preset_file_old + ".old");
+        if (QFile::rename(local_preset_file_old, local_preset_file_old + ".old")) {
+            qDebug() << local_preset_file_old + " is no longer used, "
+                        "rename to " + local_preset_file_old + ".old";
         }
-        qDebug() << QString("Created preset file: %1").arg(local_preset_file);
     }
+
+    // use global preset temporarily
+    QString local_preset_file = default_preset_file;
 #else // PORTABLE_APP
     QString local_preset_file = default_preset_file;
 #endif

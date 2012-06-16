@@ -27,48 +27,53 @@
         <translation type="obsolete">簡單易用的FFmpeg圖形介面</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="41"/>
+        <location filename="../ui/aboutdialog.cpp" line="44"/>
         <source>Version: %1</source>
         <translation>版本: %1</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="49"/>
+        <location filename="../ui/aboutdialog.cpp" line="52"/>
+        <source>Compiled with libnotify %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/aboutdialog.cpp" line="56"/>
         <source>QWinFF is a gui frontend for FFmpeg.</source>
         <translation>FFmpeg影音轉檔器前端介面</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="51"/>
+        <location filename="../ui/aboutdialog.cpp" line="58"/>
         <source>Programming: %1</source>
         <translation>程式設計：%1</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="52"/>
+        <location filename="../ui/aboutdialog.cpp" line="59"/>
         <source>Logo Design: %1</source>
         <translation>Logo 設計：%1</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="53"/>
+        <location filename="../ui/aboutdialog.cpp" line="60"/>
         <source>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License version 2 or 3.</source>
         <translation>這個程式是自由軟體，你可以在GNU授權條款(第二或第三版)下修改及散佈此軟體。</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="96"/>
+        <location filename="../ui/aboutdialog.cpp" line="103"/>
         <source>Japanese</source>
         <translation>日文</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="47"/>
+        <location filename="../ui/aboutdialog.cpp" line="50"/>
         <source>Compiled with Qt %1</source>
         <extracomment>Qt version</extracomment>
         <translation>Qt編譯版本：%1</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="56"/>
+        <location filename="../ui/aboutdialog.cpp" line="63"/>
         <source>QWinFF Project Page: %1</source>
         <translation>QWinFF專案首頁: %1</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="58"/>
+        <location filename="../ui/aboutdialog.cpp" line="65"/>
         <source>FFmpeg presets were taken from WinFF.</source>
         <translation>FFmpeg的預設參數來自WinFF專案</translation>
     </message>
@@ -349,16 +354,41 @@
     </message>
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="366"/>
+        <source>Time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/conversionparameterdialog.ui" line="372"/>
+        <source>Begin Time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/conversionparameterdialog.ui" line="378"/>
+        <source>From Begin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/conversionparameterdialog.ui" line="398"/>
+        <source>End Time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/conversionparameterdialog.ui" line="404"/>
+        <source>To End</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/conversionparameterdialog.ui" line="425"/>
         <source>Advanced</source>
         <translation>進階</translation>
     </message>
     <message>
-        <location filename="../ui/conversionparameterdialog.ui" line="372"/>
+        <location filename="../ui/conversionparameterdialog.ui" line="431"/>
         <source>FFmpeg</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/conversionparameterdialog.ui" line="380"/>
+        <location filename="../ui/conversionparameterdialog.ui" line="439"/>
         <source>Additional FFmpeg Options</source>
         <translation>其他FFmpeg參數</translation>
     </message>
