@@ -456,17 +456,23 @@ void ConvertList::changeSelectedOutputFile()
     QString orig_name = QFileInfo(param.destination).completeBaseName();
     QString dir = QFileInfo(param.destination).path();
     QString ext = QFileInfo(param.destination).suffix();
+    QString new_name = orig_name;
 
-    QString name = QInputDialog::getText(this, tr("New File Name")
-                , tr("Please input the new name for the output file.")
-                , QLineEdit::Normal, orig_name);
+    bool try_again = false;
+    do {
+        new_name = QInputDialog::getText(this, tr("New File Name")
+                    , tr("Please input the new name for the output file.")
+                    , QLineEdit::Normal, new_name);
 
-    if (!name.isEmpty() && name != orig_name) {
-        QString orig_file = param.destination;
-        QString file = QDir(dir).absoluteFilePath(name + "." + ext);
-        QMessageBox::StandardButtons overwrite = QMessageBox::No;
-        change_output_file(index, file, overwrite, false);
-    }
+        try_again = false;
+        if (!new_name.isEmpty() && new_name != orig_name) {
+            QString orig_file = param.destination;
+            QString file = QDir(dir).absoluteFilePath(new_name + "." + ext);
+            QMessageBox::StandardButtons overwrite = QMessageBox::No;
+            if (!change_output_file(index, file, overwrite, false))
+                try_again = true;
+        }
+    } while (try_again);
 }
 
 void ConvertList::changeSelectedOutputDirectory()
@@ -904,18 +910,20 @@ QString ConvertList::to_human_readable_size_1024(qint64 nBytes)
     return QString().setNum(num,'f',2)+" "+unit;
 }
 
-/* Change the output file of the task to new_file. */
-void ConvertList::change_output_file(int index, const QString &new_file
+/* Change the output file of the task to new_file.
+ * @return true if success, false if failed
+ */
+bool ConvertList::change_output_file(int index, const QString &new_file
         , QMessageBox::StandardButtons &overwrite, bool show_all_buttons)
 {
-    if (overwrite == QMessageBox::NoToAll) return;
+    if (overwrite == QMessageBox::NoToAll) return false;
 
     ConversionParameters &param = m_tasks[index]->param;
     QTreeWidgetItem *item = m_tasks[index]->listitem;
 
     QString orig_file = param.destination;
 
-    if (new_file == orig_file) return;
+    if (new_file == orig_file) return true; // success: no need to rename
 
     if ((QFileInfo(new_file).exists() || output_filenames().contains(new_file))
             && overwrite != QMessageBox::YesToAll) {
@@ -930,7 +938,7 @@ void ConvertList::change_output_file(int index, const QString &new_file
                              "Still use this name as the output filename?").arg(new_file)
                           , flags);
         if (overwrite != QMessageBox::Yes && overwrite != QMessageBox::YesToAll)
-            return;
+            return false;
     }
 
     param.destination = new_file;
@@ -944,6 +952,6 @@ void ConvertList::change_output_file(int index, const QString &new_file
     item->setToolTip(COL_DESTINATION, new_file);
 
     qDebug() << "Output filename changed: " + orig_file + " => " + new_file;
-
+    return true;
 }
 

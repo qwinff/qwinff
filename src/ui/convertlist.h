@@ -184,7 +184,7 @@ private:
     ProgressBar* progressBar(Task*);
     ProgressBar* progressBar(const Task&);
     QString to_human_readable_size_1024(qint64 nBytes);
-    void change_output_file(int index, const QString& new_file
+    bool change_output_file(int index, const QString& new_file
             , QMessageBox::StandardButtons &overwrite, bool show_all_buttons);
 
 };
