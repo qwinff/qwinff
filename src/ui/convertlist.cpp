@@ -430,7 +430,11 @@ void ConvertList::editSelectedParameters()
     if (dialog.exec(param)) {
         foreach (QTreeWidgetItem* item, itemList) {
             const int index = m_list->indexOfTopLevelItem(item);
+            // copy conversion parameters
+            // Be sure not to use assignment because it will overwrite the filename.
             m_tasks[index]->param.copyConfigurationFrom(param);
+            // Reset m_tasks[index] to "QUEUED" state if it is not running.
+            reset_item(index);
         }
     }
 }
