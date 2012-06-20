@@ -85,7 +85,7 @@ unix {
             services/notificationservice-libnotify.cpp
         # pkgconfig
         CONFIG += link_pkgconfig
-        PKGCONFIG = libnotify gtk+-2.0
+        PKGCONFIG = libnotify
         DEFINES += USE_LIBNOTIFY
     }
 }
