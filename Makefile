@@ -65,4 +65,3 @@ uninstall:
 	-rmdir $(DESTDIR)$(TRANSLATION_PATH)
 	-rmdir $(DESTDIR)$(DATA_PATH)
 	-rm -f $(DESTDIR)$(PREFIX)/share/man/man1/qwinff.1.gz
-	-rm -f $(DESTDIR)$(PREFIX)/share/applications/qwinff.desktop
