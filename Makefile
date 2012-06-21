@@ -56,6 +56,8 @@ install:
 	-install -m 644 src/translations/*.qm $(DESTDIR)$(TRANSLATION_PATH)
 	-install -d $(DESTDIR)$(PREFIX)/share/man/man1
 	install -m 644 man/qwinff.1 $(DESTDIR)$(PREFIX)/share/man/man1/
+	install -m 644 qwinff.desktop $(DESTDIR)$(PREFIX)/share/applications/
+	install -m 644 src/icons/qwinff.png $(DESTDIR)$(PREFIX)/share/pixmaps
 	gzip -9 -f $(DESTDIR)$(PREFIX)/share/man/man1/qwinff.1
 	
 uninstall:
@@ -64,4 +66,6 @@ uninstall:
 	-rm -f $(DESTDIR)$(TRANSLATION_PATH)/*.qm
 	-rmdir $(DESTDIR)$(TRANSLATION_PATH)
 	-rmdir $(DESTDIR)$(DATA_PATH)
+	-rm -f $(DESTDIR)$(PREFIX)/share/applications/qwinff.desktop
+	-rm -f $(DESTDIR)$(PREFIX)/share/pixmaps/qwinff.png
 	-rm -f $(DESTDIR)$(PREFIX)/share/man/man1/qwinff.1.gz
