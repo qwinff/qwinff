@@ -1,3 +1,7 @@
+Version 0.1.4:
+  - Some minor gui improvements
+  - Include desktop file and application icon in installation.
+
 Version 0.1.3:
   - Enable users to select the range of the media file to encode.
   - Fix video encoding error on some systems due to ffmpeg multithread options.
