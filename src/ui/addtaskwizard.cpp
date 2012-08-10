@@ -260,8 +260,14 @@ void AddTaskWizard::slotExtensionSelected(int ext_index)
     }
 
     // Restore the last used preset of the extension.
-    if (ext_index >= 0 && ext_index < m_ext_preset.size())
-        ui->cbPreset->setCurrentIndex(m_ext_preset[ext_index].toInt());
+    if (ext_index >= 0 && ext_index < m_ext_preset.size()) {
+        // index in the preset combobox
+        int index = m_ext_preset[ext_index].toInt();
+        if (index >= 0 && index < ui->cbPreset->count())
+            ui->cbPreset->setCurrentIndex(index);
+        else
+            ui->cbPreset->setCurrentIndex(0);
+    }
 }
 
 void AddTaskWizard::slotPresetSelected(int index)
