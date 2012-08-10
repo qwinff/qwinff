@@ -99,9 +99,10 @@ AboutDialog::~AboutDialog()
 
 QString AboutDialog::getTranslators()
 {
-    return QString(
-        trad(tr("Japanese"), "Tilt <tiltstr@gmail.com>")
-        );
+    return QString("")
+                + trad(tr("Japanese"), "Tilt <tiltstr@gmail.com>")
+                + trad(tr("Italian"), "TheJoe (http://thejoe.it/)")
+            ;
 }
 
 QString AboutDialog::trad(const QString& lang, const QString& author)

@@ -54,7 +54,11 @@
     </message>
     <message>
         <source>Compiled with libnotify %1</source>
-        <translation type="unfinished"></translation>
+        <translation>コンパイルに使用された libnotify: %1</translation>
+    </message>
+    <message>
+        <source>Italian</source>
+        <translation>イタリア語</translation>
     </message>
 </context>
 <context>

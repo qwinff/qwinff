@@ -34,7 +34,7 @@
     <message>
         <location filename="../ui/aboutdialog.cpp" line="52"/>
         <source>Compiled with libnotify %1</source>
-        <translation type="unfinished"></translation>
+        <translation>libnotify 編譯版本: %1</translation>
     </message>
     <message>
         <location filename="../ui/aboutdialog.cpp" line="56"/>
@@ -62,10 +62,15 @@
         <translation>日文</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.cpp" line="104"/>
+        <source>Italian</source>
+        <translation>義大利文</translation>
+    </message>
+    <message>
         <location filename="../ui/aboutdialog.cpp" line="50"/>
         <source>Compiled with Qt %1</source>
         <extracomment>Qt version</extracomment>
-        <translation>Qt編譯版本：%1</translation>
+        <translation>Qt 編譯版本：%1</translation>
     </message>
     <message>
         <location filename="../ui/aboutdialog.cpp" line="63"/>
