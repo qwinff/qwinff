@@ -71,7 +71,8 @@ RESOURCES += \
 
 TRANSLATIONS += \
     translations/qwinff_zh_TW.ts \
-    translations/qwinff_ja_JP.ts
+    translations/qwinff_ja_JP.ts \
+    translations/qwinff_it_IT.ts
 
 unix {
     # If DATA_PATH is set, QWinFF searches data in DATA_PATH
