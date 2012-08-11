@@ -65,11 +65,6 @@ public:
     static ConversionParameters fromFFmpegParameters(const QString& params_str);
     static ConversionParameters fromFFmpegParameters(const char *params_str);
 
-    QStringList toFFmpegOptionList() const;
-
-    /*! THIS FUNCTION IS UNFINISHED */
-    QStringList toMEncoderOptionList() const;
-
     ConversionParameters()
     {
         clear();
