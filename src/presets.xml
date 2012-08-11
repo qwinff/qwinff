@@ -2,6 +2,12 @@
 <presets>
   
   <!-- MPEG4 -->
+  <MPEG4Auto>
+    <label>MPEG-4 Auto</label>
+    <params>-strict experimental</params>
+    <extension>mp4</extension>
+    <category>MPEG-4</category>
+  </MPEG4Auto>
   <MPEG4VideoHQ>
     <label>MPEG-4 H.264 video (high quality)</label>
     <params>-crf 35.0 -vcodec libx264 -vpre hq -acodec libfaac -ar 48000 -ab 128kb -coder 1 -flags +loop -cmp +chroma -partitions +parti4x4+partp8x8+partb8x8 -me_method hex -subq 6 -me_range 16 -g 250 -keyint_min 25 -sc_threshold 40 -i_qfactor 0.71 -b_strategy 1 -threads 0</params>
@@ -247,6 +253,12 @@
   </wma>
   
   <!-- MPG -->
+  <MPGAuto>
+    <label>MPG Auto</label>
+    <params></params>
+    <extension>mpg</extension>
+    <category>Rockbox</category>
+  </MPGAuto>
   <GigabeatFS>
     <label>RB Toshiba Gigabeat F/X Fullscreen</label>
     <params>-acodec libmp3lame -ab 128kb -ar 44100 -vcodec mpeg2video -s 320x240 -b 600kb -strict -1</params>
@@ -461,6 +473,12 @@
   </M4a>
 
   <!-- AVI -->
+  <AVIAuto>
+    <label>AVI Auto</label>
+    <params></params>
+    <extension>avi</extension>
+    <category>AVI</category>
+  </AVIAuto>
   <XviDAVIFS>
     <label>XviD FullScreen</label>
     <params>-f avi -r 29.97 -vcodec libxvid -vtag XVID -s 640x480 -aspect 4:3 -maxrate 1800kb -b 1500kb -qmin 3 -qmax 5 -bufsize 4096 -mbd 2 -bf 2 -flags +4mv -trellis -aic -cmp 2 -subcmp 2 -g 300 -acodec libmp3lame -ar 48000 -ab 128kb -ac 2</params>
@@ -561,6 +579,12 @@
   </dvpal>
 
   <!-- Flash Video -->
+  <flvauto>
+    <label>Flash Video (flv) Auto</label>
+    <params></params>
+    <extension>flv</extension>
+    <category>Websites</category>
+  </flvauto>
   <flvwebFS>
     <label>Flash Video (flv) for Web use Fullscreen</label>
     <params>-vcodec flv -f flv -r 29.97 -s 320x240 -aspect 4:3 -b 300kb -g 160 -cmp dct -subcmp dct  -mbd 2 -flags +aic+cbp+mv0+mv4 -trellis 1 -ac 1 -ar 22050 -ab 56kb</params>
@@ -647,6 +671,12 @@
   </ogg1>
 
   <!-- MOV -->
+  <qmovauto>
+    <label>Quicktime MOV Auto</label>
+    <params>-strict experimental</params>
+    <extension>mov</extension>
+    <category>QuickTime</category>
+  </qmovauto>
   <qmov>
     <label>Quicktime MOV</label>
     <params>-f mov -acodec libfaac -b 1250kb -r 25 -ab 128kb -s 640x480 -ac 2 -ar 48000</params>
