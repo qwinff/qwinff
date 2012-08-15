@@ -9,7 +9,6 @@ QT       += core gui
 TARGET = qwinff
 TEMPLATE = app
 
-
 SOURCES += main.cpp \
     ui/progressbar.cpp \
     ui/mainwindow.cpp \
@@ -31,7 +30,8 @@ SOURCES += main.cpp \
     ui/aboutdialog.cpp \
     services/notification.cpp \
     services/notificationservice-qt.cpp \
-    services/notificationservice-notifysend.cpp
+    services/notificationservice-notifysend.cpp \
+    services/powermanagement-dummy.cpp
 
 HEADERS  += \
     ui/progressbar.h \
@@ -56,7 +56,8 @@ HEADERS  += \
     services/notification.h \
     services/notificationservice.h \
     services/notificationservice-qt.h \
-    services/notificationservice-notifysend.h
+    services/notificationservice-notifysend.h \
+    services/powermanagement.h
 
 FORMS    += \
     ui/conversionparameterdialog.ui \
@@ -88,6 +89,10 @@ unix {
         PKGCONFIG = libnotify
         DEFINES += USE_LIBNOTIFY
     }
+    # Shutdown
+    QT += dbus
+    SOURCES -= services/powermanagement-dummy.cpp
+    SOURCES += services/powermanagement-linux.cpp
 }
 
 win32 {
@@ -96,6 +101,10 @@ win32 {
     DEFINES += FFMPEG_IN_DATA_PATH
     # Application Icon
     RC_FILE = appicon.rc
+    # Shutdown
+    LIBS += -lpowrprof
+    SOURCES -= services/powermanagement-dummy.cpp
+    SOURCES += services/powermanagement-w32.cpp
 }
 
 # This string is shown in the about box.
