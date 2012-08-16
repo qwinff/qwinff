@@ -22,9 +22,16 @@ PoweroffDialog::PoweroffDialog(QWidget *parent) :
             , this, SLOT(dialog_rejected()));
     connect(m_timer, SIGNAL(timeout())
             , this, SLOT(timer_event()));
+
+    // setup timer
     m_timer->setInterval(1000); // 1 second
     m_timer->setSingleShot(false); // always execute the timer
     m_timer->stop();
+
+    // topmost frameless window
+    setWindowFlags(windowFlags()
+                   | Qt::WindowStaysOnTopHint
+                   | Qt::FramelessWindowHint);
 }
 
 PoweroffDialog::~PoweroffDialog()
