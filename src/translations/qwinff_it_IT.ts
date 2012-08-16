@@ -609,263 +609,287 @@
         <translation>&amp;Converti</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="53"/>
+        <location filename="../ui/mainwindow.ui" line="54"/>
         <source>&amp;About</source>
         <translation>&amp;Info</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="61"/>
+        <location filename="../ui/mainwindow.ui" line="62"/>
         <source>&amp;Edit</source>
         <translation>&amp;Modifica</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="80"/>
+        <location filename="../ui/mainwindow.ui" line="81"/>
         <source>toolBar</source>
         <translation>toolBar</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="95"/>
+        <location filename="../ui/mainwindow.ui" line="96"/>
         <source>&amp;Add Files</source>
         <translation>&amp;Aggiungi file</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="98"/>
+        <location filename="../ui/mainwindow.ui" line="99"/>
         <source>Add files for conversion.</source>
         <translation>Aggiungi file da convertire.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="101"/>
+        <location filename="../ui/mainwindow.ui" line="102"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="110"/>
+        <location filename="../ui/mainwindow.ui" line="111"/>
         <source>E&amp;xit</source>
         <translation>E&amp;sci</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="113"/>
+        <location filename="../ui/mainwindow.ui" line="114"/>
         <source>Exit the program.</source>
         <translation>Esci dal programma.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="122"/>
+        <location filename="../ui/mainwindow.ui" line="123"/>
         <source>&amp;Start</source>
         <translation>&amp;Start</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="125"/>
+        <location filename="../ui/mainwindow.ui" line="126"/>
         <source>Start conversion process.</source>
         <translation>Inizia la conversione.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="128"/>
+        <location filename="../ui/mainwindow.ui" line="129"/>
         <source>F9</source>
         <translation>F9</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="137"/>
+        <location filename="../ui/mainwindow.ui" line="138"/>
         <source>S&amp;top</source>
         <translation>S&amp;top</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="140"/>
+        <location filename="../ui/mainwindow.ui" line="141"/>
         <source>Stop conversion process.</source>
         <translation>Ferma la conversione.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="149"/>
+        <location filename="../ui/mainwindow.ui" line="150"/>
         <source>Set &amp;Parameters</source>
         <translation>Imposta &amp;Parametri</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="152"/>
+        <location filename="../ui/mainwindow.ui" line="153"/>
         <source>Set Parameters</source>
         <extracomment>Edit output file parameters.</extracomment>
         <translation>Imposta parametri</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="155"/>
+        <location filename="../ui/mainwindow.ui" line="156"/>
         <source>Edit conversion parameters of selected files.</source>
         <translation>Modifica i parametri per i file selezionati.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="164"/>
+        <location filename="../ui/mainwindow.ui" line="165"/>
         <source>About &amp;Qt</source>
         <translation>Info su &amp;Qt</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="167"/>
+        <location filename="../ui/mainwindow.ui" line="168"/>
         <source>About Qt</source>
         <translation>Info su Qt</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="176"/>
+        <location filename="../ui/mainwindow.ui" line="177"/>
         <source>&amp;Open Output Folder</source>
         <translation>&amp;Apri Cartella di Destinazione</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="179"/>
+        <location filename="../ui/mainwindow.ui" line="180"/>
         <source>Open output folder of the first selected file.</source>
         <translation>Apri cartella di destinazione del primo file selezionato.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="188"/>
+        <location filename="../ui/mainwindow.ui" line="189"/>
         <source>About &amp;FFmpeg</source>
         <translation>Info su &amp;FFmpeg</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="191"/>
+        <location filename="../ui/mainwindow.ui" line="192"/>
         <source>About FFmpeg</source>
         <translation>Info su FFmpeg</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="200"/>
+        <location filename="../ui/mainwindow.ui" line="201"/>
         <source>&amp;Remove Selected Items</source>
         <translation>&amp;Rimuovi gli oggetti selezionati</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="203"/>
+        <location filename="../ui/mainwindow.ui" line="204"/>
         <source>Remove all selected items in the list.</source>
         <translation>Rimuove gli oggetti selezionati dalla lista.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="212"/>
+        <location filename="../ui/mainwindow.ui" line="213"/>
         <source>R&amp;emove Completed Items</source>
         <translation>R&amp;imuovi completati</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="215"/>
+        <location filename="../ui/mainwindow.ui" line="216"/>
         <source>Remove Completed Items</source>
         <translation>Rimuove i lavori completati</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="218"/>
+        <location filename="../ui/mainwindow.ui" line="219"/>
         <source>Remove all completed items in the list.</source>
         <translation>Rimuove tutti i lavori completati.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="227"/>
+        <location filename="../ui/mainwindow.ui" line="228"/>
         <source>&amp;Clear List</source>
         <translation>&amp;Pulisci Lista</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="230"/>
+        <location filename="../ui/mainwindow.ui" line="231"/>
         <source>Clear List</source>
         <translation>Pulisci lista</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="233"/>
+        <location filename="../ui/mainwindow.ui" line="234"/>
         <source>Remove all items in the list.</source>
         <translation>Rimuove tutti i lavori dalla lista.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="242"/>
+        <location filename="../ui/mainwindow.ui" line="243"/>
         <source>&amp;Retry</source>
         <translation>&amp;Riprova</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="245"/>
+        <location filename="../ui/mainwindow.ui" line="246"/>
         <source>Retry</source>
         <translation>Riprova</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="248"/>
+        <location filename="../ui/mainwindow.ui" line="249"/>
         <source>Retry selected tasks.</source>
         <translation>Riprova i lavori selezionati.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="257"/>
+        <location filename="../ui/mainwindow.ui" line="258"/>
         <source>Retry &amp;All</source>
         <translation>Riprova &amp;Tutti</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="260"/>
+        <location filename="../ui/mainwindow.ui" line="261"/>
         <source>Retry all tasks.</source>
         <translation>Riprova tutti i lavori.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="269"/>
+        <location filename="../ui/mainwindow.ui" line="270"/>
         <source>&amp;Options</source>
         <translation>&amp;Opzioni</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="272"/>
+        <location filename="../ui/mainwindow.ui" line="273"/>
         <source>Options</source>
         <translation>Opzioni</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="281"/>
+        <location filename="../ui/mainwindow.ui" line="282"/>
         <source>About Q&amp;WinFF</source>
         <translation>Info su Q&amp;WinFF</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="284"/>
+        <location filename="../ui/mainwindow.ui" line="285"/>
         <source>About This Program</source>
         <translation>Info sul programma</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="289"/>
+        <location filename="../ui/mainwindow.ui" line="290"/>
         <source>Change Output &amp;Filename</source>
         <translation>Cambia il &amp;Nome file di output</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="292"/>
+        <location filename="../ui/mainwindow.ui" line="293"/>
         <source>Change the output filename of the selected item.</source>
         <translation>Cambia il nome del file di output.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="297"/>
+        <location filename="../ui/mainwindow.ui" line="298"/>
         <source>Change Output &amp;Directory</source>
         <translation>Cambia la &amp;Cartella di output</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="300"/>
+        <location filename="../ui/mainwindow.ui" line="301"/>
         <source>Change the output directory of the selected items.</source>
         <translation>Cambia la cartella di output dei lavori selezionati.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="117"/>
+        <location filename="../ui/mainwindow.cpp" line="118"/>
         <source>All tasks has finished.</source>
         <translation>Tutti i processi sono completati.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="143"/>
+        <location filename="../ui/mainwindow.cpp" line="151"/>
         <source>Nothing to convert.</source>
         <translation>Niente da convertire.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="217"/>
+        <location filename="../ui/mainwindow.cpp" line="225"/>
         <source>Conversion is still in progress. Abort?</source>
         <translation>La conversione è ancora in corso. Arresto la conversione?</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="240"/>
+        <location filename="../ui/mainwindow.cpp" line="247"/>
         <source>Elapsed Time: %1h %2m %3s</source>
         <translation>Tempo stimato: %1h %2m %3s</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="270"/>
+        <location filename="../ui/mainwindow.cpp" line="268"/>
+        <location filename="../ui/mainwindow.cpp" line="451"/>
+        <source>Shutdown</source>
+        <extracomment>Shutdown the computer</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="269"/>
+        <source>Shutdown when all tasks finish.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="278"/>
+        <location filename="../ui/mainwindow.cpp" line="456"/>
+        <source>Suspend</source>
+        <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="279"/>
+        <source>Suspend when all tasks finish.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="304"/>
         <source>FFmpeg Error</source>
         <translation>Errore FFmpeg</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="271"/>
+        <location filename="../ui/mainwindow.cpp" line="305"/>
         <source>FFmpeg not found. The application will quit now.</source>
         <translation>FFmpeg non trovato. L&apos;applicazione ora si chiuderà.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="278"/>
+        <location filename="../ui/mainwindow.cpp" line="312"/>
         <source>FFprobe Error</source>
         <translation>Errore FFprobe</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="279"/>
+        <location filename="../ui/mainwindow.cpp" line="313"/>
         <source>FFprobe not found. The application will quit now.</source>
         <translation>FFprobe non trovato. L&apos;applicazione ora si chiuderà.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="422"/>
+        <location filename="../ui/mainwindow.cpp" line="554"/>
         <source>Failed to load preset file. The application will quit now.</source>
         <translation>Caricamento file predefinito fallito. L&apos;applicazione ora si chiuderà.</translation>
     </message>
@@ -886,6 +910,36 @@
         <location filename="../ui/optionsdialog.ui" line="36"/>
         <source>Number of threads to use in conversion</source>
         <translation>Numero di impostazioni da usare per la conversione</translation>
+    </message>
+</context>
+<context>
+    <name>PoweroffDialog</name>
+    <message>
+        <location filename="../ui/poweroffdialog.ui" line="42"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Cancella</translation>
+    </message>
+    <message>
+        <location filename="../ui/poweroffdialog.cpp" line="48"/>
+        <source>Shutdown immediately</source>
+        <extracomment>Shutdown the computer</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/poweroffdialog.cpp" line="53"/>
+        <source>Suspend immediately</source>
+        <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/poweroffdialog.cpp" line="111"/>
+        <source>The computer will shutdown in &lt;b&gt;%1&lt;/b&gt; seconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/poweroffdialog.cpp" line="114"/>
+        <source>The computer will suspend in &lt;b&gt;%1&lt;/b&gt; seconds</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

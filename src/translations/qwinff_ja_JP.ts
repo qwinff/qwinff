@@ -695,6 +695,24 @@
         <source>Conversion is still in progress. Abort?</source>
         <translation>変換処理を実行中です、中断しますか?</translation>
     </message>
+    <message>
+        <source>Shutdown</source>
+        <extracomment>Shutdown the computer</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shutdown when all tasks finish.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Suspend</source>
+        <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Suspend when all tasks finish.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OptionsDialog</name>
@@ -709,6 +727,31 @@
     <message>
         <source>Options</source>
         <translation>設定</translation>
+    </message>
+</context>
+<context>
+    <name>PoweroffDialog</name>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">キャンセル</translation>
+    </message>
+    <message>
+        <source>Shutdown immediately</source>
+        <extracomment>Shutdown the computer</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Suspend immediately</source>
+        <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The computer will shutdown in &lt;b&gt;%1&lt;/b&gt; seconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The computer will suspend in &lt;b&gt;%1&lt;/b&gt; seconds</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

@@ -617,263 +617,287 @@
         <translation>轉換(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="53"/>
+        <location filename="../ui/mainwindow.ui" line="54"/>
         <source>&amp;About</source>
         <translation>關於(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="61"/>
+        <location filename="../ui/mainwindow.ui" line="62"/>
         <source>&amp;Edit</source>
         <translation>編輯(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="80"/>
+        <location filename="../ui/mainwindow.ui" line="81"/>
         <source>toolBar</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="95"/>
+        <location filename="../ui/mainwindow.ui" line="96"/>
         <source>&amp;Add Files</source>
         <translation>加入檔案(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="98"/>
+        <location filename="../ui/mainwindow.ui" line="99"/>
         <source>Add files for conversion.</source>
         <translation>加入要轉換的檔案</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="101"/>
+        <location filename="../ui/mainwindow.ui" line="102"/>
         <source>Ctrl+N</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="110"/>
+        <location filename="../ui/mainwindow.ui" line="111"/>
         <source>E&amp;xit</source>
         <translation>離開(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="113"/>
+        <location filename="../ui/mainwindow.ui" line="114"/>
         <source>Exit the program.</source>
         <translation>離開此程式</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="122"/>
+        <location filename="../ui/mainwindow.ui" line="123"/>
         <source>&amp;Start</source>
         <translation>開始(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="125"/>
+        <location filename="../ui/mainwindow.ui" line="126"/>
         <source>Start conversion process.</source>
         <translation>開始轉換</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="128"/>
+        <location filename="../ui/mainwindow.ui" line="129"/>
         <source>F9</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="137"/>
+        <location filename="../ui/mainwindow.ui" line="138"/>
         <source>S&amp;top</source>
         <translation>停止(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="140"/>
+        <location filename="../ui/mainwindow.ui" line="141"/>
         <source>Stop conversion process.</source>
         <translation>停止轉換</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="149"/>
+        <location filename="../ui/mainwindow.ui" line="150"/>
         <source>Set &amp;Parameters</source>
         <translation>設定轉換參數(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="152"/>
+        <location filename="../ui/mainwindow.ui" line="153"/>
         <source>Set Parameters</source>
         <extracomment>Edit output file parameters.</extracomment>
         <translation>設定轉換參數</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="155"/>
+        <location filename="../ui/mainwindow.ui" line="156"/>
         <source>Edit conversion parameters of selected files.</source>
         <translation>編輯選取檔案的轉換參數</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="164"/>
+        <location filename="../ui/mainwindow.ui" line="165"/>
         <source>About &amp;Qt</source>
         <translation>關於&amp;Qt</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="167"/>
+        <location filename="../ui/mainwindow.ui" line="168"/>
         <source>About Qt</source>
         <translation>關於Qt</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="176"/>
+        <location filename="../ui/mainwindow.ui" line="177"/>
         <source>&amp;Open Output Folder</source>
         <translation>開啟輸出資料夾(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="179"/>
+        <location filename="../ui/mainwindow.ui" line="180"/>
         <source>Open output folder of the first selected file.</source>
         <translation>開啟第一個選取檔案的輸出資料夾</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="188"/>
+        <location filename="../ui/mainwindow.ui" line="189"/>
         <source>About &amp;FFmpeg</source>
         <translation>關於&amp;FFmpeg</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="191"/>
+        <location filename="../ui/mainwindow.ui" line="192"/>
         <source>About FFmpeg</source>
         <translation>關於FFmpeg</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="200"/>
+        <location filename="../ui/mainwindow.ui" line="201"/>
         <source>&amp;Remove Selected Items</source>
         <translation>移除選取的項目</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="203"/>
+        <location filename="../ui/mainwindow.ui" line="204"/>
         <source>Remove all selected items in the list.</source>
         <translation>移除清單中所有選取的項目</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="212"/>
+        <location filename="../ui/mainwindow.ui" line="213"/>
         <source>R&amp;emove Completed Items</source>
         <translation>移除已完成的項目</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="215"/>
+        <location filename="../ui/mainwindow.ui" line="216"/>
         <source>Remove Completed Items</source>
         <translation>移除已完成的項目</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="218"/>
+        <location filename="../ui/mainwindow.ui" line="219"/>
         <source>Remove all completed items in the list.</source>
         <translation>移除清單中所有已完成的項目</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="227"/>
+        <location filename="../ui/mainwindow.ui" line="228"/>
         <source>&amp;Clear List</source>
         <translation>清除清單(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="230"/>
+        <location filename="../ui/mainwindow.ui" line="231"/>
         <source>Clear List</source>
         <translation>清除清單</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="233"/>
+        <location filename="../ui/mainwindow.ui" line="234"/>
         <source>Remove all items in the list.</source>
         <translation>移除清單中所有項目</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="242"/>
+        <location filename="../ui/mainwindow.ui" line="243"/>
         <source>&amp;Retry</source>
         <translation>重試(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="245"/>
+        <location filename="../ui/mainwindow.ui" line="246"/>
         <source>Retry</source>
         <translation>重試</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="248"/>
+        <location filename="../ui/mainwindow.ui" line="249"/>
         <source>Retry selected tasks.</source>
         <translation>重試選取的檔案</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="257"/>
+        <location filename="../ui/mainwindow.ui" line="258"/>
         <source>Retry &amp;All</source>
         <translation>全部重試(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="260"/>
+        <location filename="../ui/mainwindow.ui" line="261"/>
         <source>Retry all tasks.</source>
         <translation>重試所有的任務</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="269"/>
+        <location filename="../ui/mainwindow.ui" line="270"/>
         <source>&amp;Options</source>
         <translation>選項(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="272"/>
+        <location filename="../ui/mainwindow.ui" line="273"/>
         <source>Options</source>
         <translation>選項</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="281"/>
+        <location filename="../ui/mainwindow.ui" line="282"/>
         <source>About Q&amp;WinFF</source>
         <translation>關於Q&amp;WinFF</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="284"/>
+        <location filename="../ui/mainwindow.ui" line="285"/>
         <source>About This Program</source>
         <translation>關於這個程式</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="289"/>
+        <location filename="../ui/mainwindow.ui" line="290"/>
         <source>Change Output &amp;Filename</source>
         <translation>修改輸出檔名(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="292"/>
+        <location filename="../ui/mainwindow.ui" line="293"/>
         <source>Change the output filename of the selected item.</source>
         <translation>修改選取檔案的輸出檔案名稱</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="297"/>
+        <location filename="../ui/mainwindow.ui" line="298"/>
         <source>Change Output &amp;Directory</source>
         <translation>修改輸出資料夾(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="300"/>
+        <location filename="../ui/mainwindow.ui" line="301"/>
         <source>Change the output directory of the selected items.</source>
         <translation>修改選取檔案的輸出資料夾</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="117"/>
+        <location filename="../ui/mainwindow.cpp" line="118"/>
         <source>All tasks has finished.</source>
         <translation>所有的檔案都已轉換完成</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="143"/>
+        <location filename="../ui/mainwindow.cpp" line="151"/>
         <source>Nothing to convert.</source>
         <translation>沒有要轉換的檔案</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="217"/>
+        <location filename="../ui/mainwindow.cpp" line="225"/>
         <source>Conversion is still in progress. Abort?</source>
         <translation>檔案還在轉換中。確定要離開嗎？</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="240"/>
+        <location filename="../ui/mainwindow.cpp" line="247"/>
         <source>Elapsed Time: %1h %2m %3s</source>
         <translation>經過時間: %1 時 %2 分 %3 秒</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="270"/>
+        <location filename="../ui/mainwindow.cpp" line="268"/>
+        <location filename="../ui/mainwindow.cpp" line="451"/>
+        <source>Shutdown</source>
+        <extracomment>Shutdown the computer</extracomment>
+        <translation>關機</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="269"/>
+        <source>Shutdown when all tasks finish.</source>
+        <translation>所有任務完成之後關機</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="278"/>
+        <location filename="../ui/mainwindow.cpp" line="456"/>
+        <source>Suspend</source>
+        <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
+        <translation>待機</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="279"/>
+        <source>Suspend when all tasks finish.</source>
+        <translation>所有任務完成之後待機</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="304"/>
         <source>FFmpeg Error</source>
         <translation>FFmpeg錯誤</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="271"/>
+        <location filename="../ui/mainwindow.cpp" line="305"/>
         <source>FFmpeg not found. The application will quit now.</source>
         <translation>找不到FFmpeg，程式將立刻結束。</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="278"/>
+        <location filename="../ui/mainwindow.cpp" line="312"/>
         <source>FFprobe Error</source>
         <translation>FFprobe錯誤</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="279"/>
+        <location filename="../ui/mainwindow.cpp" line="313"/>
         <source>FFprobe not found. The application will quit now.</source>
         <translation>找不到FFprobe，程式將立刻結束。</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="422"/>
+        <location filename="../ui/mainwindow.cpp" line="554"/>
         <source>Failed to load preset file. The application will quit now.</source>
         <translation>無法載入設定檔，程式將立刻結束。</translation>
     </message>
@@ -894,6 +918,36 @@
         <location filename="../ui/optionsdialog.ui" line="36"/>
         <source>Number of threads to use in conversion</source>
         <translation>轉換時使用的線程數</translation>
+    </message>
+</context>
+<context>
+    <name>PoweroffDialog</name>
+    <message>
+        <location filename="../ui/poweroffdialog.ui" line="42"/>
+        <source>Cancel</source>
+        <translation>取消</translation>
+    </message>
+    <message>
+        <location filename="../ui/poweroffdialog.cpp" line="48"/>
+        <source>Shutdown immediately</source>
+        <extracomment>Shutdown the computer</extracomment>
+        <translation>立刻關機</translation>
+    </message>
+    <message>
+        <location filename="../ui/poweroffdialog.cpp" line="53"/>
+        <source>Suspend immediately</source>
+        <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
+        <translation>立刻待機</translation>
+    </message>
+    <message>
+        <location filename="../ui/poweroffdialog.cpp" line="111"/>
+        <source>The computer will shutdown in &lt;b&gt;%1&lt;/b&gt; seconds</source>
+        <translation>電腦將於 &lt;b&gt;%1&lt;/b&gt; 秒後關機</translation>
+    </message>
+    <message>
+        <location filename="../ui/poweroffdialog.cpp" line="114"/>
+        <source>The computer will suspend in &lt;b&gt;%1&lt;/b&gt; seconds</source>
+        <translation>電腦將於 &lt;b&gt;%1&lt;/b&gt; 秒後待機</translation>
     </message>
 </context>
 </TS>
