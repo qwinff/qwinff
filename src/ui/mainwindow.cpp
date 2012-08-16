@@ -22,10 +22,12 @@
 #include "aboutdialog.h"
 #include "services/paths.h"
 #include "services/notification.h"
+#include "services/powermanagement.h"
 #include "converter/ffmpeginterface.h"
 #include "converter/mediaprobe.h"
 #include "converter/presets.h"
 #include <QHBoxLayout>
+#include <QToolButton>
 #include <QMessageBox>
 #include <QLabel>
 #include <QFileDialog>
@@ -34,7 +36,14 @@
 #include <QSettings>
 #include <QCloseEvent>
 #include <QTimer>
+#include <QSignalMapper>
 #include <QDebug>
+
+enum {
+    POWEROFF_SHUTDOWN = 0,
+    POWEROFF_SUSPEND,
+    POWEROFF_ACTION_COUNT
+};
 
 MainWindow::MainWindow(QWidget *parent, const QStringList& fileList) :
     QMainWindow(parent),
@@ -45,8 +54,6 @@ MainWindow::MainWindow(QWidget *parent, const QStringList& fileList) :
     m_elapsedTimeLabel(new QLabel(this)),
     m_timer(new QTimer(this))
 {
-    QSettings settings;
-
     ui->setupUi(this);
 
     this->centralWidget()->layout()->addWidget(m_list);
@@ -73,8 +80,7 @@ MainWindow::MainWindow(QWidget *parent, const QStringList& fileList) :
     setup_toolbar();
     setup_statusbar();
 
-    restoreGeometry(settings.value("mainwindow/geometry").toByteArray());
-    restoreState(settings.value("mainwindow/state").toByteArray());
+    load_settings();
 
     refresh_action_states();
 
@@ -223,9 +229,8 @@ void MainWindow::closeEvent(QCloseEvent *event)
     }
 
     m_list->stop();
-    QSettings settings;
-    settings.setValue("mainwindow/geometry", saveGeometry());
-    settings.setValue("mainwindow/state", saveState());
+
+    save_settings();
 }
 
 void MainWindow::timerEvent()
@@ -252,6 +257,34 @@ void MainWindow::conversion_started()
 void MainWindow::conversion_stopped()
 {
     m_timer->stop();
+}
+
+void MainWindow::update_poweroff_button(int id)
+{
+    m_poweroff_behavior = id;
+    if (id == POWEROFF_SHUTDOWN) {
+        QIcon icon(":/actions/icons/system_shutdown.png");
+        QString title = tr("Shutdown");
+        QString statusTip = tr("Shutdown when all tasks finish.");
+        m_poweroff_button->setIcon(icon);
+        m_poweroff_button->setToolTip(title);
+        m_poweroff_button->setStatusTip(statusTip);
+        ui->actionPoweroff->setIcon(icon);
+        ui->actionPoweroff->setText(title);
+        ui->actionPoweroff->setStatusTip(statusTip);
+    } else if (id == POWEROFF_SUSPEND) {
+        QIcon icon(":/actions/icons/system_suspend.png");
+        QString title = tr("Suspend");
+        QString statusTip = tr("Suspend when all tasks finish.");
+        m_poweroff_button->setIcon(icon);
+        m_poweroff_button->setToolTip(title);
+        m_poweroff_button->setStatusTip(statusTip);
+        ui->actionPoweroff->setIcon(icon);
+        ui->actionPoweroff->setText(title);
+        ui->actionPoweroff->setStatusTip(statusTip);
+    } else {
+        Q_ASSERT(!"Incorrect poweroff behavior id");
+    }
 }
 
 // Private Methods
@@ -384,11 +417,93 @@ void MainWindow::setup_toolbar()
     toolbar->addAction(ui->actionRetryAll);
     toolbar->addSeparator();
     toolbar->addAction(ui->actionOpenOutputFolder);
+    setup_poweroff_button();
 }
 
 void MainWindow::setup_statusbar()
 {
     ui->statusBar->addPermanentWidget(m_elapsedTimeLabel);
+}
+
+/*
+ * Setup the poweroff button and menu.
+ * The poweroff button is handled differently from other menu and buttons.
+ * Its icon and title changes as the action changes.
+ */
+void MainWindow::setup_poweroff_button()
+{
+    QToolButton *button = new QToolButton(this);
+    QMenu *menu = new QMenu(this);
+    QList<QAction*> actionList;
+    QSignalMapper *signalMapper = new QSignalMapper(this);
+    QActionGroup *checkGroup = new QActionGroup(this);
+
+    m_poweroff_button = button;
+    m_poweroff_actiongroup = checkGroup;
+
+    // Insert all actions into the list (action->actionList, id->actionIdList)
+    for (int i=0; i<POWEROFF_ACTION_COUNT; i++) {
+        switch (i) {
+        case POWEROFF_SHUTDOWN:
+            //: Shutdown the computer
+            actionList.append(new QAction(QIcon(":/actions/icons/system_shutdown.png")
+                                          , tr("Shutdown"), this));
+            break;
+        case POWEROFF_SUSPEND:
+            //: Suspend the computer (sleep to ram, standby)
+            actionList.append(new QAction(QIcon(":/actions/icons/system_suspend.png")
+                                          , tr("Suspend"), this));
+            break;
+        default:
+            Q_ASSERT(!"Incorrect poweroff action id");
+        }
+    }
+
+    // Add all actions into the menu (from list)
+    foreach (QAction *action, actionList) {
+        menu->addAction(action);
+        action->setCheckable(true);
+        action->setActionGroup(checkGroup);
+    }
+
+    button->setMenu(menu);
+    button->setPopupMode(QToolButton::MenuButtonPopup);
+
+    // ensure that the toolbutton and actionPoweroff are both checkable
+    ui->actionPoweroff->setCheckable(true);
+    button->setCheckable(true);
+    button->setChecked(false);
+
+    /* Synchronize the checked state of the toolbutton and actionPoweroff.
+       This cyclic connection doesn't cause an infinite loop because
+       toggled(bool) is only triggered when the checked() state changes.
+     */
+    connect(button, SIGNAL(toggled(bool))
+            , ui->actionPoweroff, SLOT(setChecked(bool)));
+    connect(ui->actionPoweroff, SIGNAL(toggled(bool))
+            , button, SLOT(setChecked(bool)));
+
+    // update the poweroff button when the action changes
+    for (int i=0; i<actionList.size(); i++) {
+        QAction *action = actionList.at(i);
+        signalMapper->setMapping(action, i);
+        connect(action, SIGNAL(triggered())
+                , signalMapper, SLOT(map()));
+        connect(signalMapper, SIGNAL(mapped(int))
+                , this, SLOT(update_poweroff_button(int)));
+    }
+
+    actionList.at(0)->trigger();
+
+    /* Check if the power management functions are available.
+       If not, hide poweroff button and menus.
+     */
+    if (!PowerManagement::implemented()) {
+        m_poweroff_button->setVisible(false);
+        ui->actionPoweroff->setVisible(false);
+    } else {
+        ui->toolBar->addWidget(button);
+    }
 }
 
 bool MainWindow::load_presets()
@@ -464,4 +579,23 @@ void MainWindow::refresh_action_states()
     ui->actionClearList->setDisabled(hide_ClearList);
     ui->actionChangeOutputFilename->setDisabled(hide_ChangeOutputFilename);
     ui->actionChangeOutputDirectory->setDisabled(hide_ChangeOutputDirectory);
+}
+
+void MainWindow::load_settings()
+{
+    QSettings settings;
+    restoreGeometry(settings.value("mainwindow/geometry").toByteArray());
+    restoreState(settings.value("mainwindow/state").toByteArray());
+    m_poweroff_behavior = settings.value("options/poweroff_behavior", POWEROFF_SHUTDOWN).toInt();
+    if (m_poweroff_behavior >= POWEROFF_ACTION_COUNT)
+        m_poweroff_behavior = POWEROFF_SHUTDOWN;
+    m_poweroff_actiongroup->actions().at(m_poweroff_behavior)->trigger();
+}
+
+void MainWindow::save_settings()
+{
+    QSettings settings;
+    settings.setValue("mainwindow/geometry", saveGeometry());
+    settings.setValue("mainwindow/state", saveState());
+    settings.setValue("options/poweroff_behavior", m_poweroff_behavior);
 }

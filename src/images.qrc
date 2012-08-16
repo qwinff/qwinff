@@ -13,6 +13,8 @@
         <file>icons/retry.png</file>
         <file>icons/retry_all.png</file>
         <file>icons/configure.png</file>
+        <file>icons/system_shutdown.png</file>
+        <file>icons/system_suspend.png</file>
     </qresource>
     <qresource prefix="/app">
         <file>icons/qt.png</file>
