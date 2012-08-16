@@ -19,6 +19,7 @@
 #include <QRegExp>
 #include <QTextStream>
 #include <iostream>
+#include <cassert>
 
 #ifdef OPERATION_TIMEOUT
 #   define TIMEOUT OPERATION_TIMEOUT
@@ -53,6 +54,7 @@ struct MEncoderInterface::Private
       , encoders_read(false) { }
 
     bool check_progress(const QString&);
+    QStringList getOptionList(const ConversionParameters&);
 };
 
 /*! Check whether the output line is a progress line.
@@ -68,6 +70,26 @@ bool MEncoderInterface::Private::check_progress(const QString& line)
         return true;
     }
     return false;
+}
+
+/* TODO: THIS FUNCTION IS UNFINISHED
+   Remove this notice once it is finished.
+   See FFmpegInterface::Private::getOptionList() */
+QStringList MEncoderInterface::Private::getOptionList(const ConversionParameters &o)
+{
+    assert(!"This function has not been finished.");
+    QStringList list;
+
+    // source file
+    list.append(o.source);
+    // destination file
+    list.append("-o");
+    list.append(o.destination);
+
+    /* Audio Options */
+
+    /* Video Options */
+
 }
 
 MEncoderInterface::MEncoderInterface(QObject *parent) :
@@ -98,7 +120,7 @@ void MEncoderInterface::setReadChannel(QProcess& proc) const
 
 void MEncoderInterface::fillParameterList(const ConversionParameters &param, QStringList &list) const
 {
-    list = param.toFFmpegOptionList();
+    list = p->getOptionList(param);
 }
 
 void MEncoderInterface::parseProcessOutput(const QString &data)

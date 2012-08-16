@@ -13,38 +13,36 @@
     along with QWinFF.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef NOTIFICATIONSERVICE_H
-#define NOTIFICATIONSERVICE_H
+#ifndef POWERMANAGEMENT_H
+#define POWERMANAGEMENT_H
 
-#include <QString>
-
-class NotifyLevel
+class PowerManagement
 {
 public:
-    enum {
-        INFO = 0,
-        WARNING,
-        CRITICAL
+
+    /* Power Management Function ID
+     */
+    enum PowerAction {
+        SHUTDOWN = 0,
+        SUSPEND,
+        ACTION_COUNT
     };
+
+    /**
+     * Send the power management action.
+     * @param action a PowerAction indicating the desired action
+     */
+    static bool sendRequest(int action);
+
+    /*
+       This function is used to check whether there's an implementation
+       for the current build. You should always return true in this function
+       when implementing PowerManagement for another system/environment.
+     */
+    static bool implemented();
+
+private:
+    PowerManagement();
 };
 
-class NotificationService
-{
-public:
-
-    /** Send notification
-     *  @note Any implementation of this function should not block.
-     */
-    virtual void send(QString title, QString message) = 0;
-
-    /** Send notification with an image
-     *  @note Any implementation of this function should not block.
-     */
-    virtual void send(QString title, QString message, int level) = 0;
-
-    /** Determine whether the notification service is available.
-     */
-    virtual bool serviceAvailable() const = 0;
-};
-
-#endif // NOTIFICATIONSERVICE_H
+#endif // POWERMANAGEMENT_H

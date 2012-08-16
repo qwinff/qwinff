@@ -26,7 +26,7 @@
      <x>0</x>
      <y>0</y>
      <width>491</width>
-     <height>23</height>
+     <height>24</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -44,9 +44,10 @@
     </property>
     <addaction name="actionStartConversion"/>
     <addaction name="actionStopConversion"/>
-    <addaction name="separator"/>
     <addaction name="actionRetry"/>
     <addaction name="actionRetryAll"/>
+    <addaction name="separator"/>
+    <addaction name="actionPoweroff"/>
    </widget>
    <widget class="QMenu" name="menuAbout">
     <property name="title">
@@ -298,6 +299,14 @@
    </property>
    <property name="statusTip">
     <string>Change the output directory of the selected items.</string>
+   </property>
+  </action>
+  <action name="actionPoweroff">
+   <property name="text">
+    <string>Poweroff</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true"/>
    </property>
   </action>
  </widget>

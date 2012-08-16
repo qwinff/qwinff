@@ -14,6 +14,7 @@
 */
 
 #include "ffmpeginterface.h"
+#include "mediaprobe.h"
 #include <QRegExp>
 #include <QTextStream>
 #include <QDebug>
@@ -182,6 +183,7 @@ struct FFmpegInterface::Private
 
     bool check_duration(const QString&);
     bool check_progress(const QString&);
+    QStringList getOptionList(const ConversionParameters&);
 };
 
 /*! Check whether the output line is a progress line.
@@ -235,6 +237,167 @@ bool FFmpegInterface::Private::check_duration(const QString& line)
     return false;
 }
 
+/**
+ * Convert a ConversionParameters object into ffmpeg command-line option list.
+ * @param o the parameter object
+ * @return a QStringList containing command-line options
+ * @note This function is time-consuming because it calls ffprobe to obtain
+ *       media information.
+ */
+QStringList FFmpegInterface::Private::getOptionList(const ConversionParameters &o)
+{
+    MediaProbe probe;
+
+    if (o.audio_auto_bitrate || o.audio_keep_sample_rate) {
+        // Probe the bitrate of the input file and apply the value to output.
+        probe.run(o.source, TIMEOUT);
+    }
+
+    QStringList list;
+
+    // overwrite if file exists
+    list.append("-y");
+
+    // source file
+    list.append("-i");
+    list.append(o.source);
+
+    /* ==== Additional Options ==== */
+    if (!o.ffmpeg_options.isEmpty()) {
+        QList<QString> additional_options =
+                o.ffmpeg_options.split(" ", QString::SkipEmptyParts);
+        list.append(additional_options);
+    }
+
+    if (o.threads >= 2) {
+        list.append("-threads");
+        list.append(QString::number(o.threads));
+    }
+
+    /* ==== Audio/Video Options ==== */
+
+    // Audio Options
+    if (o.disable_audio) {
+        list.append("-an"); // no audio
+    } else { // audio enabled
+
+        // audio bitrate in kb/s
+        if (o.audio_bitrate > 0) {
+            list.append("-ab");
+
+            int bitrate = o.audio_bitrate;
+            if (o.audio_auto_bitrate && !probe.error()) {
+                const int probed_bitrate = probe.audioBitRate();
+
+                // Apply probed bitrate if the target bitrate is bigger.
+                if (probed_bitrate > 0 && probed_bitrate < bitrate)
+                    bitrate = probe.audioBitRate();
+
+                qDebug() << "Apply probed bitrate: " + QString::number(bitrate);
+            }
+
+            list.append(QString("%1k").arg(bitrate));
+        }
+
+        // audio sample rate in hz
+        if (o.audio_sample_rate > 0) {
+            list.append("-ar");
+
+            int sample_rate = o.audio_sample_rate;
+            if (o.audio_keep_sample_rate
+                    && !probe.error()
+                    && probe.audioSampleRate() != 0) {
+                sample_rate = probe.audioSampleRate();
+                qDebug() << "Apply probed sample rate: " + QString::number(sample_rate);
+            }
+
+            list.append(QString("%1").arg(sample_rate));
+        }
+
+        // audio channels
+        if (o.audio_channels > 0) {
+            list.append("-ac");
+            list.append(QString("%1").arg(o.audio_channels));
+        }
+
+        // volume
+        if (o.audio_volume > 0) {
+            list.append("-vol");
+            list.append(QString("%1").arg(o.audio_volume));
+        }
+
+    }
+
+    // Video Options
+    if (o.disable_video) {
+        list.append("-vn"); // no video
+    } else { // video enabled
+
+        // same video quality as source
+        if (o.video_same_quality) {
+            list.append("-sameq");
+        }
+
+        // deinterlace
+        if (o.video_deinterlace) {
+            list.append("-deinterlace");
+        }
+
+        // video bitrate
+        if (o.video_bitrate > 0) {
+            list.append("-b");
+            list.append(QString("%1k").arg(o.video_bitrate));
+        }
+
+        // video dimensions
+        if (o.video_width > 0 && o.video_height > 0) {
+            list.append("-s");
+            list.append(QString("%1x%2").arg(o.video_width).arg(o.video_height));
+        }
+
+        if (o.video_crop_top > 0) {
+            list.append("-croptop");
+            list.append(QString("%1").arg(o.video_crop_top));
+        }
+
+        if (o.video_crop_bottom > 0) {
+            list.append("-cropbottom");
+            list.append(QString("%1").arg(o.video_crop_bottom));
+        }
+
+        if (o.video_crop_left > 0) {
+            list.append("-cropleft");
+            list.append(QString("%1").arg(o.video_crop_left));
+        }
+
+        if (o.video_crop_right > 0) {
+            list.append("-cropright");
+            list.append(QString("%1").arg(o.video_crop_right));
+        }
+
+    }
+
+    // Time Options
+    /* -ss time_begin
+        When used as an output option, ffmpeg decodes but discards input
+        until timestamp reaches time_begin */
+    if (o.time_begin > 0) {
+        list.append("-ss");
+        list.append(QString("%1").arg(o.time_begin));
+    }
+    /* -t time_duration
+        Stop writing the output after its duration reaches time_duration */
+    if (o.time_duration > 0) {
+        list.append("-t");
+        list.append(QString("%1").arg(o.time_duration));
+    }
+
+    // destination file
+    list.append(o.destination);
+
+    return list;
+}
+
 FFmpegInterface::FFmpegInterface(QObject *parent) :
     ConverterInterface(parent), p(new Private)
 {
@@ -264,7 +427,7 @@ void FFmpegInterface::setReadChannel(QProcess& proc) const
 
 void FFmpegInterface::fillParameterList(const ConversionParameters &param, QStringList &list) const
 {
-    list = param.toFFmpegOptionList();
+    list = p->getOptionList(param);
 }
 
 void FFmpegInterface::parseProcessOutput(const QString &data)
