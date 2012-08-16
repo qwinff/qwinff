@@ -39,12 +39,6 @@
 #include <QSignalMapper>
 #include <QDebug>
 
-enum {
-    POWEROFF_SHUTDOWN = 0,
-    POWEROFF_SUSPEND,
-    POWEROFF_ACTION_COUNT
-};
-
 MainWindow::MainWindow(QWidget *parent, const QStringList& fileList) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
@@ -261,8 +255,7 @@ void MainWindow::conversion_stopped()
 
 void MainWindow::update_poweroff_button(int id)
 {
-    m_poweroff_behavior = id;
-    if (id == POWEROFF_SHUTDOWN) {
+    if (id == PowerManagement::SHUTDOWN) {
         QIcon icon(":/actions/icons/system_shutdown.png");
         QString title = tr("Shutdown");
         QString statusTip = tr("Shutdown when all tasks finish.");
@@ -272,7 +265,7 @@ void MainWindow::update_poweroff_button(int id)
         ui->actionPoweroff->setIcon(icon);
         ui->actionPoweroff->setText(title);
         ui->actionPoweroff->setStatusTip(statusTip);
-    } else if (id == POWEROFF_SUSPEND) {
+    } else if (id == PowerManagement::SUSPEND) {
         QIcon icon(":/actions/icons/system_suspend.png");
         QString title = tr("Suspend");
         QString statusTip = tr("Suspend when all tasks finish.");
@@ -442,14 +435,14 @@ void MainWindow::setup_poweroff_button()
     m_poweroff_actiongroup = checkGroup;
 
     // Insert all actions into the list (action->actionList, id->actionIdList)
-    for (int i=0; i<POWEROFF_ACTION_COUNT; i++) {
+    for (int i=0; i<PowerManagement::ACTION_COUNT; i++) {
         switch (i) {
-        case POWEROFF_SHUTDOWN:
+        case PowerManagement::SHUTDOWN:
             //: Shutdown the computer
             actionList.append(new QAction(QIcon(":/actions/icons/system_shutdown.png")
                                           , tr("Shutdown"), this));
             break;
-        case POWEROFF_SUSPEND:
+        case PowerManagement::SUSPEND:
             //: Suspend the computer (sleep to ram, standby)
             actionList.append(new QAction(QIcon(":/actions/icons/system_suspend.png")
                                           , tr("Suspend"), this));
@@ -504,6 +497,22 @@ void MainWindow::setup_poweroff_button()
     } else {
         ui->toolBar->addWidget(button);
     }
+}
+
+void MainWindow::set_poweroff_behavior(int action)
+{
+    if (action >= PowerManagement::ACTION_COUNT)
+        action = PowerManagement::SHUTDOWN;
+    m_poweroff_actiongroup->actions().at(action)->trigger();
+}
+
+int MainWindow::get_poweroff_behavior()
+{
+    for (int i=0; i<m_poweroff_actiongroup->actions().size(); i++) {
+        if (m_poweroff_actiongroup->actions().at(i)->isChecked())
+            return i;
+    }
+    return PowerManagement::SHUTDOWN;
 }
 
 bool MainWindow::load_presets()
@@ -586,10 +595,10 @@ void MainWindow::load_settings()
     QSettings settings;
     restoreGeometry(settings.value("mainwindow/geometry").toByteArray());
     restoreState(settings.value("mainwindow/state").toByteArray());
-    m_poweroff_behavior = settings.value("options/poweroff_behavior", POWEROFF_SHUTDOWN).toInt();
-    if (m_poweroff_behavior >= POWEROFF_ACTION_COUNT)
-        m_poweroff_behavior = POWEROFF_SHUTDOWN;
-    m_poweroff_actiongroup->actions().at(m_poweroff_behavior)->trigger();
+    int poweroff_behavior = settings.value("options/poweroff_behavior"
+                                         , PowerManagement::SHUTDOWN).toInt();
+    set_poweroff_behavior(poweroff_behavior);
+
 }
 
 void MainWindow::save_settings()
@@ -597,5 +606,5 @@ void MainWindow::save_settings()
     QSettings settings;
     settings.setValue("mainwindow/geometry", saveGeometry());
     settings.setValue("mainwindow/state", saveState());
-    settings.setValue("options/poweroff_behavior", m_poweroff_behavior);
+    settings.setValue("options/poweroff_behavior", get_poweroff_behavior());
 }

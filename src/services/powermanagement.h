@@ -20,12 +20,19 @@ class PowerManagement
 {
 public:
 
-    /*
-       Power Management Functions:
-       return true on success, false otherwise
-    */
-    static bool suspend();
-    static bool shutdown();
+    /* Power Management Function ID
+     */
+    enum PowerAction {
+        SHUTDOWN = 0,
+        SUSPEND,
+        ACTION_COUNT
+    };
+
+    /**
+     * Send the power management action.
+     * @param action a PowerAction indicating the desired action
+     */
+    static bool sendRequest(int action);
 
     /*
        This function is used to check whether there's an implementation

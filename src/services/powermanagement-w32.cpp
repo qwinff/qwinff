@@ -19,7 +19,10 @@
 #include <windows.h>
 #include <powrprof.h>
 
-static bool adjustPrivilegeForShutdown()
+namespace
+{
+
+bool adjustPrivilegeForShutdown()
 {
     HANDLE hCurrentProc = GetCurrentProcess();
     HANDLE hToken;
@@ -47,7 +50,7 @@ static bool adjustPrivilegeForShutdown()
     return true;
 }
 
-bool PowerManagement::suspend()
+bool power_suspend()
 {
     bool hal_works = false;
 
@@ -63,7 +66,7 @@ bool PowerManagement::suspend()
     return hal_works;
 }
 
-bool PowerManagement::shutdown()
+bool power_shutdown()
 {
     bool shutdown_works = false;
 
@@ -73,6 +76,19 @@ bool PowerManagement::shutdown()
     shutdown_works = ExitWindowsEx(EWX_SHUTDOWN | EWX_FORCE | EWX_POWEROFF, 0);
 
     return shutdown_works;
+}
+
+} // anonymous namespace
+
+bool PowerManagement::sendRequest(int action)
+{
+    switch (action) {
+    case SHUTDOWN:
+        return power_shutdown();
+    case SUSPEND:
+        return power_suspend();
+    }
+    return false;
 }
 
 bool PowerManagement::implemented()

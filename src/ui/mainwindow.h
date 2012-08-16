@@ -80,7 +80,6 @@ private:
     QTimer *m_timer;
     QToolButton *m_poweroff_button;
     QActionGroup *m_poweroff_actiongroup;
-    unsigned int m_poweroff_behavior;
     bool check_execute_conditions();
     void add_files();
     void add_files(const QStringList& files);
@@ -88,6 +87,8 @@ private:
     void setup_toolbar();
     void setup_statusbar();
     void setup_poweroff_button();
+    void set_poweroff_behavior(int);
+    int get_poweroff_behavior();
     bool load_presets();
     void load_settings();
     void save_settings();

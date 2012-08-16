@@ -21,9 +21,12 @@
 #include <QProcess>
 #include <QDebug>
 
-static const bool verbose = true;
+namespace
+{
 
-bool PowerManagement::suspend()
+const bool verbose = true;
+
+bool power_suspend()
 {
     bool gnome_power1 = false;
     bool gnome_power2 = false;
@@ -84,7 +87,7 @@ bool PowerManagement::suspend()
     return hal_works;
 }
 
-bool PowerManagement::shutdown()
+bool power_shutdown()
 {
     bool shutdown_works = false;
     bool gnome_power1 = false;
@@ -155,6 +158,19 @@ bool PowerManagement::shutdown()
     }
 
     return shutdown_works;
+}
+
+} // anonymous namespace
+
+bool PowerManagement::sendRequest(int action)
+{
+    switch (action) {
+    case SHUTDOWN:
+        return power_shutdown();
+    case SUSPEND:
+        return power_suspend();
+    }
+    return false;
 }
 
 bool PowerManagement::implemented()
