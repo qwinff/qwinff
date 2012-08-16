@@ -20,6 +20,7 @@
 #include "aboutffmpegdialog.h"
 #include "optionsdialog.h"
 #include "aboutdialog.h"
+#include "poweroffdialog.h"
 #include "services/paths.h"
 #include "services/notification.h"
 #include "services/powermanagement.h"
@@ -114,6 +115,13 @@ void MainWindow::task_finished(int /*exitcode*/)
 
 void MainWindow::all_tasks_finished()
 {
+    if (PowerManagement::implemented() && m_poweroff_button->isChecked()) {
+        // show poweroff dialog
+        if (PoweroffDialog(this).exec(get_poweroff_behavior()) == QDialog::Accepted) {
+            save_settings();
+        }
+    }
+
     Notification::send("QWinFF", tr("All tasks has finished."), NotifyLevel::INFO);
     refresh_action_states();
 }

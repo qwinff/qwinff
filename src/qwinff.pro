@@ -31,7 +31,8 @@ SOURCES += main.cpp \
     services/notification.cpp \
     services/notificationservice-qt.cpp \
     services/notificationservice-notifysend.cpp \
-    services/powermanagement-dummy.cpp
+    services/powermanagement-dummy.cpp \
+    ui/poweroffdialog.cpp
 
 HEADERS  += \
     ui/progressbar.h \
@@ -57,7 +58,8 @@ HEADERS  += \
     services/notificationservice.h \
     services/notificationservice-qt.h \
     services/notificationservice-notifysend.h \
-    services/powermanagement.h
+    services/powermanagement.h \
+    ui/poweroffdialog.h
 
 FORMS    += \
     ui/conversionparameterdialog.ui \
@@ -65,7 +67,8 @@ FORMS    += \
     ui/mainwindow.ui \
     ui/aboutffmpegdialog.ui \
     ui/optionsdialog.ui \
-    ui/aboutdialog.ui
+    ui/aboutdialog.ui \
+    ui/poweroffdialog.ui
 
 RESOURCES += \
     images.qrc
@@ -116,3 +119,6 @@ DEFINES += DEFAULT_THREAD_COUNT=1
 
 OTHER_FILES += \
     settings.txt
+
+
+
