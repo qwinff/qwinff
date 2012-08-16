@@ -115,15 +115,15 @@ void MainWindow::task_finished(int /*exitcode*/)
 
 void MainWindow::all_tasks_finished()
 {
+    Notification::send("QWinFF", tr("All tasks has finished."), NotifyLevel::INFO);
+    refresh_action_states();
+
     if (PowerManagement::implemented() && m_poweroff_button->isChecked()) {
         // show poweroff dialog
         if (PoweroffDialog(this).exec(get_poweroff_behavior()) == QDialog::Accepted) {
-            save_settings();
+            save_settings(); // save settings in case of power failure
         }
     }
-
-    Notification::send("QWinFF", tr("All tasks has finished."), NotifyLevel::INFO);
-    refresh_action_states();
 }
 
 // Menu Events

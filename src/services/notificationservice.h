@@ -33,11 +33,12 @@ class NotificationService
 public:
 
     /** Send notification
+     *  @note Any implementation of this function should not block.
      */
     virtual void send(QString title, QString message) = 0;
 
     /** Send notification with an image
-     *  @param image the path of the image
+     *  @note Any implementation of this function should not block.
      */
     virtual void send(QString title, QString message, int level) = 0;
 
