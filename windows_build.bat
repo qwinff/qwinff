@@ -3,6 +3,7 @@ set DEST_DIR=.\windows_release
 
 pushd src
 lrelease qwinff.pro
+mingw32-make clean
 qmake
 mingw32-make release
 popd
@@ -20,5 +21,6 @@ copy ".\src\presets.xml" "%DEST_DIR%"
 copy ".\src\translations\*.qm" "%DEST_DIR%\translations"
 copy "COPYING-v3.txt" "%DEST_DIR%\license.txt"
 unix2dos "%DEST_DIR%\license.txt"
+copy "qwinff.nsi" "%DEST_DIR%\qwinff.nsi"
 
 @echo Files are copied to %DEST_DIR%
