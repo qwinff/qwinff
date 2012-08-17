@@ -52,8 +52,6 @@ bool adjustPrivilegeForShutdown()
 
 bool power_suspend()
 {
-    bool hal_works = false;
-
     /*
         BOOLEAN WINAPI SetSuspendState(
           __in  BOOLEAN Hibernate,
@@ -61,8 +59,14 @@ bool power_suspend()
           __in  BOOLEAN DisableWakeEvent
         );
     */
-    hal_works = SetSuspendState(false, true, false);
+    bool hal_works = SetSuspendState(false, true, false);
+    return hal_works;
+}
 
+bool power_hibernate()
+{
+    /* SetSuspendState: see power_suspend() */
+    bool hal_works = SetSuspendState(true, true, false);
     return hal_works;
 }
 
