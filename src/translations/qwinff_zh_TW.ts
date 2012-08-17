@@ -854,12 +854,12 @@
     <message>
         <location filename="../ui/mainwindow.cpp" line="273"/>
         <source>Shutdown when all tasks are done.</source>
-        <translation>所有任務結束後關機.</translation>
+        <translation>所有任務結束後關機</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.cpp" line="278"/>
         <source>Suspend when all tasks are done.</source>
-        <translation>所有任務結束後待機.</translation>
+        <translation>所有任務結束後待機</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.cpp" line="282"/>
@@ -871,7 +871,7 @@
     <message>
         <location filename="../ui/mainwindow.cpp" line="283"/>
         <source>Hibernate when all tasks are done.</source>
-        <translation>所有任務結束後休眠.</translation>
+        <translation>所有任務結束後休眠</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.cpp" line="277"/>
