@@ -263,29 +263,34 @@ void MainWindow::conversion_stopped()
 
 void MainWindow::update_poweroff_button(int id)
 {
-    if (id == PowerManagement::SHUTDOWN) {
-        QIcon icon(":/actions/icons/system_shutdown.png");
-        QString title = tr("Shutdown");
-        QString statusTip = tr("Shutdown when all tasks finish.");
-        m_poweroff_button->setIcon(icon);
-        m_poweroff_button->setToolTip(title);
-        m_poweroff_button->setStatusTip(statusTip);
-        ui->actionPoweroff->setIcon(icon);
-        ui->actionPoweroff->setText(title);
-        ui->actionPoweroff->setStatusTip(statusTip);
-    } else if (id == PowerManagement::SUSPEND) {
-        QIcon icon(":/actions/icons/system_suspend.png");
-        QString title = tr("Suspend");
-        QString statusTip = tr("Suspend when all tasks finish.");
-        m_poweroff_button->setIcon(icon);
-        m_poweroff_button->setToolTip(title);
-        m_poweroff_button->setStatusTip(statusTip);
-        ui->actionPoweroff->setIcon(icon);
-        ui->actionPoweroff->setText(title);
-        ui->actionPoweroff->setStatusTip(statusTip);
-    } else {
-        Q_ASSERT(!"Incorrect poweroff behavior id");
+    const char *icon_id = "";
+    QString title = "";
+    QString status_tip = "";
+    switch (id) {
+    case PowerManagement::SHUTDOWN:
+        icon_id = ":/actions/icons/system_shutdown.png";
+        title = tr("Shutdown");
+        status_tip = tr("Shutdown when all tasks are done.");
+        break;
+    case PowerManagement::SUSPEND:
+        icon_id = ":/actions/icons/system_suspend.png";
+        title = tr("Suspend");
+        status_tip = tr("Suspend when all tasks are done.");
+        break;
+    case PowerManagement::HIBERNATE:
+        icon_id = ":/actions/icons/system_hibernate.png";
+        title = tr("Hibernate");
+        status_tip = tr("Hibernate when all tasks are done.");
+        break;
+    default:
+        Q_ASSERT(!"Incorrect id! Be sure to handle every power action in switch().");
     }
+    m_poweroff_button->setIcon(QIcon(icon_id));
+    m_poweroff_button->setToolTip(title);
+    m_poweroff_button->setStatusTip(status_tip);
+    ui->actionPoweroff->setIcon(QIcon(icon_id));
+    ui->actionPoweroff->setText(title);
+    ui->actionPoweroff->setStatusTip(status_tip);
 }
 
 // Private Methods
@@ -442,22 +447,31 @@ void MainWindow::setup_poweroff_button()
     m_poweroff_button = button;
     m_poweroff_actiongroup = checkGroup;
 
-    // Insert all actions into the list (action->actionList, id->actionIdList)
+    // Insert all actions into the list.
     for (int i=0; i<PowerManagement::ACTION_COUNT; i++) {
+        const char *icon_id = "";
+        QString text = "";
         switch (i) {
         case PowerManagement::SHUTDOWN:
-            //: Shutdown the computer
-            actionList.append(new QAction(QIcon(":/actions/icons/system_shutdown.png")
-                                          , tr("Shutdown"), this));
+            //: Shutdown the computer (completely poweroff)
+            text = tr("Shutdown");
+            icon_id = ":/actions/icons/system_shutdown.png";
             break;
         case PowerManagement::SUSPEND:
             //: Suspend the computer (sleep to ram, standby)
-            actionList.append(new QAction(QIcon(":/actions/icons/system_suspend.png")
-                                          , tr("Suspend"), this));
+            text = tr("Suspend");
+            icon_id = ":/actions/icons/system_suspend.png";
+            break;
+        case PowerManagement::HIBERNATE:
+            //: Hibernate the computer (sleep to disk, completely poweroff)
+            text = tr("Hibernate");
+            icon_id = ":/actions/icons/system_hibernate.png";
             break;
         default:
-            Q_ASSERT(!"Incorrect poweroff action id");
+            Q_ASSERT(!"Incorrect id! Be sure to implement every power action in switch().");
         }
+        actionList.append(new QAction(QIcon(icon_id)
+                                      , text, this));
     }
 
     // Add all actions into the menu (from list)

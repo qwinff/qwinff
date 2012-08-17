@@ -41,18 +41,31 @@ PoweroffDialog::~PoweroffDialog()
 
 int PoweroffDialog::exec(int action)
 {
+    const char *icon_id = "";
+    QString button_text = "";
+
     switch (action) {
     case PowerManagement::SHUTDOWN:
-        ui->btnExecute->setIcon(QIcon(":/actions/icons/system_shutdown"));
         //: Shutdown the computer
-        ui->btnExecute->setText(tr("Shutdown immediately"));
+        button_text = tr("Shutdown immediately");
+        icon_id = ":/actions/icons/system_shutdown";
         break;
     case PowerManagement::SUSPEND:
-        ui->btnExecute->setIcon(QIcon(":/actions/icons/system_suspend"));
         //: Suspend the computer (sleep to ram, standby)
-        ui->btnExecute->setText(tr("Suspend immediately"));
+        button_text = tr("Suspend immediately");
+        icon_id = ":/actions/icons/system_suspend";
         break;
+    case PowerManagement::HIBERNATE:
+        //: Hibernate the computer (sleep to disk, completely poweroff)
+        button_text = tr("Hibernate immediately");
+        icon_id = ":/actions/icons/system_hibernate";
+        break;
+    default:
+        Q_ASSERT(!"Incorrect id! Be sure to handle every power action in switch().");
     }
+
+    ui->btnExecute->setIcon(QIcon(icon_id));
+    ui->btnExecute->setText(button_text);
 
     m_action = action;
     m_time = SEC_TO_WAIT;
@@ -113,6 +126,11 @@ void PoweroffDialog::refresh_message()
     case PowerManagement::SUSPEND:
         msg = tr("The computer will suspend in <b>%1</b> seconds").arg(m_time);
         break;
+    case PowerManagement::HIBERNATE:
+        msg = tr("The computer will hibernate in <b>%1</b> seconds").arg(m_time);
+        break;
+    default:
+        Q_ASSERT(!"Incorrect id! Be sure to handle every power action in switch().");
     }
 
     ui->lblMessage->setText(msg);

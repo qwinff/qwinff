@@ -25,6 +25,7 @@ public:
     enum PowerAction {
         SHUTDOWN = 0,
         SUSPEND,
+        HIBERNATE,
         ACTION_COUNT
     };
 

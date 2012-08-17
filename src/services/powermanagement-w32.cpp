@@ -91,6 +91,8 @@ bool PowerManagement::sendRequest(int action)
         return power_shutdown();
     case SUSPEND:
         return power_suspend();
+    case HIBERNATE:
+        return power_hibernate();
     }
     return false;
 }

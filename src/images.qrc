@@ -16,6 +16,7 @@
         <file>icons/system_shutdown.png</file>
         <file>icons/system_suspend.png</file>
         <file>icons/dialog_cancel.png</file>
+        <file>icons/system_hibernate.png</file>
     </qresource>
     <qresource prefix="/app">
         <file>icons/qt.png</file>
