@@ -99,6 +99,26 @@ void PoweroffDialog::dialog_accepted()
 {
     m_timer->stop();
     m_success = PowerManagement::sendRequest(m_action);
+    if (!m_success) {
+        QString action_str;
+        switch (m_action) {
+        case PowerManagement::SHUTDOWN:
+            //: Shutdown the computer
+            action_str = tr("Shutdown");
+            break;
+        case PowerManagement::SUSPEND:
+            //: Suspend the computer (sleep to ram, standby)
+            action_str = tr("Suspend");
+            break;
+        case PowerManagement::HIBERNATE:
+            //: Hibernate the computer (sleep to disk, completely poweroff)
+            action_str = tr("Hibernate");
+            break;
+        default:
+            Q_ASSERT(!"Incorrect id! Be sure to handle every power action in switch().");
+        }
+        QMessageBox::critical(this, tr("Error"), tr("Operation Failed: %1").arg(action_str));
+    }
 }
 
 void PoweroffDialog::dialog_rejected()
