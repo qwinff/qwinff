@@ -19,14 +19,6 @@
         <translation>翻譯者</translation>
     </message>
     <message>
-        <source>Info</source>
-        <translation type="obsolete">資訊</translation>
-    </message>
-    <message>
-        <source>An intuitive GUI frontend to FFmpeg.</source>
-        <translation type="obsolete">簡單易用的FFmpeg圖形介面</translation>
-    </message>
-    <message>
         <location filename="../ui/aboutdialog.cpp" line="44"/>
         <source>Version: %1</source>
         <translation>版本: %1</translation>
@@ -853,51 +845,63 @@
         <translation>經過時間: %1 時 %2 分 %3 秒</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="268"/>
-        <location filename="../ui/mainwindow.cpp" line="451"/>
+        <location filename="../ui/mainwindow.cpp" line="272"/>
+        <location filename="../ui/mainwindow.cpp" line="457"/>
         <source>Shutdown</source>
-        <extracomment>Shutdown the computer</extracomment>
+        <extracomment>Shutdown the computer (completely poweroff)</extracomment>
         <translation>關機</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="269"/>
-        <source>Shutdown when all tasks finish.</source>
-        <translation>所有任務完成之後關機</translation>
+        <location filename="../ui/mainwindow.cpp" line="273"/>
+        <source>Shutdown when all tasks are done.</source>
+        <translation>所有任務結束後關機.</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.cpp" line="278"/>
-        <location filename="../ui/mainwindow.cpp" line="456"/>
+        <source>Suspend when all tasks are done.</source>
+        <translation>所有任務結束後待機.</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="282"/>
+        <location filename="../ui/mainwindow.cpp" line="467"/>
+        <source>Hibernate</source>
+        <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
+        <translation>休眠</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="283"/>
+        <source>Hibernate when all tasks are done.</source>
+        <translation>所有任務結束後休眠.</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="277"/>
+        <location filename="../ui/mainwindow.cpp" line="462"/>
         <source>Suspend</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
         <translation>待機</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="279"/>
-        <source>Suspend when all tasks finish.</source>
-        <translation>所有任務完成之後待機</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.cpp" line="304"/>
+        <location filename="../ui/mainwindow.cpp" line="309"/>
         <source>FFmpeg Error</source>
         <translation>FFmpeg錯誤</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="305"/>
+        <location filename="../ui/mainwindow.cpp" line="310"/>
         <source>FFmpeg not found. The application will quit now.</source>
         <translation>找不到FFmpeg，程式將立刻結束。</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="312"/>
+        <location filename="../ui/mainwindow.cpp" line="317"/>
         <source>FFprobe Error</source>
         <translation>FFprobe錯誤</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="313"/>
+        <location filename="../ui/mainwindow.cpp" line="318"/>
         <source>FFprobe not found. The application will quit now.</source>
         <translation>找不到FFprobe，程式將立刻結束。</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="554"/>
+        <location filename="../ui/mainwindow.cpp" line="568"/>
         <source>Failed to load preset file. The application will quit now.</source>
         <translation>無法載入設定檔，程式將立刻結束。</translation>
     </message>
@@ -928,26 +932,65 @@
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../ui/poweroffdialog.cpp" line="48"/>
+        <location filename="../ui/poweroffdialog.cpp" line="50"/>
         <source>Shutdown immediately</source>
         <extracomment>Shutdown the computer</extracomment>
         <translation>立刻關機</translation>
     </message>
     <message>
-        <location filename="../ui/poweroffdialog.cpp" line="53"/>
+        <location filename="../ui/poweroffdialog.cpp" line="55"/>
         <source>Suspend immediately</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
         <translation>立刻待機</translation>
     </message>
     <message>
+        <location filename="../ui/poweroffdialog.cpp" line="60"/>
+        <source>Hibernate immediately</source>
+        <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
+        <translation>立刻休眠</translation>
+    </message>
+    <message>
+        <location filename="../ui/poweroffdialog.cpp" line="107"/>
+        <source>Shutdown</source>
+        <extracomment>Shutdown the computer</extracomment>
+        <translation>關機</translation>
+    </message>
+    <message>
         <location filename="../ui/poweroffdialog.cpp" line="111"/>
+        <source>Suspend</source>
+        <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
+        <translation>待機</translation>
+    </message>
+    <message>
+        <location filename="../ui/poweroffdialog.cpp" line="115"/>
+        <source>Hibernate</source>
+        <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
+        <translation>休眠</translation>
+    </message>
+    <message>
+        <location filename="../ui/poweroffdialog.cpp" line="120"/>
+        <source>Error</source>
+        <translation>錯誤</translation>
+    </message>
+    <message>
+        <location filename="../ui/poweroffdialog.cpp" line="120"/>
+        <source>Operation Failed: %1</source>
+        <translation>執行失敗: %1</translation>
+    </message>
+    <message>
+        <location filename="../ui/poweroffdialog.cpp" line="144"/>
         <source>The computer will shutdown in &lt;b&gt;%1&lt;/b&gt; seconds</source>
         <translation>電腦將於 &lt;b&gt;%1&lt;/b&gt; 秒後關機</translation>
     </message>
     <message>
-        <location filename="../ui/poweroffdialog.cpp" line="114"/>
+        <location filename="../ui/poweroffdialog.cpp" line="147"/>
         <source>The computer will suspend in &lt;b&gt;%1&lt;/b&gt; seconds</source>
         <translation>電腦將於 &lt;b&gt;%1&lt;/b&gt; 秒後待機</translation>
+    </message>
+    <message>
+        <location filename="../ui/poweroffdialog.cpp" line="150"/>
+        <source>The computer will hibernate in &lt;b&gt;%1&lt;/b&gt; seconds</source>
+        <translation>電腦將於 &lt;b&gt;%1&lt;/b&gt; 秒後休眠</translation>
     </message>
 </context>
 </TS>

@@ -845,51 +845,63 @@
         <translation>Tempo stimato: %1h %2m %3s</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="268"/>
-        <location filename="../ui/mainwindow.cpp" line="451"/>
+        <location filename="../ui/mainwindow.cpp" line="272"/>
+        <location filename="../ui/mainwindow.cpp" line="457"/>
         <source>Shutdown</source>
-        <extracomment>Shutdown the computer</extracomment>
+        <extracomment>Shutdown the computer (completely poweroff)</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="269"/>
-        <source>Shutdown when all tasks finish.</source>
+        <location filename="../ui/mainwindow.cpp" line="273"/>
+        <source>Shutdown when all tasks are done.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.cpp" line="278"/>
-        <location filename="../ui/mainwindow.cpp" line="456"/>
+        <source>Suspend when all tasks are done.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="282"/>
+        <location filename="../ui/mainwindow.cpp" line="467"/>
+        <source>Hibernate</source>
+        <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="283"/>
+        <source>Hibernate when all tasks are done.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="277"/>
+        <location filename="../ui/mainwindow.cpp" line="462"/>
         <source>Suspend</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="279"/>
-        <source>Suspend when all tasks finish.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.cpp" line="304"/>
+        <location filename="../ui/mainwindow.cpp" line="309"/>
         <source>FFmpeg Error</source>
         <translation>Errore FFmpeg</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="305"/>
+        <location filename="../ui/mainwindow.cpp" line="310"/>
         <source>FFmpeg not found. The application will quit now.</source>
         <translation>FFmpeg non trovato. L&apos;applicazione ora si chiuderà.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="312"/>
+        <location filename="../ui/mainwindow.cpp" line="317"/>
         <source>FFprobe Error</source>
         <translation>Errore FFprobe</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="313"/>
+        <location filename="../ui/mainwindow.cpp" line="318"/>
         <source>FFprobe not found. The application will quit now.</source>
         <translation>FFprobe non trovato. L&apos;applicazione ora si chiuderà.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="554"/>
+        <location filename="../ui/mainwindow.cpp" line="568"/>
         <source>Failed to load preset file. The application will quit now.</source>
         <translation>Caricamento file predefinito fallito. L&apos;applicazione ora si chiuderà.</translation>
     </message>
@@ -920,25 +932,64 @@
         <translation type="unfinished">Cancella</translation>
     </message>
     <message>
-        <location filename="../ui/poweroffdialog.cpp" line="48"/>
+        <location filename="../ui/poweroffdialog.cpp" line="50"/>
         <source>Shutdown immediately</source>
         <extracomment>Shutdown the computer</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/poweroffdialog.cpp" line="53"/>
+        <location filename="../ui/poweroffdialog.cpp" line="55"/>
         <source>Suspend immediately</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../ui/poweroffdialog.cpp" line="60"/>
+        <source>Hibernate immediately</source>
+        <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/poweroffdialog.cpp" line="107"/>
+        <source>Shutdown</source>
+        <extracomment>Shutdown the computer</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../ui/poweroffdialog.cpp" line="111"/>
+        <source>Suspend</source>
+        <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/poweroffdialog.cpp" line="115"/>
+        <source>Hibernate</source>
+        <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/poweroffdialog.cpp" line="120"/>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/poweroffdialog.cpp" line="120"/>
+        <source>Operation Failed: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/poweroffdialog.cpp" line="144"/>
         <source>The computer will shutdown in &lt;b&gt;%1&lt;/b&gt; seconds</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/poweroffdialog.cpp" line="114"/>
+        <location filename="../ui/poweroffdialog.cpp" line="147"/>
         <source>The computer will suspend in &lt;b&gt;%1&lt;/b&gt; seconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/poweroffdialog.cpp" line="150"/>
+        <source>The computer will hibernate in &lt;b&gt;%1&lt;/b&gt; seconds</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

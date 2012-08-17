@@ -697,11 +697,7 @@
     </message>
     <message>
         <source>Shutdown</source>
-        <extracomment>Shutdown the computer</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Shutdown when all tasks finish.</source>
+        <extracomment>Shutdown the computer (completely poweroff)</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -710,7 +706,20 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Suspend when all tasks finish.</source>
+        <source>Shutdown when all tasks are done.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Suspend when all tasks are done.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hibernate</source>
+        <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hibernate when all tasks are done.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -751,6 +760,38 @@
     </message>
     <message>
         <source>The computer will suspend in &lt;b&gt;%1&lt;/b&gt; seconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hibernate immediately</source>
+        <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shutdown</source>
+        <extracomment>Shutdown the computer</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Suspend</source>
+        <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hibernate</source>
+        <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Operation Failed: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The computer will hibernate in &lt;b&gt;%1&lt;/b&gt; seconds</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
