@@ -927,6 +927,12 @@
 <context>
     <name>PoweroffDialog</name>
     <message>
+        <location filename="../ui/poweroffdialog.ui" line="17"/>
+        <location filename="../ui/poweroffdialog.cpp" line="120"/>
+        <source>QWinFF</source>
+        <translation></translation>
+    </message>
+    <message>
         <location filename="../ui/poweroffdialog.ui" line="42"/>
         <source>Cancel</source>
         <translation>取消</translation>
@@ -966,11 +972,6 @@
         <source>Hibernate</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
         <translation>休眠</translation>
-    </message>
-    <message>
-        <location filename="../ui/poweroffdialog.cpp" line="120"/>
-        <source>Error</source>
-        <translation>錯誤</translation>
     </message>
     <message>
         <location filename="../ui/poweroffdialog.cpp" line="120"/>

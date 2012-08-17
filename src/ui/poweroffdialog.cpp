@@ -117,7 +117,7 @@ void PoweroffDialog::dialog_accepted()
         default:
             Q_ASSERT(!"Incorrect id! Be sure to handle every power action in switch().");
         }
-        QMessageBox::critical(this, tr("Error"), tr("Operation Failed: %1").arg(action_str));
+        QMessageBox::critical(this, tr("QWinFF"), tr("Operation Failed: %1").arg(action_str));
     }
 }
 

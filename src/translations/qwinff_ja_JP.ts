@@ -783,16 +783,16 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Error</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Operation Failed: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>The computer will hibernate in &lt;b&gt;%1&lt;/b&gt; seconds</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>QWinFF</source>
+        <translation type="unfinished">QWinFF</translation>
     </message>
 </context>
 </TS>
