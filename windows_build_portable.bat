@@ -18,5 +18,7 @@ copy ".\src\release\qwinff.exe" "%DEST_DIR%"
 :: Copy data files to the output directory.
 copy ".\src\presets.xml" "%DEST_DIR%"
 copy ".\src\translations\*.qm" "%DEST_DIR%\translations"
+copy "COPYING-v3.txt" "%DEST_DIR%\license.txt"
+unix2dos "%DEST_DIR%\license.txt"
 
 @echo Files are copied to %DEST_DIR%
