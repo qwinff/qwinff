@@ -1,3 +1,4 @@
+!include "MUI.nsh"
 !define APPNAME "QWinFF"
 !define VERSION "0.1.5"
 !define DESCRIPTION "A cross platform media converter GUI"
@@ -6,15 +7,21 @@
 
 Name "${APPNAME}"
 OutFile "qwinff-${VERSION}-setup.exe"
-XPStyle on
-
-Page license
-LicenseData ${LICENSE}
-
-Page directory
 InstallDir $PROGRAMFILES\QWinFF
 
-Page instfiles
+!insertmacro MUI_PAGE_LICENSE ${LICENSE}
+!insertmacro MUI_PAGE_DIRECTORY
+!insertmacro MUI_PAGE_INSTFILES
+!insertmacro MUI_PAGE_FINISH
+!insertmacro MUI_UNPAGE_CONFIRM
+!insertmacro MUI_UNPAGE_INSTFILES
+!insertmacro MUI_UNPAGE_FINISH
+
+!insertmacro MUI_LANGUAGE "English"
+!insertmacro MUI_LANGUAGE "TradChinese"
+!insertmacro MUI_LANGUAGE "Japanese"
+!insertmacro MUI_LANGUAGE "Italian"
+
 Section
 
 	SetOutPath $INSTDIR
@@ -38,9 +45,9 @@ Section
 	WriteUninstaller "$INSTDIR\${UNINSTALLER}"
 
 	# Start Menu Shortcuts
-	CreateDirectory "$SMPROGRAMS\QWinFF"
-	CreateShortcut "$SMPROGRAMS\QWinFF\QWinFF.lnk" "$INSTDIR\qwinff.exe"
-	CreateShortcut "$SMPROGRAMS\QWinFF\Uninstall QWinFF.lnk" "$INSTDIR\${UNINSTALLER}"
+	CreateDirectory "$SMPROGRAMS\${APPNAME}"
+	CreateShortcut "$SMPROGRAMS\${APPNAME}\QWinFF.lnk" "$INSTDIR\qwinff.exe"
+	CreateShortcut "$SMPROGRAMS\${APPNAME}\Uninstall QWinFF.lnk" "$INSTDIR\${UNINSTALLER}"
 
 SectionEnd
 
@@ -67,7 +74,7 @@ Section "un.Uninstaller"
 	RmDir  $INSTDIR\translations
 	RmDir  $INSTDIR    # Remove the installation directory if it's empty.
 
-	Delete "$SMPROGRAMS\QWinFF\*"
-	RmDir  "$SMPROGRAMS\QWinFF"
+	Delete "$SMPROGRAMS\${APPNAME}\*"
+	RmDir  "$SMPROGRAMS\${APPNAME}"
 
 SectionEnd
