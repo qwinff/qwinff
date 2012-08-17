@@ -17,14 +17,7 @@
 
 #include "powermanagement.h"
 
-static const bool verbose = true;
-
-bool PowerManagement::suspend()
-{
-    return false;
-}
-
-bool PowerManagement::shutdown()
+bool PowerManagement::sendRequest(int action)
 {
     return false;
 }

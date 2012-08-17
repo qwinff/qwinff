@@ -160,6 +160,67 @@ bool power_shutdown()
     return shutdown_works;
 }
 
+bool power_hibernate()
+{
+    bool gnome_power1 = false;
+    bool gnome_power2 = false;
+    bool hal_works = false;
+    QDBusMessage response;
+
+    gnome_power1 = QProcess::startDetached("gnome-power-cmd.sh hibernate");
+    gnome_power2 = QProcess::startDetached("gnome-power-cmd hibernate");
+    if (!gnome_power1 && !gnome_power2 && verbose)
+        qWarning() <<
+            "W: gnome-power-cmd and gnome-power-cmd.sh didn't work";
+
+    if (!gnome_power1 && !gnome_power2) {
+        QDBusInterface powermanagement("org.freedesktop.Hal",
+                           "/org/freedesktop/Hal/devices/computer",
+                           "org.freedesktop.Hal.Device.SystemPowerManagement",
+                           QDBusConnection::systemBus());
+        response = powermanagement.call("Hibernate");
+        if (response.type() == QDBusMessage::ErrorMessage) {
+            if (verbose)
+                qWarning() << "W: " << response.
+                    errorName() << ":" << response.
+                    errorMessage();
+        } else
+            hal_works = true;
+    }
+
+    if (!hal_works && !gnome_power1 && !gnome_power2) {
+        QDBusInterface
+            powermanagement("org.freedesktop.DeviceKit.Power",
+                    "/org/freedesktop/DeviceKit/Power",
+                    "org.freedesktop.DeviceKit.Power",
+                    QDBusConnection::systemBus());
+        response = powermanagement.call("Hibernate");
+        if (response.type() == QDBusMessage::ErrorMessage) {
+            if (verbose)
+                qWarning() << "W: " << response.
+                    errorName() << ":" << response.
+                    errorMessage();
+        }
+    }
+
+    if (!hal_works) {
+        QDBusInterface
+                powermanagement("org.freedesktop.PowerManagement",
+                                "/org/freedesktop/PowerManagement",
+                                "org.freedesktop.PowerManagement",
+                                QDBusConnection::sessionBus());
+        response = powermanagement.call("Hibernate");
+        if (response.type() == QDBusMessage::ErrorMessage) {
+            if (verbose)
+                qWarning() << "W: " << response.errorName()
+                           << ":" << response.errorMessage();
+        } else
+            hal_works = true;
+    }
+
+    return hal_works;
+}
+
 } // anonymous namespace
 
 bool PowerManagement::sendRequest(int action)
