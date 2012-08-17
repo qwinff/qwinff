@@ -6,7 +6,7 @@
 !define LICENSE "license.txt"
 
 Name "${APPNAME}"
-OutFile "qwinff-${VERSION}-setup.exe"
+OutFile "qwinff_${VERSION}-setup.exe"
 InstallDir $PROGRAMFILES\QWinFF
 
 !insertmacro MUI_PAGE_LICENSE ${LICENSE}
