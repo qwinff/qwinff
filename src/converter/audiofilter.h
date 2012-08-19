@@ -29,7 +29,7 @@ public:
 
     /**
      * Start the audio-filtering process pipeline.
-     * @param infile the input filename
+     * @param param the conversion parameter
      * @param dest the process to receive the output from stdin
      */
     bool start(ConversionParameters& param, QProcess *dest);

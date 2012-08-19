@@ -55,17 +55,17 @@ public:
     //QString mencoder_ovc; // output video codec
     //QString mencoder_of;  // output format
 
-    /* SoX Specific Options (Audio) */
-    /*! Turn on/off audio scaling.
-        If audio scaling is on, audio_speed_scaling_factor will be used
-        to change the speed of the audio stream.
+    /* Speed (FFmpeg + SoX) */
+    /*! Turn on/off speed scaling.
+        If speed scaling is on, speed_scaling_factor will be used
+        to change the speed of the video and audio stream.
      */
-    bool audio_speed_scaling;
-    /*! Audio speed scaling factor.
+    bool speed_scaling;
+    /*! Speed scaling factor.
         1.0 is normal speed; less than 1.0, slow down; greater than 1.0, speed up.
-        This parameter is only used when audio_speed_scaling is true.
+        This parameter is only used when speed_scaling is true.
      */
-    double audio_speed_scaling_factor;
+    double speed_scaling_factor;
 
     /*! Copy all fields except source, destination files from src
      *  @param src the source to copy from
@@ -107,8 +107,8 @@ public:
 
         ffmpeg_options.clear();
 
-        audio_speed_scaling = false;
-        audio_speed_scaling_factor = 1.0;
+        speed_scaling = false;
+        speed_scaling_factor = 1.0;
     }
 
 };

@@ -34,6 +34,7 @@ public:
     virtual QString executableName() const = 0;
     virtual void reset() = 0;
     virtual QProcess::ProcessChannel processReadChannel() const = 0;
+    virtual bool needsAudioFiltering(const ConversionParameters& param) const = 0;
     virtual void fillParameterList(const ConversionParameters& param, QStringList& list) const = 0;
     virtual void parseProcessOutput(const QString& line) = 0;
     virtual double progress() const = 0;

@@ -31,6 +31,7 @@ public:
     QString executableName() const;
     void reset();
     QProcess::ProcessChannel processReadChannel() const;
+    bool needsAudioFiltering(const ConversionParameters& param) const;
     void fillParameterList(const ConversionParameters& param, QStringList& list) const;
     void parseProcessOutput(const QString& data);
     double progress() const;

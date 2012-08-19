@@ -118,6 +118,11 @@ QProcess::ProcessChannel MEncoderInterface::processReadChannel() const
     return QProcess::StandardOutput;
 }
 
+bool MEncoderInterface::needsAudioFiltering(const ConversionParameters&) const
+{
+    return false;
+}
+
 void MEncoderInterface::fillParameterList(const ConversionParameters &param, QStringList &list) const
 {
     list = p->getOptionList(param);

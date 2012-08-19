@@ -65,8 +65,8 @@ bool AudioFilter::start(ConversionParameters& params, QProcess *dest)
 
     // sox process settings
     sox_param << "-t" << "sox" << "-" << "-t" << "wav" << "-";
-    if (params.audio_speed_scaling) {
-        sox_param << "tempo" << QString::number(params.audio_speed_scaling_factor);
+    if (params.speed_scaling) {
+        sox_param << "tempo" << QString::number(params.speed_scaling_factor);
     }
     m_soxProc->setStandardOutputProcess(dest);
 

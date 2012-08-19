@@ -425,6 +425,11 @@ QProcess::ProcessChannel FFmpegInterface::processReadChannel() const
     return QProcess::StandardError;
 }
 
+bool FFmpegInterface::needsAudioFiltering(const ConversionParameters& param) const
+{
+    return param.speed_scaling;
+}
+
 void FFmpegInterface::fillParameterList(const ConversionParameters &param, QStringList &list) const
 {
     list = p->getOptionList(param);
