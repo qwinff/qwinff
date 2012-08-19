@@ -1,2 +1,4 @@
-syntax: glob
-*.pro.user
+syntax: regexp
+^src/qwinff\.pro\.user
+^bin/
+^build/
