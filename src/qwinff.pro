@@ -32,7 +32,8 @@ SOURCES += main.cpp \
     services/notificationservice-qt.cpp \
     services/notificationservice-notifysend.cpp \
     services/powermanagement-dummy.cpp \
-    ui/poweroffdialog.cpp
+    ui/poweroffdialog.cpp \
+    converter/audiofilter.cpp
 
 HEADERS  += \
     ui/progressbar.h \
@@ -59,7 +60,8 @@ HEADERS  += \
     services/notificationservice-qt.h \
     services/notificationservice-notifysend.h \
     services/powermanagement.h \
-    ui/poweroffdialog.h
+    ui/poweroffdialog.h \
+    converter/audiofilter.h
 
 FORMS    += \
     ui/conversionparameterdialog.ui \
@@ -120,6 +122,8 @@ DEFINES += DEFAULT_THREAD_COUNT=1
 
 OTHER_FILES += \
     settings.txt
+
+
 
 
 
