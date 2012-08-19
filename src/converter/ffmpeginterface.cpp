@@ -420,9 +420,9 @@ void FFmpegInterface::reset()
     p->stringBuffer.clear();
 }
 
-void FFmpegInterface::setReadChannel(QProcess& proc) const
+QProcess::ProcessChannel FFmpegInterface::processReadChannel() const
 {
-    proc.setReadChannel(QProcess::StandardError);
+    return QProcess::StandardError;
 }
 
 void FFmpegInterface::fillParameterList(const ConversionParameters &param, QStringList &list) const

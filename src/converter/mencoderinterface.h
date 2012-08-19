@@ -17,7 +17,6 @@
 #define MEncoderInterface_H
 #include <QObject>
 #include <QScopedPointer>
-#include <QProcess>
 #include <QList>
 #include <QSet>
 #include "conversionparameters.h"
@@ -33,7 +32,7 @@ public:
     virtual ~MEncoderInterface();
     QString executableName() const;
     void reset();
-    void setReadChannel(QProcess& proc) const;
+    QProcess::ProcessChannel processReadChannel() const;
     void fillParameterList(const ConversionParameters& param, QStringList& list) const;
     void parseProcessOutput(const QString& data);
     double progress() const;

@@ -67,7 +67,7 @@ bool MediaConverter::start(ConversionParameters param)
         m_pConv->reset();
 
         QStringList list;
-        m_pConv->setReadChannel(m_proc);
+        m_proc.setReadChannel(m_pConv->processReadChannel());
         m_pConv->fillParameterList(param, list);
 
         qDebug() << m_pConv->executableName() << list.join(" ");

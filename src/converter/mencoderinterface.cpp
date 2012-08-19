@@ -113,9 +113,9 @@ void MEncoderInterface::reset()
     p->stringBuffer.clear();
 }
 
-void MEncoderInterface::setReadChannel(QProcess& proc) const
+QProcess::ProcessChannel MEncoderInterface::processReadChannel() const
 {
-    proc.setReadChannel(QProcess::StandardOutput);
+    return QProcess::StandardOutput;
 }
 
 void MEncoderInterface::fillParameterList(const ConversionParameters &param, QStringList &list) const
