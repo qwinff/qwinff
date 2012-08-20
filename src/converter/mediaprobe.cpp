@@ -42,21 +42,23 @@ const char META_BITRATE_INDEX = 5;     // matched type: integer
 
 // AUDIO
 const char audio[]
-    = "Stream\\s+[^:]*: Audio:\\s*([^,]*),\\s*([0-9]+)\\s*Hz,\\s*([^,]*),\\s*([^,]*),\\s*([0-9]+)\\s*kb/s";
-const int AUDIO_CODEC_INDEX = 1;       // matched type: string
-const int AUDIO_SAMPLERATE_INDEX = 2;  // matched type: integer
-const int AUDIO_CHANNELS_INDEX = 3;    // matched type: string
-const int AUDIO_BITRATE_INDEX = 5;     // matched type: integer
+    = "Stream #([0-9]+).([0-9]+)(\\([^)]*\\))?: Audio:\\s*([^,]*),\\s*([0-9]+)\\s*Hz,\\s*([^,]*),\\s*([^,]*),\\s*([0-9]+)\\s*kb/s";
+const int AUDIO_STREAM_INDEX = 2;      // matched type: integer
+const int AUDIO_CODEC_INDEX = 4;       // matched type: string
+const int AUDIO_SAMPLERATE_INDEX = 5;  // matched type: integer
+const int AUDIO_CHANNELS_INDEX = 6;    // matched type: string
+const int AUDIO_BITRATE_INDEX = 8;     // matched type: integer
 
 // VIDEO
 const char video[]
-    = "Stream\\s+[^:]*: Video:\\s*([^,]*),\\s*([^,]*),\\s*([0-9]+)x([0-9]+)[^,]*,\\s*([0-9]+)\\s*kb/s,\\s*"
+    = "Stream #([0-9]+).([0-9]+)(\\([^)]*\\))?: Video:\\s*([^,]*),\\s*([^,]*),\\s*([0-9]+)x([0-9]+)[^,]*,\\s*([0-9]+)\\s*kb/s,\\s*"
       "([0-9]+\\.[0-9]+)\\s*fps";
-const int VIDEO_CODEC_INDEX = 1;       // matched type: string
-const int VIDEO_WIDTH_INDEX = 3;       // matched type: integer
-const int VIDEO_HEIGHT_INDEX = 4;      // matched type: integer
-const int VIDEO_BITRATE_INDEX = 5;     // matched type: integer
-const int VIDEO_FRAMERATE_INDEX = 6;   // matched type: double
+const int VIDEO_STREAM_INDEX = 2;      // matched type: integer
+const int VIDEO_CODEC_INDEX = 4;       // matched type: string
+const int VIDEO_WIDTH_INDEX = 6;       // matched type: integer
+const int VIDEO_HEIGHT_INDEX = 7;      // matched type: integer
+const int VIDEO_BITRATE_INDEX = 8;     // matched type: integer
+const int VIDEO_FRAMERATE_INDEX = 9;   // matched type: double
 
 // SUBTITLE
 const char subtitle[]
