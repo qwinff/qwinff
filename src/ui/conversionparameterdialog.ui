@@ -367,9 +367,9 @@
         </attribute>
         <layout class="QVBoxLayout" name="verticalLayout_9">
          <item>
-          <widget class="QGroupBox" name="groupBegin">
+          <widget class="QGroupBox" name="groupCutting">
            <property name="title">
-            <string>Begin Time</string>
+            <string extracomment="video time cutting: options for begin time and end time">Cutting</string>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_7">
             <item>
@@ -389,15 +389,6 @@
               </property>
              </widget>
             </item>
-           </layout>
-          </widget>
-         </item>
-         <item>
-          <widget class="QGroupBox" name="groupEnd">
-           <property name="title">
-            <string>End Time</string>
-           </property>
-           <layout class="QVBoxLayout" name="verticalLayout_8">
             <item>
              <widget class="QCheckBox" name="chkToEnd">
               <property name="text">
@@ -414,6 +405,39 @@
                <string notr="true">hh:mm:ss</string>
               </property>
              </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="groupScaling">
+           <property name="title">
+            <string extracomment="time scaling, changing the speed of the output file">Scaling</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_8">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_2">
+              <item>
+               <widget class="QLabel" name="lblSpeed">
+                <property name="text">
+                 <string>Speed (Experimental)</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="spinSpeedFactor">
+                <property name="suffix">
+                 <string notr="true">%</string>
+                </property>
+                <property name="minimum">
+                 <double>10.000000000000000</double>
+                </property>
+                <property name="maximum">
+                 <double>1000.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+             </layout>
             </item>
            </layout>
           </widget>

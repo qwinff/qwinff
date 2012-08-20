@@ -16,7 +16,7 @@
 #include "conversionparameterdialog.h"
 #include "ui_conversionparameterdialog.h"
 #include <QLayout>
-
+#include <cmath>
 
 #define TO_BYTEPERCENT(percent) ((percent) * 256 / 100)
 #define TO_PERCENT(bytepercent) ((bytepercent) * 100 / 256)
@@ -134,6 +134,10 @@ void ConversionParameterDialog::read_fields(const ConversionParameters& param)
         ui->chkToEnd->setChecked(true);
         ui->timeEnd->setTime(QTime());
     }
+    if (param.speed_scaling)
+        ui->spinSpeedFactor->setValue(param.speed_scaling_factor * 100.0);
+    else
+        ui->spinSpeedFactor->setValue(100.0);
 
     // Subtitle Options
     //ui->chkDisableSubtitle->setChecked(param.disable_subtitle);
@@ -178,5 +182,13 @@ void ConversionParameterDialog::write_fields(ConversionParameters& param)
         param.time_duration = 0;
     else
         param.time_duration = QTIME_TO_SECS(ui->timeEnd->time()) - param.time_begin;
+    double speed_scaling_factor = ui->spinSpeedFactor->value() / 100;
+    if (std::abs(speed_scaling_factor - 100.0) <= 0.01) {
+        param.speed_scaling = false;
+        param.speed_scaling_factor = 1.0;
+    } else {
+        param.speed_scaling = true;
+        param.speed_scaling_factor = speed_scaling_factor;
+    }
 
 }
