@@ -18,7 +18,6 @@ SOURCES += main.cpp \
     ui/aboutffmpegdialog.cpp \
     ui/optionsdialog.cpp \
     converter/presets.cpp \
-    converter/mencoderinterface.cpp \
     converter/mediaprobe.cpp \
     converter/mediaconverter.cpp \
     converter/ffmpeginterface.cpp \
@@ -44,7 +43,6 @@ HEADERS  += \
     ui/aboutffmpegdialog.h \
     ui/optionsdialog.h \
     converter/presets.h \
-    converter/mencoderinterface.h \
     converter/mediaprobe.h \
     converter/mediaconverter.h \
     converter/ffmpeginterface.h \
@@ -122,6 +120,8 @@ DEFINES += DEFAULT_THREAD_COUNT=1
 
 OTHER_FILES += \
     settings.txt
+
+
 
 
 

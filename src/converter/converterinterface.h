@@ -34,8 +34,17 @@ public:
     virtual QString executableName() const = 0;
     virtual void reset() = 0;
     virtual QProcess::ProcessChannel processReadChannel() const = 0;
-    virtual bool needsAudioFiltering(const ConversionParameters& param) const = 0;
-    virtual void fillParameterList(const ConversionParameters& param, QStringList& list) const = 0;
+
+    /*! Fill parameter list and determine whether the configuration needs
+     *  additional audio filtering.
+     *  @param param [in] the conversion parameter
+     *  @param list [out] the command-line parameter list
+     *  @param needs_audio_filter [out] whether AudioFilter should be used. The return value is true
+     *          implies that the parameter list makes the conversion process
+     *          wait for data input from stdin.
+     */
+    virtual void fillParameterList(const ConversionParameters& param, QStringList& list
+                                   , bool *needs_audio_filter) const = 0;
     virtual void parseProcessOutput(const QString& line) = 0;
     virtual double progress() const = 0;
 

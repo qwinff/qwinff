@@ -183,7 +183,7 @@ struct FFmpegInterface::Private
 
     bool check_duration(const QString&);
     bool check_progress(const QString&);
-    QStringList getOptionList(const ConversionParameters&);
+    QStringList getOptionList(const ConversionParameters&, bool*, bool*);
 };
 
 /*! Check whether the output line is a progress line.
@@ -244,23 +244,46 @@ bool FFmpegInterface::Private::check_duration(const QString& line)
  * @note This function is time-consuming because it calls ffprobe to obtain
  *       media information.
  */
-QStringList FFmpegInterface::Private::getOptionList(const ConversionParameters &o)
+QStringList FFmpegInterface::Private::getOptionList(const ConversionParameters &o
+                                                    , bool *needs_audio_filter
+                                                    , bool *success)
 {
     MediaProbe probe;
+    bool bNeedsAudioFilter;
 
-    if (o.audio_auto_bitrate || o.audio_keep_sample_rate) {
-        // Probe the bitrate of the input file and apply the value to output.
-        probe.run(o.source, TIMEOUT);
+    if (!probe.run(o.source, TIMEOUT)) {
+        if (success)
+            *success = false;
+        return QStringList();
     }
+
+    bNeedsAudioFilter = o.speed_scaling && !o.disable_audio && probe.hasAudio();
 
     QStringList list;
 
     // overwrite if file exists
     list.append("-y");
 
-    // source file
-    list.append("-i");
-    list.append(o.source);
+    if (!bNeedsAudioFilter) {
+        /* in this configuration, input is read from file
+           arguments: -i <infile>
+        */
+        list << "-i" << o.source;
+    } else {
+        /* In this configuration, video (if any) is read from file
+           and audio is read from stdin
+           if source file contains video:
+              arguments: -i <infile> -i - -map 0:<vstreamindex> -map 1
+           if source file has no video stream:
+              arguments: -i -
+        */
+        if (probe.hasVideo())
+            list << "-i" << o.source << "-i" << "-"
+                 << "-map" << QString("0:%1").arg(probe.videoStreamIndex())
+                 << "-map" << "1";
+        else
+            list << "-i" << "-";
+    }
 
     /* ==== Additional Options ==== */
     if (!o.ffmpeg_options.isEmpty()) {
@@ -391,10 +414,18 @@ QStringList FFmpegInterface::Private::getOptionList(const ConversionParameters &
         list.append("-t");
         list.append(QString("%1").arg(o.time_duration));
     }
+    /* -vf "setpts=<1/rate>*PTS": video filter to change video speed
+        <1/rate> is the reciprocal of the scaling factor (1.0 is original speed) */
+    if (o.speed_scaling && !o.disable_video && probe.hasVideo())
+        list << "-vf" << QString("setpts=%1*PTS").arg(1/o.speed_scaling_factor);
 
     // destination file
     list.append(o.destination);
 
+    if (needs_audio_filter)
+        *needs_audio_filter = bNeedsAudioFilter;
+    if (success)
+        *success = true;
     return list;
 }
 
@@ -427,12 +458,14 @@ QProcess::ProcessChannel FFmpegInterface::processReadChannel() const
 
 bool FFmpegInterface::needsAudioFiltering(const ConversionParameters& param) const
 {
-    return param.speed_scaling;
+    return !param.disable_audio && param.speed_scaling;
 }
 
-void FFmpegInterface::fillParameterList(const ConversionParameters &param, QStringList &list) const
+void FFmpegInterface::fillParameterList(const ConversionParameters &param, QStringList &list
+                                        , bool *needs_audio_filter) const
 {
-    list = p->getOptionList(param);
+    bool success; // TODO: return success
+    list = p->getOptionList(param, needs_audio_filter, &success);
 }
 
 void FFmpegInterface::parseProcessOutput(const QString &data)

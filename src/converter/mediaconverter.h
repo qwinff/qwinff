@@ -22,6 +22,7 @@
 
 class ConversionParameters;
 class ConverterInterface;
+class AudioFilter;
 
 class MediaConverter : public QObject
 {
@@ -56,6 +57,7 @@ private:
     QProcess m_proc;
     ConversionParameters m_convParam;
     ConverterInterface *m_pConv;
+    AudioFilter *m_pAudioFilter;
     QString m_outputFileName;
     QString m_tmpFileName;
     bool m_stopped;

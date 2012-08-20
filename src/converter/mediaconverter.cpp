@@ -15,6 +15,7 @@
 
 #include "mediaconverter.h"
 #include "ffmpeginterface.h"
+#include "audiofilter.h"
 #include "services/filepathoperations.h"
 #include <QDebug>
 #include <QFile>
@@ -28,17 +29,16 @@
 #endif
 
 MediaConverter::MediaConverter(QObject *parent) :
-    QObject(parent)
+    QObject(parent),
+    m_pConv(new FFmpegInterface(this)),
+    m_pAudioFilter(new AudioFilter(this))
 {
-    m_pConv = new FFmpegInterface(this);
-
     connect(&m_proc, SIGNAL(readyRead())
             , this, SLOT(readProcessOutput()));
     connect(&m_proc, SIGNAL(finished(int,QProcess::ExitStatus))
             , this, SLOT(convertProgressFinished(int,QProcess::ExitStatus)));
     connect(m_pConv, SIGNAL(progressRefreshed(double))
             , this, SLOT(convertProgressRefreshed(double)));
-
 }
 
 MediaConverter::~MediaConverter()
@@ -67,9 +67,14 @@ bool MediaConverter::start(ConversionParameters param)
         m_pConv->reset();
 
         QStringList list;
+        bool needs_audio_filter;
         m_proc.setReadChannel(m_pConv->processReadChannel());
-        m_pConv->fillParameterList(param, list);
+        m_pConv->fillParameterList(param, list, &needs_audio_filter);
 
+        if (needs_audio_filter) {
+            qDebug() << "Audio filter is turned on.";
+            m_pAudioFilter->start(param, &m_proc);
+        }
         qDebug() << m_pConv->executableName() << list.join(" ");
 
         m_proc.start(m_pConv->executableName(), list);
