@@ -181,7 +181,6 @@ struct FFmpegInterface::Private
       , duration_pattern(patterns::duration)
       , encoders_read(false) { }
 
-    bool check_duration(const QString&);
     bool check_progress(const QString&);
     QStringList getOptionList(const ConversionParameters&, bool*, bool*);
 };
@@ -213,26 +212,6 @@ bool FFmpegInterface::Private::check_progress(const QString& line)
 
             return true;
         }
-    }
-    return false;
-}
-
-/*! Check whether the output line is the duration line.
-    If it is, update p->duration and return true.
-    Otherwise, keep the value of p->duration and return false.
-*/
-bool FFmpegInterface::Private::check_duration(const QString& line)
-{
-    QRegExp& pattern = duration_pattern;
-    int index = pattern.indexIn(line);
-    if (index != -1) {
-        const int h = pattern.cap(1).toInt();
-        const int m = pattern.cap(2).toInt();
-        const double s = pattern.cap(3).toDouble();
-
-        duration = h*3600 + m*60 + s;
-
-        return true;
     }
     return false;
 }
@@ -422,6 +401,11 @@ QStringList FFmpegInterface::Private::getOptionList(const ConversionParameters &
     // destination file
     list.append(o.destination);
 
+    // record duration
+    duration = probe.mediaDuration();
+    if (o.speed_scaling)
+        duration /= o.speed_scaling_factor;
+
     if (needs_audio_filter)
         *needs_audio_filter = bNeedsAudioFilter;
     if (success)
@@ -462,7 +446,7 @@ bool FFmpegInterface::needsAudioFiltering(const ConversionParameters& param) con
 }
 
 void FFmpegInterface::fillParameterList(const ConversionParameters &param, QStringList &list
-                                        , bool *needs_audio_filter) const
+                                        , bool *needs_audio_filter)
 {
     bool success; // TODO: return success
     list = p->getOptionList(param, needs_audio_filter, &success);
@@ -494,7 +478,6 @@ void FFmpegInterface::parseProcessOutput(const QString &data)
             emit progressRefreshed(p->progress);
             continue;
         }
-        if (p->check_duration(line)) continue;
     }
 }
 

@@ -33,7 +33,7 @@ public:
     QProcess::ProcessChannel processReadChannel() const;
     bool needsAudioFiltering(const ConversionParameters& param) const;
     void fillParameterList(const ConversionParameters& param, QStringList& list
-                           , bool *needs_audio_filter) const;
+                           , bool *needs_audio_filter);
     void parseProcessOutput(const QString& data);
     double progress() const;
 

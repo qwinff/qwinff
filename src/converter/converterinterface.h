@@ -36,7 +36,10 @@ public:
     virtual QProcess::ProcessChannel processReadChannel() const = 0;
 
     /*! Fill parameter list and determine whether the configuration needs
-     *  additional audio filtering.
+     *  additional audio filtering. This function must be called before
+     *  starting the process. Implementations of this function should
+     *  do necessary setup, such as obtaining stream duration for calculating
+     *  progress.
      *  @param param [in] the conversion parameter
      *  @param list [out] the command-line parameter list
      *  @param needs_audio_filter [out] whether AudioFilter should be used. The return value is true
@@ -44,7 +47,7 @@ public:
      *          wait for data input from stdin.
      */
     virtual void fillParameterList(const ConversionParameters& param, QStringList& list
-                                   , bool *needs_audio_filter) const = 0;
+                                   , bool *needs_audio_filter) = 0;
     virtual void parseProcessOutput(const QString& line) = 0;
     virtual double progress() const = 0;
 
