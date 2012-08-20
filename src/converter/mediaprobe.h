@@ -98,6 +98,7 @@ public:
     const QString& audioCodec() const;
 
     bool hasVideo() const;
+    int videoStreamIndex() const;
     int videoWidth() const;
     int videoHeight() const;
     int videoBitRate() const;

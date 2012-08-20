@@ -152,6 +152,7 @@ struct AudioInformation
 struct VideoInformation
 {
     bool has_video;
+    int stream_index;
     int width;
     int height;
     int bitrate; ///< bitrate in kb/s
@@ -165,6 +166,7 @@ struct VideoInformation
     void clear()
     {
         has_video = false;
+        stream_index = 0;
         width = height = 0;
         bitrate = 0;
         frame_rate = 0;
@@ -177,6 +179,7 @@ struct VideoInformation
         int index = pattern.indexIn(line);
         if (index != -1) {
             has_video = true;
+            stream_index = pattern.cap(patterns::VIDEO_STREAM_INDEX).toInt();
             width = pattern.cap(patterns::VIDEO_WIDTH_INDEX).toInt();
             height = pattern.cap(patterns::VIDEO_HEIGHT_INDEX).toInt();
             bitrate = pattern.cap(patterns::VIDEO_BITRATE_INDEX).toInt();
@@ -390,6 +393,11 @@ const QString& MediaProbe::audioCodec() const
 bool MediaProbe::hasVideo() const
 {
     return p->videoinfo.has_video;
+}
+
+int MediaProbe::videoStreamIndex() const
+{
+    return p->videoinfo.stream_index;
 }
 
 int MediaProbe::videoWidth() const
