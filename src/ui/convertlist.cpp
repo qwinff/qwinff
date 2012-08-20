@@ -835,7 +835,7 @@ void ConvertList::fill_list_fields(ConversionParameters &param, MediaProbe &prob
         columns[COL_VIDEO_DIMENSIONS] = QString("%1x%2")
                 .arg(probe.videoWidth()).arg(probe.videoHeight());
         columns[COL_VIDEO_BITRATE] = tr("%1 kb/s").arg(probe.videoBitRate());
-        columns[COL_VIDEO_FRAMERATE] = tr("%1 fps").arg(probe.videoBitRate());
+        columns[COL_VIDEO_FRAMERATE] = tr("%1 fps").arg(probe.videoFrameRate());
         columns[COL_VIDEO_CODEC] = probe.videoCodec();
     }
 }
