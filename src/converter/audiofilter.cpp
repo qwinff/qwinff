@@ -59,6 +59,16 @@ bool AudioFilter::start(ConversionParameters& params, QProcess *dest)
     QStringList ffmpeg_param;
     QStringList sox_param;
 
+    if (m_soxProc->state() != QProcess::NotRunning) {
+        m_soxProc->kill();
+        m_soxProc->waitForFinished(TIMEOUT);
+    }
+
+    if (m_extractAudioProc->state() != QProcess::NotRunning) {
+        m_extractAudioProc->kill();
+        m_extractAudioProc->waitForFinished(TIMEOUT);
+    }
+
     // ffmpeg process settings
     ffmpeg_param << "-i" << params.source << "-vn" << "-f" << "sox" << "-";
     m_extractAudioProc->setStandardOutputProcess(m_soxProc);
