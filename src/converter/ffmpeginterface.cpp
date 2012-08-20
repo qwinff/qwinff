@@ -323,7 +323,8 @@ QStringList FFmpegInterface::Private::getOptionList(const ConversionParameters &
         }
 
         // volume
-        if (o.audio_volume > 0) {
+        // 256 is normal volume
+        if (o.audio_volume > 0 && o.audio_volume != 256) {
             list.append("-vol");
             list.append(QString("%1").arg(o.audio_volume));
         }

@@ -85,8 +85,11 @@
               </item>
               <item>
                <widget class="QSpinBox" name="spinChannels">
+                <property name="specialValueText">
+                 <string>(auto)</string>
+                </property>
                 <property name="minimum">
-                 <number>1</number>
+                 <number>0</number>
                 </property>
                 <property name="maximum">
                  <number>2</number>
@@ -142,6 +145,9 @@
                <widget class="QSpinBox" name="spinAudioBitrate">
                 <property name="buttonSymbols">
                  <enum>QAbstractSpinBox::NoButtons</enum>
+                </property>
+                <property name="specialValueText">
+                 <string>(auto)</string>
                 </property>
                 <property name="maximum">
                  <number>9999</number>
@@ -255,6 +261,44 @@
               </property>
              </widget>
             </item>
+            <item row="1" column="0">
+             <layout class="QHBoxLayout" name="horizontalLayout_10">
+              <item>
+               <widget class="QLabel" name="label_4">
+                <property name="text">
+                 <string>Bitrate</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="spinVideoBitrate">
+                <property name="buttonSymbols">
+                 <enum>QAbstractSpinBox::NoButtons</enum>
+                </property>
+                <property name="specialValueText">
+                 <string>(auto)</string>
+                </property>
+                <property name="maximum">
+                 <number>9999</number>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_5">
+                <property name="text">
+                 <string>kb/s</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="3" column="0">
+             <widget class="QCheckBox" name="chkDeinterlace">
+              <property name="text">
+               <string>Deinterlace</string>
+              </property>
+             </widget>
+            </item>
             <item row="4" column="0">
              <layout class="QGridLayout" name="gridLayout">
               <item row="0" column="1">
@@ -320,41 +364,6 @@
                </widget>
               </item>
              </layout>
-            </item>
-            <item row="1" column="0">
-             <layout class="QHBoxLayout" name="horizontalLayout_10">
-              <item>
-               <widget class="QLabel" name="label_4">
-                <property name="text">
-                 <string>Bitrate</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QSpinBox" name="spinVideoBitrate">
-                <property name="buttonSymbols">
-                 <enum>QAbstractSpinBox::NoButtons</enum>
-                </property>
-                <property name="maximum">
-                 <number>9999</number>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_5">
-                <property name="text">
-                 <string>kb/s</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item row="3" column="0">
-             <widget class="QCheckBox" name="chkDeinterlace">
-              <property name="text">
-               <string>Deinterlace</string>
-              </property>
-             </widget>
             </item>
            </layout>
           </widget>

@@ -80,20 +80,11 @@ void ConversionParameterDialog::read_fields(const ConversionParameters& param)
 
     ui->chkAutoAdjustBitrate->setChecked(param.audio_auto_bitrate);
 
-    if (param.audio_bitrate)
-        ui->spinAudioBitrate->setValue(param.audio_bitrate);
-    else
-        ui->spinAudioBitrate->setValue(DEFAULT_AUDIO_BITRATE);
+    ui->spinAudioBitrate->setValue(param.audio_bitrate);
 
-    if (param.audio_sample_rate)
-        ui->cbAudioSampleRate->setEditText(QString("%1").arg(param.audio_sample_rate));
-    else
-        ui->cbAudioSampleRate->setCurrentIndex(0);
+    ui->cbAudioSampleRate->setEditText(QString::number(param.audio_sample_rate));
 
-    if (param.audio_channels)
-        ui->spinChannels->setValue(param.audio_channels);
-    else
-        ui->spinChannels->setValue(DEFAULT_AUDIO_CHANNELS);
+    ui->spinChannels->setValue(param.audio_channels);
 
     if (param.audio_volume)
         ui->spinVolume->setValue(TO_PERCENT(param.audio_volume));
@@ -103,10 +94,7 @@ void ConversionParameterDialog::read_fields(const ConversionParameters& param)
     // Video Options
     ui->chkDisableVideo->setChecked(param.disable_video);
 
-    if (param.video_bitrate)
-        ui->spinVideoBitrate->setValue(param.video_bitrate);
-    else
-        ui->spinVideoBitrate->setValue(DEFAULT_VIDEO_BITRATE);
+    ui->spinVideoBitrate->setValue(param.video_bitrate);
 
     ui->spinWidth->setValue(param.video_width);
     ui->spinHeight->setValue(param.video_height);
