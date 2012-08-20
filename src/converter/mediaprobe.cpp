@@ -42,23 +42,27 @@ const char META_BITRATE_INDEX = 5;     // matched type: integer
 
 // AUDIO
 const char audio[]
-    = "Stream #([0-9]+).([0-9]+)(\\([^)]*\\))?: Audio:\\s*([^,]*),\\s*([0-9]+)\\s*Hz,\\s*([^,]*),\\s*([^,]*),\\s*([0-9]+)\\s*kb/s";
+    = "Stream #([0-9]+).([0-9]+).*: Audio:\\s*([^,]*),\\s*([0-9]+)\\s*Hz,\\s*([^,]*),\\s*([^,]*),\\s*([0-9]+)\\s*kb/s";
 const int AUDIO_STREAM_INDEX = 2;      // matched type: integer
-const int AUDIO_CODEC_INDEX = 4;       // matched type: string
-const int AUDIO_SAMPLERATE_INDEX = 5;  // matched type: integer
-const int AUDIO_CHANNELS_INDEX = 6;    // matched type: string
-const int AUDIO_BITRATE_INDEX = 8;     // matched type: integer
+const int AUDIO_CODEC_INDEX = 3;       // matched type: string
+const int AUDIO_SAMPLERATE_INDEX = 4;  // matched type: integer
+const int AUDIO_CHANNELS_INDEX = 5;    // matched type: string
+const int AUDIO_BITRATE_INDEX = 7;     // matched type: integer
+
+const char audio_check[] = "^\\s*Stream .* Audio";
 
 // VIDEO
 const char video[]
-    = "Stream #([0-9]+).([0-9]+)(\\([^)]*\\))?: Video:\\s*([^,]*),\\s*([^,]*),\\s*([0-9]+)x([0-9]+)[^,]*,\\s*([0-9]+)\\s*kb/s,\\s*"
-      "([0-9]+\\.[0-9]+)\\s*fps";
+= "Stream #([0-9]+).([0-9]+).*: Video:\\s*([^,]*),\\s*([^,]*),\\s*([0-9]+)x([0-9]+)[^,]*"
+        ",\\s*([0-9]+)[^,]*,\\s*([0-9]+(\\.[0-9]*)?)";
 const int VIDEO_STREAM_INDEX = 2;      // matched type: integer
-const int VIDEO_CODEC_INDEX = 4;       // matched type: string
-const int VIDEO_WIDTH_INDEX = 6;       // matched type: integer
-const int VIDEO_HEIGHT_INDEX = 7;      // matched type: integer
-const int VIDEO_BITRATE_INDEX = 8;     // matched type: integer
-const int VIDEO_FRAMERATE_INDEX = 9;   // matched type: double
+const int VIDEO_CODEC_INDEX = 3;       // matched type: string
+const int VIDEO_WIDTH_INDEX = 5;       // matched type: integer
+const int VIDEO_HEIGHT_INDEX = 6;      // matched type: integer
+const int VIDEO_BITRATE_INDEX = 7;     // matched type: integer
+const int VIDEO_FRAMERATE_INDEX = 8;   // matched type: double
+
+const char video_check[] = "^\\s*Stream .* Video";
 
 // SUBTITLE
 const char subtitle[]
@@ -110,8 +114,10 @@ struct AudioInformation
     int channels; ///< number of channels
     QString codec;
     QRegExp pattern;
+    QRegExp pattern_check;
 
-    AudioInformation() : pattern(patterns::audio) { clear(); }
+    AudioInformation() : pattern(patterns::audio)
+      , pattern_check(patterns::audio_check) { clear(); }
 
     void clear()
     {
@@ -144,6 +150,11 @@ struct AudioInformation
 
             return true;
         }
+        // audio existence must be correct
+        if (pattern_check.indexIn(line) != -1) {
+            has_audio = true;
+            codec = "unknown";
+        }
         return false;
     }
 };
@@ -160,8 +171,10 @@ struct VideoInformation
     QString codec;
     QString format;
     QRegExp pattern;
+    QRegExp pattern_check;
 
-    VideoInformation() : pattern(patterns::video) { clear(); }
+    VideoInformation() : pattern(patterns::video)
+      , pattern_check(patterns::video_check) { clear(); }
 
     void clear()
     {
@@ -186,6 +199,11 @@ struct VideoInformation
             frame_rate = pattern.cap(patterns::VIDEO_FRAMERATE_INDEX).toDouble();
             codec = pattern.cap(patterns::VIDEO_CODEC_INDEX);
             return true;
+        }
+        // video existence must be correct
+        if (pattern_check.indexIn(line) != -1) {
+            has_video = true;
+            codec = "unknown";
         }
         return false;
     }
