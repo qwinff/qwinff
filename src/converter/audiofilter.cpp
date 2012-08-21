@@ -40,11 +40,11 @@
      into sox format, and pipe it to stdout.
 
   2. Audio Filtering
-     command: sox -t sox - -t wav - <options>
+     command: sox -t sox - -t sox - <options>
      input: stdin
      output: stdout
      Process the audio stream using SoX. The output is piped to
-     stdout in Wave format.
+     stdout in sox format.
 
 */
 
@@ -75,7 +75,7 @@ bool AudioFilter::start(ConversionParameters& params, QProcess *dest)
     m_extractAudioProc->setStandardOutputProcess(m_soxProc);
 
     // sox process settings
-    sox_param << "-t" << "sox" << "-" << "-t" << "wav" << "-";
+    sox_param << "-t" << "sox" << "-" << "-t" << "sox" << "-";
     if (params.speed_scaling) {
         sox_param << "tempo" << QString::number(params.speed_scaling_factor);
     }
