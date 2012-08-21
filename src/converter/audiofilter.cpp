@@ -57,12 +57,7 @@ AudioFilter::AudioFilter(QObject *parent) :
     m_extractAudioProc(new QProcess(this)),
     m_soxProc(new QProcess(this))
 {
-    QSet<QString> audio_codec;
-    if (!FFmpegInterface::getAudioEncoders(audio_codec)) {
-        m_useSoxFormat = false;
-    } else {
-        m_useSoxFormat = audio_codec.contains("sox");
-    }
+    m_useSoxFormat = true;
 }
 
 bool AudioFilter::start(ConversionParameters& params, QProcess *dest)
