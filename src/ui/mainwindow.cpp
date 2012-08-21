@@ -304,7 +304,7 @@ bool MainWindow::check_execute_conditions()
 
     // check external programs
     if (!MediaConverter::checkExternalPrograms(errmsg)) {
-        QMessageBox::critical(this, tr("QWinFF"), errmsg);
+        QMessageBox::critical(this, this->windowTitle(), errmsg);
         return false;
     }
     // load presets
