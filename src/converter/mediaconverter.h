@@ -41,6 +41,14 @@ public:
     void stop();
     double progress();
 
+    /*!
+     * Check whether required external programs (e.g. ffmpeg)
+     * is available.
+     * @param msg [out] Output message if an error occurs.
+     * @return true if all dependencies are met, false otherwise.
+     */
+    static bool checkExternalPrograms(QString &msg);
+
 signals:
     void finished(int exitcode);
     void progressRefreshed(int percentage);

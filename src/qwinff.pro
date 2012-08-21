@@ -80,6 +80,8 @@ TRANSLATIONS += \
     translations/qwinff_ja_JP.ts \
     translations/qwinff_it_IT.ts
 
+INCLUDEPATH += .
+
 unix {
     # If DATA_PATH is set, QWinFF searches data in DATA_PATH
     # Otherwise, it uses the executable path as data path.

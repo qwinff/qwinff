@@ -16,6 +16,7 @@
 #include "mediaconverter.h"
 #include "ffmpeginterface.h"
 #include "audiofilter.h"
+#include "mediaprobe.h"
 #include "services/filepathoperations.h"
 #include <QDebug>
 #include <QFile>
@@ -95,6 +96,37 @@ void MediaConverter::stop()
 double MediaConverter::progress()
 {
     return m_pConv->progress();
+}
+
+/*! Check whether external programs are available
+ *   - ffmpeg
+ *   - ffprobe
+ *   - sox
+ */
+bool MediaConverter::checkExternalPrograms(QString &msg)
+{
+    // check ffmpeg
+    if (!FFmpegInterface::hasFFmpeg()) {
+        msg = tr("FFmpeg not found. "
+                 "The application will quit now.");
+        return false;
+    }
+
+    // check ffprobe
+    if (!MediaProbe::available()) { // The probe failed to start.
+        msg = tr("FFprobe not found. "
+                 "The application will quit now.");
+        return false;
+    }
+
+    // check sox
+    if (!AudioFilter::available()) {
+        msg = tr("SoX not found. "
+                 "The application will quit now");
+        return false;
+    }
+
+    return true;
 }
 
 // private slots

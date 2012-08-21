@@ -88,3 +88,10 @@ bool AudioFilter::start(ConversionParameters& params, QProcess *dest)
     return m_extractAudioProc->waitForStarted(TIMEOUT)
             && m_soxProc->waitForStarted(TIMEOUT);
 }
+
+bool AudioFilter::available()
+{
+    QProcess sox_process;
+    sox_process.start(ExePath::getPath("sox"));
+    return sox_process.waitForStarted(TIMEOUT);
+}

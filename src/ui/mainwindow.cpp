@@ -24,8 +24,7 @@
 #include "services/paths.h"
 #include "services/notification.h"
 #include "services/powermanagement.h"
-#include "converter/ffmpeginterface.h"
-#include "converter/mediaprobe.h"
+#include "converter/mediaconverter.h"
 #include "converter/presets.h"
 #include <QHBoxLayout>
 #include <QToolButton>
@@ -295,31 +294,19 @@ void MainWindow::update_poweroff_button(int id)
 
 // Private Methods
 
-/* Check if necessary external programs exist.
-   (1) Check ffmpeg
-   (2) Check ffprobe
-   (3) Load presets
+/* Check if all execute conditions are met.
    This function should return true if all the conditions are met
    and return false if any of the conditions fails.
 */
 bool MainWindow::check_execute_conditions()
 {
-    // check ffmpeg
-    if (!FFmpegInterface::hasFFmpeg()) {
-        QMessageBox::critical(this, tr("FFmpeg Error"),
-                              tr("FFmpeg not found. "
-                                 "The application will quit now."));
+    QString errmsg;
+
+    // check external programs
+    if (!MediaConverter::checkExternalPrograms(errmsg)) {
+        QMessageBox::critical(this, tr("QWinFF"), errmsg);
         return false;
     }
-
-    // check ffprobe
-    if (!MediaProbe::available()) { // The probe failed to start.
-        QMessageBox::critical(this, tr("FFprobe Error"),
-                              tr("FFprobe not found. "
-                                 "The application will quit now."));
-        return false;
-    }
-
     // load presets
     if (!load_presets())
         return false;

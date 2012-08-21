@@ -34,6 +34,12 @@ public:
      */
     bool start(ConversionParameters& param, QProcess *dest);
 
+    /**
+     * Check if execution conditions are met.
+     * @return true if AudioFilter works, false otherwise.
+     */
+    static bool available();
+
 signals:
 
 public slots:
