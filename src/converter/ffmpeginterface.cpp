@@ -15,6 +15,7 @@
 
 #include "ffmpeginterface.h"
 #include "mediaprobe.h"
+#include "exepath.h"
 #include <QRegExp>
 #include <QTextStream>
 #include <QDebug>
@@ -28,7 +29,6 @@
 #endif
 
 namespace {
-QString ffmpeg_executable("ffmpeg");
 namespace patterns {
     const char progress[]
         = "size=\\s*([0-9]+)kB\\s+time=\\s*([0-9]+\\.[0-9]+)\\s+bitrate=\\s*([0-9]+\\.[0-9]+)kbits/s";
@@ -66,8 +66,8 @@ namespace info {
 
         ffmpeg_process.setReadChannel(QProcess::StandardOutput);
 
-        qDebug() << ffmpeg_executable << parameters.join(" ");
-        ffmpeg_process.start(ffmpeg_executable, parameters);
+        qDebug() << ExePath::getPath("ffmpeg") << parameters.join(" ");
+        ffmpeg_process.start(ExePath::getPath("ffmpeg"), parameters);
 
         // Wait until ffmpeg has started.
         if (!ffmpeg_process.waitForStarted(TIMEOUT)) {
@@ -119,8 +119,8 @@ namespace info {
         QStringList parameters;
         parameters.push_back(QString("-version"));
 
-        qDebug() << ffmpeg_executable << parameters.join(" ");
-        ffmpeg_process.start(ffmpeg_executable, parameters);
+        qDebug() << ExePath::getPath("ffmpeg") << parameters.join(" ");
+        ffmpeg_process.start(ExePath::getPath("ffmpeg"), parameters);
 
         ffmpeg_process.waitForStarted(TIMEOUT);
         ffmpeg_process.waitForFinished(TIMEOUT);
@@ -426,7 +426,7 @@ FFmpegInterface::~FFmpegInterface()
 // virtual functions
 QString FFmpegInterface::executableName() const
 {
-    return ffmpeg_executable;
+    return ExePath::getPath("ffmpeg");
 }
 
 void FFmpegInterface::reset()
@@ -485,11 +485,6 @@ void FFmpegInterface::parseProcessOutput(const QString &data)
 double FFmpegInterface::progress() const
 {
     return p->progress;
-}
-
-void FFmpegInterface::setFFmpegExecutable(const QString &filename)
-{
-    ffmpeg_executable = filename;
 }
 
 bool FFmpegInterface::getAudioEncoders(QList<QString> &target)

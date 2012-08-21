@@ -23,6 +23,7 @@
 #include "services/paths.h"
 #include "converter/ffmpeginterface.h"
 #include "converter/mediaprobe.h"
+#include "converter/exepath.h"
 #include "services/notification.h"
 
 int main(int argc, char *argv[])
@@ -50,11 +51,13 @@ int main(int argc, char *argv[])
     Paths::setAppPath(app.applicationDirPath());
 
 #ifdef FFMPEG_IN_DATA_PATH // Search FFmpeg in <datapath>/ffmpeg/
-    FFmpegInterface::setFFmpegExecutable(Paths::dataFileName("ffmpeg/ffmpeg"));
-    MediaProbe::setFFprobeExecutable(Paths::dataFileName("ffmpeg/ffprobe"));
+    ExePath::setPath("ffmpeg", Paths::dataFileName("ffmpeg/ffmpeg"));
+    ExePath::setPath("ffprobe", Paths::dataFileName("ffmpeg/ffprobe"));
+    ExePath::setPath("sox", Paths::dataFileName("sox/sox"));
 #else // Search FFmpeg in environment variables
-    FFmpegInterface::setFFmpegExecutable("ffmpeg");
-    MediaProbe::setFFprobeExecutable("ffprobe");
+    ExePath::setPath("ffmpeg", "ffmpeg");
+    ExePath::setPath("ffprobe", "ffprobe");
+    ExePath::setPath("sox", "sox");
 #endif
 
     // Construct a string list containing all input filenames.

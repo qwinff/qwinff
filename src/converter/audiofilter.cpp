@@ -15,6 +15,7 @@
 
 #include "audiofilter.h"
 #include "conversionparameters.h"
+#include "exepath.h"
 #include <QProcess>
 
 #ifdef OPERATION_TIMEOUT
@@ -81,9 +82,8 @@ bool AudioFilter::start(ConversionParameters& params, QProcess *dest)
     m_soxProc->setStandardOutputProcess(dest);
 
     // start the two processes
-    // TODO: replace "ffmpeg" and "sox" with variables
-    m_extractAudioProc->start("ffmpeg", ffmpeg_param);
-    m_soxProc->start("sox", sox_param);
+    m_extractAudioProc->start(ExePath::getPath("ffmpeg"), ffmpeg_param);
+    m_soxProc->start(ExePath::getPath("sox"), sox_param);
 
     return m_extractAudioProc->waitForStarted(TIMEOUT)
             && m_soxProc->waitForStarted(TIMEOUT);

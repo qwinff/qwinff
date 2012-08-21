@@ -25,7 +25,6 @@ class MediaProbe : public QObject
 public:
     explicit MediaProbe(QObject *parent = 0);
     virtual ~MediaProbe();
-    static void setFFprobeExecutable(const QString& filename);
 
     /*! Determine whether the probing program (ffprobe) is available. */
     static bool available();

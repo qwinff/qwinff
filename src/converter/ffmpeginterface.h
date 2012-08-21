@@ -37,7 +37,6 @@ public:
     void parseProcessOutput(const QString& data);
     double progress() const;
 
-    static void setFFmpegExecutable(const QString& filename);
     static bool getAudioEncoders(QList<QString>& target);
     static bool getAudioEncoders(QSet<QString>& target);
     static bool getVideoEncoders(QList<QString>& target);

@@ -14,6 +14,7 @@
 */
 
 #include "mediaprobe.h"
+#include "exepath.h"
 #include <QProcess>
 #include <QStringList>
 #include <QRegExp>
@@ -27,7 +28,6 @@
 #define SECONDS_PER_MINUTE 60
 
 namespace {
-QString ffprobe_executable("ffprobe");
 
 namespace patterns {
 
@@ -281,11 +281,6 @@ MediaProbe::~MediaProbe()
     stop();
 }
 
-void MediaProbe::setFFprobeExecutable(const QString &filename)
-{
-    ffprobe_executable = filename;
-}
-
 bool MediaProbe::available()
 {
     MediaProbe probe;
@@ -308,7 +303,7 @@ bool MediaProbe::start(const QString& filename)
         list.push_back(filename);
 
         p->ffprobe_proc.setReadChannel(QProcess::StandardError);
-        p->ffprobe_proc.start(ffprobe_executable, list);
+        p->ffprobe_proc.start(ExePath::getPath("ffprobe"), list);
         return p->ffprobe_proc.waitForStarted(TIMEOUT);
     }
     return false;
