@@ -49,6 +49,7 @@ private slots:
 private:
     QProcess *m_extractAudioProc;
     QProcess *m_soxProc;
+    bool m_useSoxFormat;
 };
 
 #endif // AUDIOFILTER_H

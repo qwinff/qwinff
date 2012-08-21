@@ -16,7 +16,9 @@
 #include "audiofilter.h"
 #include "conversionparameters.h"
 #include "exepath.h"
+#include "ffmpeginterface.h"
 #include <QProcess>
+#include <QSet>
 
 #ifdef OPERATION_TIMEOUT
 #   define TIMEOUT OPERATION_TIMEOUT
@@ -40,11 +42,12 @@
      into sox format, and pipe it to stdout.
 
   2. Audio Filtering
-     command: sox -t sox - -t sox - <options>
+     command: sox -t <fmt> - -t <fmt> - <options>
      input: stdin
      output: stdout
      Process the audio stream using SoX. The output is piped to
-     stdout in sox format.
+     stdout. Use sox format if ffmpeg supports it. Otherwise,
+     use wav format instead.
 
 */
 
@@ -53,12 +56,19 @@ AudioFilter::AudioFilter(QObject *parent) :
     m_extractAudioProc(new QProcess(this)),
     m_soxProc(new QProcess(this))
 {
+    QSet<QString> audio_codec;
+    if (!FFmpegInterface::getAudioEncoders(audio_codec)) {
+        m_useSoxFormat = false;
+    } else {
+        m_useSoxFormat = audio_codec.contains("sox");
+    }
 }
 
 bool AudioFilter::start(ConversionParameters& params, QProcess *dest)
 {
     QStringList ffmpeg_param;
     QStringList sox_param;
+    const char *fmt = m_useSoxFormat ? "sox" : "wav";
 
     if (m_soxProc->state() != QProcess::NotRunning) {
         m_soxProc->kill();
@@ -71,11 +81,11 @@ bool AudioFilter::start(ConversionParameters& params, QProcess *dest)
     }
 
     // ffmpeg process settings
-    ffmpeg_param << "-i" << params.source << "-vn" << "-f" << "sox" << "-";
+    ffmpeg_param << "-i" << params.source << "-vn" << "-f" << fmt << "-";
     m_extractAudioProc->setStandardOutputProcess(m_soxProc);
 
     // sox process settings
-    sox_param << "-t" << "sox" << "-" << "-t" << "sox" << "-";
+    sox_param << "-t" << fmt << "-" << "-t" << fmt << "-";
     if (params.speed_scaling) {
         sox_param << "tempo" << QString::number(params.speed_scaling_factor);
     }
