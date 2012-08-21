@@ -19,6 +19,7 @@
 #include "ffmpeginterface.h"
 #include <QProcess>
 #include <QSet>
+#include <QDebug>
 
 #ifdef OPERATION_TIMEOUT
 #   define TIMEOUT OPERATION_TIMEOUT
@@ -91,6 +92,8 @@ bool AudioFilter::start(ConversionParameters& params, QProcess *dest)
     }
     m_soxProc->setStandardOutputProcess(dest);
 
+    qDebug() << "ffmpeg" << ffmpeg_param;
+    qDebug() << "sox" << sox_param;
     // start the two processes
     m_extractAudioProc->start(ExePath::getPath("ffmpeg"), ffmpeg_param);
     m_soxProc->start(ExePath::getPath("sox"), sox_param);

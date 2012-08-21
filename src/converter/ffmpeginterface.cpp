@@ -256,7 +256,7 @@ QStringList FFmpegInterface::Private::getOptionList(const ConversionParameters &
            if source file has no video stream:
               arguments: -i -
         */
-        if (probe.hasVideo())
+        if (probe.hasVideo() && !o.disable_video)
             list << "-i" << o.source << "-i" << "-"
                  << "-map" << QString("0:%1").arg(probe.videoStreamIndex())
                  << "-map" << "1";
