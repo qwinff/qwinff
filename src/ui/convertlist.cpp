@@ -735,7 +735,7 @@ QHash<QString, int>& ConvertList::output_filenames()
 // Initialize the QTreeWidget listing files.
 void ConvertList::init_treewidget(QTreeWidget *w)
 {
-    assert(w != 0);
+    Q_ASSERT_X(w, "ConvertList::init_treewidget", "w: null pointer");
 
     w->setColumnCount(COL_COUNT);
 
