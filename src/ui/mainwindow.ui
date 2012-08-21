@@ -198,7 +198,7 @@
      <normaloff>:/actions/icons/remove.png</normaloff>:/actions/icons/remove.png</iconset>
    </property>
    <property name="text">
-    <string>&amp;Remove Selected Items</string>
+    <string>&amp;Remove Selected</string>
    </property>
    <property name="statusTip">
     <string>Remove all selected items in the list.</string>
@@ -210,7 +210,7 @@
      <normaloff>:/actions/icons/remove_completed.png</normaloff>:/actions/icons/remove_completed.png</iconset>
    </property>
    <property name="text">
-    <string>R&amp;emove Completed Items</string>
+    <string>R&amp;emove Completed</string>
    </property>
    <property name="toolTip">
     <string>Remove Completed Items</string>
