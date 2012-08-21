@@ -65,13 +65,6 @@ SectionEnd
 
 # Uninstaller
 
-Function un.onInit
-	# confirm dialog
-	MessageBox MB_YESNO "This will uninstall QWinFF from your system. Do you wish to continue?" IDYES next
-	Abort
-next:
-FunctionEnd
-
 Section "un.Uninstaller"
 
 	Delete $INSTDIR\${UNINSTALLER}
