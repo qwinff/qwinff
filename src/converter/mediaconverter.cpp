@@ -17,6 +17,7 @@
 #include "ffmpeginterface.h"
 #include "audiofilter.h"
 #include "mediaprobe.h"
+#include "exepath.h"
 #include "services/filepathoperations.h"
 #include <QDebug>
 #include <QFile>
@@ -105,24 +106,23 @@ double MediaConverter::progress()
  */
 bool MediaConverter::checkExternalPrograms(QString &msg)
 {
+    QString errmsg = tr("%1 not found. "
+            "The application will quit now.");
     // check ffmpeg
     if (!FFmpegInterface::hasFFmpeg()) {
-        msg = tr("FFmpeg not found. "
-                 "The application will quit now.");
+        msg = errmsg.arg(ExePath::getPath("ffmpeg"));
         return false;
     }
 
     // check ffprobe
     if (!MediaProbe::available()) { // The probe failed to start.
-        msg = tr("FFprobe not found. "
-                 "The application will quit now.");
+        msg = errmsg.arg(ExePath::getPath("ffprobe"));
         return false;
     }
 
     // check sox
     if (!AudioFilter::available()) {
-        msg = tr("SoX not found. "
-                 "The application will quit now");
+        msg = errmsg.arg(ExePath::getPath("sox"));
         return false;
     }
 
