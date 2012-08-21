@@ -9,8 +9,18 @@ Name "${APPNAME}"
 OutFile "qwinff_${VERSION}-setup.exe"
 InstallDir $PROGRAMFILES\QWinFF
 
+RequestExecutionLevel user
+
+var StartMenuFolder
+
 !insertmacro MUI_PAGE_LICENSE ${LICENSE}
 !insertmacro MUI_PAGE_DIRECTORY
+
+!define MUI_STARTMENUPAGE_REGISTRY_ROOT "HKLM"
+!define MUI_STARTMENUPAGE_REGISTRY_KEY "Software\QWinFF"
+!define MUI_STARTMENUPAGE_REGISTRY_VALUENAME "Start Menu Folder"
+!insertmacro MUI_PAGE_STARTMENU Application $StartMenuFolder
+
 !insertmacro MUI_PAGE_INSTFILES
 !insertmacro MUI_PAGE_FINISH
 !insertmacro MUI_UNPAGE_CONFIRM
@@ -44,10 +54,12 @@ Section
 	# Create Uninstaller
 	WriteUninstaller "$INSTDIR\${UNINSTALLER}"
 
+	!insertmacro MUI_STARTMENU_WRITE_BEGIN Application
 	# Start Menu Shortcuts
-	CreateDirectory "$SMPROGRAMS\${APPNAME}"
-	CreateShortcut "$SMPROGRAMS\${APPNAME}\QWinFF.lnk" "$INSTDIR\qwinff.exe"
-	CreateShortcut "$SMPROGRAMS\${APPNAME}\Uninstall QWinFF.lnk" "$INSTDIR\${UNINSTALLER}"
+	CreateDirectory "$SMPROGRAMS\$StartMenuFolder"
+	CreateShortcut "$SMPROGRAMS\$StartMenuFolder\QWinFF.lnk" "$INSTDIR\qwinff.exe"
+	CreateShortcut "$SMPROGRAMS\$StartMenuFolder\Uninstall QWinFF.lnk" "$INSTDIR\${UNINSTALLER}"
+	!insertmacro MUI_STARTMENU_WRITE_END
 
 SectionEnd
 
@@ -74,7 +86,9 @@ Section "un.Uninstaller"
 	RmDir  $INSTDIR\translations
 	RmDir  $INSTDIR    # Remove the installation directory if it's empty.
 
-	Delete "$SMPROGRAMS\${APPNAME}\*"
-	RmDir  "$SMPROGRAMS\${APPNAME}"
+	!insertmacro MUI_STARTMENU_GETFOLDER Application $StartMenuFolder
+	Delete "$SMPROGRAMS\$StartMenuFolder\*.lnk"
+	RmDir  "$SMPROGRAMS\$StartMenuFolder"
+	DeleteRegKey /ifempty HKLM "Software\QWinFF"
 
 SectionEnd
