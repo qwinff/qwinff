@@ -334,19 +334,7 @@ QStringList FFmpegInterface::Private::getOptionList(const ConversionParameters &
         // audio bitrate in kb/s
         if (o.audio_bitrate > 0) {
             list.append("-ab");
-
-            int bitrate = o.audio_bitrate;
-            if (o.audio_auto_bitrate && !probe.error()) {
-                const int probed_bitrate = probe.audioBitRate();
-
-                // Apply probed bitrate if the target bitrate is bigger.
-                if (probed_bitrate > 0 && probed_bitrate < bitrate)
-                    bitrate = probe.audioBitRate();
-
-                qDebug() << "Apply probed bitrate: " + QString::number(bitrate);
-            }
-
-            list.append(QString("%1k").arg(bitrate));
+            list.append(QString("%1k").arg(o.audio_bitrate));
         }
 
         // audio sample rate in hz

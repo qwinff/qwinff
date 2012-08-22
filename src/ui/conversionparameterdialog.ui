@@ -166,16 +166,6 @@
               </item>
              </layout>
             </item>
-            <item row="1" column="1">
-             <widget class="QCheckBox" name="chkAutoAdjustBitrate">
-              <property name="toolTip">
-               <string>Use the source bitrate if it is smaller than the configured output bitrate. This can reduce output file size in certain conditions.</string>
-              </property>
-              <property name="text">
-               <string>Auto Adjust Bitrate</string>
-              </property>
-             </widget>
-            </item>
            </layout>
           </widget>
          </item>
@@ -503,7 +493,6 @@
   <tabstop>chkDisableAudio</tabstop>
   <tabstop>cbAudioSampleRate</tabstop>
   <tabstop>spinAudioBitrate</tabstop>
-  <tabstop>chkAutoAdjustBitrate</tabstop>
   <tabstop>spinChannels</tabstop>
   <tabstop>spinVolume</tabstop>
   <tabstop>spinWidth</tabstop>

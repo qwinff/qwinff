@@ -223,14 +223,10 @@ void AddTaskWizard::slotEditPresetButton()
     ConversionParameterDialog dialog(this->parentWidget());
     dialog.setGeometry(this->x(), this->y(), dialog.width(), dialog.height());
 
-    m_current_param->audio_auto_bitrate = ui->chkAutoAdjustBitrate->isChecked();
-
     if (dialog.exec(*m_current_param)) {
         m_cbpreset_index = ui->cbPreset->currentIndex();
         ui->cbPreset->setCurrentIndex(-1); // select no item
     }
-
-    ui->chkAutoAdjustBitrate->setChecked(m_current_param->audio_auto_bitrate);
 }
 
 void AddTaskWizard::slotBrowseOutputPathButton()
@@ -293,8 +289,6 @@ void AddTaskWizard::slotFinished()
     const QDir output_dir(ui->cbOutputPath->currentText());
     const int ext_index = ui->cbExtension->currentIndex();
     const QString ext = ui->cbExtension->itemData(ext_index).toString();
-
-    param.audio_auto_bitrate = ui->chkAutoAdjustBitrate->isChecked();
 
     // Write conversion parameters to m_params.
     for (int i=0; i<size; i++) {

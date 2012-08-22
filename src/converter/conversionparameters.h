@@ -29,7 +29,6 @@ public:
 
     bool disable_audio;
     int audio_bitrate;
-    bool audio_auto_bitrate; ///< keep original bitrate if it is smaller than audio_bitrate
     int audio_sample_rate;
     bool audio_keep_sample_rate; ///< whether to keep original audio sample rate
     int audio_channels;
@@ -89,7 +88,7 @@ public:
         threads = 0;
 
         disable_audio = false;
-        audio_auto_bitrate = audio_keep_sample_rate = false;
+        audio_keep_sample_rate = false;
         audio_bitrate = 0;
         audio_sample_rate = 0;
         audio_channels = 0;
