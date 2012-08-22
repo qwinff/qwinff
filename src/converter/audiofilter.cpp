@@ -56,7 +56,10 @@ AudioFilter::AudioFilter(QObject *parent) :
     m_extractAudioProc(new QProcess(this)),
     m_soxProc(new QProcess(this))
 {
-    m_useSoxFormat = true;
+    QSet<QString> muxing, demuxing;
+    FFmpegInterface::getSupportedMuxingFormats(muxing);
+    FFmpegInterface::getSupportedDemuxingFormats(demuxing);
+    m_useSoxFormat = muxing.contains("sox") && demuxing.contains("sox");
 }
 
 bool AudioFilter::start(ConversionParameters& params, QProcess *dest)
