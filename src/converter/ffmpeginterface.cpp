@@ -380,7 +380,7 @@ QStringList FFmpegInterface::Private::getOptionList(const ConversionParameters &
     }
 
     // Video Options
-    if (o.disable_video) {
+    if (o.disable_video || !probe.hasVideo()) {
         list.append("-vn"); // no video
     } else { // video enabled
 
@@ -426,6 +426,10 @@ QStringList FFmpegInterface::Private::getOptionList(const ConversionParameters &
             list.append(QString("%1").arg(o.video_crop_right));
         }
 
+        /* -vf "setpts=<1/rate>*PTS": video filter to change video speed
+            <1/rate> is the reciprocal of the scaling factor (1.0 is original speed) */
+        if (o.speed_scaling)
+            list << "-vf" << QString("setpts=%1*PTS").arg(1/o.speed_scaling_factor);
     }
 
     // Time Options
@@ -442,10 +446,6 @@ QStringList FFmpegInterface::Private::getOptionList(const ConversionParameters &
         list.append("-t");
         list.append(QString("%1").arg(o.time_duration));
     }
-    /* -vf "setpts=<1/rate>*PTS": video filter to change video speed
-        <1/rate> is the reciprocal of the scaling factor (1.0 is original speed) */
-    if (o.speed_scaling && !o.disable_video && probe.hasVideo())
-        list << "-vf" << QString("setpts=%1*PTS").arg(1/o.speed_scaling_factor);
 
     // destination file
     list.append(o.destination);
