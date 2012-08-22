@@ -3,6 +3,8 @@
 #include "services/powermanagement.h"
 #include <QMessageBox>
 #include <QTimer>
+#include <QApplication>
+#include <QDesktopWidget>
 
 #define SEC_TO_WAIT 30
 
@@ -71,6 +73,10 @@ int PoweroffDialog::exec(int action)
     m_time = SEC_TO_WAIT;
     m_timer->start();
     refresh_message();
+
+    // center window in screen
+    const QRect screen = QApplication::desktop()->screenGeometry();
+    move(screen.center() - this->rect().center());
 
     return QDialog::exec();
 }
