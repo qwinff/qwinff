@@ -36,7 +36,7 @@
   The audio-filtering pipeline consists of two stages:
 
   1. Audio Extraction
-     command: ffmpeg -i <infile> -vn -f sox -
+     command: ffmpeg -i <infile> -vn -f <fmt> -
      input: infile
      output: stdout
      Extract the audio stream from the input file, convert it
@@ -47,8 +47,7 @@
      input: stdin
      output: stdout
      Process the audio stream using SoX. The output is piped to
-     stdout. Use sox format if ffmpeg supports it. Otherwise,
-     use wav format instead.
+     stdout.
 
 */
 
@@ -64,7 +63,7 @@ bool AudioFilter::start(ConversionParameters& params, QProcess *dest)
 {
     QStringList ffmpeg_param;
     QStringList sox_param;
-    const char *fmt = m_useSoxFormat ? "sox" : "wav";
+    const char *fmt = m_useSoxFormat ? "sox" : "flac";
 
     if (m_soxProc->state() != QProcess::NotRunning) {
         m_soxProc->kill();
