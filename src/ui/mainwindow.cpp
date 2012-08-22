@@ -285,7 +285,7 @@ void MainWindow::update_poweroff_button(int id)
         Q_ASSERT(!"Incorrect id! Be sure to handle every power action in switch().");
     }
     m_poweroff_button->setIcon(QIcon(icon_id));
-    m_poweroff_button->setToolTip(title);
+    m_poweroff_button->setToolTip(status_tip);
     m_poweroff_button->setStatusTip(status_tip);
     ui->actionPoweroff->setIcon(QIcon(icon_id));
     ui->actionPoweroff->setText(title);
