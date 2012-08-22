@@ -29,7 +29,7 @@ PoweroffDialog::PoweroffDialog(QWidget *parent) :
     m_timer->stop();
 
     // topmost frameless window
-    setWindowFlags(windowFlags()
+    setWindowFlags(Qt::Window
                    | Qt::WindowStaysOnTopHint
                    | Qt::FramelessWindowHint);
 }
