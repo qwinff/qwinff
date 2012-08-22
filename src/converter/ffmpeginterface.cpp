@@ -54,9 +54,14 @@ namespace info {
     volatile bool ffmpeg_exist = false;
     QString ffmpeg_version;
     QString ffmpeg_codec_info;
+    QString ffmpeg_format_info;
     QList<QString> audio_encoders;
     QList<QString> video_encoders;
     QList<QString> subtitle_encoders;
+    QList<QString> muxing_formats;
+    QList<QString> demuxing_formats;
+
+namespace inner {
 
     bool read_ffmpeg_codecs(const char *flag)
     {
@@ -129,6 +134,46 @@ namespace info {
         return true;
     }
 
+    bool read_ffmpeg_formats()
+    {
+        QProcess ffmpeg_process;
+        QStringList parameters;
+        parameters << "-formats";
+
+        ffmpeg_process.start(ExePath::getPath("ffmpeg"), parameters);
+
+        ffmpeg_process.waitForStarted(TIMEOUT);
+        ffmpeg_process.waitForFinished(TIMEOUT);
+        if (ffmpeg_process.exitCode() != 0)
+            return false;
+
+        muxing_formats.clear();
+        demuxing_formats.clear();
+        ffmpeg_format_info.clear();
+
+        QRegExp pattern("^ ([ D])([ E]) ([^ ]+)\\s+(.*)$");
+        const int INDEX_DEMUX = 1;
+        const int INDEX_MUX = 2;
+        const int INDEX_NAME = 3;
+        //const int INDEX_DETAIL = 4;
+
+        while (ffmpeg_process.canReadLine()) {
+            QString line(ffmpeg_process.readLine());
+            ffmpeg_format_info.append(line);
+            if (pattern.indexIn(line) != -1) {
+                QString name = pattern.cap(INDEX_NAME);
+                if (pattern.cap(INDEX_DEMUX) == "D")
+                    demuxing_formats.append(name);
+                if (pattern.cap(INDEX_MUX) == "E")
+                    muxing_formats.append(name);
+            }
+        }
+
+        return true;
+    }
+
+} // namespace inner
+
     /* Read FFmpeg information.
      *  (1) Check available encoder from "ffmpeg -codecs" and "ffmpeg -formats".
      *  (2) Read ffmpeg version information by "ffmpeg -version" command.
@@ -147,12 +192,15 @@ namespace info {
          * by "-codecs" flag, so we check "-codecs" first. If ffmpeg
          * returns an error, retry with flag "-formats".
          */
-        if (!read_ffmpeg_codecs("-codecs") && !read_ffmpeg_codecs("-formats")) {
+        if (!inner::read_ffmpeg_codecs("-codecs") && !inner::read_ffmpeg_codecs("-formats")) {
             is_encoders_read = false; // allow retry when failed
             return;
         }
 
-        if (!read_ffmpeg_version())
+        if (!inner::read_ffmpeg_version())
+            return;
+
+        if (!inner::read_ffmpeg_formats())
             return;
 
         ffmpeg_exist = true;
@@ -542,6 +590,30 @@ QString FFmpegInterface::getFFmpegCodecInfo()
 {
     info::read_ffmpeg_info();
     return info::ffmpeg_codec_info;
+}
+
+QString FFmpegInterface::getFFmpegFormatInfo()
+{
+    info::read_ffmpeg_info();
+    return info::ffmpeg_format_info;
+}
+
+bool FFmpegInterface::getSupportedMuxingFormats(QSet<QString> &target)
+{
+    info::read_ffmpeg_info();
+    if (!info::ffmpeg_exist) return false;
+
+    target = QSet<QString>::fromList(info::muxing_formats);
+    return true;
+}
+
+bool FFmpegInterface::getSupportedDemuxingFormats(QSet<QString> &target)
+{
+    info::read_ffmpeg_info();
+    if (!info::ffmpeg_exist) return false;
+
+    target = QSet<QString>::fromList(info::demuxing_formats);
+    return true;
 }
 
 bool FFmpegInterface::hasFFmpeg()

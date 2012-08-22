@@ -45,6 +45,9 @@ public:
     static bool getSubtitleEncoders(QSet<QString>& target);
     static QString getFFmpegVersionInfo();
     static QString getFFmpegCodecInfo();
+    static QString getFFmpegFormatInfo();
+    static bool getSupportedMuxingFormats(QSet<QString>& target);
+    static bool getSupportedDemuxingFormats(QSet<QString>& target);
     static bool hasFFmpeg();
 
     static void refreshFFmpegInformation();
