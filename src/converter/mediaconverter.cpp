@@ -102,7 +102,6 @@ double MediaConverter::progress()
 /*! Check whether external programs are available
  *   - ffmpeg
  *   - ffprobe
- *   - sox
  */
 bool MediaConverter::checkExternalPrograms(QString &msg)
 {
@@ -120,11 +119,7 @@ bool MediaConverter::checkExternalPrograms(QString &msg)
         return false;
     }
 
-    // check sox
-    if (!AudioFilter::available()) {
-        msg = errmsg.arg(ExePath::getPath("sox"));
-        return false;
-    }
+    // sox is optional
 
     return true;
 }

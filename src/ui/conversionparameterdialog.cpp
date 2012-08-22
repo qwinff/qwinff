@@ -14,6 +14,7 @@
 */
 
 #include "conversionparameterdialog.h"
+#include "converter/audiofilter.h"
 #include "ui_conversionparameterdialog.h"
 #include <QLayout>
 #include <cmath>
@@ -47,6 +48,11 @@ ConversionParameterDialog::ConversionParameterDialog(QWidget *parent) :
             this, SLOT(update_endtime()));
     connect(ui->timeBegin, SIGNAL(timeChanged(QTime)),
             this, SLOT(update_endtime()));
+
+    // Hide speed-changing options if sox is not available.
+    m_enableAudioProcessing = AudioFilter::available();
+    if (!m_enableAudioProcessing)
+        ui->groupScaling->setVisible(false);
 }
 
 ConversionParameterDialog::~ConversionParameterDialog()
@@ -167,13 +173,13 @@ void ConversionParameterDialog::write_fields(ConversionParameters& param)
         param.time_duration = 0;
     else
         param.time_duration = QTIME_TO_SECS(ui->timeEnd->time()) - param.time_begin;
-    double speed_scaling_factor = ui->spinSpeedFactor->value() / 100;
-    if (std::abs(speed_scaling_factor - 100.0) <= 0.01) {
+    double speed_ratio = ui->spinSpeedFactor->value();
+    if (!m_enableAudioProcessing || std::abs(speed_ratio - 100.0) <= 0.01) {
         param.speed_scaling = false;
         param.speed_scaling_factor = 1.0;
     } else {
         param.speed_scaling = true;
-        param.speed_scaling_factor = speed_scaling_factor;
+        param.speed_scaling_factor = speed_ratio / 100.0;
     }
 
 }

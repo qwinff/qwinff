@@ -45,6 +45,7 @@ private:
     Ui::ConversionParameterDialog *ui;
     void read_fields(const ConversionParameters& param);
     void write_fields(ConversionParameters& param);
+    bool m_enableAudioProcessing;
 };
 
 #endif // CONVERSIONPARAMETERDIALOG_H
