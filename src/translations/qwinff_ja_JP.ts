@@ -64,6 +64,10 @@
         <source>Czech</source>
         <translation>チェコ語</translation>
     </message>
+    <message>
+        <source>Some audio-processing functionalities are provided by SoX.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutFFmpegDialog</name>

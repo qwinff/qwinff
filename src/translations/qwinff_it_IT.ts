@@ -61,21 +61,26 @@
     </message>
     <message>
         <location filename="../ui/aboutdialog.cpp" line="65"/>
+        <source>Some audio-processing functionalities are provided by SoX.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/aboutdialog.cpp" line="67"/>
         <source>FFmpeg presets were taken from WinFF.</source>
         <translation>I preset FFmpeg sono stati presi da WinFF.</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="103"/>
+        <location filename="../ui/aboutdialog.cpp" line="105"/>
         <source>Japanese</source>
         <translation>Giapponese</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="104"/>
+        <location filename="../ui/aboutdialog.cpp" line="106"/>
         <source>Italian</source>
         <translation>Italiano</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="105"/>
+        <location filename="../ui/aboutdialog.cpp" line="107"/>
         <source>Czech</source>
         <translation type="unfinished"></translation>
     </message>
@@ -762,13 +767,13 @@
         <location filename="../ui/mainwindow.ui" line="202"/>
         <source>&amp;Remove Selected</source>
         <extracomment>remove selected (tasks, items)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Rimuovi gli oggetti selezionati</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="214"/>
         <source>R&amp;emove Completed</source>
         <extracomment>remove completed (task, items)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>R&amp;imuovi completati</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="315"/>

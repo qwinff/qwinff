@@ -49,17 +49,22 @@
         <translation>這個程式是自由軟體，你可以在GNU授權條款(第二或第三版)下修改及散佈此軟體。</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="103"/>
+        <location filename="../ui/aboutdialog.cpp" line="65"/>
+        <source>Some audio-processing functionalities are provided by SoX.</source>
+        <translation>某些音效處理的功能由SoX提供.</translation>
+    </message>
+    <message>
+        <location filename="../ui/aboutdialog.cpp" line="105"/>
         <source>Japanese</source>
         <translation>日文</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="104"/>
+        <location filename="../ui/aboutdialog.cpp" line="106"/>
         <source>Italian</source>
         <translation>義大利文</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="105"/>
+        <location filename="../ui/aboutdialog.cpp" line="107"/>
         <source>Czech</source>
         <translation>捷克語</translation>
     </message>
@@ -75,9 +80,9 @@
         <translation>QWinFF專案首頁: %1</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="65"/>
+        <location filename="../ui/aboutdialog.cpp" line="67"/>
         <source>FFmpeg presets were taken from WinFF.</source>
-        <translation>FFmpeg的預設參數來自WinFF專案</translation>
+        <translation>FFmpeg的預設參數來自WinFF專案.</translation>
     </message>
 </context>
 <context>

@@ -64,6 +64,10 @@
         <source>Czech</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Some audio-processing functionalities are provided by SoX.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutFFmpegDialog</name>
@@ -723,12 +727,12 @@
     <message>
         <source>&amp;Remove Selected</source>
         <extracomment>remove selected (tasks, items)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Odebrat vybrané</translation>
     </message>
     <message>
         <source>R&amp;emove Completed</source>
         <extracomment>remove completed (task, items)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>O&amp;debrat celý seznam</translation>
     </message>
     <message>
         <source>Show Error &amp;Message</source>
