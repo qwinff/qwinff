@@ -147,13 +147,13 @@ void PoweroffDialog::refresh_message()
 
     switch (m_action) {
     case PowerManagement::SHUTDOWN:
-        msg = tr("The computer will shutdown in <b>%1</b> seconds").arg(m_time);
+        msg = tr("Shutting down in <b>%1</b> seconds").arg(m_time);
         break;
     case PowerManagement::SUSPEND:
-        msg = tr("The computer will suspend in <b>%1</b> seconds").arg(m_time);
+        msg = tr("Suspending in <b>%1</b> seconds").arg(m_time);
         break;
     case PowerManagement::HIBERNATE:
-        msg = tr("The computer will hibernate in <b>%1</b> seconds").arg(m_time);
+        msg = tr("Hibernating in <b>%1</b> seconds").arg(m_time);
         break;
     default:
         Q_ASSERT(!"Incorrect id! Be sure to handle every power action in switch().");
