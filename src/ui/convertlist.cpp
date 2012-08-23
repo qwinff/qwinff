@@ -585,6 +585,7 @@ void ConvertList::task_finished_slot(int exitcode)
         } else {
             /*: The text to be displayed on the progress bar when a conversion finishes */
             prog->showText(tr("Finished"));
+            prog->setToolTip(tr("Finished"));
         }
 
         prog->setActive(false);
@@ -875,6 +876,7 @@ void ConvertList::reset_item(int index)
             ProgressBar *prog = progressBar(*task);
             prog->setValue(0);
             prog->setActive(false);
+            prog->setToolTip("");
         }
     }
 }
