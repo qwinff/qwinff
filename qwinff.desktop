@@ -1,7 +1,7 @@
 [Desktop Entry]
 Categories=AudioVideo;AudioVideoEditing;
-Comment=An intuitive ffmpeg frontend
-Comment[zh_TW]=直觀易用的 ffmpeg 前端
+Comment=Convert between media file formats
+Comment[zh_TW]=轉換影音檔案格式
 Name=QWinFF
 GenericName=Media Converter
 GenericName[zh_TW]=影音轉檔器
