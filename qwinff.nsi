@@ -21,6 +21,7 @@ InstallDir $PROGRAMFILES\QWinFF
 !insertmacro MUI_LANGUAGE "TradChinese"
 !insertmacro MUI_LANGUAGE "Japanese"
 !insertmacro MUI_LANGUAGE "Italian"
+!insertmacro MUI_LANGUAGE "Czech"
 
 Section
 
