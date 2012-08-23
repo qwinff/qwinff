@@ -62,6 +62,8 @@ AboutDialog::AboutDialog(QWidget *parent) :
          + "<br><br>"
          + tr("QWinFF Project Page: %1").arg(url("http://code.google.com/p/qwinff/"))
          + "<br><br>"
+         + tr("Some audio-processing functionalities are provided by SoX.")
+         + " (" + url("http://sox.sourceforge.net/") + ")<br><br>"
          + tr("FFmpeg presets were taken from WinFF.")
          + "<br><br>"
          );
