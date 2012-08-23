@@ -102,6 +102,7 @@ QString AboutDialog::getTranslators()
     return QString("")
                 + trad(tr("Japanese"), "Tilt <tiltstr@gmail.com>")
                 + trad(tr("Italian"), "TheJoe (http://thejoe.it/)")
+                + trad(tr("Czech"), "Petr Ga&#271;orek <hahihula@gmail.com>")
             ;
 }
 
