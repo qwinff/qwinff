@@ -105,6 +105,7 @@ double MediaConverter::progress()
  */
 bool MediaConverter::checkExternalPrograms(QString &msg)
 {
+    //: %1 is a computer program
     QString errmsg = tr("%1 not found. "
             "The application will quit now.");
     // check ffmpeg

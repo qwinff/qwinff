@@ -48,14 +48,16 @@ AboutDialog::AboutDialog(QWidget *parent) :
          + "<br>"
          /*: Qt version */
          + tr("Compiled with Qt %1").arg(QT_VERSION_STR)
-#if defined(Q_WS_X11) && defined(USE_LIBNOTIFY) /* libnotify version */
+#if defined(Q_WS_X11) && defined(USE_LIBNOTIFY) /*: libnotify version */
                 + "<br>" + tr("Compiled with libnotify %1")
                 .arg(NotificationService_libnotify::getVersion())
 #endif
          + "<br><br>"
          + tr("QWinFF is a gui frontend for FFmpeg.")
          + "<br><br>"
+         //: %1 is the name and email of the programmer
          + tr("Programming: %1").arg("Timothy Lin &lt;lzh9102@gmail.com&gt;") + "<br>"
+         //: %1 is the name and email of the logo designer
          + tr("Logo Design: %1").arg("KuanYui &lt;azazabc123@gmail.com&gt;") + "<br><br>"
          + tr("This program is free software; you can redistribute it and/or modify it "
               "under the terms of the GNU General Public License version 2 or 3.")
@@ -102,8 +104,11 @@ AboutDialog::~AboutDialog()
 QString AboutDialog::getTranslators()
 {
     return QString("")
+                //: Japanese Language
                 + trad(tr("Japanese"), "Tilt <tiltstr@gmail.com>")
+                //: Italian Language
                 + trad(tr("Italian"), "TheJoe (http://thejoe.it/)")
+                //: Czech Language
                 + trad(tr("Czech"), "Petr Ga&#271;orek <hahihula@gmail.com>")
             ;
 }
