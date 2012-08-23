@@ -362,7 +362,7 @@
        </widget>
        <widget class="QWidget" name="tab">
         <attribute name="title">
-         <string>Time</string>
+         <string extracomment="time-related options (speed, length)">Time</string>
         </attribute>
         <layout class="QVBoxLayout" name="verticalLayout_9">
          <item>
