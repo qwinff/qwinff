@@ -69,6 +69,7 @@
     <addaction name="actionSetParameters"/>
     <addaction name="actionChangeOutputFilename"/>
     <addaction name="actionChangeOutputDirectory"/>
+    <addaction name="actionShowErrorMessage"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
@@ -307,6 +308,11 @@
    </property>
    <property name="shortcut">
     <string notr="true"/>
+   </property>
+  </action>
+  <action name="actionShowErrorMessage">
+   <property name="text">
+    <string>Show Error &amp;Message</string>
    </property>
   </action>
  </widget>

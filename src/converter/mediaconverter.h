@@ -49,6 +49,13 @@ public:
      */
     static bool checkExternalPrograms(QString &msg);
 
+    /*!
+     * Get the error message if the conversion fails.
+     * @return the last output line ffmpeg prints, likely to be
+     *         an error message
+     */
+    QString errorMessage() const;
+
 signals:
     void finished(int exitcode);
     void progressRefreshed(int percentage);

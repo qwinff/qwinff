@@ -19,3 +19,8 @@ ConverterInterface::ConverterInterface(QObject *parent) :
     QObject(parent)
 {
 }
+
+QString ConverterInterface::errorMessage() const
+{
+    return QString();
+}

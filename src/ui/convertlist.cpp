@@ -335,6 +335,17 @@ const ConversionParameters* ConvertList::getCurrentIndexParameter() const
     }
 }
 
+bool ConvertList::selectedTaskFailed() const
+{
+    if (selectedCount() != 1)
+        return false;
+    const int index = m_list->currentIndex().row();
+    if (index >= 0 && index < m_tasks.size())
+        return m_tasks[index]->status == Task::FAILED;
+    else
+        return false;
+}
+
 // Public Slots
 
 void ConvertList::start()
@@ -533,6 +544,18 @@ void ConvertList::retryAll()
     start();
 }
 
+void ConvertList::showErrorMessage()
+{
+    const int index = m_list->currentIndex().row();
+    if (index >= 0 && index < m_tasks.size()) {
+        QMessageBox msgBox;
+        msgBox.setText(tr("Error Message from FFmpeg:\n\n") + m_tasks[index]->errmsg);
+        msgBox.setStandardButtons(QMessageBox::Ok);
+        msgBox.setIcon(QMessageBox::Information);
+        msgBox.exec();
+    }
+}
+
 void ConvertList::clear()
 {
     QList<QTreeWidgetItem*> itemList;
@@ -557,6 +580,7 @@ void ConvertList::task_finished_slot(int exitcode)
             prog->setValue(0);
             /*: The text to be displayed on the progress bar when a conversion fails */
             prog->showText(tr("Failed"));
+            m_current_task->errmsg = m_converter->errorMessage();
         } else {
             /*: The text to be displayed on the progress bar when a conversion finishes */
             prog->showText(tr("Finished"));

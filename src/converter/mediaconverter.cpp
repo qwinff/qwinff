@@ -124,6 +124,11 @@ bool MediaConverter::checkExternalPrograms(QString &msg)
     return true;
 }
 
+QString MediaConverter::errorMessage() const
+{
+    return m_pConv->errorMessage();
+}
+
 // private slots
 
 void MediaConverter::readProcessOutput()

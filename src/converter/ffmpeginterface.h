@@ -36,6 +36,7 @@ public:
                            , bool *needs_audio_filter);
     void parseProcessOutput(const QString& data);
     double progress() const;
+    QString errorMessage() const;
 
     static bool getAudioEncoders(QList<QString>& target);
     static bool getAudioEncoders(QSet<QString>& target);

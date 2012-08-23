@@ -223,6 +223,8 @@ struct FFmpegInterface::Private
     QList<QString> video_encoders;
     QList<QString> subtitle_encoders;
 
+    QString errmsg;
+
     Private() : duration(0), progress(0)
       , progress_pattern(patterns::progress)
       , progress_pattern_2(patterns::progress2)
@@ -261,6 +263,7 @@ bool FFmpegInterface::Private::check_progress(const QString& line)
             return true;
         }
     }
+    errmsg = line; // save the last output line
     return false;
 }
 
@@ -470,6 +473,7 @@ void FFmpegInterface::reset()
     p->duration = 0;
     p->progress = 0;
     p->stringBuffer.clear();
+    p->errmsg.clear();
 }
 
 QProcess::ProcessChannel FFmpegInterface::processReadChannel() const
@@ -521,6 +525,11 @@ void FFmpegInterface::parseProcessOutput(const QString &data)
 double FFmpegInterface::progress() const
 {
     return p->progress;
+}
+
+QString FFmpegInterface::errorMessage() const
+{
+    return p->errmsg;
 }
 
 bool FFmpegInterface::getAudioEncoders(QList<QString> &target)

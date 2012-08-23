@@ -211,6 +211,7 @@ void MainWindow::slotListContextMenu(QPoint /*pos*/)
     menu.addAction(ui->actionChangeOutputFilename);
     menu.addAction(ui->actionChangeOutputDirectory);
     menu.addAction(ui->actionSetParameters);
+    menu.addAction(ui->actionShowErrorMessage);
 
     menu.exec(QCursor::pos());
 }
@@ -372,6 +373,8 @@ void MainWindow::setup_menus()
             m_list, SLOT(changeSelectedOutputFile()));
     connect(ui->actionChangeOutputDirectory, SIGNAL(triggered()),
             m_list, SLOT(changeSelectedOutputDirectory()));
+    connect(ui->actionShowErrorMessage, SIGNAL(triggered()),
+            m_list, SLOT(showErrorMessage()));
 
     // Convert
     connect(ui->menuConvert, SIGNAL(aboutToShow()),
@@ -587,6 +590,13 @@ void MainWindow::refresh_action_states()
     bool hide_ChangeOutputFilename = m_list->selectedCount() != 1;
     bool hide_ChangeOutputDirectory = m_list->selectedCount() <= 0;
 
+
+    /* Show actionShowErrorMessage if and only if one task is selected
+       and the state of the selected task is FAILED
+     */
+    bool hide_ShowErrorMessage = (selected_file_count != 1
+                                  || !m_list->selectedTaskFailed());
+
     ui->actionSetParameters->setDisabled(hide_SetParameters);
     ui->actionStartConversion->setDisabled(hide_StartConversion);
     ui->actionStopConversion->setDisabled(hide_StopConversion);
@@ -597,6 +607,7 @@ void MainWindow::refresh_action_states()
     ui->actionClearList->setDisabled(hide_ClearList);
     ui->actionChangeOutputFilename->setDisabled(hide_ChangeOutputFilename);
     ui->actionChangeOutputDirectory->setDisabled(hide_ChangeOutputDirectory);
+    ui->actionShowErrorMessage->setDisabled(hide_ShowErrorMessage);
 }
 
 void MainWindow::load_settings()

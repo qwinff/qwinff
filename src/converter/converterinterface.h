@@ -50,6 +50,7 @@ public:
                                    , bool *needs_audio_filter) = 0;
     virtual void parseProcessOutput(const QString& line) = 0;
     virtual double progress() const = 0;
+    virtual QString errorMessage() const;
 
 signals:
     void progressRefreshed(double percentage);

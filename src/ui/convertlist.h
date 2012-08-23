@@ -43,6 +43,7 @@ public:
         TaskStatus status;
         ConversionParameters param;
         QTreeWidgetItem *listitem;
+        QString errmsg;
     };
 
     explicit ConvertList(Presets *presets, QWidget *parent = 0);
@@ -77,6 +78,11 @@ public:
      *  @return If the function fails, it returns NULL.
      */
     const ConversionParameters* getCurrentIndexParameter() const;
+
+    /*! Determine whether the selected task has failed.
+     *  @note If multiple tasks are selected, this function always returns false.
+     */
+    bool selectedTaskFailed() const;
 
 signals:
     void start_conversion(int index, ConversionParameters param);
@@ -113,7 +119,7 @@ public slots:
      */
     void editSelectedParameters();
 
-    /*! Popup a input box to change the output filename
+    /*! Popup an input box to change the output filename
      *  of the **first** selected file.
      *  @warning If multiple files are selected, only the first
      *   file will be changed.
@@ -131,6 +137,11 @@ public slots:
     void retrySelectedItems();
 
     void retryAll();
+
+    /*! Popup a message box to show the error message from ffmpeg.
+     *  This function only shows the error message for the first selected task.
+     */
+    void showErrorMessage();
 
     /*! Remove all tasks but quietly ignore tasks that are in progress.
      */
