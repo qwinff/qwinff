@@ -299,6 +299,7 @@
     </message>
     <message>
         <source>Time</source>
+        <extracomment>time-related options (speed, length)</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -828,15 +829,15 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The computer will shutdown in &lt;b&gt;%1&lt;/b&gt; seconds</source>
+        <source>Shutting down in &lt;b&gt;%1&lt;/b&gt; seconds</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The computer will suspend in &lt;b&gt;%1&lt;/b&gt; seconds</source>
+        <source>Suspending in &lt;b&gt;%1&lt;/b&gt; seconds</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The computer will hibernate in &lt;b&gt;%1&lt;/b&gt; seconds</source>
+        <source>Hibernating in &lt;b&gt;%1&lt;/b&gt; seconds</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

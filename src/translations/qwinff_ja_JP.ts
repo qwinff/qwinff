@@ -295,6 +295,7 @@
     </message>
     <message>
         <source>Time</source>
+        <extracomment>time-related options (speed, length)</extracomment>
         <translation type="unfinished">時間</translation>
     </message>
     <message>
@@ -800,14 +801,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The computer will shutdown in &lt;b&gt;%1&lt;/b&gt; seconds</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The computer will suspend in &lt;b&gt;%1&lt;/b&gt; seconds</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Hibernate immediately</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
         <translation type="unfinished"></translation>
@@ -815,29 +808,37 @@
     <message>
         <source>Shutdown</source>
         <extracomment>Shutdown the computer</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">シャットダウン</translation>
     </message>
     <message>
         <source>Suspend</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">サスペンド</translation>
     </message>
     <message>
         <source>Hibernate</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ハイバネート</translation>
     </message>
     <message>
         <source>Operation Failed: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The computer will hibernate in &lt;b&gt;%1&lt;/b&gt; seconds</source>
+        <source>QWinFF</source>
+        <translation type="unfinished">QWinFF</translation>
+    </message>
+    <message>
+        <source>Shutting down in &lt;b&gt;%1&lt;/b&gt; seconds</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>QWinFF</source>
-        <translation type="unfinished">QWinFF</translation>
+        <source>Suspending in &lt;b&gt;%1&lt;/b&gt; seconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hibernating in &lt;b&gt;%1&lt;/b&gt; seconds</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

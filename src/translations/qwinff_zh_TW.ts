@@ -368,6 +368,7 @@
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="365"/>
         <source>Time</source>
+        <extracomment>time-related options (speed, length)</extracomment>
         <translation>時間</translation>
     </message>
     <message>
@@ -425,7 +426,7 @@
     </message>
     <message>
         <location filename="../ui/convertlist.cpp" line="239"/>
-        <location filename="../ui/convertlist.cpp" line="888"/>
+        <location filename="../ui/convertlist.cpp" line="890"/>
         <source>Cancel</source>
         <extracomment>Cancel the operation of adding new tasks</extracomment>
         <translation>取消</translation>
@@ -486,144 +487,145 @@
     </message>
     <message>
         <location filename="../ui/convertlist.cpp" line="587"/>
+        <location filename="../ui/convertlist.cpp" line="588"/>
         <source>Finished</source>
         <extracomment>The text to be displayed on the progress bar when a conversion finishes</extracomment>
         <translation>已完成</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="630"/>
+        <location filename="../ui/convertlist.cpp" line="631"/>
         <source>Hide &quot;%1&quot;</source>
         <extracomment>Hide a column in the list. For example, the text maybe &apos;Hide &quot;Duration&quot;&apos;. The two &quot; are quotation marks in English, you may replace it with local quotation marks.</extracomment>
         <translation>隱藏 &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="639"/>
+        <location filename="../ui/convertlist.cpp" line="640"/>
         <source>Restore All Columns</source>
         <translation>回復所有欄位</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="790"/>
+        <location filename="../ui/convertlist.cpp" line="791"/>
         <source>Source</source>
         <translation>來源</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="791"/>
+        <location filename="../ui/convertlist.cpp" line="792"/>
         <source>Destination</source>
         <translation>輸出</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="792"/>
+        <location filename="../ui/convertlist.cpp" line="793"/>
         <source>Duration</source>
         <translation>長度</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="793"/>
+        <location filename="../ui/convertlist.cpp" line="794"/>
         <source>File Size</source>
         <translation>檔案大小</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="796"/>
+        <location filename="../ui/convertlist.cpp" line="797"/>
         <source>Sample Rate</source>
         <extracomment>Audio</extracomment>
         <translation>取樣率</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="797"/>
+        <location filename="../ui/convertlist.cpp" line="798"/>
         <source>Audio Bitrate</source>
         <translation>聲音位元率</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="798"/>
+        <location filename="../ui/convertlist.cpp" line="799"/>
         <source>Channels</source>
         <extracomment>Audio</extracomment>
         <translation>聲道</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="799"/>
+        <location filename="../ui/convertlist.cpp" line="800"/>
         <source>Audio Codec</source>
         <translation>聲音編碼器</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="802"/>
+        <location filename="../ui/convertlist.cpp" line="803"/>
         <source>Dimensions</source>
         <translation>影像尺寸</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="803"/>
+        <location filename="../ui/convertlist.cpp" line="804"/>
         <source>Video Bitrate</source>
         <translation>影像位元率</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="804"/>
+        <location filename="../ui/convertlist.cpp" line="805"/>
         <source>Framerate</source>
         <extracomment>Video</extracomment>
         <translation>影格率</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="805"/>
+        <location filename="../ui/convertlist.cpp" line="806"/>
         <source>Video Codec</source>
         <translation>影像編碼器</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="807"/>
+        <location filename="../ui/convertlist.cpp" line="808"/>
         <source>Progress</source>
         <translation>進度</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="852"/>
+        <location filename="../ui/convertlist.cpp" line="853"/>
         <source>%1 Hz</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="853"/>
-        <location filename="../ui/convertlist.cpp" line="862"/>
+        <location filename="../ui/convertlist.cpp" line="854"/>
+        <location filename="../ui/convertlist.cpp" line="863"/>
         <source>%1 kb/s</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="863"/>
+        <location filename="../ui/convertlist.cpp" line="864"/>
         <source>%1 fps</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="887"/>
+        <location filename="../ui/convertlist.cpp" line="889"/>
         <source>Removing tasks...</source>
         <extracomment>Remove files from the tasklist</extracomment>
         <translation>正在移除任務</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="925"/>
+        <location filename="../ui/convertlist.cpp" line="927"/>
         <source>KiB</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="925"/>
+        <location filename="../ui/convertlist.cpp" line="927"/>
         <source>MiB</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="925"/>
+        <location filename="../ui/convertlist.cpp" line="927"/>
         <source>GiB</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="925"/>
+        <location filename="../ui/convertlist.cpp" line="927"/>
         <source>TiB</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="928"/>
+        <location filename="../ui/convertlist.cpp" line="930"/>
         <source>B</source>
         <extracomment>Bytes</extracomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="961"/>
+        <location filename="../ui/convertlist.cpp" line="963"/>
         <source>File Exists</source>
         <translation>檔案已存在</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="962"/>
+        <location filename="../ui/convertlist.cpp" line="964"/>
         <source>%1 already exists on disk or in the task list. Still use this name as the output filename?</source>
         <translation>%1 已經存在。確定還要用這個名稱作為輸出檔案嗎？</translation>
     </message>
@@ -1035,18 +1037,30 @@
     </message>
     <message>
         <location filename="../ui/poweroffdialog.cpp" line="150"/>
-        <source>The computer will shutdown in &lt;b&gt;%1&lt;/b&gt; seconds</source>
+        <source>Shutting down in &lt;b&gt;%1&lt;/b&gt; seconds</source>
         <translation>電腦將於 &lt;b&gt;%1&lt;/b&gt; 秒後關機</translation>
     </message>
     <message>
         <location filename="../ui/poweroffdialog.cpp" line="153"/>
-        <source>The computer will suspend in &lt;b&gt;%1&lt;/b&gt; seconds</source>
+        <source>Suspending in &lt;b&gt;%1&lt;/b&gt; seconds</source>
         <translation>電腦將於 &lt;b&gt;%1&lt;/b&gt; 秒後待機</translation>
     </message>
     <message>
         <location filename="../ui/poweroffdialog.cpp" line="156"/>
-        <source>The computer will hibernate in &lt;b&gt;%1&lt;/b&gt; seconds</source>
+        <source>Hibernating in &lt;b&gt;%1&lt;/b&gt; seconds</source>
         <translation>電腦將於 &lt;b&gt;%1&lt;/b&gt; 秒後休眠</translation>
+    </message>
+    <message>
+        <source>The computer will shutdown in &lt;b&gt;%1&lt;/b&gt; seconds</source>
+        <translation type="obsolete">電腦將於 &lt;b&gt;%1&lt;/b&gt; 秒後關機</translation>
+    </message>
+    <message>
+        <source>The computer will suspend in &lt;b&gt;%1&lt;/b&gt; seconds</source>
+        <translation type="obsolete">電腦將於 &lt;b&gt;%1&lt;/b&gt; 秒後待機</translation>
+    </message>
+    <message>
+        <source>The computer will hibernate in &lt;b&gt;%1&lt;/b&gt; seconds</source>
+        <translation type="obsolete">電腦將於 &lt;b&gt;%1&lt;/b&gt; 秒後休眠</translation>
     </message>
 </context>
 </TS>
