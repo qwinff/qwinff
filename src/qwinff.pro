@@ -61,7 +61,8 @@ HEADERS  += \
     services/powermanagement.h \
     ui/poweroffdialog.h \
     converter/audiofilter.h \
-    converter/exepath.h
+    converter/exepath.h \
+    extra-translations.h
 
 FORMS    += \
     ui/conversionparameterdialog.ui \
@@ -125,6 +126,7 @@ DEFINES += DEFAULT_THREAD_COUNT=1
 
 OTHER_FILES += \
     settings.txt
+
 
 
 
