@@ -502,6 +502,17 @@
     </message>
 </context>
 <context>
+    <name>ExtraTranslations</name>
+    <message>
+        <source>Convert between media file formats</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Media Converter</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
         <source>QWinFF</source>

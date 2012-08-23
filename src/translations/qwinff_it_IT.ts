@@ -636,6 +636,19 @@
     </message>
 </context>
 <context>
+    <name>ExtraTranslations</name>
+    <message>
+        <location filename="../extra-translations.h" line="40"/>
+        <source>Convert between media file formats</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../extra-translations.h" line="41"/>
+        <source>Media Converter</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
         <location filename="../ui/mainwindow.ui" line="14"/>
@@ -1000,58 +1013,58 @@
         <translation type="unfinished">Cancella</translation>
     </message>
     <message>
-        <location filename="../ui/poweroffdialog.cpp" line="52"/>
+        <location filename="../ui/poweroffdialog.cpp" line="67"/>
         <source>Shutdown immediately</source>
         <extracomment>Shutdown the computer</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/poweroffdialog.cpp" line="57"/>
+        <location filename="../ui/poweroffdialog.cpp" line="72"/>
         <source>Suspend immediately</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/poweroffdialog.cpp" line="62"/>
+        <location filename="../ui/poweroffdialog.cpp" line="77"/>
         <source>Hibernate immediately</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/poweroffdialog.cpp" line="113"/>
+        <location filename="../ui/poweroffdialog.cpp" line="128"/>
         <source>Shutdown</source>
         <extracomment>Shutdown the computer</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/poweroffdialog.cpp" line="117"/>
+        <location filename="../ui/poweroffdialog.cpp" line="132"/>
         <source>Suspend</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/poweroffdialog.cpp" line="121"/>
+        <location filename="../ui/poweroffdialog.cpp" line="136"/>
         <source>Hibernate</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/poweroffdialog.cpp" line="126"/>
+        <location filename="../ui/poweroffdialog.cpp" line="141"/>
         <source>Operation Failed: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/poweroffdialog.cpp" line="150"/>
+        <location filename="../ui/poweroffdialog.cpp" line="165"/>
         <source>Shutting down in &lt;b&gt;%1&lt;/b&gt; seconds</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/poweroffdialog.cpp" line="153"/>
+        <location filename="../ui/poweroffdialog.cpp" line="168"/>
         <source>Suspending in &lt;b&gt;%1&lt;/b&gt; seconds</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/poweroffdialog.cpp" line="156"/>
+        <location filename="../ui/poweroffdialog.cpp" line="171"/>
         <source>Hibernating in &lt;b&gt;%1&lt;/b&gt; seconds</source>
         <translation type="unfinished"></translation>
     </message>
