@@ -581,6 +581,7 @@ void ConvertList::task_finished_slot(int exitcode)
             /*: The text to be displayed on the progress bar when a conversion fails */
             prog->showText(tr("Failed"));
             m_current_task->errmsg = m_converter->errorMessage();
+            prog->setToolTip(tr("Error: %1").arg(m_current_task->errmsg));
         } else {
             /*: The text to be displayed on the progress bar when a conversion finishes */
             prog->showText(tr("Finished"));

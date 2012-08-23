@@ -208,10 +208,10 @@ void MainWindow::slotListContextMenu(QPoint /*pos*/)
     menu.addAction(ui->actionRetry);
     menu.addAction(ui->actionRetryAll);
     menu.addSeparator();
+    menu.addAction(ui->actionShowErrorMessage);
     menu.addAction(ui->actionChangeOutputFilename);
     menu.addAction(ui->actionChangeOutputDirectory);
     menu.addAction(ui->actionSetParameters);
-    menu.addAction(ui->actionShowErrorMessage);
 
     menu.exec(QCursor::pos());
 }
