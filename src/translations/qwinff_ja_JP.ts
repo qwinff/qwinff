@@ -60,6 +60,10 @@
         <source>Italian</source>
         <translation>イタリア語</translation>
     </message>
+    <message>
+        <source>Czech</source>
+        <translation>チェコ語</translation>
+    </message>
 </context>
 <context>
     <name>AboutFFmpegDialog</name>
@@ -207,7 +211,7 @@
     </message>
     <message>
         <source>Use the source bitrate if it is smaller than the configured output bitrate. This can reduce output file size in certain conditions.</source>
-        <translation>設定された出力ビットレートより小さい場合、ソースビットレートと同じ値を使用。これにより、出力サイズを軽減できます。</translation>
+        <translation type="obsolete">設定された出力ビットレートより小さい場合、ソースビットレートと同じ値を使用。これにより、出力サイズを軽減できます。</translation>
     </message>
     <message>
         <source>Audio</source>
@@ -271,7 +275,7 @@
     </message>
     <message>
         <source>Auto Adjust Bitrate</source>
-        <translation>ビットレートを自動調整</translation>
+        <translation type="obsolete">ビットレートを自動調整</translation>
     </message>
     <message>
         <source>Use same video quality as source (implies VBR).</source>
@@ -291,23 +295,33 @@
     </message>
     <message>
         <source>Time</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Begin Time</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">時間</translation>
     </message>
     <message>
         <source>From Begin</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>End Time</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">始めから</translation>
     </message>
     <message>
         <source>To End</source>
+        <translation type="unfinished">終わりまで</translation>
+    </message>
+    <message>
+        <source>(auto)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cutting</source>
+        <extracomment>video time cutting: options for begin time and end time</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scaling</source>
+        <extracomment>time scaling, changing the speed of the output file</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Speed (Experimental)</source>
+        <translation type="unfinished">速さ (実験的)</translation>
     </message>
 </context>
 <context>
@@ -471,6 +485,16 @@
         <source>Output Directory</source>
         <translation>出力ディレクトリ</translation>
     </message>
+    <message>
+        <source>Error Message from FFmpeg:
+
+</source>
+        <translation type="unfinished">FFmpegからのエラーメッセージ:</translation>
+    </message>
+    <message>
+        <source>Error: %1</source>
+        <translation type="unfinished">エラー: %1</translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -548,7 +572,7 @@
     </message>
     <message>
         <source>R&amp;emove Completed Items</source>
-        <translation>完了済みの項目を除去(&amp;E)</translation>
+        <translation type="obsolete">完了済みの項目を除去(&amp;E)</translation>
     </message>
     <message>
         <source>QWinFF</source>
@@ -556,7 +580,7 @@
     </message>
     <message>
         <source>&amp;Remove Selected Items</source>
-        <translation>選択された項目を除去(&amp;R)</translation>
+        <translation type="obsolete">選択された項目を除去(&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Add Files</source>
@@ -580,11 +604,11 @@
     </message>
     <message>
         <source>FFprobe not found. The application will quit now.</source>
-        <translation>FFprobe が見つかりません、アプリケーションを終了します.</translation>
+        <translation type="obsolete">FFprobe が見つかりません、アプリケーションを終了します.</translation>
     </message>
     <message>
         <source>FFmpeg not found. The application will quit now.</source>
-        <translation>FFmpeg が見つかりません、アプリケーションを終了します.</translation>
+        <translation type="obsolete">FFmpeg が見つかりません、アプリケーションを終了します.</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
@@ -665,7 +689,7 @@
     </message>
     <message>
         <source>FFprobe Error</source>
-        <translation>FFprobe エラー</translation>
+        <translation type="obsolete">FFprobe エラー</translation>
     </message>
     <message>
         <source>Open output folder of the first selected file.</source>
@@ -673,7 +697,7 @@
     </message>
     <message>
         <source>FFmpeg Error</source>
-        <translation>FFmpeg エラー</translation>
+        <translation type="obsolete">FFmpeg エラー</translation>
     </message>
     <message>
         <source>Retry all tasks.</source>
@@ -698,12 +722,12 @@
     <message>
         <source>Shutdown</source>
         <extracomment>Shutdown the computer (completely poweroff)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>シャットダウン</translation>
     </message>
     <message>
         <source>Suspend</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>サスペンド</translation>
     </message>
     <message>
         <source>Shutdown when all tasks are done.</source>
@@ -716,10 +740,31 @@
     <message>
         <source>Hibernate</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>ハイバネート</translation>
     </message>
     <message>
         <source>Hibernate when all tasks are done.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Remove Selected</source>
+        <extracomment>remove selected (tasks, items)</extracomment>
+        <translation>選択された項目を除去(&amp;R)</translation>
+    </message>
+    <message>
+        <source>R&amp;emove Completed</source>
+        <extracomment>remove completed (task, items)</extracomment>
+        <translation>完了済みの項目を除去(&amp;E)</translation>
+    </message>
+    <message>
+        <source>Show Error &amp;Message</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MediaConverter</name>
+    <message>
+        <source>%1 not found. The application will quit now.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

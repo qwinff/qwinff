@@ -13,6 +13,7 @@
     </message>
     <message>
         <source>Compiled with Qt %1</source>
+        <extracomment>Qt version</extracomment>
         <translation>Zkompilováno pomocí Qt %1</translation>
     </message>
     <message>
@@ -39,6 +40,30 @@
         <source>FFmpeg presets were taken from WinFF.</source>
         <translation>Nastavení FFmpeg bylo převzato z WinFF.</translation>
     </message>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Translators</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compiled with libnotify %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Japanese</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Italian</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Czech</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutFFmpegDialog</name>
@@ -56,6 +81,7 @@
     </message>
     <message>
         <source>FFmpeg is a complete, cross-platform solution to record, convert and stream audio and video. It includes libavcodec - the leading audio/video codec library.</source>
+        <extracomment>ffmpeg description</extracomment>
         <translation>FFmpef je kompletní řešení pro nahrávání, konverzi a streamování audia a videa, fungující nad několika platformami. Obsahuje kodek libav - přední knihovnu pro převod audia a videa.</translation>
     </message>
     <message>
@@ -64,6 +90,7 @@
     </message>
     <message>
         <source>Please visit %1 for more information.</source>
+        <extracomment>visit ffmpeg website</extracomment>
         <translation>Chcete-li získat další informace, prosím navštivte %1 .</translation>
     </message>
 </context>
@@ -131,6 +158,7 @@
     </message>
     <message>
         <source>Select Files</source>
+        <extracomment>This text is the title of an openfile dialog.</extracomment>
         <translation>Vyberte soubory</translation>
     </message>
     <message>
@@ -155,6 +183,7 @@
     </message>
     <message>
         <source>Select Directory</source>
+        <extracomment>This text is the title of an open directory dialog.</extracomment>
         <translation>Vyberte prosím andresář</translation>
     </message>
 </context>
@@ -206,11 +235,11 @@
     </message>
     <message>
         <source>Use the source bitrate if it is smaller than the configured output bitrate. This can reduce output file size in certain conditions.</source>
-        <translation>Použít bitrate zdrojového souboru, je-li menší než nastavený. Toto může za jistých podmínek zmenšit velikost výstupního souboru.</translation>
+        <translation type="obsolete">Použít bitrate zdrojového souboru, je-li menší než nastavený. Toto může za jistých podmínek zmenšit velikost výstupního souboru.</translation>
     </message>
     <message>
         <source>Auto Adjust Bitrate</source>
-        <translation>Automaticky nastavit bitrate</translation>
+        <translation type="obsolete">Automaticky nastavit bitrate</translation>
     </message>
     <message>
         <source>Video</source>
@@ -264,19 +293,52 @@
         <source>Additional FFmpeg Options</source>
         <translation>Další nastavení FFmpeg</translation>
     </message>
+    <message>
+        <source>(auto)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cutting</source>
+        <extracomment>video time cutting: options for begin time and end time</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>From Begin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To End</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scaling</source>
+        <extracomment>time scaling, changing the speed of the output file</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Speed (Experimental)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConvertList</name>
     <message>
         <source>%1: %2</source>
+        <extracomment>FieldName: Value</extracomment>
         <translation>%1: %2</translation>
     </message>
     <message>
         <source>Cancel</source>
+        <extracomment>Cancel the operation of adding new tasks</extracomment>
         <translation>Zrušit</translation>
     </message>
     <message>
         <source>Adding files (%1/%2)</source>
+        <extracomment>This text is the progress indicator of adding multiple tasks. %1 is the number of files that are already added. %2 is the total number of files.</extracomment>
         <translation>Přidávání souboru (%1 z %2)</translation>
     </message>
     <message>
@@ -305,14 +367,17 @@
     </message>
     <message>
         <source>Failed</source>
+        <extracomment>The text to be displayed on the progress bar when a conversion fails</extracomment>
         <translation>Došlo k selhání</translation>
     </message>
     <message>
         <source>Finished</source>
+        <extracomment>The text to be displayed on the progress bar when a conversion finishes</extracomment>
         <translation>Dokončeno</translation>
     </message>
     <message>
         <source>Hide &quot;%1&quot;</source>
+        <extracomment>Hide a column in the list. For example, the text maybe &apos;Hide &quot;Duration&quot;&apos;. The two &quot; are quotation marks in English, you may replace it with local quotation marks.</extracomment>
         <translation>Skrýt &quot;%1&quot;</translation>
     </message>
     <message>
@@ -337,6 +402,7 @@
     </message>
     <message>
         <source>Sample Rate</source>
+        <extracomment>Audio</extracomment>
         <translation>Vzorkovací frekvence</translation>
     </message>
     <message>
@@ -345,6 +411,7 @@
     </message>
     <message>
         <source>Channels</source>
+        <extracomment>Audio</extracomment>
         <translation>Počet kanálů</translation>
     </message>
     <message>
@@ -361,6 +428,7 @@
     </message>
     <message>
         <source>Framerate</source>
+        <extracomment>Video</extracomment>
         <translation>Počet snímků za vteřinu</translation>
     </message>
     <message>
@@ -385,6 +453,7 @@
     </message>
     <message>
         <source>Removing tasks...</source>
+        <extracomment>Remove files from the tasklist</extracomment>
         <translation>Odebírám úlohy...</translation>
     </message>
     <message>
@@ -405,6 +474,7 @@
     </message>
     <message>
         <source>B</source>
+        <extracomment>Bytes</extracomment>
         <translation>B</translation>
     </message>
     <message>
@@ -414,6 +484,16 @@
     <message>
         <source>%1 already exists on disk or in the task list. Still use this name as the output filename?</source>
         <translation>%1 už existuje na disku nebo v seznamu úloh. Opravdu použít toto jméno výstupního souboru?</translation>
+    </message>
+    <message>
+        <source>Error Message from FFmpeg:
+
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error: %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -488,6 +568,7 @@
     </message>
     <message>
         <source>Set Parameters</source>
+        <extracomment>Edit output file parameters.</extracomment>
         <translation>Nastavit Parametry</translation>
     </message>
     <message>
@@ -520,7 +601,7 @@
     </message>
     <message>
         <source>&amp;Remove Selected Items</source>
-        <translation>&amp;Odebrat vybrané</translation>
+        <translation type="obsolete">&amp;Odebrat vybrané</translation>
     </message>
     <message>
         <source>Remove all selected items in the list.</source>
@@ -528,7 +609,7 @@
     </message>
     <message>
         <source>R&amp;emove Completed Items</source>
-        <translation>O&amp;debrat celý seznam</translation>
+        <translation type="obsolete">O&amp;debrat celý seznam</translation>
     </message>
     <message>
         <source>Remove Completed Items</source>
@@ -620,23 +701,71 @@
     </message>
     <message>
         <source>FFmpeg Error</source>
-        <translation>Chyba FFmeg</translation>
+        <translation type="obsolete">Chyba FFmeg</translation>
     </message>
     <message>
         <source>FFmpeg not found. The application will quit now.</source>
-        <translation>FFmpeg nebyl nalezen. Tato aplikace se nyní ukončí.</translation>
+        <translation type="obsolete">FFmpeg nebyl nalezen. Tato aplikace se nyní ukončí.</translation>
     </message>
     <message>
         <source>FFprobe Error</source>
-        <translation>Chyba FFprobe</translation>
+        <translation type="obsolete">Chyba FFprobe</translation>
     </message>
     <message>
         <source>FFprobe not found. The application will quit now.</source>
-        <translation>FFprobe nebyl nalezel. Tato aplikace se nyní ukončí.</translation>
+        <translation type="obsolete">FFprobe nebyl nalezel. Tato aplikace se nyní ukončí.</translation>
     </message>
     <message>
         <source>Failed to load preset file. The application will quit now.</source>
         <translation>Nepodařilo se načíst soubor předvoleb. Tato aplikace se nyní ukončí.</translation>
+    </message>
+    <message>
+        <source>&amp;Remove Selected</source>
+        <extracomment>remove selected (tasks, items)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>R&amp;emove Completed</source>
+        <extracomment>remove completed (task, items)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Error &amp;Message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shutdown</source>
+        <extracomment>Shutdown the computer (completely poweroff)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shutdown when all tasks are done.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Suspend</source>
+        <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Suspend when all tasks are done.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hibernate</source>
+        <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hibernate when all tasks are done.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MediaConverter</name>
+    <message>
+        <source>%1 not found. The application will quit now.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -652,6 +781,63 @@
     <message>
         <source>Number of threads to use in conversion</source>
         <translation>Počet vláken které je možné použít pro konverzi</translation>
+    </message>
+</context>
+<context>
+    <name>PoweroffDialog</name>
+    <message>
+        <source>QWinFF</source>
+        <translation type="unfinished">QWinFF</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Zrušit</translation>
+    </message>
+    <message>
+        <source>Shutdown immediately</source>
+        <extracomment>Shutdown the computer</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Suspend immediately</source>
+        <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hibernate immediately</source>
+        <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shutdown</source>
+        <extracomment>Shutdown the computer</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Suspend</source>
+        <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hibernate</source>
+        <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Operation Failed: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The computer will shutdown in &lt;b&gt;%1&lt;/b&gt; seconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The computer will suspend in &lt;b&gt;%1&lt;/b&gt; seconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The computer will hibernate in &lt;b&gt;%1&lt;/b&gt; seconds</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
