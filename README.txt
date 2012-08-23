@@ -30,6 +30,10 @@ http://qt.nokia.com/products
 This program relies on FFmpeg (ffmpeg.org) to do conversion.
 License: LGPL/GPL
 
+Some audio-processing functionalities depends on SoX, the Swiss Army knife of
+sound processing programs: http://sox.sourceforge.net/
+License: LGPL/GPL
+
 Other open source projects that influenced the development of QWinFF:
   * WinFF (winff.org) - Presets, Ideas
   * Sinthgunt (code.google.com/p/sinthgunt) - Presets, Parsing FFmpeg Output

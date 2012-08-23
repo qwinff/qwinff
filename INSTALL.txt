@@ -84,17 +84,20 @@ Extract the source code to a directory.
 Enter Qt4 console from the start menu entry and cd to the directory containing
 the extracted source code.
 
-Type "windows_build.bat"
+Type "windows_build.bat". (or "windows_build_portable.bat" which will build
+QWinFF as a portable application)
 
 If the build was successful,  the output files will be copied to
-windows_release\
+windows_release\. (or windows_release_portable\ for portable version)
 
 Copy necessary Qt DLLs to windows_release\
 If you are using mingw, the DLLs are QtCore4.dll, QtGui4.dll,
 libgcc_s_dw2-1.dll and mingwm10.dll, which can be found in
 <QtSDK>\Desktop\Qt\4.x.x\mingw\bin.
 
-Download the latest FFmpeg static builds and copy ffmpeg.exe and ffprobe.exe
-to windows_release\ffmpeg.
+Download FFmpeg Windows binaries from http://ffmpeg.zeranoe.com/builds/ and put
+them under windows_release\ffmpeg. Download SoX Windows binaries from
+http://sourceforge.net/projects/sox/files/sox/ and put them under
+windows_release\sox
 
 Now you can execute QWinFF by clicking on the executable file.
