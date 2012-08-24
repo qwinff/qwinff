@@ -48,8 +48,10 @@ Section
 
 	SetOutPath $INSTDIR\translations
 	File translations\*
-	setOutPath $INSTDIR\ffmpeg
+	SetOutPath $INSTDIR\ffmpeg
 	File ffmpeg\*
+	SetOutPath $INSTDIR\sox
+	File sox\*
 
 
 	# Create Uninstaller
@@ -78,6 +80,8 @@ Section "un.Uninstaller"
 	RmDir  $INSTDIR\ffmpeg
 	Delete $INSTDIR\translations\*
 	RmDir  $INSTDIR\translations
+	Delete $INSTDIR\sox\*
+	RmDir  $INSTDIR\sox
 	RmDir  $INSTDIR    # Remove the installation directory if it's empty.
 
 	!insertmacro MUI_STARTMENU_GETFOLDER Application $StartMenuFolder

@@ -102,6 +102,6 @@ bool AudioFilter::start(ConversionParameters& params, QProcess *dest)
 bool AudioFilter::available()
 {
     QProcess sox_process;
-    sox_process.start(ExePath::getPath("sox"));
+    sox_process.start(ExePath::getPath("sox"), QStringList());
     return sox_process.waitForStarted(TIMEOUT);
 }
