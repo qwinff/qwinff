@@ -87,6 +87,7 @@ private:
     void setup_toolbar();
     void setup_statusbar();
     void setup_poweroff_button();
+    void setup_appicon();
     void set_poweroff_behavior(int);
     int get_poweroff_behavior();
     bool load_presets();

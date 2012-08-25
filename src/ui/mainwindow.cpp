@@ -73,6 +73,7 @@ MainWindow::MainWindow(QWidget *parent, const QStringList& fileList) :
     setup_menus();
     setup_toolbar();
     setup_statusbar();
+    setup_appicon();
 
     load_settings();
 
@@ -509,6 +510,20 @@ void MainWindow::setup_poweroff_button()
     } else {
         ui->toolBar->addWidget(button);
     }
+}
+
+// Fill window icon with multiple sizes of images.
+void MainWindow::setup_appicon()
+{
+    QIcon icon;
+    int sizes[] = {16, 24, 32, 48, 256};
+    const int count = sizeof(sizes) / sizeof(int);
+    const char resource_template[] = ":/app/icons/qwinff_%1x%1";
+    for (int i=0; i<count; i++) {
+        icon.addPixmap(QPixmap(QString(resource_template).arg(sizes[i])));
+    }
+    setWindowIcon(icon);
+    ui->actionAbout->setIcon(icon);
 }
 
 void MainWindow::set_poweroff_behavior(int action)

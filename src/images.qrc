@@ -25,5 +25,10 @@
         <file>icons/qwinff.png</file>
         <file>icons/qwinff_small.png</file>
         <file>icons/banner.png</file>
+        <file>icons/qwinff_16x16.png</file>
+        <file>icons/qwinff_24x24.png</file>
+        <file>icons/qwinff_32x32.png</file>
+        <file>icons/qwinff_48x48.png</file>
+        <file>icons/qwinff_256x256.png</file>
     </qresource>
 </RCC>
