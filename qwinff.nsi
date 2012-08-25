@@ -9,7 +9,7 @@ Name "${APPNAME}"
 OutFile "qwinff_${VERSION}-setup.exe"
 InstallDir $PROGRAMFILES\QWinFF
 
-RequestExecutionLevel user
+RequestExecutionLevel admin
 
 var StartMenuFolder
 
