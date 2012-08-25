@@ -4,6 +4,7 @@
 !define DESCRIPTION "A cross platform media converter GUI"
 !define UNINSTALLER "uninstall.exe"
 !define LICENSE "license.txt"
+!define CHANGELOG "changelog.txt"
 
 Name "${APPNAME}"
 OutFile "qwinff_${VERSION}-setup.exe"
@@ -19,6 +20,11 @@ var StartMenuFolder
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT "HKLM"
 !define MUI_STARTMENUPAGE_REGISTRY_KEY "Software\QWinFF"
 !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME "Start Menu Folder"
+!define MUI_FINISHPAGE_RUN
+!define MUI_FINISHPAGE_RUN_NOTCHECKED
+!define MUI_FINISHPAGE_RUN_FUNCTION "LaunchProgram"
+!define MUI_FINISHPAGE_SHOWREADME_NOTCHECKED
+!define MUI_FINISHPAGE_SHOWREADME $INSTDIR\${CHANGELOG}
 !insertmacro MUI_PAGE_STARTMENU Application $StartMenuFolder
 
 !insertmacro MUI_PAGE_INSTFILES
@@ -42,6 +48,7 @@ Section
 	File presets.xml
 	File *.dll
 	File ${LICENSE}
+	file ${CHANGELOG}
 
 	CreateDirectory translations
 	CreateDirectory ffmpeg
@@ -52,7 +59,6 @@ Section
 	File ffmpeg\*
 	SetOutPath $INSTDIR\sox
 	File sox\*
-
 
 	# Create Uninstaller
 	WriteUninstaller "$INSTDIR\${UNINSTALLER}"
@@ -66,6 +72,10 @@ Section
 
 SectionEnd
 
+Function LaunchProgram
+	ExecShell "" "$INSTDIR\qwinff.exe"
+FunctionEnd
+
 # Uninstaller
 
 Section "un.Uninstaller"
@@ -76,6 +86,7 @@ Section "un.Uninstaller"
 	Delete $INSTDIR\presets.xml
 	Delete $INSTDIR\*.dll
 	Delete $INSTDIR\${LICENSE}
+	Delete $INSTDIR\${CHANGELOG}
 	Delete $INSTDIR\ffmpeg\*
 	RmDir  $INSTDIR\ffmpeg
 	Delete $INSTDIR\translations\*

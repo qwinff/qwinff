@@ -78,22 +78,22 @@ and vice versa.
 4) Build on Windows
 
 You must install Qt4 SDK to build QWinFF.
+After installing Qt4, you have to add the paths containing qt tools
+and MinGW executables to PATH.
 
 Extract the source code to a directory.
 
-Enter Qt4 console from the start menu entry and cd to the directory containing
-the extracted source code.
-
-Type "windows_build.bat". (or "windows_build_portable.bat" which will build
-QWinFF as a portable application)
+Open the directory and click on "windows_build.bat".
+(or "windows_build_portable.bat" which will build QWinFF as a portable
+application)
 
 If the build was successful,  the output files will be copied to
 windows_release\. (or windows_release_portable\ for portable version)
 
 Copy necessary Qt DLLs to windows_release\
-If you are using mingw, the DLLs are QtCore4.dll, QtGui4.dll,
-libgcc_s_dw2-1.dll and mingwm10.dll, which can be found in
-<QtSDK>\Desktop\Qt\4.x.x\mingw\bin.
+If you are using the official QtSDK, the DLLs are probably QtCore4.dll,
+QtGui4.dll, libgcc_s_dw2-1.dll, libstdc++-6.dll and mingwm10.dll.
+These files can be found in <QtSDK>\Desktop\Qt\4.x.x\mingw\bin.
 
 Download FFmpeg Windows binaries from http://ffmpeg.zeranoe.com/builds/ and put
 them under windows_release\ffmpeg. Download SoX Windows binaries from
@@ -101,3 +101,6 @@ http://sourceforge.net/projects/sox/files/sox/ and put them under
 windows_release\sox
 
 Now you can execute QWinFF by clicking on the executable file.
+
+The NSIS script (qwinff.nsi) under windows_release\ can be used to create
+an installer.

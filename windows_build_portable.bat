@@ -8,9 +8,10 @@ qmake DEFINES+=PORTABLE_APP
 mingw32-make release
 popd
 
-:: Create output directory if it doesn't exist.
+:: Create output directory if it does not exist.
 if not exist "%DEST_DIR%" mkdir "%DEST_DIR%"
 if not exist "%DEST_DIR%\ffmpeg" mkdir "%DEST_DIR%\ffmpeg"
+if not exist "%DEST_DIR%\sox" mkdir "%DEST_DIR%\sox"
 if not exist "%DEST_DIR%\translations" mkdir "%DEST_DIR%\translations"
 
 :: Copy the final executable to the output directory.
@@ -20,6 +21,9 @@ copy ".\src\release\qwinff.exe" "%DEST_DIR%"
 copy ".\src\presets.xml" "%DEST_DIR%"
 copy ".\src\translations\*.qm" "%DEST_DIR%\translations"
 copy "COPYING-v3.txt" "%DEST_DIR%\license.txt"
+copy "CHANGELOG.txt" "%DEST_DIR%\changelog.txt"
 unix2dos "%DEST_DIR%\license.txt"
+unix2dos "%DEST_DIR%\changelog.txt"
 
 @echo Files are copied to %DEST_DIR%
+pause

@@ -20,7 +20,10 @@ copy ".\src\release\qwinff.exe" "%DEST_DIR%"
 copy ".\src\presets.xml" "%DEST_DIR%"
 copy ".\src\translations\*.qm" "%DEST_DIR%\translations"
 copy "COPYING-v3.txt" "%DEST_DIR%\license.txt"
-unix2dos "%DEST_DIR%\license.txt"
+copy "CHANGELOG.txt" "%DEST_DIR%\changelog.txt"
 copy "qwinff.nsi" "%DEST_DIR%\qwinff.nsi"
+unix2dos "%DEST_DIR%\license.txt"
+unix2dos "%DEST_DIR%\changelog.txt"
 
 @echo Files are copied to %DEST_DIR%
+pause
