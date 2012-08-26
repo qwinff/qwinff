@@ -409,9 +409,11 @@ void MainWindow::setup_toolbar()
     toolbar->addAction(ui->actionAddFiles);
     toolbar->addAction(ui->actionStartConversion);
     toolbar->addAction(ui->actionStopConversion);
-    toolbar->addSeparator();
     toolbar->addAction(ui->actionRetry);
     toolbar->addAction(ui->actionRetryAll);
+    toolbar->addSeparator();
+    toolbar->addAction(ui->actionRemoveSelectedItems);
+    toolbar->addAction(ui->actionRemoveCompletedItems);
     toolbar->addSeparator();
     toolbar->addAction(ui->actionOpenOutputFolder);
     setup_poweroff_button();
