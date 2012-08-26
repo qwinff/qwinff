@@ -45,6 +45,10 @@ AboutDialog::AboutDialog(QWidget *parent) :
 #ifdef VERSION_ID_STRING
          + QString(" %1").arg(QString(VERSION_ID_STRING))
 #endif
+#ifdef PORTABLE_APP
+         /*: Portable version (no installation, no writing registry) */
+         + " " + tr("Portable")
+#endif
          + "<br>"
          /*: Qt version */
          + tr("Compiled with Qt %1").arg(QT_VERSION_STR)
