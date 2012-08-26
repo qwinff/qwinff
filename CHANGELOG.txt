@@ -1,8 +1,17 @@
+Version 0.1.6:
+ (2012-08-26)
+  - New Feature: Adjust video speed (requires sox to be installed).
+  - Added Czech translation.
+  - Rearranged toolbar actions.
+  - Fixed: Auto presets got messed up when being edited.
+  - Removed "Auto bitrate" option
+  - Many UI improvements.
+
 Version 0.1.5:
  (2012-08-17)
   - New Feature: Shutdown computer when all tasks are done.
-  - Add Italian translation.
-  - Add several ffmpeg presets that don't give extra arguments.
+  - Added Italian translation.
+  - Added several ffmpeg presets that don't give extra arguments.
 
 Version 0.1.4:
  (2012-06-21) 
@@ -11,8 +20,8 @@ Version 0.1.4:
 
 Version 0.1.3:
   - Enable users to select the range of the media file to encode.
-  - Fix video encoding error on some systems due to ffmpeg multithread options.
-  - Remove "-aq 60" option in OGG Vorbis to prevent inflating the output file.
+  - Fixed video encoding error on some systems due to ffmpeg multithread options.
+  - Removed "-aq 60" option in OGG Vorbis to prevent inflating the output file.
 
 Version 0.1.2:
  (2012-02-11)

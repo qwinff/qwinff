@@ -31,7 +31,7 @@ This program relies on FFmpeg (ffmpeg.org) to do conversion.
 License: LGPL/GPL
 
 Some audio-processing functionalities depends on SoX, the Swiss Army knife of
-sound processing programs: http://sox.sourceforge.net/
+sound processing programs. See http://sox.sourceforge.net/ for details.
 License: LGPL/GPL
 
 Other open source projects that influenced the development of QWinFF:

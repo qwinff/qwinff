@@ -103,4 +103,4 @@ windows_release\sox
 Now you can execute QWinFF by clicking on the executable file.
 
 The NSIS script (qwinff.nsi) under windows_release\ can be used to create
-an installer.
+an installer. (see http://nsis.sourceforge.net)
