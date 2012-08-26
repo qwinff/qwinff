@@ -13,10 +13,6 @@
   <property name="windowTitle">
    <string>Add Tasks</string>
   </property>
-  <property name="windowIcon">
-   <iconset resource="../images.qrc">
-    <normaloff>:/app/icons/qwinff_small.png</normaloff>:/app/icons/qwinff_small.png</iconset>
-  </property>
   <widget class="QWizardPage" name="wizardPageSelectFiles">
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>

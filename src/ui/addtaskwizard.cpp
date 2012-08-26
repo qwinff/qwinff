@@ -220,7 +220,7 @@ void AddTaskWizard::slotRemoveFilesFromList()
 
 void AddTaskWizard::slotEditPresetButton()
 {
-    ConversionParameterDialog dialog(this->parentWidget());
+    ConversionParameterDialog dialog(this);
     dialog.setGeometry(this->x(), this->y(), dialog.width(), dialog.height());
 
     if (dialog.exec(*m_current_param)) {

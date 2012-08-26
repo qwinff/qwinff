@@ -58,7 +58,7 @@ AboutDialog::AboutDialog(QWidget *parent) :
          //: %1 is the name and email of the programmer
          + tr("Programming: %1").arg("Timothy Lin &lt;lzh9102@gmail.com&gt;") + "<br>"
          //: %1 is the name and email of the logo designer
-         + tr("Logo Design: %1").arg("KuanYui &lt;azazabc123@gmail.com&gt;") + "<br><br>"
+         + tr("Logo Design: %1").arg("kuanyui &lt;azazabc123@gmail.com&gt;") + "<br><br>"
          + tr("This program is free software; you can redistribute it and/or modify it "
               "under the terms of the GNU General Public License version 2 or 3.")
          + "<br><br>"

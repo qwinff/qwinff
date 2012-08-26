@@ -13,10 +13,6 @@
   <property name="windowTitle">
    <string>QWinFF</string>
   </property>
-  <property name="windowIcon">
-   <iconset resource="../images.qrc">
-    <normaloff>:/app/icons/qwinff_small.png</normaloff>:/app/icons/qwinff_small.png</iconset>
-  </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QHBoxLayout" name="horizontalLayout"/>
   </widget>

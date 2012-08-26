@@ -135,7 +135,7 @@ void MainWindow::slotAddFiles()
 
 void MainWindow::slotOptions()
 {
-    OptionsDialog dialog;
+    OptionsDialog dialog(this);
     dialog.exec();
 }
 
@@ -189,12 +189,12 @@ void MainWindow::slotAboutQt()
 
 void MainWindow::slotAboutFFmpeg()
 {
-    AboutFFmpegDialog().exec();
+    AboutFFmpegDialog(this).exec();
 }
 
 void MainWindow::slotAbout()
 {
-    AboutDialog().exec();
+    AboutDialog(this).exec();
 }
 
 void MainWindow::slotListContextMenu(QPoint /*pos*/)
@@ -319,7 +319,7 @@ bool MainWindow::check_execute_conditions()
 // Popup wizard to add tasks.
 void MainWindow::add_files()
 {
-    AddTaskWizard wizard(m_presets);
+    AddTaskWizard wizard(m_presets, this);
 
     if (wizard.exec_openfile() == QDialog::Accepted) {
         // Add all input files to the list.
@@ -336,7 +336,7 @@ void MainWindow::add_files(const QStringList &fileList)
         urlList.push_back(QUrl::fromLocalFile(file));
     }
 
-    AddTaskWizard wizard(m_presets);
+    AddTaskWizard wizard(m_presets, this);
 
     if (wizard.exec(urlList) == QDialog::Accepted) {
         // Add all input files to the list.
