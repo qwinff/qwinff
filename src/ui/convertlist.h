@@ -22,6 +22,7 @@
 #include <QSharedPointer>
 #include <QHash>
 #include <QMessageBox>
+#include <QModelIndex>
 #include "converter/conversionparameters.h"
 
 class MediaConverter;
@@ -153,6 +154,7 @@ private slots:
     void slotHeaderContextMenu(QPoint);
     void slotHeaderContextMenuTriggered(QAction*);
     void slotRestoreListHeaders();
+    void slotDoubleClick(QModelIndex);
 
 protected:
     bool list_keyPressEvent(QKeyEvent *event);

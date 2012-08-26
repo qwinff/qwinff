@@ -33,6 +33,7 @@
 #include <QMenu>
 #include <QFileDialog>
 #include <QInputDialog>
+#include <QDesktopServices>
 #include <cassert>
 
 #define TIMEOUT 3000
@@ -133,6 +134,8 @@ ConvertList::ConvertList(Presets *presets, QWidget *parent) :
             this, SLOT(progress_refreshed(int)));
     connect(m_list, SIGNAL(itemSelectionChanged()),
             this, SIGNAL(itemSelectionChanged()));
+    connect(m_list, SIGNAL(doubleClicked(QModelIndex)),
+            this, SLOT(slotDoubleClick(QModelIndex)));
 
     // Propagate context menu event.
     m_list->setContextMenuPolicy(Qt::CustomContextMenu);
@@ -683,6 +686,34 @@ void ConvertList::slotRestoreListHeaders()
 
     // Restore default value.
     init_treewidget_columns_visibility(m_list);
+}
+
+void ConvertList::slotDoubleClick(QModelIndex index)
+{
+    int row = index.row();
+    if (row >= 0 && row < m_tasks.size()) {
+        Task *task = m_tasks[row].data();
+        if (task) {
+            switch (task->status) {
+            case Task::QUEUED:
+            case Task::FAILED:
+                // Show ConversionParameterDialog
+                editSelectedParameters();
+                break;
+            case Task::FINISHED:
+                // Open output folder
+                {
+                    QString folder_path = QFileInfo(task->param.destination).path();
+                    if (QFileInfo(folder_path).exists()) {
+                        QDesktopServices::openUrl(QUrl::fromLocalFile(folder_path));
+                    }
+                }
+                break;
+            default:
+                break;
+            }
+        }
+    }
 }
 
 // Events
