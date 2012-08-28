@@ -66,7 +66,7 @@ AboutDialog::AboutDialog(QWidget *parent) :
          + tr("This program is free software; you can redistribute it and/or modify it "
               "under the terms of the GNU General Public License version 2 or 3.")
          + "<br><br>"
-         + tr("QWinFF Project Page: %1").arg(url("http://code.google.com/p/qwinff/"))
+         + tr("QWinFF Homepage: %1").arg(url("http://qwinff.blogspot.com"))
          + "<br><br>"
          + tr("Some audio-processing functionalities are provided by SoX.")
          + " (" + url("http://sox.sourceforge.net/") + ")<br><br>"
