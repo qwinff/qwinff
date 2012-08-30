@@ -13,6 +13,7 @@
     </message>
     <message>
         <source>Logo Design: %1</source>
+        <extracomment>%1 is the name and email of the logo designer</extracomment>
         <translation>ロゴデザイン：%1</translation>
     </message>
     <message>
@@ -34,11 +35,12 @@
     </message>
     <message>
         <source>Programming: %1</source>
+        <extracomment>%1 is the name and email of the programmer</extracomment>
         <translation>プログラミング：%1</translation>
     </message>
     <message>
         <source>QWinFF Project Page: %1</source>
-        <translation>QWinFF プロジェクトページ: %1</translation>
+        <translation type="obsolete">QWinFF プロジェクトページ: %1</translation>
     </message>
     <message>
         <source>Information</source>
@@ -50,6 +52,7 @@
     </message>
     <message>
         <source>Japanese</source>
+        <extracomment>Japanese Language</extracomment>
         <translation>日本語</translation>
     </message>
     <message>
@@ -58,14 +61,25 @@
     </message>
     <message>
         <source>Italian</source>
+        <extracomment>Italian Language</extracomment>
         <translation>イタリア語</translation>
     </message>
     <message>
         <source>Czech</source>
+        <extracomment>Czech Language</extracomment>
         <translation>チェコ語</translation>
     </message>
     <message>
         <source>Some audio-processing functionalities are provided by SoX.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Portable</source>
+        <extracomment>Portable version (no installation, no writing registry)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>QWinFF Homepage: %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -498,6 +512,7 @@
     </message>
     <message>
         <source>Error: %1</source>
+        <extracomment>%1 is the error message</extracomment>
         <translation type="unfinished">エラー: %1</translation>
     </message>
 </context>
@@ -781,6 +796,7 @@
     <name>MediaConverter</name>
     <message>
         <source>%1 not found. The application will quit now.</source>
+        <extracomment>%1 is a computer program</extracomment>
         <translation type="unfinished"></translation>
     </message>
 </context>
