@@ -44,34 +44,34 @@
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informace</translation>
     </message>
     <message>
         <source>Translators</source>
-        <translation type="unfinished"></translation>
+        <translation>Překladatelé</translation>
     </message>
     <message>
         <source>Compiled with libnotify %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Zkompilováno s knihovnou libnotify %1</translation>
     </message>
     <message>
         <source>Japanese</source>
         <extracomment>Japanese Language</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Japonština</translation>
     </message>
     <message>
         <source>Italian</source>
         <extracomment>Italian Language</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Italština</translation>
     </message>
     <message>
         <source>Czech</source>
         <extracomment>Czech Language</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Čeština</translation>
     </message>
     <message>
         <source>Some audio-processing functionalities are provided by SoX.</source>
-        <translation type="unfinished"></translation>
+        <translation>Některé funkce pro zpracování zvuku poskytl SoX.</translation>
     </message>
     <message>
         <source>Portable</source>
@@ -313,34 +313,34 @@
     </message>
     <message>
         <source>(auto)</source>
-        <translation type="unfinished"></translation>
+        <translation>(automaticky)</translation>
     </message>
     <message>
         <source>Time</source>
         <extracomment>time-related options (speed, length)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Čas</translation>
     </message>
     <message>
         <source>Cutting</source>
         <extracomment>video time cutting: options for begin time and end time</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Sřih</translation>
     </message>
     <message>
         <source>From Begin</source>
-        <translation type="unfinished"></translation>
+        <translation>Od začátku</translation>
     </message>
     <message>
         <source>To End</source>
-        <translation type="unfinished"></translation>
+        <translation>Do konce</translation>
     </message>
     <message>
         <source>Scaling</source>
         <extracomment>time scaling, changing the speed of the output file</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Zvětšení</translation>
     </message>
     <message>
         <source>Speed (Experimental)</source>
-        <translation type="unfinished"></translation>
+        <translation>Rychlost (Experimentální)</translation>
     </message>
 </context>
 <context>
@@ -508,23 +508,25 @@
         <source>Error Message from FFmpeg:
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba FFmpeg:
+
+</translation>
     </message>
     <message>
         <source>Error: %1</source>
         <extracomment>%1 is the error message</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Chyba:%1</translation>
     </message>
 </context>
 <context>
     <name>ExtraTranslations</name>
     <message>
         <source>Convert between media file formats</source>
-        <translation type="unfinished"></translation>
+        <translation>Převést mezi formáty souborů</translation>
     </message>
     <message>
         <source>Media Converter</source>
-        <translation type="unfinished"></translation>
+        <translation>Převodník médií</translation>
     </message>
 </context>
 <context>
@@ -762,34 +764,34 @@
     </message>
     <message>
         <source>Show Error &amp;Message</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit Chybovou &amp;Hlášku</translation>
     </message>
     <message>
         <source>Shutdown</source>
         <extracomment>Shutdown the computer (completely poweroff)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Vypnout</translation>
     </message>
     <message>
         <source>Shutdown when all tasks are done.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyponout po dokončení všech úloh.</translation>
     </message>
     <message>
         <source>Suspend</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Uspat</translation>
     </message>
     <message>
         <source>Suspend when all tasks are done.</source>
-        <translation type="unfinished"></translation>
+        <translation>Uspat po dokončení všech úloh.</translation>
     </message>
     <message>
         <source>Hibernate</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hibernovat</translation>
     </message>
     <message>
         <source>Hibernate when all tasks are done.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hibernovat po dokončení všech úloh.</translation>
     </message>
 </context>
 <context>
@@ -797,7 +799,7 @@
     <message>
         <source>%1 not found. The application will quit now.</source>
         <extracomment>%1 is a computer program</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>%1 nebyl nalezen. Aplikace se nyní ukončí.</translation>
     </message>
 </context>
 <context>
@@ -819,57 +821,57 @@
     <name>PoweroffDialog</name>
     <message>
         <source>QWinFF</source>
-        <translation type="unfinished">QWinFF</translation>
+        <translation>QWinFF</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Zrušit</translation>
+        <translation>Zrušit</translation>
     </message>
     <message>
         <source>Shutdown immediately</source>
         <extracomment>Shutdown the computer</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Vypnout okamžitě</translation>
     </message>
     <message>
         <source>Suspend immediately</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Uspat okamžitě</translation>
     </message>
     <message>
         <source>Hibernate immediately</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hibernovat okamžitě</translation>
     </message>
     <message>
         <source>Shutdown</source>
         <extracomment>Shutdown the computer</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Vypnout</translation>
     </message>
     <message>
         <source>Suspend</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Uspat</translation>
     </message>
     <message>
         <source>Hibernate</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hibernovat</translation>
     </message>
     <message>
         <source>Operation Failed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Oprarace se nepovedla: %1</translation>
     </message>
     <message>
         <source>Shutting down in &lt;b&gt;%1&lt;/b&gt; seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>Vypínám za &lt;b&gt;%1&lt;/b&gt; sekund</translation>
     </message>
     <message>
         <source>Suspending in &lt;b&gt;%1&lt;/b&gt; seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>Uspávám za &lt;b&gt;%1&lt;/b&gt; sekund</translation>
     </message>
     <message>
         <source>Hibernating in &lt;b&gt;%1&lt;/b&gt; seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>Hibernuji za &lt;b&gt;%1&lt;/b&gt; sekund</translation>
     </message>
 </context>
 </TS>
