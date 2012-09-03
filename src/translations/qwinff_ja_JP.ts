@@ -2,6 +2,210 @@
 <!DOCTYPE TS>
 <TS version="2.0" language="ja_JP">
 <context>
+    <name>AboutDialog</name>
+    <message>
+        <source>Version: %1</source>
+        <translation>バージョン: %1</translation>
+    </message>
+    <message>
+        <source>Czech</source>
+        <extracomment>Czech Language</extracomment>
+        <translation>チェコ語</translation>
+    </message>
+    <message>
+        <source>Italian</source>
+        <extracomment>Italian Language</extracomment>
+        <translation>イタリア語</translation>
+    </message>
+    <message>
+        <source>About QWinFF</source>
+        <translation>QWinFF について</translation>
+    </message>
+    <message>
+        <source>Logo Design: %1</source>
+        <extracomment>%1 is the name and email of the logo designer</extracomment>
+        <translation>ロゴデザイン：%1</translation>
+    </message>
+    <message>
+        <source>FFmpeg presets were taken from WinFF.</source>
+        <translation>WinFFの FFmpeg プリセットを使用しています.</translation>
+    </message>
+    <message>
+        <source>Some audio-processing functionalities are provided by SoX.</source>
+        <translation>いくつかの音声処理機能は SoX により提供されています.</translation>
+    </message>
+    <message>
+        <source>QWinFF is a gui frontend for FFmpeg.</source>
+        <translation>QWinFF は FFmpeg のGUI フロントエンドツールです.</translation>
+    </message>
+    <message>
+        <source>Japanese</source>
+        <extracomment>Japanese Language</extracomment>
+        <translation>日本語</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation>インフォ</translation>
+    </message>
+    <message>
+        <source>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License version 2 or 3.</source>
+        <translation>このプログラムはフリーウェアです。 GNU一般共有使用許諾第2版(または 第3版)に基づき、ソフトウェアの変更、再配布は許可されます。</translation>
+    </message>
+    <message>
+        <source>Translators</source>
+        <translation>翻訳者</translation>
+    </message>
+    <message>
+        <source>Compiled with Qt %1</source>
+        <extracomment>Qt version</extracomment>
+        <translation>コンパイルに使用された Qt ：%1</translation>
+    </message>
+    <message>
+        <source>Programming: %1</source>
+        <extracomment>%1 is the name and email of the programmer</extracomment>
+        <translation>プログラミング：%1</translation>
+    </message>
+    <message>
+        <source>QWinFF Project Page: %1</source>
+        <translation type="obsolete">QWinFF プロジェクトページ: %1</translation>
+    </message>
+    <message>
+        <source>Compiled with libnotify %1</source>
+        <translation>コンパイルに使用された libnotify: %1</translation>
+    </message>
+    <message>
+        <source>Portable</source>
+        <extracomment>Portable version (no installation, no writing registry)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>QWinFF Homepage: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>AboutFFmpegDialog</name>
+    <message>
+        <source>About FFmpeg</source>
+        <translation>FFmpeg について</translation>
+    </message>
+    <message>
+        <source>Please visit %1 for more information.</source>
+        <extracomment>visit ffmpeg website</extracomment>
+        <translation>FFmpeg に関する情報: %1.</translation>
+    </message>
+    <message>
+        <source>FFmpeg</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Available Codecs</source>
+        <translation>利用可能なコーデック</translation>
+    </message>
+    <message>
+        <source>FFmpeg is a complete, cross-platform solution to record, convert and stream audio and video. It includes libavcodec - the leading audio/video codec library.</source>
+        <extracomment>ffmpeg description</extracomment>
+        <translation>FFmpeg は完全なクロスプラットフォームに対応した、音声、映像ストリームの変換ツールで、主要な音声/ 映像コーデック・ライブラリが含まれています。</translation>
+    </message>
+    <message>
+        <source>FFmpeg is free software licensed under the LGPL or GPL.</source>
+        <translation>FFmpeg は、LGPL / GPL ライセンスに基づき公開されているフリーソフトウェアです.</translation>
+    </message>
+</context>
+<context>
+    <name>AddTaskWizard</name>
+    <message>
+        <source>Edit</source>
+        <translation>編集</translation>
+    </message>
+    <message>
+        <source>Audio</source>
+        <translation>音声</translation>
+    </message>
+    <message>
+        <source>Video</source>
+        <translation>映像</translation>
+    </message>
+    <message>
+        <source>Some files could not be found.</source>
+        <translation>いくつかのファイルが見つかりません.</translation>
+    </message>
+    <message>
+        <source>Files to be converted</source>
+        <translation>変換されるファイル</translation>
+    </message>
+    <message>
+        <source>Please select at least one file.</source>
+        <translation>ファイルを選択してください.</translation>
+    </message>
+    <message>
+        <source>Remove selected files.</source>
+        <translation>選択されたファイルを除去.</translation>
+    </message>
+    <message>
+        <source>Select Directory</source>
+        <extracomment>This text is the title of an open directory dialog.</extracomment>
+        <translation>ディレクトリを選択</translation>
+    </message>
+    <message>
+        <source>Auto adjust output bitrate to reduce output file size.</source>
+        <translation>出力ファイルサイズが軽減するように出力ビットレートを自動調整.</translation>
+    </message>
+    <message>
+        <source>Select Files</source>
+        <extracomment>This text is the title of an openfile dialog.</extracomment>
+        <translation>ファイルを選択</translation>
+    </message>
+    <message>
+        <source>Failed to create folder. Please select another output folder.</source>
+        <translation>フォルダ作成に失敗、別の出力フォルダを選択してください.</translation>
+    </message>
+    <message>
+        <source>Auto Adjust Audio Bitrate</source>
+        <translation>音声ビットレートを自動調整</translation>
+    </message>
+    <message>
+        <source>Browse</source>
+        <translation>参照</translation>
+    </message>
+    <message>
+        <source>Preset</source>
+        <translation>プリセット</translation>
+    </message>
+    <message>
+        <source>Add Tasks</source>
+        <translation>タスクを追加</translation>
+    </message>
+    <message>
+        <source>Add files.</source>
+        <translation>ファイルを追加.</translation>
+    </message>
+    <message>
+        <source>Output Settings</source>
+        <translation>出力設定</translation>
+    </message>
+    <message>
+        <source>Folder does not exist. Create a new folder?</source>
+        <translation>フォルダが存在しません、新たに作成しますか?</translation>
+    </message>
+    <message>
+        <source>Multimedia</source>
+        <translation>マルチメディア</translation>
+    </message>
+    <message>
+        <source>Output Path</source>
+        <translation>出力パス</translation>
+    </message>
+    <message>
+        <source>Convert to</source>
+        <translation>変換形式</translation>
+    </message>
+    <message>
+        <source>All files</source>
+        <translation>すべてのファイル</translation>
+    </message>
+</context>
+<context>
     <name>ConversionParameterDialog</name>
     <message>
         <source>%</source>
@@ -21,6 +225,7 @@
     </message>
     <message>
         <source>Time</source>
+        <extracomment>time-related options (speed, length)</extracomment>
         <translation>時間</translation>
     </message>
     <message>
@@ -81,6 +286,7 @@
     </message>
     <message>
         <source>Scaling</source>
+        <extracomment>time scaling, changing the speed of the output file</extracomment>
         <translation>スケーリング</translation>
     </message>
     <message>
@@ -97,6 +303,7 @@
     </message>
     <message>
         <source>Cutting</source>
+        <extracomment>video time cutting: options for begin time and end time</extracomment>
         <translation>カッティング</translation>
     </message>
     <message>
@@ -132,6 +339,7 @@
     <name>ConvertList</name>
     <message>
         <source>B</source>
+        <extracomment>Bytes</extracomment>
         <translation>B</translation>
     </message>
     <message>
@@ -160,6 +368,7 @@
     </message>
     <message>
         <source>Finished</source>
+        <extracomment>The text to be displayed on the progress bar when a conversion finishes</extracomment>
         <translation>完了</translation>
     </message>
     <message>
@@ -176,6 +385,7 @@
     </message>
     <message>
         <source>Sample Rate</source>
+        <extracomment>Audio</extracomment>
         <translation>サンプルレート</translation>
     </message>
     <message>
@@ -188,10 +398,12 @@
     </message>
     <message>
         <source>%1: %2</source>
+        <extracomment>FieldName: Value</extracomment>
         <translation>%1: %2</translation>
     </message>
     <message>
         <source>Removing tasks...</source>
+        <extracomment>Remove files from the tasklist</extracomment>
         <translation>タスクを除去中...</translation>
     </message>
     <message>
@@ -200,6 +412,7 @@
     </message>
     <message>
         <source>Cancel</source>
+        <extracomment>Cancel the operation of adding new tasks</extracomment>
         <translation>キャンセル</translation>
     </message>
     <message>
@@ -208,6 +421,7 @@
     </message>
     <message>
         <source>Failed</source>
+        <extracomment>The text to be displayed on the progress bar when a conversion fails</extracomment>
         <translation>失敗</translation>
     </message>
     <message>
@@ -236,6 +450,7 @@
     </message>
     <message>
         <source>Framerate</source>
+        <extracomment>Video</extracomment>
         <translation>フレームレート</translation>
     </message>
     <message>
@@ -244,10 +459,12 @@
     </message>
     <message>
         <source>Error: %1</source>
+        <extracomment>%1 is the error message</extracomment>
         <translation>エラー: %1</translation>
     </message>
     <message>
         <source>Hide &quot;%1&quot;</source>
+        <extracomment>Hide a column in the list. For example, the text maybe &apos;Hide &quot;Duration&quot;&apos;. The two &quot; are quotation marks in English, you may replace it with local quotation marks.</extracomment>
         <translation>&quot;%1&quot; を隠す</translation>
     </message>
     <message>
@@ -274,6 +491,7 @@
     </message>
     <message>
         <source>Adding files (%1/%2)</source>
+        <extracomment>This text is the progress indicator of adding multiple tasks. %1 is the number of files that are already added. %2 is the total number of files.</extracomment>
         <translation>ファイルを追加 (%1/%2)</translation>
     </message>
     <message>
@@ -282,11 +500,23 @@
     </message>
     <message>
         <source>Channels</source>
+        <extracomment>Audio</extracomment>
         <translation>チャンネル</translation>
     </message>
     <message>
         <source>Output Directory</source>
         <translation>出力ディレクトリ</translation>
+    </message>
+</context>
+<context>
+    <name>ExtraTranslations</name>
+    <message>
+        <source>Convert between media file formats</source>
+        <translation>音声とビデオファイルの変換</translation>
+    </message>
+    <message>
+        <source>Media Converter</source>
+        <translation>メディア変換</translation>
     </message>
 </context>
 <context>
@@ -305,6 +535,7 @@
     </message>
     <message>
         <source>&amp;Remove Selected</source>
+        <extracomment>remove selected (tasks, items)</extracomment>
         <translation>選択された項目を除去(&amp;R)</translation>
     </message>
     <message>
@@ -365,6 +596,7 @@
     </message>
     <message>
         <source>R&amp;emove Completed</source>
+        <extracomment>remove completed (task, items)</extracomment>
         <translation>完了済みの項目を除去(&amp;E)</translation>
     </message>
     <message>
@@ -437,6 +669,7 @@
     </message>
     <message>
         <source>Hibernate</source>
+        <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
         <translation>休止状態</translation>
     </message>
     <message>
@@ -473,6 +706,7 @@
     </message>
     <message>
         <source>Suspend</source>
+        <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
         <translation>サスペンド</translation>
     </message>
     <message>
@@ -485,6 +719,7 @@
     </message>
     <message>
         <source>Set Parameters</source>
+        <extracomment>Edit output file parameters.</extracomment>
         <translation>パラメータを設定</translation>
     </message>
     <message>
@@ -521,192 +756,16 @@
     </message>
     <message>
         <source>Shutdown</source>
+        <extracomment>Shutdown the computer (completely poweroff)</extracomment>
         <translation>シャットダウン</translation>
     </message>
 </context>
 <context>
-    <name>AddTaskWizard</name>
+    <name>MediaConverter</name>
     <message>
-        <source>Edit</source>
-        <translation>編集</translation>
-    </message>
-    <message>
-        <source>Audio</source>
-        <translation>音声</translation>
-    </message>
-    <message>
-        <source>Video</source>
-        <translation>映像</translation>
-    </message>
-    <message>
-        <source>Some files could not be found.</source>
-        <translation>いくつかのファイルが見つかりません.</translation>
-    </message>
-    <message>
-        <source>Files to be converted</source>
-        <translation>変換されるファイル</translation>
-    </message>
-    <message>
-        <source>Please select at least one file.</source>
-        <translation>ファイルを選択してください.</translation>
-    </message>
-    <message>
-        <source>Remove selected files.</source>
-        <translation>選択されたファイルを除去.</translation>
-    </message>
-    <message>
-        <source>Select Directory</source>
-        <translation>ディレクトリを選択</translation>
-    </message>
-    <message>
-        <source>Auto adjust output bitrate to reduce output file size.</source>
-        <translation>出力ファイルサイズが軽減するように出力ビットレートを自動調整.</translation>
-    </message>
-    <message>
-        <source>Select Files</source>
-        <translation>ファイルを選択</translation>
-    </message>
-    <message>
-        <source>Failed to create folder. Please select another output folder.</source>
-        <translation>フォルダ作成に失敗、別の出力フォルダを選択してください.</translation>
-    </message>
-    <message>
-        <source>Auto Adjust Audio Bitrate</source>
-        <translation>音声ビットレートを自動調整</translation>
-    </message>
-    <message>
-        <source>Browse</source>
-        <translation>参照</translation>
-    </message>
-    <message>
-        <source>Preset</source>
-        <translation>プリセット</translation>
-    </message>
-    <message>
-        <source>Add Tasks</source>
-        <translation>タスクを追加</translation>
-    </message>
-    <message>
-        <source>Add files.</source>
-        <translation>ファイルを追加.</translation>
-    </message>
-    <message>
-        <source>Output Settings</source>
-        <translation>出力設定</translation>
-    </message>
-    <message>
-        <source>Folder does not exist. Create a new folder?</source>
-        <translation>フォルダが存在しません、新たに作成しますか?</translation>
-    </message>
-    <message>
-        <source>Multimedia</source>
-        <translation>マルチメディア</translation>
-    </message>
-    <message>
-        <source>Output Path</source>
-        <translation>出力パス</translation>
-    </message>
-    <message>
-        <source>Convert to</source>
-        <translation>変換形式</translation>
-    </message>
-    <message>
-        <source>All files</source>
-        <translation>すべてのファイル</translation>
-    </message>
-</context>
-<context>
-    <name>AboutDialog</name>
-    <message>
-        <source>Version: %1</source>
-        <translation>バージョン: %1</translation>
-    </message>
-    <message>
-        <source>Czech</source>
-        <translation>チェコ語</translation>
-    </message>
-    <message>
-        <source>Italian</source>
-        <translation>イタリア語</translation>
-    </message>
-    <message>
-        <source>About QWinFF</source>
-        <translation>QWinFF について</translation>
-    </message>
-    <message>
-        <source>Logo Design: %1</source>
-        <translation>ロゴデザイン：%1</translation>
-    </message>
-    <message>
-        <source>FFmpeg presets were taken from WinFF.</source>
-        <translation>WinFFの FFmpeg プリセットを使用しています.</translation>
-    </message>
-    <message>
-        <source>Some audio-processing functionalities are provided by SoX.</source>
-        <translation>いくつかの音声処理機能は SoX により提供されています.</translation>
-    </message>
-    <message>
-        <source>QWinFF is a gui frontend for FFmpeg.</source>
-        <translation>QWinFF は FFmpeg のGUI フロントエンドツールです.</translation>
-    </message>
-    <message>
-        <source>Japanese</source>
-        <translation>日本語</translation>
-    </message>
-    <message>
-        <source>Information</source>
-        <translation>インフォ</translation>
-    </message>
-    <message>
-        <source>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License version 2 or 3.</source>
-        <translation>このプログラムはフリーウェアです。 GNU一般共有使用許諾第2版(または 第3版)に基づき、ソフトウェアの変更、再配布は許可されます。</translation>
-    </message>
-    <message>
-        <source>Translators</source>
-        <translation>翻訳者</translation>
-    </message>
-    <message>
-        <source>Compiled with Qt %1</source>
-        <translation>コンパイルに使用された Qt ：%1</translation>
-    </message>
-    <message>
-        <source>Programming: %1</source>
-        <translation>プログラミング：%1</translation>
-    </message>
-    <message>
-        <source>QWinFF Project Page: %1</source>
-        <translation>QWinFF プロジェクトページ: %1</translation>
-    </message>
-    <message>
-        <source>Compiled with libnotify %1</source>
-        <translation>コンパイルに使用された libnotify: %1</translation>
-    </message>
-</context>
-<context>
-    <name>AboutFFmpegDialog</name>
-    <message>
-        <source>About FFmpeg</source>
-        <translation>FFmpeg について</translation>
-    </message>
-    <message>
-        <source>Please visit %1 for more information.</source>
-        <translation>FFmpeg に関する情報: %1.</translation>
-    </message>
-    <message>
-        <source>FFmpeg</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>Available Codecs</source>
-        <translation>利用可能なコーデック</translation>
-    </message>
-    <message>
-        <source>FFmpeg is a complete, cross-platform solution to record, convert and stream audio and video. It includes libavcodec - the leading audio/video codec library.</source>
-        <translation>FFmpeg は完全なクロスプラットフォームに対応した、音声、映像ストリームの変換ツールで、主要な音声/ 映像コーデック・ライブラリが含まれています。</translation>
-    </message>
-    <message>
-        <source>FFmpeg is free software licensed under the LGPL or GPL.</source>
-        <translation>FFmpeg は、LGPL / GPL ライセンスに基づき公開されているフリーソフトウェアです.</translation>
+        <source>%1 not found. The application will quit now.</source>
+        <extracomment>%1 is a computer program</extracomment>
+        <translation>%1 が見つかりません. アプリケーションを終了します.</translation>
     </message>
 </context>
 <context>
@@ -732,10 +791,12 @@
     </message>
     <message>
         <source>Shutdown immediately</source>
+        <extracomment>Shutdown the computer</extracomment>
         <translation>すぐにシャットダウン</translation>
     </message>
     <message>
         <source>Hibernate immediately</source>
+        <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
         <translation>すぐに休止状態</translation>
     </message>
     <message>
@@ -744,6 +805,7 @@
     </message>
     <message>
         <source>Suspend immediately</source>
+        <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
         <translation>すぐにスリープ</translation>
     </message>
     <message>
@@ -756,10 +818,12 @@
     </message>
     <message>
         <source>Hibernate</source>
+        <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
         <translation>ハイバネート</translation>
     </message>
     <message>
         <source>Suspend</source>
+        <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
         <translation>スリープ</translation>
     </message>
     <message>
@@ -772,25 +836,8 @@
     </message>
     <message>
         <source>Shutdown</source>
+        <extracomment>Shutdown the computer</extracomment>
         <translation>シャットダウン</translation>
-    </message>
-</context>
-<context>
-    <name>MediaConverter</name>
-    <message>
-        <source>%1 not found. The application will quit now.</source>
-        <translation>%1 が見つかりません. アプリケーションを終了します.</translation>
-    </message>
-</context>
-<context>
-    <name>ExtraTranslations</name>
-    <message>
-        <source>Convert between media file formats</source>
-        <translation>音声とビデオファイルの変換</translation>
-    </message>
-    <message>
-        <source>Media Converter</source>
-        <translation>メディア変換</translation>
     </message>
 </context>
 </TS>
