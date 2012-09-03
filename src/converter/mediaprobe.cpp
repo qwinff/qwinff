@@ -33,12 +33,12 @@ namespace patterns {
 
 // META
 const char meta[]
-    = "Duration: ([0-9]+):([0-9]+):([0-9]+\\.[0-9]*), start: ([0-9]+\\.[0-9]*), bitrate: ([0-9]+) kb/s";
+    = "Duration: ([0-9]+):([0-9]+):([0-9]+\\.[0-9]*)(, start: ([0-9]+\\.[0-9]*))?, bitrate: ([0-9]+) kb/s";
 const char META_HOUR_INDEX = 1;        // matched type: integer
 const char META_MINUTE_INDEX = 2;      // matched type: integer
 const char META_SECOND_INDEX = 3;      // matched type: double
-const char META_START_INDEX = 4;       // matched type: double
-const char META_BITRATE_INDEX = 5;     // matched type: integer
+const char META_START_INDEX = 5;       // matched type: double
+const char META_BITRATE_INDEX = 6;     // matched type: integer
 
 // AUDIO
 const char audio[]
@@ -362,11 +362,6 @@ double MediaProbe::seconds() const
 double MediaProbe::mediaDuration() const
 {
     return p->metainfo.duration;
-}
-
-double MediaProbe::mediaStartTime() const
-{
-    return p->metainfo.start;
 }
 
 int MediaProbe::mediaBitRate() const

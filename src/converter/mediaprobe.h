@@ -87,7 +87,6 @@ public:
     double seconds() const;
 
     double mediaDuration() const;
-    double mediaStartTime() const;
     int mediaBitRate() const;
 
     bool hasAudio() const;
