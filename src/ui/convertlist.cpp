@@ -39,6 +39,10 @@
 #define TIMEOUT 3000
 #define MIN_DURATION 100 // Minimum duration(milliseconds) to show progress dialog.
 
+
+typedef QSharedPointer<ConvertList::Task> TaskPtr;
+Q_DECLARE_METATYPE(TaskPtr)
+
 /* This enum defines the columns of the list.
    The last item is always COL_COUNT, which is used to identify
    how many columns there are. To add a new item, just follow the
@@ -194,8 +198,6 @@ bool ConvertList::addTask(ConversionParameters param)
     task->status = Task::QUEUED;
     task->id = ++prev_index;
 
-    m_tasks.push_back(task);
-
     QStringList columns;
     for (int i=0; i<COL_COUNT; i++)
         columns.append(QString());
@@ -204,6 +206,9 @@ bool ConvertList::addTask(ConversionParameters param)
 
     QTreeWidgetItem *item = new QTreeWidgetItem(m_list, columns);
     task->listitem = item;
+    QVariant task_var;
+    task_var.setValue(task);
+    item->setData(0, Qt::UserRole, task_var);
 
     // Add a progress bar widget to the list item
     m_list->addTopLevelItem(item);
@@ -990,16 +995,6 @@ void ConvertList::remove_item(QTreeWidgetItem *item)
     Q_ASSERT(task != 0);
     if (task->status != Task::RUNNING) { // not a running task
         output_filenames_pop(task->param.destination);
-
-        /* TODO: remove references to m_tasks */
-        const int task_count = m_tasks.size();
-        for (int i=0; i<task_count; i++) {
-            if (m_tasks[i] == task) {
-                m_tasks.remove(i);
-                break;
-            }
-        }
-
         const int item_index = m_list->indexOfTopLevelItem(item);
         delete m_list->takeTopLevelItem(item_index);
         qDebug() << "Removed list item " << item_index;
@@ -1031,9 +1026,5 @@ ConvertList::Task* ConvertList::first_selected_task() const
  */
 ConvertList::Task* ConvertList::get_task(QTreeWidgetItem *item) const
 {
-    const int index = m_list->indexOfTopLevelItem(item);
-    if (index >= 0 && index < m_tasks.size())
-        return m_tasks[index].data();
-    else
-        return 0;
+    return item->data(0, Qt::UserRole).value<TaskPtr>().data();
 }

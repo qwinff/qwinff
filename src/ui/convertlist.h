@@ -168,11 +168,9 @@ private:
 
     class ListEventFilter;
     friend class ListEventFilter;
-    typedef QSharedPointer<Task> TaskPtr;
 
     QTreeWidget *m_list;
     ListEventFilter *m_listEventFilter;
-    QVector<TaskPtr> m_tasks;
     int prev_index;
     MediaConverter *m_converter;
     MediaProbe *m_probe;
