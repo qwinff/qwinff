@@ -287,22 +287,6 @@ int ConvertList::addTasks(const QList<ConversionParameters> &paramList)
     return success_count;
 }
 
-void ConvertList::removeTask(int index)
-{
-    qDebug() << "ConvertList::removeTask(), index=" << index;
-    if (m_tasks[index]->status != Task::RUNNING) { // not a running task
-        output_filenames_pop(m_tasks[index]->param.destination);
-        m_tasks.remove(index);
-        delete m_list->takeTopLevelItem(index);
-    } else { // The task is being executed.
-
-        if (false)  // Silently ignore the event.
-            QMessageBox::warning(this, tr("Remove Task")
-                              , tr("Cannot remove a task while it is in progress.")
-                              , QMessageBox::Ok);
-    }
-}
-
 bool ConvertList::isBusy() const
 {
     return is_busy;
@@ -330,23 +314,16 @@ int ConvertList::elapsedTime() const
 
 const ConversionParameters* ConvertList::getCurrentIndexParameter() const
 {
-    const int index = m_list->currentIndex().row();
-    if (index >= 0 && index < m_tasks.size()) {
-        return &m_tasks[index]->param;
-    } else {
-        return 0;
-    }
+    Task *task = first_selected_task();
+    return task ? &task->param : 0;
 }
 
 bool ConvertList::selectedTaskFailed() const
 {
-    if (selectedCount() != 1)
+    Task *task = first_selected_task();
+    if (!task || selectedCount() != 1)
         return false;
-    const int index = m_list->currentIndex().row();
-    if (index >= 0 && index < m_tasks.size())
-        return m_tasks[index]->status == Task::FAILED;
-    else
-        return false;
+    return task->status == Task::FAILED;
 }
 
 // Public Slots
@@ -363,7 +340,7 @@ void ConvertList::start()
         emit started();
     }
 
-    const int task_count = m_tasks.size();
+    const int task_count = count();
 
     if (task_count == 0) { // the task list is empty
         this->stop();
@@ -372,22 +349,23 @@ void ConvertList::start()
 
     for (int i=0; i<task_count; i++) {
         // execute the first queued task in the list and return
-        Task& task = *m_tasks[i];
-        if (task.status == Task::QUEUED) {
+        QTreeWidgetItem *item = m_list->topLevelItem(i);
+        Task *task = get_task(item);
+        if (task->status == Task::QUEUED) {
             QSettings settings;
 
             // start the task
             is_busy = true;
-            task.status = Task::RUNNING;
-            m_current_task = &task;
+            task->status = Task::RUNNING;
+            m_current_task = task;
 
             progressBar(task)->setActive(true);
 
-            task.param.threads = settings.value("options/threads", DEFAULT_THREAD_COUNT).toInt();
-            qDebug() << "Threads: " + QString::number(task.param.threads);
+            task->param.threads = settings.value("options/threads", DEFAULT_THREAD_COUNT).toInt();
+            qDebug() << "Threads: " + QString::number(task->param.threads);
 
-            m_converter->start(task.param);
-            emit start_conversion(i, task.param);
+            m_converter->start(task->param);
+            emit start_conversion(i, task->param);
 
             return;
         }
@@ -420,7 +398,9 @@ void ConvertList::removeSelectedItems()
 void ConvertList::removeCompletedItems()
 {
     QList<QTreeWidgetItem*> itemList;
-    foreach (TaskPtr task, m_tasks) {
+    const int item_count = count();
+    for (int i=0; i<item_count; i++) {
+        Task *task = get_task(m_list->topLevelItem(i));
         if (task->status == Task::FINISHED) {
             itemList.push_back(task->listitem);
         }
@@ -435,37 +415,31 @@ void ConvertList::editSelectedParameters()
     if (itemList.isEmpty())
         return;
 
-    // the index of the first selected item
-    const int sel_begin = m_list->indexOfTopLevelItem(itemList[0]);
-    ConversionParameters param = m_tasks[sel_begin]->param;
+    Task *first_sel_task = get_task(itemList[0]);
+    Q_ASSERT(first_sel_task != 0);
+    ConversionParameters param = first_sel_task->param;
 
     ConversionParameterDialog dialog(this->parentWidget());
 
     if (dialog.exec(param)) {
         foreach (QTreeWidgetItem* item, itemList) {
-            const int index = m_list->indexOfTopLevelItem(item);
+            Task *task = get_task(item);
             // copy conversion parameters
             // Be sure not to use assignment because it will overwrite the filename.
-            m_tasks[index]->param.copyConfigurationFrom(param);
-            // Reset m_tasks[index] to "QUEUED" state if it is not running.
-            reset_item(index);
+            task->param.copyConfigurationFrom(param);
+            reset_task(task);
         }
     }
 }
 
 void ConvertList::changeSelectedOutputFile()
 {
-    QList<QTreeWidgetItem*> itemList = m_list->selectedItems();
+    Task *task = first_selected_task();
 
-    if (itemList.size() != 1)
+    if (!task)
         return;
 
-    QTreeWidgetItem *item = itemList[0];
-
-    // Get the index of the first selected item.
-    const int index = m_list->indexOfTopLevelItem(item);
-
-    ConversionParameters &param = m_tasks[index]->param;
+    ConversionParameters &param = task->param;
 
     QString orig_name = QFileInfo(param.destination).completeBaseName();
     QString dir = QFileInfo(param.destination).path();
@@ -483,7 +457,7 @@ void ConvertList::changeSelectedOutputFile()
             QString orig_file = param.destination;
             QString file = QDir(dir).absoluteFilePath(new_name + "." + ext);
             QMessageBox::StandardButtons overwrite = QMessageBox::No;
-            if (!change_output_file(index, file, overwrite, false))
+            if (!change_output_file(task, file, overwrite, false))
                 try_again = true;
         }
     } while (try_again);
@@ -491,17 +465,12 @@ void ConvertList::changeSelectedOutputFile()
 
 void ConvertList::changeSelectedOutputDirectory()
 {
-    QList<QTreeWidgetItem*> itemList = m_list->selectedItems();
+    Task *task = first_selected_task();
 
-    if (itemList.isEmpty()) // No item is selected.
+    if (!task)
         return;
 
-    QTreeWidgetItem *item = itemList[0];
-
-    // Get the index of the first selected item.
-    int index = m_list->indexOfTopLevelItem(item);
-
-    ConversionParameters &param = m_tasks[index]->param;
+    ConversionParameters &param = task->param;
 
     QString orig_path = QFileInfo(param.destination).path();
 
@@ -511,13 +480,12 @@ void ConvertList::changeSelectedOutputDirectory()
     if (!path.isEmpty()) {
         // Apply the output path to all selected items
         QMessageBox::StandardButtons overwrite = QMessageBox::No;
-        foreach (item, itemList) {
-            index = m_list->indexOfTopLevelItem(item);
-            QString orig_file = m_tasks[index]->param.destination;
+        QList<QTreeWidgetItem*> itemList = m_list->selectedItems();
+        foreach (QTreeWidgetItem *item, itemList) {
+            QString orig_file = task->param.destination;
             QString name = QFileInfo(orig_file).fileName();
             QString file = QDir(path).absoluteFilePath(name);
-
-            change_output_file(index, file, overwrite, true);
+            change_output_file(get_task(item), file, overwrite, true);
         }
     }
 }
@@ -529,10 +497,8 @@ void ConvertList::retrySelectedItems()
     if (itemList.isEmpty())
         return;
 
-    foreach (QTreeWidgetItem* item, itemList) {
-        const int index = m_list->indexOfTopLevelItem(item);
-        reset_item(index);
-    }
+    foreach (QTreeWidgetItem* item, itemList)
+        reset_task(get_task(item));
 
     start();
 }
@@ -541,7 +507,8 @@ void ConvertList::retryAll()
 {
     const int list_size = m_list->topLevelItemCount();
     for (int i=0; i<list_size; i++) {
-        reset_item(i);
+        QTreeWidgetItem *item = m_list->topLevelItem(i);
+        reset_task(get_task(item));
     }
 
     start();
@@ -549,10 +516,10 @@ void ConvertList::retryAll()
 
 void ConvertList::showErrorMessage()
 {
-    const int index = m_list->currentIndex().row();
-    if (index >= 0 && index < m_tasks.size()) {
+    Task *task = first_selected_task();
+    if (task) {
         QMessageBox msgBox;
-        msgBox.setText(tr("Error Message from FFmpeg:\n\n") + m_tasks[index]->errmsg);
+        msgBox.setText(tr("Error Message from FFmpeg:\n\n") + task->errmsg);
         msgBox.setStandardButtons(QMessageBox::Ok);
         msgBox.setIcon(QMessageBox::Information);
         msgBox.exec();
@@ -561,10 +528,10 @@ void ConvertList::showErrorMessage()
 
 void ConvertList::clear()
 {
+    const int item_count = count();
     QList<QTreeWidgetItem*> itemList;
-    foreach (TaskPtr task, m_tasks) {
-        itemList.push_back(task->listitem);
-    }
+    for (int i=0; i<item_count; i++)
+        itemList.push_back(m_list->topLevelItem(i));
     remove_items(itemList);
 }
 
@@ -691,8 +658,9 @@ void ConvertList::slotRestoreListHeaders()
 void ConvertList::slotDoubleClick(QModelIndex index)
 {
     int row = index.row();
-    if (row >= 0 && row < m_tasks.size()) {
-        Task *task = m_tasks[row].data();
+    if (row >= 0 && row < count()) {
+        QTreeWidgetItem *item = m_list->topLevelItem(row);
+        Task *task = get_task(item);
         if (task) {
             switch (task->status) {
             case Task::QUEUED:
@@ -899,17 +867,14 @@ void ConvertList::fill_list_fields(ConversionParameters &param, MediaProbe &prob
 }
 
 // Reset the item to the queued state.
-void ConvertList::reset_item(int index)
+void ConvertList::reset_task(Task *task)
 {
-    if (index >= 0 && index < m_tasks.size()) {
-        TaskPtr task = m_tasks[index];
-        if (task->status != Task::RUNNING) {
-            task->status = Task::QUEUED;
-            ProgressBar *prog = progressBar(*task);
-            prog->setValue(0);
-            prog->setActive(false);
-            prog->setToolTip("");
-        }
+    if (task && task->status != Task::RUNNING) {
+        task->status = Task::QUEUED;
+        ProgressBar *prog = progressBar(*task);
+        prog->setValue(0);
+        prog->setActive(false);
+        prog->setToolTip("");
     }
 }
 
@@ -934,7 +899,7 @@ void ConvertList::remove_items(const QList<QTreeWidgetItem *>& itemList)
         if (dlgProgress.wasCanceled())
             break;
 
-        removeTask(m_list->indexOfTopLevelItem(item));
+        remove_item(item);
     }
 
     dlgProgress.setValue(itemList.size());
@@ -969,16 +934,18 @@ QString ConvertList::to_human_readable_size_1024(qint64 nBytes)
     return QString().setNum(num,'f',2)+" "+unit;
 }
 
-/* Change the output file of the task to new_file.
- * @return true if success, false if failed
+/** Change the @c destination of the @a task to @a new_file
+ *  and update relevant fields in the list.
+ *  @warning @a task must not be NULL
+ *  @return true if success, false if failed
  */
-bool ConvertList::change_output_file(int index, const QString &new_file
+bool ConvertList::change_output_file(Task *task, const QString &new_file
         , QMessageBox::StandardButtons &overwrite, bool show_all_buttons)
 {
     if (overwrite == QMessageBox::NoToAll) return false;
 
-    ConversionParameters &param = m_tasks[index]->param;
-    QTreeWidgetItem *item = m_tasks[index]->listitem;
+    ConversionParameters &param = task->param;
+    QTreeWidgetItem *item = task->listitem;
 
     QString orig_file = param.destination;
 
@@ -1014,3 +981,59 @@ bool ConvertList::change_output_file(int index, const QString &new_file
     return true;
 }
 
+/**
+ * @brief Remove the @a item along with the associated Task object.
+ */
+void ConvertList::remove_item(QTreeWidgetItem *item)
+{
+    Task *task = get_task(item);
+    Q_ASSERT(task != 0);
+    if (task->status != Task::RUNNING) { // not a running task
+        output_filenames_pop(task->param.destination);
+
+        /* TODO: remove references to m_tasks */
+        const int task_count = m_tasks.size();
+        for (int i=0; i<task_count; i++) {
+            if (m_tasks[i] == task) {
+                m_tasks.remove(i);
+                break;
+            }
+        }
+
+        const int item_index = m_list->indexOfTopLevelItem(item);
+        delete m_list->takeTopLevelItem(item_index);
+        qDebug() << "Removed list item " << item_index;
+    } else { // The task is being executed.
+
+        if (false)  // Silently ignore the event.
+            QMessageBox::warning(this, tr("Remove Task")
+                              , tr("Cannot remove a task while it is in progress.")
+                              , QMessageBox::Ok);
+    }
+}
+
+/**
+ * @brief This function returns the pointer to the first selected task.
+ * @retval 0 No item is selected.
+ */
+ConvertList::Task* ConvertList::first_selected_task() const
+{
+    QList<QTreeWidgetItem*> itemList = m_list->selectedItems();
+    if (itemList.isEmpty())
+        return 0;
+    else
+        return get_task(itemList[0]);
+}
+
+/**
+ * @brief Retrieve the task associated with the tree item
+ * @retval 0 The task doesn't exist.
+ */
+ConvertList::Task* ConvertList::get_task(QTreeWidgetItem *item) const
+{
+    const int index = m_list->indexOfTopLevelItem(item);
+    if (index >= 0 && index < m_tasks.size())
+        return m_tasks[index].data();
+    else
+        return 0;
+}

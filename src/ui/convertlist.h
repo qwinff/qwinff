@@ -63,20 +63,20 @@ public:
      */
     int addTasks(const QList<ConversionParameters>& paramList);
 
-    void removeTask(int index);
-
     bool isBusy() const;
     bool isEmpty() const;
     int count() const;
     int selectedCount() const;
 
     /*! Get the elapsed time of the session (in milliseconds).
-     *  If the converter is idle, the function returns 0.
+     *  @retval 0 the converter is idle.
      */
     int elapsedTime() const;
 
-    /*! Returns the pointer to the conversion parameter of the currently selected item.
+    /*! Returns the pointer to the ConversionParameters object of the
+     *  currently selected item.
      *  @return If the function fails, it returns NULL.
+     *  @retval NULL the parameter doesn't exist
      */
     const ConversionParameters* getCurrentIndexParameter() const;
 
@@ -192,13 +192,16 @@ private:
     void init_treewidget_fill_column_titles(QStringList&);
     void init_treewidget_columns_visibility(QTreeWidget*);
     void fill_list_fields(ConversionParameters&, MediaProbe&, QStringList&);
-    void reset_item(int index);
+    void reset_task(Task *task);
     void remove_items(const QList<QTreeWidgetItem*>&);
     ProgressBar* progressBar(Task*);
     ProgressBar* progressBar(const Task&);
     QString to_human_readable_size_1024(qint64 nBytes);
-    bool change_output_file(int index, const QString& new_file
+    bool change_output_file(Task *task, const QString& new_file
             , QMessageBox::StandardButtons &overwrite, bool show_all_buttons);
+    void remove_item(QTreeWidgetItem *item);
+    Task* first_selected_task() const;
+    Task* get_task(QTreeWidgetItem*) const;
 
 };
 
