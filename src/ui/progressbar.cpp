@@ -16,6 +16,7 @@
 #include "progressbar.h"
 #include <QHBoxLayout>
 #include <QPainter>
+#include <QDebug>
 
 #define COLOR_MARGIN QColor(200,220,255)
 #define COLOR_CENTER QColor(150,200,220)
@@ -24,6 +25,12 @@
 ProgressBar::ProgressBar(QWidget *parent) :
     QWidget(parent), m_percentage(0), m_active(false), m_show_text(false)
 {
+    //qDebug() << "ProgressBar Constructor";
+}
+
+ProgressBar::~ProgressBar()
+{
+    //qDebug() << "ProgressBar Destructor";
 }
 
 void ProgressBar::setValue(unsigned int value)

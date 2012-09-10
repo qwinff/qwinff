@@ -32,20 +32,12 @@ class QTreeWidgetItem;
 class ProgressBar;
 class Presets;
 
+class Task;
+
 class ConvertList : public QWidget
 {
     Q_OBJECT
 public:
-
-    struct Task
-    {
-        enum TaskStatus { QUEUED, RUNNING, FINISHED, FAILED };
-        int id;
-        TaskStatus status;
-        ConversionParameters param;
-        QTreeWidgetItem *listitem;
-        QString errmsg;
-    };
 
     explicit ConvertList(Presets *presets, QWidget *parent = 0);
     ~ConvertList();
@@ -162,6 +154,7 @@ protected:
     void list_dragMoveEvent(QDragMoveEvent *event);
     void list_dragLeaveEvent(QDragLeaveEvent *event);
     void list_dropEvent(QDropEvent *event);
+    void list_childRemovedEvent(QChildEvent *event);
 
 private:
     Q_DISABLE_COPY(ConvertList)
@@ -193,13 +186,13 @@ private:
     void reset_task(Task *task);
     void remove_items(const QList<QTreeWidgetItem*>&);
     ProgressBar* progressBar(Task*);
-    ProgressBar* progressBar(const Task&);
     QString to_human_readable_size_1024(qint64 nBytes);
     bool change_output_file(Task *task, const QString& new_file
             , QMessageBox::StandardButtons &overwrite, bool show_all_buttons);
     void remove_item(QTreeWidgetItem *item);
     Task* first_selected_task() const;
     Task* get_task(QTreeWidgetItem*) const;
+    void refresh_progressbar(Task*);
 
 };
 

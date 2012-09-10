@@ -40,8 +40,18 @@
 #define MIN_DURATION 100 // Minimum duration(milliseconds) to show progress dialog.
 
 
-typedef QSharedPointer<ConvertList::Task> TaskPtr;
-Q_DECLARE_METATYPE(TaskPtr)
+class Task : public QObject
+{
+public:
+    explicit Task(QObject *parent = 0) : QObject(parent) { }
+    virtual ~Task() { }
+    enum TaskStatus { QUEUED, RUNNING, FINISHED, FAILED };
+    int id;
+    TaskStatus status;
+    ConversionParameters param;
+    QTreeWidgetItem *listitem;
+    QString errmsg;
+};
 
 /* This enum defines the columns of the list.
    The last item is always COL_COUNT, which is used to identify
@@ -104,6 +114,9 @@ public:
         case QEvent::Drop:
             m_parent->list_dropEvent(static_cast<QDropEvent*>(event));
             return true;
+        case QEvent::ChildRemoved:
+            m_parent->list_childRemovedEvent(static_cast<QChildEvent*>(event));
+            return true;
         default:
             break;
         }
@@ -155,6 +168,9 @@ ConvertList::ConvertList(Presets *presets, QWidget *parent) :
     // Propagate events from the QTreeWidget to ConvertList.
     m_list->installEventFilter(m_listEventFilter);
 
+    // Enable internal drag-and-drop of list items
+    m_list->setDragDropMode(QAbstractItemView::InternalMove);
+
     QSettings settings;
     QHeaderView *header = m_list->header();
     header->restoreState(settings.value("convertlist/header_state").toByteArray());
@@ -193,11 +209,6 @@ bool ConvertList::addTask(ConversionParameters param)
             FilePathOperations::GenerateUniqueFileName(param.destination, output_filenames());
     output_filenames_push(param.destination); // Record the filename for future reference.
 
-    TaskPtr task(new Task());
-    task->param = param;
-    task->status = Task::QUEUED;
-    task->id = ++prev_index;
-
     QStringList columns;
     for (int i=0; i<COL_COUNT; i++)
         columns.append(QString());
@@ -205,15 +216,27 @@ bool ConvertList::addTask(ConversionParameters param)
     fill_list_fields(param, *m_probe, columns);
 
     QTreeWidgetItem *item = new QTreeWidgetItem(m_list, columns);
+
+    /* Create a new Task object.
+     * The ownership of the Task object belongs to m_list.
+     * However, the Task object will also be deleted when the
+     * corresponding QTreeWidgetItem is deleted. Search for
+     * keyword "delete" in this file for the deletion code.
+     */
+    Task *task = new Task(m_list);
+    task->param = param;
+    task->status = Task::QUEUED;
+    task->id = ++prev_index;
     task->listitem = item;
-    QVariant task_var;
-    task_var.setValue(task);
+
+    QVariant task_var = qVariantFromValue((void*)task);
     item->setData(0, Qt::UserRole, task_var);
 
-    // Add a progress bar widget to the list item
+    // Prevent dropping directly on an item
+    item->setFlags(item->flags() & ~Qt::ItemIsDropEnabled);
     m_list->addTopLevelItem(item);
-    m_list->setItemWidget(item, COL_PROGRESS, new ProgressBar());
-    m_list->itemWidget(item, COL_PROGRESS)->adjustSize();
+
+    progressBar(task)->adjustSize();
 
     item->setToolTip(COL_SOURCE, param.source);
     item->setToolTip(COL_DESTINATION, param.destination);
@@ -549,22 +572,13 @@ void ConvertList::task_finished_slot(int exitcode)
                 ? Task::FINISHED
                 : Task::FAILED;
 
-        ProgressBar *prog = progressBar(m_current_task);
-
-        if (exitcode) { // conversion failed
-            prog->setValue(0);
-            /*: The text to be displayed on the progress bar when a conversion fails */
-            prog->showText(tr("Failed"));
+        if (exitcode != 0)
             m_current_task->errmsg = m_converter->errorMessage();
-            //: %1 is the error message
-            prog->setToolTip(tr("Error: %1").arg(m_current_task->errmsg));
-        } else {
-            /*: The text to be displayed on the progress bar when a conversion finishes */
-            prog->showText(tr("Finished"));
-            prog->setToolTip(tr("Finished"));
-        }
+        else
+            m_current_task->errmsg = "";
 
-        prog->setActive(false);
+        refresh_progressbar(m_current_task);
+
         m_current_task = 0;
         emit task_finished(exitcode);
 
@@ -736,6 +750,15 @@ void ConvertList::list_dropEvent(QDropEvent *event)
     }
 }
 
+void ConvertList::list_childRemovedEvent(QChildEvent */*event*/)
+{
+    const int task_count = count();
+    // refresh all ProgressBar objects
+    for (int i=0; i<task_count; i++) {
+        refresh_progressbar(get_task(m_list->topLevelItem(i)));
+    }
+}
+
 // Functions to access m_outputFileNames
 
 void ConvertList::output_filenames_push(const QString& filename)
@@ -876,10 +899,7 @@ void ConvertList::reset_task(Task *task)
 {
     if (task && task->status != Task::RUNNING) {
         task->status = Task::QUEUED;
-        ProgressBar *prog = progressBar(*task);
-        prog->setValue(0);
-        prog->setActive(false);
-        prog->setToolTip("");
+        refresh_progressbar(task);
     }
 }
 
@@ -910,14 +930,19 @@ void ConvertList::remove_items(const QList<QTreeWidgetItem *>& itemList)
     dlgProgress.setValue(itemList.size());
 }
 
+/**
+ * Retrieve the ProgressBar widget associated with the task.
+ * This function creates the widget if it doesn't exist.
+ * @return Returns the pointer to the ProgressBar widget.
+ */
 ProgressBar* ConvertList::progressBar(Task *task)
 {
-    return (ProgressBar*)m_list->itemWidget(task->listitem, COL_PROGRESS);
-}
-
-ProgressBar* ConvertList::progressBar(const Task &task)
-{
-    return (ProgressBar*)m_list->itemWidget(task.listitem, COL_PROGRESS);
+    ProgressBar *prog = (ProgressBar*) m_list->itemWidget(task->listitem, COL_PROGRESS);
+    if (!prog) {
+        prog = new ProgressBar();
+        m_list->setItemWidget(task->listitem, COL_PROGRESS, prog);
+    }
+    return prog;
 }
 
 // Convert bytes to human readable form such as
@@ -996,7 +1021,14 @@ void ConvertList::remove_item(QTreeWidgetItem *item)
     if (task->status != Task::RUNNING) { // not a running task
         output_filenames_pop(task->param.destination);
         const int item_index = m_list->indexOfTopLevelItem(item);
-        delete m_list->takeTopLevelItem(item_index);
+        QTreeWidgetItem *item = m_list->takeTopLevelItem(item_index);
+        /* Delete the Task object
+         * The ownership of the Task object belongs to m_list.
+         * However, it is no longer used when the corresponding
+         * list item is deleted, so it's OK to delete it here.
+         */
+        delete get_task(item);
+        delete item;
         qDebug() << "Removed list item " << item_index;
     } else { // The task is being executed.
 
@@ -1011,7 +1043,7 @@ void ConvertList::remove_item(QTreeWidgetItem *item)
  * @brief This function returns the pointer to the first selected task.
  * @retval 0 No item is selected.
  */
-ConvertList::Task* ConvertList::first_selected_task() const
+Task* ConvertList::first_selected_task() const
 {
     QList<QTreeWidgetItem*> itemList = m_list->selectedItems();
     if (itemList.isEmpty())
@@ -1024,7 +1056,42 @@ ConvertList::Task* ConvertList::first_selected_task() const
  * @brief Retrieve the task associated with the tree item
  * @retval 0 The task doesn't exist.
  */
-ConvertList::Task* ConvertList::get_task(QTreeWidgetItem *item) const
+Task* ConvertList::get_task(QTreeWidgetItem *item) const
 {
-    return item->data(0, Qt::UserRole).value<TaskPtr>().data();
+    return (Task*)item->data(0, Qt::UserRole).value<void*>();
+}
+
+void ConvertList::refresh_progressbar(Task *task)
+{
+    ProgressBar *prog = progressBar(task);
+    switch (task->status) {
+    case Task::QUEUED:
+        prog->setValue(0);
+        prog->setToolTip("");
+        prog->setActive(false);
+        break;
+    case Task::RUNNING:
+        prog->setValue(m_converter->progress());
+        prog->setToolTip("");
+        prog->setActive(true);
+        break;
+    case Task::FINISHED:
+        /*: The text to be displayed on the progress bar when a conversion finishes */
+        prog->setValue(100);
+        prog->showText(tr("Finished"));
+        prog->setToolTip(tr("Finished"));
+        prog->setActive(false);
+        break;
+    case Task::FAILED:
+        prog->setValue(0);
+        /*: The text to be displayed on the progress bar when a conversion fails */
+        prog->showText(tr("Failed"));
+        //: %1 is the error message
+        prog->setToolTip(tr("Error: %1").arg(task->errmsg));
+        prog->setActive(false);
+        break;
+    default:
+        qDebug() << "Error: incorrect task status";
+        break;
+    }
 }

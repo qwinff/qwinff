@@ -23,6 +23,7 @@ class ProgressBar : public QWidget
     Q_OBJECT
 public:
     explicit ProgressBar(QWidget *parent = 0);
+    ~ProgressBar();
 
     /*!
       @brief Set the value of the progress
