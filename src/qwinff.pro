@@ -80,7 +80,8 @@ TRANSLATIONS += \
     translations/qwinff_zh_TW.ts \
     translations/qwinff_ja_JP.ts \
     translations/qwinff_it_IT.ts \
-    translations/qwinff_cs_CZ.ts
+    translations/qwinff_cs_CZ.ts \
+    translations/qwinff_zh_CN.ts
 
 INCLUDEPATH += .
 
