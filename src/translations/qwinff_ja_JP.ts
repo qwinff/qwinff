@@ -76,11 +76,16 @@
     <message>
         <source>Portable</source>
         <extracomment>Portable version (no installation, no writing registry)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>ポータブル</translation>
     </message>
     <message>
         <source>QWinFF Homepage: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>QWinFF 公式サイト: %1</translation>
+    </message>
+    <message>
+        <source>Simplified Chinese</source>
+        <extracomment>Simplified Chinese</extracomment>
+        <translation>中国語(簡体字)</translation>
     </message>
 </context>
 <context>
@@ -368,7 +373,6 @@
     </message>
     <message>
         <source>Finished</source>
-        <extracomment>The text to be displayed on the progress bar when a conversion finishes</extracomment>
         <translation>完了</translation>
     </message>
     <message>

@@ -82,6 +82,11 @@
         <source>QWinFF Homepage: %1</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Simplified Chinese</source>
+        <extracomment>Simplified Chinese</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutFFmpegDialog</name>
@@ -391,7 +396,6 @@
     </message>
     <message>
         <source>Finished</source>
-        <extracomment>The text to be displayed on the progress bar when a conversion finishes</extracomment>
         <translation>Dokončeno</translation>
     </message>
     <message>

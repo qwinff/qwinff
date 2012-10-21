@@ -114,7 +114,7 @@ QString AboutDialog::getTranslators()
                 + trad(tr("Italian"), "TheJoe (http://thejoe.it/)")
                 //: Czech Language
                 + trad(tr("Czech"), "Petr Ga&#271;orek <hahihula@gmail.com>")
-                //: Simplified Chinese
+                //: Chinese character set used in China
                 + trad(tr("Simplified Chinese"), "&#26472;&#27704;&#26126; <linuxfedora17@gmail.com>")
             ;
 }
