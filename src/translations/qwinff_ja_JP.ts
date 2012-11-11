@@ -84,7 +84,7 @@
     </message>
     <message>
         <source>Simplified Chinese</source>
-        <extracomment>Simplified Chinese</extracomment>
+        <extracomment>Chinese character set used in China</extracomment>
         <translation>中国語(簡体字)</translation>
     </message>
 </context>
