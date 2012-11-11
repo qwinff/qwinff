@@ -89,7 +89,7 @@ namespace inner {
         }
 
         // Find all available encoders
-        QRegExp pattern("[ D]E([ VAS])[ S][ D][ T]\\s+([^ ]+)\\s*(.*)$");
+        QRegExp pattern("[ D]E([ VAS])...\\s+([^ ]+)\\s*(.*)$");
         const int AV_INDEX = 1;
         const int CODEC_NAME_INDEX = 2;
 
