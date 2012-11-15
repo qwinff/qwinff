@@ -27,7 +27,7 @@
         <location filename="../ui/aboutdialog.cpp" line="50"/>
         <source>Portable</source>
         <extracomment>Portable version (no installation, no writing registry)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Portatile</translation>
     </message>
     <message>
         <location filename="../ui/aboutdialog.cpp" line="54"/>
@@ -65,7 +65,7 @@
     <message>
         <location filename="../ui/aboutdialog.cpp" line="69"/>
         <source>QWinFF Homepage: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Homepage di QWinFF: %1</translation>
     </message>
     <message>
         <location filename="../ui/aboutdialog.cpp" line="118"/>
@@ -80,7 +80,7 @@
     <message>
         <location filename="../ui/aboutdialog.cpp" line="71"/>
         <source>Some audio-processing functionalities are provided by SoX.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alcune funzionalità di elaborazione audio sono fornite da SoX.</translation>
     </message>
     <message>
         <location filename="../ui/aboutdialog.cpp" line="73"/>
@@ -103,7 +103,7 @@
         <location filename="../ui/aboutdialog.cpp" line="116"/>
         <source>Czech</source>
         <extracomment>Czech Language</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ceco</translation>
     </message>
 </context>
 <context>
@@ -298,7 +298,7 @@
         <location filename="../ui/conversionparameterdialog.ui" line="146"/>
         <location filename="../ui/conversionparameterdialog.ui" line="265"/>
         <source>(auto)</source>
-        <translation type="unfinished"></translation>
+        <translation>(auto)</translation>
     </message>
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="105"/>
@@ -326,7 +326,8 @@
         <location filename="../ui/conversionparameterdialog.ui" line="367"/>
         <source>Cutting</source>
         <extracomment>video time cutting: options for begin time and end time</extracomment>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Impostazioni per i tempi di inizio e fine taglio del video</translatorcomment>
+        <translation>Taglio</translation>
     </message>
     <message>
         <source>Use the source bitrate if it is smaller than the configured output bitrate. This can reduce output file size in certain conditions.</source>
@@ -419,12 +420,12 @@
         <location filename="../ui/conversionparameterdialog.ui" line="410"/>
         <source>Scaling</source>
         <extracomment>time scaling, changing the speed of the output file</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Modifica velocità</translation>
     </message>
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="418"/>
         <source>Speed (Experimental)</source>
-        <translation type="unfinished"></translation>
+        <translation>Velocità (Sperimentale)</translation>
     </message>
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="444"/>
@@ -498,7 +499,9 @@
         <source>Error Message from FFmpeg:
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Messaggio di errore da FFmpeg:
+
+</translation>
     </message>
     <message>
         <location filename="../ui/convertlist.cpp" line="1088"/>
@@ -510,7 +513,7 @@
         <location filename="../ui/convertlist.cpp" line="1090"/>
         <source>Error: %1</source>
         <extracomment>%1 is the error message</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>%1 è il messaggio di errore</translation>
     </message>
     <message>
         <location filename="../ui/convertlist.cpp" line="1081"/>
@@ -653,7 +656,7 @@
     <message>
         <location filename="../ui/convertlist.cpp" line="993"/>
         <source>%1 already exists on disk or in the task list. Still use this name as the output filename?</source>
-        <translation>%1 esiste già nel disco o nella lista dei lavori. Uso lo stesso nome anche per l&apos;output? (il file verrà sovrascritto)</translation>
+        <translation>%1 esiste già sul disco o nella lista dei lavori. Vuoi usare lo stesso nome anche per l&apos;output (il file verrà sovrascritto)?</translation>
     </message>
 </context>
 <context>
@@ -661,12 +664,12 @@
     <message>
         <location filename="../extra-translations.h" line="40"/>
         <source>Convert between media file formats</source>
-        <translation type="unfinished"></translation>
+        <translation>Converte file multimediali in vari formati</translation>
     </message>
     <message>
         <location filename="../extra-translations.h" line="41"/>
         <source>Media Converter</source>
-        <translation type="unfinished"></translation>
+        <translation>Convertitore di file multimediali</translation>
     </message>
 </context>
 <context>
@@ -812,7 +815,7 @@
     <message>
         <location filename="../ui/mainwindow.ui" line="311"/>
         <source>Show Error &amp;Message</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra &amp;messaggio di errore</translation>
     </message>
     <message>
         <source>&amp;Remove Selected Items</source>
@@ -942,36 +945,36 @@
         <location filename="../ui/mainwindow.cpp" line="450"/>
         <source>Shutdown</source>
         <extracomment>Shutdown the computer (completely poweroff)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Spegni</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.cpp" line="274"/>
         <source>Shutdown when all tasks are done.</source>
-        <translation type="unfinished"></translation>
+        <translation>Spegni quando tutti i lavori sono completati.</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.cpp" line="279"/>
         <source>Suspend when all tasks are done.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sospendi quando tutti i lavori sono completati.</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.cpp" line="283"/>
         <location filename="../ui/mainwindow.cpp" line="460"/>
         <source>Hibernate</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Iberna</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.cpp" line="284"/>
         <source>Hibernate when all tasks are done.</source>
-        <translation type="unfinished"></translation>
+        <translation>Iberna quando tutti i lavori sono completati.</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.cpp" line="278"/>
         <location filename="../ui/mainwindow.cpp" line="455"/>
         <source>Suspend</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Sospendi</translation>
     </message>
     <message>
         <source>FFmpeg Error</source>
@@ -1001,7 +1004,7 @@
         <location filename="../converter/mediaconverter.cpp" line="109"/>
         <source>%1 not found. The application will quit now.</source>
         <extracomment>%1 is a computer program</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>%1 non trovato. Il programma verrà chiuso.</translation>
     </message>
 </context>
 <context>
@@ -1027,68 +1030,68 @@
     <message>
         <location filename="../ui/poweroffdialog.ui" line="17"/>
         <source>QWinFF</source>
-        <translation type="unfinished">QWinFF</translation>
+        <translation>QWinFF</translation>
     </message>
     <message>
         <location filename="../ui/poweroffdialog.ui" line="42"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancella</translation>
+        <translation>Annulla</translation>
     </message>
     <message>
         <location filename="../ui/poweroffdialog.cpp" line="67"/>
         <source>Shutdown immediately</source>
         <extracomment>Shutdown the computer</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Spegni immediatamente</translation>
     </message>
     <message>
         <location filename="../ui/poweroffdialog.cpp" line="72"/>
         <source>Suspend immediately</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Sospendi immediatamente</translation>
     </message>
     <message>
         <location filename="../ui/poweroffdialog.cpp" line="77"/>
         <source>Hibernate immediately</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Iberna immediatamente</translation>
     </message>
     <message>
         <location filename="../ui/poweroffdialog.cpp" line="128"/>
         <source>Shutdown</source>
         <extracomment>Shutdown the computer</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Spegni</translation>
     </message>
     <message>
         <location filename="../ui/poweroffdialog.cpp" line="132"/>
         <source>Suspend</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Sospendi</translation>
     </message>
     <message>
         <location filename="../ui/poweroffdialog.cpp" line="136"/>
         <source>Hibernate</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Iberna</translation>
     </message>
     <message>
         <location filename="../ui/poweroffdialog.cpp" line="141"/>
         <source>Operation Failed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Operazione fallita: %1</translation>
     </message>
     <message>
         <location filename="../ui/poweroffdialog.cpp" line="165"/>
         <source>Shutting down in &lt;b&gt;%1&lt;/b&gt; seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>Spegnimento tra &lt;b&gt;%1&lt;/b&gt; secondi</translation>
     </message>
     <message>
         <location filename="../ui/poweroffdialog.cpp" line="168"/>
         <source>Suspending in &lt;b&gt;%1&lt;/b&gt; seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>Sospensione tra &lt;b&gt;%1&lt;/b&gt; secondi</translation>
     </message>
     <message>
         <location filename="../ui/poweroffdialog.cpp" line="171"/>
         <source>Hibernating in &lt;b&gt;%1&lt;/b&gt; seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>Ibernazione tra &lt;b&gt;%1&lt;/b&gt; secondi</translation>
     </message>
 </context>
 </TS>
