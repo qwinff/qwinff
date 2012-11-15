@@ -111,7 +111,9 @@ QString AboutDialog::getTranslators()
                 //: Japanese Language
                 + trad(tr("Japanese"), "Tilt <tiltstr@gmail.com>")
                 //: Italian Language
-                + trad(tr("Italian"), "TheJoe (http://thejoe.it/)")
+                + trad(tr("Italian"), QStringList()
+                       << "TheJoe (http://thejoe.it/)"
+                       << "Francesco Marinucci <framarinucci@gmail.com>")
                 //: Czech Language
                 + trad(tr("Czech"), "Petr Ga&#271;orek <hahihula@gmail.com>")
                 //: Chinese character set used in China
