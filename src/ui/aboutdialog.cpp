@@ -17,6 +17,7 @@
 #include "ui_aboutdialog.h"
 #include "version.h"
 #include <QtGlobal>
+#include <QLocale>
 #if defined(Q_WS_X11) && defined(USE_LIBNOTIFY)
  #include "services/notificationservice-libnotify.h"
 #endif
@@ -107,18 +108,31 @@ AboutDialog::~AboutDialog()
 
 QString AboutDialog::getTranslators()
 {
-    return QString("")
-                //: Japanese Language
-                + trad(tr("Japanese"), "Tilt <tiltstr@gmail.com>")
-                //: Italian Language
-                + trad(tr("Italian"), QStringList()
-                       << "TheJoe (http://thejoe.it/)"
-                       << "Francesco Marinucci <framarinucci@gmail.com>")
-                //: Czech Language
-                + trad(tr("Czech"), "Petr Ga&#271;orek <hahihula@gmail.com>")
-                //: Chinese character set used in China
-                + trad(tr("Simplified Chinese"), "&#26472;&#27704;&#26126; <linuxfedora17@gmail.com>")
-            ;
+    struct {QString locale; QString translator;} table[] = {
+        //: Japanese Language
+        {"ja_JP",trad(tr("Japanese"), "Tilt <tiltstr@gmail.com>")},
+        //: Italian Language
+        {"it_IT",trad(tr("Italian"), QStringList()
+               << "TheJoe (http://thejoe.it/)"
+               << "Francesco Marinucci <framarinucci@gmail.com>")},
+        //: Czech Language
+        {"cs_CZ", trad(tr("Czech"), "Petr Ga&#271;orek <hahihula@gmail.com>")},
+        //: Chinese character set used in China
+        {"zh_CN", trad(tr("Simplified Chinese")
+                       , "&#26472;&#27704;&#26126; <linuxfedora17@gmail.com>")},
+    };
+    const int size = sizeof(table) / sizeof(table[0]);
+
+    QStringList translators;
+    QString current_locale = QLocale::system().name();
+    for (int i=0; i<size; i++) {
+        if (table[i].locale == current_locale)
+            translators.push_front(table[i].translator);
+        else
+            translators.push_back(table[i].translator);
+    }
+
+    return translators.join("");
 }
 
 QString AboutDialog::trad(const QString& lang, const QString& author)
