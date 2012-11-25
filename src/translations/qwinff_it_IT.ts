@@ -19,56 +19,56 @@
         <translation>Traduzioni</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="44"/>
+        <location filename="../ui/aboutdialog.cpp" line="45"/>
         <source>Version: %1</source>
         <translation>Versione: %1</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="50"/>
+        <location filename="../ui/aboutdialog.cpp" line="51"/>
         <source>Portable</source>
         <extracomment>Portable version (no installation, no writing registry)</extracomment>
         <translation>Portatile</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="54"/>
+        <location filename="../ui/aboutdialog.cpp" line="55"/>
         <source>Compiled with Qt %1</source>
         <extracomment>Qt version</extracomment>
         <translation>Compilato con Qt %1</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="56"/>
+        <location filename="../ui/aboutdialog.cpp" line="57"/>
         <source>Compiled with libnotify %1</source>
         <translation>Compilato con libnotify %1</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="60"/>
+        <location filename="../ui/aboutdialog.cpp" line="61"/>
         <source>QWinFF is a gui frontend for FFmpeg.</source>
         <translation>QWinFF è una gui per FFmpeg.</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="63"/>
+        <location filename="../ui/aboutdialog.cpp" line="64"/>
         <source>Programming: %1</source>
         <extracomment>%1 is the name and email of the programmer</extracomment>
         <translation>Programming: %1</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="65"/>
+        <location filename="../ui/aboutdialog.cpp" line="66"/>
         <source>Logo Design: %1</source>
         <extracomment>%1 is the name and email of the logo designer</extracomment>
         <translation>Logo Design: %1</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="66"/>
+        <location filename="../ui/aboutdialog.cpp" line="67"/>
         <source>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License version 2 or 3.</source>
         <translation>Questo programma è software libero; sei libero di ridistribuirlo e/o modificarlo nei termini della GNU General Public License versione 2 o 3.</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="69"/>
+        <location filename="../ui/aboutdialog.cpp" line="70"/>
         <source>QWinFF Homepage: %1</source>
         <translation>Homepage di QWinFF: %1</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="118"/>
+        <location filename="../ui/aboutdialog.cpp" line="121"/>
         <source>Simplified Chinese</source>
         <extracomment>Chinese character set used in China</extracomment>
         <translation type="unfinished"></translation>
@@ -78,29 +78,29 @@
         <translation type="obsolete">Pagina progetto di QWinFF: %1</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="71"/>
+        <location filename="../ui/aboutdialog.cpp" line="72"/>
         <source>Some audio-processing functionalities are provided by SoX.</source>
         <translation>Alcune funzionalità di elaborazione audio sono fornite da SoX.</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="73"/>
+        <location filename="../ui/aboutdialog.cpp" line="74"/>
         <source>FFmpeg presets were taken from WinFF.</source>
         <translation>I preset FFmpeg sono stati presi da WinFF.</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="112"/>
+        <location filename="../ui/aboutdialog.cpp" line="113"/>
         <source>Japanese</source>
         <extracomment>Japanese Language</extracomment>
         <translation>Giapponese</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="114"/>
+        <location filename="../ui/aboutdialog.cpp" line="115"/>
         <source>Italian</source>
         <extracomment>Italian Language</extracomment>
         <translation>Italiano</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="116"/>
+        <location filename="../ui/aboutdialog.cpp" line="119"/>
         <source>Czech</source>
         <extracomment>Czech Language</extracomment>
         <translation>Ceco</translation>
@@ -993,7 +993,7 @@
         <translation type="obsolete">FFprobe non trovato. L&apos;applicazione ora si chiuderà.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="575"/>
+        <location filename="../ui/mainwindow.cpp" line="577"/>
         <source>Failed to load preset file. The application will quit now.</source>
         <translation>Caricamento file predefinito fallito. L&apos;applicazione ora si chiuderà.</translation>
     </message>
@@ -1020,9 +1020,19 @@
         <translation>FFmpeg</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="32"/>
+        <location filename="../ui/optionsdialog.ui" line="35"/>
         <source>Number of threads to use in conversion</source>
         <translation>Numero di impostazioni da usare per la conversione</translation>
+    </message>
+    <message>
+        <location filename="../ui/optionsdialog.ui" line="49"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hide output formats that are not available in the current ffmpeg installation. It is recommended to turn this option on unless you are sure that QWinFF has failed to detect available formats. (requires restarting QWinFF to take effect)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/optionsdialog.ui" line="52"/>
+        <source>Hide unavailable formats (requires restarting)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

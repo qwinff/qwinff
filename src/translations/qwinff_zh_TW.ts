@@ -19,79 +19,79 @@
         <translation>翻譯者</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="44"/>
+        <location filename="../ui/aboutdialog.cpp" line="45"/>
         <source>Version: %1</source>
         <translation>版本: %1</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="50"/>
+        <location filename="../ui/aboutdialog.cpp" line="51"/>
         <source>Portable</source>
         <extracomment>Portable version (no installation, no writing registry)</extracomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="56"/>
+        <location filename="../ui/aboutdialog.cpp" line="57"/>
         <source>Compiled with libnotify %1</source>
         <translation>libnotify 編譯版本: %1</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="60"/>
+        <location filename="../ui/aboutdialog.cpp" line="61"/>
         <source>QWinFF is a gui frontend for FFmpeg.</source>
         <translation>FFmpeg影音轉檔器前端介面</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="63"/>
+        <location filename="../ui/aboutdialog.cpp" line="64"/>
         <source>Programming: %1</source>
         <extracomment>%1 is the name and email of the programmer</extracomment>
         <translation>程式設計：%1</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="65"/>
+        <location filename="../ui/aboutdialog.cpp" line="66"/>
         <source>Logo Design: %1</source>
         <extracomment>%1 is the name and email of the logo designer</extracomment>
         <translation>Logo 設計：%1</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="66"/>
+        <location filename="../ui/aboutdialog.cpp" line="67"/>
         <source>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License version 2 or 3.</source>
         <translation>這個程式是自由軟體，你可以在GNU授權條款(第二或第三版)下修改及散佈此軟體。</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="69"/>
+        <location filename="../ui/aboutdialog.cpp" line="70"/>
         <source>QWinFF Homepage: %1</source>
         <translation>QWinFF首頁: %1</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="71"/>
+        <location filename="../ui/aboutdialog.cpp" line="72"/>
         <source>Some audio-processing functionalities are provided by SoX.</source>
         <translation>某些音效處理的功能由SoX提供.</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="112"/>
+        <location filename="../ui/aboutdialog.cpp" line="113"/>
         <source>Japanese</source>
         <extracomment>Japanese Language</extracomment>
         <translation>日文</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="114"/>
+        <location filename="../ui/aboutdialog.cpp" line="115"/>
         <source>Italian</source>
         <extracomment>Italian Language</extracomment>
         <translation>義大利文</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="116"/>
+        <location filename="../ui/aboutdialog.cpp" line="119"/>
         <source>Czech</source>
         <extracomment>Czech Language</extracomment>
         <translation>捷克語</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="118"/>
+        <location filename="../ui/aboutdialog.cpp" line="121"/>
         <source>Simplified Chinese</source>
         <extracomment>Chinese character set used in China</extracomment>
         <translation>簡體中文</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="54"/>
+        <location filename="../ui/aboutdialog.cpp" line="55"/>
         <source>Compiled with Qt %1</source>
         <extracomment>Qt version</extracomment>
         <translation>Qt 編譯版本：%1</translation>
@@ -101,7 +101,7 @@
         <translation type="obsolete">QWinFF專案首頁: %1</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="73"/>
+        <location filename="../ui/aboutdialog.cpp" line="74"/>
         <source>FFmpeg presets were taken from WinFF.</source>
         <translation>FFmpeg的預設參數來自WinFF專案.</translation>
     </message>
@@ -990,7 +990,7 @@
         <translation type="obsolete">找不到FFprobe，程式將立刻結束。</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="575"/>
+        <location filename="../ui/mainwindow.cpp" line="577"/>
         <source>Failed to load preset file. The application will quit now.</source>
         <translation>無法載入設定檔，程式將立刻結束。</translation>
     </message>
@@ -1017,9 +1017,19 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="32"/>
+        <location filename="../ui/optionsdialog.ui" line="35"/>
         <source>Number of threads to use in conversion</source>
         <translation>轉換時使用的線程數</translation>
+    </message>
+    <message>
+        <location filename="../ui/optionsdialog.ui" line="49"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hide output formats that are not available in the current ffmpeg installation. It is recommended to turn this option on unless you are sure that QWinFF has failed to detect available formats. (requires restarting QWinFF to take effect)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;隱藏目前系統上的ffmpeg無法使用的輸出格式. 建議開啟此選項, 除非你確定 QWinFF 搞錯了. (需要重啟QWinFF)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="../ui/optionsdialog.ui" line="52"/>
+        <source>Hide unavailable formats (requires restarting)</source>
+        <translation>隱藏無法使用的格式 (需要重啟)</translation>
     </message>
 </context>
 <context>

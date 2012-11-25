@@ -786,6 +786,14 @@
         <source>Options</source>
         <translation>設定</translation>
     </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hide output formats that are not available in the current ffmpeg installation. It is recommended to turn this option on unless you are sure that QWinFF has failed to detect available formats. (requires restarting QWinFF to take effect)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide unavailable formats (requires restarting)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PoweroffDialog</name>
