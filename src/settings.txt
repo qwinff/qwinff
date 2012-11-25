@@ -26,6 +26,12 @@ default: 4 (defined by DEFAULT_THREAD_COUNT)
 description: how many threads to use in conversion
 files: convertlist.cpp optionsdialog.cpp
 
+key: options/hideformats
+type: boolean
+default: true
+description: whether to hide unavailable output formats in the list
+files: mainwindow.cpp optionsdialog.cpp
+
 ----------------------------------------------
 
 [addtaskwizard]

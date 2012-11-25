@@ -46,8 +46,8 @@ public:
     explicit Presets(QObject *parent = 0);
     virtual ~Presets();
 
-    bool readFromFile(const QString& filename);
-    bool readFromFile(const char *filename);
+    bool readFromFile(const QString& filename, bool removeUnavailableCodecs=true);
+    bool readFromFile(const char *filename, bool removeUnavailableCodecs=true);
 
     bool getExtensions(QList<QString>& target) const;
 

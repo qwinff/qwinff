@@ -567,10 +567,12 @@ bool MainWindow::load_presets()
     QString local_preset_file = default_preset_file;
 #endif
 
+    QSettings settings;
+    bool removeUnavailableCodecs = settings.value("options/hideformats", true).toBool();
     // Load the preset file from the user's home directory
     // The presets are loaded once and shared between objects
     // that need the information.
-    if (!m_presets->readFromFile(local_preset_file)) {
+    if (!m_presets->readFromFile(local_preset_file, removeUnavailableCodecs)) {
         QMessageBox::critical(this, this->windowTitle(),
                               tr("Failed to load preset file. "
                                  "The application will quit now."));

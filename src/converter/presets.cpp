@@ -34,13 +34,13 @@ struct Presets::Private
 
     Private() : m_prev_id(0) { }
 
-    bool parseXmlFile(QFile& file);
+    bool parseXmlFile(QFile& file, bool removeUnavailableCodecs);
     bool parsePreset(QXmlStreamReader& xml);
     bool readElementData(QXmlStreamReader& xml, Preset& target);
     void removeUnavailablePresets();
 };
 
-bool Presets::Private::parseXmlFile(QFile &file)
+bool Presets::Private::parseXmlFile(QFile &file, bool removeUnavailableCodecs)
 {
     Q_ASSERT_X(file.isOpen(), "parse xml file", "file is not opened");
     QXmlStreamReader xml(&file);
@@ -73,7 +73,8 @@ bool Presets::Private::parseXmlFile(QFile &file)
         return false;
     }
 
-    removeUnavailablePresets();
+    if (removeUnavailableCodecs)
+        removeUnavailablePresets();
 
     return true;
 }
@@ -188,7 +189,7 @@ Presets::~Presets()
 {
 }
 
-bool Presets::readFromFile(const QString &filename)
+bool Presets::readFromFile(const QString &filename, bool removeUnavailableCodecs)
 {
     qDebug() << "Reading preset file: " << filename;
     QFile xmlfile(filename);
@@ -199,15 +200,15 @@ bool Presets::readFromFile(const QString &filename)
 
     qDebug() << "Finished reading preset file.";
 
-    bool ret = p->parseXmlFile(xmlfile);
+    bool ret = p->parseXmlFile(xmlfile, removeUnavailableCodecs);
 
     xmlfile.close();
     return ret;
 }
 
-bool Presets::readFromFile(const char *filename)
+bool Presets::readFromFile(const char *filename, bool removeUnavailableCodecs)
 {
-    return readFromFile(QString(filename));
+    return readFromFile(QString(filename), removeUnavailableCodecs);
 }
 
 bool Presets::getExtensions(QList<QString> &target) const

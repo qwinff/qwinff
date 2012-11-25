@@ -44,10 +44,12 @@ void OptionsDialog::read_fields()
 {
     QSettings settings;
     ui->spinThreads->setValue(settings.value("options/threads", DEFAULT_THREAD_COUNT).toInt());
+    ui->chkHideFormats->setChecked(settings.value("options/hideformats", true).toBool());
 }
 
 void OptionsDialog::write_fields()
 {
     QSettings settings;
     settings.setValue("options/threads", ui->spinThreads->value());
+    settings.setValue("options/hideformats", ui->chkHideFormats->isChecked());
 }
