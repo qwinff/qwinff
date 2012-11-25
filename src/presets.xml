@@ -657,18 +657,30 @@
   -->
 
   <!-- OGG Audio -->
-  <ogg1>
-    <label>OGG</label>
+  <ogglibv>
+    <label>OGG (libvorbis)</label>
     <params>-acodec libvorbis -vn -ac 2</params>
     <extension>ogg</extension>
     <category>Audio</category>
-  </ogg1>
-  <ogg1>
-    <label>OGG Mono</label>
+  </ogglibv>
+  <oggmonolibv>
+    <label>OGG Mono (libvorbis)</label>
     <params>-acodec libvorbis -vn -ac 1</params>
     <extension>ogg</extension>
     <category>Audio</category>
-  </ogg1>
+  </oggmonolibv>
+  <oggv>
+    <label>OGG (vorbis)</label>
+    <params>-acodec vorbis -vn -ac 2</params>
+    <extension>ogg</extension>
+    <category>Audio</category>
+  </oggv>
+  <oggmonov>
+    <label>OGG Mono (vorbis)</label>
+    <params>-acodec vorbis -vn -ac 1</params>
+    <extension>ogg</extension>
+    <category>Audio</category>
+  </oggmonov>
 
   <!-- MOV -->
   <qmovauto>
