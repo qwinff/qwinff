@@ -63,6 +63,36 @@ namespace info {
 
 namespace inner {
 
+    /**
+     * @brief Extract encoder information from codec description.
+     * @param target Extracted encoder names will be pushed into @a target
+     * @param s the codec description string
+     * @return number of encoders found
+     */
+    int find_encoders_in_desc(QStringList& target, const QString& s) {
+        const char *keyword_begin = "(encoders:";
+        const char *keyword_end = ")";
+        int begin = s.indexOf(keyword_begin) + strlen(keyword_begin);
+        if (begin < 0)
+            return 0; // encoder name not found in description
+        int end = s.indexOf(keyword_end, begin);
+        if (end < 0)
+            return 0; // error, mission ')'
+        int length = end - begin;
+
+        // encoder_str contains encoder names separated by spaces, and
+        // may contain leading and trailing spaces.
+        QString encoders_str = s.mid(begin, length);
+
+        // split encoder_str into encoder names and skip whitespaces
+        QStringList encoders = encoders_str.split(' ', QString::SkipEmptyParts);
+        foreach (QString s, encoders) {
+            target.push_back(s); // fill codec names into the list
+        }
+
+        return encoders.size();
+    }
+
     bool read_ffmpeg_codecs(const char *flag)
     {
         QProcess ffmpeg_process;
@@ -90,8 +120,10 @@ namespace inner {
 
         // Find all available encoders
         QRegExp pattern("[ D]E([ VAS])...\\s+([^ ]+)\\s*(.*)$");
+        QStringList encoder_list; // temporary storage of encoder names
         const int AV_INDEX = 1;
         const int CODEC_NAME_INDEX = 2;
+        const int CODEC_DESC = 3;
 
         ffmpeg_codec_info.clear();
         while (ffmpeg_process.canReadLine()) {
@@ -101,16 +133,24 @@ namespace inner {
             if (pattern.indexIn(line) != -1) {
                 QString av = pattern.cap(AV_INDEX);
                 QString codec = pattern.cap(CODEC_NAME_INDEX);
+                QString desc = pattern.cap(CODEC_DESC);
 
-                if (av == "A") { // audio encoder
-                    qDebug() << "Audio Codec: " + codec;
-                    audio_encoders.push_back(codec);
-                } else if (av == "V") { // video encoder
-                    qDebug() << "Video Codec: " + codec;
-                    video_encoders.push_back(codec);
-                } else if (av == "S") { // subtitle encoder
-                    qDebug() << "Subtitle Codec: " + codec;
-                    subtitle_encoders.push_back(codec);
+                // extract codec names
+                encoder_list.clear();
+                if (!find_encoders_in_desc(encoder_list, desc))
+                    encoder_list.push_back(codec);
+
+                foreach (QString codec_name, encoder_list) {
+                    if (av == "A") { // audio encoder
+                        qDebug() << "Audio Codec: " + codec_name;
+                        audio_encoders.push_back(codec_name);
+                    } else if (av == "V") { // video encoder
+                        qDebug() << "Video Codec: " + codec_name;
+                        video_encoders.push_back(codec_name);
+                    } else if (av == "S") { // subtitle encoder
+                        qDebug() << "Subtitle Codec: " + codec_name;
+                        subtitle_encoders.push_back(codec_name);
+                    }
                 }
             }
         }

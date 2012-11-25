@@ -73,7 +73,7 @@ bool Presets::Private::parseXmlFile(QFile &file)
         return false;
     }
 
-    //removeUnavailablePresets();
+    removeUnavailablePresets();
 
     return true;
 }
