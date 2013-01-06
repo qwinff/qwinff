@@ -16,7 +16,7 @@
 #include "notification.h"
 #include "notificationservice-qt.h"
 #include "notificationservice-notifysend.h"
-#if defined(Q_WS_X11) && defined(USE_LIBNOTIFY)
+#ifdef USE_LIBNOTIFY
  #include "notificationservice-libnotify.h"
 #endif
 #include <QSharedPointer>
@@ -34,7 +34,7 @@ void Notification::init()
 
     notify_service[TYPE_MSGBOX]
             = QSharedPointer<NotificationService>(new NotificationService_qt());
-#if defined(Q_WS_X11) && defined(USE_LIBNOTIFY) // libnotify is for X11 desktop
+#ifdef USE_LIBNOTIFY
     notify_service[TYPE_LIBNOTIFY]
             = QSharedPointer<NotificationService>(new NotificationService_libnotify());
 #endif

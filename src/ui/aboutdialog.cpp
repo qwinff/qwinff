@@ -18,7 +18,7 @@
 #include "version.h"
 #include <QtGlobal>
 #include <QLocale>
-#if defined(Q_WS_X11) && defined(USE_LIBNOTIFY)
+#ifdef USE_LIBNOTIFY
  #include "services/notificationservice-libnotify.h"
 #endif
 
@@ -53,7 +53,7 @@ AboutDialog::AboutDialog(QWidget *parent) :
          + "<br>"
          /*: Qt version */
          + tr("Compiled with Qt %1").arg(QT_VERSION_STR)
-#if defined(Q_WS_X11) && defined(USE_LIBNOTIFY) /*: libnotify version */
+#ifdef USE_LIBNOTIFY /*: libnotify version */
                 + "<br>" + tr("Compiled with libnotify %1")
                 .arg(NotificationService_libnotify::getVersion())
 #endif
