@@ -16,8 +16,8 @@
 /* Linux Implementation of PowerManagement class */
 
 #include "powermanagement.h"
-#include <QtDBus/QDBusMessage>
-#include <QtDBus/QDBusInterface>
+#include <QDBusMessage>
+#include <QDBusInterface>
 #include <QProcess>
 #include <QDebug>
 

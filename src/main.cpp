@@ -13,7 +13,7 @@
     along with QWinFF.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <QtGui/QApplication>
+#include <QApplication>
 #include <QDebug>
 #include <QLocale>
 #include <QTranslator>
