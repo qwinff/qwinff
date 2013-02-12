@@ -347,6 +347,10 @@
         <source>Speed (Experimental)</source>
         <translation>Rychlost (Experimentální)</translation>
     </message>
+    <message>
+        <source>&amp;Preview</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConvertList</name>

@@ -402,7 +402,7 @@
         <translation type="obsolete">开始时间</translation>
     </message>
     <message>
-        <location filename="../ui/conversionparameterdialog.ui" line="373"/>
+        <location filename="../ui/conversionparameterdialog.ui" line="380"/>
         <source>From Begin</source>
         <translation>从文件开头开始</translation>
     </message>
@@ -411,33 +411,38 @@
         <translation type="obsolete">结束时间</translation>
     </message>
     <message>
-        <location filename="../ui/conversionparameterdialog.ui" line="390"/>
+        <location filename="../ui/conversionparameterdialog.ui" line="401"/>
         <source>To End</source>
         <translation>到文件结尾</translation>
     </message>
     <message>
-        <location filename="../ui/conversionparameterdialog.ui" line="410"/>
+        <location filename="../ui/conversionparameterdialog.ui" line="437"/>
+        <source>&amp;Preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/conversionparameterdialog.ui" line="449"/>
         <source>Scaling</source>
         <extracomment>time scaling, changing the speed of the output file</extracomment>
         <translation>改变长度</translation>
     </message>
     <message>
-        <location filename="../ui/conversionparameterdialog.ui" line="418"/>
+        <location filename="../ui/conversionparameterdialog.ui" line="457"/>
         <source>Speed (Experimental)</source>
         <translation>速度 (测试版)</translation>
     </message>
     <message>
-        <location filename="../ui/conversionparameterdialog.ui" line="444"/>
+        <location filename="../ui/conversionparameterdialog.ui" line="483"/>
         <source>Advanced</source>
         <translation>进阶</translation>
     </message>
     <message>
-        <location filename="../ui/conversionparameterdialog.ui" line="450"/>
+        <location filename="../ui/conversionparameterdialog.ui" line="489"/>
         <source>FFmpeg</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/conversionparameterdialog.ui" line="458"/>
+        <location filename="../ui/conversionparameterdialog.ui" line="497"/>
         <source>Additional FFmpeg Options</source>
         <translation>其他FFmpeg参数</translation>
     </message>
@@ -452,7 +457,7 @@
     </message>
     <message>
         <location filename="../ui/convertlist.cpp" line="270"/>
-        <location filename="../ui/convertlist.cpp" line="912"/>
+        <location filename="../ui/convertlist.cpp" line="913"/>
         <source>Cancel</source>
         <extracomment>Cancel the operation of adding new tasks</extracomment>
         <translation>取消</translation>
@@ -469,189 +474,189 @@
         <translation>有一些文件无法识别</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="1036"/>
+        <location filename="../ui/convertlist.cpp" line="1037"/>
         <source>Remove Task</source>
         <translation>移除任务</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="1037"/>
+        <location filename="../ui/convertlist.cpp" line="1038"/>
         <source>Cannot remove a task while it is in progress.</source>
         <translation>无法移除正在进行的任务</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="479"/>
+        <location filename="../ui/convertlist.cpp" line="480"/>
         <source>New File Name</source>
         <translation>新的文件名称</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="480"/>
+        <location filename="../ui/convertlist.cpp" line="481"/>
         <source>Please input the new name for the output file.</source>
         <translation>请输出新的文件名称</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="505"/>
+        <location filename="../ui/convertlist.cpp" line="506"/>
         <source>Output Directory</source>
         <translation>输出文件夹</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="550"/>
+        <location filename="../ui/convertlist.cpp" line="551"/>
         <source>Error Message from FFmpeg:
 
 </source>
         <translation>FFmpeg的错误信息:</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="1088"/>
+        <location filename="../ui/convertlist.cpp" line="1089"/>
         <source>Failed</source>
         <extracomment>The text to be displayed on the progress bar when a conversion fails</extracomment>
         <translation>失败</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="1090"/>
+        <location filename="../ui/convertlist.cpp" line="1091"/>
         <source>Error: %1</source>
         <extracomment>%1 is the error message</extracomment>
         <translation>错误: %1</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="1081"/>
         <location filename="../ui/convertlist.cpp" line="1082"/>
+        <location filename="../ui/convertlist.cpp" line="1083"/>
         <source>Finished</source>
         <translation>已完成</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="621"/>
+        <location filename="../ui/convertlist.cpp" line="622"/>
         <source>Hide &quot;%1&quot;</source>
         <extracomment>Hide a column in the list. For example, the text maybe &apos;Hide &quot;Duration&quot;&apos;. The two &quot; are quotation marks in English, you may replace it with local quotation marks.</extracomment>
         <translation>隐藏 &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="630"/>
+        <location filename="../ui/convertlist.cpp" line="631"/>
         <source>Restore All Columns</source>
         <translation>回复所有任务</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="819"/>
+        <location filename="../ui/convertlist.cpp" line="820"/>
         <source>Source</source>
         <translation>来源</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="820"/>
+        <location filename="../ui/convertlist.cpp" line="821"/>
         <source>Destination</source>
         <translation>输出</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="821"/>
+        <location filename="../ui/convertlist.cpp" line="822"/>
         <source>Duration</source>
         <translation>长度</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="822"/>
+        <location filename="../ui/convertlist.cpp" line="823"/>
         <source>File Size</source>
         <translation>文件大小</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="825"/>
+        <location filename="../ui/convertlist.cpp" line="826"/>
         <source>Sample Rate</source>
         <extracomment>Audio</extracomment>
         <translation>取样率</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="826"/>
+        <location filename="../ui/convertlist.cpp" line="827"/>
         <source>Audio Bitrate</source>
         <translation>声音比特率</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="827"/>
+        <location filename="../ui/convertlist.cpp" line="828"/>
         <source>Channels</source>
         <extracomment>Audio</extracomment>
         <translation>声道</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="828"/>
+        <location filename="../ui/convertlist.cpp" line="829"/>
         <source>Audio Codec</source>
         <translation>声音编码器</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="831"/>
+        <location filename="../ui/convertlist.cpp" line="832"/>
         <source>Dimensions</source>
         <translation>影像尺寸</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="832"/>
+        <location filename="../ui/convertlist.cpp" line="833"/>
         <source>Video Bitrate</source>
         <translation>影像比特率</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="833"/>
+        <location filename="../ui/convertlist.cpp" line="834"/>
         <source>Framerate</source>
         <extracomment>Video</extracomment>
         <translation>影格率</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="834"/>
+        <location filename="../ui/convertlist.cpp" line="835"/>
         <source>Video Codec</source>
         <translation>影像编码器</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="836"/>
+        <location filename="../ui/convertlist.cpp" line="837"/>
         <source>Progress</source>
         <translation>进度</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="881"/>
+        <location filename="../ui/convertlist.cpp" line="882"/>
         <source>%1 Hz</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="882"/>
-        <location filename="../ui/convertlist.cpp" line="891"/>
+        <location filename="../ui/convertlist.cpp" line="883"/>
+        <location filename="../ui/convertlist.cpp" line="892"/>
         <source>%1 kb/s</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="892"/>
+        <location filename="../ui/convertlist.cpp" line="893"/>
         <source>%1 fps</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="911"/>
+        <location filename="../ui/convertlist.cpp" line="912"/>
         <source>Removing tasks...</source>
         <extracomment>Remove files from the tasklist</extracomment>
         <translation>正在移除任务</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="954"/>
+        <location filename="../ui/convertlist.cpp" line="955"/>
         <source>KiB</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="954"/>
+        <location filename="../ui/convertlist.cpp" line="955"/>
         <source>MiB</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="954"/>
+        <location filename="../ui/convertlist.cpp" line="955"/>
         <source>GiB</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="954"/>
+        <location filename="../ui/convertlist.cpp" line="955"/>
         <source>TiB</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="957"/>
+        <location filename="../ui/convertlist.cpp" line="958"/>
         <source>B</source>
         <extracomment>Bytes</extracomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="992"/>
+        <location filename="../ui/convertlist.cpp" line="993"/>
         <source>File Exists</source>
         <translation>文件已存在</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="993"/>
+        <location filename="../ui/convertlist.cpp" line="994"/>
         <source>%1 already exists on disk or in the task list. Still use this name as the output filename?</source>
         <translation>%1 已经存在。确定还要用这个名称作为输出文件吗？</translation>
     </message>

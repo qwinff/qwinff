@@ -339,6 +339,10 @@
         <source>From Begin</source>
         <translation>始めから</translation>
     </message>
+    <message>
+        <source>&amp;Preview</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConvertList</name>
