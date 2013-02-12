@@ -17,6 +17,9 @@ SOURCES += main.cpp \
     ui/addtaskwizard.cpp \
     ui/aboutffmpegdialog.cpp \
     ui/optionsdialog.cpp \
+    ui/aboutdialog.cpp \
+    ui/poweroffdialog.cpp \
+    ui/rangeselector.cpp \
     converter/presets.cpp \
     converter/mediaprobe.cpp \
     converter/mediaconverter.cpp \
@@ -26,12 +29,10 @@ SOURCES += main.cpp \
     services/paths.cpp \
     services/extensions.cpp \
     services/filepathoperations.cpp \
-    ui/aboutdialog.cpp \
     services/notification.cpp \
     services/notificationservice-qt.cpp \
     services/notificationservice-notifysend.cpp \
     services/powermanagement-dummy.cpp \
-    ui/poweroffdialog.cpp \
     converter/audiofilter.cpp \
     converter/exepath.cpp
 
@@ -43,6 +44,9 @@ HEADERS  += \
     ui/addtaskwizard.h \
     ui/aboutffmpegdialog.h \
     ui/optionsdialog.h \
+    ui/aboutdialog.h \
+    ui/poweroffdialog.h \
+    ui/rangeselector.h \
     converter/presets.h \
     converter/mediaprobe.h \
     converter/mediaconverter.h \
@@ -52,14 +56,12 @@ HEADERS  += \
     services/paths.h \
     services/extensions.h \
     services/filepathoperations.h \
-    ui/aboutdialog.h \
     version.h \
     services/notification.h \
     services/notificationservice.h \
     services/notificationservice-qt.h \
     services/notificationservice-notifysend.h \
     services/powermanagement.h \
-    ui/poweroffdialog.h \
     converter/audiofilter.h \
     converter/exepath.h \
     extra-translations.h
