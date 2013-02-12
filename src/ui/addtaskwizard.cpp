@@ -221,9 +221,16 @@ void AddTaskWizard::slotRemoveFilesFromList()
 void AddTaskWizard::slotEditPresetButton()
 {
     ConversionParameterDialog dialog(this);
+    bool singleFile = (ui->lstFiles->count() == 1);
+    ConversionParameters param = *m_current_param;
     dialog.setGeometry(this->x(), this->y(), dialog.width(), dialog.height());
 
-    if (dialog.exec(*m_current_param)) {
+    if (singleFile) {
+        param.source = ui->lstFiles->item(0)->text();
+    }
+
+    if (dialog.exec(param, singleFile)) {
+        m_current_param->copyConfigurationFrom(param);
         m_cbpreset_index = ui->cbPreset->currentIndex();
         ui->cbPreset->setCurrentIndex(-1); // select no item
     }
