@@ -34,7 +34,8 @@ SOURCES += main.cpp \
     services/notificationservice-notifysend.cpp \
     services/powermanagement-dummy.cpp \
     converter/audiofilter.cpp \
-    converter/exepath.cpp
+    converter/exepath.cpp \
+    converter/ffplayinterface.cpp
 
 HEADERS  += \
     ui/progressbar.h \
@@ -64,7 +65,8 @@ HEADERS  += \
     services/powermanagement.h \
     converter/audiofilter.h \
     converter/exepath.h \
-    extra-translations.h
+    extra-translations.h \
+    converter/ffplayinterface.h
 
 FORMS    += \
     ui/conversionparameterdialog.ui \
