@@ -9,6 +9,7 @@ RangeSelector::RangeSelector(QWidget *parent) :
     m_mouseDown(false)
 {
     setMinimumSize(20, 20);
+    setMaximumHeight(20);
     emit beginValueChanged(m_val_begin);
     emit endValueChanged(m_val_end);
 }
