@@ -368,6 +368,9 @@
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_7">
             <item>
+             <layout class="QVBoxLayout" name="layoutTimeSel"/>
+            </item>
+            <item>
              <widget class="QCheckBox" name="chkFromBegin">
               <property name="text">
                <string>From Begin</string>
@@ -513,8 +516,8 @@
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>248</x>
-     <y>254</y>
+     <x>253</x>
+     <y>417</y>
     </hint>
     <hint type="destinationlabel">
      <x>157</x>
@@ -529,8 +532,8 @@
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>316</x>
-     <y>260</y>
+     <x>321</x>
+     <y>417</y>
     </hint>
     <hint type="destinationlabel">
      <x>286</x>
@@ -545,8 +548,8 @@
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>104</x>
-     <y>116</y>
+     <x>113</x>
+     <y>56</y>
     </hint>
     <hint type="destinationlabel">
      <x>229</x>
@@ -561,8 +564,8 @@
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>227</x>
-     <y>110</y>
+     <x>236</x>
+     <y>56</y>
     </hint>
     <hint type="destinationlabel">
      <x>227</x>

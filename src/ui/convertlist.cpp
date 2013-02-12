@@ -446,10 +446,11 @@ void ConvertList::editSelectedParameters()
     Task *first_sel_task = get_task(itemList[0]);
     Q_ASSERT(first_sel_task != 0);
     ConversionParameters param = first_sel_task->param;
+    bool singleItem = (itemList.size() == 1);
 
     ConversionParameterDialog dialog(this->parentWidget());
 
-    if (dialog.exec(param)) {
+    if (dialog.exec(param, singleItem)) {
         foreach (QTreeWidgetItem* item, itemList) {
             Task *task = get_task(item);
             // copy conversion parameters

@@ -12,14 +12,18 @@ public:
 
     int beginValue() const;
     int endValue() const;
+    int minValue() const;
+    int maxValue() const;
 
 signals:
+    void valueChanged();
     void beginValueChanged(int newvalue);
     void endValueChanged(int newvalue);
 
 public slots:
     void setBeginValue(int beginValue);
     void setEndValue(int beginValue);
+    void setMaxValue(int maxValue);
 
 private slots:
     void mouseDown(QPoint pos);

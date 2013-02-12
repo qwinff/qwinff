@@ -26,21 +26,46 @@ int RangeSelector::endValue() const
     return m_val_end;
 }
 
+int RangeSelector::minValue() const
+{
+    return m_min;
+}
+
+int RangeSelector::maxValue() const
+{
+    return m_max;
+}
+
 void RangeSelector::setBeginValue(int value)
 {
-    if (m_min <= value && value <= m_max && value < m_val_end) {
+    if (m_val_begin != value
+            && m_min <= value && value <= m_max
+            && value < m_val_end) {
         m_val_begin = value;
-        beginValueChanged(m_val_begin);
         repaint();
+        emit valueChanged();
+        emit beginValueChanged(m_val_begin);
     }
 }
 
 void RangeSelector::setEndValue(int value)
 {
-    if (m_min <= value && value <= m_max && value > m_val_begin) {
+    if (m_val_end != value
+            && m_min <= value && value <= m_max
+            && value > m_val_begin) {
         m_val_end = value;
-        endValueChanged(m_val_end);
         repaint();
+        emit valueChanged();
+        emit endValueChanged(m_val_end);
+    }
+}
+
+void RangeSelector::setMaxValue(int maxValue)
+{
+    if (maxValue > m_min) {
+        m_max = maxValue;
+        m_val_begin = m_min;
+        m_val_end = m_max;
     }
 }
 

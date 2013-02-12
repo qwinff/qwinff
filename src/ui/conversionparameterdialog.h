@@ -23,6 +23,8 @@ namespace Ui {
     class ConversionParameterDialog;
 }
 
+class RangeSelector;
+
 class ConversionParameterDialog : public QDialog
 {
     Q_OBJECT
@@ -33,19 +35,28 @@ public:
 
     /*! This function blocks until the dialog is closed.
      *  @param param If the user presses OK, the modified parameter is written back.
+     *  @param single_file If @a single_file is true, the dialog will probe
+     *    the file indicated by @c param.source and show some additional options.
+     *    default: false.
      *  @return If the user presses OK, the function returns true.
      *  Otherwise, it returns false.
      */
-    bool exec(ConversionParameters& param);
+    bool exec(ConversionParameters& param, bool single_file=false);
 
 private slots:
     void update_endtime();
+    void sync_time_view_to_text();
+    void sync_time_text_to_view();
+    void from_begin_toggled(bool);
+    void to_end_toggled(bool);
 
 private:
     Ui::ConversionParameterDialog *ui;
     void read_fields(const ConversionParameters& param);
     void write_fields(ConversionParameters& param);
     bool m_enableAudioProcessing;
+    bool m_singleFile;
+    RangeSelector *m_selTime;
 };
 
 #endif // CONVERSIONPARAMETERDIALOG_H

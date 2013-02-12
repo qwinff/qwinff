@@ -15,6 +15,8 @@
 
 #include "conversionparameterdialog.h"
 #include "converter/audiofilter.h"
+#include "converter/mediaprobe.h"
+#include "rangeselector.h"
 #include "ui_conversionparameterdialog.h"
 #include <QLayout>
 #include <cmath>
@@ -28,9 +30,12 @@
 
 ConversionParameterDialog::ConversionParameterDialog(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::ConversionParameterDialog)
+    ui(new Ui::ConversionParameterDialog),
+    m_selTime(new RangeSelector(this))
 {
     ui->setupUi(this);
+
+    ui->layoutTimeSel->addWidget(m_selTime);
 
     // Setup audio sample rate selection
     ui->cbAudioSampleRate->addItem("44100");
@@ -40,10 +45,20 @@ ConversionParameterDialog::ConversionParameterDialog(QWidget *parent) :
     ui->timeBegin->setSelectedSection(QDateTimeEdit::SecondSection);
     ui->timeEnd->setSelectedSection(QDateTimeEdit::SecondSection);
 
+    // enable/disable time control widgets
     connect(ui->chkFromBegin, SIGNAL(toggled(bool)),
-            ui->timeBegin, SLOT(setDisabled(bool)));
+            this, SLOT(from_begin_toggled(bool)));
     connect(ui->chkToEnd, SIGNAL(toggled(bool)),
-            ui->timeEnd, SLOT(setDisabled(bool)));
+            this, SLOT(to_end_toggled(bool)));
+
+    // synchronize time sliders and time selectors
+    connect(ui->timeBegin, SIGNAL(timeChanged(QTime)),
+            this, SLOT(sync_time_text_to_view()));
+    connect(ui->timeEnd, SIGNAL(timeChanged(QTime)),
+            this, SLOT(sync_time_text_to_view()));
+    connect(m_selTime, SIGNAL(valueChanged()),
+            this, SLOT(sync_time_view_to_text()));
+
     connect(ui->chkToEnd, SIGNAL(toggled(bool)),
             this, SLOT(update_endtime()));
     connect(ui->timeBegin, SIGNAL(timeChanged(QTime)),
@@ -60,8 +75,9 @@ ConversionParameterDialog::~ConversionParameterDialog()
     delete ui;
 }
 
-bool ConversionParameterDialog::exec(ConversionParameters& param)
+bool ConversionParameterDialog::exec(ConversionParameters& param, bool single_file)
 {
+    m_singleFile = single_file;
     read_fields(param);
     bool accepted = (QDialog::exec() == QDialog::Accepted);
     if (accepted) {
@@ -73,6 +89,55 @@ bool ConversionParameterDialog::exec(ConversionParameters& param)
 void ConversionParameterDialog::update_endtime()
 {
     ui->timeEnd->setMinimumTime(ui->timeBegin->time().addSecs(1));
+}
+
+#define SECS_TO_QTIME(s) QTime(0, 0).addSecs(s)
+#define QTIME_TO_SECS(t) (t).hour()*3600 + (t).minute()*60 + (t).second()
+
+void ConversionParameterDialog::sync_time_view_to_text()
+{
+    bool fromBegin = (m_selTime->beginValue() == m_selTime->minValue());
+    bool toEnd = (m_selTime->endValue() == m_selTime->maxValue());
+    if (!fromBegin)
+        ui->timeBegin->setTime(SECS_TO_QTIME(m_selTime->beginValue()));
+    if (!toEnd)
+        ui->timeEnd->setTime(SECS_TO_QTIME(m_selTime->endValue()));
+    ui->chkFromBegin->setChecked(fromBegin);
+    ui->chkToEnd->setChecked(toEnd);
+}
+
+void ConversionParameterDialog::sync_time_text_to_view()
+{
+    int beginSecs = QTIME_TO_SECS(ui->timeBegin->time());
+    int endSecs = QTIME_TO_SECS(ui->timeEnd->time());
+    if (ui->chkFromBegin->isChecked())
+        beginSecs = m_selTime->minValue();
+    if (ui->chkToEnd->isChecked())
+        endSecs = m_selTime->maxValue();
+    m_selTime->setBeginValue(beginSecs);
+    m_selTime->setEndValue(endSecs);
+}
+
+void ConversionParameterDialog::from_begin_toggled(bool value)
+{
+    ui->timeBegin->setDisabled(value);
+    if (value == true) {
+        // from begin
+        m_selTime->setBeginValue(m_selTime->minValue());
+    } else {
+        sync_time_text_to_view();
+    }
+}
+
+void ConversionParameterDialog::to_end_toggled(bool value)
+{
+    ui->timeEnd->setDisabled(value);
+    if (value == true) {
+        // to end
+        m_selTime->setEndValue(m_selTime->maxValue());
+    } else {
+        sync_time_text_to_view();
+    }
 }
 
 // read the fields from the ConversionParameters
@@ -112,6 +177,18 @@ void ConversionParameterDialog::read_fields(const ConversionParameters& param)
     ui->spinCropRight->setValue(param.video_crop_right);
 
     // Time Options
+    bool show_slider = false;
+    int slider_max = 0;
+    if (m_singleFile) {
+        // time slider: only show in single file mode
+        MediaProbe probe;
+        if (probe.run(param.source)) { // probe the source file, blocking call
+            // success, show the slider
+            slider_max = (int)probe.mediaDuration();
+            show_slider = true;
+        }
+    }
+    m_selTime->setVisible(show_slider);
     if (param.time_begin > 0) {
         ui->chkFromBegin->setChecked(false);
         ui->timeBegin->setTime(QTime().addSecs(param.time_begin));
@@ -135,7 +212,7 @@ void ConversionParameterDialog::read_fields(const ConversionParameters& param)
     //ui->chkDisableSubtitle->setChecked(param.disable_subtitle);
 }
 
-#define QTIME_TO_SECS(t) ((t.hour()) * 3600 + (t.minute()) * 60 + (t.second()))
+//#define QTIME_TO_SECS(t) ((t.hour()) * 3600 + (t.minute()) * 60 + (t.second()))
 
 // write the fields to the ConversionParameters
 void ConversionParameterDialog::write_fields(ConversionParameters& param)
