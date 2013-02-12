@@ -1,5 +1,6 @@
 #include "ffplayinterface.h"
 #include <QProcess>
+#include <QDebug>
 
 #ifdef OPERATION_TIMEOUT
 #   define TIMEOUT OPERATION_TIMEOUT
@@ -101,6 +102,7 @@ void FFplayInterface::ffplay_start(const QString& filename, int t_begin, int t_e
             param.append(QString::number(t_end)); // start from time zero
     }
     param.append(filename);
+    qDebug() << "ffplay" << param.join(" ");
     m_proc->start(ffplay_executable, param);
     m_proc->waitForStarted(TIMEOUT);
 }

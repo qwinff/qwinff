@@ -16,6 +16,7 @@
 #include "conversionparameterdialog.h"
 #include "converter/audiofilter.h"
 #include "converter/mediaprobe.h"
+#include "converter/ffplayinterface.h"
 #include "rangeselector.h"
 #include "ui_conversionparameterdialog.h"
 #include <QLayout>
@@ -31,7 +32,8 @@
 ConversionParameterDialog::ConversionParameterDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ConversionParameterDialog),
-    m_selTime(new RangeSelector(this))
+    m_selTime(new RangeSelector(this)),
+    m_ffplay(new FFplayInterface(this))
 {
     ui->setupUi(this);
 
@@ -64,6 +66,9 @@ ConversionParameterDialog::ConversionParameterDialog(QWidget *parent) :
     connect(ui->timeBegin, SIGNAL(timeChanged(QTime)),
             this, SLOT(update_endtime()));
 
+    connect(ui->btnPreview, SIGNAL(clicked()),
+            this, SLOT(preview_time_selection()));
+
     // Hide speed-changing options if sox is not available.
     m_enableAudioProcessing = AudioFilter::available();
     if (!m_enableAudioProcessing)
@@ -78,6 +83,7 @@ ConversionParameterDialog::~ConversionParameterDialog()
 bool ConversionParameterDialog::exec(ConversionParameters& param, bool single_file)
 {
     m_singleFile = single_file;
+    m_param = &param;
     read_fields(param);
     bool accepted = (QDialog::exec() == QDialog::Accepted);
     if (accepted) {
@@ -140,6 +146,16 @@ void ConversionParameterDialog::to_end_toggled(bool value)
     }
 }
 
+void ConversionParameterDialog::preview_time_selection()
+{
+    int timeBegin = -1, timeEnd = -1;
+    if (!ui->chkFromBegin->isChecked())
+        timeBegin = QTIME_TO_SECS(ui->timeBegin->time());
+    if (!ui->chkToEnd->isChecked())
+        timeEnd = QTIME_TO_SECS(ui->timeEnd->time());
+    m_ffplay->play(m_param->source, timeBegin, timeEnd);
+}
+
 // read the fields from the ConversionParameters
 void ConversionParameterDialog::read_fields(const ConversionParameters& param)
 {
@@ -178,17 +194,19 @@ void ConversionParameterDialog::read_fields(const ConversionParameters& param)
 
     // Time Options
     bool show_slider = false;
-    int slider_max = 0;
     if (m_singleFile) {
         // time slider: only show in single file mode
         MediaProbe probe;
         if (probe.run(param.source)) { // probe the source file, blocking call
             // success, show the slider
-            slider_max = (int)probe.mediaDuration();
+            m_selTime->setMaxValue((int)probe.mediaDuration());
             show_slider = true;
         }
     }
     m_selTime->setVisible(show_slider);
+    bool show_preview_button = show_slider && FFplayInterface::FFplayAvailable();
+    ui->btnPreview->setVisible(show_preview_button);
+
     if (param.time_begin > 0) {
         ui->chkFromBegin->setChecked(false);
         ui->timeBegin->setTime(QTime().addSecs(param.time_begin));

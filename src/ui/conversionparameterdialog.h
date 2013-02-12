@@ -24,6 +24,7 @@ namespace Ui {
 }
 
 class RangeSelector;
+class FFplayInterface;
 
 class ConversionParameterDialog : public QDialog
 {
@@ -49,6 +50,7 @@ private slots:
     void sync_time_text_to_view();
     void from_begin_toggled(bool);
     void to_end_toggled(bool);
+    void preview_time_selection();
 
 private:
     Ui::ConversionParameterDialog *ui;
@@ -57,6 +59,8 @@ private:
     bool m_enableAudioProcessing;
     bool m_singleFile;
     RangeSelector *m_selTime;
+    ConversionParameters *m_param;
+    FFplayInterface *m_ffplay;
 };
 
 #endif // CONVERSIONPARAMETERDIALOG_H
