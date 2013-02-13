@@ -458,7 +458,7 @@
               <item>
                <widget class="QLabel" name="lblSpeed">
                 <property name="text">
-                 <string>Speed (Experimental)</string>
+                 <string>Speed</string>
                 </property>
                </widget>
               </item>
