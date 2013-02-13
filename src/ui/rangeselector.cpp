@@ -2,7 +2,20 @@
 #include <QPainter>
 #include <QMouseEvent>
 
+// rounded rectangle radius
 #define ROUNDRECT_RADIUS 3.0
+
+// container color
+#define COLOR_CONT_BG_GRAD_1 QColor(148, 148, 148) /* gradient 1 */
+#define COLOR_CONT_BG_GRAD_2 QColor(172, 172, 172) /* gradient 2 */
+#define COLOR_CONT_OUT_BORDER QColor(84, 84, 84)   /* outer border */
+#define COLOR_CONT_IN_BORDER QColor(172, 172, 172) /* inner border */
+
+// range indicator color
+#define COLOR_RANGE_BG_GRAD_1 QColor(107, 228, 65)  /* gradient 1 */
+#define COLOR_RANGE_BG_GRAD_2 QColor(69, 204, 20)   /* gradient 2 */
+#define COLOR_RANGE_OUT_BORDER QColor(0, 138, 0)    /* outer border */
+#define COLOR_RANGE_IN_BORDER QColor(169, 243, 143) /* inner border */
 
 RangeSelector::RangeSelector(QWidget *parent) :
     QWidget(parent), m_max(255), m_min(0), m_val_begin(0), m_val_end(128),
@@ -138,21 +151,21 @@ void RangeSelector::drawContainer(QPainter &painter, QPen &pen)
     // background
     QRect background_region(0, 0, width(), height());
     QLinearGradient background_gradient(0, 0, 0, background_region.bottom());
-    background_gradient.setColorAt(0.0, QColor(148, 148, 148));
-    background_gradient.setColorAt(1.0, QColor(172, 172, 172));
+    background_gradient.setColorAt(0.0, COLOR_CONT_BG_GRAD_1);
+    background_gradient.setColorAt(1.0, COLOR_CONT_BG_GRAD_2);
     painter.setBrush(background_gradient);
     painter.setPen(Qt::NoPen);
     painter.drawRoundedRect(background_region, ROUNDRECT_RADIUS, ROUNDRECT_RADIUS);
 
     // outer border
     QRect outer_border_region(0, 0, width()-1, height()-1);
-    pen.setColor(QColor(84, 84, 84));
+    pen.setColor(COLOR_CONT_OUT_BORDER);
     painter.setPen(pen);
     painter.drawRoundedRect(outer_border_region, ROUNDRECT_RADIUS, ROUNDRECT_RADIUS);
 
     // inner border
     QRect inner_border_region(1, 1, width()-3, height()-3);
-    pen.setColor(QColor(172, 172, 172));
+    pen.setColor(COLOR_CONT_IN_BORDER);
     painter.setPen(pen);
     painter.drawRoundedRect(inner_border_region, ROUNDRECT_RADIUS, ROUNDRECT_RADIUS);
 
@@ -165,21 +178,21 @@ void RangeSelector::drawRange(QPainter &painter, QPen &pen)
     // background
     QRect background_region(begin, 0, end - begin - 1, height() - 1);
     QLinearGradient background_gradient(0, 0, 0, background_region.bottom());
-    background_gradient.setColorAt(0.0, QColor(107, 228, 65));
-    background_gradient.setColorAt(1.0, QColor(69, 204, 20));
+    background_gradient.setColorAt(0.0, COLOR_RANGE_BG_GRAD_1);
+    background_gradient.setColorAt(1.0, COLOR_RANGE_BG_GRAD_2);
     painter.setBrush(background_gradient);
     painter.setPen(Qt::NoPen);
     painter.drawRoundedRect(background_region, ROUNDRECT_RADIUS, ROUNDRECT_RADIUS);
 
     // outer border
     QRect outer_border_region(begin, 0, end-begin-1, height()-1);
-    pen.setColor(QColor(0, 138, 0));
+    pen.setColor(COLOR_RANGE_OUT_BORDER);
     painter.setPen(pen);
     painter.drawRoundedRect(outer_border_region, ROUNDRECT_RADIUS, ROUNDRECT_RADIUS);
 
     // inner border
     QRect inner_border_region(begin+1, 1, end-begin-3, height()-3);
-    pen.setColor(QColor(169, 243, 143));
+    pen.setColor(COLOR_RANGE_IN_BORDER);
     painter.setPen(pen);
     painter.drawRoundedRect(inner_border_region, ROUNDRECT_RADIUS, ROUNDRECT_RADIUS);
 }
