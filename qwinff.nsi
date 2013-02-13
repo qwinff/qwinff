@@ -107,6 +107,9 @@ Section
 	# Create Uninstaller
 	WriteUninstaller "$INSTDIR\${UNINSTALLER}"
 
+	# Create Desktop Shortcut
+	CreateShortcut "$DESKTOP\QWinFF.lnk" "$INSTDIR\qwinff.exe"
+
 	!insertmacro MUI_STARTMENU_WRITE_BEGIN Application
 	# Start Menu Shortcuts
 	CreateDirectory "$SMPROGRAMS\$StartMenuFolder"
@@ -139,6 +142,7 @@ Section "un.Uninstaller"
 	RmDir  $INSTDIR\sox
 	RmDir  $INSTDIR    # Remove the installation directory if it's empty.
 
+	Delete "$DESKTOP\QWinFF.lnk"
 	!insertmacro MUI_STARTMENU_GETFOLDER Application $StartMenuFolder
 	Delete "$SMPROGRAMS\$StartMenuFolder\*.lnk"
 	RmDir  "$SMPROGRAMS\$StartMenuFolder"
