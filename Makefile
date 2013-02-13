@@ -27,7 +27,8 @@ QMAKE_DEFS= DESTDIR=$(BIN_DIR) \
             OBJECTS_DIR=$(BUILD_DIR)/obj \
             MOC_DIR=$(BUILD_DIR)/moc \
             RCC_DIR=$(BUILD_DIR)/rcc \
-            UI_DIR=$(BUILD_DIR)/ui
+            UI_DIR=$(BUILD_DIR)/ui \
+            DEFINES+=QT_NO_DEBUG_OUTPUT
 
 DEFS= DATA_PATH=\\\"$(DATA_PATH)\\\" \
       VERSION_ID_STRING=\\\"$(VIDSTR)\\\"
