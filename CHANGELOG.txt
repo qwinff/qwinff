@@ -1,3 +1,8 @@
+Version 0.1.8:
+ (2013-02-13)
+  - Improved video/audio cutting interface.
+  - Fixed some bugs when working with newer ffmpeg versions.
+
 Version 0.1.7:
  (2012-09-17)
   - Drag&Drop reordering tasks

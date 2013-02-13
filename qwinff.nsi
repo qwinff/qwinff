@@ -1,6 +1,6 @@
 !include "MUI.nsh"
 !define APPNAME "QWinFF"
-!define VERSION "0.1.7"
+!define VERSION "0.1.8"
 !define DESCRIPTION "A cross platform media converter GUI"
 !define UNINSTALLER "uninstall.exe"
 !define LICENSE "license.txt"
