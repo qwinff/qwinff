@@ -250,7 +250,7 @@
         <translation>Alcuni file non possono essere trovati.</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="235"/>
+        <location filename="../ui/addtaskwizard.cpp" line="242"/>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
         <translation>Seleziona Directory</translation>
@@ -328,6 +328,11 @@
         <extracomment>video time cutting: options for begin time and end time</extracomment>
         <translatorcomment>Impostazioni per i tempi di inizio e fine taglio del video</translatorcomment>
         <translation>Taglio</translation>
+    </message>
+    <message>
+        <location filename="../ui/conversionparameterdialog.ui" line="461"/>
+        <source>Speed</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Use the source bitrate if it is smaller than the configured output bitrate. This can reduce output file size in certain conditions.</source>
@@ -422,28 +427,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/conversionparameterdialog.ui" line="449"/>
+        <location filename="../ui/conversionparameterdialog.ui" line="453"/>
         <source>Scaling</source>
         <extracomment>time scaling, changing the speed of the output file</extracomment>
         <translation>Modifica velocità</translation>
     </message>
     <message>
-        <location filename="../ui/conversionparameterdialog.ui" line="457"/>
         <source>Speed (Experimental)</source>
-        <translation>Velocità (Sperimentale)</translation>
+        <translation type="obsolete">Velocità (Sperimentale)</translation>
     </message>
     <message>
-        <location filename="../ui/conversionparameterdialog.ui" line="483"/>
+        <location filename="../ui/conversionparameterdialog.ui" line="487"/>
         <source>Advanced</source>
         <translation>Avanzato</translation>
     </message>
     <message>
-        <location filename="../ui/conversionparameterdialog.ui" line="489"/>
+        <location filename="../ui/conversionparameterdialog.ui" line="493"/>
         <source>FFmpeg</source>
         <translation>FFmpeg</translation>
     </message>
     <message>
-        <location filename="../ui/conversionparameterdialog.ui" line="497"/>
+        <location filename="../ui/conversionparameterdialog.ui" line="501"/>
         <source>Additional FFmpeg Options</source>
         <translation>Opzioni FFmpeg Addizionali</translation>
     </message>

@@ -296,7 +296,7 @@
     </message>
     <message>
         <source>Speed (Experimental)</source>
-        <translation>速さ (実験的)</translation>
+        <translation type="obsolete">速さ (実験的)</translation>
     </message>
     <message>
         <source>Video Options</source>
@@ -341,6 +341,10 @@
     </message>
     <message>
         <source>&amp;Preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Speed</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -250,7 +250,7 @@
         <translation>無法找到其中的一些檔案</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="235"/>
+        <location filename="../ui/addtaskwizard.cpp" line="242"/>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
         <translation>選擇資料夾</translation>
@@ -327,6 +327,11 @@
         <source>Cutting</source>
         <extracomment>video time cutting: options for begin time and end time</extracomment>
         <translation>剪裁</translation>
+    </message>
+    <message>
+        <location filename="../ui/conversionparameterdialog.ui" line="461"/>
+        <source>Speed</source>
+        <translation>速度</translation>
     </message>
     <message>
         <source>Use the source bitrate if it is smaller than the configured output bitrate. This can reduce output file size in certain conditions.</source>
@@ -418,31 +423,30 @@
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="437"/>
         <source>&amp;Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>預覽(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../ui/conversionparameterdialog.ui" line="449"/>
+        <location filename="../ui/conversionparameterdialog.ui" line="453"/>
         <source>Scaling</source>
         <extracomment>time scaling, changing the speed of the output file</extracomment>
-        <translation>改變長度</translation>
+        <translation>改變速度</translation>
     </message>
     <message>
-        <location filename="../ui/conversionparameterdialog.ui" line="457"/>
         <source>Speed (Experimental)</source>
-        <translation>速度 (測試版)</translation>
+        <translation type="obsolete">速度 (測試版)</translation>
     </message>
     <message>
-        <location filename="../ui/conversionparameterdialog.ui" line="483"/>
+        <location filename="../ui/conversionparameterdialog.ui" line="487"/>
         <source>Advanced</source>
         <translation>進階</translation>
     </message>
     <message>
-        <location filename="../ui/conversionparameterdialog.ui" line="489"/>
+        <location filename="../ui/conversionparameterdialog.ui" line="493"/>
         <source>FFmpeg</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/conversionparameterdialog.ui" line="497"/>
+        <location filename="../ui/conversionparameterdialog.ui" line="501"/>
         <source>Additional FFmpeg Options</source>
         <translation>其他FFmpeg參數</translation>
     </message>
