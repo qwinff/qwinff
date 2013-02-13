@@ -72,9 +72,10 @@ namespace inner {
     int find_encoders_in_desc(QStringList& target, const QString& s) {
         const char *keyword_begin = "(encoders:";
         const char *keyword_end = ")";
-        int begin = s.indexOf(keyword_begin) + strlen(keyword_begin);
+        int begin = s.indexOf(keyword_begin);
         if (begin < 0)
             return 0; // encoder name not found in description
+        begin += strlen(keyword_begin);
         int end = s.indexOf(keyword_end, begin);
         if (end < 0)
             return 0; // error, mission ')'
