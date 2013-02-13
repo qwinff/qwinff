@@ -123,7 +123,7 @@ void RangeSelector::mouseDrag(QPoint newpos)
     }
 }
 
-void RangeSelector::mouseClick(QPoint pos)
+void RangeSelector::mouseClick(QPoint)
 {
 
 }
