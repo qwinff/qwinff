@@ -436,6 +436,10 @@
                 <property name="text">
                  <string>&amp;Preview</string>
                 </property>
+                <property name="icon">
+                 <iconset resource="../images.qrc">
+                  <normaloff>:/actions/icons/preview_play.png</normaloff>:/actions/icons/preview_play.png</iconset>
+                </property>
                </widget>
               </item>
              </layout>
@@ -543,7 +547,9 @@
   <tabstop>buttonBox</tabstop>
   <tabstop>chkDisableVideo</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../images.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonBox</sender>
