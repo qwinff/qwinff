@@ -193,6 +193,7 @@ private:
     Task* first_selected_task() const;
     Task* get_task(QTreeWidgetItem*) const;
     void refresh_progressbar(Task*);
+    void update_tooltip(QTreeWidgetItem *item);
 
 };
 

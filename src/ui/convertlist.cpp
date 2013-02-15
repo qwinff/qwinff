@@ -34,6 +34,7 @@
 #include <QFileDialog>
 #include <QInputDialog>
 #include <QDesktopServices>
+#include <QTextDocument>
 #include <cassert>
 
 #define TIMEOUT 3000
@@ -238,18 +239,7 @@ bool ConvertList::addTask(ConversionParameters param)
 
     progressBar(task)->adjustSize();
 
-    item->setToolTip(COL_SOURCE, param.source);
-    item->setToolTip(COL_DESTINATION, param.destination);
-
-    for (int i=0; i<COL_COUNT; i++) {
-        if (i!=COL_SOURCE && i!=COL_DESTINATION && i!=COL_PROGRESS
-                && !columns[i].isEmpty()) {
-			   /*: FieldName: Value */
-            item->setToolTip(i, tr("%1: %2")
-                             .arg(m_list->headerItem()->text(i))
-                             .arg(columns[i]));
-        }
-    }
+    update_tooltip(item);
 
     qDebug() << QString("Added: \"%1\" -> \"%2\"").arg(param.source).arg(param.destination);
 
@@ -1006,7 +996,7 @@ bool ConvertList::change_output_file(Task *task, const QString &new_file
 
     // Update item text
     item->setText(COL_DESTINATION, QFileInfo(new_file).fileName());
-    item->setToolTip(COL_DESTINATION, new_file);
+    update_tooltip(item);
 
     qDebug() << "Output filename changed: " + orig_file + " => " + new_file;
     return true;
@@ -1094,5 +1084,50 @@ void ConvertList::refresh_progressbar(Task *task)
     default:
         qDebug() << "Error: incorrect task status";
         break;
+    }
+}
+
+
+void ConvertList::update_tooltip(QTreeWidgetItem *item)
+{
+    QStringList tip;
+
+    // List all columns except "progress" in tooltip.
+
+    tip << "<p style='white-space:pre'>"; // prevent automatic linebreak
+    int count = 0;
+    for (int i=0; i<COL_COUNT; i++) {
+        if (i != COL_PROGRESS
+                && !m_list->isColumnHidden(i)) {
+
+            if (count++ != 0)
+                tip << "<br/>"; // prepend linebreak if necessary
+
+            // show full filename for source and destination
+            // otherwise, show the content of the column
+            QString content;
+            if (i == COL_SOURCE)
+                content = get_task(item)->param.source;
+            else if (i == COL_DESTINATION)
+                content= get_task(item)->param.destination;
+            else
+               content = item->text(i);
+
+            // show only visible columns
+            tip << "<b>"
+                   + m_list->headerItem()->text(i) // column title
+                   + ":</b> "
+                   + Qt::escape(content) // column content
+                   ;
+        }
+    }
+    tip << "</p>";
+
+    QString tip_str = tip.join("");
+
+    // set tooltip for every column in the row
+    for (int i=0; i<COL_COUNT; i++) {
+        if (i != COL_PROGRESS)
+            item->setToolTip(i, tip_str);
     }
 }
