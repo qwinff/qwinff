@@ -71,7 +71,7 @@
         <location filename="../ui/aboutdialog.cpp" line="121"/>
         <source>Simplified Chinese</source>
         <extracomment>Chinese character set used in China</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Cinese semplificato</translation>
     </message>
     <message>
         <source>QWinFF Project Page: %1</source>
@@ -332,7 +332,7 @@
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="461"/>
         <source>Speed</source>
-        <translation type="unfinished"></translation>
+        <translation>Velocità</translation>
     </message>
     <message>
         <source>Use the source bitrate if it is smaller than the configured output bitrate. This can reduce output file size in certain conditions.</source>
@@ -424,7 +424,7 @@
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="437"/>
         <source>&amp;Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Anteprima</translation>
     </message>
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="453"/>
@@ -1036,12 +1036,12 @@
     <message>
         <location filename="../ui/optionsdialog.ui" line="49"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hide output formats that are not available in the current ffmpeg installation. It is recommended to turn this option on unless you are sure that QWinFF has failed to detect available formats. (requires restarting QWinFF to take effect)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nascondi i formati di output non disponibili nell&apos;attuale installazione di ffmpeg. Si consiglia di attivare questa opzione a meno che non si sia certi che QWinFF abbia fallito nel rilevare i formati disponibili. (richiede il riavvio di QWinFF)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../ui/optionsdialog.ui" line="52"/>
         <source>Hide unavailable formats (requires restarting)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nascondi formati non disponibili (richiede riavvio)</translation>
     </message>
 </context>
 <context>
