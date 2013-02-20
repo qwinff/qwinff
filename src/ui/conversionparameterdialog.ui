@@ -237,16 +237,6 @@
               </item>
              </layout>
             </item>
-            <item row="2" column="0">
-             <widget class="QCheckBox" name="chkVideoSameQuality">
-              <property name="toolTip">
-               <string>Use same video quality as source (implies VBR).</string>
-              </property>
-              <property name="text">
-               <string>Same Quality as Source</string>
-              </property>
-             </widget>
-            </item>
             <item row="1" column="0">
              <layout class="QHBoxLayout" name="horizontalLayout_10">
               <item>
@@ -277,13 +267,6 @@
                </widget>
               </item>
              </layout>
-            </item>
-            <item row="3" column="0">
-             <widget class="QCheckBox" name="chkDeinterlace">
-              <property name="text">
-               <string>Deinterlace</string>
-              </property>
-             </widget>
             </item>
             <item row="4" column="0">
              <layout class="QGridLayout" name="gridLayout">
@@ -350,6 +333,23 @@
                </widget>
               </item>
              </layout>
+            </item>
+            <item row="6" column="0">
+             <widget class="QCheckBox" name="chkVideoSameQuality">
+              <property name="toolTip">
+               <string>Use same video quality as source (implies VBR).</string>
+              </property>
+              <property name="text">
+               <string>Same Quantizer as Source</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="0">
+             <widget class="QCheckBox" name="chkDeinterlace">
+              <property name="text">
+               <string>Deinterlace</string>
+              </property>
+             </widget>
             </item>
            </layout>
           </widget>
@@ -537,8 +537,6 @@
   <tabstop>spinWidth</tabstop>
   <tabstop>spinHeight</tabstop>
   <tabstop>spinVideoBitrate</tabstop>
-  <tabstop>chkVideoSameQuality</tabstop>
-  <tabstop>chkDeinterlace</tabstop>
   <tabstop>spinCropTop</tabstop>
   <tabstop>spinCropLeft</tabstop>
   <tabstop>spinCropRight</tabstop>
