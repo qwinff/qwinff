@@ -245,7 +245,7 @@ void MainWindow::timerEvent()
         int seconds = total_seconds % 60;
 
         m_elapsedTimeLabel->setText(
-                    tr("Elapsed Time: %1h %2m %3s")
+                    tr("Elapsed Time: %1 h %2 m %3 s")
                     .arg(hours).arg(minutes).arg(seconds)
                     );
     }
