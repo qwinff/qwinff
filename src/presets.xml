@@ -4,7 +4,7 @@
   <!-- MPEG4 -->
   <MPEG4Auto>
     <label>MPEG-4 Auto</label>
-    <params>-strict experimental -sameq</params>
+    <params>-strict experimental</params>
     <extension>mp4</extension>
     <category>MPEG-4</category>
   </MPEG4Auto>
@@ -255,7 +255,7 @@
   <!-- MPG -->
   <MPGAuto>
     <label>MPG Auto</label>
-    <params>-sameq</params>
+    <params></params>
     <extension>mpg</extension>
     <category>Rockbox</category>
   </MPGAuto>
@@ -475,7 +475,7 @@
   <!-- AVI -->
   <AVIAuto>
     <label>AVI Auto</label>
-    <params>-sameq</params>
+    <params></params>
     <extension>avi</extension>
     <category>AVI</category>
   </AVIAuto>
@@ -581,7 +581,7 @@
   <!-- Flash Video -->
   <flvauto>
     <label>Flash Video (flv) Auto</label>
-    <params>-sameq</params>
+    <params></params>
     <extension>flv</extension>
     <category>Websites</category>
   </flvauto>
@@ -685,7 +685,7 @@
   <!-- MOV -->
   <qmovauto>
     <label>Quicktime MOV Auto</label>
-    <params>-strict experimental -sameq</params>
+    <params>-strict experimental</params>
     <extension>mov</extension>
     <category>QuickTime</category>
   </qmovauto>
