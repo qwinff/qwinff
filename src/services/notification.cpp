@@ -19,35 +19,39 @@
 #ifdef USE_LIBNOTIFY
  #include "notificationservice-libnotify.h"
 #endif
-#include <QSharedPointer>
 
 namespace {
-    QList<QSharedPointer<NotificationService> > notify_service;
+    NotificationService* notify_service[Notification::END_OF_TYPE];
 }
 
 Notification::NotificationType Notification::m_type;
 
+#define SERVICE(type, cl) notify_service[type] = new cl();
 void Notification::init()
 {
-    for (int i=0; i<END_OF_TYPE; i++)
-        notify_service.push_back(QSharedPointer<NotificationService>(0));
-
-    notify_service[TYPE_MSGBOX]
-            = QSharedPointer<NotificationService>(new NotificationService_qt());
+    // define all notification services here
+    SERVICE(TYPE_MSGBOX, NotificationService_qt);
+    SERVICE(TYPE_NOTIFYSEND, NotificationService_NotifySend);
 #ifdef USE_LIBNOTIFY
-    notify_service[TYPE_LIBNOTIFY]
-            = QSharedPointer<NotificationService>(new NotificationService_libnotify());
+    SERVICE(TYPE_LIBNOTIFY, NotificationService_libnotify);
 #endif
-    notify_service[TYPE_NOTIFYSEND]
-            = QSharedPointer<NotificationService>(new NotificationService_NotifySend());
+
+    // default to msgbox
     m_type = TYPE_MSGBOX;
+}
+#undef SERVICE
+
+void Notification::release()
+{
+    for (int i=0; i<END_OF_TYPE; i++)
+        delete notify_service[i]; // free all services
 }
 
 bool Notification::serviceAvailable(NotificationType type)
 {
     if (type < 0 || type >= END_OF_TYPE)
         return false;
-    NotificationService *service = notify_service[type].data();
+    NotificationService *service = notify_service[type];
     if (!service)
         return false;
     return service->serviceAvailable();

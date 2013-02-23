@@ -34,6 +34,10 @@ public:
      */
     static void init();
 
+    /** Release the notification subsystem.
+     */
+    static void release();
+
     /** Determine whether the notification type is available in the system.
      */
     static bool serviceAvailable(NotificationType type);

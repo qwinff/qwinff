@@ -109,5 +109,11 @@ int main(int argc, char *argv[])
     MainWindow window(0, inputFiles);
     window.show();
 
-    return app.exec();
+    // Execute the main loop
+    int status = app.exec();
+
+    // Tear down notification
+    Notification::release();
+
+    return status;
 }

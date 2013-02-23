@@ -30,6 +30,7 @@ SOURCES += main.cpp \
     services/extensions.cpp \
     services/filepathoperations.cpp \
     services/notification.cpp \
+    services/notificationservice.cpp \
     services/notificationservice-qt.cpp \
     services/notificationservice-notifysend.cpp \
     services/powermanagement-dummy.cpp \

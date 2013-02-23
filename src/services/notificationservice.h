@@ -32,6 +32,8 @@ class NotificationService
 {
 public:
 
+    virtual ~NotificationService();
+
     /** Send notification
      *  @note Any implementation of this function should not block.
      */
