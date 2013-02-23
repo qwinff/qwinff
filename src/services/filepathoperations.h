@@ -24,7 +24,7 @@ class FilePathOperations
 public:
     static QString GenerateUniqueFileName(const QDir& output_dir, const QString& input_file_basename
                                           , const QString& ext
-                                          , const QHash<QString, int>& extra = QHash<QString, int>());
+                                          , const QHash<QString, int>& extra);
     /*! Ensure unique output filename.
        If the destination filename already exists either on disk
        or in %extra, rename it to prevent overwritting
@@ -33,7 +33,7 @@ public:
        @param extra additional filenames to exclude
     */
     static QString GenerateUniqueFileName(const QString& filename
-                                          , const QHash<QString, int>& extra = QHash<QString, int>());
+                                          , const QHash<QString, int>& extra);
     static QString GenerateTempFileName(const QString& filename);
 private:
     FilePathOperations();
