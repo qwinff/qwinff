@@ -397,9 +397,11 @@ void AddTaskWizard::save_settings()
     QStringList recent_paths;
     recent_paths.push_back(ui->cbOutputPath->currentText()); // Save current text.
     for (int i=0; i<ui->cbOutputPath->count(); i++) {
-        recent_paths.push_back(ui->cbOutputPath->itemText(i));
+        QString path = ui->cbOutputPath->itemText(i);
+        if (recent_paths.indexOf(path) == -1) // avoid duplicate items
+            recent_paths.push_back(ui->cbOutputPath->itemText(i));
     }
-    recent_paths.removeDuplicates();
+
     if (recent_paths.size() > NUM_RECENT_PATHS) {
         // Make the list contain at most NUM_RECENT_PATHS items.
         recent_paths = recent_paths.mid(0, NUM_RECENT_PATHS);
