@@ -501,6 +501,7 @@ FFmpegInterface::FFmpegInterface(QObject *parent) :
 
 FFmpegInterface::~FFmpegInterface()
 {
+    delete p;
 }
 
 // virtual functions

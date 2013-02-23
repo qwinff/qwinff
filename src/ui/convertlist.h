@@ -19,7 +19,6 @@
 #include <QWidget>
 #include <QVector>
 #include <QTime>
-#include <QSharedPointer>
 #include <QHash>
 #include <QMessageBox>
 #include <QModelIndex>

@@ -18,7 +18,6 @@
 
 #include <QObject>
 #include <QList>
-#include <QScopedPointer>
 
 class Preset
 {
@@ -78,7 +77,7 @@ public slots:
 private:
     Q_DISABLE_COPY(Presets)
     struct Private;
-    QScopedPointer<Private> p;
+    Private *p;
 };
 
 #endif // PRESETS_H

@@ -18,7 +18,6 @@
 
 #include <QWizard>
 #include <QUrl>
-#include <QScopedPointer>
 
 namespace Ui {
     class AddTaskWizard;
@@ -69,7 +68,7 @@ private:
     QString m_prev_path; //!< the most recently opened path of the file dialog.
     Presets *m_presets;
     QList<ConversionParameters> m_params;
-    QScopedPointer<ConversionParameters> m_current_param;
+    ConversionParameters *m_current_param;
     QVector<QVariant> m_ext_preset; //!< the mapping between extension and the last selected preset.
     int m_cbpreset_index; //!< saves the index of the preset combobox
     bool load_extensions();

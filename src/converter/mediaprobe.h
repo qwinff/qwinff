@@ -17,7 +17,6 @@
 #define MEDIAPROBE_H
 
 #include <QObject>
-#include <QScopedPointer>
 
 class MediaProbe : public QObject
 {
@@ -118,7 +117,7 @@ private slots:
 private:
     Q_DISABLE_COPY(MediaProbe)
     struct Private;
-    QScopedPointer<Private> p;
+    Private *p;
 };
 
 #endif // MEDIAPROBE_H

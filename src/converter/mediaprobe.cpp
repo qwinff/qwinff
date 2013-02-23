@@ -279,6 +279,7 @@ MediaProbe::MediaProbe(QObject *parent) :
 MediaProbe::~MediaProbe()
 {
     stop();
+    delete p;
 }
 
 bool MediaProbe::available()

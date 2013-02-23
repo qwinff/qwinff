@@ -187,6 +187,7 @@ Presets::Presets(QObject *parent) :
 
 Presets::~Presets()
 {
+    delete p;
 }
 
 bool Presets::readFromFile(const QString &filename, bool removeUnavailableCodecs)

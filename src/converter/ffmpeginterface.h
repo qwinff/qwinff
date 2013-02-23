@@ -16,7 +16,6 @@
 #ifndef FFMPEGINTERFACE_H
 #define FFMPEGINTERFACE_H
 #include <QObject>
-#include <QScopedPointer>
 #include <QList>
 #include <QSet>
 #include "conversionparameters.h"
@@ -61,7 +60,7 @@ public slots:
 private:
     Q_DISABLE_COPY(FFmpegInterface)
     struct Private;
-    QScopedPointer<Private> p;
+    Private *p;
 };
 
 #endif // FFMPEGINTERFACE_H

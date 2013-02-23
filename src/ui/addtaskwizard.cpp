@@ -79,6 +79,7 @@ AddTaskWizard::~AddTaskWizard()
     // Save Geometry
     settings.setValue("addtaskwizard/geometry", saveGeometry());
     delete ui;
+    delete m_current_param;
 }
 
 const QList<ConversionParameters>&
