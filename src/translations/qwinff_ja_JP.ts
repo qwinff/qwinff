@@ -87,6 +87,11 @@
         <extracomment>Chinese character set used in China</extracomment>
         <translation>中国語(簡体字)</translation>
     </message>
+    <message>
+        <source>Russian</source>
+        <extracomment>Russian Language</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutFFmpegDialog</name>

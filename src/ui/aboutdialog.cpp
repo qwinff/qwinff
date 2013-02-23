@@ -120,13 +120,16 @@ QString AboutDialog::getTranslators()
         //: Chinese character set used in China
         {"zh_CN", trad(tr("Simplified Chinese")
                        , "&#26472;&#27704;&#26126; <linuxfedora17@gmail.com>")},
+        //: Russian Language
+        {"ru", trad(tr("Russian")
+                       , "Stanislav Hanzhin <stanislav.hanzhin@rosalab.ru>")},
     };
     const int size = sizeof(table) / sizeof(table[0]);
 
     QStringList translators;
     QString current_locale = QLocale::system().name();
     for (int i=0; i<size; i++) {
-        if (table[i].locale == current_locale)
+        if (current_locale.startsWith(table[i].locale))
             translators.push_front(table[i].translator);
         else
             translators.push_back(table[i].translator);

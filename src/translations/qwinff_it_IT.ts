@@ -74,6 +74,12 @@
         <translation>Cinese semplificato</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.cpp" line="124"/>
+        <source>Russian</source>
+        <extracomment>Russian Language</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>QWinFF Project Page: %1</source>
         <translation type="obsolete">Pagina progetto di QWinFF: %1</translation>
     </message>

@@ -91,6 +91,12 @@
         <translation>簡體中文</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.cpp" line="124"/>
+        <source>Russian</source>
+        <extracomment>Russian Language</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../ui/aboutdialog.cpp" line="55"/>
         <source>Compiled with Qt %1</source>
         <extracomment>Qt version</extracomment>
