@@ -94,7 +94,7 @@
         <location filename="../ui/aboutdialog.cpp" line="124"/>
         <source>Russian</source>
         <extracomment>Russian Language</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>俄文</translation>
     </message>
     <message>
         <location filename="../ui/aboutdialog.cpp" line="55"/>
