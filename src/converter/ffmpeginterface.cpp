@@ -356,6 +356,9 @@ QStringList FFmpegInterface::Private::getOptionList(const ConversionParameters &
             list << "-i" << "-";
     }
 
+    // enable experimental codecs by default
+    list << "-strict" << "experimental";
+
     /* ==== Additional Options ==== */
     if (!o.ffmpeg_options.isEmpty()) {
         QList<QString> additional_options =
