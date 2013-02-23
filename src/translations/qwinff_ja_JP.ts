@@ -255,7 +255,7 @@
     </message>
     <message>
         <source>Same Quality as Source</source>
-        <translation>ソースと同じ品質</translation>
+        <translation type="obsolete">ソースと同じ品質</translation>
     </message>
     <message>
         <source>(auto)</source>
@@ -347,6 +347,10 @@
         <source>Speed</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Same Quantizer as Source</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConvertList</name>
@@ -411,7 +415,7 @@
     <message>
         <source>%1: %2</source>
         <extracomment>FieldName: Value</extracomment>
-        <translation>%1: %2</translation>
+        <translation type="obsolete">%1: %2</translation>
     </message>
     <message>
         <source>Removing tasks...</source>
@@ -722,10 +726,6 @@
         <translation>サスペンド</translation>
     </message>
     <message>
-        <source>toolBar</source>
-        <translation></translation>
-    </message>
-    <message>
         <source>Change the output filename of the selected item.</source>
         <translation>選択された項目の出力ファイル名を変更.</translation>
     </message>
@@ -760,7 +760,7 @@
     </message>
     <message>
         <source>Elapsed Time: %1h %2m %3s</source>
-        <translation>経過時間: %1 時 %2 分 %3 秒</translation>
+        <translation type="obsolete">経過時間: %1 時 %2 分 %3 秒</translation>
     </message>
     <message>
         <source>Conversion is still in progress. Abort?</source>
@@ -770,6 +770,10 @@
         <source>Shutdown</source>
         <extracomment>Shutdown the computer (completely poweroff)</extracomment>
         <translation>シャットダウン</translation>
+    </message>
+    <message>
+        <source>Elapsed Time: %1 h %2 m %3 s</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

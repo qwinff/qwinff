@@ -294,7 +294,7 @@
     </message>
     <message>
         <source>Same Quality as Source</source>
-        <translation>Stejná kvalita jako Zdroj</translation>
+        <translation type="obsolete">Stejná kvalita jako Zdroj</translation>
     </message>
     <message>
         <source>Crop</source>
@@ -355,13 +355,17 @@
         <source>Speed</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Same Quantizer as Source</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConvertList</name>
     <message>
         <source>%1: %2</source>
         <extracomment>FieldName: Value</extracomment>
-        <translation>%1: %2</translation>
+        <translation type="obsolete">%1: %2</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -565,7 +569,7 @@
     </message>
     <message>
         <source>toolBar</source>
-        <translation>panel nástrojů</translation>
+        <translation type="obsolete">panel nástrojů</translation>
     </message>
     <message>
         <source>&amp;Add Files</source>
@@ -742,7 +746,7 @@
     </message>
     <message>
         <source>Elapsed Time: %1h %2m %3s</source>
-        <translation>Uplynuvší čas: %1h %2m %3s</translation>
+        <translation type="obsolete">Uplynuvší čas: %1h %2m %3s</translation>
     </message>
     <message>
         <source>FFmpeg Error</source>
@@ -804,6 +808,10 @@
     <message>
         <source>Hibernate when all tasks are done.</source>
         <translation>Hibernovat po dokončení všech úloh.</translation>
+    </message>
+    <message>
+        <source>Elapsed Time: %1 h %2 m %3 s</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
