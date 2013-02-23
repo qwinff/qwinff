@@ -360,7 +360,8 @@ QStringList FFmpegInterface::Private::getOptionList(const ConversionParameters &
     if (!o.ffmpeg_options.isEmpty()) {
         QList<QString> additional_options =
                 o.ffmpeg_options.split(" ", QString::SkipEmptyParts);
-        list.append(additional_options);
+        foreach (QString opt, additional_options)
+            list.append(opt);
     }
 
     if (o.threads >= 2) {
