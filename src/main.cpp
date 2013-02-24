@@ -87,6 +87,7 @@ int main(int argc, char *argv[])
     ExePath::setPath("ffprobe", "ffprobe");
     ExePath::setPath("sox", "sox");
     ExePath::setPath("ffplay", "ffplay");
+    ExePath::loadSettings();
 #endif
 
     // Construct a string list containing all input filenames.
@@ -121,6 +122,11 @@ int main(int argc, char *argv[])
 
     // Tear down notification
     Notification::release();
+
+#ifndef FFMPEG_IN_DATA_PATH
+    // Save path settings
+    ExePath::saveSettings();
+#endif
 
     return status;
 }
