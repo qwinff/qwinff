@@ -81,10 +81,12 @@ int main(int argc, char *argv[])
     ExePath::setPath("ffmpeg", Paths::dataFileName("ffmpeg/ffmpeg"));
     ExePath::setPath("ffprobe", Paths::dataFileName("ffmpeg/ffprobe"));
     ExePath::setPath("sox", Paths::dataFileName("sox/sox"));
+    ExePath::setPath("ffplay", Paths::dataFileName("ffmpeg/ffplay"));
 #else // Search FFmpeg in environment variables
     ExePath::setPath("ffmpeg", "ffmpeg");
     ExePath::setPath("ffprobe", "ffprobe");
     ExePath::setPath("sox", "sox");
+    ExePath::setPath("ffplay", "ffplay");
 #endif
 
     // Construct a string list containing all input filenames.

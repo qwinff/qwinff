@@ -1,4 +1,5 @@
 #include "ffplayinterface.h"
+#include "exepath.h"
 #include <QProcess>
 #include <QDebug>
 
@@ -10,10 +11,6 @@
 
 #define DEFAULT_WIDTH 320
 #define DEFAULT_HEIGHT 180
-
-namespace {
-QString ffplay_executable("ffplay");
-}
 
 FFplayInterface::FFplayInterface(QObject *parent) :
     QObject(parent), m_proc(new QProcess), m_w(DEFAULT_WIDTH), m_h(DEFAULT_HEIGHT)
@@ -63,17 +60,12 @@ void FFplayInterface::setWindowTitle(QString str)
     m_title = str;
 }
 
-void FFplayInterface::setFFplayExecutable(const QString &filename)
-{
-    ffplay_executable = filename;
-}
-
 bool FFplayInterface::FFplayAvailable()
 {
     QProcess proc;
     QStringList param;
     /* test whether ffplay could be invoked */
-    proc.start(ffplay_executable, param);
+    proc.start(ExePath::getPath("ffplay"), param);
     if (!proc.waitForStarted(TIMEOUT))
         return false;
     proc.kill();
@@ -103,6 +95,6 @@ void FFplayInterface::ffplay_start(const QString& filename, int t_begin, int t_e
     }
     param.append(filename);
     qDebug() << "ffplay" << param.join(" ");
-    m_proc->start(ffplay_executable, param);
+    m_proc->start(ExePath::getPath("ffplay"), param);
     m_proc->waitForStarted(TIMEOUT);
 }
