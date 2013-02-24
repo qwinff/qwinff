@@ -4,7 +4,7 @@
   <!-- MPEG4 -->
   <MPEG4Auto>
     <label>MPEG-4 Auto</label>
-    <params>-strict experimental</params>
+    <params>-sameq</params>
     <extension>mp4</extension>
     <category>MPEG-4</category>
   </MPEG4Auto>
@@ -255,7 +255,7 @@
   <!-- MPG -->
   <MPGAuto>
     <label>MPG Auto</label>
-    <params></params>
+    <params>-sameq</params>
     <extension>mpg</extension>
     <category>Rockbox</category>
   </MPGAuto>
@@ -685,7 +685,7 @@
   <!-- MOV -->
   <qmovauto>
     <label>Quicktime MOV Auto</label>
-    <params>-strict experimental</params>
+    <params>-sameq</params>
     <extension>mov</extension>
     <category>QuickTime</category>
   </qmovauto>
