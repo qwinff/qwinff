@@ -17,6 +17,7 @@
 #define EXEPATH_H
 
 #include <QString>
+#include <QList>
 
 class ExePath
 {
@@ -33,6 +34,8 @@ public:
      * Load the paths using QSettings
      */
     static void loadSettings();
+
+    static QList<QString> getPrograms();
 
 private:
     ExePath();

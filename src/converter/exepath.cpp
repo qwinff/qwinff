@@ -57,3 +57,8 @@ void ExePath::loadSettings()
         program_path[name] = path;
     }
 }
+
+QList<QString> ExePath::getPrograms()
+{
+    return program_path.keys();
+}
