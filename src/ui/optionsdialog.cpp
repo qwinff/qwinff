@@ -58,6 +58,12 @@ bool OptionsDialog::exec()
     return accepted;
 }
 
+bool OptionsDialog::exec_tools()
+{
+    ui->tabWidget->setCurrentIndex(ui->tabWidget->indexOf(ui->tabTools));
+    exec();
+}
+
 void OptionsDialog::read_fields()
 {
     QSettings settings;

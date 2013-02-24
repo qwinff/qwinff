@@ -50,6 +50,7 @@ private slots:
     // Menu Events
     void slotAddFiles();
     void slotOptions();
+    void slotSetTools();
     void slotExit();
     void slotStartConversion();
     void slotStopConversion();
