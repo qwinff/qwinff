@@ -96,13 +96,16 @@ Section
 
 	CreateDirectory translations
 	CreateDirectory ffmpeg
+	CreateDirectory qt-i18n
 
 	SetOutPath $INSTDIR\translations
-	File translations\*
+	File translations\*.qm
 	SetOutPath $INSTDIR\ffmpeg
 	File ffmpeg\*
 	SetOutPath $INSTDIR\sox
 	File sox\*
+	SetOutPath $INSTDIR\qt-i18n
+	File qt-i18n\*.qm
 
 	# Create Uninstaller
 	WriteUninstaller "$INSTDIR\${UNINSTALLER}"
@@ -140,6 +143,8 @@ Section "un.Uninstaller"
 	RmDir  $INSTDIR\translations
 	Delete $INSTDIR\sox\*
 	RmDir  $INSTDIR\sox
+	Delete $INSTDIR\qt-i18n\*
+	RmDir  $INSTDIR\qt-i18n
 	RmDir  $INSTDIR    # Remove the installation directory if it's empty.
 
 	Delete "$DESKTOP\QWinFF.lnk"
