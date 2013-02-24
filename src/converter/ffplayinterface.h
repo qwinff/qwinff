@@ -35,7 +35,6 @@ public:
      */
     void setWindowTitle(QString str);
 
-    static void setFFplayExecutable(const QString& filename);
     static bool FFplayAvailable();
 
 signals:

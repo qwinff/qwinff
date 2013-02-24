@@ -139,6 +139,12 @@ void MainWindow::slotOptions()
     dialog.exec();
 }
 
+void MainWindow::slotSetTools()
+{
+    OptionsDialog dialog(this);
+    dialog.exec_tools();
+}
+
 void MainWindow::slotExit()
 {
     this->close();
@@ -307,7 +313,11 @@ bool MainWindow::check_execute_conditions()
     // check external programs
     if (!MediaConverter::checkExternalPrograms(errmsg)) {
         QMessageBox::critical(this, this->windowTitle(), errmsg);
-        return false;
+#ifdef FFMPEG_IN_DATA_PATH
+        return false; // fatal: ffmpeg should be in the data path but doesn't exist
+#else
+        QTimer::singleShot(0, this, SLOT(slotSetTools()));
+#endif
     }
     // load presets
     if (!load_presets())

@@ -129,6 +129,9 @@ QString AboutDialog::getTranslators()
         //: Spanish Language (Guatemala)
         {"es_GT", trad(tr("Spanish (Guatemala)")
                     , "Ermides González <obedlink@gmail.com>")},
+        //: Romanian Language
+        {"ro_RO", trad(tr("Romanian")
+                       , "SymbianFlo <symbianflo@mandrivausers.ro>")},
     };
     const int size = sizeof(table) / sizeof(table[0]);
 

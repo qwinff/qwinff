@@ -17,12 +17,25 @@
 #define EXEPATH_H
 
 #include <QString>
+#include <QList>
 
 class ExePath
 {
 public:
     static void setPath(QString program, QString path);
     static QString getPath(QString program);
+
+    /**
+     * Save the paths using QSettings
+     */
+    static void saveSettings();
+
+    /**
+     * Load the paths using QSettings
+     */
+    static void loadSettings();
+
+    static QList<QString> getPrograms();
 
 private:
     ExePath();

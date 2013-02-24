@@ -15,10 +15,12 @@
 
 #include "exepath.h"
 #include <QMap>
+#include <QSettings>
 
 namespace
 {
-QMap<QString, QString> program_path;
+typedef QMap<QString, QString> Map;
+Map program_path;
 }
 
 void ExePath::setPath(QString program, QString path)
@@ -35,4 +37,28 @@ QString ExePath::getPath(QString program)
                    , QString("Program path of '%1' has not been set.")
                    .arg(program).toStdString().c_str());
     return "";
+}
+
+void ExePath::saveSettings()
+{
+    QSettings settings;
+    foreach (QString name, program_path.keys()) {
+        QString path = program_path[name];
+        settings.setValue("exepath/" + name, path);
+    }
+}
+
+void ExePath::loadSettings()
+{
+    QSettings settings;
+    foreach (QString name, program_path.keys()) {
+        QString path = settings.value("exepath/" + name
+                                      , program_path[name]).toString();
+        program_path[name] = path;
+    }
+}
+
+QList<QString> ExePath::getPrograms()
+{
+    return program_path.keys();
 }

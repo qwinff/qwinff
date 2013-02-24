@@ -31,6 +31,7 @@ public:
     ~OptionsDialog();
 
     bool exec();
+    bool exec_tools();
 
 private:
     Ui::OptionsDialog *ui;
