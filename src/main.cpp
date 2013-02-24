@@ -19,6 +19,7 @@
 #include <QTranslator>
 #include <QDir>
 #include <QSettings>
+#include <QLibraryInfo>
 #include "ui/mainwindow.h"
 #include "services/paths.h"
 #include "converter/ffmpeginterface.h"
@@ -99,6 +100,12 @@ int main(int argc, char *argv[])
         translator.load(translation_filename);
         app.installTranslator(&translator);
     }
+
+    // Load translation for Qt library
+    QTranslator translator_qt;
+    translator_qt.load("qt_" + QLocale::system().name()
+                    , QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+    app.installTranslator(&translator_qt);
 
     // Setup notification
     Notification::init();
