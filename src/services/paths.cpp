@@ -16,6 +16,7 @@
 #include "paths.h"
 #include <QDir>
 #include <QDebug>
+#include <QLibraryInfo>
 
 namespace {
     QString app_path;
@@ -52,4 +53,13 @@ QString Paths::dataFileName(const QString &filename)
 QString Paths::translationPath()
 {
     return QDir(dataPath()).absoluteFilePath("translations");
+}
+
+QString Paths::qtTranslationPath()
+{
+#ifndef Q_OS_WIN32 // unix: load qt translation file from the default path
+    return QLibraryInfo::location(QLibraryInfo::TranslationsPath);
+#else // windows: load qt translation file from <data path>/qt-i18n/
+    return QDir(dataPath()).absoluteFilePath("qt-i18n");
+#endif
 }

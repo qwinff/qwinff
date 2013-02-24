@@ -27,6 +27,7 @@ public:
     static QString dataPath();
     static QString dataFileName(const QString& filename);
     static QString translationPath();
+    static QString qtTranslationPath();
 };
 
 #endif // PATHS_H
