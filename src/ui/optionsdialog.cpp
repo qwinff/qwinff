@@ -16,6 +16,8 @@
 #include "optionsdialog.h"
 #include "ui_optionsdialog.h"
 #include "converter/exepath.h"
+#include "converter/mediaconverter.h"
+#include <QMessageBox>
 #include <QSettings>
 
 OptionsDialog::OptionsDialog(QWidget *parent) :
@@ -61,7 +63,7 @@ bool OptionsDialog::exec()
 bool OptionsDialog::exec_tools()
 {
     ui->tabWidget->setCurrentIndex(ui->tabWidget->indexOf(ui->tabTools));
-    exec();
+    return exec();
 }
 
 void OptionsDialog::read_fields()
@@ -94,6 +96,11 @@ void OptionsDialog::write_fields()
         QTableWidgetItem *item_program = ui->toolTable->item(i, 0);
         QTableWidgetItem *item_path = ui->toolTable->item(i, 1);
         ExePath::setPath(item_program->text(), item_path->text());
+    }
+    // check programs
+    QString errmsg;
+    if (!MediaConverter::checkExternalPrograms(errmsg)) {
+        QMessageBox::critical(this, this->windowTitle(), errmsg);
     }
 #endif
 }
