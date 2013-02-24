@@ -87,7 +87,9 @@ TRANSLATIONS += \
     translations/qwinff_it_IT.ts \
     translations/qwinff_cs_CZ.ts \
     translations/qwinff_zh_CN.ts \
-    translations/qwinff_ru.ts
+    translations/qwinff_ru.ts \
+    translations/qwinff_es_ES.ts \
+    translations/qwinff_es_GT.ts
 
 INCLUDEPATH += .
 

@@ -123,6 +123,12 @@ QString AboutDialog::getTranslators()
         //: Russian Language
         {"ru", trad(tr("Russian")
                        , "Stanislav Hanzhin <stanislav.hanzhin@rosalab.ru>")},
+        //: Spanish Language (Spain)
+        {"es_ES", trad(tr("Spanish (Spain)")
+                    , "Ermides González <obedlink@gmail.com>")},
+        //: Spanish Language (Guatemala)
+        {"es_GT", trad(tr("Spanish (Guatemala)")
+                    , "Ermides González <obedlink@gmail.com>")},
     };
     const int size = sizeof(table) / sizeof(table[0]);
 
