@@ -27,7 +27,13 @@
         <location filename="../ui/aboutdialog.cpp" line="51"/>
         <source>Portable</source>
         <extracomment>Portable version (no installation, no writing registry)</extracomment>
-        <translation></translation>
+        <translation>綠色版</translation>
+    </message>
+    <message>
+        <location filename="../ui/aboutdialog.cpp" line="55"/>
+        <source>Compiled with Qt %1</source>
+        <extracomment>Qt version</extracomment>
+        <translation>Qt 編譯版本：%1</translation>
     </message>
     <message>
         <location filename="../ui/aboutdialog.cpp" line="57"/>
@@ -67,6 +73,11 @@
         <translation>某些音效處理的功能由SoX提供.</translation>
     </message>
     <message>
+        <location filename="../ui/aboutdialog.cpp" line="74"/>
+        <source>FFmpeg presets were taken from WinFF.</source>
+        <translation>FFmpeg的預設參數來自WinFF專案.</translation>
+    </message>
+    <message>
         <location filename="../ui/aboutdialog.cpp" line="113"/>
         <source>Japanese</source>
         <extracomment>Japanese Language</extracomment>
@@ -97,19 +108,22 @@
         <translation>俄文</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="55"/>
-        <source>Compiled with Qt %1</source>
-        <extracomment>Qt version</extracomment>
-        <translation>Qt 編譯版本：%1</translation>
+        <location filename="../ui/aboutdialog.cpp" line="127"/>
+        <source>Spanish (Spain)</source>
+        <extracomment>Spanish Language (Spain)</extracomment>
+        <translation>西班牙語 (西班牙)</translation>
     </message>
     <message>
-        <source>QWinFF Project Page: %1</source>
-        <translation type="obsolete">QWinFF專案首頁: %1</translation>
+        <location filename="../ui/aboutdialog.cpp" line="130"/>
+        <source>Spanish (Guatemala)</source>
+        <extracomment>Spanish Language (Guatemala)</extracomment>
+        <translation>西班牙語 (瓜地馬拉)</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="74"/>
-        <source>FFmpeg presets were taken from WinFF.</source>
-        <translation>FFmpeg的預設參數來自WinFF專案.</translation>
+        <location filename="../ui/aboutdialog.cpp" line="133"/>
+        <source>Romanian</source>
+        <extracomment>Romanian Language</extracomment>
+        <translation>羅馬尼亞語</translation>
     </message>
 </context>
 <context>
@@ -122,7 +136,7 @@
     <message>
         <location filename="../ui/aboutffmpegdialog.ui" line="31"/>
         <source>FFmpeg</source>
-        <translation></translation>
+        <translation>FFmpeg</translation>
     </message>
     <message>
         <location filename="../ui/aboutffmpegdialog.ui" line="90"/>
@@ -172,7 +186,7 @@
     <message>
         <location filename="../ui/addtaskwizard.ui" line="108"/>
         <source>Output Settings</source>
-        <translation></translation>
+        <translation>輸出設定</translation>
     </message>
     <message>
         <location filename="../ui/addtaskwizard.ui" line="117"/>
@@ -210,53 +224,53 @@
         <translation>自動調整聲音位元率</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="127"/>
+        <location filename="../ui/addtaskwizard.cpp" line="128"/>
         <source>Please select at least one file.</source>
         <translation>請至少選擇一個檔案</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="140"/>
+        <location filename="../ui/addtaskwizard.cpp" line="141"/>
         <source>Folder does not exist. Create a new folder?</source>
         <translation>資料夾不存在。要建立新的資料夾嗎？</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="149"/>
+        <location filename="../ui/addtaskwizard.cpp" line="150"/>
         <source>Failed to create folder. Please select another output folder.</source>
         <translation>建立資料夾失敗。請選擇另一個輸出資料夾。</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="170"/>
+        <location filename="../ui/addtaskwizard.cpp" line="171"/>
         <source>Select Files</source>
         <extracomment>This text is the title of an openfile dialog.</extracomment>
         <translation>選擇檔案</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="172"/>
+        <location filename="../ui/addtaskwizard.cpp" line="173"/>
         <source>Multimedia</source>
         <translation>多媒體</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="173"/>
+        <location filename="../ui/addtaskwizard.cpp" line="174"/>
         <source>Video</source>
         <translation>影片</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="174"/>
+        <location filename="../ui/addtaskwizard.cpp" line="175"/>
         <source>Audio</source>
         <translation>聲音</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="175"/>
+        <location filename="../ui/addtaskwizard.cpp" line="176"/>
         <source>All files</source>
         <translation>所有檔案</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="197"/>
+        <location filename="../ui/addtaskwizard.cpp" line="198"/>
         <source>Some files could not be found.</source>
         <translation>無法找到其中的一些檔案</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="242"/>
+        <location filename="../ui/addtaskwizard.cpp" line="243"/>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
         <translation>選擇資料夾</translation>
@@ -292,7 +306,7 @@
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="67"/>
         <source>Hz</source>
-        <translation></translation>
+        <translation>Hz</translation>
     </message>
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="78"/>
@@ -314,7 +328,7 @@
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="125"/>
         <source>%</source>
-        <translation></translation>
+        <translation>%</translation>
     </message>
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="136"/>
@@ -326,31 +340,7 @@
         <location filename="../ui/conversionparameterdialog.ui" line="159"/>
         <location filename="../ui/conversionparameterdialog.ui" line="265"/>
         <source>kb/s</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../ui/conversionparameterdialog.ui" line="343"/>
-        <source>Same Quantizer as Source</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/conversionparameterdialog.ui" line="367"/>
-        <source>Cutting</source>
-        <extracomment>video time cutting: options for begin time and end time</extracomment>
-        <translation>剪裁</translation>
-    </message>
-    <message>
-        <location filename="../ui/conversionparameterdialog.ui" line="461"/>
-        <source>Speed</source>
-        <translation>速度</translation>
-    </message>
-    <message>
-        <source>Use the source bitrate if it is smaller than the configured output bitrate. This can reduce output file size in certain conditions.</source>
-        <translation type="obsolete">如果來源檔案的位元率比較小，就使用來源檔案的位元率。這樣可以減少輸出檔案的大小。</translation>
-    </message>
-    <message>
-        <source>Auto Adjust Bitrate</source>
-        <translation type="obsolete">自動調整位元率</translation>
+        <translation>kb/s</translation>
     </message>
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="172"/>
@@ -380,7 +370,7 @@
         <location filename="../ui/conversionparameterdialog.ui" line="315"/>
         <location filename="../ui/conversionparameterdialog.ui" line="328"/>
         <source> px</source>
-        <translation></translation>
+        <translation>px</translation>
     </message>
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="219"/>
@@ -388,18 +378,19 @@
         <translation>高度</translation>
     </message>
     <message>
+        <location filename="../ui/conversionparameterdialog.ui" line="302"/>
+        <source>Crop</source>
+        <translation>裁切</translation>
+    </message>
+    <message>
         <location filename="../ui/conversionparameterdialog.ui" line="340"/>
         <source>Use same video quality as source (implies VBR).</source>
         <translation>使用與來源相同的影像品質(變動位元率)</translation>
     </message>
     <message>
-        <source>Same Quality as Source</source>
-        <translation type="obsolete">使用與來源相同的品質</translation>
-    </message>
-    <message>
-        <location filename="../ui/conversionparameterdialog.ui" line="302"/>
-        <source>Crop</source>
-        <translation>裁切</translation>
+        <location filename="../ui/conversionparameterdialog.ui" line="343"/>
+        <source>Same Quantizer as Source</source>
+        <translation>與來源使用相同的量化單位（Quantizer）</translation>
     </message>
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="350"/>
@@ -413,17 +404,15 @@
         <translation>時間</translation>
     </message>
     <message>
-        <source>Begin Time</source>
-        <translation type="obsolete">開始時間</translation>
+        <location filename="../ui/conversionparameterdialog.ui" line="367"/>
+        <source>Cutting</source>
+        <extracomment>video time cutting: options for begin time and end time</extracomment>
+        <translation>剪裁</translation>
     </message>
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="380"/>
         <source>From Begin</source>
         <translation>從檔案開頭開始</translation>
-    </message>
-    <message>
-        <source>End Time</source>
-        <translation type="obsolete">結束時間</translation>
     </message>
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="401"/>
@@ -442,8 +431,9 @@
         <translation>改變速度</translation>
     </message>
     <message>
-        <source>Speed (Experimental)</source>
-        <translation type="obsolete">速度 (測試版)</translation>
+        <location filename="../ui/conversionparameterdialog.ui" line="461"/>
+        <source>Speed</source>
+        <translation>速度</translation>
     </message>
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="487"/>
@@ -453,7 +443,7 @@
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="493"/>
         <source>FFmpeg</source>
-        <translation></translation>
+        <translation>FFmpeg</translation>
     </message>
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="501"/>
@@ -482,16 +472,6 @@
         <translation>有一些檔案無法辨識</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="1027"/>
-        <source>Remove Task</source>
-        <translation>移除任務</translation>
-    </message>
-    <message>
-        <location filename="../ui/convertlist.cpp" line="1028"/>
-        <source>Cannot remove a task while it is in progress.</source>
-        <translation>無法移除正在進行的任務</translation>
-    </message>
-    <message>
         <location filename="../ui/convertlist.cpp" line="470"/>
         <source>New File Name</source>
         <translation>新的檔案名稱</translation>
@@ -512,24 +492,6 @@
 
 </source>
         <translation>FFmpeg的錯誤訊息:</translation>
-    </message>
-    <message>
-        <location filename="../ui/convertlist.cpp" line="1079"/>
-        <source>Failed</source>
-        <extracomment>The text to be displayed on the progress bar when a conversion fails</extracomment>
-        <translation>失敗</translation>
-    </message>
-    <message>
-        <location filename="../ui/convertlist.cpp" line="1081"/>
-        <source>Error: %1</source>
-        <extracomment>%1 is the error message</extracomment>
-        <translation>錯誤: %1</translation>
-    </message>
-    <message>
-        <location filename="../ui/convertlist.cpp" line="1072"/>
-        <location filename="../ui/convertlist.cpp" line="1073"/>
-        <source>Finished</source>
-        <translation>已完成</translation>
     </message>
     <message>
         <location filename="../ui/convertlist.cpp" line="612"/>
@@ -613,18 +575,18 @@
     <message>
         <location filename="../ui/convertlist.cpp" line="872"/>
         <source>%1 Hz</source>
-        <translation></translation>
+        <translation>%1 Hz</translation>
     </message>
     <message>
         <location filename="../ui/convertlist.cpp" line="873"/>
         <location filename="../ui/convertlist.cpp" line="882"/>
         <source>%1 kb/s</source>
-        <translation></translation>
+        <translation>%1 kb/s</translation>
     </message>
     <message>
         <location filename="../ui/convertlist.cpp" line="883"/>
         <source>%1 fps</source>
-        <translation></translation>
+        <translation>%1 畫格/秒</translation>
     </message>
     <message>
         <location filename="../ui/convertlist.cpp" line="902"/>
@@ -635,28 +597,28 @@
     <message>
         <location filename="../ui/convertlist.cpp" line="945"/>
         <source>KiB</source>
-        <translation></translation>
+        <translation>KiB</translation>
     </message>
     <message>
         <location filename="../ui/convertlist.cpp" line="945"/>
         <source>MiB</source>
-        <translation></translation>
+        <translation>MiB</translation>
     </message>
     <message>
         <location filename="../ui/convertlist.cpp" line="945"/>
         <source>GiB</source>
-        <translation></translation>
+        <translation>GiB</translation>
     </message>
     <message>
         <location filename="../ui/convertlist.cpp" line="945"/>
         <source>TiB</source>
-        <translation></translation>
+        <translation>TiB</translation>
     </message>
     <message>
         <location filename="../ui/convertlist.cpp" line="948"/>
         <source>B</source>
         <extracomment>Bytes</extracomment>
-        <translation></translation>
+        <translation>B</translation>
     </message>
     <message>
         <location filename="../ui/convertlist.cpp" line="983"/>
@@ -667,6 +629,34 @@
         <location filename="../ui/convertlist.cpp" line="984"/>
         <source>%1 already exists on disk or in the task list. Still use this name as the output filename?</source>
         <translation>%1 已經存在。確定還要用這個名稱作為輸出檔案嗎？</translation>
+    </message>
+    <message>
+        <location filename="../ui/convertlist.cpp" line="1027"/>
+        <source>Remove Task</source>
+        <translation>移除任務</translation>
+    </message>
+    <message>
+        <location filename="../ui/convertlist.cpp" line="1028"/>
+        <source>Cannot remove a task while it is in progress.</source>
+        <translation>無法移除正在進行的任務</translation>
+    </message>
+    <message>
+        <location filename="../ui/convertlist.cpp" line="1072"/>
+        <location filename="../ui/convertlist.cpp" line="1073"/>
+        <source>Finished</source>
+        <translation>已完成</translation>
+    </message>
+    <message>
+        <location filename="../ui/convertlist.cpp" line="1079"/>
+        <source>Failed</source>
+        <extracomment>The text to be displayed on the progress bar when a conversion fails</extracomment>
+        <translation>失敗</translation>
+    </message>
+    <message>
+        <location filename="../ui/convertlist.cpp" line="1081"/>
+        <source>Error: %1</source>
+        <extracomment>%1 is the error message</extracomment>
+        <translation>錯誤: %1</translation>
     </message>
 </context>
 <context>
@@ -687,7 +677,7 @@
     <message>
         <location filename="../ui/mainwindow.ui" line="14"/>
         <source>QWinFF</source>
-        <translation></translation>
+        <translation>QWinFF</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="30"/>
@@ -722,7 +712,7 @@
     <message>
         <location filename="../ui/mainwindow.ui" line="99"/>
         <source>Ctrl+N</source>
-        <translation></translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="108"/>
@@ -747,7 +737,7 @@
     <message>
         <location filename="../ui/mainwindow.ui" line="126"/>
         <source>F9</source>
-        <translation></translation>
+        <translation>F9</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="135"/>
@@ -812,28 +802,15 @@
         <translation>移除選取的任務(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="210"/>
-        <source>R&amp;emove Completed</source>
-        <extracomment>remove completed (task, items)</extracomment>
-        <translation>移除完成的任務(&amp;e)</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.ui" line="311"/>
-        <source>Show Error &amp;Message</source>
-        <translation>顯示錯誤訊息(&amp;M)</translation>
-    </message>
-    <message>
-        <source>&amp;Remove Selected Items</source>
-        <translation type="obsolete">移除選取的項目</translation>
-    </message>
-    <message>
         <location filename="../ui/mainwindow.ui" line="201"/>
         <source>Remove all selected items in the list.</source>
         <translation>移除清單中所有選取的項目</translation>
     </message>
     <message>
-        <source>R&amp;emove Completed Items</source>
-        <translation type="obsolete">移除已完成的項目</translation>
+        <location filename="../ui/mainwindow.ui" line="210"/>
+        <source>R&amp;emove Completed</source>
+        <extracomment>remove completed (task, items)</extracomment>
+        <translation>移除完成的任務(&amp;e)</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="213"/>
@@ -926,83 +903,68 @@
         <translation>修改選取檔案的輸出資料夾</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.ui" line="311"/>
+        <source>Show Error &amp;Message</source>
+        <translation>顯示錯誤訊息(&amp;M)</translation>
+    </message>
+    <message>
         <location filename="../ui/mainwindow.cpp" line="118"/>
         <source>All tasks has finished.</source>
         <translation>所有的檔案都已轉換完成</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="151"/>
+        <location filename="../ui/mainwindow.cpp" line="157"/>
         <source>Nothing to convert.</source>
         <translation>沒有要轉換的檔案</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="226"/>
+        <location filename="../ui/mainwindow.cpp" line="232"/>
         <source>Conversion is still in progress. Abort?</source>
         <translation>檔案還在轉換中。確定要離開嗎？</translation>
     </message>
     <message>
-        <source>Elapsed Time: %1h %2m %3s</source>
-        <translation type="obsolete">經過時間: %1 時 %2 分 %3 秒</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.cpp" line="248"/>
+        <location filename="../ui/mainwindow.cpp" line="254"/>
         <source>Elapsed Time: %1 h %2 m %3 s</source>
-        <translation type="unfinished"></translation>
+        <translation>經過時間: %1 時 %2 分 %3 秒</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="273"/>
-        <location filename="../ui/mainwindow.cpp" line="450"/>
+        <location filename="../ui/mainwindow.cpp" line="279"/>
+        <location filename="../ui/mainwindow.cpp" line="460"/>
         <source>Shutdown</source>
         <extracomment>Shutdown the computer (completely poweroff)</extracomment>
         <translation>關機</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="274"/>
+        <location filename="../ui/mainwindow.cpp" line="280"/>
         <source>Shutdown when all tasks are done.</source>
         <translation>所有任務結束後關機</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="279"/>
-        <source>Suspend when all tasks are done.</source>
-        <translation>所有任務結束後待機</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.cpp" line="283"/>
-        <location filename="../ui/mainwindow.cpp" line="460"/>
-        <source>Hibernate</source>
-        <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
-        <translation>休眠</translation>
-    </message>
-    <message>
         <location filename="../ui/mainwindow.cpp" line="284"/>
-        <source>Hibernate when all tasks are done.</source>
-        <translation>所有任務結束後休眠</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.cpp" line="278"/>
-        <location filename="../ui/mainwindow.cpp" line="455"/>
+        <location filename="../ui/mainwindow.cpp" line="465"/>
         <source>Suspend</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
         <translation>待機</translation>
     </message>
     <message>
-        <source>FFmpeg Error</source>
-        <translation type="obsolete">FFmpeg錯誤</translation>
+        <location filename="../ui/mainwindow.cpp" line="285"/>
+        <source>Suspend when all tasks are done.</source>
+        <translation>所有任務結束後待機</translation>
     </message>
     <message>
-        <source>FFmpeg not found. The application will quit now.</source>
-        <translation type="obsolete">找不到FFmpeg，程式將立刻結束。</translation>
+        <location filename="../ui/mainwindow.cpp" line="289"/>
+        <location filename="../ui/mainwindow.cpp" line="470"/>
+        <source>Hibernate</source>
+        <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
+        <translation>休眠</translation>
     </message>
     <message>
-        <source>FFprobe Error</source>
-        <translation type="obsolete">FFprobe錯誤</translation>
+        <location filename="../ui/mainwindow.cpp" line="290"/>
+        <source>Hibernate when all tasks are done.</source>
+        <translation>所有任務結束後休眠</translation>
     </message>
     <message>
-        <source>FFprobe not found. The application will quit now.</source>
-        <translation type="obsolete">找不到FFprobe，程式將立刻結束。</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.cpp" line="577"/>
+        <location filename="../ui/mainwindow.cpp" line="587"/>
         <source>Failed to load preset file. The application will quit now.</source>
         <translation>無法載入設定檔，程式將立刻結束。</translation>
     </message>
@@ -1011,9 +973,9 @@
     <name>MediaConverter</name>
     <message>
         <location filename="../converter/mediaconverter.cpp" line="109"/>
-        <source>%1 not found. The application will quit now.</source>
+        <source>%1 not found.</source>
         <extracomment>%1 is a computer program</extracomment>
-        <translation>無法找到 %1. 程式將立即結束.</translation>
+        <translation>找不到 %1.</translation>
     </message>
 </context>
 <context>
@@ -1026,7 +988,7 @@
     <message>
         <location filename="../ui/optionsdialog.ui" line="24"/>
         <source>FFmpeg</source>
-        <translation></translation>
+        <translation>FFmpeg</translation>
     </message>
     <message>
         <location filename="../ui/optionsdialog.ui" line="35"/>
@@ -1043,13 +1005,33 @@
         <source>Hide unavailable formats (requires restarting)</source>
         <translation>隱藏無法使用的格式 (需要重啟)</translation>
     </message>
+    <message>
+        <location filename="../ui/optionsdialog.ui" line="62"/>
+        <source>Tools</source>
+        <translation>工具</translation>
+    </message>
+    <message>
+        <location filename="../ui/optionsdialog.ui" line="70"/>
+        <source>You have to restart QWinFF for the changes to take effect.</source>
+        <translation>需要重啟 QWinFF 以套用設定.</translation>
+    </message>
+    <message>
+        <location filename="../ui/optionsdialog.ui" line="90"/>
+        <source>Name</source>
+        <translation>名稱</translation>
+    </message>
+    <message>
+        <location filename="../ui/optionsdialog.ui" line="95"/>
+        <source>Command</source>
+        <translation>指令</translation>
+    </message>
 </context>
 <context>
     <name>PoweroffDialog</name>
     <message>
         <location filename="../ui/poweroffdialog.ui" line="17"/>
         <source>QWinFF</source>
-        <translation></translation>
+        <translation>QWinFF</translation>
     </message>
     <message>
         <location filename="../ui/poweroffdialog.ui" line="42"/>
@@ -1111,18 +1093,6 @@
         <location filename="../ui/poweroffdialog.cpp" line="171"/>
         <source>Hibernating in &lt;b&gt;%1&lt;/b&gt; seconds</source>
         <translation>電腦將於 &lt;b&gt;%1&lt;/b&gt; 秒後休眠</translation>
-    </message>
-    <message>
-        <source>The computer will shutdown in &lt;b&gt;%1&lt;/b&gt; seconds</source>
-        <translation type="obsolete">電腦將於 &lt;b&gt;%1&lt;/b&gt; 秒後關機</translation>
-    </message>
-    <message>
-        <source>The computer will suspend in &lt;b&gt;%1&lt;/b&gt; seconds</source>
-        <translation type="obsolete">電腦將於 &lt;b&gt;%1&lt;/b&gt; 秒後待機</translation>
-    </message>
-    <message>
-        <source>The computer will hibernate in &lt;b&gt;%1&lt;/b&gt; seconds</source>
-        <translation type="obsolete">電腦將於 &lt;b&gt;%1&lt;/b&gt; 秒後休眠</translation>
     </message>
 </context>
 </TS>

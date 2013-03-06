@@ -90,7 +90,10 @@ TRANSLATIONS += \
     translations/qwinff_ru.ts \
     translations/qwinff_es_ES.ts \
     translations/qwinff_es_GT.ts \
-    translations/qwinff_ro_RO.ts
+    translations/qwinff_ro_RO.ts \
+	 translations/qwinff_de.ts \
+	 translations/qwinff_tr_TR.ts \
+	 translations/qwinff_ar.ts
 
 INCLUDEPATH += .
 

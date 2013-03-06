@@ -68,22 +68,6 @@
         <translation>Homepage di QWinFF: %1</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="121"/>
-        <source>Simplified Chinese</source>
-        <extracomment>Chinese character set used in China</extracomment>
-        <translation>Cinese semplificato</translation>
-    </message>
-    <message>
-        <location filename="../ui/aboutdialog.cpp" line="124"/>
-        <source>Russian</source>
-        <extracomment>Russian Language</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>QWinFF Project Page: %1</source>
-        <translation type="obsolete">Pagina progetto di QWinFF: %1</translation>
-    </message>
-    <message>
         <location filename="../ui/aboutdialog.cpp" line="72"/>
         <source>Some audio-processing functionalities are provided by SoX.</source>
         <translation>Alcune funzionalità di elaborazione audio sono fornite da SoX.</translation>
@@ -110,6 +94,36 @@
         <source>Czech</source>
         <extracomment>Czech Language</extracomment>
         <translation>Ceco</translation>
+    </message>
+    <message>
+        <location filename="../ui/aboutdialog.cpp" line="121"/>
+        <source>Simplified Chinese</source>
+        <extracomment>Chinese character set used in China</extracomment>
+        <translation>Cinese semplificato</translation>
+    </message>
+    <message>
+        <location filename="../ui/aboutdialog.cpp" line="124"/>
+        <source>Russian</source>
+        <extracomment>Russian Language</extracomment>
+        <translation>Russo</translation>
+    </message>
+    <message>
+        <location filename="../ui/aboutdialog.cpp" line="127"/>
+        <source>Spanish (Spain)</source>
+        <extracomment>Spanish Language (Spain)</extracomment>
+        <translation>Spagnolo (Spagna) </translation>
+    </message>
+    <message>
+        <location filename="../ui/aboutdialog.cpp" line="130"/>
+        <source>Spanish (Guatemala)</source>
+        <extracomment>Spanish Language (Guatemala)</extracomment>
+        <translation>Spagnolo (Guatemala) </translation>
+    </message>
+    <message>
+        <location filename="../ui/aboutdialog.cpp" line="133"/>
+        <source>Romanian</source>
+        <extracomment>Romanian Language</extracomment>
+        <translation>Rumeno </translation>
     </message>
 </context>
 <context>
@@ -210,53 +224,53 @@
         <translation>Regola automaticamente il Bitrate</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="127"/>
+        <location filename="../ui/addtaskwizard.cpp" line="128"/>
         <source>Please select at least one file.</source>
         <translation>Seleziona almeno un file.</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="140"/>
+        <location filename="../ui/addtaskwizard.cpp" line="141"/>
         <source>Folder does not exist. Create a new folder?</source>
         <translation>La cartella non esiste. Vuoi crearne una nuova?</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="149"/>
+        <location filename="../ui/addtaskwizard.cpp" line="150"/>
         <source>Failed to create folder. Please select another output folder.</source>
         <translation>Errore creazione cartella. Seleziona un&apos;altra cartella di destinazione.</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="170"/>
+        <location filename="../ui/addtaskwizard.cpp" line="171"/>
         <source>Select Files</source>
         <extracomment>This text is the title of an openfile dialog.</extracomment>
         <translation>Seleziona i File</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="172"/>
+        <location filename="../ui/addtaskwizard.cpp" line="173"/>
         <source>Multimedia</source>
         <translation>Multimedia</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="173"/>
+        <location filename="../ui/addtaskwizard.cpp" line="174"/>
         <source>Video</source>
         <translation>Video</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="174"/>
+        <location filename="../ui/addtaskwizard.cpp" line="175"/>
         <source>Audio</source>
         <translation>Audio</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="175"/>
+        <location filename="../ui/addtaskwizard.cpp" line="176"/>
         <source>All files</source>
         <translation>Tutti i file</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="197"/>
+        <location filename="../ui/addtaskwizard.cpp" line="198"/>
         <source>Some files could not be found.</source>
         <translation>Alcuni file non possono essere trovati.</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="242"/>
+        <location filename="../ui/addtaskwizard.cpp" line="243"/>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
         <translation>Seleziona Directory</translation>
@@ -329,31 +343,6 @@
         <translation>kb/s</translation>
     </message>
     <message>
-        <location filename="../ui/conversionparameterdialog.ui" line="343"/>
-        <source>Same Quantizer as Source</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/conversionparameterdialog.ui" line="367"/>
-        <source>Cutting</source>
-        <extracomment>video time cutting: options for begin time and end time</extracomment>
-        <translatorcomment>Impostazioni per i tempi di inizio e fine taglio del video</translatorcomment>
-        <translation>Taglio</translation>
-    </message>
-    <message>
-        <location filename="../ui/conversionparameterdialog.ui" line="461"/>
-        <source>Speed</source>
-        <translation>Velocità</translation>
-    </message>
-    <message>
-        <source>Use the source bitrate if it is smaller than the configured output bitrate. This can reduce output file size in certain conditions.</source>
-        <translation type="obsolete">Usa il bitrate originale se è più piccolo del bitrate configurato. Questa operazione può ridurre le dimensioni del file in output.</translation>
-    </message>
-    <message>
-        <source>Auto Adjust Bitrate</source>
-        <translation type="obsolete">Autoregolazione Bitrate</translation>
-    </message>
-    <message>
         <location filename="../ui/conversionparameterdialog.ui" line="172"/>
         <source>Video</source>
         <translation>Video</translation>
@@ -389,18 +378,19 @@
         <translation>Altezza</translation>
     </message>
     <message>
+        <location filename="../ui/conversionparameterdialog.ui" line="302"/>
+        <source>Crop</source>
+        <translation>Taglia</translation>
+    </message>
+    <message>
         <location filename="../ui/conversionparameterdialog.ui" line="340"/>
         <source>Use same video quality as source (implies VBR).</source>
         <translation>Usa la stessa qualità video della sorgente (richiede VBR).</translation>
     </message>
     <message>
-        <source>Same Quality as Source</source>
-        <translation type="obsolete">Stessa qualità dell&apos;originale</translation>
-    </message>
-    <message>
-        <location filename="../ui/conversionparameterdialog.ui" line="302"/>
-        <source>Crop</source>
-        <translation>Taglia</translation>
+        <location filename="../ui/conversionparameterdialog.ui" line="343"/>
+        <source>Same Quantizer as Source</source>
+        <translation>Stesso Quantizzatore della Sorgente</translation>
     </message>
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="350"/>
@@ -414,17 +404,15 @@
         <translation>Tempo</translation>
     </message>
     <message>
-        <source>Begin Time</source>
-        <translation type="obsolete">Inizio</translation>
+        <location filename="../ui/conversionparameterdialog.ui" line="367"/>
+        <source>Cutting</source>
+        <extracomment>video time cutting: options for begin time and end time</extracomment>
+        <translation>Taglio</translation>
     </message>
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="380"/>
         <source>From Begin</source>
         <translation>Dall&apos;Inizio</translation>
-    </message>
-    <message>
-        <source>End Time</source>
-        <translation type="obsolete">Fine</translation>
     </message>
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="401"/>
@@ -443,8 +431,9 @@
         <translation>Modifica velocità</translation>
     </message>
     <message>
-        <source>Speed (Experimental)</source>
-        <translation type="obsolete">Velocità (Sperimentale)</translation>
+        <location filename="../ui/conversionparameterdialog.ui" line="461"/>
+        <source>Speed</source>
+        <translation>Velocità</translation>
     </message>
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="487"/>
@@ -465,11 +454,6 @@
 <context>
     <name>ConvertList</name>
     <message>
-        <source>%1: %2</source>
-        <extracomment>FieldName: Value</extracomment>
-        <translation type="obsolete">%1: %2</translation>
-    </message>
-    <message>
         <location filename="../ui/convertlist.cpp" line="260"/>
         <location filename="../ui/convertlist.cpp" line="903"/>
         <source>Cancel</source>
@@ -486,16 +470,6 @@
         <location filename="../ui/convertlist.cpp" line="298"/>
         <source>Some files are not recognized by the converter.</source>
         <translation>Alcuni file non sono stati riconosciuti dal convertitore.</translation>
-    </message>
-    <message>
-        <location filename="../ui/convertlist.cpp" line="1027"/>
-        <source>Remove Task</source>
-        <translation>Rimuovi lavoro</translation>
-    </message>
-    <message>
-        <location filename="../ui/convertlist.cpp" line="1028"/>
-        <source>Cannot remove a task while it is in progress.</source>
-        <translation>Non posso rimuovere un lavoro in corso.</translation>
     </message>
     <message>
         <location filename="../ui/convertlist.cpp" line="470"/>
@@ -520,24 +494,6 @@
         <translation>Messaggio di errore da FFmpeg:
 
 </translation>
-    </message>
-    <message>
-        <location filename="../ui/convertlist.cpp" line="1079"/>
-        <source>Failed</source>
-        <extracomment>The text to be displayed on the progress bar when a conversion fails</extracomment>
-        <translation>Fallito</translation>
-    </message>
-    <message>
-        <location filename="../ui/convertlist.cpp" line="1081"/>
-        <source>Error: %1</source>
-        <extracomment>%1 is the error message</extracomment>
-        <translation>%1 è il messaggio di errore</translation>
-    </message>
-    <message>
-        <location filename="../ui/convertlist.cpp" line="1072"/>
-        <location filename="../ui/convertlist.cpp" line="1073"/>
-        <source>Finished</source>
-        <translation>Finito</translation>
     </message>
     <message>
         <location filename="../ui/convertlist.cpp" line="612"/>
@@ -676,6 +632,34 @@
         <source>%1 already exists on disk or in the task list. Still use this name as the output filename?</source>
         <translation>%1 esiste già sul disco o nella lista dei lavori. Vuoi usare lo stesso nome anche per l&apos;output (il file verrà sovrascritto)?</translation>
     </message>
+    <message>
+        <location filename="../ui/convertlist.cpp" line="1027"/>
+        <source>Remove Task</source>
+        <translation>Rimuovi lavoro</translation>
+    </message>
+    <message>
+        <location filename="../ui/convertlist.cpp" line="1028"/>
+        <source>Cannot remove a task while it is in progress.</source>
+        <translation>Non posso rimuovere un lavoro in corso.</translation>
+    </message>
+    <message>
+        <location filename="../ui/convertlist.cpp" line="1072"/>
+        <location filename="../ui/convertlist.cpp" line="1073"/>
+        <source>Finished</source>
+        <translation>Finito</translation>
+    </message>
+    <message>
+        <location filename="../ui/convertlist.cpp" line="1079"/>
+        <source>Failed</source>
+        <extracomment>The text to be displayed on the progress bar when a conversion fails</extracomment>
+        <translation>Fallito</translation>
+    </message>
+    <message>
+        <location filename="../ui/convertlist.cpp" line="1081"/>
+        <source>Error: %1</source>
+        <extracomment>%1 is the error message</extracomment>
+        <translation>%1 è il messaggio di errore</translation>
+    </message>
 </context>
 <context>
     <name>ExtraTranslations</name>
@@ -716,10 +700,6 @@
         <location filename="../ui/mainwindow.ui" line="58"/>
         <source>&amp;Edit</source>
         <translation>&amp;Modifica</translation>
-    </message>
-    <message>
-        <source>toolBar</source>
-        <translation type="obsolete">toolBar</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="93"/>
@@ -824,28 +804,15 @@
         <translation>&amp;Rimuovi gli oggetti selezionati</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="210"/>
-        <source>R&amp;emove Completed</source>
-        <extracomment>remove completed (task, items)</extracomment>
-        <translation>R&amp;imuovi completati</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.ui" line="311"/>
-        <source>Show Error &amp;Message</source>
-        <translation>Mostra &amp;messaggio di errore</translation>
-    </message>
-    <message>
-        <source>&amp;Remove Selected Items</source>
-        <translation type="obsolete">&amp;Rimuovi gli oggetti selezionati</translation>
-    </message>
-    <message>
         <location filename="../ui/mainwindow.ui" line="201"/>
         <source>Remove all selected items in the list.</source>
         <translation>Rimuove gli oggetti selezionati dalla lista.</translation>
     </message>
     <message>
-        <source>R&amp;emove Completed Items</source>
-        <translation type="obsolete">R&amp;imuovi completati</translation>
+        <location filename="../ui/mainwindow.ui" line="210"/>
+        <source>R&amp;emove Completed</source>
+        <extracomment>remove completed (task, items)</extracomment>
+        <translation>R&amp;imuovi completati</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="213"/>
@@ -938,83 +905,68 @@
         <translation>Cambia la cartella di output dei lavori selezionati.</translation>
     </message>
     <message>
+        <location filename="../ui/mainwindow.ui" line="311"/>
+        <source>Show Error &amp;Message</source>
+        <translation>Mostra &amp;messaggio di errore</translation>
+    </message>
+    <message>
         <location filename="../ui/mainwindow.cpp" line="118"/>
         <source>All tasks has finished.</source>
         <translation>Tutti i processi sono completati.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="151"/>
+        <location filename="../ui/mainwindow.cpp" line="157"/>
         <source>Nothing to convert.</source>
         <translation>Niente da convertire.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="226"/>
+        <location filename="../ui/mainwindow.cpp" line="232"/>
         <source>Conversion is still in progress. Abort?</source>
         <translation>La conversione è ancora in corso. Arresto la conversione?</translation>
     </message>
     <message>
-        <source>Elapsed Time: %1h %2m %3s</source>
-        <translation type="obsolete">Tempo stimato: %1h %2m %3s</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.cpp" line="248"/>
+        <location filename="../ui/mainwindow.cpp" line="254"/>
         <source>Elapsed Time: %1 h %2 m %3 s</source>
-        <translation type="unfinished"></translation>
+        <translation>Tempo stimato: %1 h %2 m %3 s</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="273"/>
-        <location filename="../ui/mainwindow.cpp" line="450"/>
+        <location filename="../ui/mainwindow.cpp" line="279"/>
+        <location filename="../ui/mainwindow.cpp" line="460"/>
         <source>Shutdown</source>
         <extracomment>Shutdown the computer (completely poweroff)</extracomment>
         <translation>Spegni</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="274"/>
+        <location filename="../ui/mainwindow.cpp" line="280"/>
         <source>Shutdown when all tasks are done.</source>
         <translation>Spegni quando tutti i lavori sono completati.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="279"/>
-        <source>Suspend when all tasks are done.</source>
-        <translation>Sospendi quando tutti i lavori sono completati.</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.cpp" line="283"/>
-        <location filename="../ui/mainwindow.cpp" line="460"/>
-        <source>Hibernate</source>
-        <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
-        <translation>Iberna</translation>
-    </message>
-    <message>
         <location filename="../ui/mainwindow.cpp" line="284"/>
-        <source>Hibernate when all tasks are done.</source>
-        <translation>Iberna quando tutti i lavori sono completati.</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.cpp" line="278"/>
-        <location filename="../ui/mainwindow.cpp" line="455"/>
+        <location filename="../ui/mainwindow.cpp" line="465"/>
         <source>Suspend</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
         <translation>Sospendi</translation>
     </message>
     <message>
-        <source>FFmpeg Error</source>
-        <translation type="obsolete">Errore FFmpeg</translation>
+        <location filename="../ui/mainwindow.cpp" line="285"/>
+        <source>Suspend when all tasks are done.</source>
+        <translation>Sospendi quando tutti i lavori sono completati.</translation>
     </message>
     <message>
-        <source>FFmpeg not found. The application will quit now.</source>
-        <translation type="obsolete">FFmpeg non trovato. L&apos;applicazione ora si chiuderà.</translation>
+        <location filename="../ui/mainwindow.cpp" line="289"/>
+        <location filename="../ui/mainwindow.cpp" line="470"/>
+        <source>Hibernate</source>
+        <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
+        <translation>Iberna</translation>
     </message>
     <message>
-        <source>FFprobe Error</source>
-        <translation type="obsolete">Errore FFprobe</translation>
+        <location filename="../ui/mainwindow.cpp" line="290"/>
+        <source>Hibernate when all tasks are done.</source>
+        <translation>Iberna quando tutti i lavori sono completati.</translation>
     </message>
     <message>
-        <source>FFprobe not found. The application will quit now.</source>
-        <translation type="obsolete">FFprobe non trovato. L&apos;applicazione ora si chiuderà.</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.cpp" line="577"/>
+        <location filename="../ui/mainwindow.cpp" line="587"/>
         <source>Failed to load preset file. The application will quit now.</source>
         <translation>Caricamento file predefinito fallito. L&apos;applicazione ora si chiuderà.</translation>
     </message>
@@ -1023,9 +975,9 @@
     <name>MediaConverter</name>
     <message>
         <location filename="../converter/mediaconverter.cpp" line="109"/>
-        <source>%1 not found. The application will quit now.</source>
+        <source>%1 not found.</source>
         <extracomment>%1 is a computer program</extracomment>
-        <translation>%1 non trovato. Il programma verrà chiuso.</translation>
+        <translation>%1 non trovato. </translation>
     </message>
 </context>
 <context>
@@ -1054,6 +1006,26 @@
         <location filename="../ui/optionsdialog.ui" line="52"/>
         <source>Hide unavailable formats (requires restarting)</source>
         <translation>Nascondi formati non disponibili (richiede riavvio)</translation>
+    </message>
+    <message>
+        <location filename="../ui/optionsdialog.ui" line="62"/>
+        <source>Tools</source>
+        <translation>Strumenti </translation>
+    </message>
+    <message>
+        <location filename="../ui/optionsdialog.ui" line="70"/>
+        <source>You have to restart QWinFF for the changes to take effect.</source>
+        <translation>È necessario riavviare QWinFF affinché le modifiche abbiano effetto. </translation>
+    </message>
+    <message>
+        <location filename="../ui/optionsdialog.ui" line="90"/>
+        <source>Name</source>
+        <translation>Nome</translation>
+    </message>
+    <message>
+        <location filename="../ui/optionsdialog.ui" line="95"/>
+        <source>Command</source>
+        <translation>Comando </translation>
     </message>
 </context>
 <context>

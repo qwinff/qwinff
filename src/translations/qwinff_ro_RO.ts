@@ -49,7 +49,7 @@
         <location filename="../ui/aboutdialog.cpp" line="64"/>
         <source>Programming: %1</source>
         <extracomment>%1 is the name and email of the programmer</extracomment>
-        <translation type="unfinished">Programare: %1</translation>
+        <translation>Programare: 1% </translation>
     </message>
     <message>
         <location filename="../ui/aboutdialog.cpp" line="66"/>
@@ -106,6 +106,24 @@
         <source>Russian</source>
         <extracomment>Russian Language</extracomment>
         <translation>Rusă</translation>
+    </message>
+    <message>
+        <location filename="../ui/aboutdialog.cpp" line="127"/>
+        <source>Spanish (Spain)</source>
+        <extracomment>Spanish Language (Spain)</extracomment>
+        <translation>Spaniolă (Spania) </translation>
+    </message>
+    <message>
+        <location filename="../ui/aboutdialog.cpp" line="130"/>
+        <source>Spanish (Guatemala)</source>
+        <extracomment>Spanish Language (Guatemala)</extracomment>
+        <translation>Spaniolă (Guatemala) </translation>
+    </message>
+    <message>
+        <location filename="../ui/aboutdialog.cpp" line="133"/>
+        <source>Romanian</source>
+        <extracomment>Romanian Language</extracomment>
+        <translation>Română  </translation>
     </message>
 </context>
 <context>
@@ -206,53 +224,53 @@
         <translation>Ajustare Automată  Bitrate Audio</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="127"/>
+        <location filename="../ui/addtaskwizard.cpp" line="128"/>
         <source>Please select at least one file.</source>
         <translation>Selectați cel puțin un fișier. </translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="140"/>
+        <location filename="../ui/addtaskwizard.cpp" line="141"/>
         <source>Folder does not exist. Create a new folder?</source>
         <translation>Folderul nu există. Crearea unui folder nou? </translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="149"/>
+        <location filename="../ui/addtaskwizard.cpp" line="150"/>
         <source>Failed to create folder. Please select another output folder.</source>
         <translation>Imposibilă creerea folderului.  Vă rugăm să selectați un alt folder de ieșire.</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="170"/>
+        <location filename="../ui/addtaskwizard.cpp" line="171"/>
         <source>Select Files</source>
         <extracomment>This text is the title of an openfile dialog.</extracomment>
         <translation>Selectați Fișiere </translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="172"/>
+        <location filename="../ui/addtaskwizard.cpp" line="173"/>
         <source>Multimedia</source>
         <translation>Multimedia </translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="173"/>
+        <location filename="../ui/addtaskwizard.cpp" line="174"/>
         <source>Video</source>
         <translation>Video </translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="174"/>
+        <location filename="../ui/addtaskwizard.cpp" line="175"/>
         <source>Audio</source>
         <translation>Audio </translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="175"/>
+        <location filename="../ui/addtaskwizard.cpp" line="176"/>
         <source>All files</source>
         <translation>Toate fișierele </translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="197"/>
+        <location filename="../ui/addtaskwizard.cpp" line="198"/>
         <source>Some files could not be found.</source>
         <translation>Unele fișiere nu au putut fi găsite.</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="242"/>
+        <location filename="../ui/addtaskwizard.cpp" line="243"/>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
         <translation>Selectați Directorul </translation>
@@ -360,25 +378,25 @@
         <translation>Înălțime </translation>
     </message>
     <message>
+        <location filename="../ui/conversionparameterdialog.ui" line="302"/>
+        <source>Crop</source>
+        <translation>Decupați </translation>
+    </message>
+    <message>
         <location filename="../ui/conversionparameterdialog.ui" line="340"/>
         <source>Use same video quality as source (implies VBR).</source>
         <translation>Utilizați aceeaşi  calitate video ca şi sursa (implică VBR).</translation>
+    </message>
+    <message>
+        <location filename="../ui/conversionparameterdialog.ui" line="343"/>
+        <source>Same Quantizer as Source</source>
+        <translation>Quantizer Identic cu al Sursei </translation>
     </message>
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="350"/>
         <source>Deinterlace</source>
         <translation>Deinterlace 
 </translation>
-    </message>
-    <message>
-        <location filename="../ui/conversionparameterdialog.ui" line="302"/>
-        <source>Crop</source>
-        <translation>Decupați </translation>
-    </message>
-    <message>
-        <location filename="../ui/conversionparameterdialog.ui" line="343"/>
-        <source>Same Quantizer as Source</source>
-        <translation>Quantizer Identic cu al Sursei </translation>
     </message>
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="361"/>
@@ -455,16 +473,6 @@
         <translation>Unele fișiere nu sunt recunoscute de către convertor.</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="1027"/>
-        <source>Remove Task</source>
-        <translation>Elimină Sarcina </translation>
-    </message>
-    <message>
-        <location filename="../ui/convertlist.cpp" line="1028"/>
-        <source>Cannot remove a task while it is in progress.</source>
-        <translation>Nu se poate șterge o sarcină în timp ce acesta este în curs de desfășurare.</translation>
-    </message>
-    <message>
         <location filename="../ui/convertlist.cpp" line="470"/>
         <source>New File Name</source>
         <translation>Numele Noului Fișier</translation>
@@ -486,24 +494,6 @@
 </source>
         <translation>Mesajul de Eroare de la FFmpeg: ⏎ ⏎
 </translation>
-    </message>
-    <message>
-        <location filename="../ui/convertlist.cpp" line="1079"/>
-        <source>Failed</source>
-        <extracomment>The text to be displayed on the progress bar when a conversion fails</extracomment>
-        <translation>A eșuat </translation>
-    </message>
-    <message>
-        <location filename="../ui/convertlist.cpp" line="1081"/>
-        <source>Error: %1</source>
-        <extracomment>%1 is the error message</extracomment>
-        <translation>Eroare: %1</translation>
-    </message>
-    <message>
-        <location filename="../ui/convertlist.cpp" line="1072"/>
-        <location filename="../ui/convertlist.cpp" line="1073"/>
-        <source>Finished</source>
-        <translation>Terminat</translation>
     </message>
     <message>
         <location filename="../ui/convertlist.cpp" line="612"/>
@@ -641,6 +631,34 @@
         <location filename="../ui/convertlist.cpp" line="984"/>
         <source>%1 already exists on disk or in the task list. Still use this name as the output filename?</source>
         <translation>%1 există deja pe disc sau în lista de activități. Folosesc oricum  acest nume ca numele fișierului de ieșire?</translation>
+    </message>
+    <message>
+        <location filename="../ui/convertlist.cpp" line="1027"/>
+        <source>Remove Task</source>
+        <translation>Elimină Sarcina </translation>
+    </message>
+    <message>
+        <location filename="../ui/convertlist.cpp" line="1028"/>
+        <source>Cannot remove a task while it is in progress.</source>
+        <translation>Nu se poate șterge o sarcină în timp ce acesta este în curs de desfășurare.</translation>
+    </message>
+    <message>
+        <location filename="../ui/convertlist.cpp" line="1072"/>
+        <location filename="../ui/convertlist.cpp" line="1073"/>
+        <source>Finished</source>
+        <translation>Terminat</translation>
+    </message>
+    <message>
+        <location filename="../ui/convertlist.cpp" line="1079"/>
+        <source>Failed</source>
+        <extracomment>The text to be displayed on the progress bar when a conversion fails</extracomment>
+        <translation>A eșuat </translation>
+    </message>
+    <message>
+        <location filename="../ui/convertlist.cpp" line="1081"/>
+        <source>Error: %1</source>
+        <extracomment>%1 is the error message</extracomment>
+        <translation>Eroare: %1</translation>
     </message>
 </context>
 <context>
@@ -897,58 +915,58 @@
         <translation>Toate sarcinile s-au terminat.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="151"/>
+        <location filename="../ui/mainwindow.cpp" line="157"/>
         <source>Nothing to convert.</source>
         <translation>Nimic de convertit.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="226"/>
+        <location filename="../ui/mainwindow.cpp" line="232"/>
         <source>Conversion is still in progress. Abort?</source>
         <translation>Conversia este încă în curs. Abandonați?</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="248"/>
+        <location filename="../ui/mainwindow.cpp" line="254"/>
         <source>Elapsed Time: %1 h %2 m %3 s</source>
         <translation>Timp scurs: %1 h %2 m %3 s</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="273"/>
-        <location filename="../ui/mainwindow.cpp" line="450"/>
+        <location filename="../ui/mainwindow.cpp" line="279"/>
+        <location filename="../ui/mainwindow.cpp" line="460"/>
         <source>Shutdown</source>
         <extracomment>Shutdown the computer (completely poweroff)</extracomment>
         <translation>Shutdown</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="274"/>
+        <location filename="../ui/mainwindow.cpp" line="280"/>
         <source>Shutdown when all tasks are done.</source>
         <translation>Shutdown atunci când toate sarcinile au fost finalizate.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="278"/>
-        <location filename="../ui/mainwindow.cpp" line="455"/>
+        <location filename="../ui/mainwindow.cpp" line="284"/>
+        <location filename="../ui/mainwindow.cpp" line="465"/>
         <source>Suspend</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
         <translation>Suspendare</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="279"/>
+        <location filename="../ui/mainwindow.cpp" line="285"/>
         <source>Suspend when all tasks are done.</source>
         <translation>Suspendare atunci când toate sarcinile au fost efectuate.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="283"/>
-        <location filename="../ui/mainwindow.cpp" line="460"/>
+        <location filename="../ui/mainwindow.cpp" line="289"/>
+        <location filename="../ui/mainwindow.cpp" line="470"/>
         <source>Hibernate</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
         <translation>Hibernare</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="284"/>
+        <location filename="../ui/mainwindow.cpp" line="290"/>
         <source>Hibernate when all tasks are done.</source>
         <translation>Hibernare când toate sarcinile sunt efectuate. </translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="577"/>
+        <location filename="../ui/mainwindow.cpp" line="587"/>
         <source>Failed to load preset file. The application will quit now.</source>
         <translation>Imposibilă încărcarea fișierului presetat. Aplicaţia se va închide acum.</translation>
     </message>
@@ -957,9 +975,9 @@
     <name>MediaConverter</name>
     <message>
         <location filename="../converter/mediaconverter.cpp" line="109"/>
-        <source>%1 not found. The application will quit now.</source>
+        <source>%1 not found.</source>
         <extracomment>%1 is a computer program</extracomment>
-        <translation>%1 nu a fost găsit.  Aplicaţia se va închide acum. </translation>
+        <translation>%1 nu a fost găsit. </translation>
     </message>
 </context>
 <context>
@@ -988,6 +1006,26 @@
         <location filename="../ui/optionsdialog.ui" line="52"/>
         <source>Hide unavailable formats (requires restarting)</source>
         <translation>Ascunde formatele indisponibile (necesită repornirea)</translation>
+    </message>
+    <message>
+        <location filename="../ui/optionsdialog.ui" line="62"/>
+        <source>Tools</source>
+        <translation>Instrumente </translation>
+    </message>
+    <message>
+        <location filename="../ui/optionsdialog.ui" line="70"/>
+        <source>You have to restart QWinFF for the changes to take effect.</source>
+        <translation>Trebuie să reporniți QWinFF pentru ca modificările să aibă efect.</translation>
+    </message>
+    <message>
+        <location filename="../ui/optionsdialog.ui" line="90"/>
+        <source>Name</source>
+        <translation>Nume </translation>
+    </message>
+    <message>
+        <location filename="../ui/optionsdialog.ui" line="95"/>
+        <source>Command</source>
+        <translation>Comandă </translation>
     </message>
 </context>
 <context>
