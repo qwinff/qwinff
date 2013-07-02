@@ -255,7 +255,7 @@
   <!-- MPG -->
   <MPGAuto>
     <label>MPG Auto</label>
-    <params>-sameq</params>
+    <params version="lt 1.2.0">-sameq</params>
     <extension>mpg</extension>
     <category>Rockbox</category>
   </MPGAuto>
@@ -685,7 +685,7 @@
   <!-- MOV -->
   <qmovauto>
     <label>Quicktime MOV Auto</label>
-    <params>-sameq</params>
+    <params version="lt 1.2.0">-sameq</params>
     <extension>mov</extension>
     <category>QuickTime</category>
   </qmovauto>
