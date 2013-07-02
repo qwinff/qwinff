@@ -15,6 +15,7 @@
 
 #include "presets.h"
 #include "ffmpeginterface.h"
+#include "versioncompare.h"
 #include <QMultiMap>
 #include <QXmlStreamReader>
 #include <QFile>
@@ -38,6 +39,7 @@ struct Presets::Private
     bool parsePreset(QXmlStreamReader& xml);
     bool readElementData(QXmlStreamReader& xml, Preset& target);
     void removeUnavailablePresets();
+    QString getVersionAttribute(const QXmlStreamAttributes& attrs);
 };
 
 bool Presets::Private::parseXmlFile(QFile &file, bool removeUnavailableCodecs)
@@ -111,6 +113,9 @@ bool Presets::Private::readElementData(QXmlStreamReader &xml, Preset& target)
     if (xml.tokenType() != QXmlStreamReader::StartElement)
         return false;
     QString property_name = xml.name().toString();
+    QString versionrange_str;
+    if (property_name == "params")
+        versionrange_str = getVersionAttribute(xml.attributes());
 
     xml.readNext();
 
@@ -122,7 +127,11 @@ bool Presets::Private::readElementData(QXmlStreamReader &xml, Preset& target)
     if (property_name == "label") {
         target.label = property_value;
     } else if (property_name == "params") {
-        target.parameters = property_value;
+        Version ffmpegVersion(FFmpegInterface::getFFmpegVersionInfo());
+        if (versionrange_str.isEmpty()
+                || VersionRange(versionrange_str).containsVersion(ffmpegVersion)) {
+            target.parameters = property_value;
+        }
     } else if (property_name == "extension") {
         target.extension = property_value;
     } else if (property_name == "category") {
@@ -178,6 +187,18 @@ void Presets::Private::removeUnavailablePresets()
         else
             ++it;
     }
+}
+
+QString Presets::Private::getVersionAttribute(const QXmlStreamAttributes &attrs)
+{
+    QString version;
+    foreach (QXmlStreamAttribute attr, attrs) {
+        if (attr.name() == "version") {
+            version = attr.value().toString();
+            break;
+        }
+    }
+    return version;
 }
 
 Presets::Presets(QObject *parent) :

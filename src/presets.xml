@@ -4,7 +4,7 @@
   <!-- MPEG4 -->
   <MPEG4Auto>
     <label>MPEG-4 Auto</label>
-    <params>-sameq</params>
+    <params version="lt 1.2.0">-sameq</params>
     <extension>mp4</extension>
     <category>MPEG-4</category>
   </MPEG4Auto>

@@ -36,7 +36,8 @@ SOURCES += main.cpp \
     services/powermanagement-dummy.cpp \
     converter/audiofilter.cpp \
     converter/exepath.cpp \
-    converter/ffplayinterface.cpp
+    converter/ffplayinterface.cpp \
+    converter/versioncompare.cpp
 
 HEADERS  += \
     ui/progressbar.h \
@@ -67,7 +68,8 @@ HEADERS  += \
     converter/audiofilter.h \
     converter/exepath.h \
     extra-translations.h \
-    converter/ffplayinterface.h
+    converter/ffplayinterface.h \
+    converter/versioncompare.h
 
 FORMS    += \
     ui/conversionparameterdialog.ui \
