@@ -27,7 +27,7 @@
 #include "converter/mediaconverter.h"
 #include "converter/presets.h"
 #include "services/updatechecker.h"
-#include "config.h"
+#include "services/constants.h"
 #include <QHBoxLayout>
 #include <QToolButton>
 #include <QMessageBox>
@@ -105,7 +105,7 @@ void MainWindow::window_ready()
     }
     QSettings settings;
     if (settings.value("options/check_update_on_startup",
-                       DEFAULT_CHECK_UPDATE_ON_STARTUP).toBool())
+                       Constants::getBool("DefaultCheckUpdateOnStartup")).toBool())
         m_update_checker->checkUpdate();
 }
 
