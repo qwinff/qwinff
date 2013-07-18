@@ -15,6 +15,7 @@
 
 #include <QXmlStreamReader>
 #include "updateinfoparser.h"
+#include "constants.h"
 
 XmlUpdateInfoParser::XmlUpdateInfoParser()
 {
@@ -86,13 +87,13 @@ void XmlUpdateInfoParser::readDownloadUrl(QXmlStreamAttributes &attrs, QString u
     (void)attrs; (void)url; // eliminate "unused variable" warning
 #ifdef Q_OS_WIN32
     QString type = getAttribute(attrs, "type");
-#ifdef PORTABLE_APP
-    if (type == "windows-portable")
-        m_downloadUrl = url;
-#else
-    if (type == "windows-installer")
-        m_downloadUrl = url;
-#endif
+    if (Constants::getBool("Portable")) {
+        if (type == "windows-portable")
+            m_downloadUrl = url;
+    } else {
+        if (type == "windows-installer")
+            m_downloadUrl = url;
+    }
 #endif
 }
 

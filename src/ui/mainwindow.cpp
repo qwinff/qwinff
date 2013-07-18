@@ -576,23 +576,25 @@ bool MainWindow::load_presets()
     // The default preset file is located in <datapath>/presets.xml
     QString default_preset_file = QDir(Paths::dataPath()).absoluteFilePath("presets.xml");
 
-#ifndef PORTABLE_APP
-    // rename local preset file created by older versions of qwinff
-    // operation: mv ~/.qwinff/presets.xml ~/.qwinff/presets.xml.old
-    QString local_preset_file_old = QDir(QDir::homePath()).absoluteFilePath(".qwinff/presets.xml");
-    if (QFile(local_preset_file_old).exists()) {
-        QFile::remove(local_preset_file_old + ".old");
-        if (QFile::rename(local_preset_file_old, local_preset_file_old + ".old")) {
-            qDebug() << local_preset_file_old + " is no longer used, "
-                        "rename to " + local_preset_file_old + ".old";
+    QString local_preset_file;
+    if (!Constants::getBool("Portable")) { // non-portable app
+        // rename local preset file created by older versions of qwinff
+        // operation: mv ~/.qwinff/presets.xml ~/.qwinff/presets.xml.old
+        QString local_preset_file_old = QDir(QDir::homePath()).absoluteFilePath(".qwinff/presets.xml");
+        if (QFile(local_preset_file_old).exists()) {
+            QFile::remove(local_preset_file_old + ".old");
+            if (QFile::rename(local_preset_file_old, local_preset_file_old + ".old")) {
+                qDebug() << local_preset_file_old + " is no longer used, "
+                            "rename to " + local_preset_file_old + ".old";
+            }
         }
-    }
 
-    // use global preset temporarily
-    QString local_preset_file = default_preset_file;
-#else // PORTABLE_APP
-    QString local_preset_file = default_preset_file;
-#endif
+        // use global preset temporarily
+        local_preset_file = default_preset_file;
+    } else {
+        // portable app
+        local_preset_file = default_preset_file;
+    }
 
     QSettings settings;
     bool removeUnavailableCodecs = settings.value("options/hideformats", true).toBool();

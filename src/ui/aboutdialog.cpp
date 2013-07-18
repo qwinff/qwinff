@@ -13,11 +13,12 @@
     along with QWinFF.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include <QtGlobal>
+#include <QLocale>
 #include "aboutdialog.h"
 #include "ui_aboutdialog.h"
 #include "version.h"
-#include <QtGlobal>
-#include <QLocale>
+#include "services/constants.h"
 #ifdef USE_LIBNOTIFY
  #include "services/notificationservice-libnotify.h"
 #endif
@@ -46,10 +47,10 @@ AboutDialog::AboutDialog(QWidget *parent) :
 #ifdef VERSION_ID_STRING
          + QString(" %1").arg(QString(VERSION_ID_STRING))
 #endif
-#ifdef PORTABLE_APP
-         /*: Portable version (no installation, no writing registry) */
-         + " " + tr("Portable")
-#endif
+         + " "
+         + ((Constants::getBool("Portable"))
+                /*: Portable version (no installation, no writing registry) */
+                ? tr("Portable") : "")
          + "<br>"
          /*: Qt version */
          + tr("Compiled with Qt %1").arg(QT_VERSION_STR)
