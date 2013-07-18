@@ -40,7 +40,8 @@ SOURCES += main.cpp \
     services/versioncompare.cpp \
     services/updatechecker.cpp \
     services/httpdownloader.cpp \
-    services/updateinfoparser.cpp
+    services/updateinfoparser.cpp \
+    services/constants.cpp
 
 HEADERS  += \
     ui/progressbar.h \
@@ -76,7 +77,8 @@ HEADERS  += \
     services/updatechecker.h \
     services/httpdownloader.h \
     services/updateinfoparser.h \
-    config.h
+    config.h \
+    services/constants.h
 
 FORMS    += \
     ui/conversionparameterdialog.ui \
