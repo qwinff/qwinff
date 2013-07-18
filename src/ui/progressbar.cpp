@@ -67,9 +67,18 @@ void ProgressBar::paintEvent(QPaintEvent*)
     QColor color_center = Constants::getColor("ProgressBarColor_Center");
     QColor color_border = Constants::getColor("ProgressBarColor_Border");
     QColor color_text = Constants::getColor("ProgressBarColor_Text");
+    QColor color_background = Constants::getColor("ProgressBarColor_Background");
 
     //if (m_percentage >= 0)
     {
+        QRect rect_region(0, 0, width()-1, height()-1);
+
+        // draw background
+        QBrush background_brush(color_background);
+        painter.setPen(Qt::NoPen);
+        painter.setBrush(background_brush);
+        painter.drawRect(rect_region);
+
         if (m_percentage > 0) {
             // draw progress bar
             QRect rect_progress(0, 0, (width()*m_percentage/100)-1, height()-1);
@@ -86,7 +95,6 @@ void ProgressBar::paintEvent(QPaintEvent*)
         pen.setColor(color_text);
         painter.setPen(pen);
 
-        QRect rect_region(0, 0, width()-1, height()-1);
         if (!m_show_text) { // show percentage
             painter.drawText(rect_region, QString("%1\%").arg(m_percentage)
                              , QTextOption(Qt::AlignCenter));

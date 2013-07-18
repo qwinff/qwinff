@@ -34,5 +34,6 @@
   <ProgressBarColor_Center type="color">#96C8DC</ProgressBarColor_Center>
   <ProgressBarColor_Border type="color">#6496A0</ProgressBarColor_Border>
   <ProgressBarColor_Text type="color">#000000</ProgressBarColor_Text>
+  <ProgressBarColor_Background type="color">#FFFFFF5F</ProgressBarColor_Background>
 
 </QWinFFConstants>
