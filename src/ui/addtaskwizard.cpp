@@ -173,7 +173,7 @@ void AddTaskWizard::slotAddFilesToList()
               tr("Multimedia") + exts.multimedia().forFilter() + ";;" +
               tr("Video") + exts.video().forFilter() + ";;" +
               tr("Audio") + exts.audio().forFilter() + ";;" +
-              tr("All files") + " (*)"
+              tr("All files") + "(*)"
               );
 
     if (!files.isEmpty()) {

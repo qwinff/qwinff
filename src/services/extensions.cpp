@@ -27,7 +27,7 @@ QString ExtensionList::forFilter() {
 	for (int n=0; n < count(); n++) {
 		s = s + "*." + at(n) + " ";
 	}
-	if (!s.isEmpty()) s = " (" + s + ")";
+    if (!s.isEmpty()) s = "(" + s + ")";
 	return s;
 }
 
