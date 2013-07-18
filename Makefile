@@ -53,6 +53,7 @@ install:
 	install -m 755 bin/qwinff $(DESTDIR)$(PREFIX)/bin/
 	-install -d $(DESTDIR)$(DATA_PATH)
 	install -m 644 src/presets.xml $(DESTDIR)$(DATA_PATH)
+	install -m 644 src/constants.xml $(DESTDIR)$(DATA_PATH)
 	-install -d $(DESTDIR)$(TRANSLATION_PATH)
 	-install -m 644 src/translations/*.qm $(DESTDIR)$(TRANSLATION_PATH)
 	-install -d $(DESTDIR)$(PREFIX)/share/man/man1
@@ -66,6 +67,7 @@ install:
 uninstall:
 	-rm -f $(DESTDIR)$(PREFIX)/bin/qwinff
 	-rm -f $(DESTDIR)$(DATA_PATH)/presets.xml
+	-rm -f $(DESTDIR)$(DATA_PATH)/constants.xml
 	-rm -f $(DESTDIR)$(TRANSLATION_PATH)/*.qm
 	-rmdir $(DESTDIR)$(TRANSLATION_PATH)
 	-rmdir $(DESTDIR)$(DATA_PATH)
