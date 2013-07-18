@@ -70,6 +70,9 @@ bool Constants::readFile(QFile &file)
         }
     }
 
+    if (!reader.hasError())
+        constants_initialized = true;
+
     return !reader.hasError();
 }
 
