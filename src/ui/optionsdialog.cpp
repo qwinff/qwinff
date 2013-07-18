@@ -17,6 +17,7 @@
 #include "ui_optionsdialog.h"
 #include "converter/exepath.h"
 #include "converter/mediaconverter.h"
+#include "config.h"
 #include <QMessageBox>
 #include <QSettings>
 
@@ -71,7 +72,8 @@ void OptionsDialog::read_fields()
     QSettings settings;
     ui->spinThreads->setValue(settings.value("options/threads", DEFAULT_THREAD_COUNT).toInt());
     ui->chkHideFormats->setChecked(settings.value("options/hideformats", true).toBool());
-    ui->chkCheckUpdates->setChecked(settings.value("options/check_update_on_startup", true).toBool());
+    ui->chkCheckUpdates->setChecked(settings.value("options/check_update_on_startup",
+                                                   DEFAULT_CHECK_UPDATE_ON_STARTUP).toBool());
 
 #ifndef FFMPEG_IN_DATA_PATH
     // ExePath to table

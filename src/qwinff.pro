@@ -75,7 +75,8 @@ HEADERS  += \
     services/versioncompare.h \
     services/updatechecker.h \
     services/httpdownloader.h \
-    services/updateinfoparser.h
+    services/updateinfoparser.h \
+    config.h
 
 FORMS    += \
     ui/conversionparameterdialog.ui \

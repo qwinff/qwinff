@@ -27,6 +27,7 @@
 #include "converter/mediaconverter.h"
 #include "converter/presets.h"
 #include "services/updatechecker.h"
+#include "config.h"
 #include <QHBoxLayout>
 #include <QToolButton>
 #include <QMessageBox>
@@ -103,7 +104,8 @@ void MainWindow::window_ready()
         add_files(m_argv_input_files);
     }
     QSettings settings;
-    if (settings.value("options/check_update_on_startup", true).toBool())
+    if (settings.value("options/check_update_on_startup",
+                       DEFAULT_CHECK_UPDATE_ON_STARTUP).toBool())
         m_update_checker->checkUpdate();
 }
 
