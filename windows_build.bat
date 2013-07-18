@@ -19,6 +19,7 @@ copy ".\src\release\qwinff.exe" "%DEST_DIR%"
 
 :: Copy data files to the output directory.
 copy ".\src\presets.xml" "%DEST_DIR%"
+copy ".\src\constants.xml" "%DEST_DIR%"
 copy ".\src\translations\*.qm" "%DEST_DIR%\translations"
 copy "COPYING-v3.txt" "%DEST_DIR%\license.txt"
 copy "CHANGELOG.txt" "%DEST_DIR%\changelog.txt"

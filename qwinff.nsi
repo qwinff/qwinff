@@ -90,6 +90,7 @@ Section
 	# Program Files
 	File qwinff.exe
 	File presets.xml
+	File constants.xml
 	File *.dll
 	File ${LICENSE}
 	file ${CHANGELOG}
@@ -134,6 +135,7 @@ Section "un.Uninstaller"
 
 	Delete $INSTDIR\qwinff.exe
 	Delete $INSTDIR\presets.xml
+	Delete $INSTDIR\constants.xml
 	Delete $INSTDIR\*.dll
 	Delete $INSTDIR\${LICENSE}
 	Delete $INSTDIR\${CHANGELOG}
