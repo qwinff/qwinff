@@ -47,12 +47,13 @@ namespace
 
     int hex2int(const QString& hex_str)
     {
+        QString qualified_str = QString("0x%1").arg(hex_str);
         bool ok;
-        int value = hex_str.toInt(&ok, 16);
-        if (!ok)
-            return 0;
-        else
+        int value = qualified_str.toInt(&ok, 16);
+        if (ok)
             return value;
+        else
+            return 0;
     }
 
     QColor str2color(const QString& color_str)

@@ -66,6 +66,7 @@ void ProgressBar::paintEvent(QPaintEvent*)
     QColor color_margin = Constants::getColor("ProgressBarColor_Margin");
     QColor color_center = Constants::getColor("ProgressBarColor_Center");
     QColor color_border = Constants::getColor("ProgressBarColor_Border");
+    QColor color_text = Constants::getColor("ProgressBarColor_Text");
 
     //if (m_percentage >= 0)
     {
@@ -82,6 +83,7 @@ void ProgressBar::paintEvent(QPaintEvent*)
         }
 
         // Restore the pen such that the text can be rendered.
+        pen.setColor(color_text);
         painter.setPen(pen);
 
         QRect rect_region(0, 0, width()-1, height()-1);
