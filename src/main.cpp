@@ -19,12 +19,14 @@
 #include <QTranslator>
 #include <QDir>
 #include <QSettings>
+#include <QMessageBox>
 #include "ui/mainwindow.h"
 #include "services/paths.h"
 #include "converter/ffmpeginterface.h"
 #include "converter/mediaprobe.h"
 #include "converter/exepath.h"
 #include "services/notification.h"
+#include "services/constants.h"
 
 /**
  * @brief Find the absolute path of the translation of the current locale.
@@ -53,10 +55,50 @@ static QString find_translation_file()
     return "";
 }
 
+/**
+ * @brief Load program constants from constants.xml.
+ * @return true on success, false on failure
+ */
+static bool load_constants()
+{
+#ifdef DATA_PATH
+    QString app_path = QString(DATA_PATH);
+#else
+    QString app_path = app.applicationDirPath();
+#endif
+    QString constant_xml_filename = QDir(app_path).absoluteFilePath("constants.xml");
+
+    // open constant xml file
+    QFile constant_xml(constant_xml_filename);
+    constant_xml.open(QIODevice::ReadOnly);
+    if (!constant_xml.isOpen()) {
+        QMessageBox::critical(0, "QWinFF",
+                              QString("Cannot load %1. The program will exit now.")
+                              .arg(constant_xml_filename));
+        return false;
+    }
+
+    // parse the xml file
+    if (!Constants::readFile(constant_xml)) {
+        QMessageBox::critical(0, "QWinFF",
+                              QString("%1 contains error(s). "
+                                      "Reinstall the application may solve the problem.")
+                              .arg(constant_xml_filename));
+        return false;
+    }
+
+    return true;
+}
+
 int main(int argc, char *argv[])
 {
     // Create Application.
     QApplication app(argc, argv);
+
+    if (!load_constants()) {
+        app.exec();
+        return EXIT_FAILURE;
+    }
 
     // Register QSettings information.
     app.setOrganizationName("qwinff");
