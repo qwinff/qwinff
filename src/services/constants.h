@@ -16,7 +16,7 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
-#include <QString>
+#include <QStringList>
 #include <QFile>
 
 class Constants
@@ -27,6 +27,7 @@ public:
     static bool getBool(const char *key);
     static int getInteger(const char *key);
     static QString getString(const char *key);
+    static QStringList getSpaceSeparatedList(const char *key);
 
 private:
     Constants();

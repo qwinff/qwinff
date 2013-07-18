@@ -17,6 +17,7 @@
 #include <QVariant>
 #include <QXmlStreamReader>
 #include <QDebug>
+#include <QRegExp>
 #include "constants.h"
 
 namespace
@@ -92,4 +93,12 @@ QString Constants::getString(const char *key)
 {
     Q_ASSERT(constants_initialized);
     return constants[key].toString();
+}
+
+QStringList Constants::getSpaceSeparatedList(const char *key)
+{
+    Q_ASSERT(constants_initialized);
+    QString collapsed_string = constants[key].toString()
+            .replace(QRegExp("[\n\t ]"), " ");
+    return collapsed_string.split(" ", QString::SkipEmptyParts);
 }

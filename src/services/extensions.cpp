@@ -16,6 +16,7 @@
 /* This file is taken from smplayer */
 
 #include "extensions.h"
+#include "constants.h"
 
 ExtensionList::ExtensionList() : QStringList()
 {
@@ -41,26 +42,21 @@ QString ExtensionList::forRegExp() {
 
 Extensions::Extensions()
 {
-	_video << "avi" << "vfw" << "divx" 
-           << "mpg" << "mpeg" << "m1v" << "m2v" << "mpv" << "dv" << "3gp"
-           << "mov" << "mp4" << "m4v" << "mqv"
-           << "dat" << "vcd"
-           << "ogg" << "ogm" << "ogv"
-           << "asf" << "wmv"
-           << "bin" << "iso" << "vob"
-           << "mkv" << "nsv" << "ram" << "flv"
-           << "rm" << "swf"
-           << "ts" << "rmvb" << "dvr-ms" << "m2t" << "m2ts" << "rec"
-           << "mts" << "webm";
+    QStringList video_exts = Constants::getSpaceSeparatedList("VideoExtensions");
+    QStringList audio_exts = Constants::getSpaceSeparatedList("AudioExtensions");
 
-	_audio << "mp3" << "ogg" << "wav" << "wma" <<  "ac3" << "ra" << "ape" << "flac";
+    foreach (QString ext, video_exts)
+        _video << ext;
 
-        // multimedia = union of video and audio
-	_multimedia = _video;
-	for (int n = 0; n < _audio.count(); n++) {
-		if (!_multimedia.contains(_audio[n])) _multimedia << _audio[n];
-	}
+    foreach (QString ext, audio_exts)
+        _audio << ext;
 
+    // multimedia = union of video and audio
+    _multimedia = _video;
+    foreach (QString ext, audio_exts) {
+        if (!_multimedia.contains(ext))
+            _multimedia << ext;
+    }
 }
 
 Extensions::~Extensions() {
