@@ -13,15 +13,14 @@
     along with QWinFF.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "poweroffdialog.h"
-#include "ui_poweroffdialog.h"
-#include "services/powermanagement.h"
 #include <QMessageBox>
 #include <QTimer>
 #include <QApplication>
 #include <QDesktopWidget>
-
-#define SEC_TO_WAIT 30
+#include "poweroffdialog.h"
+#include "ui_poweroffdialog.h"
+#include "services/powermanagement.h"
+#include "services/constants.h"
 
 PoweroffDialog::PoweroffDialog(QWidget *parent) :
     QDialog(parent),
@@ -85,7 +84,7 @@ int PoweroffDialog::exec(int action)
     ui->btnExecute->setText(button_text);
 
     m_action = action;
-    m_time = SEC_TO_WAIT;
+    m_time = Constants::getInteger("PoweroffTimeout");
     m_timer->start();
     refresh_message();
 

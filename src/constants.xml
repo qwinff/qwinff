@@ -36,4 +36,7 @@
   <ProgressBarColor_Text type="color">#000000</ProgressBarColor_Text>
   <ProgressBarColor_Background type="color">#FFFFFF5F</ProgressBarColor_Background>
 
+  <!-- seconds to wait before shutting down or suspending the computer -->
+  <PoweroffTimeout>30</PoweroffTimeout>
+
 </QWinFFConstants>
