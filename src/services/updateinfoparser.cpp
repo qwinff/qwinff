@@ -65,6 +65,7 @@ QString XmlUpdateInfoParser::downloadUrl() const
 bool XmlUpdateInfoParser::readLeafElement(QXmlStreamReader &xml)
 {
     QString name = xml.name().toString();
+    QXmlStreamAttributes attributes = xml.attributes();
     xml.readNext();
     if (xml.tokenType() != QXmlStreamReader::Characters)
         return false;
@@ -76,14 +77,15 @@ bool XmlUpdateInfoParser::readLeafElement(QXmlStreamReader &xml)
     else if (name == "ReleaseNotes")
         m_releaseNotes = data;
     else if (name == "DownloadUrl")
-        readDownloadUrl(xml, data);
+        readDownloadUrl(attributes, data);
     return true;
 }
 
-void XmlUpdateInfoParser::readDownloadUrl(QXmlStreamReader &xml, QString url)
+void XmlUpdateInfoParser::readDownloadUrl(QXmlStreamAttributes &attrs, QString url)
 {
+    (void)attrs; (void)url; // eliminate "unused variable" warning
 #ifdef Q_OS_WIN32
-    QString type = readAttribute(xml, "type");
+    QString type = getAttribute(attrs, "type");
 #ifdef PORTABLE_APP
     if (type == "windows-portable")
         m_downloadUrl = url;
@@ -94,9 +96,8 @@ void XmlUpdateInfoParser::readDownloadUrl(QXmlStreamReader &xml, QString url)
 #endif
 }
 
-QString XmlUpdateInfoParser::readAttribute(QXmlStreamReader &xml, QString name)
+QString XmlUpdateInfoParser::getAttribute(QXmlStreamAttributes &attrs, QString name)
 {
-    QXmlStreamAttributes attrs = xml.attributes();
     foreach (QXmlStreamAttribute attr, attrs) {
         if (attr.name() == name) {
             return attr.value().toString();

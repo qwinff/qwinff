@@ -25,10 +25,14 @@ namespace Ui {
     class MainWindow;
 }
 
-class Presets;
+QT_BEGIN_NAMESPACE
 class QLabel;
 class QToolButton;
 class QActionGroup;
+QT_END_NAMESPACE
+
+class Presets;
+class UpdateChecker;
 
 class MainWindow : public QMainWindow
 {
@@ -68,6 +72,7 @@ private slots:
     void conversion_stopped();
 
     void update_poweroff_button(int);
+    void received_update_result(int);
 
 protected:
     void closeEvent(QCloseEvent *);
@@ -81,6 +86,7 @@ private:
     QTimer *m_timer;
     QToolButton *m_poweroff_button;
     QActionGroup *m_poweroff_actiongroup;
+    UpdateChecker *m_update_checker;
     bool check_execute_conditions();
     void add_files();
     void add_files(const QStringList& files);

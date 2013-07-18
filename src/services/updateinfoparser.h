@@ -32,6 +32,7 @@ public:
 
 QT_BEGIN_NAMESPACE
 class QXmlStreamReader;
+class QXmlStreamAttributes;
 QT_END_NAMESPACE
 
 class XmlUpdateInfoParser : public UpdateInfoParser
@@ -50,8 +51,8 @@ private:
     QString m_releaseNotes;
     QString m_downloadUrl;
     bool readLeafElement(QXmlStreamReader& xml);
-    void readDownloadUrl(QXmlStreamReader& xml, QString url);
-    QString readAttribute(QXmlStreamReader& xml, QString attr);
+    void readDownloadUrl(QXmlStreamAttributes& attrs, QString url);
+    QString getAttribute(QXmlStreamAttributes& attrs, QString name);
 };
 
 #endif // UPDATEINFOPARSER_H

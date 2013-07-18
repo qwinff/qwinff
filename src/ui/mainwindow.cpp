@@ -26,6 +26,7 @@
 #include "services/powermanagement.h"
 #include "converter/mediaconverter.h"
 #include "converter/presets.h"
+#include "services/updatechecker.h"
 #include <QHBoxLayout>
 #include <QToolButton>
 #include <QMessageBox>
@@ -46,7 +47,8 @@ MainWindow::MainWindow(QWidget *parent, const QStringList& fileList) :
     m_list(new ConvertList(m_presets, this)),
     m_argv_input_files(fileList),
     m_elapsedTimeLabel(new QLabel(this)),
-    m_timer(new QTimer(this))
+    m_timer(new QTimer(this)),
+    m_update_checker(new UpdateChecker(this))
 {
     ui->setupUi(this);
 
@@ -67,6 +69,8 @@ MainWindow::MainWindow(QWidget *parent, const QStringList& fileList) :
             this, SLOT(conversion_started()));
     connect(m_list, SIGNAL(stopped()),
             this, SLOT(conversion_stopped()));
+    connect(m_update_checker, SIGNAL(receivedResult(int)),
+            this, SLOT(received_update_result(int)));
 
     m_list->setContextMenuPolicy(Qt::CustomContextMenu);
 
@@ -98,6 +102,8 @@ void MainWindow::window_ready()
     if (!m_argv_input_files.isEmpty()) {
         add_files(m_argv_input_files);
     }
+    // TEST
+    m_update_checker->checkUpdate();
 }
 
 void MainWindow::task_finished(int /*exitcode*/)
@@ -298,6 +304,30 @@ void MainWindow::update_poweroff_button(int id)
     ui->actionPoweroff->setIcon(QIcon(icon_id));
     ui->actionPoweroff->setText(title);
     ui->actionPoweroff->setStatusTip(status_tip);
+}
+
+void MainWindow::received_update_result(int status)
+{
+    QString message;
+    switch (status) {
+    case UpdateChecker::ConnectionError:
+        message = "Connection Error"; break;
+    case UpdateChecker::DataError:
+        message = "Data Error"; break;
+    case UpdateChecker::UpdateFound:
+        message = QString("Update Found\nversion: %1\ndate: %2\n"
+                          "release notes:\n%3\ndownload url: %4")
+                .arg(m_update_checker->versionName(),
+                     m_update_checker->releaseDate(),
+                     m_update_checker->releaseNotes(),
+                     m_update_checker->downloadUrl());
+        break;
+    case UpdateChecker::UpdateNotFound:
+        message = QString("Update Not Found"); break;
+    default:
+        break;
+    }
+    QMessageBox::information(this, "Check Update", message);
 }
 
 // Private Methods
