@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui network
 
 TARGET = qwinff
 TEMPLATE = app
@@ -37,7 +37,10 @@ SOURCES += main.cpp \
     converter/audiofilter.cpp \
     converter/exepath.cpp \
     converter/ffplayinterface.cpp \
-    converter/versioncompare.cpp
+    converter/versioncompare.cpp \
+    services/updatechecker.cpp \
+    services/httpdownloader.cpp \
+    services/updateinfoparser.cpp
 
 HEADERS  += \
     ui/progressbar.h \
@@ -69,7 +72,10 @@ HEADERS  += \
     converter/exepath.h \
     extra-translations.h \
     converter/ffplayinterface.h \
-    converter/versioncompare.h
+    converter/versioncompare.h \
+    services/updatechecker.h \
+    services/httpdownloader.h \
+    services/updateinfoparser.h
 
 FORMS    += \
     ui/conversionparameterdialog.ui \
