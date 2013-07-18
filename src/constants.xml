@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<QWinFFConstants>
+  <!-- Options may contain an optional attribute "type" to indicate its data
+       type. Options without the type attributes are considered strings. -->
+
+  <!-- Whether the program is a portable application. This option only works if
+       the operating system is Microsoft Windows. If the program is in portable
+       mode, the settings file is written to
+          (QWinFF Directory)/qwinff.ini.
+       Otherwise, it is written to
+          (Home Directory)/.qwinff/qwinff.ini. -->
+  <Portable type="boolean">false</Portable>
+
+  <!-- video file extensions used in the file open dialog -->
+  <VideoExtensions>
+     avi vfw divx mpg mpeg m1v m2v mpv dv 3gp mov mp4 m4v mqv dat vcd ogg ogm
+     ogv asf wmv bin iso vob mkv nsv ram flv rm swf ts rmvb dvr-ms m2t m2ts rec
+     mts webm
+  </VideoExtensions>
+
+  <!-- audio file extensions used in the file open dialog -->
+  <AudioExtensions>
+     mp3 ogg wav wma  ac3 ra ape flac
+  </AudioExtensions>
+
+  <!-- url pointing to the update info xml -->
+  <UpdateInfoUrl>http://version.qwinff.googlecode.com/hg/latest.xml</UpdateInfoUrl>
+
+  <!-- Whether to check for updates on program startup by default. -->
+  <DefaultCheckUpdateOnStartup type="boolean">true</DefaultCheckUpdateOnStartup>
+
+</QWinFFConstants>
