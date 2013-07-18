@@ -71,6 +71,7 @@ void OptionsDialog::read_fields()
     QSettings settings;
     ui->spinThreads->setValue(settings.value("options/threads", DEFAULT_THREAD_COUNT).toInt());
     ui->chkHideFormats->setChecked(settings.value("options/hideformats", true).toBool());
+    ui->chkCheckUpdates->setChecked(settings.value("options/check_update_on_startup", true).toBool());
 
 #ifndef FFMPEG_IN_DATA_PATH
     // ExePath to table
@@ -88,6 +89,7 @@ void OptionsDialog::write_fields()
     QSettings settings;
     settings.setValue("options/threads", ui->spinThreads->value());
     settings.setValue("options/hideformats", ui->chkHideFormats->isChecked());
+    settings.setValue("options/check_update_on_startup", ui->chkCheckUpdates->isChecked());
 
 #ifndef FFMPEG_IN_DATA_PATH
     // table to ExePath

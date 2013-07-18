@@ -102,8 +102,9 @@ void MainWindow::window_ready()
     if (!m_argv_input_files.isEmpty()) {
         add_files(m_argv_input_files);
     }
-    // TEST
-    m_update_checker->checkUpdate();
+    QSettings settings;
+    if (settings.value("options/check_update_on_startup", true).toBool())
+        m_update_checker->checkUpdate();
 }
 
 void MainWindow::task_finished(int /*exitcode*/)
@@ -308,26 +309,10 @@ void MainWindow::update_poweroff_button(int id)
 
 void MainWindow::received_update_result(int status)
 {
-    QString message;
-    switch (status) {
-    case UpdateChecker::ConnectionError:
-        message = "Connection Error"; break;
-    case UpdateChecker::DataError:
-        message = "Data Error"; break;
-    case UpdateChecker::UpdateFound:
-        message = QString("Update Found\nversion: %1\ndate: %2\n"
-                          "release notes:\n%3\ndownload url: %4")
-                .arg(m_update_checker->versionName(),
-                     m_update_checker->releaseDate(),
-                     m_update_checker->releaseNotes(),
-                     m_update_checker->downloadUrl());
-        break;
-    case UpdateChecker::UpdateNotFound:
-        message = QString("Update Not Found"); break;
-    default:
-        break;
+    if (status == UpdateChecker::UpdateFound) {
+        QMessageBox::information(this, tr("Check Updates"),
+                                 tr("A new version of QWinFF is available."));
     }
-    QMessageBox::information(this, "Check Update", message);
 }
 
 // Private Methods
