@@ -18,7 +18,7 @@
 #include "updatechecker.h"
 #include "httpdownloader.h"
 #include "updateinfoparser.h"
-#include "../converter/versioncompare.h"
+#include "versioncompare.h"
 #include "../version.h"
 
 class UpdateChecker::Private

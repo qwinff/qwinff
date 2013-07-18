@@ -37,7 +37,7 @@ SOURCES += main.cpp \
     converter/audiofilter.cpp \
     converter/exepath.cpp \
     converter/ffplayinterface.cpp \
-    converter/versioncompare.cpp \
+    services/versioncompare.cpp \
     services/updatechecker.cpp \
     services/httpdownloader.cpp \
     services/updateinfoparser.cpp
@@ -72,7 +72,7 @@ HEADERS  += \
     converter/exepath.h \
     extra-translations.h \
     converter/ffplayinterface.h \
-    converter/versioncompare.h \
+    services/versioncompare.h \
     services/updatechecker.h \
     services/httpdownloader.h \
     services/updateinfoparser.h

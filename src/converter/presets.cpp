@@ -15,7 +15,7 @@
 
 #include "presets.h"
 #include "ffmpeginterface.h"
-#include "versioncompare.h"
+#include "../services/versioncompare.h"
 #include <QMultiMap>
 #include <QXmlStreamReader>
 #include <QFile>
