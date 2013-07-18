@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <presets>
-  
+
   <!-- MPEG4 -->
   <MPEG4Auto>
     <label>MPEG-4 Auto</label>
@@ -210,7 +210,7 @@
     <extension>wav</extension>
     <category>Audio</category>
   </CDWavStereo>
-  
+
   <!-- MPEG Layer 3 -->
   <mp3_192k>
     <label>MP3 (Very Good Quality)</label>
@@ -235,15 +235,15 @@
     <params>-acodec libmp3lame -ab 32kb -ac 1 -ar 22050 -vn</params>
     <extension>mp3</extension>
     <category>Mobile Phones</category>
-  </mp3m>  
+  </mp3m>
   <blackberrymp3>
     <label>Blackberry Music</label>
     <params>-acodec libmp3lame -ab 160kb -ac 2 -ar 44100 -vn</params>
     <extension>mp3</extension>
     <category>Blackberry</category>
-  </blackberrymp3>  
-  
-  
+  </blackberrymp3>
+
+
   <!-- WMA -->
   <wma>
     <label>WMA</label>
@@ -251,7 +251,7 @@
     <extension>wma</extension>
     <category>Audio</category>
   </wma>
-  
+
   <!-- MPG -->
   <MPGAuto>
     <label>MPG Auto</label>
@@ -463,7 +463,7 @@
     <extension>mpg</extension>
     <category>Bravia</category>
   </BRAVIAsmWide>
-  
+
   <!-- MPEG4 Audio -->
   <M4a>
     <label>MPEG4 Audio</label>
@@ -514,7 +514,7 @@
     <params>-acodec libmp3lame -vcodec msmpeg4 -ab 192kb -b 1000kb -s 640x480 -ar 44100</params>
     <extension>avi</extension>
     <category>AVI</category>
-  </divx>  
+  </divx>
   <N810FS>
     <label>Nokia N810 mplayer 4:3</label>
     <params>-r 29.97 -vcodec libxvid -vtag XVID -s 400x240 -aspect 4:3  -maxrate 1200k -b 1200k -qmin 3 -qmax 5 -bufsize 4096 -mbd 2 -bf 2 -cmp 2 -subcmp 2 -g 300 -acodec libmp3lame -ar 44100 -ab 160k -ac 2 -async 1</params>
@@ -538,8 +538,8 @@
     <params>-f avi -r 10 -s 256x192 -b 192k -bt 64k -vcodec libxvid -deinterlace -acodec libmp3lame -ar 32000 -ab 96k -ac 2</params>
     <extension>avi</extension>
     <category>Tuna-Vids</category>
-  </tuna-Vids>  
-  
+  </tuna-Vids>
+
   <!-- Ac3 DVD -->
   <ac3dvd192>
     <label>Ac3 DVD - 192kbps Stereo</label>
@@ -562,7 +562,7 @@
     <extension>3g2</extension>
     <category>Mobile Phones</category>
   </cdma3g>
-  
+
 
   <!-- DV -->
   <dvntsc>
@@ -597,7 +597,7 @@
     <extension>flv</extension>
     <category>Websites</category>
   </flvwebWS>
-  
+
   <!-- m4v --> <!-- These settings always fails on my computer -->
   <!--
   <iPodiTunesSmallCRF21FS>
@@ -712,8 +712,8 @@
     <params>-crf 15.0 -vcodec libx264 -acodec libfaac -ar 48000 -ab 192kb -coder 1 -flags +loop -cmp +chroma -partitions +parti4x4+partp8x8+partb8x8 -me_method hex -subq 6 -me_range 16 -g 250 -keyint_min 25 -sc_threshold 40 -i_qfactor 0.71 -b_strategy 1 -threads 0</params>
     <extension>mov</extension>
     <category>QuickTime</category>
-  </qmovshq>  
-  
+  </qmovshq>
+
 
   <!-- WMV -->
   <wmv>
@@ -790,9 +790,24 @@
     <params>-r 15 -b 128kb -s 320x180 -padtop 30 -padbottom 30 -ar 22050 -ab 64kb -acodec libfaac -vcodec libx264 -coder 1 -flags +loop -cmp +chroma -partitions +parti4x4+partp8x8+partb8x8 -me_method hex -subq 6 -me_range 16 -g 250 -keyint_min 25 -sc_threshold 40 -i_qfactor 0.71 -b_strategy 1 -threads 0</params>
     <extension>3gp</extension>
     <category>Mobile Phones</category>
-  </MP3GP320x240stereo169L> 
+  </MP3GP320x240stereo169L>
 
-  
+  <!-- ASF -->
+  <asfAuto>
+    <label>Active Streaming Format - Auto</label>
+    <params></params>
+    <extension>asf</extension>
+    <category>Websites</category>
+  </asfAuto>
+
+  <!-- ShockWave Flash -->
+  <swfauto>
+    <label>ShockWave Flash (swf) - Auto</label>
+    <params></params>
+    <extension>swf</extension>
+    <category>Websites</category>
+  </swfauto>
+
   <!-- RealVideo -->
   <RealVideoVersion1>
     <label>RealVideo 1.0</label>
@@ -806,5 +821,37 @@
     <extension>rm</extension>
     <category>RealMedia</category>
   </RealVideoVersion2>
+
+  <!-- AIFF -->
+  <aifAuto>
+    <label>Audio Interchange File - Auto</label>
+    <params>-vn</params>
+    <extension>aiff</extension>
+    <category>Audio</category>
+  </aifAuto>
+
+  <!-- FLAC -->
+  <flacAuto>
+    <label>Free Lossless Audio Codec - Auto</label>
+    <params>-vn</params>
+    <extension>flac</extension>
+    <category>Audio</category>
+  </flacAuto>
+
+  <!-- AU -->
+  <auAuto>
+    <label>Sun Audio - Auto</label>
+    <params>-vn</params>
+    <extension>au</extension>
+    <category>Audio</category>
+  </auAuto>
+
+  <!-- MP2 -->
+  <mp2Auto>
+    <label>MPEG-1 Audio Layer II  - Auto</label>
+    <params>-vn</params>
+    <extension>mp2</extension>
+    <category>Audio</category>
+  </mp2Auto>
 
 </presets>
