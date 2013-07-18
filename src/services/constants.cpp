@@ -92,7 +92,7 @@ int Constants::getInteger(const char *key)
 QString Constants::getString(const char *key)
 {
     Q_ASSERT(constants_initialized);
-    return constants[key].toString();
+    return constants[key].toString().trimmed();
 }
 
 QStringList Constants::getSpaceSeparatedList(const char *key)

@@ -13,13 +13,12 @@
     along with QWinFF.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#define UPDATE_URL "http://version.qwinff.googlecode.com/hg/latest.xml"
-
 #include "updatechecker.h"
 #include "httpdownloader.h"
 #include "updateinfoparser.h"
 #include "versioncompare.h"
 #include "../version.h"
+#include "constants.h"
 
 class UpdateChecker::Private
 {
@@ -74,7 +73,8 @@ QString UpdateChecker::downloadUrl() const
 
 void UpdateChecker::checkUpdate()
 {
-    p->downloader.startDownload(UPDATE_URL);
+    QString update_url = Constants::getString("UpdateInfoUrl");
+    p->downloader.startDownload(update_url);
 }
 
 void UpdateChecker::downloadFinished(bool success, QString /*url*/, QString content)
