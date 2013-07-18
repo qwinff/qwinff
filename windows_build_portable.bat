@@ -4,7 +4,7 @@ set DEST_DIR=.\windows_release_portable
 pushd src
 lrelease qwinff.pro
 mingw32-make clean
-qmake DEFINES+=PORTABLE_APP
+qmake
 mingw32-make release
 popd
 
