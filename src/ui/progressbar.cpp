@@ -13,14 +13,11 @@
     along with QWinFF.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "progressbar.h"
 #include <QHBoxLayout>
 #include <QPainter>
 #include <QDebug>
-
-#define COLOR_MARGIN QColor(200,220,255)
-#define COLOR_CENTER QColor(150,200,220)
-#define COLOR_BORDER QColor(100,150,160)
+#include "progressbar.h"
+#include "services/constants.h"
 
 ProgressBar::ProgressBar(QWidget *parent) :
     QWidget(parent), m_percentage(0), m_active(false), m_show_text(false)
@@ -66,6 +63,9 @@ void ProgressBar::paintEvent(QPaintEvent*)
 {
     QPainter painter(this);
     QPen pen;
+    QColor color_margin = Constants::getColor("ProgressBarColor_Margin");
+    QColor color_center = Constants::getColor("ProgressBarColor_Center");
+    QColor color_border = Constants::getColor("ProgressBarColor_Border");
 
     //if (m_percentage >= 0)
     {
@@ -73,9 +73,9 @@ void ProgressBar::paintEvent(QPaintEvent*)
             // draw progress bar
             QRect rect_progress(0, 0, (width()*m_percentage/100)-1, height()-1);
             QLinearGradient gradient(0, 0, 0, rect_progress.bottom());
-            gradient.setColorAt(0, COLOR_MARGIN);
-            gradient.setColorAt(0.5, COLOR_CENTER);
-            gradient.setColorAt(1, COLOR_MARGIN);
+            gradient.setColorAt(0, color_margin);
+            gradient.setColorAt(0.5, color_center);
+            gradient.setColorAt(1, color_margin);
             painter.setBrush(gradient);
             painter.setPen(Qt::NoPen);  // Don't draw the border.
             painter.drawRect(rect_progress);
@@ -93,7 +93,7 @@ void ProgressBar::paintEvent(QPaintEvent*)
         }
 
         if (m_active) {
-            pen.setColor(COLOR_BORDER);
+            pen.setColor(color_border);
             painter.setPen(pen);
             painter.setBrush(Qt::NoBrush); // disable filling
             painter.drawRect(0, 0, width()-1, height()-1);

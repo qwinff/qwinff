@@ -29,4 +29,9 @@
   <!-- Whether to check for updates on program startup by default. -->
   <DefaultCheckUpdateOnStartup type="boolean">true</DefaultCheckUpdateOnStartup>
 
+  <!-- colors of the conversion progressbar -->
+  <ProgressBarColor_Margin type="color">#C8DCFF</ProgressBarColor_Margin>
+  <ProgressBarColor_Center type="color">#96C8DC</ProgressBarColor_Center>
+  <ProgressBarColor_Border type="color">#6496A0</ProgressBarColor_Border>
+
 </QWinFFConstants>

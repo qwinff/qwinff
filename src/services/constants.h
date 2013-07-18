@@ -18,6 +18,7 @@
 
 #include <QStringList>
 #include <QFile>
+#include <QColor>
 
 class Constants
 {
@@ -28,6 +29,7 @@ public:
     static int getInteger(const char *key);
     static QString getString(const char *key);
     static QStringList getSpaceSeparatedList(const char *key);
+    static QColor getColor(const char *key);
 
 private:
     Constants();

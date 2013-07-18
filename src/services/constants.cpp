@@ -20,10 +20,13 @@
 #include <QRegExp>
 #include "constants.h"
 
+#define REGEXP_HEXDIGIT "[0-9a-fA-F]"
+
 namespace
 {
     bool constants_initialized = false;
     QMap<QString, QVariant> constants;
+    QString color_pattern(QString("#(%1%1)(%1%1)(%1%1)(%1%1)?").arg(REGEXP_HEXDIGIT));
 
     bool readLeafElement(QXmlStreamReader& reader)
     {
@@ -42,6 +45,31 @@ namespace
         return true;
     }
 
+    int hex2int(const QString& hex_str)
+    {
+        bool ok;
+        int value = hex_str.toInt(&ok, 16);
+        if (!ok)
+            return 0;
+        else
+            return value;
+    }
+
+    QColor str2color(const QString& color_str)
+    {
+        QRegExp color(color_pattern);
+        if (color.indexIn(color_str) >= 0) {
+            int r_value = hex2int(color.cap(1));
+            int g_value = hex2int(color.cap(2));
+            int b_value = hex2int(color.cap(3));
+            int a_value = 0xff;
+            if (!color.cap(4).isEmpty()) // with alpha value
+                a_value = hex2int(color.cap(4));
+            return QColor(r_value, g_value, b_value, a_value);
+        } else {
+            return QColor(0, 0, 0); // default black
+        }
+    }
 }
 
 bool Constants::readFile(QFile &file)
@@ -101,4 +129,10 @@ QStringList Constants::getSpaceSeparatedList(const char *key)
     QString collapsed_string = constants[key].toString()
             .replace(QRegExp("[\n\t ]"), " ");
     return collapsed_string.split(" ", QString::SkipEmptyParts);
+}
+
+QColor Constants::getColor(const char *key)
+{
+    Q_ASSERT(constants_initialized);
+    return str2color(constants[key].toString());
 }
