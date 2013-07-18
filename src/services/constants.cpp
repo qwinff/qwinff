@@ -16,6 +16,7 @@
 #include <QMap>
 #include <QVariant>
 #include <QXmlStreamReader>
+#include <QDebug>
 #include "constants.h"
 
 namespace
@@ -34,6 +35,8 @@ namespace
 
         QString data = reader.text().toString().trimmed();
         constants[name] = QVariant(data);
+
+        qDebug() << QString("constant[%1] = %2").arg(name, data);
 
         return true;
     }
@@ -67,7 +70,7 @@ bool Constants::readFile(QFile &file)
         }
     }
 
-    return reader.hasError();
+    return !reader.hasError();
 }
 
 bool Constants::getBool(const char *key)
