@@ -73,12 +73,14 @@ static bool load_constants(QApplication& app)
     QFile constant_xml(constant_xml_filename);
     constant_xml.open(QIODevice::ReadOnly);
     if (!constant_xml.isOpen()) {
+        qCritical() << "Failed to read file: " << constant_xml_filename;
         QMessageBox::critical(0, "QWinFF",
                               QString("Cannot load %1. The program will exit now.")
                               .arg(constant_xml_filename));
         return false;
     }
 
+    qDebug() << "Reading file: " << constant_xml_filename;
     // parse the xml file
     if (!Constants::readFile(constant_xml)) {
         QMessageBox::critical(0, "QWinFF",
@@ -141,7 +143,7 @@ int main(int argc, char *argv[])
     QTranslator translator;
     QString translation_filename = find_translation_file();
     if (!translation_filename.isEmpty()) {
-        qDebug() << "Translation file: " + translation_filename;
+        qDebug() << "Translation file: " << translation_filename;
         translator.load(translation_filename);
         app.installTranslator(&translator);
     }
