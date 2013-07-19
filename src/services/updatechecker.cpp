@@ -38,6 +38,7 @@ public:
 UpdateChecker::UpdateChecker(QObject *parent) :
     QObject(parent), p(new Private)
 {
+    p->downloader.setSizeLimit(Constants::getInteger("UpdateInfoSizeLimit"));
     connect(&p->downloader, SIGNAL(downloadFinished(bool,QString,QString)),
             this, SLOT(downloadFinished(bool,QString,QString)));
 }

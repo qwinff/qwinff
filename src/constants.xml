@@ -29,6 +29,12 @@
   <!-- Whether to check for updates on program startup by default. -->
   <DefaultCheckUpdateOnStartup type="boolean">true</DefaultCheckUpdateOnStartup>
 
+  <!-- the maximum allowable update info size in bytes, a value of 0 means unlimited
+       Warning: Setting this value to 0 may cause buffer overflow and compromise
+       the stability and security of your system.
+       Bytes exceeding the limit will be discarded. -->
+  <UpdateInfoSizeLimit type="integer">4096</UpdateInfoSizeLimit>
+
   <!-- colors of the conversion progressbar -->
   <ProgressBarColor_Margin type="color">#C8DCFF</ProgressBarColor_Margin>
   <ProgressBarColor_Center type="color">#96C8DC</ProgressBarColor_Center>
