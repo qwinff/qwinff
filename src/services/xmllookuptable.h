@@ -67,6 +67,11 @@ public:
      */
     QString attribute(QString path, QString attr) const;
 
+    /**
+     * @brief Clear all xml data.
+     */
+    void clear();
+
 private:
 
     class Entry

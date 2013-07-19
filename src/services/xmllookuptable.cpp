@@ -81,6 +81,11 @@ QString XmlLookupTable::attribute(QString path, QString attr) const
     return attributes[attr];
 }
 
+void XmlLookupTable::clear()
+{
+    m_data.clear();
+}
+
 QString XmlLookupTable::full_path(const QString &path) const
 {
     if (!m_prefix.isEmpty())
