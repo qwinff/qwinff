@@ -26,6 +26,15 @@ namespace
     XmlLookupTable constants;
     QString color_pattern(QString("#(%1%1)(%1%1)(%1%1)(%1%1)?").arg(REGEXP_HEXDIGIT));
 
+    QString lookup_constant(const QString& key)
+    {
+        bool ok;
+        QString result = constants.lookup(key, &ok);
+        if (!ok)
+            qWarning() << "Constants: lookup undefined key " << key;
+        return result;
+    }
+
     int hex2int(const QString& hex_str)
     {
         QString qualified_str = QString("0x%1").arg(hex_str);
@@ -68,7 +77,7 @@ bool Constants::readFile(QFile &file)
 bool Constants::getBool(const char *key)
 {
     Q_ASSERT(constants_initialized);
-    QString value = constants[key].trimmed().toLower();
+    QString value = lookup_constant(key).trimmed().toLower();
     if (value.isEmpty() || value == "0" || value == "false")
         return false;
     else
@@ -78,24 +87,24 @@ bool Constants::getBool(const char *key)
 int Constants::getInteger(const char *key)
 {
     Q_ASSERT(constants_initialized);
-    return constants[key].toInt();
+    return lookup_constant(key).toInt();
 }
 
 QString Constants::getString(const char *key)
 {
     Q_ASSERT(constants_initialized);
-    return constants[key].trimmed();
+    return lookup_constant(key).trimmed();
 }
 
 QStringList Constants::getSpaceSeparatedList(const char *key)
 {
     Q_ASSERT(constants_initialized);
-    QString collapsed_string = constants[key].replace(QRegExp("[\n\t ]"), " ");
+    QString collapsed_string = lookup_constant(key).replace(QRegExp("[\n\t ]"), " ");
     return collapsed_string.split(" ", QString::SkipEmptyParts);
 }
 
 QColor Constants::getColor(const char *key)
 {
     Q_ASSERT(constants_initialized);
-    return str2color(constants[key]);
+    return str2color(lookup_constant(key));
 }
