@@ -15,13 +15,14 @@
 
 #include <QXmlStreamReader>
 #include <QStringList>
+#include <QBuffer>
 #include "xmllookuptable.h"
 
 XmlLookupTable::XmlLookupTable()
 {
 }
 
-bool XmlLookupTable::readFile(QFile &file)
+bool XmlLookupTable::readFile(QIODevice &file)
 {
     if (!file.isOpen())
         return false;
@@ -54,6 +55,13 @@ bool XmlLookupTable::readFile(QFile &file)
     }
 
     return !reader.hasError();
+}
+
+bool XmlLookupTable::readString(const QString &s)
+{
+    QByteArray barray = s.toUtf8();
+    QBuffer buffer(&barray);
+    return readFile(buffer);
 }
 
 void XmlLookupTable::setPrefix(const QString &s)

@@ -16,10 +16,9 @@
 #ifndef XMLLOOKUPTABLE_H
 #define XMLLOOKUPTABLE_H
 
-#include <QFile>
+#include <QIODevice>
 #include <QMap>
 #include <QString>
-#include <QMap>
 
 /**
  * @brief Read an xml file and provide path lookup syntax.
@@ -28,7 +27,23 @@ class XmlLookupTable
 {
 public:
     XmlLookupTable();
-    bool readFile(QFile& file);
+
+    /**
+     * @brief Read xml from file.
+     * @param file a QIODevice opened for reading
+     * @note Existing data are cleared no matter the function succeeds or fails.
+     * @return true if succeed, false if failed
+     */
+    bool readFile(QIODevice& file);
+
+
+    /**
+     * @brief Read xml from string
+     * @param s a string to read from
+     * @note Existing data are cleared no matter the function succeeds or fails.
+     * @return true if succeed, false if failed
+     */
+    bool readString(const QString& s);
 
     /**
      * @brief Set the lookup prefix.
