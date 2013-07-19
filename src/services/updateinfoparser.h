@@ -50,9 +50,6 @@ private:
     QString m_releaseDate;
     QString m_releaseNotes;
     QString m_downloadUrl;
-    bool readLeafElement(QXmlStreamReader& xml);
-    void readDownloadUrl(QXmlStreamAttributes& attrs, QString url);
-    QString getAttribute(QXmlStreamAttributes& attrs, QString name);
 };
 
 #endif // UPDATEINFOPARSER_H

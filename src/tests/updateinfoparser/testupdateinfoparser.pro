@@ -7,5 +7,7 @@ TEMPLATE = app
 TARGET = testupdateinfoparser
 
 # Input
-HEADERS += testupdateinfoparser.h ../../services/updateinfoparser.h
-SOURCES += testupdateinfoparser.cpp ../../services/updateinfoparser.cpp
+HEADERS += testupdateinfoparser.h ../../services/updateinfoparser.h \
+           ../../services/xmllookuptable.cpp
+SOURCES += testupdateinfoparser.cpp ../../services/updateinfoparser.cpp \
+           ../../services/xmllookuptable.cpp
