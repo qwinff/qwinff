@@ -70,7 +70,12 @@ QString XmlLookupTable::prefix() const
     return m_prefix;
 }
 
-QString XmlLookupTable::lookup(QString path) const
+QString XmlLookupTable::lookup(const QString &path) const
+{
+    return m_data[full_path(path)].data;
+}
+
+QString XmlLookupTable::operator [](const QString& path) const
 {
     return m_data[full_path(path)].data;
 }

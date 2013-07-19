@@ -54,7 +54,14 @@ public:
      *
      * @return the data associated witht @a path.
      */
-    QString lookup(QString path) const;
+    QString lookup(const QString &path) const;
+
+    /**
+     * @brief alias for lookup()
+     *
+     * @see lookup()
+     */
+    QString operator [](const QString &path) const;
 
     /**
      * @brief Get the value of the attribute associated with @a path.
