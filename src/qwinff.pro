@@ -41,7 +41,8 @@ SOURCES += main.cpp \
     services/updatechecker.cpp \
     services/httpdownloader.cpp \
     services/updateinfoparser.cpp \
-    services/constants.cpp
+    services/constants.cpp \
+    services/xmllookuptable.cpp
 
 HEADERS  += \
     ui/progressbar.h \
@@ -78,7 +79,8 @@ HEADERS  += \
     services/httpdownloader.h \
     services/updateinfoparser.h \
     config.h \
-    services/constants.h
+    services/constants.h \
+    services/xmllookuptable.h
 
 FORMS    += \
     ui/conversionparameterdialog.ui \
