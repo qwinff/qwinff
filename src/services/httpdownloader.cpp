@@ -11,11 +11,12 @@
 
 #include "httpdownloader.h"
 #include <QFile>
+#include <vector>
 
 #define BUFFER_SIZE 1024
 
 HttpDownloader::HttpDownloader(QObject *parent)
-    : QObject(parent)
+    : QObject(parent), m_sizeLimit(0)
 {
     connect(&m_webCtrl, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(slotDownloadFinished(QNetworkReply*)));
@@ -24,6 +25,16 @@ HttpDownloader::HttpDownloader(QObject *parent)
 HttpDownloader::~HttpDownloader()
 {
     cancelAllDownloads();
+}
+
+void HttpDownloader::setSizeLimit(unsigned int limit)
+{
+    m_sizeLimit = limit;
+}
+
+unsigned int HttpDownloader::sizeLimit() const
+{
+    return m_sizeLimit;
 }
 
 void HttpDownloader::startDownload(QString url)
@@ -46,8 +57,24 @@ void HttpDownloader::slotDownloadFinished(QNetworkReply *reply)
 {
     QString url = m_downloads[reply];
     bool success = !reply->error();
-    QString content = reply->readAll();
+    QString content;
+    readData(content, reply);
     m_downloads.remove(reply);
     reply->deleteLater();
     emit downloadFinished(success, url, content);
+}
+
+// read at most m_sizeLimit bytes from reply to dest
+// or read all data if m_sizeLimit is 0
+void HttpDownloader::readData(QString &dest, QNetworkReply *reply)
+{
+    if (m_sizeLimit == 0) {
+        dest = reply->readAll();
+    } else {
+        std::vector<char> buffer;
+        buffer.reserve(m_sizeLimit + 1); // reserve data length and NULL byte
+        reply->read(buffer.data(), m_sizeLimit); // buffer.data() is char*
+        buffer[m_sizeLimit] = 0; // terminate the data with NULL
+        dest = QString(buffer.data()); // convert the data to QString
+    }
 }

@@ -27,6 +27,18 @@ public:
 
     virtual ~HttpDownloader();
 
+    /**
+     * @brief Set the maximum allowable download size.
+     * @param limit the size limit in bytes. 0 means unlimited.
+     */
+    void setSizeLimit(unsigned int limit);
+
+    /**
+     * @brief Get the maximum allowable download size.
+     * @return the size limit in bytes
+     */
+    unsigned int sizeLimit() const;
+
 public slots:
     void startDownload(QString url);
     void cancelAllDownloads();
@@ -39,7 +51,9 @@ private slots:
 
 private:
     QNetworkAccessManager m_webCtrl;
+    unsigned int m_sizeLimit;
     QMap<QNetworkReply*, QString> m_downloads;
+    void readData(QString& dest, QNetworkReply *reply);
 };
 
 #endif // HTTPDOWNLOADER_H
