@@ -34,24 +34,22 @@ bool XmlLookupTable::readFile(QFile &file)
         QXmlStreamReader::TokenType token = reader.readNext();
         if (token == QXmlStreamReader::StartElement) {
             QString name = reader.name().toString();
-            if (depth > 0) {
-                path.push_back(name);
-                QXmlStreamAttributes attrs = reader.attributes();
-                if (reader.readNext() == QXmlStreamReader::Characters) {
-                    Entry& entry = m_data[path.join("/")];
-                    entry.data = reader.text().toString().trimmed();
-                    entry.attributes.clear();
-                    foreach (QXmlStreamAttribute attr, attrs)
-                        entry.attributes[attr.name().toString()]
-                                = attr.value().toString();
-                }
+            QXmlStreamAttributes attrs = reader.attributes();
+            path.push_back(name);
+            if (reader.readNext() == QXmlStreamReader::Characters) {
+                Entry& entry = m_data[path.join("/")];
+                entry.data = reader.text().toString().trimmed();
+                entry.attributes.clear();
+                foreach (QXmlStreamAttribute attr, attrs)
+                    entry.attributes[attr.name().toString()]
+                            = attr.value().toString();
             }
             ++depth;
         } else if (token == QXmlStreamReader::EndElement) {
+            if (depth <= 0)
+                return false; // malformed xml
             --depth;
-            if (depth > 0) {
-                path.pop_back();
-            }
+            path.pop_back();
         }
     }
 

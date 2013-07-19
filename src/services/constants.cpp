@@ -58,8 +58,10 @@ bool Constants::readFile(QFile &file)
 {
     constants.clear();
     constants_initialized = false;
-    if (constants.readFile(file))
+    if (constants.readFile(file)) {
         constants_initialized = true;
+        constants.setPrefix("QWinFFConstants");
+    }
     return constants_initialized;
 }
 
