@@ -69,7 +69,7 @@ public:
      *
      * @return the data associated witht @a path.
      */
-    QString lookup(const QString &path) const;
+    QString lookup(const QString &path, bool *ok=0) const;
 
     /**
      * @brief alias for lookup()

@@ -78,9 +78,16 @@ QString XmlLookupTable::prefix() const
     return m_prefix;
 }
 
-QString XmlLookupTable::lookup(const QString &path) const
+QString XmlLookupTable::lookup(const QString &path, bool *ok) const
 {
-    return m_data[full_path(path)].data;
+    QMap<QString, Entry>::ConstIterator it = m_data.find(full_path(path));
+    bool found = (it != m_data.end());
+    if (ok)
+        *ok = found;
+    if (found)
+        return it->data;
+    else
+        return QString(); // default
 }
 
 QString XmlLookupTable::operator [](const QString& path) const
