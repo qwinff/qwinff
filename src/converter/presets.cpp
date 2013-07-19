@@ -220,7 +220,7 @@ bool Presets::readFromFile(const QString &filename, bool removeUnavailableCodecs
         return false;
     }
 
-    qDebug() << "Finished reading preset file.";
+    //qDebug() << "Finished reading preset file.";
 
     bool ret = p->parseXmlFile(xmlfile, removeUnavailableCodecs);
 

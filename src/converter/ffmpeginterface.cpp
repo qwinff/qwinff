@@ -102,7 +102,7 @@ namespace inner {
 
         ffmpeg_process.setReadChannel(QProcess::StandardOutput);
 
-        qDebug() << ExePath::getPath("ffmpeg") << parameters.join(" ");
+        //qDebug() << ExePath::getPath("ffmpeg") << parameters.join(" ");
         ffmpeg_process.start(ExePath::getPath("ffmpeg"), parameters);
 
         // Wait until ffmpeg has started.
@@ -143,13 +143,13 @@ namespace inner {
 
                 foreach (QString codec_name, encoder_list) {
                     if (av == "A") { // audio encoder
-                        qDebug() << "Audio Codec: " + codec_name;
+                        //qDebug() << "Audio Codec: " + codec_name;
                         audio_encoders.push_back(codec_name);
                     } else if (av == "V") { // video encoder
-                        qDebug() << "Video Codec: " + codec_name;
+                        //qDebug() << "Video Codec: " + codec_name;
                         video_encoders.push_back(codec_name);
                     } else if (av == "S") { // subtitle encoder
-                        qDebug() << "Subtitle Codec: " + codec_name;
+                        //qDebug() << "Subtitle Codec: " + codec_name;
                         subtitle_encoders.push_back(codec_name);
                     }
                 }
@@ -165,7 +165,7 @@ namespace inner {
         QStringList parameters;
         parameters.push_back(QString("-version"));
 
-        qDebug() << ExePath::getPath("ffmpeg") << parameters.join(" ");
+        //qDebug() << ExePath::getPath("ffmpeg") << parameters.join(" ");
         ffmpeg_process.start(ExePath::getPath("ffmpeg"), parameters);
 
         ffmpeg_process.waitForStarted(TIMEOUT);
@@ -541,7 +541,7 @@ void FFmpegInterface::fillParameterList(const ConversionParameters &param, QStri
 
 void FFmpegInterface::parseProcessOutput(const QString &data)
 {
-    qDebug() << data;
+    //qDebug() << data;
 
     // split incoming data by [end of line] or [carriage return]
     QStringList lines(data.split(QRegExp("[\r\n]"), QString::KeepEmptyParts));
