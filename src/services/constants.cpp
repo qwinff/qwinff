@@ -28,21 +28,12 @@ namespace
     QMap<QString, QVariant> constants;
     QString color_pattern(QString("#(%1%1)(%1%1)(%1%1)(%1%1)?").arg(REGEXP_HEXDIGIT));
 
-    bool readLeafElement(QXmlStreamReader& reader)
+    void processData(const QXmlStreamAttributes& /*attrs*/,
+                            const QString& name,
+                            const QString& data)
     {
-        Q_ASSERT(reader.tokenType() == QXmlStreamReader::StartElement);
-        //QXmlStreamAttributes attrs = reader.attributes();
-        QString name = reader.name().toString();
-
-        if (reader.readNext() != QXmlStreamReader::Characters)
-            return false; // not a leaf element
-
-        QString data = reader.text().toString().trimmed();
         constants[name] = QVariant(data);
-
         qDebug() << QString("constant[%1] = %2").arg(name, data);
-
-        return true;
     }
 
     int hex2int(const QString& hex_str)
@@ -81,22 +72,26 @@ bool Constants::readFile(QFile &file)
     QXmlStreamReader reader(&file);
     constants.clear();
     constants_initialized = false;
+    QStringList path;
 
     while (!reader.atEnd() && !reader.hasError()) {
         QXmlStreamReader::TokenType token = reader.readNext();
-        switch (token) {
-        case QXmlStreamReader::StartElement:
-            if (reader.name() != "QWinFFConstants") {
-                if (depth != 1 || !readLeafElement(reader))
-                    return false;
+        if (token == QXmlStreamReader::StartElement) {
+            QString name = reader.name().toString();
+            if (depth > 0) {
+                path.push_back(name);
+                QXmlStreamAttributes attrs = reader.attributes();
+                if (reader.readNext() == QXmlStreamReader::Characters) {
+                    QString data = reader.text().toString().trimmed();
+                    processData(attrs, path.join("/"), data);
+                }
             }
             ++depth;
-            break;
-        case QXmlStreamReader::EndElement:
+        } else if (token == QXmlStreamReader::EndElement) {
             --depth;
-            break;
-        default:
-            break;
+            if (depth > 0) {
+                path.pop_back();
+            }
         }
     }
 
