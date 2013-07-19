@@ -13,7 +13,6 @@
     along with QWinFF.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <QVariant>
 #include <QDebug>
 #include <QRegExp>
 #include "constants.h"
@@ -67,7 +66,11 @@ bool Constants::readFile(QFile &file)
 bool Constants::getBool(const char *key)
 {
     Q_ASSERT(constants_initialized);
-    return QVariant(constants[key]).toBool();
+    QString value = constants[key].trimmed().toLower();
+    if (value.isEmpty() || value == "0" || value == "false")
+        return false;
+    else
+        return true;
 }
 
 int Constants::getInteger(const char *key)
