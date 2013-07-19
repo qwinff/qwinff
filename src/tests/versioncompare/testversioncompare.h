@@ -2,7 +2,7 @@
 #define TESTVERSIONCOMPARE_H
 
 #include <QtTest/QtTest>
-#include "../../converter/versioncompare.h"
+#include "../../services/versioncompare.h"
 
 class TestVersionCompare : public QObject
 {

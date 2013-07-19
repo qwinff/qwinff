@@ -13,4 +13,4 @@ HEADERS += \
 
 SOURCES += \
     testversioncompare.cpp \
-    ../../converter/versioncompare.cpp
+    ../../services/versioncompare.cpp
