@@ -71,10 +71,10 @@ void UpdateDialog::slotReceivedUpdateResult(int result)
     switch (result)
     {
     case UpdateChecker::ConnectionError:
-        message = tr("Cannot connect to the server.");
+        message = tr("Cannot connect to server.");
         break;
     case UpdateChecker::DataError:
-        message = tr("Data received from the server is incorrect.");
+        message = tr("Data received from server is incorrect.");
         break;
     case UpdateChecker::UpdateNotFound:
         message = tr("You are already using the latest version of QWinFF.");
@@ -82,7 +82,7 @@ void UpdateDialog::slotReceivedUpdateResult(int result)
     default:
         message = tr("An unknown error has occurred.");
     }
-    ui->lblStatus->setText(QString("<b>%1</b>").arg(message));
+    ui->lblStatus->setText(QString("%1").arg(message));
     resizeToFit();
 }
 
