@@ -63,11 +63,11 @@ void ProgressBar::paintEvent(QPaintEvent*)
 {
     QPainter painter(this);
     QPen pen;
-    QColor color_margin = Constants::getColor("ProgressBarColor_Margin");
-    QColor color_center = Constants::getColor("ProgressBarColor_Center");
-    QColor color_border = Constants::getColor("ProgressBarColor_Border");
-    QColor color_text = Constants::getColor("ProgressBarColor_Text");
-    QColor color_background = Constants::getColor("ProgressBarColor_Background");
+    QColor color_margin = Constants::getColor("ProgressBar/Colors/Margin");
+    QColor color_center = Constants::getColor("ProgressBar/Colors/Center");
+    QColor color_border = Constants::getColor("ProgressBar/Colors/Border");
+    QColor color_text = Constants::getColor("ProgressBar/Colors/Text");
+    QColor color_background = Constants::getColor("ProgressBar/Colors/Background");
 
     //if (m_percentage >= 0)
     {

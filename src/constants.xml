@@ -35,12 +35,16 @@
        Bytes exceeding the limit will be discarded. -->
   <UpdateInfoSizeLimit type="integer">4096</UpdateInfoSizeLimit>
 
-  <!-- colors of the conversion progressbar -->
-  <ProgressBarColor_Margin type="color">#C8DCFF</ProgressBarColor_Margin>
-  <ProgressBarColor_Center type="color">#96C8DC</ProgressBarColor_Center>
-  <ProgressBarColor_Border type="color">#6496A0</ProgressBarColor_Border>
-  <ProgressBarColor_Text type="color">#000000</ProgressBarColor_Text>
-  <ProgressBarColor_Background type="color">#FFFFFF5F</ProgressBarColor_Background>
+  <ProgressBar>
+    <Colors>
+      <!-- colors of the conversion progressbar -->
+      <Margin type="color">#C8DCFF</Margin>
+      <Center type="color">#96C8DC</Center>
+      <Border type="color">#6496A0</Border>
+      <Text type="color">#000000</Text>
+      <Background type="color">#FFFFFF5F</Background>
+    </Colors>
+  </ProgressBar>
 
   <!-- seconds to wait before shutting down or suspending the computer -->
   <PoweroffTimeout type="integer">30</PoweroffTimeout>
