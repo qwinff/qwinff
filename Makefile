@@ -43,6 +43,9 @@ release:
 	+cd $(SRC_DIR) && $(QMAKE) $(QMAKE_DEFS) qwinff.pro && $(DEFS) make
 	-cd src && $(LRELEASE) qwinff.pro
 
+check:
+	cd $(SRC_DIR)/tests && sh run-tests.sh
+
 clean:
 	rm -rf $(BIN_DIR)/*
 	rm -rf $(BUILD_DIR)/*
