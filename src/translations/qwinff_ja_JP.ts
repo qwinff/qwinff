@@ -19,108 +19,108 @@
         <translation>翻訳者</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="45"/>
+        <location filename="../ui/aboutdialog.cpp" line="46"/>
         <source>Version: %1</source>
         <translation>バージョン: %1</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="51"/>
+        <location filename="../ui/aboutdialog.cpp" line="53"/>
         <source>Portable</source>
         <extracomment>Portable version (no installation, no writing registry)</extracomment>
         <translation>ポータブル</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="55"/>
+        <location filename="../ui/aboutdialog.cpp" line="56"/>
         <source>Compiled with Qt %1</source>
         <extracomment>Qt version</extracomment>
         <translation>コンパイルに使用された Qt ：%1</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="57"/>
+        <location filename="../ui/aboutdialog.cpp" line="58"/>
         <source>Compiled with libnotify %1</source>
         <translation>コンパイルに使用された libnotify: %1</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="61"/>
+        <location filename="../ui/aboutdialog.cpp" line="62"/>
         <source>QWinFF is a gui frontend for FFmpeg.</source>
         <translation>QWinFF は FFmpeg のGUI フロントエンドツールです.</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="64"/>
+        <location filename="../ui/aboutdialog.cpp" line="65"/>
         <source>Programming: %1</source>
         <extracomment>%1 is the name and email of the programmer</extracomment>
         <translation>プログラミング：%1</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="66"/>
+        <location filename="../ui/aboutdialog.cpp" line="67"/>
         <source>Logo Design: %1</source>
         <extracomment>%1 is the name and email of the logo designer</extracomment>
         <translation>ロゴデザイン：%1</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="67"/>
+        <location filename="../ui/aboutdialog.cpp" line="68"/>
         <source>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License version 2 or 3.</source>
         <translation>このプログラムはフリーウェアです。 GNU一般共有使用許諾第2版(または 第3版)に基づき、ソフトウェアの変更、再配布は許可されます。</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="70"/>
+        <location filename="../ui/aboutdialog.cpp" line="71"/>
         <source>QWinFF Homepage: %1</source>
         <translation>QWinFF 公式サイト: %1</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="72"/>
+        <location filename="../ui/aboutdialog.cpp" line="73"/>
         <source>Some audio-processing functionalities are provided by SoX.</source>
         <translation>いくつかの音声処理機能は SoX により提供されています.</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="74"/>
+        <location filename="../ui/aboutdialog.cpp" line="75"/>
         <source>FFmpeg presets were taken from WinFF.</source>
         <translation>WinFFの FFmpeg プリセットを使用しています.</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="113"/>
+        <location filename="../ui/aboutdialog.cpp" line="114"/>
         <source>Japanese</source>
         <extracomment>Japanese Language</extracomment>
         <translation>日本語</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="115"/>
+        <location filename="../ui/aboutdialog.cpp" line="116"/>
         <source>Italian</source>
         <extracomment>Italian Language</extracomment>
         <translation>イタリア語</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="119"/>
+        <location filename="../ui/aboutdialog.cpp" line="120"/>
         <source>Czech</source>
         <extracomment>Czech Language</extracomment>
         <translation>チェコ語</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="121"/>
+        <location filename="../ui/aboutdialog.cpp" line="122"/>
         <source>Simplified Chinese</source>
         <extracomment>Chinese character set used in China</extracomment>
         <translation>中国語(簡体字)</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="124"/>
+        <location filename="../ui/aboutdialog.cpp" line="125"/>
         <source>Russian</source>
         <extracomment>Russian Language</extracomment>
         <translation>ロシア語</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="127"/>
+        <location filename="../ui/aboutdialog.cpp" line="128"/>
         <source>Spanish (Spain)</source>
         <extracomment>Spanish Language (Spain)</extracomment>
         <translation>スペイン語 (スペイン)</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="130"/>
+        <location filename="../ui/aboutdialog.cpp" line="131"/>
         <source>Spanish (Guatemala)</source>
         <extracomment>Spanish Language (Guatemala)</extracomment>
         <translation>スペイン語 (グアテマラ)</translation>
     </message>
     <message>
-        <location filename="../ui/aboutdialog.cpp" line="133"/>
+        <location filename="../ui/aboutdialog.cpp" line="134"/>
         <source>Romanian</source>
         <extracomment>Romanian Language</extracomment>
         <translation>ルーマニア語</translation>
@@ -695,276 +695,281 @@
         <translation>情報(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="58"/>
+        <location filename="../ui/mainwindow.ui" line="59"/>
         <source>&amp;Edit</source>
         <translation>編集(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="93"/>
+        <location filename="../ui/mainwindow.ui" line="94"/>
         <source>&amp;Add Files</source>
         <translation>ファイルを追加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="96"/>
+        <location filename="../ui/mainwindow.ui" line="97"/>
         <source>Add files for conversion.</source>
         <translation>変換するファイルを追加.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="99"/>
+        <location filename="../ui/mainwindow.ui" line="100"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="108"/>
+        <location filename="../ui/mainwindow.ui" line="109"/>
         <source>E&amp;xit</source>
         <translation>終了(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="111"/>
+        <location filename="../ui/mainwindow.ui" line="112"/>
         <source>Exit the program.</source>
         <translation>プログラムを終了.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="120"/>
+        <location filename="../ui/mainwindow.ui" line="121"/>
         <source>&amp;Start</source>
         <translation>開始(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="123"/>
+        <location filename="../ui/mainwindow.ui" line="124"/>
         <source>Start conversion process.</source>
         <translation>変換を開始.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="126"/>
+        <location filename="../ui/mainwindow.ui" line="127"/>
         <source>F9</source>
         <translation>F9</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="135"/>
+        <location filename="../ui/mainwindow.ui" line="136"/>
         <source>S&amp;top</source>
         <translation>停止(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="138"/>
+        <location filename="../ui/mainwindow.ui" line="139"/>
         <source>Stop conversion process.</source>
         <translation>変換処理を停止.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="147"/>
+        <location filename="../ui/mainwindow.ui" line="148"/>
         <source>Set &amp;Parameters</source>
         <translation>パラメータを設定(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="150"/>
+        <location filename="../ui/mainwindow.ui" line="151"/>
         <source>Set Parameters</source>
         <extracomment>Edit output file parameters.</extracomment>
         <translation>パラメータを設定</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="153"/>
+        <location filename="../ui/mainwindow.ui" line="154"/>
         <source>Edit conversion parameters of selected files.</source>
         <translation>選択されたファイルの変換パラメータを編集.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="162"/>
+        <location filename="../ui/mainwindow.ui" line="163"/>
         <source>About &amp;Qt</source>
         <translation>&amp;Qt について</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="165"/>
+        <location filename="../ui/mainwindow.ui" line="166"/>
         <source>About Qt</source>
         <translation>Qt について</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="174"/>
+        <location filename="../ui/mainwindow.ui" line="175"/>
         <source>&amp;Open Output Folder</source>
         <translation>出力先を開く(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="177"/>
+        <location filename="../ui/mainwindow.ui" line="178"/>
         <source>Open output folder of the first selected file.</source>
         <translation>最初に選択されたファイルの出力先を開く.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="186"/>
+        <location filename="../ui/mainwindow.ui" line="187"/>
         <source>About &amp;FFmpeg</source>
         <translation>&amp;FFmpeg について</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="189"/>
+        <location filename="../ui/mainwindow.ui" line="190"/>
         <source>About FFmpeg</source>
         <translation>FFmpeg について</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="198"/>
+        <location filename="../ui/mainwindow.ui" line="199"/>
         <source>&amp;Remove Selected</source>
         <extracomment>remove selected (tasks, items)</extracomment>
         <translation>選択された項目を除去(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="201"/>
+        <location filename="../ui/mainwindow.ui" line="202"/>
         <source>Remove all selected items in the list.</source>
         <translation>すべての選択された項目を一覧から除去.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="210"/>
+        <location filename="../ui/mainwindow.ui" line="211"/>
         <source>R&amp;emove Completed</source>
         <extracomment>remove completed (task, items)</extracomment>
         <translation>完了済みの項目を除去(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="213"/>
+        <location filename="../ui/mainwindow.ui" line="214"/>
         <source>Remove Completed Items</source>
         <translation>完了済の項目を除去</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="216"/>
+        <location filename="../ui/mainwindow.ui" line="217"/>
         <source>Remove all completed items in the list.</source>
         <translation>すべての完了済項目を一覧から除去.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="225"/>
+        <location filename="../ui/mainwindow.ui" line="226"/>
         <source>&amp;Clear List</source>
         <translation>リストをクリア(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="228"/>
+        <location filename="../ui/mainwindow.ui" line="229"/>
         <source>Clear List</source>
         <translation>一覧をクリア</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="231"/>
+        <location filename="../ui/mainwindow.ui" line="232"/>
         <source>Remove all items in the list.</source>
         <translation>すべての項目を一覧から除去.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="240"/>
+        <location filename="../ui/mainwindow.ui" line="241"/>
         <source>&amp;Retry</source>
         <translation>再試行(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="243"/>
+        <location filename="../ui/mainwindow.ui" line="244"/>
         <source>Retry</source>
         <translation>再試行</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="246"/>
+        <location filename="../ui/mainwindow.ui" line="247"/>
         <source>Retry selected tasks.</source>
         <translation>選択されたタスクを再試行.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="255"/>
+        <location filename="../ui/mainwindow.ui" line="256"/>
         <source>Retry &amp;All</source>
         <translation>すべてを再試行(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="258"/>
+        <location filename="../ui/mainwindow.ui" line="259"/>
         <source>Retry all tasks.</source>
         <translation>すべてのタスクを再試行.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="267"/>
+        <location filename="../ui/mainwindow.ui" line="268"/>
         <source>&amp;Options</source>
         <translation>設定(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="270"/>
+        <location filename="../ui/mainwindow.ui" line="271"/>
         <source>Options</source>
         <translation>設定</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="279"/>
+        <location filename="../ui/mainwindow.ui" line="280"/>
         <source>About Q&amp;WinFF</source>
         <translation>Q&amp;WinFF について</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="282"/>
+        <location filename="../ui/mainwindow.ui" line="283"/>
         <source>About This Program</source>
         <translation>このプログラムについて</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="287"/>
+        <location filename="../ui/mainwindow.ui" line="288"/>
         <source>Change Output &amp;Filename</source>
         <translation>出力ファイル名を変更(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="290"/>
+        <location filename="../ui/mainwindow.ui" line="291"/>
         <source>Change the output filename of the selected item.</source>
         <translation>選択された項目の出力ファイル名を変更.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="295"/>
+        <location filename="../ui/mainwindow.ui" line="296"/>
         <source>Change Output &amp;Directory</source>
         <translation>出力ディレクトリを変更(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="298"/>
+        <location filename="../ui/mainwindow.ui" line="299"/>
         <source>Change the output directory of the selected items.</source>
         <translation>選択された項目の出力ディレクトリを変更.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="311"/>
+        <location filename="../ui/mainwindow.ui" line="312"/>
         <source>Show Error &amp;Message</source>
         <translation>エラーメッセージを表示(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="118"/>
+        <location filename="../ui/mainwindow.ui" line="321"/>
+        <source>Check For &amp;Updates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="128"/>
         <source>All tasks has finished.</source>
         <translation>すべてのタスクが完了しました.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="157"/>
+        <location filename="../ui/mainwindow.cpp" line="167"/>
         <source>Nothing to convert.</source>
         <translation>変換されていません.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="232"/>
+        <location filename="../ui/mainwindow.cpp" line="248"/>
         <source>Conversion is still in progress. Abort?</source>
         <translation>変換処理を実行中です、中断しますか?</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="254"/>
+        <location filename="../ui/mainwindow.cpp" line="270"/>
         <source>Elapsed Time: %1 h %2 m %3 s</source>
         <translation>経過時間: %1 時 %2 分 %3 秒</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="279"/>
-        <location filename="../ui/mainwindow.cpp" line="460"/>
+        <location filename="../ui/mainwindow.cpp" line="295"/>
+        <location filename="../ui/mainwindow.cpp" line="484"/>
         <source>Shutdown</source>
         <extracomment>Shutdown the computer (completely poweroff)</extracomment>
         <translation>シャットダウン</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="280"/>
+        <location filename="../ui/mainwindow.cpp" line="296"/>
         <source>Shutdown when all tasks are done.</source>
         <translation>全タスク完了後にシャットダウン.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="284"/>
-        <location filename="../ui/mainwindow.cpp" line="465"/>
+        <location filename="../ui/mainwindow.cpp" line="300"/>
+        <location filename="../ui/mainwindow.cpp" line="489"/>
         <source>Suspend</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
         <translation>サスペンド</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="285"/>
+        <location filename="../ui/mainwindow.cpp" line="301"/>
         <source>Suspend when all tasks are done.</source>
         <translation>全タスク完了後にスリープ.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="289"/>
-        <location filename="../ui/mainwindow.cpp" line="470"/>
+        <location filename="../ui/mainwindow.cpp" line="305"/>
+        <location filename="../ui/mainwindow.cpp" line="494"/>
         <source>Hibernate</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
         <translation>休止状態</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="290"/>
+        <location filename="../ui/mainwindow.cpp" line="306"/>
         <source>Hibernate when all tasks are done.</source>
         <translation>全タスク完了後に休止状態.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="587"/>
+        <location filename="../ui/mainwindow.cpp" line="613"/>
         <source>Failed to load preset file. The application will quit now.</source>
         <translation>プリセットの読み込みに失敗、アプリケーションを終了します.</translation>
     </message>
@@ -987,41 +992,51 @@
     </message>
     <message>
         <location filename="../ui/optionsdialog.ui" line="24"/>
+        <source>General</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/optionsdialog.ui" line="30"/>
+        <source>Check for updates on program startup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/optionsdialog.ui" line="51"/>
         <source>FFmpeg</source>
         <translation>FFMpeg</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="35"/>
+        <location filename="../ui/optionsdialog.ui" line="62"/>
         <source>Number of threads to use in conversion</source>
         <translation>変換時に使用するスレッド数</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="49"/>
+        <location filename="../ui/optionsdialog.ui" line="76"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hide output formats that are not available in the current ffmpeg installation. It is recommended to turn this option on unless you are sure that QWinFF has failed to detect available formats. (requires restarting QWinFF to take effect)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="52"/>
+        <location filename="../ui/optionsdialog.ui" line="79"/>
         <source>Hide unavailable formats (requires restarting)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="62"/>
+        <location filename="../ui/optionsdialog.ui" line="89"/>
         <source>Tools</source>
         <translation>ツール</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="70"/>
+        <location filename="../ui/optionsdialog.ui" line="97"/>
         <source>You have to restart QWinFF for the changes to take effect.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="90"/>
+        <location filename="../ui/optionsdialog.ui" line="117"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="95"/>
+        <location filename="../ui/optionsdialog.ui" line="122"/>
         <source>Command</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1039,60 +1054,109 @@
         <translation>キャンセル</translation>
     </message>
     <message>
-        <location filename="../ui/poweroffdialog.cpp" line="67"/>
+        <location filename="../ui/poweroffdialog.cpp" line="66"/>
         <source>Shutdown immediately</source>
         <extracomment>Shutdown the computer</extracomment>
         <translation>すぐにシャットダウン</translation>
     </message>
     <message>
-        <location filename="../ui/poweroffdialog.cpp" line="72"/>
+        <location filename="../ui/poweroffdialog.cpp" line="71"/>
         <source>Suspend immediately</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
         <translation>すぐにスリープ</translation>
     </message>
     <message>
-        <location filename="../ui/poweroffdialog.cpp" line="77"/>
+        <location filename="../ui/poweroffdialog.cpp" line="76"/>
         <source>Hibernate immediately</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
         <translation>すぐに休止状態</translation>
     </message>
     <message>
-        <location filename="../ui/poweroffdialog.cpp" line="128"/>
+        <location filename="../ui/poweroffdialog.cpp" line="127"/>
         <source>Shutdown</source>
         <extracomment>Shutdown the computer</extracomment>
         <translation>シャットダウン</translation>
     </message>
     <message>
-        <location filename="../ui/poweroffdialog.cpp" line="132"/>
+        <location filename="../ui/poweroffdialog.cpp" line="131"/>
         <source>Suspend</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
         <translation>スリープ</translation>
     </message>
     <message>
-        <location filename="../ui/poweroffdialog.cpp" line="136"/>
+        <location filename="../ui/poweroffdialog.cpp" line="135"/>
         <source>Hibernate</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
         <translation>ハイバネート</translation>
     </message>
     <message>
-        <location filename="../ui/poweroffdialog.cpp" line="141"/>
+        <location filename="../ui/poweroffdialog.cpp" line="140"/>
         <source>Operation Failed: %1</source>
         <translation>処理に失敗: %1</translation>
     </message>
     <message>
-        <location filename="../ui/poweroffdialog.cpp" line="165"/>
+        <location filename="../ui/poweroffdialog.cpp" line="164"/>
         <source>Shutting down in &lt;b&gt;%1&lt;/b&gt; seconds</source>
         <translation>シャットダウンまで &lt;b&gt;%1&lt;/b&gt; 秒</translation>
     </message>
     <message>
-        <location filename="../ui/poweroffdialog.cpp" line="168"/>
+        <location filename="../ui/poweroffdialog.cpp" line="167"/>
         <source>Suspending in &lt;b&gt;%1&lt;/b&gt; seconds</source>
         <translation>スリープまで &lt;b&gt;%1&lt;/b&gt; 秒</translation>
     </message>
     <message>
-        <location filename="../ui/poweroffdialog.cpp" line="171"/>
+        <location filename="../ui/poweroffdialog.cpp" line="170"/>
         <source>Hibernating in &lt;b&gt;%1&lt;/b&gt; seconds</source>
         <translation>休止状態まで &lt;b&gt;%1&lt;/b&gt; 秒</translation>
+    </message>
+</context>
+<context>
+    <name>UpdateDialog</name>
+    <message>
+        <location filename="../ui/updatedialog.ui" line="51"/>
+        <source>Show &amp;Release Notes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/updatedialog.cpp" line="47"/>
+        <source>Downloading update information...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/updatedialog.cpp" line="74"/>
+        <source>Cannot connect to server.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/updatedialog.cpp" line="77"/>
+        <source>Data received from server is incorrect.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/updatedialog.cpp" line="80"/>
+        <source>You are already using the latest version of QWinFF.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/updatedialog.cpp" line="83"/>
+        <source>An unknown error has occurred.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/updatedialog.cpp" line="105"/>
+        <source>A new version of QWinFF has been released!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/updatedialog.cpp" line="108"/>
+        <source>Version &lt;b&gt;%1&lt;/b&gt; is available at %2.</source>
+        <extracomment>%1 is version number, %2 is the project homepage</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/updatedialog.cpp" line="114"/>
+        <source>You can download this version using the link:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
