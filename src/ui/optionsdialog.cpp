@@ -20,6 +20,7 @@
 #include "services/constants.h"
 #include <QMessageBox>
 #include <QSettings>
+#include <QHeaderView>
 
 OptionsDialog::OptionsDialog(QWidget *parent) :
     QDialog(parent),

@@ -24,13 +24,15 @@ Version::Version(const QString &s)
     for (int i=0; version_patterns[i]; i++) { // try each pattern
         QRegExp pattern(version_patterns[i]);
         if (pattern.indexIn(s) != -1) {
+            const QStringList cap = pattern.capturedTexts();
+            const int capture_count = cap.size() - 1;
             m_major = m_minor = m_patch = 0;
-            if (pattern.captureCount() >= 1)
-                m_major = pattern.cap(1).toInt();
-            if (pattern.captureCount() >= 2)
-                m_minor = pattern.cap(2).toInt();
-            if (pattern.captureCount() >= 3)
-                m_patch = pattern.cap(3).toInt();
+            if (capture_count >= 1)
+                m_major = cap[1].toInt();
+            if (capture_count >= 2)
+                m_minor = cap[2].toInt();
+            if (capture_count >= 3)
+                m_patch = cap[3].toInt();
             break;
         }
     }
