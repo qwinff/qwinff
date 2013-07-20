@@ -90,6 +90,12 @@ int Constants::getInteger(const char *key)
     return lookup_constant(key).toInt();
 }
 
+float Constants::getFloat(const char *key)
+{
+    Q_ASSERT(constants_initialized);
+    return lookup_constant(key).toFloat();
+}
+
 QString Constants::getString(const char *key)
 {
     Q_ASSERT(constants_initialized);

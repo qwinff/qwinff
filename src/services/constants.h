@@ -27,6 +27,7 @@ public:
 
     static bool getBool(const char *key);
     static int getInteger(const char *key);
+    static float getFloat(const char *key);
     static QString getString(const char *key);
     static QStringList getSpaceSeparatedList(const char *key);
     static QColor getColor(const char *key);
