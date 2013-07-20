@@ -18,7 +18,6 @@
 
 #include <QObject>
 #include <QString>
-#include <QScopedPointer>
 #include <QXmlStreamReader>
 
 /**
@@ -57,7 +56,7 @@ private slots:
 private:
     Q_DISABLE_COPY(UpdateChecker)
     class Private;
-    QScopedPointer<Private> p;
+    Private *p;
 };
 
 #endif // UPDATECHECKER_H

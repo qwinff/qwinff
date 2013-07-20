@@ -29,10 +29,7 @@ public:
     QString release_date;
     QString download_url;
     HttpDownloader downloader;
-    QScopedPointer<UpdateInfoParser> parser;
-    Private()
-        : result(UpdateChecker::None), parser(new XmlUpdateInfoParser)
-    { }
+    Private() : result(UpdateChecker::None) { }
 };
 
 UpdateChecker::UpdateChecker(QObject *parent) :
@@ -45,6 +42,7 @@ UpdateChecker::UpdateChecker(QObject *parent) :
 
 UpdateChecker::~UpdateChecker()
 {
+    delete p;
 }
 
 UpdateChecker::CheckResult UpdateChecker::result() const
@@ -81,16 +79,17 @@ void UpdateChecker::checkUpdate()
 void UpdateChecker::downloadFinished(bool success, QString /*url*/, QString content)
 {
     if (success) {
-        if (!p->parser->parse(content)) {
+        XmlUpdateInfoParser parser;
+        if (!parser.parse(content)) {
             // parse error
             p->result = DataError;
-        } else if (Version(p->parser->version()) > Version(VERSION_STRING)) {
+        } else if (Version(parser.version()) > Version(VERSION_STRING)) {
             // new version > current version
             p->result = UpdateFound;
-            p->version = p->parser->version();
-            p->release_note = p->parser->releaseNotes();
-            p->release_date = p->parser->releaseDate();
-            p->download_url = p->parser->downloadUrl();
+            p->version = parser.version();
+            p->release_note = parser.releaseNotes();
+            p->release_date = parser.releaseDate();
+            p->download_url = parser.downloadUrl();
         } else {
             // no new version found
             p->result = UpdateNotFound;
