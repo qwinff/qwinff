@@ -39,6 +39,7 @@ public:
     };
 
     CheckResult result() const;
+    bool hasUpdate() const;
     QString versionName() const;
     QString releaseDate() const;
     QString releaseNotes() const;

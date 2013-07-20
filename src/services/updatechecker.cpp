@@ -50,6 +50,11 @@ UpdateChecker::CheckResult UpdateChecker::result() const
     return p->result;
 }
 
+bool UpdateChecker::hasUpdate() const
+{
+    return p->result == UpdateChecker::UpdateFound;
+}
+
 QString UpdateChecker::versionName() const
 {
     return p->version;
