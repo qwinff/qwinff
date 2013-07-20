@@ -42,7 +42,8 @@ SOURCES += main.cpp \
     services/httpdownloader.cpp \
     services/updateinfoparser.cpp \
     services/constants.cpp \
-    services/xmllookuptable.cpp
+    services/xmllookuptable.cpp \
+    ui/updatedialog.cpp
 
 HEADERS  += \
     ui/progressbar.h \
@@ -80,7 +81,8 @@ HEADERS  += \
     services/updateinfoparser.h \
     config.h \
     services/constants.h \
-    services/xmllookuptable.h
+    services/xmllookuptable.h \
+    ui/updatedialog.h
 
 FORMS    += \
     ui/conversionparameterdialog.ui \
@@ -89,7 +91,8 @@ FORMS    += \
     ui/aboutffmpegdialog.ui \
     ui/optionsdialog.ui \
     ui/aboutdialog.ui \
-    ui/poweroffdialog.ui
+    ui/poweroffdialog.ui \
+    ui/updatedialog.ui
 
 RESOURCES += \
     images.qrc
