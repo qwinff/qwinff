@@ -9,9 +9,10 @@
  * project page: http://code.google.com/p/qtypist
  */
 
-#include "httpdownloader.h"
 #include <QFile>
+#include <QNetworkRequest>
 #include <vector>
+#include "httpdownloader.h"
 
 #define BUFFER_SIZE 1024
 

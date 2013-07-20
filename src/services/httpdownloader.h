@@ -14,9 +14,7 @@
 
 #include <QObject>
 #include <QNetworkAccessManager>
-#include <QNetworkRequest>
 #include <QNetworkReply>
-#include <QSharedPointer>
 #include <QMap>
 
 class HttpDownloader : public QObject
