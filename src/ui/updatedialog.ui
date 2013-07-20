@@ -23,7 +23,7 @@
    <item>
     <widget class="QLabel" name="lblStatus">
      <property name="text">
-      <string>lblStatus</string>
+      <string notr="true">lblStatus</string>
      </property>
      <property name="openExternalLinks">
       <bool>true</bool>
