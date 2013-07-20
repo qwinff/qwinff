@@ -73,7 +73,7 @@ void HttpDownloader::readData(QString &dest, QNetworkReply *reply)
         dest = reply->readAll();
     } else {
         std::vector<char> buffer;
-        buffer.reserve(m_sizeLimit + 1); // reserve data length and NULL byte
+        buffer.resize(m_sizeLimit + 1); // reserve data length and NULL byte
         reply->read(buffer.data(), m_sizeLimit); // buffer.data() is char*
         buffer[m_sizeLimit] = 0; // terminate the data with NULL
         dest = QString(buffer.data()); // convert the data to QString
