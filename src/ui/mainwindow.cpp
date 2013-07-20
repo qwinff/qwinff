@@ -21,6 +21,7 @@
 #include "optionsdialog.h"
 #include "aboutdialog.h"
 #include "poweroffdialog.h"
+#include "updatedialog.h"
 #include "services/paths.h"
 #include "services/notification.h"
 #include "services/powermanagement.h"
@@ -212,6 +213,12 @@ void MainWindow::slotAbout()
     AboutDialog(this).exec();
 }
 
+void MainWindow::slotShowUpdateDialog()
+{
+    UpdateChecker update_checker;
+    UpdateDialog(this).exec(update_checker);
+}
+
 void MainWindow::slotListContextMenu(QPoint /*pos*/)
 {
     refresh_action_states();
@@ -312,8 +319,7 @@ void MainWindow::update_poweroff_button(int id)
 void MainWindow::received_update_result(int status)
 {
     if (status == UpdateChecker::UpdateFound) {
-        QMessageBox::information(this, tr("Check Updates"),
-                                 tr("A new version of QWinFF is available."));
+        UpdateDialog(this).exec(*m_update_checker);
     }
 }
 
@@ -427,7 +433,8 @@ void MainWindow::setup_menus()
             this, SLOT(slotAboutFFmpeg()));
     connect(ui->actionAbout, SIGNAL(triggered()),
             this, SLOT(slotAbout()));
-
+    connect(ui->actionCheckUpdate, SIGNAL(triggered()),
+            this, SLOT(slotShowUpdateDialog()));
 }
 
 void MainWindow::setup_toolbar()

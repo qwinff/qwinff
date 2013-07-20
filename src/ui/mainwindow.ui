@@ -22,7 +22,7 @@
      <x>0</x>
      <y>0</y>
      <width>491</width>
-     <height>23</height>
+     <height>27</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -52,6 +52,7 @@
     <addaction name="actionAboutQt"/>
     <addaction name="actionAboutFFmpeg"/>
     <addaction name="actionAbout"/>
+    <addaction name="actionCheckUpdate"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
@@ -309,6 +310,11 @@
   <action name="actionShowErrorMessage">
    <property name="text">
     <string>Show Error &amp;Message</string>
+   </property>
+  </action>
+  <action name="actionCheckUpdate">
+   <property name="text">
+    <string>Check For &amp;Updates</string>
    </property>
   </action>
  </widget>
