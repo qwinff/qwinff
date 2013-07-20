@@ -54,6 +54,7 @@ void UpdateDialog::updateFound()
     Q_ASSERT(m_updateChecker);
     ui->btnReleaseNotes->setVisible(true);
     ui->btnReleaseNotes->setChecked(false);
+    ui->txtReleaseNotes->setVisible(false);
     ui->lblStatus->setText(get_status());
     ui->txtReleaseNotes->setText(m_updateChecker->releaseNotes());
     resizeToFit();
