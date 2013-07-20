@@ -46,6 +46,24 @@
     </Colors>
   </ProgressBar>
 
+  <RangeSelector>
+    <RoundRectRadius type="float">3.0</RoundRectRadius>
+    <Colors>
+      <Container>
+        <BackgroundGradient1 type="color">#D2D2D2</BackgroundGradient1>
+        <BackgroundGradient2 type="color">#EBEBEB</BackgroundGradient2>
+        <OuterBorder type="color">#828282</OuterBorder>
+        <InnerBorder type="color">#FAFAFA</InnerBorder>
+      </Container>
+      <Range>
+        <BackgroundGradient1 type="color">#D8F4A6</BackgroundGradient1>
+        <BackgroundGradient2 type="color">#A8E854</BackgroundGradient2>
+        <OuterBorder type="color">#008A00</OuterBorder>
+        <InnerBorder type="color">#DAFAA7</InnerBorder>
+      </Range>
+    </Colors>
+  </RangeSelector>
+
   <!-- seconds to wait before shutting down or suspending the computer -->
   <PoweroffTimeout type="integer">30</PoweroffTimeout>
 

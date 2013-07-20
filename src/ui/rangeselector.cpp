@@ -1,21 +1,23 @@
-#include "rangeselector.h"
 #include <QPainter>
 #include <QMouseEvent>
+#include "rangeselector.h"
+#include "services/constants.h"
 
 // rounded rectangle radius
-#define ROUNDRECT_RADIUS 3.0
+#define ROUNDRECT_RADIUS Constants::getFloat("RangeSelector/RoundRectRadius")
 
+#define COLOR(name) Constants::getColor("RangeSelector/Colors/" name)
 // container color
-#define COLOR_CONT_BG_GRAD_1 QColor(210, 210, 210)  /* gradient 1 */
-#define COLOR_CONT_BG_GRAD_2 QColor(235, 235, 235)  /* gradient 2 */
-#define COLOR_CONT_OUT_BORDER QColor(130, 130, 130) /* outer border */
-#define COLOR_CONT_IN_BORDER QColor(250, 250, 250)  /* inner border */
+#define COLOR_CONT_BG_GRAD_1  COLOR("Container/BackgroundGradient1")
+#define COLOR_CONT_BG_GRAD_2  COLOR("Container/BackgroundGradient2")
+#define COLOR_CONT_OUT_BORDER COLOR("Container/OuterBorder")
+#define COLOR_CONT_IN_BORDER  COLOR("Container/InnerBorder")
 
-// range indicator color 191, 238, 118
-#define COLOR_RANGE_BG_GRAD_1 QColor(216, 244, 166) /* gradient 1 */
-#define COLOR_RANGE_BG_GRAD_2 QColor(168, 232, 84)  /* gradient 2 */
-#define COLOR_RANGE_OUT_BORDER QColor(0, 138, 0)    /* outer border */
-#define COLOR_RANGE_IN_BORDER QColor(218, 250, 167) /* inner border */
+// range indicator color
+#define COLOR_RANGE_BG_GRAD_1  COLOR("Range/BackgroundGradient1")
+#define COLOR_RANGE_BG_GRAD_2  COLOR("Range/BackgroundGradient2")
+#define COLOR_RANGE_OUT_BORDER COLOR("Range/OuterBorder")
+#define COLOR_RANGE_IN_BORDER  COLOR("Range/InnerBorder")
 
 RangeSelector::RangeSelector(QWidget *parent) :
     QWidget(parent), m_max(255), m_min(0), m_val_begin(0), m_val_end(128),
