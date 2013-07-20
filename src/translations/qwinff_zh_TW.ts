@@ -910,7 +910,7 @@
     <message>
         <location filename="../ui/mainwindow.ui" line="321"/>
         <source>Check For &amp;Updates</source>
-        <translation type="unfinished"></translation>
+        <translation>檢查更新(&amp;U)</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.cpp" line="128"/>
@@ -993,12 +993,12 @@
     <message>
         <location filename="../ui/optionsdialog.ui" line="24"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>一般</translation>
     </message>
     <message>
         <location filename="../ui/optionsdialog.ui" line="30"/>
         <source>Check for updates on program startup</source>
-        <translation type="unfinished"></translation>
+        <translation>程式啟動時檢查更新</translation>
     </message>
     <message>
         <location filename="../ui/optionsdialog.ui" line="51"/>
@@ -1115,48 +1115,48 @@
     <message>
         <location filename="../ui/updatedialog.ui" line="51"/>
         <source>Show &amp;Release Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>顯示發行備註(&amp;R)</translation>
     </message>
     <message>
         <location filename="../ui/updatedialog.cpp" line="47"/>
         <source>Downloading update information...</source>
-        <translation type="unfinished"></translation>
+        <translation>正在下載更新資訊...</translation>
     </message>
     <message>
         <location filename="../ui/updatedialog.cpp" line="74"/>
         <source>Cannot connect to server.</source>
-        <translation type="unfinished"></translation>
+        <translation>無法連線到伺服器.</translation>
     </message>
     <message>
         <location filename="../ui/updatedialog.cpp" line="77"/>
         <source>Data received from server is incorrect.</source>
-        <translation type="unfinished"></translation>
+        <translation>從伺服器取得的資料不正確.</translation>
     </message>
     <message>
         <location filename="../ui/updatedialog.cpp" line="80"/>
         <source>You are already using the latest version of QWinFF.</source>
-        <translation type="unfinished"></translation>
+        <translation>您已經使用了最新版本的 QWinFF.</translation>
     </message>
     <message>
         <location filename="../ui/updatedialog.cpp" line="83"/>
         <source>An unknown error has occurred.</source>
-        <translation type="unfinished"></translation>
+        <translation>發生了未知的錯誤.</translation>
     </message>
     <message>
         <location filename="../ui/updatedialog.cpp" line="105"/>
         <source>A new version of QWinFF has been released!</source>
-        <translation type="unfinished"></translation>
+        <translation>已有 QWinFF 的更新!</translation>
     </message>
     <message>
         <location filename="../ui/updatedialog.cpp" line="108"/>
         <source>Version &lt;b&gt;%1&lt;/b&gt; is available at %2.</source>
         <extracomment>%1 is version number, %2 is the project homepage</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>版本 &lt;b&gt;%1&lt;/b&gt; 可從 %2 下載.</translation>
     </message>
     <message>
         <location filename="../ui/updatedialog.cpp" line="114"/>
         <source>You can download this version using the link:</source>
-        <translation type="unfinished"></translation>
+        <translation>您可以從以下連結下載這個版本:</translation>
     </message>
 </context>
 </TS>
