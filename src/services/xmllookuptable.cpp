@@ -78,7 +78,7 @@ QString XmlLookupTable::prefix() const
 
 QString XmlLookupTable::lookup(const QString &path, bool *ok) const
 {
-    QMap<QString, Entry>::ConstIterator it = m_data.find(full_path(path));
+    QHash<QString, Entry>::ConstIterator it = m_data.find(full_path(path));
     bool found = (it != m_data.end());
     if (ok)
         *ok = found;

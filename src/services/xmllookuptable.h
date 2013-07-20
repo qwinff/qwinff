@@ -18,6 +18,7 @@
 
 #include <QIODevice>
 #include <QMap>
+#include <QHash>
 #include <QString>
 
 /**
@@ -103,7 +104,7 @@ private:
         QString data;
     };
 
-    QMap<QString, Entry> m_data;
+    QHash<QString, Entry> m_data;
     QString m_prefix;
 
     QString full_path(const QString &path) const;
