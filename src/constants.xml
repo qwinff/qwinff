@@ -29,15 +29,18 @@
   <!-- Whether to check for updates on program startup by default. -->
   <DefaultCheckUpdateOnStartup type="boolean">true</DefaultCheckUpdateOnStartup>
 
+  <!-- seconds to wait before shutting down or suspending the computer -->
+  <PoweroffTimeout type="integer">30</PoweroffTimeout>
+
   <!-- the maximum allowable update info size in bytes, a value of 0 means unlimited
        Warning: Setting this value to 0 may cause buffer overflow and compromise
        the stability and security of your system.
        Bytes exceeding the limit will be discarded. -->
   <UpdateInfoSizeLimit type="integer">4096</UpdateInfoSizeLimit>
 
+  <!-- progressbar of the conversion list -->
   <ProgressBar>
     <Colors>
-      <!-- colors of the conversion progressbar -->
       <Margin type="color">#C8DCFF</Margin>
       <Center type="color">#96C8DC</Center>
       <Border type="color">#6496A0</Border>
@@ -46,7 +49,9 @@
     </Colors>
   </ProgressBar>
 
+  <!-- time range selector in "Time" tab in conversion parameter dialog -->
   <RangeSelector>
+    <!-- radius of the round edges -->
     <RoundRectRadius type="float">3.0</RoundRectRadius>
     <Colors>
       <Container>
@@ -63,8 +68,5 @@
       </Range>
     </Colors>
   </RangeSelector>
-
-  <!-- seconds to wait before shutting down or suspending the computer -->
-  <PoweroffTimeout type="integer">30</PoweroffTimeout>
 
 </QWinFFConstants>
