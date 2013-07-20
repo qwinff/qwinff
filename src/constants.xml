@@ -32,6 +32,9 @@
   <!-- seconds to wait before shutting down or suspending the computer -->
   <PoweroffTimeout type="integer">30</PoweroffTimeout>
 
+  <!-- number of recent paths to remember -->
+  <NumRecentPaths type="integer">5</NumRecentPaths>
+
   <!-- the maximum allowable update info size in bytes, a value of 0 means unlimited
        Warning: Setting this value to 0 may cause buffer overflow and compromise
        the stability and security of your system.

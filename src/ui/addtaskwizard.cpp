@@ -20,14 +20,13 @@
 #include "conversionparameterdialog.h"
 #include "services/extensions.h"
 #include "services/paths.h"
+#include "services/constants.h"
 
 #include <QMessageBox>
 #include <QFileDialog>
 #include <QDebug>
 #include <QSettings>
 #include <cassert>
-
-#define NUM_RECENT_PATHS 5
 
 #define PAGEID_SELECTFILES 0
 #define PAGEID_PARAMS 1
@@ -402,9 +401,10 @@ void AddTaskWizard::save_settings()
             recent_paths.push_back(ui->cbOutputPath->itemText(i));
     }
 
-    if (recent_paths.size() > NUM_RECENT_PATHS) {
-        // Make the list contain at most NUM_RECENT_PATHS items.
-        recent_paths = recent_paths.mid(0, NUM_RECENT_PATHS);
+    const int num_recent_paths = Constants::getInteger("NumRecentPaths");
+    if (recent_paths.size() > num_recent_paths) {
+        // Make the list contain at most num_recent_paths items.
+        recent_paths = recent_paths.mid(0, num_recent_paths);
     }
     settings.setValue("addtaskwizard/recentpaths", recent_paths);
 }
