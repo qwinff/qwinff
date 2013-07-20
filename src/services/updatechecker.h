@@ -44,6 +44,7 @@ public:
     QString releaseDate() const;
     QString releaseNotes() const;
     QString downloadUrl() const;
+    QString downloadPage() const;
     
 signals:
     void receivedResult(int result);

@@ -45,6 +45,7 @@ bool XmlUpdateInfoParser::parse(QString s)
 #else
     m_downloadUrl = "";
 #endif
+    m_downloadPage = table.lookup("DownloadPage");
 
     if (!m_version.isEmpty())
         return true;
@@ -70,4 +71,9 @@ QString XmlUpdateInfoParser::releaseNotes() const
 QString XmlUpdateInfoParser::downloadUrl() const
 {
     return m_downloadUrl;
+}
+
+QString XmlUpdateInfoParser::downloadPage() const
+{
+    return m_downloadPage;
 }

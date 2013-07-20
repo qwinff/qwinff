@@ -28,6 +28,7 @@ public:
     QString release_note;
     QString release_date;
     QString download_url;
+    QString download_page;
     HttpDownloader downloader;
     Private() : result(UpdateChecker::None) { }
 };
@@ -75,6 +76,11 @@ QString UpdateChecker::downloadUrl() const
     return p->download_url;
 }
 
+QString UpdateChecker::downloadPage() const
+{
+    return p->download_page;
+}
+
 void UpdateChecker::checkUpdate()
 {
     QString update_url = Constants::getString("UpdateInfoUrl");
@@ -95,6 +101,7 @@ void UpdateChecker::downloadFinished(bool success, QString /*url*/, QString cont
             p->release_note = parser.releaseNotes();
             p->release_date = parser.releaseDate();
             p->download_url = parser.downloadUrl();
+            p->download_page = parser.downloadPage();
         } else {
             // no new version found
             p->result = UpdateNotFound;

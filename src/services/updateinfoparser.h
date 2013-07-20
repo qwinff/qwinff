@@ -28,6 +28,7 @@ public:
     virtual QString releaseDate() const = 0;
     virtual QString releaseNotes() const = 0;
     virtual QString downloadUrl() const = 0;
+    virtual QString downloadPage() const = 0;
 };
 
 QT_BEGIN_NAMESPACE
@@ -45,11 +46,13 @@ public:
     QString releaseDate() const;
     QString releaseNotes() const;
     QString downloadUrl() const;
+    QString downloadPage() const;
 private:
     QString m_version;
     QString m_releaseDate;
     QString m_releaseNotes;
     QString m_downloadUrl;
+    QString m_downloadPage;
 };
 
 #endif // UPDATEINFOPARSER_H
