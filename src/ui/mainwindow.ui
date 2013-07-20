@@ -313,6 +313,10 @@
    </property>
   </action>
   <action name="actionCheckUpdate">
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/actions/icons/check_update.png</normaloff>:/actions/icons/check_update.png</iconset>
+   </property>
    <property name="text">
     <string>Check For &amp;Updates</string>
    </property>

@@ -18,6 +18,7 @@
         <file>icons/dialog_cancel.png</file>
         <file>icons/system_hibernate.png</file>
         <file>icons/preview_play.png</file>
+        <file>icons/check_update.png</file>
     </qresource>
     <qresource prefix="/app">
         <file>icons/qt.png</file>
