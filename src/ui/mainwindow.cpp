@@ -439,6 +439,28 @@ void MainWindow::setup_menus()
 
 void MainWindow::setup_toolbar()
 {
+    QMap<QString, QAction*> toolbar_map;
+#define ADD_ACTION(name) toolbar_map[QString(#name).toUpper()] = ui->action ## name
+    ADD_ACTION(AddFiles);
+    ADD_ACTION(Options);
+    ADD_ACTION(Exit);
+    ADD_ACTION(RemoveSelectedItems);
+    ADD_ACTION(RemoveCompletedItems);
+    ADD_ACTION(ClearList);
+    ADD_ACTION(OpenOutputFolder);
+    ADD_ACTION(SetParameters);
+    ADD_ACTION(ChangeOutputFilename);
+    ADD_ACTION(ChangeOutputDirectory); // TODO: rename to "folder"
+    ADD_ACTION(ShowErrorMessage);
+    ADD_ACTION(StartConversion);
+    ADD_ACTION(StopConversion);
+    ADD_ACTION(Retry);
+    ADD_ACTION(RetryAll);
+    // "Shutdown" button is special, so we don't add it here
+    ADD_ACTION(AboutQt);
+    ADD_ACTION(AboutFFmpeg);
+    ADD_ACTION(About);
+    ADD_ACTION(CheckUpdate);
     QToolBar *toolbar = ui->toolBar;
     toolbar->addAction(ui->actionAddFiles);
     toolbar->addAction(ui->actionStartConversion);
