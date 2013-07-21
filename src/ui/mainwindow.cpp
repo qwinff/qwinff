@@ -106,7 +106,7 @@ void MainWindow::window_ready()
     }
     QSettings settings;
     if (settings.value("options/check_update_on_startup",
-                       Constants::getBool("DefaultCheckUpdateOnStartup")).toBool())
+                       Constants::getBool("CheckUpdateOnStartup")).toBool())
         m_update_checker->checkUpdate();
 }
 

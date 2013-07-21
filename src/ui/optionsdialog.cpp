@@ -74,9 +74,9 @@ void OptionsDialog::read_fields()
     ui->spinThreads->setValue(settings.value("options/threads", DEFAULT_THREAD_COUNT).toInt());
     ui->chkHideFormats->setChecked(settings.value("options/hideformats", true).toBool());
     ui->chkCheckUpdates->setChecked(settings.value("options/check_update_on_startup",
-                              Constants::getBool("DefaultCheckUpdateOnStartup")).toBool());
+                              Constants::getBool("CheckUpdateOnStartup")).toBool());
     ui->chkOutputToSrcDir->setChecked(settings.value("options/output_to_src_dir",
-                              Constants::getBool("DefaultOutputToSourceFolder")).toBool());
+                              Constants::getBool("OutputToSourceFolder")).toBool());
 
 #ifndef FFMPEG_IN_DATA_PATH
     // ExePath to table

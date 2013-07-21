@@ -28,7 +28,7 @@
 #include <QSettings>
 #include <cassert>
 
-#define DEFAULT_OUTPUT_TO_SOURCE_DIR Constants::getBool("DefaultOutputToSourceFolder")
+#define DEFAULT_OUTPUT_TO_SOURCE_DIR Constants::getBool("OutputToSourceFolder")
 
 #define PAGEID_SELECTFILES 0
 #define PAGEID_PARAMS 1
