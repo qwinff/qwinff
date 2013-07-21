@@ -79,7 +79,8 @@ MainWindow::MainWindow(QWidget *parent, const QStringList& fileList) :
     m_list->setContextMenuPolicy(Qt::CustomContextMenu);
 
     setup_menus();
-    setup_toolbar();
+    setup_poweroff_button();
+    setup_toolbar(Constants::getSpaceSeparatedList("ToolbarEntries"));
     setup_statusbar();
     setup_appicon();
 
@@ -439,10 +440,14 @@ void MainWindow::setup_menus()
             this, SLOT(slotShowUpdateDialog()));
 }
 
-void MainWindow::setup_toolbar()
+void MainWindow::setup_toolbar(const QStringList &entries)
 {
-    QMap<QString, QAction*> toolbar_map;
-#define ADD_ACTION(name) toolbar_map[QString(#name).toUpper()] = ui->action ## name
+    Q_ASSERT(m_poweroff_button && "setup_poweroff_button() must be called first");
+
+    // construct a table of available actions
+    // map action name to action pointer
+    QMap<QString, QAction*> toolbar_table;
+#define ADD_ACTION(name) toolbar_table[QString(#name).toUpper()] = ui->action ## name
     ADD_ACTION(AddFiles);
     ADD_ACTION(Options);
     ADD_ACTION(Exit);
@@ -459,22 +464,19 @@ void MainWindow::setup_toolbar()
     ADD_ACTION(Retry);
     ADD_ACTION(RetryAll);
     // "Shutdown" button is special, so we don't add it here
+#define POWEROFF_BUTTON_NAME "POWEROFF"
     ADD_ACTION(AboutQt);
     ADD_ACTION(AboutFFmpeg);
     ADD_ACTION(About);
     ADD_ACTION(CheckUpdate);
-    QToolBar *toolbar = ui->toolBar;
-    toolbar->addAction(ui->actionAddFiles);
-    toolbar->addAction(ui->actionStartConversion);
-    toolbar->addAction(ui->actionStopConversion);
-    toolbar->addAction(ui->actionRetry);
-    toolbar->addAction(ui->actionRetryAll);
-    toolbar->addSeparator();
-    toolbar->addAction(ui->actionRemoveSelectedItems);
-    toolbar->addAction(ui->actionRemoveCompletedItems);
-    toolbar->addSeparator();
-    toolbar->addAction(ui->actionOpenOutputFolder);
-    setup_poweroff_button();
+
+    for (int i=0; i<entries.size(); i++) {
+        QString entry = entries[i].toUpper(); // case-insensitive compare
+        if (entry == POWEROFF_BUTTON_NAME && PowerManagement::implemented())
+            ui->toolBar->addWidget(m_poweroff_button);
+        else if (toolbar_table.contains(entry))
+            ui->toolBar->addAction(toolbar_table[entry]);
+    }
 }
 
 void MainWindow::setup_statusbar()
@@ -569,8 +571,6 @@ void MainWindow::setup_poweroff_button()
     if (!PowerManagement::implemented()) {
         m_poweroff_button->setVisible(false);
         ui->actionPoweroff->setVisible(false);
-    } else {
-        ui->toolBar->addWidget(button);
     }
 }
 
