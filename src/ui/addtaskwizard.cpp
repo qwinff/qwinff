@@ -55,6 +55,12 @@ AddTaskWizard::AddTaskWizard(Presets *presets, QWidget *parent) :
     connect(this, SIGNAL(accepted())
             , this, SLOT(slotFinished()));
 
+    // disable output path settings if "output to source folder" is checked
+    connect(ui->chkOutputToSourceDir, SIGNAL(toggled(bool))
+            , ui->cbOutputPath, SLOT(setDisabled(bool)));
+    connect(ui->chkOutputToSourceDir, SIGNAL(toggled(bool))
+            , ui->btnBrowseOutputPath, SLOT(setDisabled(bool)));
+
     ui->lstFiles->setSelectionMode(QAbstractItemView::ExtendedSelection);
 
     load_extensions();
@@ -290,23 +296,26 @@ void AddTaskWizard::slotFinished()
     const int size = ui->lstFiles->count();
     m_params.clear();
 
-    // This variable is reused in the loop.
-    // Only "source" and "destination" should be modified in the loop.
+    // The variable "param" is reused in the loop.
     ConversionParameters param(*m_current_param);
-    const QDir output_dir(ui->cbOutputPath->currentText());
+    const bool output_to_src_dir = ui->chkOutputToSourceDir->isChecked();
     const int ext_index = ui->cbExtension->currentIndex();
     const QString ext = ui->cbExtension->itemData(ext_index).toString();
 
     // Write conversion parameters to m_params.
     for (int i=0; i<size; i++) {
-
         QString input_filename = ui->lstFiles->item(i)->text();
         QString input_file_basename = QFileInfo(input_filename).completeBaseName();
 
-        // Fill in input filename.
-        param.source = input_filename;
+        QDir output_dir(ui->cbOutputPath->currentText());
+        if (output_to_src_dir) { // output to source folder
+            QString containing_directory = QFileInfo(input_filename).absolutePath();
+            output_dir = QDir(containing_directory);
+        }
 
-        // Generate output filename.
+        // Fill in input and output filenames
+        // IMPORTANT: Only "source" and "destination" should be modified in the loop.
+        param.source = input_filename;
         param.destination = output_dir.absoluteFilePath(input_file_basename + "." + ext);
 
         // Save the configuration for the file.
@@ -370,7 +379,9 @@ void AddTaskWizard::load_settings()
     }
     ui->cbOutputPath->setCurrentIndex(0); // Select the most recent path.
 
-
+    bool output_to_src_dir = settings.value("addtaskwizard/output_to_src_dir",
+                                            false).toBool();
+    ui->chkOutputToSourceDir->setChecked(output_to_src_dir);
 }
 
 void AddTaskWizard::save_settings()
@@ -407,4 +418,6 @@ void AddTaskWizard::save_settings()
         recent_paths = recent_paths.mid(0, num_recent_paths);
     }
     settings.setValue("addtaskwizard/recentpaths", recent_paths);
+    settings.setValue("addtaskwizard/output_to_src_dir",
+                      ui->chkOutputToSourceDir->isChecked());
 }

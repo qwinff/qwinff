@@ -111,40 +111,6 @@
       </item>
       <item>
        <layout class="QGridLayout" name="gridLayout">
-        <item row="0" column="0">
-         <widget class="QLabel" name="lblExtension">
-          <property name="text">
-           <string>Convert to</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QComboBox" name="cbExtension">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="lblPreset">
-          <property name="text">
-           <string>Preset</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QComboBox" name="cbPreset">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-         </widget>
-        </item>
         <item row="1" column="2">
          <widget class="QPushButton" name="btnEditPreset">
           <property name="text">
@@ -159,15 +125,12 @@
           </property>
          </widget>
         </item>
-        <item row="3" column="2">
-         <widget class="QPushButton" name="btnBrowseOutputPath">
+        <item row="0" column="0">
+         <widget class="QLabel" name="lblExtension">
           <property name="text">
-           <string>Browse</string>
+           <string>Convert to</string>
           </property>
          </widget>
-        </item>
-        <item row="3" column="1">
-         <widget class="QComboBox" name="cbOutputPath"/>
         </item>
         <item row="2" column="1">
          <widget class="QCheckBox" name="chkAutoAdjustBitrate">
@@ -176,6 +139,50 @@
           </property>
           <property name="text">
            <string>Auto Adjust Audio Bitrate</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QComboBox" name="cbOutputPath"/>
+        </item>
+        <item row="3" column="2">
+         <widget class="QPushButton" name="btnBrowseOutputPath">
+          <property name="text">
+           <string>Browse</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="lblPreset">
+          <property name="text">
+           <string>Preset</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QComboBox" name="cbExtension">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QComboBox" name="cbPreset">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QCheckBox" name="chkOutputToSourceDir">
+          <property name="text">
+           <string>Output to &amp;source folder</string>
           </property>
          </widget>
         </item>
