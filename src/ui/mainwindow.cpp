@@ -50,6 +50,8 @@ MainWindow::MainWindow(QWidget *parent, const QStringList& fileList) :
     m_argv_input_files(fileList),
     m_elapsedTimeLabel(new QLabel(this)),
     m_timer(new QTimer(this)),
+    m_poweroff_button(0),
+    m_poweroff_actiongroup(0),
     m_update_checker(new UpdateChecker(this))
 {
     ui->setupUi(this);
@@ -484,6 +486,8 @@ void MainWindow::setup_statusbar()
  * Setup the poweroff button and menu.
  * The poweroff button is handled differently from other menu and buttons.
  * Its icon and title changes as the action changes.
+ * When this function finishes, m_poweroff_button will point to the constructed
+ * button widget.
  */
 void MainWindow::setup_poweroff_button()
 {

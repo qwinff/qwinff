@@ -37,6 +37,20 @@
   <!-- seconds to wait before shutting down or suspending the computer -->
   <PoweroffTimeout type="integer">30</PoweroffTimeout>
 
+  <!-- entries of the main window toolbar
+       valid values (case insensitive):
+          AddFiles Options Exit
+          RemoveSelectedItems RemoveCompletedItems ClearList
+          OpenOutputFolder SetParameters ChangeOutputFilename
+          ChangeOutputDirectory ShowErrorMessage
+          StartConversion StopConversion Retry RetryAll Poweroff
+          AboutQt AboutFFmpeg About CheckUpdate
+  -->
+  <ToolbarEntries>
+    AddFiles StartConversion StopConversion Retry RetryAll
+    RemoveSelectedItems RemoveCompletedItems OpenOutputFolder Poweroff
+  </ToolbarEntries>
+
   <!-- number of recent paths to remember -->
   <NumRecentPaths type="integer">5</NumRecentPaths>
 
