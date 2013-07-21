@@ -38,9 +38,9 @@ bool XmlUpdateInfoParser::parse(QString s)
     m_releaseNotes = table.lookup("ReleaseNotes");
 #ifdef Q_OS_WIN32
     if (Constants::getBool("Portable")) {
-        m_downloadUrl = table.lookup("WindowsPortable/DownloadLink");
+        m_downloadUrl = table.lookup("DownloadLinks/WindowsPortable");
     } else {
-        m_downloadUrl = table.lookup("WindowsInstaller/DownloadLink");
+        m_downloadUrl = table.lookup("DownloadLinks/WindowsInstaller");
     }
 #else
     m_downloadUrl = "";
