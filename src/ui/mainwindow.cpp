@@ -474,6 +474,8 @@ void MainWindow::setup_toolbar(const QStringList &entries)
         QString entry = entries[i].toUpper(); // case-insensitive compare
         if (entry == POWEROFF_BUTTON_NAME && PowerManagement::implemented())
             ui->toolBar->addWidget(m_poweroff_button);
+        else if (entry == "|") // separator
+            ui->toolBar->addSeparator();
         else if (toolbar_table.contains(entry))
             ui->toolBar->addAction(toolbar_table[entry]);
     }
