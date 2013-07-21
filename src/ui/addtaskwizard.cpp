@@ -28,6 +28,8 @@
 #include <QSettings>
 #include <cassert>
 
+#define DEFAULT_OUTPUT_TO_SOURCE_DIR Constants::getBool("DefaultOutputToSourceFolder")
+
 #define PAGEID_SELECTFILES 0
 #define PAGEID_PARAMS 1
 
@@ -380,7 +382,7 @@ void AddTaskWizard::load_settings()
     ui->cbOutputPath->setCurrentIndex(0); // Select the most recent path.
 
     bool output_to_src_dir = settings.value("addtaskwizard/output_to_src_dir",
-                                            false).toBool();
+                                            DEFAULT_OUTPUT_TO_SOURCE_DIR).toBool();
     ui->chkOutputToSourceDir->setChecked(output_to_src_dir);
 }
 

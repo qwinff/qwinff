@@ -29,6 +29,9 @@
   <!-- Whether to check for updates on program startup by default. -->
   <DefaultCheckUpdateOnStartup type="boolean">true</DefaultCheckUpdateOnStartup>
 
+  <!-- Output to source folder by default -->
+  <DefaultOutputToSourceFolder type="boolean">false</DefaultOutputToSourceFolder>
+
   <!-- seconds to wait before shutting down or suspending the computer -->
   <PoweroffTimeout type="integer">30</PoweroffTimeout>
 
