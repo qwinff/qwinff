@@ -224,53 +224,53 @@
         <translation>الضبط التلقائي لمعدل بت الصوت</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="128"/>
+        <location filename="../ui/addtaskwizard.cpp" line="127"/>
         <source>Please select at least one file.</source>
         <translation>الرجاء اختيار ملف او اكثر </translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="141"/>
+        <location filename="../ui/addtaskwizard.cpp" line="140"/>
         <source>Folder does not exist. Create a new folder?</source>
         <translation>المجلد غير موجود. إنشاء مجلد جديد ؟</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="150"/>
+        <location filename="../ui/addtaskwizard.cpp" line="149"/>
         <source>Failed to create folder. Please select another output folder.</source>
         <translation>فشل في إنشاء المجلد. الرجاء اختيار مجلد آخر للإخراج</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="171"/>
+        <location filename="../ui/addtaskwizard.cpp" line="170"/>
         <source>Select Files</source>
         <extracomment>This text is the title of an openfile dialog.</extracomment>
         <translation>حدد ملفات</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="173"/>
+        <location filename="../ui/addtaskwizard.cpp" line="172"/>
         <source>Multimedia</source>
         <translation>الوسائط المتعددة</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="174"/>
+        <location filename="../ui/addtaskwizard.cpp" line="173"/>
         <source>Video</source>
         <translation>الفيديو</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="175"/>
+        <location filename="../ui/addtaskwizard.cpp" line="174"/>
         <source>Audio</source>
         <translation>الصوت</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="176"/>
+        <location filename="../ui/addtaskwizard.cpp" line="175"/>
         <source>All files</source>
         <translation>جميع الملفات</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="198"/>
+        <location filename="../ui/addtaskwizard.cpp" line="197"/>
         <source>Some files could not be found.</source>
         <translation>لم يتم العثور على بعض الملفات .</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="243"/>
+        <location filename="../ui/addtaskwizard.cpp" line="242"/>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
         <translation>اختيار مجلد</translation>
@@ -1130,7 +1130,7 @@
     </message>
     <message>
         <location filename="../ui/updatedialog.cpp" line="77"/>
-        <source>Data received from server is incorrect.</source>
+        <source>Failed to parse the received data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

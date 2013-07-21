@@ -224,53 +224,53 @@
         <translation>Auto ajustar el bitrate del audio</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="128"/>
+        <location filename="../ui/addtaskwizard.cpp" line="127"/>
         <source>Please select at least one file.</source>
         <translation>Por favor seleccione al menos un archivo.</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="141"/>
+        <location filename="../ui/addtaskwizard.cpp" line="140"/>
         <source>Folder does not exist. Create a new folder?</source>
         <translation>EL folder no existe. ¿Crear un nuevo folder?</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="150"/>
+        <location filename="../ui/addtaskwizard.cpp" line="149"/>
         <source>Failed to create folder. Please select another output folder.</source>
         <translation>Fallo al crear el folder. Por favor seleccione otro folder de salida.</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="171"/>
+        <location filename="../ui/addtaskwizard.cpp" line="170"/>
         <source>Select Files</source>
         <extracomment>This text is the title of an openfile dialog.</extracomment>
         <translation>Seleccione archivos</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="173"/>
+        <location filename="../ui/addtaskwizard.cpp" line="172"/>
         <source>Multimedia</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="174"/>
+        <location filename="../ui/addtaskwizard.cpp" line="173"/>
         <source>Video</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="175"/>
+        <location filename="../ui/addtaskwizard.cpp" line="174"/>
         <source>Audio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="176"/>
+        <location filename="../ui/addtaskwizard.cpp" line="175"/>
         <source>All files</source>
         <translation>Todos los archivos</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="198"/>
+        <location filename="../ui/addtaskwizard.cpp" line="197"/>
         <source>Some files could not be found.</source>
         <translation>Algunos archivos no puedieron ser encontrados.</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="243"/>
+        <location filename="../ui/addtaskwizard.cpp" line="242"/>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
         <translation>Seleccione un directorio</translation>
@@ -381,10 +381,6 @@
         <location filename="../ui/conversionparameterdialog.ui" line="340"/>
         <source>Use same video quality as source (implies VBR).</source>
         <translation>Usar la misma calidad de video que la fuente (implica VBR).</translation>
-    </message>
-    <message>
-        <source>Same Quality as Source</source>
-        <translation type="obsolete">Misma calidad que la fuente</translation>
     </message>
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="350"/>
@@ -704,10 +700,6 @@
         <translation>&amp;Editar</translation>
     </message>
     <message>
-        <source>toolBar</source>
-        <translation type="obsolete">Barra de herramientas</translation>
-    </message>
-    <message>
         <location filename="../ui/mainwindow.ui" line="94"/>
         <source>&amp;Add Files</source>
         <translation type="unfinished">A&amp;ñadir Archivos</translation>
@@ -936,10 +928,6 @@
         <translation>Converción aun en progreso. ¿Abortar?</translation>
     </message>
     <message>
-        <source>Elapsed Time: %1h %2m %3s</source>
-        <translation type="obsolete">Tiempo transcurrido: %1h %2m %3s</translation>
-    </message>
-    <message>
         <location filename="../ui/mainwindow.cpp" line="270"/>
         <source>Elapsed Time: %1 h %2 m %3 s</source>
         <translation type="unfinished"></translation>
@@ -988,11 +976,6 @@
 </context>
 <context>
     <name>MediaConverter</name>
-    <message>
-        <source>%1 not found. The application will quit now.</source>
-        <extracomment>%1 is a computer program</extracomment>
-        <translation type="obsolete">%1 no encontrado. La aplicación se cerrará ahora.</translation>
-    </message>
     <message>
         <location filename="../converter/mediaconverter.cpp" line="109"/>
         <source>%1 not found.</source>
@@ -1146,7 +1129,7 @@
     </message>
     <message>
         <location filename="../ui/updatedialog.cpp" line="77"/>
-        <source>Data received from server is incorrect.</source>
+        <source>Failed to parse the received data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

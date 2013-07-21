@@ -224,53 +224,53 @@
         <translation>Auto ajustar el bitrate del audio</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="128"/>
+        <location filename="../ui/addtaskwizard.cpp" line="127"/>
         <source>Please select at least one file.</source>
         <translation>Por favor seleccione al menos un archivo.</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="141"/>
+        <location filename="../ui/addtaskwizard.cpp" line="140"/>
         <source>Folder does not exist. Create a new folder?</source>
         <translation>EL folder no existe. ¿Crear un nuevo folder?</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="150"/>
+        <location filename="../ui/addtaskwizard.cpp" line="149"/>
         <source>Failed to create folder. Please select another output folder.</source>
         <translation>Fallo al crear el folder. Por favor seleccione otro folder de salida.</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="171"/>
+        <location filename="../ui/addtaskwizard.cpp" line="170"/>
         <source>Select Files</source>
         <extracomment>This text is the title of an openfile dialog.</extracomment>
         <translation>Seleccione archivos</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="173"/>
+        <location filename="../ui/addtaskwizard.cpp" line="172"/>
         <source>Multimedia</source>
         <translation>Multimedia</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="174"/>
+        <location filename="../ui/addtaskwizard.cpp" line="173"/>
         <source>Video</source>
         <translation>Video</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="175"/>
+        <location filename="../ui/addtaskwizard.cpp" line="174"/>
         <source>Audio</source>
         <translation>Audio</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="176"/>
+        <location filename="../ui/addtaskwizard.cpp" line="175"/>
         <source>All files</source>
         <translation>Todos los archivos</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="198"/>
+        <location filename="../ui/addtaskwizard.cpp" line="197"/>
         <source>Some files could not be found.</source>
         <translation>Algunos archivos no puedieron ser encontrados.</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="243"/>
+        <location filename="../ui/addtaskwizard.cpp" line="242"/>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
         <translation>Seleccione un directorio</translation>
@@ -1129,7 +1129,7 @@
     </message>
     <message>
         <location filename="../ui/updatedialog.cpp" line="77"/>
-        <source>Data received from server is incorrect.</source>
+        <source>Failed to parse the received data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

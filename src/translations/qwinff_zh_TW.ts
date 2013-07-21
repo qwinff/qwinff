@@ -224,53 +224,53 @@
         <translation>自動調整聲音位元率</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="128"/>
+        <location filename="../ui/addtaskwizard.cpp" line="127"/>
         <source>Please select at least one file.</source>
         <translation>請至少選擇一個檔案</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="141"/>
+        <location filename="../ui/addtaskwizard.cpp" line="140"/>
         <source>Folder does not exist. Create a new folder?</source>
         <translation>資料夾不存在。要建立新的資料夾嗎？</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="150"/>
+        <location filename="../ui/addtaskwizard.cpp" line="149"/>
         <source>Failed to create folder. Please select another output folder.</source>
         <translation>建立資料夾失敗。請選擇另一個輸出資料夾。</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="171"/>
+        <location filename="../ui/addtaskwizard.cpp" line="170"/>
         <source>Select Files</source>
         <extracomment>This text is the title of an openfile dialog.</extracomment>
         <translation>選擇檔案</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="173"/>
+        <location filename="../ui/addtaskwizard.cpp" line="172"/>
         <source>Multimedia</source>
         <translation>多媒體</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="174"/>
+        <location filename="../ui/addtaskwizard.cpp" line="173"/>
         <source>Video</source>
         <translation>影片</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="175"/>
+        <location filename="../ui/addtaskwizard.cpp" line="174"/>
         <source>Audio</source>
         <translation>聲音</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="176"/>
+        <location filename="../ui/addtaskwizard.cpp" line="175"/>
         <source>All files</source>
         <translation>所有檔案</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="198"/>
+        <location filename="../ui/addtaskwizard.cpp" line="197"/>
         <source>Some files could not be found.</source>
         <translation>無法找到其中的一些檔案</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="243"/>
+        <location filename="../ui/addtaskwizard.cpp" line="242"/>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
         <translation>選擇資料夾</translation>
@@ -1129,8 +1129,8 @@
     </message>
     <message>
         <location filename="../ui/updatedialog.cpp" line="77"/>
-        <source>Data received from server is incorrect.</source>
-        <translation>從伺服器取得的資料不正確.</translation>
+        <source>Failed to parse the received data.</source>
+        <translation>無法分析取得的資料.</translation>
     </message>
     <message>
         <location filename="../ui/updatedialog.cpp" line="80"/>

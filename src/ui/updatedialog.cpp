@@ -74,7 +74,7 @@ void UpdateDialog::slotReceivedUpdateResult(int result)
         message = tr("Cannot connect to server.");
         break;
     case UpdateChecker::DataError:
-        message = tr("Data received from server is incorrect.");
+        message = tr("Failed to parse the received data.");
         break;
     case UpdateChecker::UpdateNotFound:
         message = tr("You are already using the latest version of QWinFF.");

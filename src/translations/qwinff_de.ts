@@ -224,53 +224,53 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="128"/>
+        <location filename="../ui/addtaskwizard.cpp" line="127"/>
         <source>Please select at least one file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="141"/>
+        <location filename="../ui/addtaskwizard.cpp" line="140"/>
         <source>Folder does not exist. Create a new folder?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="150"/>
+        <location filename="../ui/addtaskwizard.cpp" line="149"/>
         <source>Failed to create folder. Please select another output folder.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="171"/>
+        <location filename="../ui/addtaskwizard.cpp" line="170"/>
         <source>Select Files</source>
         <extracomment>This text is the title of an openfile dialog.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="173"/>
+        <location filename="../ui/addtaskwizard.cpp" line="172"/>
         <source>Multimedia</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="174"/>
+        <location filename="../ui/addtaskwizard.cpp" line="173"/>
         <source>Video</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="175"/>
+        <location filename="../ui/addtaskwizard.cpp" line="174"/>
         <source>Audio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="176"/>
+        <location filename="../ui/addtaskwizard.cpp" line="175"/>
         <source>All files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="198"/>
+        <location filename="../ui/addtaskwizard.cpp" line="197"/>
         <source>Some files could not be found.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="243"/>
+        <location filename="../ui/addtaskwizard.cpp" line="242"/>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
         <translation type="unfinished"></translation>
@@ -1129,7 +1129,7 @@
     </message>
     <message>
         <location filename="../ui/updatedialog.cpp" line="77"/>
-        <source>Data received from server is incorrect.</source>
+        <source>Failed to parse the received data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
