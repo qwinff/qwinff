@@ -381,7 +381,7 @@ void AddTaskWizard::load_settings()
     }
     ui->cbOutputPath->setCurrentIndex(0); // Select the most recent path.
 
-    bool output_to_src_dir = settings.value("addtaskwizard/output_to_src_dir",
+    bool output_to_src_dir = settings.value("options/output_to_src_dir",
                                             DEFAULT_OUTPUT_TO_SOURCE_DIR).toBool();
     ui->chkOutputToSourceDir->setChecked(output_to_src_dir);
 }
@@ -420,6 +420,6 @@ void AddTaskWizard::save_settings()
         recent_paths = recent_paths.mid(0, num_recent_paths);
     }
     settings.setValue("addtaskwizard/recentpaths", recent_paths);
-    settings.setValue("addtaskwizard/output_to_src_dir",
+    settings.setValue("options/output_to_src_dir",
                       ui->chkOutputToSourceDir->isChecked());
 }
