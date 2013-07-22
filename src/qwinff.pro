@@ -79,7 +79,6 @@ HEADERS  += \
     services/updatechecker.h \
     services/httpdownloader.h \
     services/updateinfoparser.h \
-    config.h \
     services/constants.h \
     services/xmllookuptable.h \
     ui/updatedialog.h
