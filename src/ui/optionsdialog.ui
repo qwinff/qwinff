@@ -32,13 +32,6 @@
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="chkOutputToSrcDir">
-         <property name="text">
-          <string>Output to &amp;source folder</string>
-         </property>
-        </widget>
-       </item>
-       <item>
         <spacer name="verticalSpacer">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -158,8 +151,8 @@
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>248</x>
-     <y>254</y>
+     <x>252</x>
+     <y>377</y>
     </hint>
     <hint type="destinationlabel">
      <x>157</x>
@@ -174,8 +167,8 @@
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>316</x>
-     <y>260</y>
+     <x>320</x>
+     <y>377</y>
     </hint>
     <hint type="destinationlabel">
      <x>286</x>
