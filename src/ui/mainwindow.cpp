@@ -323,13 +323,24 @@ void MainWindow::update_poweroff_button(int id)
 void MainWindow::received_update_result(int status)
 {
     if (status == UpdateChecker::UpdateFound) {
+        QSettings settings;
         SettingTimer timer("mainwindow/last_remind_update_time");
         const int seconds_per_day = 86400;
+        const QString prev_update_version =
+                settings.value("mainwindow/last_remind_update_version").toString();
+        const QString new_update_version = m_update_checker->versionName();
+        const bool timeout = !timer.isValid()
+                || timer.elapsedSeconds() > seconds_per_day;
+        const bool is_different_version =
+                new_update_version != prev_update_version;
+
         // Show update dialog only if the update dialog has not been shown
-        // for a certain period.
-        if (!timer.isValid() || timer.elapsedSeconds() > seconds_per_day) {
+        // for a certain period or the version is different.
+        if (timeout || is_different_version) {
             UpdateDialog(this).exec(*m_update_checker);
             timer.restart();
+            settings.setValue("mainwindow/last_remind_update_version",
+                              new_update_version);
         }
     }
 }
