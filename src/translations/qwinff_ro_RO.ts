@@ -189,88 +189,108 @@
         <translation>Setări de ieșire </translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="117"/>
+        <location filename="../ui/addtaskwizard.ui" line="171"/>
         <source>Convert to</source>
         <translation>Conversie în</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="134"/>
+        <location filename="../ui/addtaskwizard.ui" line="232"/>
+        <source>Create &amp;new folder in source folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="257"/>
+        <source>Folder Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="285"/>
+        <source>Output to &amp;source folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="154"/>
         <source>Preset</source>
         <translation>Presetate</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="151"/>
+        <location filename="../ui/addtaskwizard.ui" line="123"/>
         <source>Edit</source>
         <translation>Editare </translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="158"/>
+        <location filename="../ui/addtaskwizard.ui" line="182"/>
         <source>Output Path</source>
         <translation>Parcursul de Ieșire</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="165"/>
+        <location filename="../ui/addtaskwizard.ui" line="188"/>
+        <source>Select &amp;folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="223"/>
         <source>Browse</source>
         <translation>Caută</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="175"/>
+        <location filename="../ui/addtaskwizard.ui" line="144"/>
         <source>Auto adjust output bitrate to reduce output file size.</source>
         <translation>Ajustare automată bitrate de ieșire pentru a reduce dimensiunea fișierului rezultat.</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="178"/>
+        <location filename="../ui/addtaskwizard.ui" line="147"/>
         <source>Auto Adjust Audio Bitrate</source>
         <translation>Ajustare Automată  Bitrate Audio</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="127"/>
+        <location filename="../ui/addtaskwizard.cpp" line="146"/>
         <source>Please select at least one file.</source>
         <translation>Selectați cel puțin un fișier. </translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="140"/>
+        <location filename="../ui/addtaskwizard.cpp" line="472"/>
         <source>Folder does not exist. Create a new folder?</source>
         <translation>Folderul nu există. Crearea unui folder nou? </translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="149"/>
+        <location filename="../ui/addtaskwizard.cpp" line="483"/>
         <source>Failed to create folder. Please select another output folder.</source>
         <translation>Imposibilă creerea folderului.  Vă rugăm să selectați un alt folder de ieșire.</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="170"/>
+        <location filename="../ui/addtaskwizard.cpp" line="172"/>
         <source>Select Files</source>
         <extracomment>This text is the title of an openfile dialog.</extracomment>
         <translation>Selectați Fișiere </translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="172"/>
+        <location filename="../ui/addtaskwizard.cpp" line="174"/>
         <source>Multimedia</source>
         <translation>Multimedia </translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="173"/>
+        <location filename="../ui/addtaskwizard.cpp" line="175"/>
         <source>Video</source>
         <translation>Video </translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="174"/>
+        <location filename="../ui/addtaskwizard.cpp" line="176"/>
         <source>Audio</source>
         <translation>Audio </translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="175"/>
+        <location filename="../ui/addtaskwizard.cpp" line="177"/>
         <source>All files</source>
         <translation>Toate fișierele </translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="197"/>
+        <location filename="../ui/addtaskwizard.cpp" line="199"/>
         <source>Some files could not be found.</source>
         <translation>Unele fișiere nu au putut fi găsite.</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="242"/>
+        <location filename="../ui/addtaskwizard.cpp" line="244"/>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
         <translation>Selectați Directorul </translation>
@@ -915,63 +935,63 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="128"/>
+        <location filename="../ui/mainwindow.cpp" line="132"/>
         <source>All tasks has finished.</source>
         <translation>Toate sarcinile s-au terminat.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="167"/>
+        <location filename="../ui/mainwindow.cpp" line="171"/>
         <source>Nothing to convert.</source>
         <translation>Nimic de convertit.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="248"/>
+        <location filename="../ui/mainwindow.cpp" line="252"/>
         <source>Conversion is still in progress. Abort?</source>
         <translation>Conversia este încă în curs. Abandonați?</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="270"/>
+        <location filename="../ui/mainwindow.cpp" line="274"/>
         <source>Elapsed Time: %1 h %2 m %3 s</source>
         <translation>Timp scurs: %1 h %2 m %3 s</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="295"/>
-        <location filename="../ui/mainwindow.cpp" line="484"/>
+        <location filename="../ui/mainwindow.cpp" line="299"/>
+        <location filename="../ui/mainwindow.cpp" line="533"/>
         <source>Shutdown</source>
         <extracomment>Shutdown the computer (completely poweroff)</extracomment>
         <translation>Shutdown</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="296"/>
+        <location filename="../ui/mainwindow.cpp" line="300"/>
         <source>Shutdown when all tasks are done.</source>
         <translation>Shutdown atunci când toate sarcinile au fost finalizate.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="300"/>
-        <location filename="../ui/mainwindow.cpp" line="489"/>
+        <location filename="../ui/mainwindow.cpp" line="304"/>
+        <location filename="../ui/mainwindow.cpp" line="538"/>
         <source>Suspend</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
         <translation>Suspendare</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="301"/>
+        <location filename="../ui/mainwindow.cpp" line="305"/>
         <source>Suspend when all tasks are done.</source>
         <translation>Suspendare atunci când toate sarcinile au fost efectuate.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="305"/>
-        <location filename="../ui/mainwindow.cpp" line="494"/>
+        <location filename="../ui/mainwindow.cpp" line="309"/>
+        <location filename="../ui/mainwindow.cpp" line="543"/>
         <source>Hibernate</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
         <translation>Hibernare</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="306"/>
+        <location filename="../ui/mainwindow.cpp" line="310"/>
         <source>Hibernate when all tasks are done.</source>
         <translation>Hibernare când toate sarcinile sunt efectuate. </translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="613"/>
+        <location filename="../ui/mainwindow.cpp" line="660"/>
         <source>Failed to load preset file. The application will quit now.</source>
         <translation>Imposibilă încărcarea fișierului presetat. Aplicaţia se va închide acum.</translation>
     </message>

@@ -189,88 +189,108 @@
         <translation>出力設定</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="117"/>
+        <location filename="../ui/addtaskwizard.ui" line="171"/>
         <source>Convert to</source>
         <translation>変換形式</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="134"/>
+        <location filename="../ui/addtaskwizard.ui" line="232"/>
+        <source>Create &amp;new folder in source folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="257"/>
+        <source>Folder Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="285"/>
+        <source>Output to &amp;source folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="154"/>
         <source>Preset</source>
         <translation>プリセット</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="151"/>
+        <location filename="../ui/addtaskwizard.ui" line="123"/>
         <source>Edit</source>
         <translation>編集</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="158"/>
+        <location filename="../ui/addtaskwizard.ui" line="182"/>
         <source>Output Path</source>
         <translation>出力パス</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="165"/>
+        <location filename="../ui/addtaskwizard.ui" line="188"/>
+        <source>Select &amp;folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="223"/>
         <source>Browse</source>
         <translation>参照</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="175"/>
+        <location filename="../ui/addtaskwizard.ui" line="144"/>
         <source>Auto adjust output bitrate to reduce output file size.</source>
         <translation>出力ファイルサイズが軽減するように出力ビットレートを自動調整.</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="178"/>
+        <location filename="../ui/addtaskwizard.ui" line="147"/>
         <source>Auto Adjust Audio Bitrate</source>
         <translation>音声ビットレートを自動調整</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="127"/>
+        <location filename="../ui/addtaskwizard.cpp" line="146"/>
         <source>Please select at least one file.</source>
         <translation>ファイルを選択してください.</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="140"/>
+        <location filename="../ui/addtaskwizard.cpp" line="472"/>
         <source>Folder does not exist. Create a new folder?</source>
         <translation>フォルダが存在しません、新たに作成しますか?</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="149"/>
+        <location filename="../ui/addtaskwizard.cpp" line="483"/>
         <source>Failed to create folder. Please select another output folder.</source>
         <translation>フォルダ作成に失敗、別の出力フォルダを選択してください.</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="170"/>
+        <location filename="../ui/addtaskwizard.cpp" line="172"/>
         <source>Select Files</source>
         <extracomment>This text is the title of an openfile dialog.</extracomment>
         <translation>ファイルを選択</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="172"/>
+        <location filename="../ui/addtaskwizard.cpp" line="174"/>
         <source>Multimedia</source>
         <translation>マルチメディア</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="173"/>
+        <location filename="../ui/addtaskwizard.cpp" line="175"/>
         <source>Video</source>
         <translation>映像</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="174"/>
+        <location filename="../ui/addtaskwizard.cpp" line="176"/>
         <source>Audio</source>
         <translation>音声</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="175"/>
+        <location filename="../ui/addtaskwizard.cpp" line="177"/>
         <source>All files</source>
         <translation>すべてのファイル</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="197"/>
+        <location filename="../ui/addtaskwizard.cpp" line="199"/>
         <source>Some files could not be found.</source>
         <translation>いくつかのファイルが見つかりません.</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="242"/>
+        <location filename="../ui/addtaskwizard.cpp" line="244"/>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
         <translation>ディレクトリを選択</translation>
@@ -913,63 +933,63 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="128"/>
+        <location filename="../ui/mainwindow.cpp" line="132"/>
         <source>All tasks has finished.</source>
         <translation>すべてのタスクが完了しました.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="167"/>
+        <location filename="../ui/mainwindow.cpp" line="171"/>
         <source>Nothing to convert.</source>
         <translation>変換されていません.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="248"/>
+        <location filename="../ui/mainwindow.cpp" line="252"/>
         <source>Conversion is still in progress. Abort?</source>
         <translation>変換処理を実行中です、中断しますか?</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="270"/>
+        <location filename="../ui/mainwindow.cpp" line="274"/>
         <source>Elapsed Time: %1 h %2 m %3 s</source>
         <translation>経過時間: %1 時 %2 分 %3 秒</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="295"/>
-        <location filename="../ui/mainwindow.cpp" line="484"/>
+        <location filename="../ui/mainwindow.cpp" line="299"/>
+        <location filename="../ui/mainwindow.cpp" line="533"/>
         <source>Shutdown</source>
         <extracomment>Shutdown the computer (completely poweroff)</extracomment>
         <translation>シャットダウン</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="296"/>
+        <location filename="../ui/mainwindow.cpp" line="300"/>
         <source>Shutdown when all tasks are done.</source>
         <translation>全タスク完了後にシャットダウン.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="300"/>
-        <location filename="../ui/mainwindow.cpp" line="489"/>
+        <location filename="../ui/mainwindow.cpp" line="304"/>
+        <location filename="../ui/mainwindow.cpp" line="538"/>
         <source>Suspend</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
         <translation>サスペンド</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="301"/>
+        <location filename="../ui/mainwindow.cpp" line="305"/>
         <source>Suspend when all tasks are done.</source>
         <translation>全タスク完了後にスリープ.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="305"/>
-        <location filename="../ui/mainwindow.cpp" line="494"/>
+        <location filename="../ui/mainwindow.cpp" line="309"/>
+        <location filename="../ui/mainwindow.cpp" line="543"/>
         <source>Hibernate</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
         <translation>休止状態</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="306"/>
+        <location filename="../ui/mainwindow.cpp" line="310"/>
         <source>Hibernate when all tasks are done.</source>
         <translation>全タスク完了後に休止状態.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="613"/>
+        <location filename="../ui/mainwindow.cpp" line="660"/>
         <source>Failed to load preset file. The application will quit now.</source>
         <translation>プリセットの読み込みに失敗、アプリケーションを終了します.</translation>
     </message>

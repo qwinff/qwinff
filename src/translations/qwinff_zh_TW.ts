@@ -189,88 +189,108 @@
         <translation>輸出設定</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="117"/>
+        <location filename="../ui/addtaskwizard.ui" line="171"/>
         <source>Convert to</source>
         <translation>轉換成</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="134"/>
+        <location filename="../ui/addtaskwizard.ui" line="232"/>
+        <source>Create &amp;new folder in source folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="257"/>
+        <source>Folder Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="285"/>
+        <source>Output to &amp;source folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="154"/>
         <source>Preset</source>
         <translation>設定檔</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="151"/>
+        <location filename="../ui/addtaskwizard.ui" line="123"/>
         <source>Edit</source>
         <translation>編輯</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="158"/>
+        <location filename="../ui/addtaskwizard.ui" line="182"/>
         <source>Output Path</source>
         <translation>輸出資料夾</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="165"/>
+        <location filename="../ui/addtaskwizard.ui" line="188"/>
+        <source>Select &amp;folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="223"/>
         <source>Browse</source>
         <translation>瀏覽</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="175"/>
+        <location filename="../ui/addtaskwizard.ui" line="144"/>
         <source>Auto adjust output bitrate to reduce output file size.</source>
         <translation>自動調整輸出位元率以減少輸出檔案大小</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="178"/>
+        <location filename="../ui/addtaskwizard.ui" line="147"/>
         <source>Auto Adjust Audio Bitrate</source>
         <translation>自動調整聲音位元率</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="127"/>
+        <location filename="../ui/addtaskwizard.cpp" line="146"/>
         <source>Please select at least one file.</source>
         <translation>請至少選擇一個檔案</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="140"/>
+        <location filename="../ui/addtaskwizard.cpp" line="472"/>
         <source>Folder does not exist. Create a new folder?</source>
         <translation>資料夾不存在。要建立新的資料夾嗎？</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="149"/>
+        <location filename="../ui/addtaskwizard.cpp" line="483"/>
         <source>Failed to create folder. Please select another output folder.</source>
         <translation>建立資料夾失敗。請選擇另一個輸出資料夾。</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="170"/>
+        <location filename="../ui/addtaskwizard.cpp" line="172"/>
         <source>Select Files</source>
         <extracomment>This text is the title of an openfile dialog.</extracomment>
         <translation>選擇檔案</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="172"/>
+        <location filename="../ui/addtaskwizard.cpp" line="174"/>
         <source>Multimedia</source>
         <translation>多媒體</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="173"/>
+        <location filename="../ui/addtaskwizard.cpp" line="175"/>
         <source>Video</source>
         <translation>影片</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="174"/>
+        <location filename="../ui/addtaskwizard.cpp" line="176"/>
         <source>Audio</source>
         <translation>聲音</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="175"/>
+        <location filename="../ui/addtaskwizard.cpp" line="177"/>
         <source>All files</source>
         <translation>所有檔案</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="197"/>
+        <location filename="../ui/addtaskwizard.cpp" line="199"/>
         <source>Some files could not be found.</source>
         <translation>無法找到其中的一些檔案</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="242"/>
+        <location filename="../ui/addtaskwizard.cpp" line="244"/>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
         <translation>選擇資料夾</translation>
@@ -913,63 +933,63 @@
         <translation>檢查更新(&amp;U)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="128"/>
+        <location filename="../ui/mainwindow.cpp" line="132"/>
         <source>All tasks has finished.</source>
         <translation>所有的檔案都已轉換完成</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="167"/>
+        <location filename="../ui/mainwindow.cpp" line="171"/>
         <source>Nothing to convert.</source>
         <translation>沒有要轉換的檔案</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="248"/>
+        <location filename="../ui/mainwindow.cpp" line="252"/>
         <source>Conversion is still in progress. Abort?</source>
         <translation>檔案還在轉換中。確定要離開嗎？</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="270"/>
+        <location filename="../ui/mainwindow.cpp" line="274"/>
         <source>Elapsed Time: %1 h %2 m %3 s</source>
         <translation>經過時間: %1 時 %2 分 %3 秒</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="295"/>
-        <location filename="../ui/mainwindow.cpp" line="484"/>
+        <location filename="../ui/mainwindow.cpp" line="299"/>
+        <location filename="../ui/mainwindow.cpp" line="533"/>
         <source>Shutdown</source>
         <extracomment>Shutdown the computer (completely poweroff)</extracomment>
         <translation>關機</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="296"/>
+        <location filename="../ui/mainwindow.cpp" line="300"/>
         <source>Shutdown when all tasks are done.</source>
         <translation>所有任務結束後關機</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="300"/>
-        <location filename="../ui/mainwindow.cpp" line="489"/>
+        <location filename="../ui/mainwindow.cpp" line="304"/>
+        <location filename="../ui/mainwindow.cpp" line="538"/>
         <source>Suspend</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
         <translation>待機</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="301"/>
+        <location filename="../ui/mainwindow.cpp" line="305"/>
         <source>Suspend when all tasks are done.</source>
         <translation>所有任務結束後待機</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="305"/>
-        <location filename="../ui/mainwindow.cpp" line="494"/>
+        <location filename="../ui/mainwindow.cpp" line="309"/>
+        <location filename="../ui/mainwindow.cpp" line="543"/>
         <source>Hibernate</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
         <translation>休眠</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="306"/>
+        <location filename="../ui/mainwindow.cpp" line="310"/>
         <source>Hibernate when all tasks are done.</source>
         <translation>所有任務結束後休眠</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="613"/>
+        <location filename="../ui/mainwindow.cpp" line="660"/>
         <source>Failed to load preset file. The application will quit now.</source>
         <translation>無法載入設定檔，程式將立刻結束。</translation>
     </message>

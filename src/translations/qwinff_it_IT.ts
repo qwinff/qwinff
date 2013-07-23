@@ -189,88 +189,108 @@
         <translation>Impostazioni Output</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="117"/>
+        <location filename="../ui/addtaskwizard.ui" line="171"/>
         <source>Convert to</source>
         <translation>Converti in</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="134"/>
+        <location filename="../ui/addtaskwizard.ui" line="232"/>
+        <source>Create &amp;new folder in source folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="257"/>
+        <source>Folder Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="285"/>
+        <source>Output to &amp;source folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="154"/>
         <source>Preset</source>
         <translation>Preimpostazioni</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="151"/>
+        <location filename="../ui/addtaskwizard.ui" line="123"/>
         <source>Edit</source>
         <translation>Modifica</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="158"/>
+        <location filename="../ui/addtaskwizard.ui" line="182"/>
         <source>Output Path</source>
         <translation>Path di Output</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="165"/>
+        <location filename="../ui/addtaskwizard.ui" line="188"/>
+        <source>Select &amp;folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="223"/>
         <source>Browse</source>
         <translation>Sfoglia</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="175"/>
+        <location filename="../ui/addtaskwizard.ui" line="144"/>
         <source>Auto adjust output bitrate to reduce output file size.</source>
         <translation>Regola automaticamente il bitrate per ridurre le dimensioni finali.</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="178"/>
+        <location filename="../ui/addtaskwizard.ui" line="147"/>
         <source>Auto Adjust Audio Bitrate</source>
         <translation>Regola automaticamente il Bitrate</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="127"/>
+        <location filename="../ui/addtaskwizard.cpp" line="146"/>
         <source>Please select at least one file.</source>
         <translation>Seleziona almeno un file.</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="140"/>
+        <location filename="../ui/addtaskwizard.cpp" line="472"/>
         <source>Folder does not exist. Create a new folder?</source>
         <translation>La cartella non esiste. Vuoi crearne una nuova?</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="149"/>
+        <location filename="../ui/addtaskwizard.cpp" line="483"/>
         <source>Failed to create folder. Please select another output folder.</source>
         <translation>Errore creazione cartella. Seleziona un&apos;altra cartella di destinazione.</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="170"/>
+        <location filename="../ui/addtaskwizard.cpp" line="172"/>
         <source>Select Files</source>
         <extracomment>This text is the title of an openfile dialog.</extracomment>
         <translation>Seleziona i File</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="172"/>
+        <location filename="../ui/addtaskwizard.cpp" line="174"/>
         <source>Multimedia</source>
         <translation>Multimedia</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="173"/>
+        <location filename="../ui/addtaskwizard.cpp" line="175"/>
         <source>Video</source>
         <translation>Video</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="174"/>
+        <location filename="../ui/addtaskwizard.cpp" line="176"/>
         <source>Audio</source>
         <translation>Audio</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="175"/>
+        <location filename="../ui/addtaskwizard.cpp" line="177"/>
         <source>All files</source>
         <translation>Tutti i file</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="197"/>
+        <location filename="../ui/addtaskwizard.cpp" line="199"/>
         <source>Some files could not be found.</source>
         <translation>Alcuni file non possono essere trovati.</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="242"/>
+        <location filename="../ui/addtaskwizard.cpp" line="244"/>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
         <translation>Seleziona Directory</translation>
@@ -915,63 +935,63 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="128"/>
+        <location filename="../ui/mainwindow.cpp" line="132"/>
         <source>All tasks has finished.</source>
         <translation>Tutti i processi sono completati.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="167"/>
+        <location filename="../ui/mainwindow.cpp" line="171"/>
         <source>Nothing to convert.</source>
         <translation>Niente da convertire.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="248"/>
+        <location filename="../ui/mainwindow.cpp" line="252"/>
         <source>Conversion is still in progress. Abort?</source>
         <translation>La conversione è ancora in corso. Arresto la conversione?</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="270"/>
+        <location filename="../ui/mainwindow.cpp" line="274"/>
         <source>Elapsed Time: %1 h %2 m %3 s</source>
         <translation>Tempo stimato: %1 h %2 m %3 s</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="295"/>
-        <location filename="../ui/mainwindow.cpp" line="484"/>
+        <location filename="../ui/mainwindow.cpp" line="299"/>
+        <location filename="../ui/mainwindow.cpp" line="533"/>
         <source>Shutdown</source>
         <extracomment>Shutdown the computer (completely poweroff)</extracomment>
         <translation>Spegni</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="296"/>
+        <location filename="../ui/mainwindow.cpp" line="300"/>
         <source>Shutdown when all tasks are done.</source>
         <translation>Spegni quando tutti i lavori sono completati.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="300"/>
-        <location filename="../ui/mainwindow.cpp" line="489"/>
+        <location filename="../ui/mainwindow.cpp" line="304"/>
+        <location filename="../ui/mainwindow.cpp" line="538"/>
         <source>Suspend</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
         <translation>Sospendi</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="301"/>
+        <location filename="../ui/mainwindow.cpp" line="305"/>
         <source>Suspend when all tasks are done.</source>
         <translation>Sospendi quando tutti i lavori sono completati.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="305"/>
-        <location filename="../ui/mainwindow.cpp" line="494"/>
+        <location filename="../ui/mainwindow.cpp" line="309"/>
+        <location filename="../ui/mainwindow.cpp" line="543"/>
         <source>Hibernate</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
         <translation>Iberna</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="306"/>
+        <location filename="../ui/mainwindow.cpp" line="310"/>
         <source>Hibernate when all tasks are done.</source>
         <translation>Iberna quando tutti i lavori sono completati.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="613"/>
+        <location filename="../ui/mainwindow.cpp" line="660"/>
         <source>Failed to load preset file. The application will quit now.</source>
         <translation>Caricamento file predefinito fallito. L&apos;applicazione ora si chiuderà.</translation>
     </message>
