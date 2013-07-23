@@ -43,7 +43,8 @@ SOURCES += main.cpp \
     services/updateinfoparser.cpp \
     services/constants.cpp \
     services/xmllookuptable.cpp \
-    ui/updatedialog.cpp
+    ui/updatedialog.cpp \
+    services/settingtimer.cpp
 
 HEADERS  += \
     ui/progressbar.h \
@@ -81,7 +82,8 @@ HEADERS  += \
     services/updateinfoparser.h \
     services/constants.h \
     services/xmllookuptable.h \
-    ui/updatedialog.h
+    ui/updatedialog.h \
+    services/settingtimer.h
 
 FORMS    += \
     ui/conversionparameterdialog.ui \
