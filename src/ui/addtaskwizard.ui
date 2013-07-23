@@ -113,8 +113,18 @@
        <layout class="QGridLayout" name="gridLayout">
         <item row="1" column="2">
          <widget class="QPushButton" name="btnEditPreset">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
            <string>Edit</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../images.qrc">
+            <normaloff>:/actions/icons/edit_preset.png</normaloff>:/actions/icons/edit_preset.png</iconset>
           </property>
          </widget>
         </item>

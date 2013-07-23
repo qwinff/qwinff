@@ -19,6 +19,7 @@
         <file>icons/system_hibernate.png</file>
         <file>icons/preview_play.png</file>
         <file>icons/check_update.png</file>
+        <file>icons/edit_preset.png</file>
     </qresource>
     <qresource prefix="/app">
         <file>icons/qt.png</file>
