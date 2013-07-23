@@ -29,6 +29,7 @@
 #include "converter/presets.h"
 #include "services/updatechecker.h"
 #include "services/constants.h"
+#include "services/settingtimer.h"
 #include <QHBoxLayout>
 #include <QToolButton>
 #include <QMessageBox>
@@ -322,7 +323,14 @@ void MainWindow::update_poweroff_button(int id)
 void MainWindow::received_update_result(int status)
 {
     if (status == UpdateChecker::UpdateFound) {
-        UpdateDialog(this).exec(*m_update_checker);
+        SettingTimer timer("mainwindow/last_remind_update_time");
+        const int seconds_per_day = 86400;
+        // Show update dialog only if the update dialog has not been shown
+        // for a certain period.
+        if (!timer.isValid() || timer.elapsedSeconds() > seconds_per_day) {
+            UpdateDialog(this).exec(*m_update_checker);
+            timer.restart();
+        }
     }
 }
 
