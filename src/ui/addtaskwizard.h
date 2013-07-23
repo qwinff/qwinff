@@ -74,6 +74,9 @@ private:
     bool load_extensions();
     void load_settings();
     void save_settings();
+    void set_output_path_type(int n);
+    int get_output_path_type();
+    QString get_output_path(const QString& input_filename);
 };
 
 #endif // ADDTASKWIZARD_H

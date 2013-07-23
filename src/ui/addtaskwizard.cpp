@@ -33,6 +33,13 @@
 #define PAGEID_SELECTFILES 0
 #define PAGEID_PARAMS 1
 
+enum OutputPathType
+{
+    SelectFolder,
+    NewFolder,
+    SourceFolder
+};
+
 AddTaskWizard::AddTaskWizard(Presets *presets, QWidget *parent) :
     QWizard(parent),
     ui(new Ui::AddTaskWizard),
@@ -57,11 +64,15 @@ AddTaskWizard::AddTaskWizard(Presets *presets, QWidget *parent) :
     connect(this, SIGNAL(accepted())
             , this, SLOT(slotFinished()));
 
-    // disable output path settings if "output to source folder" is checked
-    connect(ui->chkOutputToSourceDir, SIGNAL(toggled(bool))
-            , ui->cbOutputPath, SLOT(setDisabled(bool)));
-    connect(ui->chkOutputToSourceDir, SIGNAL(toggled(bool))
-            , ui->btnBrowseOutputPath, SLOT(setDisabled(bool)));
+    connect(ui->rbSelectFolder, SIGNAL(toggled(bool))
+            , ui->cbOutputPath, SLOT(setEnabled(bool)));
+    connect(ui->rbSelectFolder, SIGNAL(toggled(bool))
+            , ui->btnBrowseOutputPath, SLOT(setEnabled(bool)));
+    connect(ui->rbNewFolder, SIGNAL(toggled(bool))
+            , ui->txtNewFolderName, SLOT(setEnabled(bool)));
+    ui->rbSelectFolder->setChecked(true); // trigger toggled() event
+    ui->rbNewFolder->setChecked(true); // trigger toggled() event
+    ui->rbSourceFolder->setChecked(true); // trigger toggled() event
 
     ui->lstFiles->setSelectionMode(QAbstractItemView::ExtendedSelection);
 
@@ -137,34 +148,6 @@ bool AddTaskWizard::validateCurrentPage()
         }
         break;
     case 1: // Select conversion parameters
-        // check if output directory exists
-        QDir output_dir(ui->cbOutputPath->currentText());
-        if (output_dir.exists()) {
-            return true;
-        } else { // The folder doesn't exist.
-            // Prompt the user to create new folder.
-            QMessageBox::StandardButton reply =
-                    QMessageBox::warning(this, this->windowTitle()
-                                 , tr("Folder does not exist. Create a new folder?")
-                                 , QMessageBox::Yes | QMessageBox::No);
-
-            if (reply == QMessageBox::Yes) {
-                // The user chooses to create folder.
-                qDebug() << "Try to create folder " << output_dir.path();
-                bool succeed = QDir().mkpath(output_dir.path());
-                if (!succeed) { // failed to create folder
-                    QMessageBox::critical(this, this->windowTitle()
-                                          , tr("Failed to create folder. "
-                                               "Please select another output folder.")
-                                          , QMessageBox::Ok);
-                }
-                return succeed;
-            }
-            else {
-                return false;
-            }
-
-        }
         return true;
         break;
     }
@@ -300,7 +283,6 @@ void AddTaskWizard::slotFinished()
 
     // The variable "param" is reused in the loop.
     ConversionParameters param(*m_current_param);
-    const bool output_to_src_dir = ui->chkOutputToSourceDir->isChecked();
     const int ext_index = ui->cbExtension->currentIndex();
     const QString ext = ui->cbExtension->itemData(ext_index).toString();
 
@@ -308,12 +290,7 @@ void AddTaskWizard::slotFinished()
     for (int i=0; i<size; i++) {
         QString input_filename = ui->lstFiles->item(i)->text();
         QString input_file_basename = QFileInfo(input_filename).completeBaseName();
-
-        QDir output_dir(ui->cbOutputPath->currentText());
-        if (output_to_src_dir) { // output to source folder
-            QString containing_directory = QFileInfo(input_filename).absolutePath();
-            output_dir = QDir(containing_directory);
-        }
+        QDir output_dir(get_output_path(input_filename));
 
         // Fill in input and output filenames
         // IMPORTANT: Only "source" and "destination" should be modified in the loop.
@@ -381,9 +358,8 @@ void AddTaskWizard::load_settings()
     }
     ui->cbOutputPath->setCurrentIndex(0); // Select the most recent path.
 
-    bool output_to_src_dir = settings.value("options/output_to_src_dir",
-                                            DEFAULT_OUTPUT_TO_SOURCE_DIR).toBool();
-    ui->chkOutputToSourceDir->setChecked(output_to_src_dir);
+    const int output_path_type = settings.value("addtaskwizard/output_path_type").toInt();
+    set_output_path_type(output_path_type);
 }
 
 void AddTaskWizard::save_settings()
@@ -420,6 +396,47 @@ void AddTaskWizard::save_settings()
         recent_paths = recent_paths.mid(0, num_recent_paths);
     }
     settings.setValue("addtaskwizard/recentpaths", recent_paths);
-    settings.setValue("options/output_to_src_dir",
-                      ui->chkOutputToSourceDir->isChecked());
+    settings.setValue("addtaskwizard/output_path_type", get_output_path_type());
+}
+
+void AddTaskWizard::set_output_path_type(int n)
+{
+    switch (n)
+    {
+    case SelectFolder:
+        ui->rbSelectFolder->setChecked(true); break;
+    case NewFolder:
+        ui->rbNewFolder->setChecked(true); break;
+    case SourceFolder:
+        ui->rbSourceFolder->setChecked(true); break;
+    default:
+        Q_ASSERT(false);
+    }
+}
+
+int AddTaskWizard::get_output_path_type()
+{
+    if (ui->rbNewFolder->isChecked())
+        return NewFolder;
+    if (ui->rbSourceFolder->isChecked())
+        return SourceFolder;
+    else
+        return SelectFolder;
+}
+
+QString AddTaskWizard::get_output_path(const QString &input_filename)
+{
+    QString input_folder_name(QFileInfo(input_filename).absolutePath());
+    QDir input_folder(input_folder_name);
+    switch (get_output_path_type()) {
+    case SelectFolder:
+        return ui->cbOutputPath->currentText();
+    case NewFolder:
+        return input_folder.absoluteFilePath(ui->txtNewFolderName->text());
+    case SourceFolder:
+        return input_folder.absoluteFilePath(input_folder_name);
+    default:
+        Q_ASSERT(false);
+    }
+    return "";
 }
