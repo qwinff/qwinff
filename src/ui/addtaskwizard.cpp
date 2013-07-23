@@ -371,6 +371,11 @@ void AddTaskWizard::load_settings()
 
     const int output_path_type = settings.value("addtaskwizard/output_path_type").toInt();
     set_output_path_type(output_path_type);
+
+    const QString new_folder_name = settings.value(
+                "addtaskwizard/new_folder_name",
+                Constants::getString("NewFolderName")).toString();
+    ui->txtNewFolderName->setText(new_folder_name);
 }
 
 void AddTaskWizard::save_settings()
@@ -408,6 +413,7 @@ void AddTaskWizard::save_settings()
     }
     settings.setValue("addtaskwizard/recentpaths", recent_paths);
     settings.setValue("addtaskwizard/output_path_type", get_output_path_type());
+    settings.setValue("addtaskwizard/new_folder_name", ui->txtNewFolderName->text());
 }
 
 void AddTaskWizard::set_output_path_type(int n)

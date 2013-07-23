@@ -30,9 +30,8 @@
        This value will be overridden by user settings. -->
   <CheckUpdateOnStartup type="boolean">true</CheckUpdateOnStartup>
 
-  <!-- Whether to output to source folder by default.
-       This value will be overridden by user settings. -->
-  <OutputToSourceFolder type="boolean">false</OutputToSourceFolder>
+  <!-- default folder name to create when setting output path -->
+  <NewFolderName>qwinff_output</NewFolderName>
 
   <!-- seconds to wait before shutting down or suspending the computer -->
   <PoweroffTimeout type="integer">30</PoweroffTimeout>
