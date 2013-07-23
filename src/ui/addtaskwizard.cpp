@@ -148,6 +148,17 @@ bool AddTaskWizard::validateCurrentPage()
         }
         break;
     case 1: // Select conversion parameters
+        if (get_output_path_type() == SelectFolder) {
+            if (!create_directory(ui->cbOutputPath->currentText()))
+                return false;
+        } else if (get_output_path_type() == NewFolder) {
+            for (int i=0; i<ui->lstFiles->count(); i++) {
+                QString input_file = ui->lstFiles->item(i)->text();
+                QString output_path = get_output_path(input_file);
+                if (!create_directory(output_path, /* do not confirm */ false))
+                    return false;
+            }
+        }
         return true;
         break;
     }
@@ -439,4 +450,37 @@ QString AddTaskWizard::get_output_path(const QString &input_filename)
         Q_ASSERT(false);
     }
     return "";
+}
+
+bool AddTaskWizard::create_directory(const QString &dir, bool confirm)
+{
+    // check if output directory exists
+    QDir output_dir(dir);
+    if (output_dir.exists()) {
+        return true;
+    } else { // The folder doesn't exist.
+        // Prompt the user to create new folder.
+        QMessageBox::StandardButton reply;
+        if (confirm)
+            reply = QMessageBox::warning(this, this->windowTitle()
+                             , tr("Folder does not exist. Create a new folder?")
+                             , QMessageBox::Yes | QMessageBox::No);
+        else
+            reply = QMessageBox::Yes;
+
+        if (reply == QMessageBox::Yes) {
+            // The user chooses to create folder.
+            qDebug() << "Try to create folder " << output_dir.path();
+            bool succeed = QDir().mkpath(output_dir.path());
+            if (!succeed) { // failed to create folder
+                QMessageBox::critical(this, this->windowTitle()
+                                      , tr("Failed to create folder. "
+                                           "Please select another output folder.")
+                                      , QMessageBox::Ok);
+            }
+            return succeed;
+        } else {
+            return false;
+        }
+    }
 }

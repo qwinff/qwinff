@@ -77,6 +77,7 @@ private:
     void set_output_path_type(int n);
     int get_output_path_type();
     QString get_output_path(const QString& input_filename);
+    bool create_directory(const QString& dir, bool confirm=true);
 };
 
 #endif // ADDTASKWIZARD_H
