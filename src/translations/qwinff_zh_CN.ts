@@ -805,7 +805,7 @@
     <message>
         <location filename="../ui/mainwindow.ui" line="178"/>
         <source>Open output folder of the selected file.</source>
-        <translation type="unfinished"></translation>
+        <translation>开启已选文件的输出文件夹。</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="187"/>
