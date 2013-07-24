@@ -34,6 +34,7 @@
 
 class ExtraTranslations : QObject
 {
+    Q_OBJECT
 private:
     ExtraTranslations()
     {

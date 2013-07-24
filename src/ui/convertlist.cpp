@@ -1067,8 +1067,8 @@ void ConvertList::refresh_progressbar(Task *task)
         prog->setActive(true);
         break;
     case Task::FINISHED:
-        /*: The text to be displayed on the progress bar when a conversion finishes */
         prog->setValue(100);
+        /*: The text to be displayed on the progress bar when a conversion finishes */
         prog->showText(tr("Finished"));
         prog->setToolTip(tr("Finished"));
         prog->setActive(false);
