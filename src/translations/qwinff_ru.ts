@@ -125,6 +125,18 @@
         <extracomment>Romanian Language</extracomment>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../ui/aboutdialog.cpp" line="137"/>
+        <source>Turkish</source>
+        <extracomment>Turkish Language</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/aboutdialog.cpp" line="140"/>
+        <source>Arabic</source>
+        <extracomment>Arabic Language</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutFFmpegDialog</name>
@@ -189,9 +201,44 @@
         <translation>Настройки вывода</translation>
     </message>
     <message>
+        <location filename="../ui/addtaskwizard.ui" line="123"/>
+        <source>Edit</source>
+        <translation>Правка</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="144"/>
+        <source>Auto adjust output bitrate to reduce output file size.</source>
+        <translation>Автоматически подстроить битрейт для уменьшения размера итогового файла.</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="147"/>
+        <source>Auto Adjust Audio Bitrate</source>
+        <translation>Автоматически подстроить битрейт звука</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="154"/>
+        <source>Preset</source>
+        <translation>Предустановки</translation>
+    </message>
+    <message>
         <location filename="../ui/addtaskwizard.ui" line="171"/>
         <source>Convert to</source>
         <translation>Преобразовать в</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="182"/>
+        <source>Output Path</source>
+        <translation>Путь вывода</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="188"/>
+        <source>Select &amp;folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="223"/>
+        <source>Browse</source>
+        <translation>Обзор</translation>
     </message>
     <message>
         <location filename="../ui/addtaskwizard.ui" line="232"/>
@@ -211,91 +258,56 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="154"/>
-        <source>Preset</source>
-        <translation>Предустановки</translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="123"/>
-        <source>Edit</source>
-        <translation>Правка</translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="182"/>
-        <source>Output Path</source>
-        <translation>Путь вывода</translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="188"/>
-        <source>Select &amp;folder</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="223"/>
-        <source>Browse</source>
-        <translation>Обзор</translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="144"/>
-        <source>Auto adjust output bitrate to reduce output file size.</source>
-        <translation>Автоматически подстроить битрейт для уменьшения размера итогового файла.</translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="147"/>
-        <source>Auto Adjust Audio Bitrate</source>
-        <translation>Автоматически подстроить битрейт звука</translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.cpp" line="146"/>
+        <location filename="../ui/addtaskwizard.cpp" line="145"/>
         <source>Please select at least one file.</source>
         <translation>Нужно выбрать хотя бы один файл.</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="472"/>
-        <source>Folder does not exist. Create a new folder?</source>
-        <translation>Папка не существует. Создать новую папку?</translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.cpp" line="483"/>
-        <source>Failed to create folder. Please select another output folder.</source>
-        <translation>Не удалось создать папку. Укажите другую папку.</translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.cpp" line="172"/>
+        <location filename="../ui/addtaskwizard.cpp" line="171"/>
         <source>Select Files</source>
         <extracomment>This text is the title of an openfile dialog.</extracomment>
         <translation>Выбрать файлы</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="174"/>
+        <location filename="../ui/addtaskwizard.cpp" line="173"/>
         <source>Multimedia</source>
         <translation>Мультимедиа</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="175"/>
+        <location filename="../ui/addtaskwizard.cpp" line="174"/>
         <source>Video</source>
         <translation>Видео</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="176"/>
+        <location filename="../ui/addtaskwizard.cpp" line="175"/>
         <source>Audio</source>
         <translation>Аудио</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="177"/>
+        <location filename="../ui/addtaskwizard.cpp" line="176"/>
         <source>All files</source>
         <translation>Все файлы</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="199"/>
+        <location filename="../ui/addtaskwizard.cpp" line="198"/>
         <source>Some files could not be found.</source>
         <translation>Некоторые файлы не найдены.</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="244"/>
+        <location filename="../ui/addtaskwizard.cpp" line="243"/>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
         <translation>Выбрать каталог</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.cpp" line="471"/>
+        <source>Folder does not exist. Create a new folder?</source>
+        <translation>Папка не существует. Создать новую папку?</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.cpp" line="482"/>
+        <source>Failed to create folder. Please select another output folder.</source>
+        <translation>Не удалось создать папку. Укажите другую папку.</translation>
     </message>
 </context>
 <context>
@@ -668,6 +680,7 @@
         <location filename="../ui/convertlist.cpp" line="1072"/>
         <location filename="../ui/convertlist.cpp" line="1073"/>
         <source>Finished</source>
+        <extracomment>The text to be displayed on the progress bar when a conversion finishes</extracomment>
         <translation>Завершено</translation>
     </message>
     <message>
@@ -686,12 +699,12 @@
 <context>
     <name>ExtraTranslations</name>
     <message>
-        <location filename="../extra-translations.h" line="40"/>
+        <location filename="../extra-translations.h" line="41"/>
         <source>Convert between media file formats</source>
         <translation>Преобразование между медиа-форматами</translation>
     </message>
     <message>
-        <location filename="../extra-translations.h" line="41"/>
+        <location filename="../extra-translations.h" line="42"/>
         <source>Media Converter</source>
         <translation>Медиа-конвертер</translation>
     </message>

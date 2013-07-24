@@ -125,6 +125,18 @@
         <extracomment>Romanian Language</extracomment>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../ui/aboutdialog.cpp" line="137"/>
+        <source>Turkish</source>
+        <extracomment>Turkish Language</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/aboutdialog.cpp" line="140"/>
+        <source>Arabic</source>
+        <extracomment>Arabic Language</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutFFmpegDialog</name>
@@ -246,53 +258,53 @@
         <translation>Auto ajustar el bitrate del audio</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="146"/>
+        <location filename="../ui/addtaskwizard.cpp" line="145"/>
         <source>Please select at least one file.</source>
         <translation>Por favor seleccione al menos un archivo.</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="472"/>
+        <location filename="../ui/addtaskwizard.cpp" line="471"/>
         <source>Folder does not exist. Create a new folder?</source>
         <translation>EL folder no existe. ¿Crear un nuevo folder?</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="483"/>
+        <location filename="../ui/addtaskwizard.cpp" line="482"/>
         <source>Failed to create folder. Please select another output folder.</source>
         <translation>Fallo al crear el folder. Por favor seleccione otro folder de salida.</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="172"/>
+        <location filename="../ui/addtaskwizard.cpp" line="171"/>
         <source>Select Files</source>
         <extracomment>This text is the title of an openfile dialog.</extracomment>
         <translation>Seleccione archivos</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="174"/>
+        <location filename="../ui/addtaskwizard.cpp" line="173"/>
         <source>Multimedia</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="175"/>
+        <location filename="../ui/addtaskwizard.cpp" line="174"/>
         <source>Video</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="176"/>
+        <location filename="../ui/addtaskwizard.cpp" line="175"/>
         <source>Audio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="177"/>
+        <location filename="../ui/addtaskwizard.cpp" line="176"/>
         <source>All files</source>
         <translation>Todos los archivos</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="199"/>
+        <location filename="../ui/addtaskwizard.cpp" line="198"/>
         <source>Some files could not be found.</source>
         <translation>Algunos archivos no puedieron ser encontrados.</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="244"/>
+        <location filename="../ui/addtaskwizard.cpp" line="243"/>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
         <translation>Seleccione un directorio</translation>
@@ -541,6 +553,7 @@
         <location filename="../ui/convertlist.cpp" line="1072"/>
         <location filename="../ui/convertlist.cpp" line="1073"/>
         <source>Finished</source>
+        <extracomment>The text to be displayed on the progress bar when a conversion finishes</extracomment>
         <translation>Terminado</translation>
     </message>
     <message>
@@ -684,12 +697,12 @@
 <context>
     <name>ExtraTranslations</name>
     <message>
-        <location filename="../extra-translations.h" line="40"/>
+        <location filename="../extra-translations.h" line="41"/>
         <source>Convert between media file formats</source>
         <translation>Convertir entre formados de archivos</translation>
     </message>
     <message>
-        <location filename="../extra-translations.h" line="41"/>
+        <location filename="../extra-translations.h" line="42"/>
         <source>Media Converter</source>
         <translation>Convertidor de Medios</translation>
     </message>

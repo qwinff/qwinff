@@ -125,6 +125,18 @@
         <extracomment>Romanian Language</extracomment>
         <translation>ルーマニア語</translation>
     </message>
+    <message>
+        <location filename="../ui/aboutdialog.cpp" line="137"/>
+        <source>Turkish</source>
+        <extracomment>Turkish Language</extracomment>
+        <translation>トルコ語</translation>
+    </message>
+    <message>
+        <location filename="../ui/aboutdialog.cpp" line="140"/>
+        <source>Arabic</source>
+        <extracomment>Arabic Language</extracomment>
+        <translation>アラビア語</translation>
+    </message>
 </context>
 <context>
     <name>AboutFFmpegDialog</name>
@@ -189,51 +201,9 @@
         <translation>出力設定</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="171"/>
-        <source>Convert to</source>
-        <translation>変換形式</translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="232"/>
-        <source>Create &amp;new folder in source folder</source>
-        <extracomment>Create a new folder (e.g. qwinff_output) in the folder containing the input files. Put the output files in the newly created folder.</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="257"/>
-        <source>Folder Name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="285"/>
-        <source>Output to &amp;source folder</source>
-        <extracomment>put the output files in the same folder as the input files</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="154"/>
-        <source>Preset</source>
-        <translation>プリセット</translation>
-    </message>
-    <message>
         <location filename="../ui/addtaskwizard.ui" line="123"/>
         <source>Edit</source>
         <translation>編集</translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="182"/>
-        <source>Output Path</source>
-        <translation>出力パス</translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="188"/>
-        <source>Select &amp;folder</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="223"/>
-        <source>Browse</source>
-        <translation>参照</translation>
     </message>
     <message>
         <location filename="../ui/addtaskwizard.ui" line="144"/>
@@ -246,56 +216,98 @@
         <translation>音声ビットレートを自動調整</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="146"/>
+        <location filename="../ui/addtaskwizard.ui" line="154"/>
+        <source>Preset</source>
+        <translation>プリセット</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="171"/>
+        <source>Convert to</source>
+        <translation>変換形式</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="182"/>
+        <source>Output Path</source>
+        <translation>出力パス</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="188"/>
+        <source>Select &amp;folder</source>
+        <translation>ファイルを選択(&amp;F)</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="223"/>
+        <source>Browse</source>
+        <translation>参照</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="232"/>
+        <source>Create &amp;new folder in source folder</source>
+        <extracomment>Create a new folder (e.g. qwinff_output) in the folder containing the input files. Put the output files in the newly created folder.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="257"/>
+        <source>Folder Name</source>
+        <translation>フォルダ名</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="285"/>
+        <source>Output to &amp;source folder</source>
+        <extracomment>put the output files in the same folder as the input files</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.cpp" line="145"/>
         <source>Please select at least one file.</source>
         <translation>ファイルを選択してください.</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="472"/>
-        <source>Folder does not exist. Create a new folder?</source>
-        <translation>フォルダが存在しません、新たに作成しますか?</translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.cpp" line="483"/>
-        <source>Failed to create folder. Please select another output folder.</source>
-        <translation>フォルダ作成に失敗、別の出力フォルダを選択してください.</translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.cpp" line="172"/>
+        <location filename="../ui/addtaskwizard.cpp" line="171"/>
         <source>Select Files</source>
         <extracomment>This text is the title of an openfile dialog.</extracomment>
         <translation>ファイルを選択</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="174"/>
+        <location filename="../ui/addtaskwizard.cpp" line="173"/>
         <source>Multimedia</source>
         <translation>マルチメディア</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="175"/>
+        <location filename="../ui/addtaskwizard.cpp" line="174"/>
         <source>Video</source>
         <translation>映像</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="176"/>
+        <location filename="../ui/addtaskwizard.cpp" line="175"/>
         <source>Audio</source>
         <translation>音声</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="177"/>
+        <location filename="../ui/addtaskwizard.cpp" line="176"/>
         <source>All files</source>
         <translation>すべてのファイル</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="199"/>
+        <location filename="../ui/addtaskwizard.cpp" line="198"/>
         <source>Some files could not be found.</source>
         <translation>いくつかのファイルが見つかりません.</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="244"/>
+        <location filename="../ui/addtaskwizard.cpp" line="243"/>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
         <translation>ディレクトリを選択</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.cpp" line="471"/>
+        <source>Folder does not exist. Create a new folder?</source>
+        <translation>フォルダが存在しません、新たに作成しますか?</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.cpp" line="482"/>
+        <source>Failed to create folder. Please select another output folder.</source>
+        <translation>フォルダ作成に失敗、別の出力フォルダを選択してください.</translation>
     </message>
 </context>
 <context>
@@ -666,6 +678,7 @@
         <location filename="../ui/convertlist.cpp" line="1072"/>
         <location filename="../ui/convertlist.cpp" line="1073"/>
         <source>Finished</source>
+        <extracomment>The text to be displayed on the progress bar when a conversion finishes</extracomment>
         <translation>完了</translation>
     </message>
     <message>
@@ -684,12 +697,12 @@
 <context>
     <name>ExtraTranslations</name>
     <message>
-        <location filename="../extra-translations.h" line="40"/>
+        <location filename="../extra-translations.h" line="41"/>
         <source>Convert between media file formats</source>
         <translation>音声とビデオファイルの変換</translation>
     </message>
     <message>
-        <location filename="../extra-translations.h" line="41"/>
+        <location filename="../extra-translations.h" line="42"/>
         <source>Media Converter</source>
         <translation>メディア変換</translation>
     </message>
@@ -805,7 +818,7 @@
     <message>
         <location filename="../ui/mainwindow.ui" line="178"/>
         <source>Open output folder of the selected file.</source>
-        <translation type="unfinished"></translation>
+        <translation>選択されたファイルの出力先を開く.</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="187"/>
@@ -932,7 +945,7 @@
     <message>
         <location filename="../ui/mainwindow.ui" line="321"/>
         <source>Check For &amp;Updates</source>
-        <translation type="unfinished"></translation>
+        <translation>更新のチェック(&amp;U)</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.cpp" line="132"/>
@@ -1002,7 +1015,7 @@
         <location filename="../converter/mediaconverter.cpp" line="109"/>
         <source>%1 not found.</source>
         <extracomment>%1 is a computer program</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>%1 が見つかりません。</translation>
     </message>
 </context>
 <context>
@@ -1015,12 +1028,12 @@
     <message>
         <location filename="../ui/optionsdialog.ui" line="24"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>全般</translation>
     </message>
     <message>
         <location filename="../ui/optionsdialog.ui" line="30"/>
         <source>Check for updates on program startup</source>
-        <translation type="unfinished"></translation>
+        <translation>起動時に更新をチェックする</translation>
     </message>
     <message>
         <location filename="../ui/optionsdialog.ui" line="51"/>
@@ -1040,7 +1053,7 @@
     <message>
         <location filename="../ui/optionsdialog.ui" line="79"/>
         <source>Hide unavailable formats (requires restarting)</source>
-        <translation type="unfinished"></translation>
+        <translation>使用できないフォーマットを隠す (再起動必要)</translation>
     </message>
     <message>
         <location filename="../ui/optionsdialog.ui" line="89"/>
@@ -1142,17 +1155,17 @@
     <message>
         <location filename="../ui/updatedialog.cpp" line="47"/>
         <source>Downloading update information...</source>
-        <translation type="unfinished"></translation>
+        <translation>更新情報をダウンロードしています...</translation>
     </message>
     <message>
         <location filename="../ui/updatedialog.cpp" line="74"/>
         <source>Cannot connect to server.</source>
-        <translation type="unfinished"></translation>
+        <translation>サーバーをアクセスできません。</translation>
     </message>
     <message>
         <location filename="../ui/updatedialog.cpp" line="77"/>
         <source>Failed to parse the received data.</source>
-        <translation type="unfinished"></translation>
+        <translation>受信されたデータの解析に失敗しました。</translation>
     </message>
     <message>
         <location filename="../ui/updatedialog.cpp" line="80"/>

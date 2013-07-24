@@ -105,24 +105,36 @@
         <location filename="../ui/aboutdialog.cpp" line="125"/>
         <source>Russian</source>
         <extracomment>Russian Language</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ruso</translation>
     </message>
     <message>
         <location filename="../ui/aboutdialog.cpp" line="128"/>
         <source>Spanish (Spain)</source>
         <extracomment>Spanish Language (Spain)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Español (España)</translation>
     </message>
     <message>
         <location filename="../ui/aboutdialog.cpp" line="131"/>
         <source>Spanish (Guatemala)</source>
         <extracomment>Spanish Language (Guatemala)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Español (Guatemala)</translation>
     </message>
     <message>
         <location filename="../ui/aboutdialog.cpp" line="134"/>
         <source>Romanian</source>
         <extracomment>Romanian Language</extracomment>
+        <translation>Rumano</translation>
+    </message>
+    <message>
+        <location filename="../ui/aboutdialog.cpp" line="137"/>
+        <source>Turkish</source>
+        <extracomment>Turkish Language</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/aboutdialog.cpp" line="140"/>
+        <source>Arabic</source>
+        <extracomment>Arabic Language</extracomment>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -189,9 +201,44 @@
         <translation>Configuración de salida</translation>
     </message>
     <message>
+        <location filename="../ui/addtaskwizard.ui" line="123"/>
+        <source>Edit</source>
+        <translation>Editar</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="144"/>
+        <source>Auto adjust output bitrate to reduce output file size.</source>
+        <translation>Auto ajustar el bitrate de salida para reducir el tamaño de archivo de salida.</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="147"/>
+        <source>Auto Adjust Audio Bitrate</source>
+        <translation>Auto ajustar el bitrate del audio</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="154"/>
+        <source>Preset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../ui/addtaskwizard.ui" line="171"/>
         <source>Convert to</source>
         <translation>Convertir a</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="182"/>
+        <source>Output Path</source>
+        <translation>Directorio de salida</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="188"/>
+        <source>Select &amp;folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="223"/>
+        <source>Browse</source>
+        <translation>Explorar</translation>
     </message>
     <message>
         <location filename="../ui/addtaskwizard.ui" line="232"/>
@@ -211,91 +258,56 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="154"/>
-        <source>Preset</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="123"/>
-        <source>Edit</source>
-        <translation>Editar</translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="182"/>
-        <source>Output Path</source>
-        <translation>Directorio de salida</translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="188"/>
-        <source>Select &amp;folder</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="223"/>
-        <source>Browse</source>
-        <translation>Explorar</translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="144"/>
-        <source>Auto adjust output bitrate to reduce output file size.</source>
-        <translation>Auto ajustar el bitrate de salida para reducir el tamaño de archivo de salida.</translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="147"/>
-        <source>Auto Adjust Audio Bitrate</source>
-        <translation>Auto ajustar el bitrate del audio</translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.cpp" line="146"/>
+        <location filename="../ui/addtaskwizard.cpp" line="145"/>
         <source>Please select at least one file.</source>
         <translation>Por favor seleccione al menos un archivo.</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="472"/>
-        <source>Folder does not exist. Create a new folder?</source>
-        <translation>EL folder no existe. ¿Crear un nuevo folder?</translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.cpp" line="483"/>
-        <source>Failed to create folder. Please select another output folder.</source>
-        <translation>Fallo al crear el folder. Por favor seleccione otro folder de salida.</translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.cpp" line="172"/>
+        <location filename="../ui/addtaskwizard.cpp" line="171"/>
         <source>Select Files</source>
         <extracomment>This text is the title of an openfile dialog.</extracomment>
         <translation>Seleccione archivos</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="174"/>
+        <location filename="../ui/addtaskwizard.cpp" line="173"/>
         <source>Multimedia</source>
         <translation>Multimedia</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="175"/>
+        <location filename="../ui/addtaskwizard.cpp" line="174"/>
         <source>Video</source>
         <translation>Video</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="176"/>
+        <location filename="../ui/addtaskwizard.cpp" line="175"/>
         <source>Audio</source>
         <translation>Audio</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="177"/>
+        <location filename="../ui/addtaskwizard.cpp" line="176"/>
         <source>All files</source>
         <translation>Todos los archivos</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="199"/>
+        <location filename="../ui/addtaskwizard.cpp" line="198"/>
         <source>Some files could not be found.</source>
         <translation>Algunos archivos no puedieron ser encontrados.</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="244"/>
+        <location filename="../ui/addtaskwizard.cpp" line="243"/>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
         <translation>Seleccione un directorio</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.cpp" line="471"/>
+        <source>Folder does not exist. Create a new folder?</source>
+        <translation>EL folder no existe. ¿Crear un nuevo folder?</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.cpp" line="482"/>
+        <source>Failed to create folder. Please select another output folder.</source>
+        <translation>Fallo al crear el folder. Por favor seleccione otro folder de salida.</translation>
     </message>
 </context>
 <context>
@@ -356,7 +368,7 @@
         <location filename="../ui/conversionparameterdialog.ui" line="136"/>
         <location filename="../ui/conversionparameterdialog.ui" line="245"/>
         <source>Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitrate</translation>
     </message>
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="159"/>
@@ -392,7 +404,7 @@
         <location filename="../ui/conversionparameterdialog.ui" line="315"/>
         <location filename="../ui/conversionparameterdialog.ui" line="328"/>
         <source> px</source>
-        <translation type="unfinished"></translation>
+        <translation>px</translation>
     </message>
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="219"/>
@@ -470,7 +482,7 @@
     <message>
         <location filename="../ui/conversionparameterdialog.ui" line="501"/>
         <source>Additional FFmpeg Options</source>
-        <translation type="unfinished"></translation>
+        <translation>Opciones adicionales de FFmpeg</translation>
     </message>
 </context>
 <context>
@@ -597,18 +609,18 @@
     <message>
         <location filename="../ui/convertlist.cpp" line="872"/>
         <source>%1 Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Hz</translation>
     </message>
     <message>
         <location filename="../ui/convertlist.cpp" line="873"/>
         <location filename="../ui/convertlist.cpp" line="882"/>
         <source>%1 kb/s</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 kb/s</translation>
     </message>
     <message>
         <location filename="../ui/convertlist.cpp" line="883"/>
         <source>%1 fps</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 fps</translation>
     </message>
     <message>
         <location filename="../ui/convertlist.cpp" line="902"/>
@@ -619,33 +631,33 @@
     <message>
         <location filename="../ui/convertlist.cpp" line="945"/>
         <source>KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>KiB</translation>
     </message>
     <message>
         <location filename="../ui/convertlist.cpp" line="945"/>
         <source>MiB</source>
-        <translation type="unfinished"></translation>
+        <translation>MiB</translation>
     </message>
     <message>
         <location filename="../ui/convertlist.cpp" line="945"/>
         <source>GiB</source>
-        <translation type="unfinished"></translation>
+        <translation>GiB</translation>
     </message>
     <message>
         <location filename="../ui/convertlist.cpp" line="945"/>
         <source>TiB</source>
-        <translation type="unfinished"></translation>
+        <translation>TiB</translation>
     </message>
     <message>
         <location filename="../ui/convertlist.cpp" line="948"/>
         <source>B</source>
         <extracomment>Bytes</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>B</translation>
     </message>
     <message>
         <location filename="../ui/convertlist.cpp" line="983"/>
         <source>File Exists</source>
-        <translation type="unfinished"></translation>
+        <translation>El archivo existe</translation>
     </message>
     <message>
         <location filename="../ui/convertlist.cpp" line="984"/>
@@ -666,6 +678,7 @@
         <location filename="../ui/convertlist.cpp" line="1072"/>
         <location filename="../ui/convertlist.cpp" line="1073"/>
         <source>Finished</source>
+        <extracomment>The text to be displayed on the progress bar when a conversion finishes</extracomment>
         <translation>Terminado</translation>
     </message>
     <message>
@@ -684,12 +697,12 @@
 <context>
     <name>ExtraTranslations</name>
     <message>
-        <location filename="../extra-translations.h" line="40"/>
+        <location filename="../extra-translations.h" line="41"/>
         <source>Convert between media file formats</source>
         <translation>Convertir entre formados de archivos</translation>
     </message>
     <message>
-        <location filename="../extra-translations.h" line="41"/>
+        <location filename="../extra-translations.h" line="42"/>
         <source>Media Converter</source>
         <translation>Convertidor de Medios</translation>
     </message>
@@ -759,7 +772,7 @@
     <message>
         <location filename="../ui/mainwindow.ui" line="127"/>
         <source>F9</source>
-        <translation type="unfinished"></translation>
+        <translation>F9</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="136"/>
@@ -952,7 +965,7 @@
     <message>
         <location filename="../ui/mainwindow.cpp" line="274"/>
         <source>Elapsed Time: %1 h %2 m %3 s</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiempo estimado: %1 h %2 m %3 s</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.cpp" line="299"/>
@@ -1045,17 +1058,17 @@
     <message>
         <location filename="../ui/optionsdialog.ui" line="89"/>
         <source>Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Herramientas</translation>
     </message>
     <message>
         <location filename="../ui/optionsdialog.ui" line="97"/>
         <source>You have to restart QWinFF for the changes to take effect.</source>
-        <translation type="unfinished"></translation>
+        <translation>Usted debe reiniciar QWinFF para que los cambios tomen efecto.</translation>
     </message>
     <message>
         <location filename="../ui/optionsdialog.ui" line="117"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre</translation>
     </message>
     <message>
         <location filename="../ui/optionsdialog.ui" line="122"/>

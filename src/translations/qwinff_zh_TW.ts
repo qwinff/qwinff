@@ -125,6 +125,18 @@
         <extracomment>Romanian Language</extracomment>
         <translation>羅馬尼亞語</translation>
     </message>
+    <message>
+        <location filename="../ui/aboutdialog.cpp" line="137"/>
+        <source>Turkish</source>
+        <extracomment>Turkish Language</extracomment>
+        <translation>土耳其文</translation>
+    </message>
+    <message>
+        <location filename="../ui/aboutdialog.cpp" line="140"/>
+        <source>Arabic</source>
+        <extracomment>Arabic Language</extracomment>
+        <translation>阿拉伯文</translation>
+    </message>
 </context>
 <context>
     <name>AboutFFmpegDialog</name>
@@ -246,54 +258,54 @@
         <translation>輸出到來源資料夾(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="146"/>
+        <location filename="../ui/addtaskwizard.cpp" line="145"/>
         <source>Please select at least one file.</source>
         <translation>請至少選擇一個檔案</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="172"/>
+        <location filename="../ui/addtaskwizard.cpp" line="171"/>
         <source>Select Files</source>
         <extracomment>This text is the title of an openfile dialog.</extracomment>
         <translation>選擇檔案</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="174"/>
+        <location filename="../ui/addtaskwizard.cpp" line="173"/>
         <source>Multimedia</source>
         <translation>多媒體</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="175"/>
+        <location filename="../ui/addtaskwizard.cpp" line="174"/>
         <source>Video</source>
         <translation>影片</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="176"/>
+        <location filename="../ui/addtaskwizard.cpp" line="175"/>
         <source>Audio</source>
         <translation>聲音</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="177"/>
+        <location filename="../ui/addtaskwizard.cpp" line="176"/>
         <source>All files</source>
         <translation>所有檔案</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="199"/>
+        <location filename="../ui/addtaskwizard.cpp" line="198"/>
         <source>Some files could not be found.</source>
         <translation>無法找到其中的一些檔案</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="244"/>
+        <location filename="../ui/addtaskwizard.cpp" line="243"/>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
         <translation>選擇資料夾</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="472"/>
+        <location filename="../ui/addtaskwizard.cpp" line="471"/>
         <source>Folder does not exist. Create a new folder?</source>
         <translation>資料夾不存在。要建立新的資料夾嗎？</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.cpp" line="483"/>
+        <location filename="../ui/addtaskwizard.cpp" line="482"/>
         <source>Failed to create folder. Please select another output folder.</source>
         <translation>建立資料夾失敗。請選擇另一個輸出資料夾。</translation>
     </message>
@@ -666,6 +678,7 @@
         <location filename="../ui/convertlist.cpp" line="1072"/>
         <location filename="../ui/convertlist.cpp" line="1073"/>
         <source>Finished</source>
+        <extracomment>The text to be displayed on the progress bar when a conversion finishes</extracomment>
         <translation>已完成</translation>
     </message>
     <message>
@@ -684,12 +697,12 @@
 <context>
     <name>ExtraTranslations</name>
     <message>
-        <location filename="../extra-translations.h" line="40"/>
+        <location filename="../extra-translations.h" line="41"/>
         <source>Convert between media file formats</source>
         <translation>轉換影音檔案格式</translation>
     </message>
     <message>
-        <location filename="../extra-translations.h" line="41"/>
+        <location filename="../extra-translations.h" line="42"/>
         <source>Media Converter</source>
         <translation>影音轉檔器</translation>
     </message>
