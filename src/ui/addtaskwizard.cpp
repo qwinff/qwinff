@@ -364,10 +364,7 @@ void AddTaskWizard::load_settings()
     ui->cbOutputPath->clear();
     ui->cbOutputPath->addItems(recent_paths);
     if (ui->cbOutputPath->count() == 0) {
-        QString new_folder_name = Constants::getString("NewFolderName");
-        QString output_path = QDir(QDir::homePath()).absoluteFilePath(new_folder_name);
-        create_directory(output_path, /* do not confirm */ false);
-        ui->cbOutputPath->addItem(output_path);
+        ui->cbOutputPath->addItem(QDir::homePath());
     }
     ui->cbOutputPath->setCurrentIndex(0); // Select the most recent path.
 
