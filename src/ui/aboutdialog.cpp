@@ -133,12 +133,19 @@ QString AboutDialog::getTranslators()
         //: Romanian Language
         {"ro_RO", trad(tr("Romanian")
                        , "SymbianFlo <symbianflo@mandrivausers.ro>")},
+        //: Turkish Language
+        {"tr_TR", trad(tr("Turkish")
+                    , "Mustafa K&#305;l&#305;&#231;")},
+        //: Arabic Language
+        {"ar", trad(tr("Arabic")
+                    , "Mohammed Ali")},
     };
     const int size = sizeof(table) / sizeof(table[0]);
 
     QStringList translators;
     QString current_locale = QLocale::system().name();
     for (int i=0; i<size; i++) {
+        // Put the translator of the current language at the top.
         if (current_locale.startsWith(table[i].locale))
             translators.push_front(table[i].translator);
         else
