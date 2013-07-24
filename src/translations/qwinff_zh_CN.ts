@@ -200,7 +200,7 @@
     </message>
     <message>
         <location filename="../ui/addtaskwizard.ui" line="257"/>
-        <source>Folder Name:</source>
+        <source>Folder Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
