@@ -1,9 +1,13 @@
 @echo off
 set DEST_DIR=.\windows_release
 
+:: Extract version string from src\version.h
+for /f "delims=" %%v in ('grep -o "[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*" src\version.h') do (
+	@set VERSION=%%v
+)
+
 pushd src
 lrelease qwinff.pro
-mingw32-make clean
 qmake
 mingw32-make release
 popd
@@ -23,9 +27,8 @@ copy ".\src\constants.xml" "%DEST_DIR%"
 copy ".\src\translations\*.qm" "%DEST_DIR%\translations"
 copy "COPYING-v3.txt" "%DEST_DIR%\license.txt"
 copy "CHANGELOG.txt" "%DEST_DIR%\changelog.txt"
-copy "qwinff.nsi" "%DEST_DIR%\qwinff.nsi"
+sed "s/@QWINFF_VERSION@/%VERSION%/" "qwinff.nsi" > "%DEST_DIR%\qwinff.nsi"
 unix2dos "%DEST_DIR%\license.txt"
 unix2dos "%DEST_DIR%\changelog.txt"
 
-@echo Files are copied to %DEST_DIR%
-pause
+@echo Files have been copied to %DEST_DIR%
