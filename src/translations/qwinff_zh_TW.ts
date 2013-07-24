@@ -189,49 +189,9 @@
         <translation>輸出設定</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="171"/>
-        <source>Convert to</source>
-        <translation>轉換成</translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="232"/>
-        <source>Create &amp;new folder in source folder</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="257"/>
-        <source>Folder Name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="285"/>
-        <source>Output to &amp;source folder</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="154"/>
-        <source>Preset</source>
-        <translation>設定檔</translation>
-    </message>
-    <message>
         <location filename="../ui/addtaskwizard.ui" line="123"/>
         <source>Edit</source>
         <translation>編輯</translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="182"/>
-        <source>Output Path</source>
-        <translation>輸出資料夾</translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="188"/>
-        <source>Select &amp;folder</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="223"/>
-        <source>Browse</source>
-        <translation>瀏覽</translation>
     </message>
     <message>
         <location filename="../ui/addtaskwizard.ui" line="144"/>
@@ -244,19 +204,49 @@
         <translation>自動調整聲音位元率</translation>
     </message>
     <message>
+        <location filename="../ui/addtaskwizard.ui" line="154"/>
+        <source>Preset</source>
+        <translation>設定檔</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="171"/>
+        <source>Convert to</source>
+        <translation>轉換成</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="182"/>
+        <source>Output Path</source>
+        <translation>輸出資料夾</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="188"/>
+        <source>Select &amp;folder</source>
+        <translation>選擇資料夾(&amp;F)</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="223"/>
+        <source>Browse</source>
+        <translation>瀏覽</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="232"/>
+        <source>Create &amp;new folder in source folder</source>
+        <translation>鍵立新的資料夾(&amp;N)</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="257"/>
+        <source>Folder Name</source>
+        <translation>資料夾名稱</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="285"/>
+        <source>Output to &amp;source folder</source>
+        <translation>輸出到來源資料夾(&amp;S)</translation>
+    </message>
+    <message>
         <location filename="../ui/addtaskwizard.cpp" line="146"/>
         <source>Please select at least one file.</source>
         <translation>請至少選擇一個檔案</translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.cpp" line="472"/>
-        <source>Folder does not exist. Create a new folder?</source>
-        <translation>資料夾不存在。要建立新的資料夾嗎？</translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.cpp" line="483"/>
-        <source>Failed to create folder. Please select another output folder.</source>
-        <translation>建立資料夾失敗。請選擇另一個輸出資料夾。</translation>
     </message>
     <message>
         <location filename="../ui/addtaskwizard.cpp" line="172"/>
@@ -294,6 +284,16 @@
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
         <translation>選擇資料夾</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.cpp" line="472"/>
+        <source>Folder does not exist. Create a new folder?</source>
+        <translation>資料夾不存在。要建立新的資料夾嗎？</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.cpp" line="483"/>
+        <source>Failed to create folder. Please select another output folder.</source>
+        <translation>建立資料夾失敗。請選擇另一個輸出資料夾。</translation>
     </message>
 </context>
 <context>

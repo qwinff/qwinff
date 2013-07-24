@@ -189,49 +189,9 @@
         <translation>输出设置</translation>
     </message>
     <message>
-        <location filename="../ui/addtaskwizard.ui" line="171"/>
-        <source>Convert to</source>
-        <translation>转换成</translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="232"/>
-        <source>Create &amp;new folder in source folder</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="257"/>
-        <source>Folder Name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="285"/>
-        <source>Output to &amp;source folder</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="154"/>
-        <source>Preset</source>
-        <translation>设定档</translation>
-    </message>
-    <message>
         <location filename="../ui/addtaskwizard.ui" line="123"/>
         <source>Edit</source>
         <translation>编辑</translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="182"/>
-        <source>Output Path</source>
-        <translation>输出文件夹</translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="188"/>
-        <source>Select &amp;folder</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.ui" line="223"/>
-        <source>Browse</source>
-        <translation>浏览</translation>
     </message>
     <message>
         <location filename="../ui/addtaskwizard.ui" line="144"/>
@@ -244,19 +204,49 @@
         <translation>自动调整音频比特率</translation>
     </message>
     <message>
+        <location filename="../ui/addtaskwizard.ui" line="154"/>
+        <source>Preset</source>
+        <translation>设定档</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="171"/>
+        <source>Convert to</source>
+        <translation>转换成</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="182"/>
+        <source>Output Path</source>
+        <translation>输出文件夹</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="188"/>
+        <source>Select &amp;folder</source>
+        <translation>选择文件夹(&amp;F)</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="223"/>
+        <source>Browse</source>
+        <translation>浏览</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="232"/>
+        <source>Create &amp;new folder in source folder</source>
+        <translation>在来源文件夹创建新的文件夹(&amp;N)</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="257"/>
+        <source>Folder Name</source>
+        <translation>文件夹名称</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.ui" line="285"/>
+        <source>Output to &amp;source folder</source>
+        <translation>输出到来源文件夹(&amp;S)</translation>
+    </message>
+    <message>
         <location filename="../ui/addtaskwizard.cpp" line="146"/>
         <source>Please select at least one file.</source>
         <translation>请至少选择一个文件</translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.cpp" line="472"/>
-        <source>Folder does not exist. Create a new folder?</source>
-        <translation>文件夹不存在。要建立新的文件夹嗎？</translation>
-    </message>
-    <message>
-        <location filename="../ui/addtaskwizard.cpp" line="483"/>
-        <source>Failed to create folder. Please select another output folder.</source>
-        <translation>建立文件夹失败。请选择另一个输出文件夹。</translation>
     </message>
     <message>
         <location filename="../ui/addtaskwizard.cpp" line="172"/>
@@ -294,6 +284,16 @@
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
         <translation>选择文件夹</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.cpp" line="472"/>
+        <source>Folder does not exist. Create a new folder?</source>
+        <translation>文件夹不存在。要建立新的文件夹嗎？</translation>
+    </message>
+    <message>
+        <location filename="../ui/addtaskwizard.cpp" line="483"/>
+        <source>Failed to create folder. Please select another output folder.</source>
+        <translation>建立文件夹失败。请选择另一个输出文件夹。</translation>
     </message>
 </context>
 <context>
@@ -930,7 +930,7 @@
     <message>
         <location filename="../ui/mainwindow.ui" line="321"/>
         <source>Check For &amp;Updates</source>
-        <translation type="unfinished"></translation>
+        <translation>检查更新(&amp;U)</translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.cpp" line="132"/>
@@ -1013,12 +1013,12 @@
     <message>
         <location filename="../ui/optionsdialog.ui" line="24"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>常规</translation>
     </message>
     <message>
         <location filename="../ui/optionsdialog.ui" line="30"/>
         <source>Check for updates on program startup</source>
-        <translation type="unfinished"></translation>
+        <translation>程序启动时检查更新</translation>
     </message>
     <message>
         <location filename="../ui/optionsdialog.ui" line="51"/>
@@ -1135,32 +1135,32 @@
     <message>
         <location filename="../ui/updatedialog.ui" line="51"/>
         <source>Show &amp;Release Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>显示发行说明(&amp;R)</translation>
     </message>
     <message>
         <location filename="../ui/updatedialog.cpp" line="47"/>
         <source>Downloading update information...</source>
-        <translation type="unfinished"></translation>
+        <translation>正在下载更新信息...</translation>
     </message>
     <message>
         <location filename="../ui/updatedialog.cpp" line="74"/>
         <source>Cannot connect to server.</source>
-        <translation type="unfinished"></translation>
+        <translation>无法连接到服务器.</translation>
     </message>
     <message>
         <location filename="../ui/updatedialog.cpp" line="77"/>
         <source>Failed to parse the received data.</source>
-        <translation type="unfinished"></translation>
+        <translation>无法分析接收到的数据。</translation>
     </message>
     <message>
         <location filename="../ui/updatedialog.cpp" line="80"/>
         <source>You are already using the latest version of QWinFF.</source>
-        <translation type="unfinished"></translation>
+        <translation>您已使用最新版本的 QWinFF。</translation>
     </message>
     <message>
         <location filename="../ui/updatedialog.cpp" line="83"/>
         <source>An unknown error has occurred.</source>
-        <translation type="unfinished"></translation>
+        <translation>发生了不明的错误。</translation>
     </message>
     <message>
         <location filename="../ui/updatedialog.cpp" line="105"/>
