@@ -231,6 +231,7 @@
     <message>
         <location filename="../ui/addtaskwizard.ui" line="232"/>
         <source>Create &amp;new folder in source folder</source>
+        <extracomment>Create a new folder (e.g. qwinff_output) in the folder containing the input files. Put the output files in the newly created folder.</extracomment>
         <translation>在来源文件夹创建新的文件夹(&amp;N)</translation>
     </message>
     <message>
@@ -241,6 +242,7 @@
     <message>
         <location filename="../ui/addtaskwizard.ui" line="285"/>
         <source>Output to &amp;source folder</source>
+        <extracomment>put the output files in the same folder as the input files</extracomment>
         <translation>输出到来源文件夹(&amp;S)</translation>
     </message>
     <message>

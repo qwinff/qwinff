@@ -229,7 +229,7 @@
        <item>
         <widget class="QRadioButton" name="rbNewFolder">
          <property name="text">
-          <string>Create &amp;new folder in source folder</string>
+          <string extracomment="Create a new folder (e.g. qwinff_output) in the folder containing the input files. Put the output files in the newly created folder.">Create &amp;new folder in source folder</string>
          </property>
         </widget>
        </item>
@@ -282,7 +282,7 @@
        <item>
         <widget class="QRadioButton" name="rbSourceFolder">
          <property name="text">
-          <string>Output to &amp;source folder</string>
+          <string extracomment="put the output files in the same folder as the input files">Output to &amp;source folder</string>
          </property>
         </widget>
        </item>
