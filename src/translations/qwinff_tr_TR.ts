@@ -803,8 +803,8 @@
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="178"/>
-        <source>Open output folder of the first selected file.</source>
-        <translation>İlk seçilen dosyanın çıkış klasörü aç.</translation>
+        <source>Open output folder of the selected file.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="187"/>

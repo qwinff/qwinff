@@ -175,7 +175,7 @@
     <string>&amp;Open Output Folder</string>
    </property>
    <property name="statusTip">
-    <string>Open output folder of the first selected file.</string>
+    <string>Open output folder of the selected file.</string>
    </property>
   </action>
   <action name="actionAboutFFmpeg">

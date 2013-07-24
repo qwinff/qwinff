@@ -802,8 +802,8 @@
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="178"/>
-        <source>Open output folder of the first selected file.</source>
-        <translation>開啟第一個選取檔案的輸出資料夾</translation>
+        <source>Open output folder of the selected file.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="187"/>

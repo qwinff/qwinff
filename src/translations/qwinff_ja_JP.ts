@@ -802,8 +802,8 @@
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="178"/>
-        <source>Open output folder of the first selected file.</source>
-        <translation>最初に選択されたファイルの出力先を開く.</translation>
+        <source>Open output folder of the selected file.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../ui/mainwindow.ui" line="187"/>
