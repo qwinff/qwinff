@@ -112,6 +112,7 @@ void MainWindow::window_ready()
     if (settings.value("options/check_update_on_startup",
                        Constants::getBool("CheckUpdateOnStartup")).toBool())
         m_update_checker->checkUpdate();
+    refresh_status();
 }
 
 void MainWindow::task_finished(int /*exitcode*/)
@@ -264,28 +265,20 @@ void MainWindow::closeEvent(QCloseEvent *event)
 
 void MainWindow::timerEvent()
 {
-    if (m_list->isBusy()) { // update elapsed time
-        int total_seconds = m_list->elapsedTime() / 1000;
-        int hours = total_seconds / 3600;
-        int minutes = (total_seconds / 60) % 60;
-        int seconds = total_seconds % 60;
-
-        m_elapsedTimeLabel->setText(
-                    tr("Elapsed Time: %1 h %2 m %3 s")
-                    .arg(hours).arg(minutes).arg(seconds)
-                    );
-    }
+    refresh_status();
 }
 
 void MainWindow::conversion_started()
 {
     m_elapsedTimeLabel->clear();
     m_timer->start(1000);
+    refresh_status();
 }
 
 void MainWindow::conversion_stopped()
 {
     m_timer->stop();
+    refresh_status();
 }
 
 void MainWindow::update_poweroff_button(int id)
@@ -729,4 +722,40 @@ void MainWindow::save_settings()
     settings.setValue("mainwindow/geometry", saveGeometry());
     settings.setValue("mainwindow/state", saveState());
     settings.setValue("options/poweroff_behavior", get_poweroff_behavior());
+}
+
+void MainWindow::refresh_status()
+{
+    refresh_statusbar();
+    refresh_titlebar();
+}
+
+void MainWindow::refresh_statusbar()
+{
+    if (m_list->isBusy()) {
+        int total_seconds = m_list->elapsedTime() / 1000;
+        int hours = total_seconds / 3600;
+        int minutes = (total_seconds / 60) % 60;
+        int seconds = total_seconds % 60;
+
+        m_elapsedTimeLabel->setText(
+                    tr("Elapsed Time: %1 h %2 m %3 s")
+                    .arg(hours).arg(minutes).arg(seconds)
+                    );
+    } else {
+        m_elapsedTimeLabel->clear();
+    }
+}
+
+void MainWindow::refresh_titlebar()
+{
+    const int task_count = m_list->count();
+    const int finished_task_count = m_list->finishedCount();
+    if (finished_task_count < task_count) {
+        //: Converting the %1-th file in %2 files. %2 is the number of files.
+        setWindowTitle(tr("Converting %1/%2")
+                       .arg(finished_task_count+1).arg(task_count));
+    } else {
+        setWindowTitle(tr("QWinFF"));
+    }
 }

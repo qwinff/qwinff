@@ -101,6 +101,9 @@ private:
     bool load_presets();
     void load_settings();
     void save_settings();
+    void refresh_status();
+    void refresh_statusbar();
+    void refresh_titlebar();
 };
 
 #endif // MAINWINDOW_H
