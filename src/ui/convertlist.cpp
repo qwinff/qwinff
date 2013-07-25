@@ -325,6 +325,11 @@ int ConvertList::selectedCount() const
     return m_list->selectedItems().size();
 }
 
+int ConvertList::finishedCount() const
+{
+    return finished_items().size();
+}
+
 int ConvertList::elapsedTime() const
 {
     return is_busy ? m_startTime.elapsed() : 0;
@@ -415,15 +420,7 @@ void ConvertList::removeSelectedItems()
 
 void ConvertList::removeCompletedItems()
 {
-    QList<QTreeWidgetItem*> itemList;
-    const int item_count = count();
-    for (int i=0; i<item_count; i++) {
-        Task *task = get_task(m_list->topLevelItem(i));
-        if (task->status == Task::FINISHED) {
-            itemList.push_back(task->listitem);
-        }
-    }
-    remove_items(itemList);
+    remove_items(finished_items());
 }
 
 void ConvertList::editSelectedParameters()
@@ -1130,4 +1127,17 @@ void ConvertList::update_tooltip(QTreeWidgetItem *item)
         if (i != COL_PROGRESS)
             item->setToolTip(i, tip_str);
     }
+}
+
+QList<QTreeWidgetItem*> ConvertList::finished_items() const
+{
+    QList<QTreeWidgetItem*> itemList;
+    const int item_count = count();
+    for (int i=0; i<item_count; i++) {
+        Task *task = get_task(m_list->topLevelItem(i));
+        if (task->status == Task::FINISHED) {
+            itemList.push_back(task->listitem);
+        }
+    }
+    return itemList;
 }

@@ -58,6 +58,7 @@ public:
     bool isEmpty() const;
     int count() const;
     int selectedCount() const;
+    int finishedCount() const;
 
     /*! Get the elapsed time of the session (in milliseconds).
      *  @retval 0 the converter is idle.
@@ -193,6 +194,7 @@ private:
     Task* get_task(QTreeWidgetItem*) const;
     void refresh_progressbar(Task*);
     void update_tooltip(QTreeWidgetItem *item);
+    QList<QTreeWidgetItem*> finished_items() const;
 
 };
 
