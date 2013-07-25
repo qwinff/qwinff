@@ -27,9 +27,6 @@
 #ifndef EXTRATRANSLATIONS_H
 #define EXTRATRANSLATIONS_H
 
-// Generate a compile error if this file is included and compiled.
-#error This file should not be included!
-
 #include <QObject>
 
 class ExtraTranslations : QObject
