@@ -32,6 +32,16 @@
         </widget>
        </item>
        <item>
+        <widget class="QCheckBox" name="chkAutoStartConversion">
+         <property name="toolTip">
+          <string>Automatically start conversion after adding files to the list.</string>
+         </property>
+         <property name="text">
+          <string>Start conversion automatically</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <spacer name="verticalSpacer">
          <property name="orientation">
           <enum>Qt::Vertical</enum>

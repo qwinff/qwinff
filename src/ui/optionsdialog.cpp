@@ -75,7 +75,8 @@ void OptionsDialog::read_fields()
     ui->chkHideFormats->setChecked(settings.value("options/hideformats", true).toBool());
     ui->chkCheckUpdates->setChecked(settings.value("options/check_update_on_startup",
                               Constants::getBool("CheckUpdateOnStartup")).toBool());
-
+    ui->chkAutoStartConversion->setChecked(settings.value("options/auto_start_conversion",
+                              Constants::getBool("AutoStartConversion")).toBool());
 #ifndef FFMPEG_IN_DATA_PATH
     // ExePath to table
     const int count = ui->toolTable->rowCount();
@@ -93,6 +94,7 @@ void OptionsDialog::write_fields()
     settings.setValue("options/threads", ui->spinThreads->value());
     settings.setValue("options/hideformats", ui->chkHideFormats->isChecked());
     settings.setValue("options/check_update_on_startup", ui->chkCheckUpdates->isChecked());
+    settings.setValue("options/auto_start_conversion", ui->chkAutoStartConversion->isChecked());
 
 #ifndef FFMPEG_IN_DATA_PATH
     // table to ExePath
