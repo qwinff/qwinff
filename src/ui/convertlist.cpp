@@ -13,13 +13,6 @@
     along with QWinFF.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "convertlist.h"
-#include "progressbar.h"
-#include "converter/mediaconverter.h"
-#include "converter/mediaprobe.h"
-#include "services/filepathoperations.h"
-#include "ui/conversionparameterdialog.h"
-#include "addtaskwizard.h"
 #include <QTreeWidget>
 #include <QHBoxLayout>
 #include <QHeaderView>
@@ -36,6 +29,15 @@
 #include <QDesktopServices>
 #include <QTextDocument>
 #include <cassert>
+
+#include "convertlist.h"
+#include "progressbar.h"
+#include "converter/mediaconverter.h"
+#include "converter/mediaprobe.h"
+#include "services/filepathoperations.h"
+#include "services/constants.h"
+#include "ui/conversionparameterdialog.h"
+#include "addtaskwizard.h"
 
 #define TIMEOUT 3000
 #define MIN_DURATION 100 // Minimum duration(milliseconds) to show progress dialog.
@@ -301,6 +303,13 @@ int ConvertList::addTasks(const QList<ConversionParameters> &paramList)
         msgBox.setIcon(QMessageBox::Warning);
         msgBox.exec();
     }
+
+    // start conversion if autostart is true
+    const bool autostart_default = Constants::getBool("AutoStartConversion");
+    bool autostart = QSettings().value("options/auto_start_conversion",
+                                       autostart_default).toBool();
+    if (autostart && count() > 0)
+        start();
 
     return success_count;
 }

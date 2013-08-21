@@ -30,6 +30,10 @@
        This value will be overridden by user settings. -->
   <CheckUpdateOnStartup type="boolean">false</CheckUpdateOnStartup>
 
+  <!-- Start conversion immediately after adding files to the list.
+       This value will be overridden by user settings. -->
+  <AutoStartConversion type="boolean">true</AutoStartConversion>
+
   <!-- default folder name to create when setting output path -->
   <NewFolderName>qwinff_output</NewFolderName>
 
