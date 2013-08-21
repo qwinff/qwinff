@@ -41,6 +41,7 @@
 #include <QCloseEvent>
 #include <QTimer>
 #include <QSignalMapper>
+#include <QPushButton>
 #include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent, const QStringList& fileList) :
@@ -55,10 +56,7 @@ MainWindow::MainWindow(QWidget *parent, const QStringList& fileList) :
     m_poweroff_actiongroup(0),
     m_update_checker(new UpdateChecker(this))
 {
-    ui->setupUi(this);
-
-    this->centralWidget()->layout()->addWidget(m_list);
-    m_list->adjustSize();
+    ui->setupUi(this);    
 
     connect(m_list, SIGNAL(task_finished(int)),
             this, SLOT(task_finished(int)));
@@ -76,9 +74,10 @@ MainWindow::MainWindow(QWidget *parent, const QStringList& fileList) :
             this, SLOT(conversion_stopped()));
     connect(m_update_checker, SIGNAL(receivedResult(int)),
             this, SLOT(received_update_result(int)));
+    connect(ui->btnStartConversion, SIGNAL(clicked()),
+            this, SLOT(slotStartConversion()));
 
-    m_list->setContextMenuPolicy(Qt::CustomContextMenu);
-
+    setup_widgets();
     setup_menus();
     setup_poweroff_button();
     setup_toolbar(Constants::getSpaceSeparatedList("ToolbarEntries"));
@@ -389,6 +388,16 @@ void MainWindow::add_files(const QStringList &fileList)
         const QList<ConversionParameters> &paramList = wizard.getConversionParameters();
         m_list->addTasks(paramList);
     }
+}
+
+void MainWindow::setup_widgets()
+{
+    // list
+    ui->layoutListPlaceholder->addWidget(m_list);
+    m_list->adjustSize();
+    m_list->setContextMenuPolicy(Qt::CustomContextMenu);
+
+    ui->lblTime->clear();
 }
 
 void MainWindow::setup_menus()
@@ -736,12 +745,13 @@ void MainWindow::refresh_statusbar()
         int minutes = (total_seconds / 60) % 60;
         int seconds = total_seconds % 60;
 
-        m_elapsedTimeLabel->setText(
-                    tr("Elapsed Time: %1 h %2 m %3 s")
-                    .arg(hours).arg(minutes).arg(seconds)
-                    );
+        QString timeinfo = tr("Elapsed Time: %1 h %2 m %3 s")
+                .arg(hours).arg(minutes).arg(seconds);
+        //m_elapsedTimeLabel->setText(timeinfo);
+        ui->lblTime->setText(timeinfo);
     } else {
-        m_elapsedTimeLabel->clear();
+        //m_elapsedTimeLabel->clear();
+        ui->lblTime->clear();
     }
 }
 

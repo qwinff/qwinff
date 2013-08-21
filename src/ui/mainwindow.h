@@ -91,6 +91,7 @@ private:
     bool check_execute_conditions();
     void add_files();
     void add_files(const QStringList& files);
+    void setup_widgets();
     void setup_menus();
     void setup_toolbar(const QStringList& entries);
     void setup_statusbar();
