@@ -571,15 +571,15 @@ void ConvertList::progress_refreshed(int percentage)
 
 void ConvertList::show_background_image()
 {
-    m_list->setStyleSheet(
-                "background-image: url();" // TODO: fill in image path
+    m_list->viewport()->setStyleSheet(
+                "background-image: url(:/other/icons/list_background.png);"
                 "background-position: center;"
                 "background-repeat: no-repeat;");
 }
 
 void ConvertList::hide_background_image()
 {
-    m_list->setStyleSheet("");
+    m_list->viewport()->setStyleSheet("");
 }
 
 void ConvertList::slotHeaderContextMenu(QPoint point)
