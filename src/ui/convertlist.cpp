@@ -373,13 +373,6 @@ void ConvertList::start()
         emit started();
     }
 
-    const int task_count = count();
-
-    if (task_count == 0) { // the task list is empty
-        this->stop();
-        return;
-    }
-
     if (!run_first_queued_task()) {
         // no task is executed
         this->stop();
