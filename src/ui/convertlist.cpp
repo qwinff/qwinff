@@ -753,7 +753,13 @@ void ConvertList::list_childRemovedEvent(QChildEvent */*event*/)
 
 void ConvertList::list_mousePressEvent(QMouseEvent *event)
 {
-    // TODO: open add file wizard if list is empty
+    if (event->button() == Qt::LeftButton && isEmpty()) {
+        // open add task wizard if the list is empty
+        AddTaskWizard wizard(m_presets, this);
+        if (wizard.exec_openfile() == QDialog::Accepted) {
+            addTasks(wizard.getConversionParameters());
+        }
+    }
 }
 
 // Functions to access m_outputFileNames
