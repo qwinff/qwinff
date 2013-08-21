@@ -122,7 +122,7 @@ public:
             return true;
         case QEvent::MouseButtonPress:
             m_parent->list_mousePressEvent(static_cast<QMouseEvent*>(event));
-            return true;
+            return false; // don't eat mouse events
         default:
             break;
         }
