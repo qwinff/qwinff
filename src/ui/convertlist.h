@@ -158,6 +158,7 @@ protected:
     void list_dragLeaveEvent(QDragLeaveEvent *event);
     void list_dropEvent(QDropEvent *event);
     void list_childRemovedEvent(QChildEvent *event);
+    void list_mousePressEvent(QMouseEvent *event);
 
 private:
     Q_DISABLE_COPY(ConvertList)

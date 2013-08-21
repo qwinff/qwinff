@@ -120,6 +120,9 @@ public:
         case QEvent::ChildRemoved:
             m_parent->list_childRemovedEvent(static_cast<QChildEvent*>(event));
             return true;
+        case QEvent::MouseButtonPress:
+            m_parent->list_mousePressEvent(static_cast<QMouseEvent*>(event));
+            return true;
         default:
             break;
         }
@@ -169,7 +172,7 @@ ConvertList::ConvertList(Presets *presets, QWidget *parent) :
     m_list->setSelectionMode(QAbstractItemView::ExtendedSelection);
 
     // Propagate events from the QTreeWidget to ConvertList.
-    m_list->installEventFilter(m_listEventFilter);
+    m_list->viewport()->installEventFilter(m_listEventFilter);
 
     // Enable internal drag-and-drop of list items
     m_list->setDragDropMode(QAbstractItemView::InternalMove);
@@ -746,6 +749,11 @@ void ConvertList::list_childRemovedEvent(QChildEvent */*event*/)
     for (int i=0; i<task_count; i++) {
         refresh_progressbar(get_task(m_list->topLevelItem(i)));
     }
+}
+
+void ConvertList::list_mousePressEvent(QMouseEvent *event)
+{
+    // TODO: open add file wizard if list is empty
 }
 
 // Functions to access m_outputFileNames
