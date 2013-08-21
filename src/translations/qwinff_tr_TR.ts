@@ -488,40 +488,40 @@
 <context>
     <name>ConvertList</name>
     <message>
-        <location filename="../ui/convertlist.cpp" line="260"/>
-        <location filename="../ui/convertlist.cpp" line="903"/>
+        <location filename="../ui/convertlist.cpp" line="268"/>
+        <location filename="../ui/convertlist.cpp" line="948"/>
         <source>Cancel</source>
         <extracomment>Cancel the operation of adding new tasks</extracomment>
         <translation>İptal</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="274"/>
+        <location filename="../ui/convertlist.cpp" line="282"/>
         <source>Adding files (%1/%2)</source>
         <extracomment>This text is the progress indicator of adding multiple tasks. %1 is the number of files that are already added. %2 is the total number of files.</extracomment>
         <translation>Dosyalar ekleniyor (%1/%2)</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="298"/>
+        <location filename="../ui/convertlist.cpp" line="306"/>
         <source>Some files are not recognized by the converter.</source>
         <translation>Bazı dosyalar dönüştürücü tarafından tanınmamaktadır.</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="470"/>
+        <location filename="../ui/convertlist.cpp" line="454"/>
         <source>New File Name</source>
         <translation>Yeni Dosya Adı</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="471"/>
+        <location filename="../ui/convertlist.cpp" line="455"/>
         <source>Please input the new name for the output file.</source>
         <translation>Lütfen çıktı dosyası için yeni ad girin.</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="496"/>
+        <location filename="../ui/convertlist.cpp" line="480"/>
         <source>Output Directory</source>
         <translation>Çıktı Dizini</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="541"/>
+        <location filename="../ui/convertlist.cpp" line="525"/>
         <source>Error Message from FFmpeg:
 
 </source>
@@ -529,167 +529,172 @@
 </translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="612"/>
+        <location filename="../ui/convertlist.cpp" line="579"/>
+        <source>Drag and drop files here to add tasks.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/convertlist.cpp" line="611"/>
         <source>Hide &quot;%1&quot;</source>
         <extracomment>Hide a column in the list. For example, the text maybe &apos;Hide &quot;Duration&quot;&apos;. The two &quot; are quotation marks in English, you may replace it with local quotation marks.</extracomment>
         <translation>Gizle &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="621"/>
+        <location filename="../ui/convertlist.cpp" line="620"/>
         <source>Restore All Columns</source>
         <translation>Tüm Sütunları eski haline getir</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="810"/>
+        <location filename="../ui/convertlist.cpp" line="825"/>
         <source>Source</source>
         <translation>kaynak</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="811"/>
+        <location filename="../ui/convertlist.cpp" line="826"/>
         <source>Destination</source>
         <translation>Hedef</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="812"/>
+        <location filename="../ui/convertlist.cpp" line="827"/>
         <source>Duration</source>
         <translation>Süreç</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="813"/>
+        <location filename="../ui/convertlist.cpp" line="828"/>
         <source>File Size</source>
         <translation>Dosya Boyutu</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="816"/>
+        <location filename="../ui/convertlist.cpp" line="831"/>
         <source>Sample Rate</source>
         <extracomment>Audio</extracomment>
         <translation>Örnekleme Oranı</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="817"/>
+        <location filename="../ui/convertlist.cpp" line="832"/>
         <source>Audio Bitrate</source>
         <translation>Ses bit hızı</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="818"/>
+        <location filename="../ui/convertlist.cpp" line="833"/>
         <source>Channels</source>
         <extracomment>Audio</extracomment>
         <translation>Kanallar</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="819"/>
+        <location filename="../ui/convertlist.cpp" line="834"/>
         <source>Audio Codec</source>
         <translation>Ses Kodlayıcı</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="822"/>
+        <location filename="../ui/convertlist.cpp" line="837"/>
         <source>Dimensions</source>
         <translation>Ölçüler</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="823"/>
+        <location filename="../ui/convertlist.cpp" line="838"/>
         <source>Video Bitrate</source>
         <translation>Video bit hızı</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="824"/>
+        <location filename="../ui/convertlist.cpp" line="839"/>
         <source>Framerate</source>
         <extracomment>Video</extracomment>
         <translation>Kare Hızı</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="825"/>
+        <location filename="../ui/convertlist.cpp" line="840"/>
         <source>Video Codec</source>
         <translation>Video Kodlayıcı</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="827"/>
+        <location filename="../ui/convertlist.cpp" line="842"/>
         <source>Progress</source>
         <translation>İlerleme</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="872"/>
+        <location filename="../ui/convertlist.cpp" line="917"/>
         <source>%1 Hz</source>
         <translation>%1 Hz</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="873"/>
-        <location filename="../ui/convertlist.cpp" line="882"/>
+        <location filename="../ui/convertlist.cpp" line="918"/>
+        <location filename="../ui/convertlist.cpp" line="927"/>
         <source>%1 kb/s</source>
         <translation>%1 kb/s</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="883"/>
+        <location filename="../ui/convertlist.cpp" line="928"/>
         <source>%1 fps</source>
         <translation>%1 fps</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="902"/>
+        <location filename="../ui/convertlist.cpp" line="947"/>
         <source>Removing tasks...</source>
         <extracomment>Remove files from the tasklist</extracomment>
         <translation>Görevler kaldırılıyor ...</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="945"/>
+        <location filename="../ui/convertlist.cpp" line="990"/>
         <source>KiB</source>
         <translation>KiB</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="945"/>
+        <location filename="../ui/convertlist.cpp" line="990"/>
         <source>MiB</source>
         <translation>MiB</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="945"/>
+        <location filename="../ui/convertlist.cpp" line="990"/>
         <source>GiB</source>
         <translation>GiB</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="945"/>
+        <location filename="../ui/convertlist.cpp" line="990"/>
         <source>TiB</source>
         <translation>TiB</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="948"/>
+        <location filename="../ui/convertlist.cpp" line="993"/>
         <source>B</source>
         <extracomment>Bytes</extracomment>
         <translation>B</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="983"/>
+        <location filename="../ui/convertlist.cpp" line="1028"/>
         <source>File Exists</source>
         <translation>Dosya Var</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="984"/>
+        <location filename="../ui/convertlist.cpp" line="1029"/>
         <source>%1 already exists on disk or in the task list. Still use this name as the output filename?</source>
         <translation>%1 diskinizde veya görev listesinde zaten var. Hala çıkış dosya adı olarak bu ad kullanılınsın mı?</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="1027"/>
+        <location filename="../ui/convertlist.cpp" line="1074"/>
         <source>Remove Task</source>
         <translation>Görev kaldır</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="1028"/>
+        <location filename="../ui/convertlist.cpp" line="1075"/>
         <source>Cannot remove a task while it is in progress.</source>
         <translation>İşlem devam ederken görev kaldırılamaz.</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="1072"/>
-        <location filename="../ui/convertlist.cpp" line="1073"/>
+        <location filename="../ui/convertlist.cpp" line="1119"/>
+        <location filename="../ui/convertlist.cpp" line="1120"/>
         <source>Finished</source>
         <extracomment>The text to be displayed on the progress bar when a conversion finishes</extracomment>
         <translation>Bitti</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="1079"/>
+        <location filename="../ui/convertlist.cpp" line="1126"/>
         <source>Failed</source>
         <extracomment>The text to be displayed on the progress bar when a conversion fails</extracomment>
         <translation>Başarısız</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="1081"/>
+        <location filename="../ui/convertlist.cpp" line="1128"/>
         <source>Error: %1</source>
         <extracomment>%1 is the error message</extracomment>
         <translation>Hata: %1</translation>
@@ -698,12 +703,12 @@
 <context>
     <name>ExtraTranslations</name>
     <message>
-        <location filename="../extra-translations.h" line="41"/>
+        <location filename="../extra-translations.h" line="38"/>
         <source>Convert between media file formats</source>
         <translation>Çokluortam dosya biçimleri arasında dönüştürme</translation>
     </message>
     <message>
-        <location filename="../extra-translations.h" line="42"/>
+        <location filename="../extra-translations.h" line="39"/>
         <source>Media Converter</source>
         <translation>Çokluortam Dönüştürücü</translation>
     </message>
@@ -712,239 +717,242 @@
     <name>MainWindow</name>
     <message>
         <location filename="../ui/mainwindow.ui" line="14"/>
+        <location filename="../ui/mainwindow.cpp" line="767"/>
         <source>QWinFF</source>
         <translation>QWinFF</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="30"/>
-        <source>&amp;File</source>
-        <translation>&amp;Dosya</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.ui" line="39"/>
-        <source>&amp;Convert</source>
-        <translation>Dö&amp;nüştür</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.ui" line="50"/>
-        <source>&amp;About</source>
-        <translation>&amp;Hakkında</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.ui" line="59"/>
-        <source>&amp;Edit</source>
-        <translation>Düzenl&amp;e</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.ui" line="94"/>
-        <source>&amp;Add Files</source>
-        <translation>&amp;Dosya Ekle</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.ui" line="97"/>
-        <source>Add files for conversion.</source>
-        <translation>Dönüşüm için dosyaları ekleyin.</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.ui" line="100"/>
-        <source>Ctrl+N</source>
-        <translation>Ctrl+N</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.ui" line="109"/>
-        <source>E&amp;xit</source>
-        <translation>&amp;Çık</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.ui" line="112"/>
-        <source>Exit the program.</source>
-        <translation>Programdan çık.</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.ui" line="121"/>
-        <source>&amp;Start</source>
-        <translation>&amp;Başlat</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.ui" line="124"/>
+        <location filename="../ui/mainwindow.ui" line="61"/>
+        <location filename="../ui/mainwindow.ui" line="181"/>
         <source>Start conversion process.</source>
         <translation>Dönüştürme işlemini başlat.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="127"/>
+        <location filename="../ui/mainwindow.ui" line="64"/>
+        <location filename="../ui/mainwindow.ui" line="178"/>
+        <source>&amp;Start</source>
+        <translation>&amp;Başlat</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.ui" line="87"/>
+        <source>&amp;File</source>
+        <translation>&amp;Dosya</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.ui" line="96"/>
+        <source>&amp;Convert</source>
+        <translation>Dö&amp;nüştür</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.ui" line="107"/>
+        <source>&amp;About</source>
+        <translation>&amp;Hakkında</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.ui" line="116"/>
+        <source>&amp;Edit</source>
+        <translation>Düzenl&amp;e</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.ui" line="151"/>
+        <source>&amp;Add Files</source>
+        <translation>&amp;Dosya Ekle</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.ui" line="154"/>
+        <source>Add files for conversion.</source>
+        <translation>Dönüşüm için dosyaları ekleyin.</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.ui" line="157"/>
+        <source>Ctrl+N</source>
+        <translation>Ctrl+N</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.ui" line="166"/>
+        <source>E&amp;xit</source>
+        <translation>&amp;Çık</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.ui" line="169"/>
+        <source>Exit the program.</source>
+        <translation>Programdan çık.</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.ui" line="184"/>
         <source>F9</source>
         <translation>F9</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="136"/>
+        <location filename="../ui/mainwindow.ui" line="193"/>
         <source>S&amp;top</source>
         <translation>&amp;Durdur</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="139"/>
+        <location filename="../ui/mainwindow.ui" line="196"/>
         <source>Stop conversion process.</source>
         <translation>Dönüştürme işlemi durdur.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="148"/>
+        <location filename="../ui/mainwindow.ui" line="205"/>
         <source>Set &amp;Parameters</source>
         <translation>Ayar &amp;Parametreler</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="151"/>
+        <location filename="../ui/mainwindow.ui" line="208"/>
         <source>Set Parameters</source>
         <extracomment>Edit output file parameters.</extracomment>
         <translation>Parametre Ayarları</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="154"/>
+        <location filename="../ui/mainwindow.ui" line="211"/>
         <source>Edit conversion parameters of selected files.</source>
         <translation>Seçilen dosyaların dönüşüm parametrelerini düzenleyin.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="163"/>
+        <location filename="../ui/mainwindow.ui" line="220"/>
         <source>About &amp;Qt</source>
         <translation>Hakkında &amp;Qt</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="166"/>
+        <location filename="../ui/mainwindow.ui" line="223"/>
         <source>About Qt</source>
         <translation>Qt Hakkında</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="175"/>
+        <location filename="../ui/mainwindow.ui" line="232"/>
         <source>&amp;Open Output Folder</source>
         <translation>&amp;Çıktı Klasörünü Aç</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="178"/>
+        <location filename="../ui/mainwindow.ui" line="235"/>
         <source>Open output folder of the selected file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="187"/>
+        <location filename="../ui/mainwindow.ui" line="244"/>
         <source>About &amp;FFmpeg</source>
         <translation>Hakkında &amp;FFmpeg</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="190"/>
+        <location filename="../ui/mainwindow.ui" line="247"/>
         <source>About FFmpeg</source>
         <translation>FFmpeg Hakkında</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="199"/>
+        <location filename="../ui/mainwindow.ui" line="256"/>
         <source>&amp;Remove Selected</source>
         <extracomment>remove selected (tasks, items)</extracomment>
         <translation>&amp;Seçileni kaldır</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="202"/>
+        <location filename="../ui/mainwindow.ui" line="259"/>
         <source>Remove all selected items in the list.</source>
         <translation>Listede seçili tüm öğeleri kaldır.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="211"/>
+        <location filename="../ui/mainwindow.ui" line="268"/>
         <source>R&amp;emove Completed</source>
         <extracomment>remove completed (task, items)</extracomment>
         <translation>&amp;Tamamlananları kaldır</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="214"/>
+        <location filename="../ui/mainwindow.ui" line="271"/>
         <source>Remove Completed Items</source>
         <translation>Tamamlanan Öğeleri Kaldır</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="217"/>
+        <location filename="../ui/mainwindow.ui" line="274"/>
         <source>Remove all completed items in the list.</source>
         <translation>Listedeki tüm tamamlanan öğeleri kaldır.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="226"/>
+        <location filename="../ui/mainwindow.ui" line="283"/>
         <source>&amp;Clear List</source>
         <translation>&amp;Listeyi Temizle</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="229"/>
+        <location filename="../ui/mainwindow.ui" line="286"/>
         <source>Clear List</source>
         <translation>Listeyi Temizle</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="232"/>
+        <location filename="../ui/mainwindow.ui" line="289"/>
         <source>Remove all items in the list.</source>
         <translation>Listedeki tüm öğeleri kaldırın.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="241"/>
+        <location filename="../ui/mainwindow.ui" line="298"/>
         <source>&amp;Retry</source>
         <translation>&amp;Tekrar dene</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="244"/>
+        <location filename="../ui/mainwindow.ui" line="301"/>
         <source>Retry</source>
         <translation>Tekrar dene</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="247"/>
+        <location filename="../ui/mainwindow.ui" line="304"/>
         <source>Retry selected tasks.</source>
         <translation>Seçilen görevler yeniden deneyin.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="256"/>
+        <location filename="../ui/mainwindow.ui" line="313"/>
         <source>Retry &amp;All</source>
         <translation>Tekrar dene &amp;Hepsi</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="259"/>
+        <location filename="../ui/mainwindow.ui" line="316"/>
         <source>Retry all tasks.</source>
         <translation>Tüm görevleri yeniden deneyin.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="268"/>
+        <location filename="../ui/mainwindow.ui" line="325"/>
         <source>&amp;Options</source>
         <translation>&amp;Seçenekler</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="271"/>
+        <location filename="../ui/mainwindow.ui" line="328"/>
         <source>Options</source>
         <translation>Seçenekler</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="280"/>
+        <location filename="../ui/mainwindow.ui" line="337"/>
         <source>About Q&amp;WinFF</source>
         <translation>Hakkında Q&amp;WinFF</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="283"/>
+        <location filename="../ui/mainwindow.ui" line="340"/>
         <source>About This Program</source>
         <translation>Bu Program Hakkında</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="288"/>
+        <location filename="../ui/mainwindow.ui" line="345"/>
         <source>Change Output &amp;Filename</source>
         <translation>Çıktı &amp;Dosya Adı Değiştir</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="291"/>
+        <location filename="../ui/mainwindow.ui" line="348"/>
         <source>Change the output filename of the selected item.</source>
         <translation>Seçili öğenin çıkış dosya adı değiştirin.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="296"/>
+        <location filename="../ui/mainwindow.ui" line="353"/>
         <source>Change Output &amp;Directory</source>
         <translation>Değiştir Çıktı &amp;Dizin</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="299"/>
+        <location filename="../ui/mainwindow.ui" line="356"/>
         <source>Change the output directory of the selected items.</source>
         <translation>Seçilen öğelerin çıkış dizinini değiştirin.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="312"/>
+        <location filename="../ui/mainwindow.ui" line="369"/>
         <source>Show Error &amp;Message</source>
         <translation>Hata Göster &amp;İleti</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="321"/>
+        <location filename="../ui/mainwindow.ui" line="378"/>
         <source>Check For &amp;Updates</source>
         <translation type="unfinished"></translation>
     </message>
@@ -959,48 +967,43 @@
         <translation>Dönüştürmek için bir şey yok.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="252"/>
+        <location filename="../ui/mainwindow.cpp" line="248"/>
         <source>Conversion is still in progress. Abort?</source>
         <translation>Dönüşüm devam etmektedir. İptal edilsin mi?</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="274"/>
-        <source>Elapsed Time: %1 h %2 m %3 s</source>
-        <translation>geçen zaman: %1 h %2 m %3 s</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.cpp" line="299"/>
+        <location filename="../ui/mainwindow.cpp" line="289"/>
         <location filename="../ui/mainwindow.cpp" line="533"/>
         <source>Shutdown</source>
         <extracomment>Shutdown the computer (completely poweroff)</extracomment>
         <translation>Kapat</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="300"/>
+        <location filename="../ui/mainwindow.cpp" line="290"/>
         <source>Shutdown when all tasks are done.</source>
         <translation>Tüm görevler bittiğinde kapat.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="304"/>
+        <location filename="../ui/mainwindow.cpp" line="294"/>
         <location filename="../ui/mainwindow.cpp" line="538"/>
         <source>Suspend</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
         <translation>Askıya al</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="305"/>
+        <location filename="../ui/mainwindow.cpp" line="295"/>
         <source>Suspend when all tasks are done.</source>
         <translation>Tüm görevler bittiğinde askıya al.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="309"/>
+        <location filename="../ui/mainwindow.cpp" line="299"/>
         <location filename="../ui/mainwindow.cpp" line="543"/>
         <source>Hibernate</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
         <translation>Hazırda Beklet</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="310"/>
+        <location filename="../ui/mainwindow.cpp" line="300"/>
         <source>Hibernate when all tasks are done.</source>
         <translation>Tüm görevler bittiğinde hazırda beklet.</translation>
     </message>
@@ -1008,6 +1011,17 @@
         <location filename="../ui/mainwindow.cpp" line="660"/>
         <source>Failed to load preset file. The application will quit now.</source>
         <translation>Önayar dosyası yüklenemedi.Uygulamadan şimdi çıkılacak.</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="748"/>
+        <source>Elapsed Time: %1 h %2 m %3 s</source>
+        <translation>geçen zaman: %1 h %2 m %3 s</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="764"/>
+        <source>Converting %1/%2</source>
+        <extracomment>Converting the %1-th file in %2 files. %2 is the number of files.</extracomment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1037,42 +1051,52 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="51"/>
+        <location filename="../ui/optionsdialog.ui" line="37"/>
+        <source>Automatically start conversion after adding files to the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/optionsdialog.ui" line="40"/>
+        <source>Start conversion automatically</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/optionsdialog.ui" line="61"/>
         <source>FFmpeg</source>
         <translation>FFmpeg</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="62"/>
+        <location filename="../ui/optionsdialog.ui" line="72"/>
         <source>Number of threads to use in conversion</source>
         <translation>Dönüşümde kullanılacak iş parçacığı sayısı</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="76"/>
+        <location filename="../ui/optionsdialog.ui" line="86"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hide output formats that are not available in the current ffmpeg installation. It is recommended to turn this option on unless you are sure that QWinFF has failed to detect available formats. (requires restarting QWinFF to take effect)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Geçerli ffmpeg kurulumunda bulunmayan çıkış biçimleri gizle. QWinFF kullanılabilir biçimleri algılamak için başarısız olduğuna emin olmadıkça bu seçeneği açmak için önerilir.(QWinFF etkili olması için yeniden başlatma gerektirir)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="79"/>
+        <location filename="../ui/optionsdialog.ui" line="89"/>
         <source>Hide unavailable formats (requires restarting)</source>
         <translation>Kullanılamaz biçimleri gizle (yeniden başlatma gerektirir)</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="89"/>
+        <location filename="../ui/optionsdialog.ui" line="99"/>
         <source>Tools</source>
         <translation>Araçlar</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="97"/>
+        <location filename="../ui/optionsdialog.ui" line="107"/>
         <source>You have to restart QWinFF for the changes to take effect.</source>
         <translation>Değişikliklerin etkili olması için QWinFF yeniden başlatılmalıdır.</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="117"/>
+        <location filename="../ui/optionsdialog.ui" line="127"/>
         <source>Name</source>
         <translation>Ad</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="122"/>
+        <location filename="../ui/optionsdialog.ui" line="132"/>
         <source>Command</source>
         <translation>Komut</translation>
     </message>

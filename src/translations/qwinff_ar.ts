@@ -488,40 +488,40 @@
 <context>
     <name>ConvertList</name>
     <message>
-        <location filename="../ui/convertlist.cpp" line="260"/>
-        <location filename="../ui/convertlist.cpp" line="903"/>
+        <location filename="../ui/convertlist.cpp" line="268"/>
+        <location filename="../ui/convertlist.cpp" line="948"/>
         <source>Cancel</source>
         <extracomment>Cancel the operation of adding new tasks</extracomment>
         <translation>خروج</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="274"/>
+        <location filename="../ui/convertlist.cpp" line="282"/>
         <source>Adding files (%1/%2)</source>
         <extracomment>This text is the progress indicator of adding multiple tasks. %1 is the number of files that are already added. %2 is the total number of files.</extracomment>
         <translation>اضافة الملفات (%1/%2)</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="298"/>
+        <location filename="../ui/convertlist.cpp" line="306"/>
         <source>Some files are not recognized by the converter.</source>
         <translation>لم يتم التعرف على بعض الملفات من قبل المحول.</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="470"/>
+        <location filename="../ui/convertlist.cpp" line="454"/>
         <source>New File Name</source>
         <translation>اسم الملف الجديد</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="471"/>
+        <location filename="../ui/convertlist.cpp" line="455"/>
         <source>Please input the new name for the output file.</source>
         <translation>الرجاء إدخال اسم جديد لملف الإخراج.</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="496"/>
+        <location filename="../ui/convertlist.cpp" line="480"/>
         <source>Output Directory</source>
         <translation>مجلد الاخراج</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="541"/>
+        <location filename="../ui/convertlist.cpp" line="525"/>
         <source>Error Message from FFmpeg:
 
 </source>
@@ -529,167 +529,172 @@
 </translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="612"/>
+        <location filename="../ui/convertlist.cpp" line="579"/>
+        <source>Drag and drop files here to add tasks.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/convertlist.cpp" line="611"/>
         <source>Hide &quot;%1&quot;</source>
         <extracomment>Hide a column in the list. For example, the text maybe &apos;Hide &quot;Duration&quot;&apos;. The two &quot; are quotation marks in English, you may replace it with local quotation marks.</extracomment>
         <translation>اخفاء &quot;%1&quot;</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="621"/>
+        <location filename="../ui/convertlist.cpp" line="620"/>
         <source>Restore All Columns</source>
         <translation>استعادة كافة الأعمدة</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="810"/>
+        <location filename="../ui/convertlist.cpp" line="825"/>
         <source>Source</source>
         <translation>المصدر</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="811"/>
+        <location filename="../ui/convertlist.cpp" line="826"/>
         <source>Destination</source>
         <translation>الوجهة</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="812"/>
+        <location filename="../ui/convertlist.cpp" line="827"/>
         <source>Duration</source>
         <translation>المدة</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="813"/>
+        <location filename="../ui/convertlist.cpp" line="828"/>
         <source>File Size</source>
         <translation>حجم الملف</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="816"/>
+        <location filename="../ui/convertlist.cpp" line="831"/>
         <source>Sample Rate</source>
         <extracomment>Audio</extracomment>
         <translation>معدل العينة</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="817"/>
+        <location filename="../ui/convertlist.cpp" line="832"/>
         <source>Audio Bitrate</source>
         <translation>معدل البت للصوت</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="818"/>
+        <location filename="../ui/convertlist.cpp" line="833"/>
         <source>Channels</source>
         <extracomment>Audio</extracomment>
         <translation>قنوات</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="819"/>
+        <location filename="../ui/convertlist.cpp" line="834"/>
         <source>Audio Codec</source>
         <translation>مرمزات الصوت</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="822"/>
+        <location filename="../ui/convertlist.cpp" line="837"/>
         <source>Dimensions</source>
         <translation>الأبعاد</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="823"/>
+        <location filename="../ui/convertlist.cpp" line="838"/>
         <source>Video Bitrate</source>
         <translation>معدل البت للفيديو</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="824"/>
+        <location filename="../ui/convertlist.cpp" line="839"/>
         <source>Framerate</source>
         <extracomment>Video</extracomment>
         <translation>عدد الاطارات</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="825"/>
+        <location filename="../ui/convertlist.cpp" line="840"/>
         <source>Video Codec</source>
         <translation>مرمزات الفيديو</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="827"/>
+        <location filename="../ui/convertlist.cpp" line="842"/>
         <source>Progress</source>
         <translation>التقدم</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="872"/>
+        <location filename="../ui/convertlist.cpp" line="917"/>
         <source>%1 Hz</source>
         <translation>%1 هيرتز</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="873"/>
-        <location filename="../ui/convertlist.cpp" line="882"/>
+        <location filename="../ui/convertlist.cpp" line="918"/>
+        <location filename="../ui/convertlist.cpp" line="927"/>
         <source>%1 kb/s</source>
         <translation>%1 ك.ب/ ث</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="883"/>
+        <location filename="../ui/convertlist.cpp" line="928"/>
         <source>%1 fps</source>
         <translation>%1 اطار/ ثانية</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="902"/>
+        <location filename="../ui/convertlist.cpp" line="947"/>
         <source>Removing tasks...</source>
         <extracomment>Remove files from the tasklist</extracomment>
         <translation>إزالة المهام ...</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="945"/>
+        <location filename="../ui/convertlist.cpp" line="990"/>
         <source>KiB</source>
         <translation>ك.ب</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="945"/>
+        <location filename="../ui/convertlist.cpp" line="990"/>
         <source>MiB</source>
         <translation>م.ب</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="945"/>
+        <location filename="../ui/convertlist.cpp" line="990"/>
         <source>GiB</source>
         <translation>ج.ب</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="945"/>
+        <location filename="../ui/convertlist.cpp" line="990"/>
         <source>TiB</source>
         <translation>ت.ب</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="948"/>
+        <location filename="../ui/convertlist.cpp" line="993"/>
         <source>B</source>
         <extracomment>Bytes</extracomment>
         <translation>بايت</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="983"/>
+        <location filename="../ui/convertlist.cpp" line="1028"/>
         <source>File Exists</source>
         <translation>الملف موجود</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="984"/>
+        <location filename="../ui/convertlist.cpp" line="1029"/>
         <source>%1 already exists on disk or in the task list. Still use this name as the output filename?</source>
         <translation>%1 بالفعل موجود على القرص أو في قائمة المهام. لا تزال تستخدم هذا الاسم كما الإخراج اسم الملف؟</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="1027"/>
+        <location filename="../ui/convertlist.cpp" line="1074"/>
         <source>Remove Task</source>
         <translation>خذف المهمة</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="1028"/>
+        <location filename="../ui/convertlist.cpp" line="1075"/>
         <source>Cannot remove a task while it is in progress.</source>
         <translation>لا يمكن إزالة مهمة عندما يكون في التقدم.</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="1072"/>
-        <location filename="../ui/convertlist.cpp" line="1073"/>
+        <location filename="../ui/convertlist.cpp" line="1119"/>
+        <location filename="../ui/convertlist.cpp" line="1120"/>
         <source>Finished</source>
         <extracomment>The text to be displayed on the progress bar when a conversion finishes</extracomment>
         <translation>تم التحويل بنجاح</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="1079"/>
+        <location filename="../ui/convertlist.cpp" line="1126"/>
         <source>Failed</source>
         <extracomment>The text to be displayed on the progress bar when a conversion fails</extracomment>
         <translation>فشل</translation>
     </message>
     <message>
-        <location filename="../ui/convertlist.cpp" line="1081"/>
+        <location filename="../ui/convertlist.cpp" line="1128"/>
         <source>Error: %1</source>
         <extracomment>%1 is the error message</extracomment>
         <translation>خطأ : %1</translation>
@@ -698,12 +703,12 @@
 <context>
     <name>ExtraTranslations</name>
     <message>
-        <location filename="../extra-translations.h" line="41"/>
+        <location filename="../extra-translations.h" line="38"/>
         <source>Convert between media file formats</source>
         <translation>تحويل بين صيغ ملفات الوسائط</translation>
     </message>
     <message>
-        <location filename="../extra-translations.h" line="42"/>
+        <location filename="../extra-translations.h" line="39"/>
         <source>Media Converter</source>
         <translation>محول الوسائط</translation>
     </message>
@@ -712,239 +717,242 @@
     <name>MainWindow</name>
     <message>
         <location filename="../ui/mainwindow.ui" line="14"/>
+        <location filename="../ui/mainwindow.cpp" line="767"/>
         <source>QWinFF</source>
         <translation>QWinFF</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="30"/>
-        <source>&amp;File</source>
-        <translation>&amp;ملف</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.ui" line="39"/>
-        <source>&amp;Convert</source>
-        <translation>&amp;تحويل</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.ui" line="50"/>
-        <source>&amp;About</source>
-        <translation>&amp;حول</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.ui" line="59"/>
-        <source>&amp;Edit</source>
-        <translation>&amp;تعديل</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.ui" line="94"/>
-        <source>&amp;Add Files</source>
-        <translation>&amp;اضافة ملفات</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.ui" line="97"/>
-        <source>Add files for conversion.</source>
-        <translation>إضافة ملفات للتحويل.</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.ui" line="100"/>
-        <source>Ctrl+N</source>
-        <translation>Ctrl+N</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.ui" line="109"/>
-        <source>E&amp;xit</source>
-        <translation>خروج</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.ui" line="112"/>
-        <source>Exit the program.</source>
-        <translation>الخروج من البرنامج</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.ui" line="121"/>
-        <source>&amp;Start</source>
-        <translation>&amp;بدء</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.ui" line="124"/>
+        <location filename="../ui/mainwindow.ui" line="61"/>
+        <location filename="../ui/mainwindow.ui" line="181"/>
         <source>Start conversion process.</source>
         <translation>بدء عملية التحويل.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="127"/>
+        <location filename="../ui/mainwindow.ui" line="64"/>
+        <location filename="../ui/mainwindow.ui" line="178"/>
+        <source>&amp;Start</source>
+        <translation>&amp;بدء</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.ui" line="87"/>
+        <source>&amp;File</source>
+        <translation>&amp;ملف</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.ui" line="96"/>
+        <source>&amp;Convert</source>
+        <translation>&amp;تحويل</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.ui" line="107"/>
+        <source>&amp;About</source>
+        <translation>&amp;حول</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.ui" line="116"/>
+        <source>&amp;Edit</source>
+        <translation>&amp;تعديل</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.ui" line="151"/>
+        <source>&amp;Add Files</source>
+        <translation>&amp;اضافة ملفات</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.ui" line="154"/>
+        <source>Add files for conversion.</source>
+        <translation>إضافة ملفات للتحويل.</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.ui" line="157"/>
+        <source>Ctrl+N</source>
+        <translation>Ctrl+N</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.ui" line="166"/>
+        <source>E&amp;xit</source>
+        <translation>خروج</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.ui" line="169"/>
+        <source>Exit the program.</source>
+        <translation>الخروج من البرنامج</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.ui" line="184"/>
         <source>F9</source>
         <translation>F9</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="136"/>
+        <location filename="../ui/mainwindow.ui" line="193"/>
         <source>S&amp;top</source>
         <translation>ايقاف</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="139"/>
+        <location filename="../ui/mainwindow.ui" line="196"/>
         <source>Stop conversion process.</source>
         <translation>إيقاف عملية التحويل.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="148"/>
+        <location filename="../ui/mainwindow.ui" line="205"/>
         <source>Set &amp;Parameters</source>
         <translation>ضبط المعلمات</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="151"/>
+        <location filename="../ui/mainwindow.ui" line="208"/>
         <source>Set Parameters</source>
         <extracomment>Edit output file parameters.</extracomment>
         <translation>ضبط المعلمات</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="154"/>
+        <location filename="../ui/mainwindow.ui" line="211"/>
         <source>Edit conversion parameters of selected files.</source>
         <translation>تحرير معلمات تحويل الملفات المحددة.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="163"/>
+        <location filename="../ui/mainwindow.ui" line="220"/>
         <source>About &amp;Qt</source>
         <translation>حول &amp;Qt</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="166"/>
+        <location filename="../ui/mainwindow.ui" line="223"/>
         <source>About Qt</source>
         <translation>حول Qt</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="175"/>
+        <location filename="../ui/mainwindow.ui" line="232"/>
         <source>&amp;Open Output Folder</source>
         <translation>فتح مجلد الاخراج</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="178"/>
+        <location filename="../ui/mainwindow.ui" line="235"/>
         <source>Open output folder of the selected file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="187"/>
+        <location filename="../ui/mainwindow.ui" line="244"/>
         <source>About &amp;FFmpeg</source>
         <translation>حول FFmpeg</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="190"/>
+        <location filename="../ui/mainwindow.ui" line="247"/>
         <source>About FFmpeg</source>
         <translation>حول FFmpeg</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="199"/>
+        <location filename="../ui/mainwindow.ui" line="256"/>
         <source>&amp;Remove Selected</source>
         <extracomment>remove selected (tasks, items)</extracomment>
         <translation>الغاء التحديد</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="202"/>
+        <location filename="../ui/mainwindow.ui" line="259"/>
         <source>Remove all selected items in the list.</source>
         <translation>إزالة كافة العناصر المحددة في القائمة.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="211"/>
+        <location filename="../ui/mainwindow.ui" line="268"/>
         <source>R&amp;emove Completed</source>
         <extracomment>remove completed (task, items)</extracomment>
         <translation>ازالة المكتملة</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="214"/>
+        <location filename="../ui/mainwindow.ui" line="271"/>
         <source>Remove Completed Items</source>
         <translation>ازالة الملفات المكتملة</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="217"/>
+        <location filename="../ui/mainwindow.ui" line="274"/>
         <source>Remove all completed items in the list.</source>
         <translation>إزالة كافة العناصر المحددة في القائمة.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="226"/>
+        <location filename="../ui/mainwindow.ui" line="283"/>
         <source>&amp;Clear List</source>
         <translation>ازالة القائمة</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="229"/>
+        <location filename="../ui/mainwindow.ui" line="286"/>
         <source>Clear List</source>
         <translation>ازالة القائمة</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="232"/>
+        <location filename="../ui/mainwindow.ui" line="289"/>
         <source>Remove all items in the list.</source>
         <translation>إزالة كافة العناصر الموجودة في القائمة.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="241"/>
+        <location filename="../ui/mainwindow.ui" line="298"/>
         <source>&amp;Retry</source>
         <translation>اعادة المحاولة</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="244"/>
+        <location filename="../ui/mainwindow.ui" line="301"/>
         <source>Retry</source>
         <translation>اعادة المحاولة</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="247"/>
+        <location filename="../ui/mainwindow.ui" line="304"/>
         <source>Retry selected tasks.</source>
         <translation>اعادة تحدبد المهام</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="256"/>
+        <location filename="../ui/mainwindow.ui" line="313"/>
         <source>Retry &amp;All</source>
         <translation>اعادة الكل</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="259"/>
+        <location filename="../ui/mainwindow.ui" line="316"/>
         <source>Retry all tasks.</source>
         <translation>اعادة جميع المهام</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="268"/>
+        <location filename="../ui/mainwindow.ui" line="325"/>
         <source>&amp;Options</source>
         <translation>خيارات</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="271"/>
+        <location filename="../ui/mainwindow.ui" line="328"/>
         <source>Options</source>
         <translation>خيارات</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="280"/>
+        <location filename="../ui/mainwindow.ui" line="337"/>
         <source>About Q&amp;WinFF</source>
         <translation>عن QWinFF</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="283"/>
+        <location filename="../ui/mainwindow.ui" line="340"/>
         <source>About This Program</source>
         <translation>عن هذا البرنامج</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="288"/>
+        <location filename="../ui/mainwindow.ui" line="345"/>
         <source>Change Output &amp;Filename</source>
         <translation>تغيير اسم ملف الاخراج</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="291"/>
+        <location filename="../ui/mainwindow.ui" line="348"/>
         <source>Change the output filename of the selected item.</source>
         <translation>تغيير اسم ملف الإخراج من العنصر المحدد.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="296"/>
+        <location filename="../ui/mainwindow.ui" line="353"/>
         <source>Change Output &amp;Directory</source>
         <translation>تغيير مجلد الاخراج</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="299"/>
+        <location filename="../ui/mainwindow.ui" line="356"/>
         <source>Change the output directory of the selected items.</source>
         <translation>تغيير مجلد الإخراج للعناصر المحددة.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="312"/>
+        <location filename="../ui/mainwindow.ui" line="369"/>
         <source>Show Error &amp;Message</source>
         <translation>اظهار رسالة الخطأ</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.ui" line="321"/>
+        <location filename="../ui/mainwindow.ui" line="378"/>
         <source>Check For &amp;Updates</source>
         <translation type="unfinished"></translation>
     </message>
@@ -959,48 +967,43 @@
         <translation>لا شيء للتحويل.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="252"/>
+        <location filename="../ui/mainwindow.cpp" line="248"/>
         <source>Conversion is still in progress. Abort?</source>
         <translation>التحويل لا يزال قيد التقدم. إيقاف؟</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="274"/>
-        <source>Elapsed Time: %1 h %2 m %3 s</source>
-        <translation>الوقت المنقضي: %1 س %2 د %3 ث</translation>
-    </message>
-    <message>
-        <location filename="../ui/mainwindow.cpp" line="299"/>
+        <location filename="../ui/mainwindow.cpp" line="289"/>
         <location filename="../ui/mainwindow.cpp" line="533"/>
         <source>Shutdown</source>
         <extracomment>Shutdown the computer (completely poweroff)</extracomment>
         <translation>ايقاف التشغيل</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="300"/>
+        <location filename="../ui/mainwindow.cpp" line="290"/>
         <source>Shutdown when all tasks are done.</source>
         <translation>ايقاف تشغيل الكمبيوتر عند الانتهاء من جميع المهام</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="304"/>
+        <location filename="../ui/mainwindow.cpp" line="294"/>
         <location filename="../ui/mainwindow.cpp" line="538"/>
         <source>Suspend</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
         <translation>تعليق</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="305"/>
+        <location filename="../ui/mainwindow.cpp" line="295"/>
         <source>Suspend when all tasks are done.</source>
         <translation>تعليق الكمبيوتر عند الانتهاء من جميع المهام</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="309"/>
+        <location filename="../ui/mainwindow.cpp" line="299"/>
         <location filename="../ui/mainwindow.cpp" line="543"/>
         <source>Hibernate</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
         <translation>الإسبات</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="310"/>
+        <location filename="../ui/mainwindow.cpp" line="300"/>
         <source>Hibernate when all tasks are done.</source>
         <translation>اسبات الكمبيوتر عند الانتهاء من جميع المهام</translation>
     </message>
@@ -1008,6 +1011,17 @@
         <location filename="../ui/mainwindow.cpp" line="660"/>
         <source>Failed to load preset file. The application will quit now.</source>
         <translation>فشل تحميل ملف معين. سوف يتم إنهاء التطبيق الآن.</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="748"/>
+        <source>Elapsed Time: %1 h %2 m %3 s</source>
+        <translation>الوقت المنقضي: %1 س %2 د %3 ث</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="764"/>
+        <source>Converting %1/%2</source>
+        <extracomment>Converting the %1-th file in %2 files. %2 is the number of files.</extracomment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1037,42 +1051,52 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="51"/>
+        <location filename="../ui/optionsdialog.ui" line="37"/>
+        <source>Automatically start conversion after adding files to the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/optionsdialog.ui" line="40"/>
+        <source>Start conversion automatically</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/optionsdialog.ui" line="61"/>
         <source>FFmpeg</source>
         <translation>FFmpeg</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="62"/>
+        <location filename="../ui/optionsdialog.ui" line="72"/>
         <source>Number of threads to use in conversion</source>
         <translation>عدد الخيوط للاستخدام في التحويل</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="76"/>
+        <location filename="../ui/optionsdialog.ui" line="86"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hide output formats that are not available in the current ffmpeg installation. It is recommended to turn this option on unless you are sure that QWinFF has failed to detect available formats. (requires restarting QWinFF to take effect)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;إخفاء تنسيقات الإخراج التي لا تتوفر في تركيب FFMPEG الحالي. فمن المستحسن لتشغيل هذا الخيار إلا إذا كنت متأكدا من أن QWinFF فشلت في الكشف عن الأشكال المتاحة. (يتطلب إعادة تشغيل QWinFF نافذة المفعول)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="79"/>
+        <location filename="../ui/optionsdialog.ui" line="89"/>
         <source>Hide unavailable formats (requires restarting)</source>
         <translation>إخفاء تنسيقات غير متوفرة (يتطلب إعادة تشغيل)</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="89"/>
+        <location filename="../ui/optionsdialog.ui" line="99"/>
         <source>Tools</source>
         <translation>ادوات</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="97"/>
+        <location filename="../ui/optionsdialog.ui" line="107"/>
         <source>You have to restart QWinFF for the changes to take effect.</source>
         <translation>عليك إعادة تشغيل QWinFF لتصبح التغييرات نافذة المفعول.</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="117"/>
+        <location filename="../ui/optionsdialog.ui" line="127"/>
         <source>Name</source>
         <translation>الاسم</translation>
     </message>
     <message>
-        <location filename="../ui/optionsdialog.ui" line="122"/>
+        <location filename="../ui/optionsdialog.ui" line="132"/>
         <source>Command</source>
         <translation>أمر</translation>
     </message>
