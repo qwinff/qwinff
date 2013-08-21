@@ -380,34 +380,12 @@ void ConvertList::start()
         return;
     }
 
-    for (int i=0; i<task_count; i++) {
-        // execute the first queued task in the list and return
-        QTreeWidgetItem *item = m_list->topLevelItem(i);
-        Task *task = get_task(item);
-        if (task->status == Task::QUEUED) {
-            QSettings settings;
-
-            // start the task
-            is_busy = true;
-            task->status = Task::RUNNING;
-            m_current_task = task;
-
-            progressBar(task)->setActive(true);
-
-            task->param.threads = settings.value("options/threads", DEFAULT_THREAD_COUNT).toInt();
-            qDebug() << "Threads: " + QString::number(task->param.threads);
-
-            m_converter->start(task->param);
-            emit start_conversion(i, task->param);
-
-            return;
-        }
+    if (!run_first_queued_task()) {
+        // no task is executed
+        this->stop();
+        emit all_tasks_finished();
+        emit stopped();
     }
-
-    // no task is executed
-    this->stop();
-    emit all_tasks_finished();
-    emit stopped();
 }
 
 void ConvertList::stop()
@@ -852,6 +830,36 @@ void ConvertList::init_treewidget_columns_visibility(QTreeWidget *w)
     w->hideColumn(COL_VIDEO_BITRATE);
     w->hideColumn(COL_VIDEO_FRAMERATE);
     w->hideColumn(COL_VIDEO_CODEC);
+}
+
+bool ConvertList::run_first_queued_task()
+{
+    // execute the first queued task in the list and return
+    // returns true if a task is run, false if none
+    const int task_count = count();
+    for (int i=0; i<task_count; i++) {
+        QTreeWidgetItem *item = m_list->topLevelItem(i);
+        Task *task = get_task(item);
+        if (task->status == Task::QUEUED) {
+            QSettings settings;
+
+            // start the task
+            is_busy = true;
+            task->status = Task::RUNNING;
+            m_current_task = task;
+
+            progressBar(task)->setActive(true);
+
+            task->param.threads = settings.value("options/threads", DEFAULT_THREAD_COUNT).toInt();
+            qDebug() << "Threads: " + QString::number(task->param.threads);
+
+            m_converter->start(task->param);
+            emit start_conversion(i, task->param);
+
+            return true;
+        }
+    }
+    return false;
 }
 
 /* Fill in the columns of the list according to the conversion parameter

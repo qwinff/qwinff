@@ -182,6 +182,7 @@ private:
     void init_treewidget(QTreeWidget*);
     void init_treewidget_fill_column_titles(QStringList&);
     void init_treewidget_columns_visibility(QTreeWidget*);
+    bool run_first_queued_task();
     void fill_list_fields(ConversionParameters&, MediaProbe&, QStringList&);
     void reset_task(Task *task);
     void remove_items(const QList<QTreeWidgetItem*>&);
