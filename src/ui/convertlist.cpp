@@ -369,6 +369,7 @@ void ConvertList::start()
 
     if (!is_busy) { // new session: start timing
         m_startTime.restart();
+        is_busy = true;
         emit started();
     }
 
@@ -411,6 +412,7 @@ void ConvertList::start()
 
 void ConvertList::stop()
 {
+    is_busy = false;
     if (m_current_task) {
         progress_refreshed(0);
         m_current_task->status = Task::QUEUED;
@@ -418,7 +420,6 @@ void ConvertList::stop()
         m_current_task = 0;
         emit stopped();
     }
-    is_busy = false;
     m_converter->stop();
 }
 

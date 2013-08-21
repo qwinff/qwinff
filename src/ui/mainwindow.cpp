@@ -173,15 +173,11 @@ void MainWindow::slotStartConversion()
     } else {
         m_list->start();
     }
-
-    refresh_action_states();
 }
 
 void MainWindow::slotStopConversion()
 {
     m_list->stop();
-
-    refresh_action_states();
 }
 
 void MainWindow::slotSetConversionParameters()
@@ -273,12 +269,14 @@ void MainWindow::conversion_started()
     m_elapsedTimeLabel->clear();
     m_timer->start(1000);
     refresh_status();
+    refresh_action_states();
 }
 
 void MainWindow::conversion_stopped()
 {
     m_timer->stop();
     refresh_status();
+    refresh_action_states();
 }
 
 void MainWindow::update_poweroff_button(int id)
