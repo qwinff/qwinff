@@ -172,6 +172,7 @@ ConvertList::ConvertList(Presets *presets, QWidget *parent) :
     m_list->setSelectionMode(QAbstractItemView::ExtendedSelection);
 
     // Propagate events from the QTreeWidget to ConvertList.
+    m_list->installEventFilter(m_listEventFilter);
     m_list->viewport()->installEventFilter(m_listEventFilter);
 
     // Enable internal drag-and-drop of list items
