@@ -51,7 +51,7 @@
        use "|" to represent a separator
   -->
   <ToolbarEntries>
-    AddFiles StartConversion StopConversion Retry RetryAll
+    AddFiles StopConversion Retry RetryAll
     | RemoveSelectedItems RemoveCompletedItems | OpenOutputFolder Poweroff
   </ToolbarEntries>
 
