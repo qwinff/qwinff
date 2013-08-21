@@ -182,6 +182,7 @@ ConvertList::ConvertList(Presets *presets, QWidget *parent) :
             this, SLOT(slotHeaderContextMenu(QPoint)));
 
     m_startTime.start();
+    show_background_image();
 }
 
 ConvertList::~ConvertList()
@@ -242,6 +243,7 @@ bool ConvertList::addTask(ConversionParameters param)
     progressBar(task)->adjustSize();
 
     update_tooltip(item);
+    hide_background_image();
 
     qDebug() << QString("Added: \"%1\" -> \"%2\"").arg(param.source).arg(param.destination);
 
@@ -564,6 +566,19 @@ void ConvertList::progress_refreshed(int percentage)
     }
 }
 
+void ConvertList::show_background_image()
+{
+    m_list->setStyleSheet(
+                "background-image: url();" // TODO: fill in image path
+                "background-position: center;"
+                "background-repeat: no-repeat;");
+}
+
+void ConvertList::hide_background_image()
+{
+    m_list->setStyleSheet("");
+}
+
 void ConvertList::slotHeaderContextMenu(QPoint point)
 {
     const int header_count = m_list->header()->count();
@@ -670,6 +685,11 @@ void ConvertList::slotDoubleClick(QModelIndex index)
             }
         }
     }
+}
+
+void ConvertList::slotAllItemsRemoved()
+{
+    show_background_image();
 }
 
 // Events
@@ -1029,6 +1049,8 @@ void ConvertList::remove_item(QTreeWidgetItem *item)
         delete get_task(item);
         delete item;
         qDebug() << "Removed list item " << item_index;
+        if (isEmpty()) // removed the last item
+            slotAllItemsRemoved();
     } else { // The task is being executed.
 
         if (false)  // Silently ignore the event.

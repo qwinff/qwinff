@@ -143,10 +143,13 @@ public slots:
 private slots:
     void task_finished_slot(int);
     void progress_refreshed(int);
+    void show_background_image();
+    void hide_background_image();
     void slotHeaderContextMenu(QPoint);
     void slotHeaderContextMenuTriggered(QAction*);
     void slotRestoreListHeaders();
     void slotDoubleClick(QModelIndex);
+    void slotAllItemsRemoved();
 
 protected:
     bool list_keyPressEvent(QKeyEvent *event);
@@ -196,7 +199,6 @@ private:
     void refresh_progressbar(Task*);
     void update_tooltip(QTreeWidgetItem *item);
     QList<QTreeWidgetItem*> finished_items() const;
-
 };
 
 #endif // CONVERTLIST_H
