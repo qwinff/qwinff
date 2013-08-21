@@ -751,7 +751,7 @@ void MainWindow::refresh_statusbar()
         ui->lblTime->setText(timeinfo);
     } else {
         //m_elapsedTimeLabel->clear();
-        ui->lblTime->clear();
+        //ui->lblTime->clear();
     }
 }
 
