@@ -244,7 +244,7 @@
         <location filename="../ui/addtaskwizard.ui" line="232"/>
         <source>Create &amp;new folder in source folder</source>
         <extracomment>Create a new folder (e.g. qwinff_output) in the folder containing the input files. Put the output files in the newly created folder.</extracomment>
-        <translation>鍵立新的資料夾(&amp;N)</translation>
+        <translation>建立新的資料夾(&amp;N)</translation>
     </message>
     <message>
         <location filename="../ui/addtaskwizard.ui" line="257"/>
