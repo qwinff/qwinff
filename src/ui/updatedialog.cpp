@@ -1,6 +1,8 @@
+#include <QSettings>
 #include "updatedialog.h"
 #include "ui_updatedialog.h"
 #include "services/updatechecker.h"
+#include "services/constants.h"
 
 UpdateDialog::UpdateDialog(QWidget *parent) :
     QDialog(parent),
@@ -10,6 +12,12 @@ UpdateDialog::UpdateDialog(QWidget *parent) :
     ui->setupUi(this);
     connect(ui->btnReleaseNotes, SIGNAL(toggled(bool)),
             this, SLOT(slotToggleReleaseNotes(bool)));
+    connect(ui->chkCheckUpdateOnStartup, SIGNAL(toggled(bool)),
+            this, SLOT(slotToggleCheckUpdateOnStartup(bool)));
+    // read check_update_on_startup setting to chkCheckUpdateOnStartup
+    ui->chkCheckUpdateOnStartup->setChecked(
+                QSettings().value("options/check_update_on_startup",
+                                  Constants::getBool("CheckUpdateOnStartup")).toBool());
 }
 
 UpdateDialog::~UpdateDialog()
@@ -91,6 +99,12 @@ void UpdateDialog::slotToggleReleaseNotes(bool checked)
     // show/hide release notes
     ui->txtReleaseNotes->setVisible(checked);
     resizeToFit();
+}
+
+void UpdateDialog::slotToggleCheckUpdateOnStartup(bool checked)
+{
+    QSettings settings;
+    settings.setValue("options/check_update_on_startup", checked);
 }
 
 void UpdateDialog::resizeToFit()

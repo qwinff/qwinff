@@ -26,6 +26,7 @@ private slots:
     void updateFound();
     void slotReceivedUpdateResult(int result);
     void slotToggleReleaseNotes(bool checked);
+    void slotToggleCheckUpdateOnStartup(bool checked);
     void resizeToFit();
     
 private:
