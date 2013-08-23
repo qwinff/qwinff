@@ -109,8 +109,10 @@ void MainWindow::window_ready()
     }
     QSettings settings;
     if (settings.value("options/check_update_on_startup",
-                       Constants::getBool("CheckUpdateOnStartup")).toBool())
-        m_update_checker->checkUpdate();
+                       Constants::getBool("CheckUpdateOnStartup")).toBool()) {
+        if (ask_for_update_permission())
+            m_update_checker->checkUpdate();
+    }
     refresh_status();
 }
 
@@ -215,8 +217,10 @@ void MainWindow::slotAbout()
 
 void MainWindow::slotShowUpdateDialog()
 {
-    UpdateChecker update_checker;
-    UpdateDialog(this).exec(update_checker);
+    if (ask_for_update_permission()) {
+        UpdateChecker update_checker;
+        UpdateDialog(this).exec(update_checker);
+    }
 }
 
 void MainWindow::slotListContextMenu(QPoint /*pos*/)
@@ -359,6 +363,36 @@ bool MainWindow::check_execute_conditions()
         return false;
 
     return true;
+}
+
+// Be polite. Ask the user before using the internet to check for updates.
+// If the user says yes, remember the decision and don't ask next time.
+// If the user says no, disable checking for updates on startup.
+bool MainWindow::ask_for_update_permission()
+{
+    const char *setting_key = "update_permission";
+    QSettings settings;
+    bool permitted = settings.value(setting_key, false).toBool();
+    if (permitted) return true;
+
+    QString msg = tr("This program is going to check for updates online. "
+                     "Do you allow this program to use the Internet "
+                     "to check for updates?");
+
+    int reply = QMessageBox::information(this,
+                                          windowTitle(),
+                                          msg,
+                                          QMessageBox::Yes,
+                                          QMessageBox::No);
+
+    if (reply == QMessageBox::Yes) { // permitted
+        settings.setValue(setting_key, true); // don't ask next time
+        return true;
+    } else { // rejected
+        // disable auto update because the user probably doesn't like it
+        settings.setValue("options/check_update_on_startup", false);
+        return false;
+    }
 }
 
 // Popup wizard to add tasks.

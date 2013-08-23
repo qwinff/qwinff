@@ -89,6 +89,7 @@ private:
     QActionGroup *m_poweroff_actiongroup;
     UpdateChecker *m_update_checker;
     bool check_execute_conditions();
+    bool ask_for_update_permission();
     void add_files();
     void add_files(const QStringList& files);
     void setup_widgets();
