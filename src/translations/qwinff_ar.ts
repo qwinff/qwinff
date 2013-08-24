@@ -717,7 +717,7 @@
     <name>MainWindow</name>
     <message>
         <location filename="../ui/mainwindow.ui" line="14"/>
-        <location filename="../ui/mainwindow.cpp" line="767"/>
+        <location filename="../ui/mainwindow.cpp" line="801"/>
         <source>QWinFF</source>
         <translation>QWinFF</translation>
     </message>
@@ -957,68 +957,73 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="132"/>
+        <location filename="../ui/mainwindow.cpp" line="134"/>
         <source>All tasks has finished.</source>
         <translation>تم الانتهاء من جميع المهام</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="171"/>
+        <location filename="../ui/mainwindow.cpp" line="173"/>
         <source>Nothing to convert.</source>
         <translation>لا شيء للتحويل.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="248"/>
+        <location filename="../ui/mainwindow.cpp" line="252"/>
         <source>Conversion is still in progress. Abort?</source>
         <translation>التحويل لا يزال قيد التقدم. إيقاف؟</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="289"/>
-        <location filename="../ui/mainwindow.cpp" line="533"/>
+        <location filename="../ui/mainwindow.cpp" line="293"/>
+        <location filename="../ui/mainwindow.cpp" line="567"/>
         <source>Shutdown</source>
         <extracomment>Shutdown the computer (completely poweroff)</extracomment>
         <translation>ايقاف التشغيل</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="290"/>
+        <location filename="../ui/mainwindow.cpp" line="294"/>
         <source>Shutdown when all tasks are done.</source>
         <translation>ايقاف تشغيل الكمبيوتر عند الانتهاء من جميع المهام</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="294"/>
-        <location filename="../ui/mainwindow.cpp" line="538"/>
+        <location filename="../ui/mainwindow.cpp" line="298"/>
+        <location filename="../ui/mainwindow.cpp" line="572"/>
         <source>Suspend</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
         <translation>تعليق</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="295"/>
+        <location filename="../ui/mainwindow.cpp" line="299"/>
         <source>Suspend when all tasks are done.</source>
         <translation>تعليق الكمبيوتر عند الانتهاء من جميع المهام</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="299"/>
-        <location filename="../ui/mainwindow.cpp" line="543"/>
+        <location filename="../ui/mainwindow.cpp" line="303"/>
+        <location filename="../ui/mainwindow.cpp" line="577"/>
         <source>Hibernate</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
         <translation>الإسبات</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="300"/>
+        <location filename="../ui/mainwindow.cpp" line="304"/>
         <source>Hibernate when all tasks are done.</source>
         <translation>اسبات الكمبيوتر عند الانتهاء من جميع المهام</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="660"/>
+        <location filename="../ui/mainwindow.cpp" line="378"/>
+        <source>This program is going to check for updates online. Do you allow this program to use the Internet to check for updates?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="694"/>
         <source>Failed to load preset file. The application will quit now.</source>
         <translation>فشل تحميل ملف معين. سوف يتم إنهاء التطبيق الآن.</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="748"/>
+        <location filename="../ui/mainwindow.cpp" line="782"/>
         <source>Elapsed Time: %1 h %2 m %3 s</source>
         <translation>الوقت المنقضي: %1 س %2 د %3 ث</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="764"/>
+        <location filename="../ui/mainwindow.cpp" line="798"/>
         <source>Converting %1/%2</source>
         <extracomment>Converting the %1-th file in %2 files. %2 is the number of files.</extracomment>
         <translation type="unfinished"></translation>
@@ -1178,43 +1183,48 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/updatedialog.cpp" line="47"/>
+        <location filename="../ui/updatedialog.ui" line="73"/>
+        <source>Check for updates on program startup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui/updatedialog.cpp" line="55"/>
         <source>Downloading update information...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/updatedialog.cpp" line="74"/>
+        <location filename="../ui/updatedialog.cpp" line="82"/>
         <source>Cannot connect to server.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/updatedialog.cpp" line="77"/>
+        <location filename="../ui/updatedialog.cpp" line="85"/>
         <source>Failed to parse the received data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/updatedialog.cpp" line="80"/>
+        <location filename="../ui/updatedialog.cpp" line="88"/>
         <source>You are already using the latest version of QWinFF.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/updatedialog.cpp" line="83"/>
+        <location filename="../ui/updatedialog.cpp" line="91"/>
         <source>An unknown error has occurred.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/updatedialog.cpp" line="105"/>
+        <location filename="../ui/updatedialog.cpp" line="119"/>
         <source>A new version of QWinFF has been released!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/updatedialog.cpp" line="108"/>
+        <location filename="../ui/updatedialog.cpp" line="122"/>
         <source>Version &lt;b&gt;%1&lt;/b&gt; is available at %2.</source>
         <extracomment>%1 is version number, %2 is the project homepage</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/updatedialog.cpp" line="114"/>
+        <location filename="../ui/updatedialog.cpp" line="128"/>
         <source>You can download this version using the link:</source>
         <translation type="unfinished"></translation>
     </message>

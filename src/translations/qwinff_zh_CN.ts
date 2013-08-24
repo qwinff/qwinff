@@ -716,7 +716,7 @@
     <name>MainWindow</name>
     <message>
         <location filename="../ui/mainwindow.ui" line="14"/>
-        <location filename="../ui/mainwindow.cpp" line="767"/>
+        <location filename="../ui/mainwindow.cpp" line="801"/>
         <source>QWinFF</source>
         <translation>QWinFF</translation>
     </message>
@@ -956,68 +956,73 @@
         <translation>检查更新(&amp;U)</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="132"/>
+        <location filename="../ui/mainwindow.cpp" line="134"/>
         <source>All tasks has finished.</source>
         <translation>所有的文件都已转换完成</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="171"/>
+        <location filename="../ui/mainwindow.cpp" line="173"/>
         <source>Nothing to convert.</source>
         <translation>沒有要转换的文件</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="248"/>
+        <location filename="../ui/mainwindow.cpp" line="252"/>
         <source>Conversion is still in progress. Abort?</source>
         <translation>文件还在转换中。確定要离开吗？</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="289"/>
-        <location filename="../ui/mainwindow.cpp" line="533"/>
+        <location filename="../ui/mainwindow.cpp" line="293"/>
+        <location filename="../ui/mainwindow.cpp" line="567"/>
         <source>Shutdown</source>
         <extracomment>Shutdown the computer (completely poweroff)</extracomment>
         <translation>关机</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="290"/>
+        <location filename="../ui/mainwindow.cpp" line="294"/>
         <source>Shutdown when all tasks are done.</source>
         <translation>所有任务结束后关机</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="294"/>
-        <location filename="../ui/mainwindow.cpp" line="538"/>
+        <location filename="../ui/mainwindow.cpp" line="298"/>
+        <location filename="../ui/mainwindow.cpp" line="572"/>
         <source>Suspend</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
         <translation>待机</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="295"/>
+        <location filename="../ui/mainwindow.cpp" line="299"/>
         <source>Suspend when all tasks are done.</source>
         <translation>所有任务结束后待机</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="299"/>
-        <location filename="../ui/mainwindow.cpp" line="543"/>
+        <location filename="../ui/mainwindow.cpp" line="303"/>
+        <location filename="../ui/mainwindow.cpp" line="577"/>
         <source>Hibernate</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
         <translation>休眠</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="300"/>
+        <location filename="../ui/mainwindow.cpp" line="304"/>
         <source>Hibernate when all tasks are done.</source>
         <translation>所有任务结束后休眠</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="660"/>
+        <location filename="../ui/mainwindow.cpp" line="378"/>
+        <source>This program is going to check for updates online. Do you allow this program to use the Internet to check for updates?</source>
+        <translation>这个程序将检查在线更新。您要允许这个程序使用互联网检查更新吗？</translation>
+    </message>
+    <message>
+        <location filename="../ui/mainwindow.cpp" line="694"/>
         <source>Failed to load preset file. The application will quit now.</source>
         <translation>无法载入设定档，程序将立刻结束。</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="748"/>
+        <location filename="../ui/mainwindow.cpp" line="782"/>
         <source>Elapsed Time: %1 h %2 m %3 s</source>
         <translation>经过时间: %1 时 %2 分 %3 秒</translation>
     </message>
     <message>
-        <location filename="../ui/mainwindow.cpp" line="764"/>
+        <location filename="../ui/mainwindow.cpp" line="798"/>
         <source>Converting %1/%2</source>
         <extracomment>Converting the %1-th file in %2 files. %2 is the number of files.</extracomment>
         <translation>正在转换 %1/%2</translation>
@@ -1177,43 +1182,48 @@
         <translation>显示发行说明(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../ui/updatedialog.cpp" line="47"/>
+        <location filename="../ui/updatedialog.ui" line="73"/>
+        <source>Check for updates on program startup</source>
+        <translation>程序启动时检查更新</translation>
+    </message>
+    <message>
+        <location filename="../ui/updatedialog.cpp" line="55"/>
         <source>Downloading update information...</source>
         <translation>正在下载更新信息...</translation>
     </message>
     <message>
-        <location filename="../ui/updatedialog.cpp" line="74"/>
+        <location filename="../ui/updatedialog.cpp" line="82"/>
         <source>Cannot connect to server.</source>
         <translation>无法连接到服务器.</translation>
     </message>
     <message>
-        <location filename="../ui/updatedialog.cpp" line="77"/>
+        <location filename="../ui/updatedialog.cpp" line="85"/>
         <source>Failed to parse the received data.</source>
         <translation>无法分析接收到的数据。</translation>
     </message>
     <message>
-        <location filename="../ui/updatedialog.cpp" line="80"/>
+        <location filename="../ui/updatedialog.cpp" line="88"/>
         <source>You are already using the latest version of QWinFF.</source>
         <translation>您已使用最新版本的 QWinFF。</translation>
     </message>
     <message>
-        <location filename="../ui/updatedialog.cpp" line="83"/>
+        <location filename="../ui/updatedialog.cpp" line="91"/>
         <source>An unknown error has occurred.</source>
         <translation>发生了不明的错误。</translation>
     </message>
     <message>
-        <location filename="../ui/updatedialog.cpp" line="105"/>
+        <location filename="../ui/updatedialog.cpp" line="119"/>
         <source>A new version of QWinFF has been released!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/updatedialog.cpp" line="108"/>
+        <location filename="../ui/updatedialog.cpp" line="122"/>
         <source>Version &lt;b&gt;%1&lt;/b&gt; is available at %2.</source>
         <extracomment>%1 is version number, %2 is the project homepage</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui/updatedialog.cpp" line="114"/>
+        <location filename="../ui/updatedialog.cpp" line="128"/>
         <source>You can download this version using the link:</source>
         <translation type="unfinished"></translation>
     </message>
