@@ -24,7 +24,7 @@ void SettingTimer::start()
 
 void SettingTimer::restart()
 {
-    QSettings().setValue(m_key, QDateTime::currentDateTimeUtc());
+    QSettings().setValue(m_key, QDateTime::currentDateTime());
 }
 
 void SettingTimer::invalidate()
