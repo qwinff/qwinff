@@ -98,19 +98,7 @@ FORMS    += \
 RESOURCES += \
     images.qrc
 
-TRANSLATIONS += \
-    translations/qwinff_zh_TW.ts \
-    translations/qwinff_ja_JP.ts \
-    translations/qwinff_it_IT.ts \
-    translations/qwinff_cs_CZ.ts \
-    translations/qwinff_zh_CN.ts \
-    translations/qwinff_ru.ts \
-    translations/qwinff_es_ES.ts \
-    translations/qwinff_es_GT.ts \
-    translations/qwinff_ro_RO.ts \
-	 translations/qwinff_de.ts \
-	 translations/qwinff_tr_TR.ts \
-	 translations/qwinff_ar.ts
+TRANSLATIONS = $$files(translations/qwinff_*.ts)
 
 INCLUDEPATH += .
 
