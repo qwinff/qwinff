@@ -2,6 +2,16 @@
 #include <QDateTime>
 #include "settingtimer.h"
 
+namespace
+{
+qint64 msecsTo(const QDateTime& t1, const QDateTime& t2)
+{
+    qint64 days = t1.daysTo(t2);
+    qint64 msecs = t1.time().msecsTo(t2.time());
+    return days * (24*60*60*1000) + msecs;
+}
+}
+
 SettingTimer::SettingTimer(const QString& key)
     : m_key(key)
 {
@@ -30,8 +40,8 @@ bool SettingTimer::isValid() const
 qint64 SettingTimer::elapsedMilliseconds() const
 {
     QDateTime prev_time = QSettings().value(m_key).toDateTime();
-    QDateTime current_time = QDateTime::currentDateTimeUtc();
-    return prev_time.msecsTo(current_time);
+    QDateTime current_time = QDateTime::currentDateTime();
+    return msecsTo(prev_time, current_time);
 }
 
 qint64 SettingTimer::elapsedSeconds() const
