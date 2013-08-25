@@ -576,13 +576,16 @@ void ConvertList::show_background_image()
                 "background-image: url(:/other/icons/list_background.png);"
                 "background-position: center;"
                 "background-repeat: no-repeat;");
-    m_list->viewport()->setStatusTip(tr("Drag and drop files here to add tasks."));
+    QString tip = tr("Drag and drop files here to add tasks.");
+    m_list->viewport()->setStatusTip(tip);
+    m_list->viewport()->setToolTip(tip);
 }
 
 void ConvertList::hide_background_image()
 {
     m_list->viewport()->setStyleSheet("");
     m_list->viewport()->setStatusTip("");
+    m_list->viewport()->setToolTip("");
 }
 
 void ConvertList::slotHeaderContextMenu(QPoint point)

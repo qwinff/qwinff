@@ -57,6 +57,9 @@
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="toolTip">
+         <string>Start conversion process.</string>
+        </property>
         <property name="statusTip">
          <string>Start conversion process.</string>
         </property>
