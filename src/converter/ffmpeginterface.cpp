@@ -248,6 +248,18 @@ namespace inner {
     }
 
 } // namespace info
+
+    // extract error message from the line
+    QString extract_errmsg(const QString& line)
+    {
+        QRegExp pattern("^[^:]*:(.*)$");
+        const int INDEX_MESSAGE = 1;
+        if (pattern.indexIn(line) != -1)
+            return pattern.cap(INDEX_MESSAGE).trimmed();
+        else
+            return "";
+    }
+
 } // anonymous namespace
 
 struct FFmpegInterface::Private
@@ -575,7 +587,7 @@ double FFmpegInterface::progress() const
 
 QString FFmpegInterface::errorMessage() const
 {
-    return p->errmsg;
+    return extract_errmsg(p->errmsg);
 }
 
 bool FFmpegInterface::getAudioEncoders(QList<QString> &target)
