@@ -1109,11 +1109,13 @@ void ConvertList::refresh_progressbar(Task *task)
     case Task::QUEUED:
         prog->setValue(0);
         prog->setToolTip("");
+        prog->setStatusTip("");
         prog->setActive(false);
         break;
     case Task::RUNNING:
         prog->setValue(m_converter->progress());
         prog->setToolTip("");
+        prog->setStatusTip("");
         prog->setActive(true);
         break;
     case Task::FINISHED:
@@ -1121,6 +1123,7 @@ void ConvertList::refresh_progressbar(Task *task)
         /*: The text to be displayed on the progress bar when a conversion finishes */
         prog->showText(tr("Finished"));
         prog->setToolTip(tr("Finished"));
+        prog->setStatusTip("");
         prog->setActive(false);
         break;
     case Task::FAILED:
@@ -1129,6 +1132,7 @@ void ConvertList::refresh_progressbar(Task *task)
         prog->showText(tr("Failed"));
         //: %1 is the error message
         prog->setToolTip(tr("Error: %1").arg(task->errmsg));
+        prog->setStatusTip(prog->toolTip()); // show error message in statusbar
         prog->setActive(false);
         break;
     default:
