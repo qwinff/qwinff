@@ -765,7 +765,7 @@
         <translation>檢查更新(&amp;U)</translation>
     </message>
     <message>
-        <source>All tasks has finished.</source>
+        <source>All tasks have finished.</source>
         <translation>所有檔案都已轉換完成</translation>
     </message>
     <message>

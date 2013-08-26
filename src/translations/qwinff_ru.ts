@@ -766,7 +766,7 @@
         <translation>Проверить &amp;обновления</translation>
     </message>
     <message>
-        <source>All tasks has finished.</source>
+        <source>All tasks have finished.</source>
         <translation>Все задания завершены.</translation>
     </message>
     <message>

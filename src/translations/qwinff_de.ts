@@ -761,7 +761,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>All tasks has finished.</source>
+        <source>All tasks have finished.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

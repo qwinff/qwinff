@@ -766,7 +766,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>All tasks has finished.</source>
+        <source>All tasks have finished.</source>
         <translation>تم الانتهاء من جميع المهام</translation>
     </message>
     <message>

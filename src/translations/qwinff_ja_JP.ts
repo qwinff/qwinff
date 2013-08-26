@@ -765,7 +765,7 @@
         <translation>更新のチェック(&amp;U)</translation>
     </message>
     <message>
-        <source>All tasks has finished.</source>
+        <source>All tasks have finished.</source>
         <translation>すべてのタスクが完了しました.</translation>
     </message>
     <message>
