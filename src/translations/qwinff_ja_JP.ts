@@ -364,7 +364,7 @@
     </message>
     <message>
         <source>&amp;Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>プレビュー(&amp;P)</translation>
     </message>
     <message>
         <source>Scaling</source>

@@ -91,27 +91,27 @@
     <message>
         <source>Spanish (Spain)</source>
         <extracomment>Spanish Language (Spain)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Испанский (Испания)</translation>
     </message>
     <message>
         <source>Spanish (Guatemala)</source>
         <extracomment>Spanish Language (Guatemala)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Испанский (Гватемала)</translation>
     </message>
     <message>
         <source>Romanian</source>
         <extracomment>Romanian Language</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Румынский</translation>
     </message>
     <message>
         <source>Turkish</source>
         <extracomment>Turkish Language</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Турецкий</translation>
     </message>
     <message>
         <source>Arabic</source>
         <extracomment>Arabic Language</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Арабский</translation>
     </message>
 </context>
 <context>
@@ -140,7 +140,7 @@
     <message>
         <source>Please visit %1 for more information.</source>
         <extracomment>visit ffmpeg website</extracomment>
-        <translation>Подробности доступны на странице %1.</translation>
+        <translation>Посетите %1, чтобы получить дополнительную информацию.</translation>
     </message>
 </context>
 <context>
@@ -191,7 +191,7 @@
     </message>
     <message>
         <source>Select &amp;folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите папку (&amp;F)</translation>
     </message>
     <message>
         <source>Browse</source>
@@ -200,16 +200,16 @@
     <message>
         <source>Create &amp;new folder in source folder</source>
         <extracomment>Create a new folder (e.g. qwinff_output) in the folder containing the input files. Put the output files in the newly created folder.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Создать новую папку в исходной (&amp;N)</translation>
     </message>
     <message>
         <source>Folder Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Имя папки</translation>
     </message>
     <message>
         <source>Output to &amp;source folder</source>
         <extracomment>put the output files in the same folder as the input files</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Выводить в исходную папку</translation>
     </message>
     <message>
         <source>Please select at least one file.</source>
@@ -426,7 +426,7 @@
     </message>
     <message>
         <source>Drag and drop files here to add tasks.</source>
-        <translation type="unfinished"></translation>
+        <translation>Перетащите сюда файлы, чтобы добавить задания.</translation>
     </message>
     <message>
         <source>Hide &quot;%1&quot;</source>
@@ -662,7 +662,7 @@
     </message>
     <message>
         <source>Open output folder of the selected file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть выходную папку выбранного файла.</translation>
     </message>
     <message>
         <source>About &amp;FFmpeg</source>
@@ -764,7 +764,7 @@
     </message>
     <message>
         <source>Check For &amp;Updates</source>
-        <translation type="unfinished"></translation>
+        <translation>Проверить обновления (&amp;U)</translation>
     </message>
     <message>
         <source>All tasks has finished.</source>
@@ -807,7 +807,7 @@
     </message>
     <message>
         <source>This program is going to check for updates online. Do you allow this program to use the Internet to check for updates?</source>
-        <translation type="unfinished"></translation>
+        <translation>Приложение проверит наличие обновление. Разрешить приложению использовать Интернет для поиска обновлений?</translation>
     </message>
     <message>
         <source>Failed to load preset file. The application will quit now.</source>
@@ -820,7 +820,7 @@
     <message>
         <source>Converting %1/%2</source>
         <extracomment>Converting the %1-th file in %2 files. %2 is the number of files.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Преобразование %1/%2</translation>
     </message>
 </context>
 <context>
@@ -828,7 +828,7 @@
     <message>
         <source>%1 not found.</source>
         <extracomment>%1 is a computer program</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>%1 не найден.</translation>
     </message>
 </context>
 <context>
@@ -839,19 +839,19 @@
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Основной</translation>
     </message>
     <message>
         <source>Check for updates on program startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Проверять обновления при запуске приложения</translation>
     </message>
     <message>
         <source>Automatically start conversion after adding files to the list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Начинать преобразование автоматически после добавления файлов в список.</translation>
     </message>
     <message>
         <source>Start conversion automatically</source>
-        <translation type="unfinished"></translation>
+        <translation>Начинать преобразование автоматически</translation>
     </message>
     <message>
         <source>FFmpeg</source>
@@ -871,19 +871,19 @@
     </message>
     <message>
         <source>Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Инструменты</translation>
     </message>
     <message>
         <source>You have to restart QWinFF for the changes to take effect.</source>
-        <translation type="unfinished"></translation>
+        <translation>Перезапустите QWinFF, чтобы настройки вступили в силу.</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Имя</translation>
     </message>
     <message>
         <source>Command</source>
-        <translation type="unfinished"></translation>
+        <translation>Команда</translation>
     </message>
 </context>
 <context>
@@ -947,44 +947,44 @@
     <name>UpdateDialog</name>
     <message>
         <source>Show &amp;Release Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Примечания к релизу (&amp;R)</translation>
     </message>
     <message>
         <source>Check for updates on program startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Проверять обновления при запуске приложения</translation>
     </message>
     <message>
         <source>Downloading update information...</source>
-        <translation type="unfinished"></translation>
+        <translation>Загружается информация об обновлении...</translation>
     </message>
     <message>
         <source>Cannot connect to server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось связаться с сервером.</translation>
     </message>
     <message>
         <source>Failed to parse the received data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось обработать полученные данные.</translation>
     </message>
     <message>
         <source>You are already using the latest version of QWinFF.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ваша версия QWinFF не нуждается в обновлении.</translation>
     </message>
     <message>
         <source>An unknown error has occurred.</source>
-        <translation type="unfinished"></translation>
+        <translation>Произошла неизвестная ошибка.</translation>
     </message>
     <message>
         <source>A new version of QWinFF has been released!</source>
-        <translation type="unfinished"></translation>
+        <translation>Опубликована новая версия QWinFF!</translation>
     </message>
     <message>
         <source>Version &lt;b&gt;%1&lt;/b&gt; is available at %2.</source>
         <extracomment>%1 is version number, %2 is the project homepage</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Версия &lt;b&gt;%1&lt;/b&gt; доступна в %2.</translation>
     </message>
     <message>
         <source>You can download this version using the link:</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы можете скачать эту версию используя ссылку:</translation>
     </message>
 </context>
 </TS>

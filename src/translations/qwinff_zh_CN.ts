@@ -973,16 +973,16 @@
     </message>
     <message>
         <source>A new version of QWinFF has been released!</source>
-        <translation type="unfinished"></translation>
+        <translation>新版的 QWinFF 已发布!</translation>
     </message>
     <message>
         <source>Version &lt;b&gt;%1&lt;/b&gt; is available at %2.</source>
         <extracomment>%1 is version number, %2 is the project homepage</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>版本 &lt;b&gt;%1&lt;/b&gt; 可从 %2 取得.</translation>
     </message>
     <message>
         <source>You can download this version using the link:</source>
-        <translation type="unfinished"></translation>
+        <translation>您可以从以下链接下载这个版本:</translation>
     </message>
 </context>
 </TS>
