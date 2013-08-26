@@ -333,10 +333,6 @@
         <translation>Кроп</translation>
     </message>
     <message>
-        <source>Use same video quality as source (implies VBR).</source>
-        <translation type="obsolete">Использовать качество как в исходном видео (включая VBR)</translation>
-    </message>
-    <message>
         <source>Same Quantizer as Source</source>
         <translation>Такой же квантователь, как у исходного</translation>
     </message>

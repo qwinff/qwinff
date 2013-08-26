@@ -333,10 +333,6 @@
         <translation>محصول</translation>
     </message>
     <message>
-        <source>Use same video quality as source (implies VBR).</source>
-        <translation type="obsolete">استخدام نفس نوعية الفيديو والمصدر (يعني VBR).</translation>
-    </message>
-    <message>
         <source>Same Quantizer as Source</source>
         <translation>نفس المصدر والمقسم الى كميات</translation>
     </message>

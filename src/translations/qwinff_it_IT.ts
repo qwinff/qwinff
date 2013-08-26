@@ -333,10 +333,6 @@
         <translation>Taglia</translation>
     </message>
     <message>
-        <source>Use same video quality as source (implies VBR).</source>
-        <translation type="obsolete">Usa la stessa qualità video della sorgente (richiede VBR).</translation>
-    </message>
-    <message>
         <source>Same Quantizer as Source</source>
         <translation>Stesso Quantizzatore della Sorgente</translation>
     </message>

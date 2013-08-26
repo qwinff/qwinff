@@ -333,10 +333,6 @@
         <translation>Kırp</translation>
     </message>
     <message>
-        <source>Use same video quality as source (implies VBR).</source>
-        <translation type="obsolete">Kaynağıyla  aynı video kalitesini kullan (VBR anlamında).</translation>
-    </message>
-    <message>
         <source>Same Quantizer as Source</source>
         <translation>Kaynakla aynı nicemleyici</translation>
     </message>

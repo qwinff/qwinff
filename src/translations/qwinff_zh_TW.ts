@@ -333,10 +333,6 @@
         <translation>裁切</translation>
     </message>
     <message>
-        <source>Use same video quality as source (implies VBR).</source>
-        <translation type="obsolete">使用與來源相同的影像品質(變動位元率)</translation>
-    </message>
-    <message>
         <source>Same Quantizer as Source</source>
         <translation>與來源使用相同的量化單位（Quantizer）</translation>
     </message>
