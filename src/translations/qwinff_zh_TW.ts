@@ -334,7 +334,7 @@
     </message>
     <message>
         <source>Use same video quality as source (implies VBR).</source>
-        <translation>使用與來源相同的影像品質(變動位元率)</translation>
+        <translation type="obsolete">使用與來源相同的影像品質(變動位元率)</translation>
     </message>
     <message>
         <source>Same Quantizer as Source</source>
@@ -766,7 +766,7 @@
     </message>
     <message>
         <source>All tasks has finished.</source>
-        <translation>所有的檔案都已轉換完成</translation>
+        <translation>所有檔案都已轉換完成</translation>
     </message>
     <message>
         <source>Nothing to convert.</source>

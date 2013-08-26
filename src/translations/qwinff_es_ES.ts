@@ -334,7 +334,7 @@
     </message>
     <message>
         <source>Use same video quality as source (implies VBR).</source>
-        <translation>Usar la misma calidad de video que la fuente (implica VBR).</translation>
+        <translation type="obsolete">Usar la misma calidad de video que la fuente (implica VBR).</translation>
     </message>
     <message>
         <source>Same Quantizer as Source</source>

@@ -27,7 +27,7 @@
     <message>
         <source>Compiled with Qt %1</source>
         <extracomment>Qt version</extracomment>
-        <translation>Скомпилированно с Qt %1</translation>
+        <translation>Скомпилированно с помощью Qt %1</translation>
     </message>
     <message>
         <source>Compiled with libnotify %1</source>
@@ -49,7 +49,7 @@
     </message>
     <message>
         <source>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License version 2 or 3.</source>
-        <translation>Это свободное программное обеспечение. Вы можете распространять и изменять его на условиях Стандартной Общественной Лицензии GNU версии 2 или 3.</translation>
+        <translation>Это свободное программное обеспечение. Вы можете распространять и изменять его на условиях GNU General Public License версии 2 или 3.</translation>
     </message>
     <message>
         <source>QWinFF Homepage: %1</source>
@@ -191,7 +191,7 @@
     </message>
     <message>
         <source>Select &amp;folder</source>
-        <translation>Выберите папку (&amp;F)</translation>
+        <translation>Выберите &amp;папку</translation>
     </message>
     <message>
         <source>Browse</source>
@@ -200,7 +200,7 @@
     <message>
         <source>Create &amp;new folder in source folder</source>
         <extracomment>Create a new folder (e.g. qwinff_output) in the folder containing the input files. Put the output files in the newly created folder.</extracomment>
-        <translation>Создать новую папку в исходной (&amp;N)</translation>
+        <translation>Создать &amp;новую папку в исходной</translation>
     </message>
     <message>
         <source>Folder Name</source>
@@ -209,7 +209,7 @@
     <message>
         <source>Output to &amp;source folder</source>
         <extracomment>put the output files in the same folder as the input files</extracomment>
-        <translation>Выводить в исходную папку</translation>
+        <translation>Выводить в &amp;исходную папку</translation>
     </message>
     <message>
         <source>Please select at least one file.</source>
@@ -243,7 +243,7 @@
     <message>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
-        <translation>Выбрать каталог</translation>
+        <translation>Выбрать папку</translation>
     </message>
     <message>
         <source>Folder does not exist. Create a new folder?</source>
@@ -334,7 +334,7 @@
     </message>
     <message>
         <source>Use same video quality as source (implies VBR).</source>
-        <translation>Использовать качество как в исходном видео (включая VBR)</translation>
+        <translation type="obsolete">Использовать качество как в исходном видео (включая VBR)</translation>
     </message>
     <message>
         <source>Same Quantizer as Source</source>
@@ -356,11 +356,11 @@
     </message>
     <message>
         <source>From Begin</source>
-        <translation>С начала</translation>
+        <translation>Начало</translation>
     </message>
     <message>
         <source>To End</source>
-        <translation>До конца</translation>
+        <translation>Конец</translation>
     </message>
     <message>
         <source>&amp;Preview</source>
@@ -410,18 +410,17 @@
     </message>
     <message>
         <source>Please input the new name for the output file.</source>
-        <translation>Требуется указать новое название итогового файла.</translation>
+        <translation>Требуется указать новое имя итогового файла.</translation>
     </message>
     <message>
         <source>Output Directory</source>
-        <translation>Каталог вывода</translation>
+        <translation>Папка вывода</translation>
     </message>
     <message>
         <source>Error Message from FFmpeg:
 
 </source>
         <translation>Сообщение об ошибке от FFmpeg:
-
 </translation>
     </message>
     <message>
@@ -593,15 +592,15 @@
     </message>
     <message>
         <source>&amp;Convert</source>
-        <translation>&amp;Преобразовать</translation>
+        <translation>П&amp;реобразовать</translation>
     </message>
     <message>
         <source>&amp;About</source>
-        <translation>&amp; О приложении</translation>
+        <translation>&amp;О приложении</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation>&amp; Правка</translation>
+        <translation>&amp;Правка</translation>
     </message>
     <message>
         <source>&amp;Add Files</source>
@@ -752,19 +751,19 @@
     </message>
     <message>
         <source>Change Output &amp;Directory</source>
-        <translation>Изменить каталог &amp;вывода</translation>
+        <translation>Изменить папку &amp;вывода</translation>
     </message>
     <message>
         <source>Change the output directory of the selected items.</source>
-        <translation>Изменить каталог вывода выбранного элемента.</translation>
+        <translation>Изменить папку вывода выбранного элемента.</translation>
     </message>
     <message>
         <source>Show Error &amp;Message</source>
-        <translation>Показать сообщение об &amp;ошибке</translation>
+        <translation>Показать &amp;сообщение об ошибке</translation>
     </message>
     <message>
         <source>Check For &amp;Updates</source>
-        <translation>Проверить обновления (&amp;U)</translation>
+        <translation>Проверить &amp;обновления</translation>
     </message>
     <message>
         <source>All tasks has finished.</source>
@@ -772,7 +771,7 @@
     </message>
     <message>
         <source>Nothing to convert.</source>
-        <translation>Нечего преобразовывать.</translation>
+        <translation>Нет объектов для преобразования.</translation>
     </message>
     <message>
         <source>Conversion is still in progress. Abort?</source>
@@ -799,11 +798,11 @@
     <message>
         <source>Hibernate</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
-        <translation>Спящий режим</translation>
+        <translation>Гибернация</translation>
     </message>
     <message>
         <source>Hibernate when all tasks are done.</source>
-        <translation>Перейти в спящий режим при завершении всех заданий.</translation>
+        <translation>Перейти в состояние гибернации после завершения всех заданий.</translation>
     </message>
     <message>
         <source>This program is going to check for updates online. Do you allow this program to use the Internet to check for updates?</source>
@@ -863,7 +862,7 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hide output formats that are not available in the current ffmpeg installation. It is recommended to turn this option on unless you are sure that QWinFF has failed to detect available formats. (requires restarting QWinFF to take effect)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Скрыть форматы вывода, не доступные в текущей установке ffmpeg. Рекомендуется включить эту опцию, если только вы не уверены, что QWinFF не смог обнаружить доступные форматы. (Требуется перезапуск QWinFF)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Скрыть форматы вывода, недоступные в текущей установке ffmpeg. Рекомендуется включить эту опцию, если только вы не уверены, что QWinFF не смог обнаружить доступные форматы. (Требуется перезапуск QWinFF)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Hide unavailable formats (requires restarting)</source>
@@ -909,7 +908,7 @@
     <message>
         <source>Hibernate immediately</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
-        <translation>Перейти в спящий режим немедленно</translation>
+        <translation>Перейти в состояние гибернации немедленно</translation>
     </message>
     <message>
         <source>Shutdown</source>
@@ -924,7 +923,7 @@
     <message>
         <source>Hibernate</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
-        <translation>Спящий режим</translation>
+        <translation>Гибернация</translation>
     </message>
     <message>
         <source>Operation Failed: %1</source>
@@ -940,14 +939,14 @@
     </message>
     <message>
         <source>Hibernating in &lt;b&gt;%1&lt;/b&gt; seconds</source>
-        <translation>Переход в спящий режим через &lt;b&gt;%1&lt;/b&gt; c.</translation>
+        <translation>Переход в состояние гибернации через &lt;b&gt;%1&lt;/b&gt; c.</translation>
     </message>
 </context>
 <context>
     <name>UpdateDialog</name>
     <message>
         <source>Show &amp;Release Notes</source>
-        <translation>Примечания к релизу (&amp;R)</translation>
+        <translation>Примечания к &amp;релизу</translation>
     </message>
     <message>
         <source>Check for updates on program startup</source>

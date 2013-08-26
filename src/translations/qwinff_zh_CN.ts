@@ -334,7 +334,7 @@
     </message>
     <message>
         <source>Use same video quality as source (implies VBR).</source>
-        <translation>使用与来源相同的影像品质(变动比特率)</translation>
+        <translation type="obsolete">使用与来源相同的影像品质(变动比特率)</translation>
     </message>
     <message>
         <source>Same Quantizer as Source</source>

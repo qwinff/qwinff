@@ -333,10 +333,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Use same video quality as source (implies VBR).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Same Quantizer as Source</source>
         <translation type="unfinished"></translation>
     </message>

@@ -334,7 +334,7 @@
     </message>
     <message>
         <source>Use same video quality as source (implies VBR).</source>
-        <translation>Použít stejnou kvalitu videa jako zdrojový soubor (předpokládá VBR).</translation>
+        <translation type="obsolete">Použít stejnou kvalitu videa jako zdrojový soubor (předpokládá VBR).</translation>
     </message>
     <message>
         <source>Same Quantizer as Source</source>
