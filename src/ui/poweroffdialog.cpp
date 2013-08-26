@@ -47,7 +47,8 @@ PoweroffDialog::PoweroffDialog(QWidget *parent) :
     // topmost frameless window
     setWindowFlags(Qt::Window
                    | Qt::WindowStaysOnTopHint
-                   | Qt::FramelessWindowHint);
+                   | Qt::FramelessWindowHint
+                   | Qt::ToolTip);
 }
 
 PoweroffDialog::~PoweroffDialog()
