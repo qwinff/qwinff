@@ -14,7 +14,7 @@ RequestExecutionLevel admin
 
 var StartMenuFolder
 
-!insertmacro MUI_PAGE_LICENSE ${LICENSE}
+!insertmacro MUI_PAGE_WELCOME
 !insertmacro MUI_PAGE_DIRECTORY
 
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT "HKLM"
