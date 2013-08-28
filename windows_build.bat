@@ -1,8 +1,8 @@
 @echo off
 set DEST_DIR=.\windows_release
 
-:: Extract version string from src\version.h
-for /f "delims=" %%v in ('grep -o "[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*" src\version.h') do (
+:: Save version string to variable %VERSION%
+for /f "delims=" %%v in ('sh src\get-version.sh') do (
 	@set VERSION=%%v
 )
 
