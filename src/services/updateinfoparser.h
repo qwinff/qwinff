@@ -43,12 +43,14 @@ public:
     ~XmlUpdateInfoParser();
     bool parse(QString s);
     QString version() const;
+    unsigned int versionId() const;
     QString releaseDate() const;
     QString releaseNotes() const;
     QString downloadUrl() const;
     QString downloadPage() const;
 private:
     QString m_version;
+    QString m_vid;
     QString m_releaseDate;
     QString m_releaseNotes;
     QString m_downloadUrl;

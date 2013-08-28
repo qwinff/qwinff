@@ -34,6 +34,7 @@ bool XmlUpdateInfoParser::parse(QString s)
     table.setPrefix("QWinFFVersionInfo");
 
     m_version = table.lookup("Name");
+    m_vid = table.lookup("VersionId");
     m_releaseDate = table.lookup("ReleaseDate");
     m_releaseNotes = table.lookup("ReleaseNotes");
 #ifdef Q_OS_WIN32
@@ -56,6 +57,11 @@ bool XmlUpdateInfoParser::parse(QString s)
 QString XmlUpdateInfoParser::version() const
 {
     return m_version;
+}
+
+unsigned int XmlUpdateInfoParser::versionId() const
+{
+    return m_vid.toUInt();
 }
 
 QString XmlUpdateInfoParser::releaseDate() const

@@ -16,6 +16,10 @@
 #ifndef VERSION_H
 #define VERSION_H
 
+// human-readable version string (VersionName)
 #define VERSION_STRING "0.1.8"
+
+// machine-readable version id (VersionId)
+#define VERSION_INTEGER 18
 
 #endif // VERSION_H

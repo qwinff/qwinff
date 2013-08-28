@@ -16,7 +16,6 @@
 #include "updatechecker.h"
 #include "httpdownloader.h"
 #include "updateinfoparser.h"
-#include "versioncompare.h"
 #include "../version.h"
 #include "constants.h"
 
@@ -25,6 +24,7 @@ class UpdateChecker::Private
 public:
     UpdateChecker::CheckResult result;
     QString version;
+    unsigned int versionId;
     QString release_note;
     QString release_date;
     QString download_url;
@@ -61,6 +61,11 @@ QString UpdateChecker::versionName() const
     return p->version;
 }
 
+unsigned int UpdateChecker::versionId() const
+{
+    return p->versionId;
+}
+
 QString UpdateChecker::releaseDate() const
 {
     return p->release_date;
@@ -94,10 +99,11 @@ void UpdateChecker::downloadFinished(bool success, QString /*url*/, QString cont
         if (!parser.parse(content)) {
             // parse error
             p->result = DataError;
-        } else if (Version(parser.version()) > Version(VERSION_STRING)) {
+        } else if (parser.versionId() > VERSION_INTEGER) {
             // new version > current version
             p->result = UpdateFound;
             p->version = parser.version();
+            p->versionId = parser.versionId();
             p->release_note = parser.releaseNotes();
             p->release_date = parser.releaseDate();
             p->download_url = parser.downloadUrl();

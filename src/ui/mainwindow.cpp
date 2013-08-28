@@ -321,9 +321,9 @@ void MainWindow::received_update_result(int status)
         QSettings settings;
         SettingTimer timer("mainwindow/last_remind_update_time");
         const int seconds_per_day = 86400;
-        const QString prev_update_version =
-                settings.value("mainwindow/last_remind_update_version").toString();
-        const QString new_update_version = m_update_checker->versionName();
+        const unsigned int prev_update_version =
+                settings.value("mainwindow/last_remind_update_version").toUInt();
+        const unsigned int new_update_version = m_update_checker->versionId();
         const bool timeout = !timer.isValid()
                 || timer.elapsedSeconds() > seconds_per_day;
         const bool is_different_version =
