@@ -2,9 +2,7 @@
 set DEST_DIR=.\windows_release
 
 :: Save version string to variable %VERSION%
-for /f "delims=" %%v in ('sh src\get-version.sh') do (
-	@set VERSION=%%v
-)
+for /f "delims=" %%v in ('sh src\get-version.sh') do @set VERSION=%%v
 
 pushd src
 lrelease qwinff.pro
