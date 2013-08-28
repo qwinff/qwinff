@@ -27,7 +27,7 @@ sed "s/\(<CheckUpdateOnStartup [^>]*>\)[\t ]*false/\1true/" ".\src\constants.xml
 copy ".\src\translations\*.qm" "%DEST_DIR%\translations"
 copy "COPYING-v3.txt" "%DEST_DIR%\license.txt"
 copy "CHANGELOG.txt" "%DEST_DIR%\changelog.txt"
-sed "s/@QWINFF_VERSION@/%VERSION%/" "qwinff.nsi" > "%DEST_DIR%\qwinff.nsi"
+sed "s/@QWINFF_VERSION@/%VERSION%/" "qwinff.nsi.in" > "%DEST_DIR%\qwinff.nsi"
 unix2dos "%DEST_DIR%\license.txt"
 unix2dos "%DEST_DIR%\changelog.txt"
 
