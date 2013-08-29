@@ -93,6 +93,16 @@ static bool load_constants(QApplication& app)
     return true;
 }
 
+// register an external tool for use
+static void register_tool(const char *name)
+{
+#ifdef TOOLS_IN_DATA_PATH // Search external tools in <datapath>/tools
+    ExePath::setPath(name, Paths::dataFileName("tools/%1").arg(name));
+#else // Search external tools in environment variables
+    ExePath::setPath(name, name);
+#endif
+}
+
 int main(int argc, char *argv[])
 {
     // Create Application.
@@ -122,20 +132,13 @@ int main(int argc, char *argv[])
 
     Paths::setAppPath(app.applicationDirPath());
 
-#ifdef TOOLS_IN_DATA_PATH // Search external tools in <datapath>/tools
-    ExePath::setPath("ffmpeg", Paths::dataFileName("tools/ffmpeg"));
-    ExePath::setPath("ffprobe", Paths::dataFileName("tools/ffprobe"));
-    ExePath::setPath("sox", Paths::dataFileName("tools/sox"));
-    ExePath::setPath("ffplay", Paths::dataFileName("tools/ffplay"));
-    ExePath::setPath("ffplay", Paths::dataFileName("tools/ffplay"));
-#else // Search FFmpeg in environment variables
-    ExePath::setPath("ffmpeg", "ffmpeg");
-    ExePath::setPath("ffprobe", "ffprobe");
-    ExePath::setPath("sox", "sox");
-    ExePath::setPath("ffplay", "ffplay");
-    ExePath::setPath("mplayer", "mplayer");
+    // register external tools
+    register_tool("ffmpeg");
+    register_tool("ffprobe");
+    register_tool("sox");
+    register_tool("ffplay");
+    register_tool("mplayer");
     ExePath::loadSettings();
-#endif
 
     // Construct a string list containing all input filenames.
     QStringList inputFiles(app.arguments());
