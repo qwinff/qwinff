@@ -5,12 +5,12 @@
 
 class QProcess;
 
-class FFplayInterface : public QObject
+class FFplayPreviewer : public QObject
 {
     Q_OBJECT
 public:
-    explicit FFplayInterface(QObject *parent = 0);
-    virtual ~FFplayInterface();
+    explicit FFplayPreviewer(QObject *parent = 0);
+    virtual ~FFplayPreviewer();
 
     /** Play the media file with ffplay.
      *  If a media file is being played, it will be stopped before

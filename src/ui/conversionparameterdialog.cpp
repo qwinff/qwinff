@@ -33,7 +33,7 @@ ConversionParameterDialog::ConversionParameterDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ConversionParameterDialog),
     m_selTime(new RangeSelector(this)),
-    m_ffplay(new FFplayInterface(this))
+    m_ffplay(new FFplayPreviewer(this))
 {
     ui->setupUi(this);
 
@@ -204,7 +204,7 @@ void ConversionParameterDialog::read_fields(const ConversionParameters& param)
         }
     }
     m_selTime->setVisible(show_slider);
-    bool show_preview_button = show_slider && FFplayInterface::FFplayAvailable();
+    bool show_preview_button = show_slider && FFplayPreviewer::FFplayAvailable();
     ui->btnPreview->setVisible(show_preview_button);
 
     if (param.time_begin > 0) {

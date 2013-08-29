@@ -1,5 +1,5 @@
-#include "ffplayinterface.h"
-#include "exepath.h"
+#include "ffplaypreviewer.h"
+#include "converter/exepath.h"
 #include <QProcess>
 #include <QDebug>
 
@@ -12,37 +12,37 @@
 #define DEFAULT_WIDTH 320
 #define DEFAULT_HEIGHT 180
 
-FFplayInterface::FFplayInterface(QObject *parent) :
+FFplayPreviewer::FFplayPreviewer(QObject *parent) :
     QObject(parent), m_proc(new QProcess), m_w(DEFAULT_WIDTH), m_h(DEFAULT_HEIGHT)
 {
 }
 
-FFplayInterface::~FFplayInterface()
+FFplayPreviewer::~FFplayPreviewer()
 {
     delete m_proc;
 }
 
-void FFplayInterface::play(const QString &filename)
+void FFplayPreviewer::play(const QString &filename)
 {
     ffplay_start(filename, -1, -1);
 }
 
-void FFplayInterface::play(const QString &filename, int t_begin, int t_end)
+void FFplayPreviewer::play(const QString &filename, int t_begin, int t_end)
 {
     ffplay_start(filename, t_begin, t_end);
 }
 
-void FFplayInterface::playFrom(const QString &filename, int t_begin)
+void FFplayPreviewer::playFrom(const QString &filename, int t_begin)
 {
     ffplay_start(filename, t_begin, -1);
 }
 
-void FFplayInterface::playUntil(const QString &filename, int t_end)
+void FFplayPreviewer::playUntil(const QString &filename, int t_end)
 {
     ffplay_start(filename, -1, t_end);
 }
 
-void FFplayInterface::stop()
+void FFplayPreviewer::stop()
 {
     if (m_proc->state() != QProcess::NotRunning) {
         m_proc->kill();
@@ -50,17 +50,17 @@ void FFplayInterface::stop()
     }
 }
 
-void FFplayInterface::setWindowSize(int w, int h)
+void FFplayPreviewer::setWindowSize(int w, int h)
 {
     m_w = w; m_h = h;
 }
 
-void FFplayInterface::setWindowTitle(QString str)
+void FFplayPreviewer::setWindowTitle(QString str)
 {
     m_title = str;
 }
 
-bool FFplayInterface::FFplayAvailable()
+bool FFplayPreviewer::FFplayAvailable()
 {
     QProcess proc;
     QStringList param;
@@ -75,7 +75,7 @@ bool FFplayInterface::FFplayAvailable()
 
 /* If t_begin >= 0, start from t_begin; otherwise, start from time zero.
    If t_end >= 0, stop at t_end; othersize, play until end of file. */
-void FFplayInterface::ffplay_start(const QString& filename, int t_begin, int t_end)
+void FFplayPreviewer::ffplay_start(const QString& filename, int t_begin, int t_end)
 {
     QStringList param;
     stop();

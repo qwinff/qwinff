@@ -36,7 +36,6 @@ SOURCES += main.cpp \
     services/powermanagement-dummy.cpp \
     converter/audiofilter.cpp \
     converter/exepath.cpp \
-    converter/ffplayinterface.cpp \
     services/versioncompare.cpp \
     services/updatechecker.cpp \
     services/httpdownloader.cpp \
@@ -44,7 +43,8 @@ SOURCES += main.cpp \
     services/constants.cpp \
     services/xmllookuptable.cpp \
     ui/updatedialog.cpp \
-    services/settingtimer.cpp
+    services/settingtimer.cpp \
+    services/ffplaypreviewer.cpp
 
 HEADERS  += \
     ui/progressbar.h \
@@ -75,7 +75,6 @@ HEADERS  += \
     converter/audiofilter.h \
     converter/exepath.h \
     extra-translations.h \
-    converter/ffplayinterface.h \
     services/versioncompare.h \
     services/updatechecker.h \
     services/httpdownloader.h \
@@ -83,7 +82,8 @@ HEADERS  += \
     services/constants.h \
     services/xmllookuptable.h \
     ui/updatedialog.h \
-    services/settingtimer.h
+    services/settingtimer.h \
+    services/ffplaypreviewer.h
 
 FORMS    += \
     ui/conversionparameterdialog.ui \
