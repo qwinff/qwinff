@@ -45,7 +45,8 @@ SOURCES += main.cpp \
     ui/updatedialog.cpp \
     services/settingtimer.cpp \
     services/ffplaypreviewer.cpp \
-    services/abstractpreviewer.cpp
+    services/abstractpreviewer.cpp \
+    services/mplayerpreviewer.cpp
 
 HEADERS  += \
     ui/progressbar.h \
@@ -85,7 +86,8 @@ HEADERS  += \
     ui/updatedialog.h \
     services/settingtimer.h \
     services/ffplaypreviewer.h \
-    services/abstractpreviewer.h
+    services/abstractpreviewer.h \
+    services/mplayerpreviewer.h
 
 FORMS    += \
     ui/conversionparameterdialog.ui \

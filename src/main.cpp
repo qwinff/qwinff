@@ -132,6 +132,7 @@ int main(int argc, char *argv[])
     ExePath::setPath("ffprobe", "ffprobe");
     ExePath::setPath("sox", "sox");
     ExePath::setPath("ffplay", "ffplay");
+    ExePath::setPath("mplayer", "mplayer");
     ExePath::loadSettings();
 #endif
 
