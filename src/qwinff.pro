@@ -140,9 +140,9 @@ unix {
 }
 
 win32 {
-    # If FFMPEG_IN_DATA_PATH is set, QWinFF searches for FFmpeg executables
-    # in <datapath>/ffmpeg/ instead of PATH.
-    DEFINES += FFMPEG_IN_DATA_PATH
+    # If TOOLS_IN_DATA_PATH is set, QWinFF searches for FFmpeg executables
+    # in <datapath>/tools/ instead of PATH.
+    DEFINES += TOOLS_IN_DATA_PATH
     # Application Icon
     RC_FILE = appicon.rc
     # Shutdown

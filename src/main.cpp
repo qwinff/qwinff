@@ -122,11 +122,12 @@ int main(int argc, char *argv[])
 
     Paths::setAppPath(app.applicationDirPath());
 
-#ifdef FFMPEG_IN_DATA_PATH // Search FFmpeg in <datapath>/ffmpeg/
-    ExePath::setPath("ffmpeg", Paths::dataFileName("ffmpeg/ffmpeg"));
-    ExePath::setPath("ffprobe", Paths::dataFileName("ffmpeg/ffprobe"));
-    ExePath::setPath("sox", Paths::dataFileName("sox/sox"));
-    ExePath::setPath("ffplay", Paths::dataFileName("ffmpeg/ffplay"));
+#ifdef TOOLS_IN_DATA_PATH // Search external tools in <datapath>/tools
+    ExePath::setPath("ffmpeg", Paths::dataFileName("tools/ffmpeg"));
+    ExePath::setPath("ffprobe", Paths::dataFileName("tools/ffprobe"));
+    ExePath::setPath("sox", Paths::dataFileName("tools/sox"));
+    ExePath::setPath("ffplay", Paths::dataFileName("tools/ffplay"));
+    ExePath::setPath("ffplay", Paths::dataFileName("tools/ffplay"));
 #else // Search FFmpeg in environment variables
     ExePath::setPath("ffmpeg", "ffmpeg");
     ExePath::setPath("ffprobe", "ffprobe");
@@ -169,7 +170,7 @@ int main(int argc, char *argv[])
     // Tear down notification
     Notification::release();
 
-#ifndef FFMPEG_IN_DATA_PATH
+#ifndef TOOLS_IN_DATA_PATH
     // Save path settings
     ExePath::saveSettings();
 #endif

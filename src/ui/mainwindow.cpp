@@ -353,7 +353,7 @@ bool MainWindow::check_execute_conditions()
     // check external programs
     if (!MediaConverter::checkExternalPrograms(errmsg)) {
         QMessageBox::critical(this, this->windowTitle(), errmsg);
-#ifdef FFMPEG_IN_DATA_PATH
+#ifdef TOOLS_IN_DATA_PATH
         return false; // fatal: ffmpeg should be in the data path but doesn't exist
 #else
         QTimer::singleShot(0, this, SLOT(slotSetTools()));

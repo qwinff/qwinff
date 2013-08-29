@@ -29,7 +29,7 @@ OptionsDialog::OptionsDialog(QWidget *parent) :
     ui->setupUi(this);
     ui->spinThreads->setMinimum(1); // at least 1 thread
 
-#ifndef FFMPEG_IN_DATA_PATH
+#ifndef TOOLS_IN_DATA_PATH
     // initialize program list
     ui->toolTable->verticalHeader()->setVisible(false);
     ui->toolTable->horizontalHeader()->setStretchLastSection(true);
@@ -77,7 +77,7 @@ void OptionsDialog::read_fields()
                               Constants::getBool("CheckUpdateOnStartup")).toBool());
     ui->chkAutoStartConversion->setChecked(settings.value("options/auto_start_conversion",
                               Constants::getBool("AutoStartConversion")).toBool());
-#ifndef FFMPEG_IN_DATA_PATH
+#ifndef TOOLS_IN_DATA_PATH
     // ExePath to table
     const int count = ui->toolTable->rowCount();
     for (int i=0; i<count; i++) {
@@ -96,7 +96,7 @@ void OptionsDialog::write_fields()
     settings.setValue("options/check_update_on_startup", ui->chkCheckUpdates->isChecked());
     settings.setValue("options/auto_start_conversion", ui->chkAutoStartConversion->isChecked());
 
-#ifndef FFMPEG_IN_DATA_PATH
+#ifndef TOOLS_IN_DATA_PATH
     // table to ExePath
     const int count = ui->toolTable->rowCount();
     for (int i=0; i<count; i++) {
