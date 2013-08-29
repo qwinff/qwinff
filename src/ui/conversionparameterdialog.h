@@ -24,7 +24,7 @@ namespace Ui {
 }
 
 class RangeSelector;
-class FFplayPreviewer;
+class AbstractPreviewer;
 
 class ConversionParameterDialog : public QDialog
 {
@@ -60,7 +60,7 @@ private:
     bool m_singleFile;
     RangeSelector *m_selTime;
     ConversionParameters *m_param;
-    FFplayPreviewer *m_ffplay;
+    AbstractPreviewer *m_ffplay;
 };
 
 #endif // CONVERSIONPARAMETERDIALOG_H

@@ -10,6 +10,10 @@ public:
     explicit AbstractPreviewer(QObject *parent = 0);
     virtual ~AbstractPreviewer();
 
+    /** @brief Determine whether this previewer can play files.
+     */
+    virtual bool available() const = 0;
+
     /** @brief Play the media file named @a filename.
      *
      *  This function must be asynchronous, i.e. it must return

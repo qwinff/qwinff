@@ -12,6 +12,8 @@ public:
     explicit FFplayPreviewer(QObject *parent = 0);
     virtual ~FFplayPreviewer();
 
+    bool available() const;
+
     /** Play the media file with ffplay.
      *  If a media file is being played, it will be stopped before
      *  playing the new one.

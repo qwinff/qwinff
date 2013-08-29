@@ -24,6 +24,11 @@ FFplayPreviewer::~FFplayPreviewer()
     delete m_proc;
 }
 
+bool FFplayPreviewer::available() const
+{
+    return FFplayAvailable();
+}
+
 void FFplayPreviewer::play(const QString &filename)
 {
     ffplay_start(filename, -1, -1);

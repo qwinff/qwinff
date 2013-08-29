@@ -16,7 +16,7 @@
 #include "conversionparameterdialog.h"
 #include "converter/audiofilter.h"
 #include "converter/mediaprobe.h"
-#include "converter/ffplayinterface.h"
+#include "services/ffplaypreviewer.h"
 #include "rangeselector.h"
 #include "ui_conversionparameterdialog.h"
 #include <QLayout>
@@ -204,7 +204,7 @@ void ConversionParameterDialog::read_fields(const ConversionParameters& param)
         }
     }
     m_selTime->setVisible(show_slider);
-    bool show_preview_button = show_slider && FFplayPreviewer::FFplayAvailable();
+    bool show_preview_button = show_slider && m_ffplay->available();
     ui->btnPreview->setVisible(show_preview_button);
 
     if (param.time_begin > 0) {
