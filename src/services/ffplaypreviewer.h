@@ -1,11 +1,11 @@
-#ifndef FFPLAYINTERFACE_H
-#define FFPLAYINTERFACE_H
+#ifndef FFPLAYPREVIEWER_H
+#define FFPLAYPREVIEWER_H
 
-#include <QObject>
+#include "abstractpreviewer.h"
 
 class QProcess;
 
-class FFplayPreviewer : public QObject
+class FFplayPreviewer : public AbstractPreviewer
 {
     Q_OBJECT
 public:
@@ -49,4 +49,4 @@ private:
     void ffplay_start(const QString&, int, int);
 };
 
-#endif // FFPLAYINTERFACE_H
+#endif // FFPLAYPREVIEWER_H

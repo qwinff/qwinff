@@ -13,7 +13,9 @@
 #define DEFAULT_HEIGHT 180
 
 FFplayPreviewer::FFplayPreviewer(QObject *parent) :
-    QObject(parent), m_proc(new QProcess), m_w(DEFAULT_WIDTH), m_h(DEFAULT_HEIGHT)
+    AbstractPreviewer(parent),
+    m_proc(new QProcess),
+    m_w(DEFAULT_WIDTH), m_h(DEFAULT_HEIGHT)
 {
 }
 

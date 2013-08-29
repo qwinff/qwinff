@@ -44,7 +44,8 @@ SOURCES += main.cpp \
     services/xmllookuptable.cpp \
     ui/updatedialog.cpp \
     services/settingtimer.cpp \
-    services/ffplaypreviewer.cpp
+    services/ffplaypreviewer.cpp \
+    services/abstractpreviewer.cpp
 
 HEADERS  += \
     ui/progressbar.h \
@@ -83,7 +84,8 @@ HEADERS  += \
     services/xmllookuptable.h \
     ui/updatedialog.h \
     services/settingtimer.h \
-    services/ffplaypreviewer.h
+    services/ffplaypreviewer.h \
+    services/abstractpreviewer.h
 
 FORMS    += \
     ui/conversionparameterdialog.ui \
