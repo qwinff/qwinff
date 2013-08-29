@@ -59,7 +59,7 @@ QString Paths::qtTranslationPath()
 {
 #ifndef Q_OS_WIN32 // unix: load qt translation file from the default path
     return QLibraryInfo::location(QLibraryInfo::TranslationsPath);
-#else // windows: load qt translation file from <data path>/qt-i18n/
-    return QDir(dataPath()).absoluteFilePath("qt-i18n");
+#else // windows: load qt translation file from translation directory
+    return translationPath();
 #endif
 }
