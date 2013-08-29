@@ -96,17 +96,12 @@ Section
 	file ${CHANGELOG}
 
 	CreateDirectory translations
-	CreateDirectory ffmpeg
-	CreateDirectory qt-i18n
+	CreateDirectory tools
 
 	SetOutPath $INSTDIR\translations
 	File translations\*.qm
-	SetOutPath $INSTDIR\ffmpeg
-	File ffmpeg\*
-	SetOutPath $INSTDIR\sox
-	File sox\*
-	SetOutPath $INSTDIR\qt-i18n
-	File qt-i18n\*.qm
+	SetOutPath $INSTDIR\tools
+	File tools\*
 
 	# Create Uninstaller
 	WriteUninstaller "$INSTDIR\${UNINSTALLER}"
@@ -139,15 +134,11 @@ Section "un.Uninstaller"
 	Delete $INSTDIR\*.dll
 	Delete $INSTDIR\${LICENSE}
 	Delete $INSTDIR\${CHANGELOG}
-	Delete $INSTDIR\ffmpeg\*
-	RmDir  $INSTDIR\ffmpeg
+	Delete $INSTDIR\tools\*
+	RmDir  $INSTDIR\tools
 	Delete $INSTDIR\translations\*
 	RmDir  $INSTDIR\translations
-	Delete $INSTDIR\sox\*
-	RmDir  $INSTDIR\sox
-	Delete $INSTDIR\qt-i18n\*
-	RmDir  $INSTDIR\qt-i18n
-	RmDir  $INSTDIR    # Remove the installation directory if it's empty.
+	RmDir  $INSTDIR  # Remove the installation directory if it's empty.
 
 	Delete "$DESKTOP\QWinFF.lnk"
 	!insertmacro MUI_STARTMENU_GETFOLDER Application $StartMenuFolder

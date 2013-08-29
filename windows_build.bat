@@ -12,8 +12,7 @@ popd
 
 :: Create output directory if it does not exist.
 if not exist "%DEST_DIR%" mkdir "%DEST_DIR%"
-if not exist "%DEST_DIR%\ffmpeg" mkdir "%DEST_DIR%\ffmpeg"
-if not exist "%DEST_DIR%\sox" mkdir "%DEST_DIR%\sox"
+if not exist "%DEST_DIR%\tools" mkdir "%DEST_DIR%\tools"
 if not exist "%DEST_DIR%\translations" mkdir "%DEST_DIR%\translations"
 
 :: Copy the final executable to the output directory.
