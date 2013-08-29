@@ -17,6 +17,7 @@
 #include "converter/audiofilter.h"
 #include "converter/mediaprobe.h"
 #include "services/ffplaypreviewer.h"
+#include "services/mplayerpreviewer.h"
 #include "rangeselector.h"
 #include "ui_conversionparameterdialog.h"
 #include <QLayout>
@@ -33,7 +34,7 @@ ConversionParameterDialog::ConversionParameterDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ConversionParameterDialog),
     m_selTime(new RangeSelector(this)),
-    m_previewer(new FFplayPreviewer(this))
+    m_previewer(0)
 {
     ui->setupUi(this);
 
@@ -73,6 +74,8 @@ ConversionParameterDialog::ConversionParameterDialog(QWidget *parent) :
     m_enableAudioProcessing = AudioFilter::available();
     if (!m_enableAudioProcessing)
         ui->groupScaling->setVisible(false);
+
+    m_previewer = create_previewer();
 }
 
 ConversionParameterDialog::~ConversionParameterDialog()
@@ -154,6 +157,18 @@ void ConversionParameterDialog::preview_time_selection()
     if (!ui->chkToEnd->isChecked())
         timeEnd = QTIME_TO_SECS(ui->timeEnd->time());
     m_previewer->play(m_param->source, timeBegin, timeEnd);
+}
+
+AbstractPreviewer *ConversionParameterDialog::create_previewer()
+{
+    AbstractPreviewer *previewer;
+    // Use mplayer by default.
+    previewer = new MPlayerPreviewer(this);
+    if (previewer->available())
+        return previewer;
+    // mplayer not available, use ffplay as fallback
+    delete previewer;
+    return new FFplayPreviewer(this);
 }
 
 // read the fields from the ConversionParameters

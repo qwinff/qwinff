@@ -51,6 +51,7 @@ private slots:
     void from_begin_toggled(bool);
     void to_end_toggled(bool);
     void preview_time_selection();
+    AbstractPreviewer *create_previewer();
 
 private:
     Ui::ConversionParameterDialog *ui;

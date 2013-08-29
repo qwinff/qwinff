@@ -34,9 +34,11 @@ void MPlayerPreviewer::play(const QString &filename, int t_begin, int t_end)
     stop();
     if (t_begin >= 0) // set begin time: -ss <seconds>
         param.append("-ss"), param.append(QString::number(t_begin));
+    else
+        t_begin = 0;
     if (t_end >= 0) { // set end time: -endpos <seconds>
         param.append("-endpos");
-        param.append(QString::number(t_end));
+        param.append(QString::number(t_end - t_begin));
     }
     param.append(filename);
     m_proc->start(ExePath::getPath("mplayer"), param);
