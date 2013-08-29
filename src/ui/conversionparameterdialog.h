@@ -60,7 +60,7 @@ private:
     bool m_singleFile;
     RangeSelector *m_selTime;
     ConversionParameters *m_param;
-    AbstractPreviewer *m_ffplay;
+    AbstractPreviewer *m_previewer;
 };
 
 #endif // CONVERSIONPARAMETERDIALOG_H

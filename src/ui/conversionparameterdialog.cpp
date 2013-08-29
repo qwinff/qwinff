@@ -33,7 +33,7 @@ ConversionParameterDialog::ConversionParameterDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ConversionParameterDialog),
     m_selTime(new RangeSelector(this)),
-    m_ffplay(new FFplayPreviewer(this))
+    m_previewer(new FFplayPreviewer(this))
 {
     ui->setupUi(this);
 
@@ -153,7 +153,7 @@ void ConversionParameterDialog::preview_time_selection()
         timeBegin = QTIME_TO_SECS(ui->timeBegin->time());
     if (!ui->chkToEnd->isChecked())
         timeEnd = QTIME_TO_SECS(ui->timeEnd->time());
-    m_ffplay->play(m_param->source, timeBegin, timeEnd);
+    m_previewer->play(m_param->source, timeBegin, timeEnd);
 }
 
 // read the fields from the ConversionParameters
@@ -204,7 +204,7 @@ void ConversionParameterDialog::read_fields(const ConversionParameters& param)
         }
     }
     m_selTime->setVisible(show_slider);
-    bool show_preview_button = show_slider && m_ffplay->available();
+    bool show_preview_button = show_slider && m_previewer->available();
     ui->btnPreview->setVisible(show_preview_button);
 
     if (param.time_begin > 0) {
