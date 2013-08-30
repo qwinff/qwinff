@@ -203,6 +203,14 @@
     <category>Nokia</category>
   </NokiaN73N81N95FS>
 
+  <!-- WebM -->
+  <WebMAuto>
+    <label>WebM Auto</label>
+    <params></params>
+    <extension>webm</extension>
+    <category>Websites</category>
+  </WebMAuto>
+
   <!-- Wave Audio -->
   <CDWavStereo>
     <label>Wav for CD</label>
