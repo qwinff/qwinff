@@ -794,7 +794,7 @@ void MainWindow::refresh_titlebar()
 {
     const int task_count = m_list->count();
     const int finished_task_count = m_list->finishedCount();
-    if (finished_task_count < task_count) {
+    if (finished_task_count < task_count && m_list->isBusy()) {
         //: Converting the %1-th file in %2 files. %2 is the number of files.
         setWindowTitle(tr("Converting %1/%2")
                        .arg(finished_task_count+1).arg(task_count));
