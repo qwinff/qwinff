@@ -161,13 +161,13 @@ void ConversionParameterDialog::preview_time_selection()
 
 AbstractPreviewer *ConversionParameterDialog::create_previewer()
 {
-    AbstractPreviewer *previewer;
+    //AbstractPreviewer *previewer;
     // Use mplayer by default.
-    previewer = new MPlayerPreviewer(this);
-    if (previewer->available())
-        return previewer;
+    //previewer = new MPlayerPreviewer(this);
+    //if (previewer->available())
+    //    return previewer;
     // mplayer not available, use ffplay as fallback
-    delete previewer;
+    //delete previewer;
     return new FFplayPreviewer(this);
 }
 
