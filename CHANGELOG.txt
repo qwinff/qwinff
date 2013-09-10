@@ -1,15 +1,41 @@
-Version 0.1.8:
- (2013-02-13)
+Version 0.1.9
+-------------
+(2013-09-10)
+
+  - Added output formats: asf, swf, aiff, flac, au, mp2
+  - Added more output path options.
+  - Added update checker.
+  - Automatically start conversion after adding files (off by default)
+  - Several program parameters can be set in constants.xml.
+  - Minor UI improvements
+  - Can now set version-specific ffmpeg parameters in presets.xml.
+  - Compatible with newer ffmpeg versions ("-sameq" doesn't work since ffmpeg 1.2).
+  - (Windows) Dialog buttons are now also translated.
+  - (Linux) User can now change ffmpeg and sox executable paths in the Options dialog.
+  - (Packaging) Support older Qt versions down to 4.4.3.
+  - (Packaging) Added file "constants.xml".
+  - (Packaging) (Windows) Place Qt translation files in "translations" folder
+  - (Packaging) (Windows) QWinFF now depends on QtNetwork4.dll (for update checker).
+  - (Packaging) (Windows) merge "ffmpeg" and "sox" folder into "tools" folder
+
+Version 0.1.8
+-------------
+(2013-02-13)
+
   - Improved video/audio cutting interface.
   - Fixed some bugs when working with newer ffmpeg versions.
 
-Version 0.1.7:
- (2012-09-17)
+Version 0.1.7
+-------------
+(2012-09-17)
+
   - Drag&Drop reordering tasks
   - Fixed progress-displaying of wav input files.
 
-Version 0.1.6:
- (2012-08-26)
+Version 0.1.6
+-------------
+(2012-08-26)
+
   - New Feature: Adjust video speed (requires sox to be installed).
   - Added Czech translation.
   - Rearranged toolbar actions.
@@ -17,38 +43,52 @@ Version 0.1.6:
   - Removed "Auto bitrate" option
   - Many UI improvements.
 
-Version 0.1.5:
- (2012-08-17)
+Version 0.1.5
+-------------
+(2012-08-17)
+
   - New Feature: Shutdown computer when all tasks are done.
   - Added Italian translation.
   - Added several ffmpeg presets that don't give extra arguments.
 
-Version 0.1.4:
- (2012-06-21) 
+Version 0.1.4
+-------------
+(2012-06-21) 
+
   - Some minor gui improvements
   - Include desktop file and application icon in installation.
 
-Version 0.1.3:
+Version 0.1.3
+-------------
+
   - Enable users to select the range of the media file to encode.
   - Fixed video encoding error on some systems due to ffmpeg multithread options.
   - Removed "-aq 60" option in OGG Vorbis to prevent inflating the output file.
 
-Version 0.1.2:
- (2012-02-11)
+Version 0.1.2
+-------------
+(2012-02-11)
+
   - Use notify-send by default.
   - Made libnotify optional and disabled by default.
   - Explicit link with gtk+-2.0. (libnotify can be used with either gtk2 or gtk3)
   - Fixed compilation error with older libnotify versions.
 
-Version 0.1.1:
- (2012-02-07)
+Version 0.1.1
+-------------
+(2012-02-07)
+
   - Use libnotify for desktop notification.
   - Separate preset file for each user.
   - Save program settings and the user preset file in ~/.qwinff/
   - Added Japanese translation.
 
-Version 0.1.0:
- (2011-11-05)
+Version 0.1.0
+-------------
+(2011-11-05)
+
   - Disable the auto adjust bitrate option by default as it causes problems sometimes.
- (2011-11-03)
+
+(2011-11-03)
+
   - First stable release.

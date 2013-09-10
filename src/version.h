@@ -17,9 +17,9 @@
 #define VERSION_H
 
 // human-readable version string (VersionName)
-#define VERSION_STRING "0.1.9a"
+#define VERSION_STRING "0.1.9"
 
 // machine-readable version id (VersionId)
-#define VERSION_INTEGER 18
+#define VERSION_INTEGER 19
 
 #endif // VERSION_H
