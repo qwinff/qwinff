@@ -13,7 +13,7 @@
     </message>
     <message>
         <source>Translators</source>
-        <translation>Traduzioni</translation>
+        <translation>Traduttori</translation>
     </message>
     <message>
         <source>Version: %1</source>
@@ -760,7 +760,7 @@
     </message>
     <message>
         <source>Check For &amp;Updates</source>
-        <translation type="unfinished"></translation>
+        <translation>Controlla  gli &amp;aggiornamenti</translation>
     </message>
     <message>
         <source>All tasks have finished.</source>
@@ -835,11 +835,11 @@
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Generale</translation>
     </message>
     <message>
         <source>Check for updates on program startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Controlla gli aggiornamenti all&apos;avvio del programma</translation>
     </message>
     <message>
         <source>Automatically start conversion after adding files to the list.</source>
@@ -943,19 +943,19 @@
     <name>UpdateDialog</name>
     <message>
         <source>Show &amp;Release Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra le note di &amp;rilascio</translation>
     </message>
     <message>
         <source>Check for updates on program startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Controlla gli aggiornamenti all&apos;avvio del programma</translation>
     </message>
     <message>
         <source>Downloading update information...</source>
-        <translation type="unfinished"></translation>
+        <translation>Download delle informazioni sull&apos;aggiornamento...</translation>
     </message>
     <message>
         <source>Cannot connect to server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile contattare il server.</translation>
     </message>
     <message>
         <source>Failed to parse the received data.</source>
@@ -963,20 +963,20 @@
     </message>
     <message>
         <source>You are already using the latest version of QWinFF.</source>
-        <translation type="unfinished"></translation>
+        <translation>Stai già utilizzando la versione più recente di QWinFF.</translation>
     </message>
     <message>
         <source>An unknown error has occurred.</source>
-        <translation type="unfinished"></translation>
+        <translation>Si è verificato un errore sconosciuto.</translation>
     </message>
     <message>
         <source>A new version of QWinFF has been released!</source>
-        <translation type="unfinished"></translation>
+        <translation>È stata rilasciata una nuova versione di QWinFF!</translation>
     </message>
     <message>
         <source>Version &lt;b&gt;%1&lt;/b&gt; is available at %2.</source>
         <extracomment>%1 is version number, %2 is the project homepage</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>È disponibile la versione &lt;b&gt;%1&lt;/b&gt; su %2.</translation>
     </message>
     <message>
         <source>You can download this version using the link:</source>

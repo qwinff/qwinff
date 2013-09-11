@@ -17,12 +17,12 @@
     </message>
     <message>
         <source>Version: %1</source>
-        <translation>Versiune:%1</translation>
+        <translation>Versiune: %1</translation>
     </message>
     <message>
         <source>Portable</source>
         <extracomment>Portable version (no installation, no writing registry)</extracomment>
-        <translation>Portabil </translation>
+        <translation>Portabil</translation>
     </message>
     <message>
         <source>Compiled with Qt %1</source>
@@ -40,7 +40,7 @@
     <message>
         <source>Programming: %1</source>
         <extracomment>%1 is the name and email of the programmer</extracomment>
-        <translation>Programare: 1% </translation>
+        <translation>Programare: %1</translation>
     </message>
     <message>
         <source>Logo Design: %1</source>
@@ -49,19 +49,19 @@
     </message>
     <message>
         <source>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License version 2 or 3.</source>
-        <translation>Acest program este software liber; îl puteți redistribui și /sau modifica în conformitate cu termenii GNU General Public License  versiunea 2 sau 3.</translation>
+        <translation>Acest program este software liber; îl puteți redistribui și/sau modifica în conformitate cu termenii GNU General Public License versiunea 2 sau 3.</translation>
     </message>
     <message>
         <source>QWinFF Homepage: %1</source>
-        <translation>QWinFF Homepage: %1 </translation>
+        <translation>QWinFF Homepage: %1</translation>
     </message>
     <message>
         <source>Some audio-processing functionalities are provided by SoX.</source>
-        <translation>Unele funcționalități de prelucrare audio sunt oferite de Sox. </translation>
+        <translation>Unele funcționalități de prelucrare audio sunt oferite de SoX.</translation>
     </message>
     <message>
         <source>FFmpeg presets were taken from WinFF.</source>
-        <translation>Presetări FFmpeg au fost luate din WinFF.</translation>
+        <translation>Presetările FFmpeg au fost luate din WinFF.</translation>
     </message>
     <message>
         <source>Japanese</source>
@@ -81,7 +81,7 @@
     <message>
         <source>Simplified Chinese</source>
         <extracomment>Chinese character set used in China</extracomment>
-        <translation>Chineză Simplificată</translation>
+        <translation>Chineză simplificată</translation>
     </message>
     <message>
         <source>Russian</source>
@@ -106,12 +106,12 @@
     <message>
         <source>Turkish</source>
         <extracomment>Turkish Language</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Turcă</translation>
     </message>
     <message>
         <source>Arabic</source>
         <extracomment>Arabic Language</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Arabă</translation>
     </message>
 </context>
 <context>
@@ -122,16 +122,16 @@
     </message>
     <message>
         <source>FFmpeg</source>
-        <translation>FFmpeg </translation>
+        <translation>FFmpeg</translation>
     </message>
     <message>
         <source>Available Codecs</source>
-        <translation>Codec-urile Disponibile </translation>
+        <translation>Codecuri disponibile</translation>
     </message>
     <message>
         <source>FFmpeg is a complete, cross-platform solution to record, convert and stream audio and video. It includes libavcodec - the leading audio/video codec library.</source>
         <extracomment>ffmpeg description</extracomment>
-        <translation>FFmpeg este un sistem complet, soluție cross-platform  pentru a înregistra, converti  fluxuri audio și video. Acesta include libavcodec - bibliotecă codec lider în materie .</translation>
+        <translation>FFmpeg este un sistem complet, soluție cross-platform pentru a înregistra, converti fluxuri audio și video. Acesta include libavcodec - bibliotecă codec lider în materie.</translation>
     </message>
     <message>
         <source>FFmpeg is free software licensed under the LGPL or GPL.</source>
@@ -140,42 +140,42 @@
     <message>
         <source>Please visit %1 for more information.</source>
         <extracomment>visit ffmpeg website</extracomment>
-        <translation>Vă rugăm să vizitați %1 pentru mai multe informații.</translation>
+        <translation>Te rog vizitează %1 pentru mai multe informații.</translation>
     </message>
 </context>
 <context>
     <name>AddTaskWizard</name>
     <message>
         <source>Add Tasks</source>
-        <translation>Adăugați Sarcini </translation>
+        <translation>Adaugă sarcini </translation>
     </message>
     <message>
         <source>Files to be converted</source>
-        <translation>Fișierele care urmează să fie convertite </translation>
+        <translation>Fișierele care urmează să fie convertite</translation>
     </message>
     <message>
         <source>Add files.</source>
-        <translation>Adăugare fișiere. </translation>
+        <translation>Adaugă fișiere.</translation>
     </message>
     <message>
         <source>Remove selected files.</source>
-        <translation>Eliminarea fișierelor selectate. </translation>
+        <translation>Elimină fișierele selectate.</translation>
     </message>
     <message>
         <source>Output Settings</source>
-        <translation>Setări de ieșire </translation>
+        <translation>Setări de ieșire</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Editare </translation>
+        <translation>Editare</translation>
     </message>
     <message>
         <source>Auto adjust output bitrate to reduce output file size.</source>
-        <translation>Ajustare automată bitrate de ieșire pentru a reduce dimensiunea fișierului rezultat.</translation>
+        <translation>Ajustare automată rată de biți de ieșire pentru a reduce dimensiunea fișierului rezultat.</translation>
     </message>
     <message>
         <source>Auto Adjust Audio Bitrate</source>
-        <translation>Ajustare Automată  Bitrate Audio</translation>
+        <translation>Ajustare automată a ratei de biți audio</translation>
     </message>
     <message>
         <source>Preset</source>
@@ -187,15 +187,15 @@
     </message>
     <message>
         <source>Output Path</source>
-        <translation>Parcursul de Ieșire</translation>
+        <translation>Calea de ieșire</translation>
     </message>
     <message>
         <source>Select &amp;folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Selectează &amp;dosar</translation>
     </message>
     <message>
         <source>Browse</source>
-        <translation>Caută</translation>
+        <translation>Răsfoiește</translation>
     </message>
     <message>
         <source>Create &amp;new folder in source folder</source>
@@ -204,7 +204,7 @@
     </message>
     <message>
         <source>Folder Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nume dosar</translation>
     </message>
     <message>
         <source>Output to &amp;source folder</source>
@@ -213,28 +213,28 @@
     </message>
     <message>
         <source>Please select at least one file.</source>
-        <translation>Selectați cel puțin un fișier. </translation>
+        <translation>Selectează cel puțin un fișier.</translation>
     </message>
     <message>
         <source>Select Files</source>
         <extracomment>This text is the title of an openfile dialog.</extracomment>
-        <translation>Selectați Fișiere </translation>
+        <translation>Selectează fișiere</translation>
     </message>
     <message>
         <source>Multimedia</source>
-        <translation>Multimedia </translation>
+        <translation>Multimedia</translation>
     </message>
     <message>
         <source>Video</source>
-        <translation>Video </translation>
+        <translation>Video</translation>
     </message>
     <message>
         <source>Audio</source>
-        <translation>Audio </translation>
+        <translation>Audio</translation>
     </message>
     <message>
         <source>All files</source>
-        <translation>Toate fișierele </translation>
+        <translation>Toate fișierele</translation>
     </message>
     <message>
         <source>Some files could not be found.</source>
@@ -243,94 +243,94 @@
     <message>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
-        <translation>Selectați Directorul </translation>
+        <translation>Selectează dosarul</translation>
     </message>
     <message>
         <source>Folder does not exist. Create a new folder?</source>
-        <translation>Folderul nu există. Crearea unui folder nou? </translation>
+        <translation>Dosarul nu există. Creezi un dosar nou?</translation>
     </message>
     <message>
         <source>Failed to create folder. Please select another output folder.</source>
-        <translation>Imposibilă creerea folderului.  Vă rugăm să selectați un alt folder de ieșire.</translation>
+        <translation>Crearea dosarului a eșuat. Te rog selectează un alt dosar de ieșire.</translation>
     </message>
 </context>
 <context>
     <name>ConversionParameterDialog</name>
     <message>
         <source>Conversion Parameters</source>
-        <translation>Parametrii de Conversie</translation>
+        <translation>Parametrii de conversie</translation>
     </message>
     <message>
         <source>Audio</source>
-        <translation>Audio </translation>
+        <translation>Audio</translation>
     </message>
     <message>
         <source>Disable Audio</source>
-        <translation>Dezactivați Audio</translation>
+        <translation>Dezactivează audio</translation>
     </message>
     <message>
         <source>Audio Options</source>
-        <translation>Opțiuni Audio</translation>
+        <translation>Opțiuni audio</translation>
     </message>
     <message>
         <source>Sample Rate</source>
-        <translation>Rată de eșantionare </translation>
+        <translation>Rată de eșantionare</translation>
     </message>
     <message>
         <source>Hz</source>
-        <translation>Hz </translation>
+        <translation>Hz</translation>
     </message>
     <message>
         <source>Channels</source>
-        <translation>Canale </translation>
+        <translation>Canale</translation>
     </message>
     <message>
         <source>(auto)</source>
-        <translation>(auto) </translation>
+        <translation>(auto)</translation>
     </message>
     <message>
         <source>Volume</source>
-        <translation>Volum </translation>
+        <translation>Volum</translation>
     </message>
     <message>
         <source>%</source>
-        <translation>% </translation>
+        <translation>%</translation>
     </message>
     <message>
         <source>Bitrate</source>
-        <translation>Bitrate </translation>
+        <translation>Rată de biți</translation>
     </message>
     <message>
         <source>kb/s</source>
-        <translation>kb/s </translation>
+        <translation>kb/s</translation>
     </message>
     <message>
         <source>Video</source>
-        <translation>Video </translation>
+        <translation>Video</translation>
     </message>
     <message>
         <source>Disable Video</source>
-        <translation>Dezactivați Video </translation>
+        <translation>Dezactivează video</translation>
     </message>
     <message>
         <source>Video Options</source>
-        <translation>Opțiuni Video </translation>
+        <translation>Opțiuni video</translation>
     </message>
     <message>
         <source>Width</source>
-        <translation>Lățime </translation>
+        <translation>Lățime</translation>
     </message>
     <message>
         <source> px</source>
-        <translation>px </translation>
+        <translation>px</translation>
     </message>
     <message>
         <source>Height</source>
-        <translation>Înălțime </translation>
+        <translation>Înălțime</translation>
     </message>
     <message>
         <source>Crop</source>
-        <translation>Decupați </translation>
+        <translation>Decupează</translation>
     </message>
     <message>
         <source>Same Quantizer as Source</source>
@@ -338,18 +338,17 @@
     </message>
     <message>
         <source>Deinterlace</source>
-        <translation>Deinterlace 
-</translation>
+        <translation>Deinterlace</translation>
     </message>
     <message>
         <source>Time</source>
         <extracomment>time-related options (speed, length)</extracomment>
-        <translation>Timp </translation>
+        <translation>Timp</translation>
     </message>
     <message>
         <source>Cutting</source>
         <extracomment>video time cutting: options for begin time and end time</extracomment>
-        <translation>Tăiere </translation>
+        <translation>Tăiere</translation>
     </message>
     <message>
         <source>From Begin</source>
@@ -357,7 +356,7 @@
     </message>
     <message>
         <source>To End</source>
-        <translation>Până la capăt </translation>
+        <translation>Până la capăt</translation>
     </message>
     <message>
         <source>&amp;Preview</source>
@@ -366,11 +365,11 @@
     <message>
         <source>Scaling</source>
         <extracomment>time scaling, changing the speed of the output file</extracomment>
-        <translation>Scalarea </translation>
+        <translation>Scalarea</translation>
     </message>
     <message>
         <source>Speed</source>
-        <translation>Viteză </translation>
+        <translation>Viteză</translation>
     </message>
     <message>
         <source>Advanced</source>
@@ -378,11 +377,11 @@
     </message>
     <message>
         <source>FFmpeg</source>
-        <translation>FFmpeg </translation>
+        <translation>FFmpeg</translation>
     </message>
     <message>
         <source>Additional FFmpeg Options</source>
-        <translation>Opțiuni Suplimentare FFmpeg</translation>
+        <translation>Opțiuni suplimentare FFmpeg</translation>
     </message>
 </context>
 <context>
@@ -390,12 +389,12 @@
     <message>
         <source>Cancel</source>
         <extracomment>Cancel the operation of adding new tasks</extracomment>
-        <translation>Anulare </translation>
+        <translation>Renunță</translation>
     </message>
     <message>
         <source>Adding files (%1/%2)</source>
         <extracomment>This text is the progress indicator of adding multiple tasks. %1 is the number of files that are already added. %2 is the total number of files.</extracomment>
-        <translation>Adăugarea  fișierelor (%1/%2)</translation>
+        <translation>Adăugare fișiere (%1/%2)</translation>
     </message>
     <message>
         <source>Some files are not recognized by the converter.</source>
@@ -403,7 +402,7 @@
     </message>
     <message>
         <source>New File Name</source>
-        <translation>Numele Noului Fișier</translation>
+        <translation>Numele noului fișier</translation>
     </message>
     <message>
         <source>Please input the new name for the output file.</source>
@@ -417,105 +416,106 @@
         <source>Error Message from FFmpeg:
 
 </source>
-        <translation>Mesajul de Eroare de la FFmpeg: ⏎ ⏎
+        <translation>Mesajul de eroare de la FFmpeg:
+
 </translation>
     </message>
     <message>
         <source>Drag and drop files here to add tasks.</source>
-        <translation type="unfinished"></translation>
+        <translation>Trage fișiere aici pentru a adăuga sarcini.</translation>
     </message>
     <message>
         <source>Hide &quot;%1&quot;</source>
         <extracomment>Hide a column in the list. For example, the text maybe &apos;Hide &quot;Duration&quot;&apos;. The two &quot; are quotation marks in English, you may replace it with local quotation marks.</extracomment>
-        <translation>Ascunde  &quot;%1&quot;</translation>
+        <translation>Ascunde &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Restore All Columns</source>
-        <translation>Restaurarea Tuturor Coloanelor</translation>
+        <translation>Restaurarea tuturor coloanelor</translation>
     </message>
     <message>
         <source>Source</source>
-        <translation>Sursă </translation>
+        <translation>Sursă</translation>
     </message>
     <message>
         <source>Destination</source>
-        <translation>Destinație </translation>
+        <translation>Destinație</translation>
     </message>
     <message>
         <source>Duration</source>
-        <translation>Durată </translation>
+        <translation>Durată</translation>
     </message>
     <message>
         <source>File Size</source>
-        <translation>Dimensiune </translation>
+        <translation>Dimensiune</translation>
     </message>
     <message>
         <source>Sample Rate</source>
         <extracomment>Audio</extracomment>
-        <translation>Rată de eșantionare </translation>
+        <translation>Rată de eșantionare</translation>
     </message>
     <message>
         <source>Audio Bitrate</source>
-        <translation>Audio Bitrate </translation>
+        <translation>Rată de biți audio</translation>
     </message>
     <message>
         <source>Channels</source>
         <extracomment>Audio</extracomment>
-        <translation>Canale </translation>
+        <translation>Canale</translation>
     </message>
     <message>
         <source>Audio Codec</source>
-        <translation>Audio Codec </translation>
+        <translation>Codec audio</translation>
     </message>
     <message>
         <source>Dimensions</source>
-        <translation>Dimensiuni </translation>
+        <translation>Dimensiuni</translation>
     </message>
     <message>
         <source>Video Bitrate</source>
-        <translation>Video Bitrate </translation>
+        <translation>Rată de biți video</translation>
     </message>
     <message>
         <source>Framerate</source>
         <extracomment>Video</extracomment>
-        <translation>Framerate </translation>
+        <translation>Framerate</translation>
     </message>
     <message>
         <source>Video Codec</source>
-        <translation>Video Codec </translation>
+        <translation>Codec video</translation>
     </message>
     <message>
         <source>Progress</source>
-        <translation>Progres </translation>
+        <translation>Progres</translation>
     </message>
     <message>
         <source>%1 Hz</source>
-        <translation>%1 Hz </translation>
+        <translation>%1 Hz</translation>
     </message>
     <message>
         <source>%1 kb/s</source>
-        <translation>%1 kb/s </translation>
+        <translation>%1 kb/s</translation>
     </message>
     <message>
         <source>%1 fps</source>
-        <translation>%1 fps </translation>
+        <translation>%1 fps</translation>
     </message>
     <message>
         <source>Removing tasks...</source>
         <extracomment>Remove files from the tasklist</extracomment>
-        <translation>Sarcini în curs de eliminare</translation>
+        <translation>Eliminare sarcini...</translation>
     </message>
     <message>
         <source>KiB</source>
-        <translation>KiB </translation>
+        <translation>KiB</translation>
     </message>
     <message>
         <source>MiB</source>
-        <translation>MiB </translation>
+        <translation>MiB</translation>
     </message>
     <message>
         <source>GiB</source>
-        <translation>GiB </translation>
+        <translation>GiB</translation>
     </message>
     <message>
         <source>TiB</source>
@@ -528,19 +528,19 @@
     </message>
     <message>
         <source>File Exists</source>
-        <translation>Fișierul Există</translation>
+        <translation>Fișierul există</translation>
     </message>
     <message>
         <source>%1 already exists on disk or in the task list. Still use this name as the output filename?</source>
-        <translation>%1 există deja pe disc sau în lista de activități. Folosesc oricum  acest nume ca numele fișierului de ieșire?</translation>
+        <translation>%1 există deja pe disc sau în lista de activități. Folosesc oricum acest nume ca numele fișierului de ieșire?</translation>
     </message>
     <message>
         <source>Remove Task</source>
-        <translation>Elimină Sarcina </translation>
+        <translation>Elimină sarcina</translation>
     </message>
     <message>
         <source>Cannot remove a task while it is in progress.</source>
-        <translation>Nu se poate șterge o sarcină în timp ce acesta este în curs de desfășurare.</translation>
+        <translation>Nu se poate șterge o sarcină în timp ce este în curs de desfășurare.</translation>
     </message>
     <message>
         <source>Finished</source>
@@ -550,7 +550,7 @@
     <message>
         <source>Failed</source>
         <extracomment>The text to be displayed on the progress bar when a conversion fails</extracomment>
-        <translation>A eșuat </translation>
+        <translation>A eșuat</translation>
     </message>
     <message>
         <source>Error: %1</source>
@@ -562,18 +562,18 @@
     <name>ExtraTranslations</name>
     <message>
         <source>Convert between media file formats</source>
-        <translation>Converteşte  formatele de fișiere media</translation>
+        <translation>Converteşte formatele de fișiere media</translation>
     </message>
     <message>
         <source>Media Converter</source>
-        <translation>Media Converter </translation>
+        <translation>Media Converter</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
         <source>QWinFF</source>
-        <translation>QWinFF </translation>
+        <translation>QWinFF</translation>
     </message>
     <message>
         <source>Start conversion process.</source>
@@ -585,7 +585,7 @@
     </message>
     <message>
         <source>&amp;File</source>
-        <translation>&amp;Fișier </translation>
+        <translation>&amp;Fișier</translation>
     </message>
     <message>
         <source>&amp;Convert</source>
@@ -597,15 +597,15 @@
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation>&amp;Modifică </translation>
+        <translation>&amp;Editare</translation>
     </message>
     <message>
         <source>&amp;Add Files</source>
-        <translation>&amp;Adăugați Fișiere</translation>
+        <translation>&amp;Adaugă fișiere</translation>
     </message>
     <message>
         <source>Add files for conversion.</source>
-        <translation>Adăugați fișiere pentru conversie. </translation>
+        <translation>Adaugă fișiere pentru conversie.</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
@@ -613,7 +613,7 @@
     </message>
     <message>
         <source>E&amp;xit</source>
-        <translation>I&amp;eșire</translation>
+        <translation>Term&amp;ină</translation>
     </message>
     <message>
         <source>Exit the program.</source>
@@ -633,12 +633,12 @@
     </message>
     <message>
         <source>Set &amp;Parameters</source>
-        <translation>Setare &amp;Parametrii</translation>
+        <translation>Setare &amp;parametrii</translation>
     </message>
     <message>
         <source>Set Parameters</source>
         <extracomment>Edit output file parameters.</extracomment>
-        <translation>Setare Parametrii</translation>
+        <translation>Setare parametrii</translation>
     </message>
     <message>
         <source>Edit conversion parameters of selected files.</source>
@@ -760,7 +760,7 @@
     </message>
     <message>
         <source>Check For &amp;Updates</source>
-        <translation type="unfinished"></translation>
+        <translation>Verifică pentru act&amp;ualizări</translation>
     </message>
     <message>
         <source>All tasks have finished.</source>
@@ -835,11 +835,11 @@
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>General</translation>
     </message>
     <message>
         <source>Check for updates on program startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Verifică pentru actualizări la pornirea programului</translation>
     </message>
     <message>
         <source>Automatically start conversion after adding files to the list.</source>
@@ -847,7 +847,7 @@
     </message>
     <message>
         <source>Start conversion automatically</source>
-        <translation type="unfinished"></translation>
+        <translation>Pornește conversia automat</translation>
     </message>
     <message>
         <source>FFmpeg</source>
@@ -947,11 +947,11 @@
     </message>
     <message>
         <source>Check for updates on program startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Verifică pentru actualizări la pornirea programului</translation>
     </message>
     <message>
         <source>Downloading update information...</source>
-        <translation type="unfinished"></translation>
+        <translation>Se descarcă informațiile despre actualizare...</translation>
     </message>
     <message>
         <source>Cannot connect to server.</source>
@@ -967,7 +967,7 @@
     </message>
     <message>
         <source>An unknown error has occurred.</source>
-        <translation type="unfinished"></translation>
+        <translation>A intervenit o eroare necunoscută.</translation>
     </message>
     <message>
         <source>A new version of QWinFF has been released!</source>
@@ -976,11 +976,11 @@
     <message>
         <source>Version &lt;b&gt;%1&lt;/b&gt; is available at %2.</source>
         <extracomment>%1 is version number, %2 is the project homepage</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Versiunea &lt;b&gt;%1&lt;/b&gt; este disponibilă la %2.</translation>
     </message>
     <message>
         <source>You can download this version using the link:</source>
-        <translation type="unfinished"></translation>
+        <translation>Poți descărca această versiunea folosind legătura:</translation>
     </message>
 </context>
 </TS>

@@ -9,7 +9,7 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>インフォ</translation>
+        <translation>情報</translation>
     </message>
     <message>
         <source>Translators</source>
@@ -122,7 +122,7 @@
     </message>
     <message>
         <source>FFmpeg</source>
-        <translation>FFMpeg</translation>
+        <translation>FFmpeg</translation>
     </message>
     <message>
         <source>Available Codecs</source>
@@ -151,7 +151,7 @@
     </message>
     <message>
         <source>Files to be converted</source>
-        <translation>変換されるファイル</translation>
+        <translation>変換対象のファイル</translation>
     </message>
     <message>
         <source>Add files.</source>
@@ -200,7 +200,7 @@
     <message>
         <source>Create &amp;new folder in source folder</source>
         <extracomment>Create a new folder (e.g. qwinff_output) in the folder containing the input files. Put the output files in the newly created folder.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>ソースフォルダに新規フォルダを作成(&amp;N)</translation>
     </message>
     <message>
         <source>Folder Name</source>
@@ -209,7 +209,7 @@
     <message>
         <source>Output to &amp;source folder</source>
         <extracomment>put the output files in the same folder as the input files</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>ソースフォルダに出力(&amp;S)</translation>
     </message>
     <message>
         <source>Please select at least one file.</source>
@@ -302,7 +302,7 @@
     </message>
     <message>
         <source>kb/s</source>
-        <translation>kb/s</translation>
+        <translation>kb/秒</translation>
     </message>
     <message>
         <source>Video</source>
@@ -334,7 +334,7 @@
     </message>
     <message>
         <source>Same Quantizer as Source</source>
-        <translation type="unfinished"></translation>
+        <translation>ソースと同じ量子化</translation>
     </message>
     <message>
         <source>Deinterlace</source>
@@ -348,15 +348,15 @@
     <message>
         <source>Cutting</source>
         <extracomment>video time cutting: options for begin time and end time</extracomment>
-        <translation>カッティング</translation>
+        <translation>動画のカット</translation>
     </message>
     <message>
         <source>From Begin</source>
-        <translation>始めから</translation>
+        <translation>最初から</translation>
     </message>
     <message>
         <source>To End</source>
-        <translation>終わりまで</translation>
+        <translation>最後まで</translation>
     </message>
     <message>
         <source>&amp;Preview</source>
@@ -369,7 +369,7 @@
     </message>
     <message>
         <source>Speed</source>
-        <translation>速さ</translation>
+        <translation>速度</translation>
     </message>
     <message>
         <source>Advanced</source>
@@ -420,7 +420,7 @@
     </message>
     <message>
         <source>Drag and drop files here to add tasks.</source>
-        <translation type="unfinished"></translation>
+        <translation>ファイルをここにドロップでタスクを追加.</translation>
     </message>
     <message>
         <source>Hide &quot;%1&quot;</source>
@@ -801,7 +801,7 @@
     </message>
     <message>
         <source>This program is going to check for updates online. Do you allow this program to use the Internet to check for updates?</source>
-        <translation type="unfinished"></translation>
+        <translation>アップデートの確認にはオンライン接続が必要です、このプログラムのインターネットへの接続を許可しますか?</translation>
     </message>
     <message>
         <source>Failed to load preset file. The application will quit now.</source>
@@ -833,23 +833,23 @@
     </message>
     <message>
         <source>General</source>
-        <translation>全般</translation>
+        <translation>一般</translation>
     </message>
     <message>
         <source>Check for updates on program startup</source>
-        <translation>起動時に更新をチェックする</translation>
+        <translation>起動時にアップデートの有無を確認</translation>
     </message>
     <message>
         <source>Automatically start conversion after adding files to the list.</source>
-        <translation type="unfinished"></translation>
+        <translation>リストにファイルが追加されたら、自動的に変換を開始する.</translation>
     </message>
     <message>
         <source>Start conversion automatically</source>
-        <translation type="unfinished"></translation>
+        <translation>変換を自動的に開始</translation>
     </message>
     <message>
         <source>FFmpeg</source>
-        <translation>FFMpeg</translation>
+        <translation>FFmpeg</translation>
     </message>
     <message>
         <source>Number of threads to use in conversion</source>
@@ -857,11 +857,11 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hide output formats that are not available in the current ffmpeg installation. It is recommended to turn this option on unless you are sure that QWinFF has failed to detect available formats. (requires restarting QWinFF to take effect)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;現在インストールされている ffmpeg では利用できない出力形式を非表示にします。QWinFF による利用可能な形式の検出があきらかに失敗している場合を除き、このオプションは有効にしておくことをお勧めします。(設定の変更には QWinFF の再起動が必要)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Hide unavailable formats (requires restarting)</source>
-        <translation>使用できないフォーマットを隠す (再起動必要)</translation>
+        <translation>利用できない形式は隠す (再起動が必要)</translation>
     </message>
     <message>
         <source>Tools</source>
@@ -869,15 +869,15 @@
     </message>
     <message>
         <source>You have to restart QWinFF for the changes to take effect.</source>
-        <translation type="unfinished"></translation>
+        <translation>ここでの変更は QWinFF の再起動後に適用されます.</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>名前</translation>
     </message>
     <message>
         <source>Command</source>
-        <translation type="unfinished"></translation>
+        <translation>コマンド</translation>
     </message>
 </context>
 <context>
@@ -941,44 +941,44 @@
     <name>UpdateDialog</name>
     <message>
         <source>Show &amp;Release Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>更新履歴を表示(&amp;R)</translation>
     </message>
     <message>
         <source>Check for updates on program startup</source>
-        <translation type="unfinished">起動時に更新をチェックする</translation>
+        <translation>起動時にアップデートを確認</translation>
     </message>
     <message>
         <source>Downloading update information...</source>
-        <translation>更新情報をダウンロードしています...</translation>
+        <translation>更新情報をダウンロード中...</translation>
     </message>
     <message>
         <source>Cannot connect to server.</source>
-        <translation>サーバーをアクセスできません。</translation>
+        <translation>サーバに接続できません.</translation>
     </message>
     <message>
         <source>Failed to parse the received data.</source>
-        <translation>受信されたデータの解析に失敗しました。</translation>
+        <translation>受信データの解析に失敗.</translation>
     </message>
     <message>
         <source>You are already using the latest version of QWinFF.</source>
-        <translation type="unfinished"></translation>
+        <translation>あなたは最新の QWinFF を使用中です.</translation>
     </message>
     <message>
         <source>An unknown error has occurred.</source>
-        <translation type="unfinished"></translation>
+        <translation>不明なエラーが発生.</translation>
     </message>
     <message>
         <source>A new version of QWinFF has been released!</source>
-        <translation type="unfinished"></translation>
+        <translation>QWinFF の新バージョンが公開されています!</translation>
     </message>
     <message>
         <source>Version &lt;b&gt;%1&lt;/b&gt; is available at %2.</source>
         <extracomment>%1 is version number, %2 is the project homepage</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>バージョン &lt;b&gt;%1&lt;/b&gt; %2 が利用可能.</translation>
     </message>
     <message>
         <source>You can download this version using the link:</source>
-        <translation type="unfinished"></translation>
+        <translation>このリンクからダウンロード可能です:</translation>
     </message>
 </context>
 </TS>
