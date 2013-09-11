@@ -24,6 +24,17 @@
 namespace
 {
 
+/* The following power management functions were taken from qshutdown:
+ *
+ *   power_suspend()
+ *   power_shutdown()
+ *   power_hibernate()
+ *
+ * qshutdown is a program to shutdown/reboot/suspend/hibernate the computer.
+ * For more information, please visit
+ * https://launchpad.net/~hakaishi/+archive/qshutdown
+ */
+
 const bool verbose = true;
 
 bool power_suspend()
