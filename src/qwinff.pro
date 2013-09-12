@@ -20,6 +20,8 @@ SOURCES += main.cpp \
     ui/aboutdialog.cpp \
     ui/poweroffdialog.cpp \
     ui/rangeselector.cpp \
+    ui/timerangeedit.cpp \
+    ui/compositerangewidget.cpp \
     converter/presets.cpp \
     converter/mediaprobe.cpp \
     converter/mediaconverter.cpp \
@@ -59,6 +61,8 @@ HEADERS  += \
     ui/aboutdialog.h \
     ui/poweroffdialog.h \
     ui/rangeselector.h \
+    ui/timerangeedit.h \
+    ui/compositerangewidget.h \
     converter/presets.h \
     converter/mediaprobe.h \
     converter/mediaconverter.h \
