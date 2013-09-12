@@ -1,7 +1,5 @@
 #include <QVBoxLayout>
 #include "compositerangewidget.h"
-#include "rangeselector.h"
-#include "timerangeedit.h"
 
 CompositeRangeWidget::CompositeRangeWidget(QWidget *parent) :
     QWidget(parent),
@@ -12,8 +10,16 @@ CompositeRangeWidget::CompositeRangeWidget(QWidget *parent) :
     layout->addWidget(m_selector);
     layout->addWidget(m_rangeEdit);
     setLayout(layout);
+    m_selector->setVisible(false);
     connect(m_selector, SIGNAL(valueChanged()), SLOT(sync_sel_to_edit()));
     connect(m_rangeEdit, SIGNAL(valueChanged()), SLOT(sync_edit_to_sel()));
+}
+
+void CompositeRangeWidget::setMaxTime(int secs)
+{
+    m_rangeEdit->setMaxTime(secs);
+    m_selector->setMaxValue(secs);
+    m_selector->setVisible(true);
 }
 
 RangeSelector* CompositeRangeWidget::selectorWidget()

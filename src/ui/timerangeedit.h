@@ -15,9 +15,29 @@ public:
     explicit TimeRangeEdit(QWidget *parent = 0);
 
     int maxTime() const;
+
+    /**
+     * @brief begin time
+     * @return If fromBegin() is false, this function returns the begin time.
+     *       If fromBegin() is true, the return value is 0.
+     */
     int beginTime() const;
+
+    /**
+     * @brief endTime
+     * @return If toEnd() is false, this fuction returns the end time.
+     *       If toEnd() is true, the return value is the same as maxTime().
+     */
     int endTime() const;
+
+    /**
+     * @brief whether the "from begin" checkbox is checked
+     */
     bool fromBegin() const;
+
+    /**
+     * @brief whether the "to end" checkbox is checked
+     */
     bool toEnd() const;
 
 public slots:

@@ -18,7 +18,7 @@
 #include "converter/mediaprobe.h"
 #include "services/ffplaypreviewer.h"
 #include "services/mplayerpreviewer.h"
-#include "rangeselector.h"
+#include "compositerangewidget.h"
 #include "ui_conversionparameterdialog.h"
 #include <QLayout>
 #include <cmath>
@@ -33,7 +33,7 @@
 ConversionParameterDialog::ConversionParameterDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ConversionParameterDialog),
-    m_selTime(new RangeSelector(this)),
+    m_selTime(new CompositeRangeWidget(this)),
     m_previewer(0)
 {
     ui->setupUi(this);
@@ -44,28 +44,6 @@ ConversionParameterDialog::ConversionParameterDialog(QWidget *parent) :
     ui->cbAudioSampleRate->addItem("44100");
     ui->cbAudioSampleRate->addItem("22050");
     ui->cbAudioSampleRate->addItem("11025");
-
-    ui->timeBegin->setSelectedSection(QDateTimeEdit::SecondSection);
-    ui->timeEnd->setSelectedSection(QDateTimeEdit::SecondSection);
-
-    // enable/disable time control widgets
-    connect(ui->chkFromBegin, SIGNAL(toggled(bool)),
-            this, SLOT(from_begin_toggled(bool)));
-    connect(ui->chkToEnd, SIGNAL(toggled(bool)),
-            this, SLOT(to_end_toggled(bool)));
-
-    // synchronize time sliders and time selectors
-    connect(ui->timeBegin, SIGNAL(timeChanged(QTime)),
-            this, SLOT(sync_time_text_to_view()));
-    connect(ui->timeEnd, SIGNAL(timeChanged(QTime)),
-            this, SLOT(sync_time_text_to_view()));
-    connect(m_selTime, SIGNAL(valueChanged()),
-            this, SLOT(sync_time_view_to_text()));
-
-    connect(ui->chkToEnd, SIGNAL(toggled(bool)),
-            this, SLOT(update_endtime()));
-    connect(ui->timeBegin, SIGNAL(timeChanged(QTime)),
-            this, SLOT(update_endtime()));
 
     connect(ui->btnPreview, SIGNAL(clicked()),
             this, SLOT(preview_time_selection()));
@@ -95,67 +73,14 @@ bool ConversionParameterDialog::exec(ConversionParameters& param, bool single_fi
     return accepted;
 }
 
-void ConversionParameterDialog::update_endtime()
-{
-    ui->timeEnd->setMinimumTime(ui->timeBegin->time().addSecs(1));
-}
-
-#define SECS_TO_QTIME(s) QTime(0, 0).addSecs(s)
-#define QTIME_TO_SECS(t) (t).hour()*3600 + (t).minute()*60 + (t).second()
-
-void ConversionParameterDialog::sync_time_view_to_text()
-{
-    bool fromBegin = (m_selTime->beginValue() == m_selTime->minValue());
-    bool toEnd = (m_selTime->endValue() == m_selTime->maxValue());
-    if (!fromBegin)
-        ui->timeBegin->setTime(SECS_TO_QTIME(m_selTime->beginValue()));
-    if (!toEnd)
-        ui->timeEnd->setTime(SECS_TO_QTIME(m_selTime->endValue()));
-    ui->chkFromBegin->setChecked(fromBegin);
-    ui->chkToEnd->setChecked(toEnd);
-}
-
-void ConversionParameterDialog::sync_time_text_to_view()
-{
-    int beginSecs = QTIME_TO_SECS(ui->timeBegin->time());
-    int endSecs = QTIME_TO_SECS(ui->timeEnd->time());
-    if (ui->chkFromBegin->isChecked())
-        beginSecs = m_selTime->minValue();
-    if (ui->chkToEnd->isChecked())
-        endSecs = m_selTime->maxValue();
-    m_selTime->setBeginValue(beginSecs);
-    m_selTime->setEndValue(endSecs);
-}
-
-void ConversionParameterDialog::from_begin_toggled(bool value)
-{
-    ui->timeBegin->setDisabled(value);
-    if (value == true) {
-        // from begin
-        m_selTime->setBeginValue(m_selTime->minValue());
-    } else {
-        sync_time_text_to_view();
-    }
-}
-
-void ConversionParameterDialog::to_end_toggled(bool value)
-{
-    ui->timeEnd->setDisabled(value);
-    if (value == true) {
-        // to end
-        m_selTime->setEndValue(m_selTime->maxValue());
-    } else {
-        sync_time_text_to_view();
-    }
-}
-
 void ConversionParameterDialog::preview_time_selection()
 {
+    TimeRangeEdit *rangeEdit = m_selTime->rangeEditWidget();
     int timeBegin = -1, timeEnd = -1;
-    if (!ui->chkFromBegin->isChecked())
-        timeBegin = QTIME_TO_SECS(ui->timeBegin->time());
-    if (!ui->chkToEnd->isChecked())
-        timeEnd = QTIME_TO_SECS(ui->timeEnd->time());
+    if (!rangeEdit->fromBegin())
+        timeBegin = rangeEdit->beginTime();
+    if (!rangeEdit->toEnd())
+        timeEnd = rangeEdit->endTime();
     m_previewer->play(m_param->source, timeBegin, timeEnd);
 }
 
@@ -209,32 +134,33 @@ void ConversionParameterDialog::read_fields(const ConversionParameters& param)
 
     // Time Options
     bool show_slider = false;
+    m_selTime->selectorWidget()->setVisible(false); // hide slider if this dialog is reused
     if (m_singleFile) {
         // time slider: only show in single file mode
         MediaProbe probe;
         if (probe.run(param.source)) { // probe the source file, blocking call
-            // success, show the slider
-            m_selTime->setMaxValue((int)probe.mediaDuration());
+            // success, set the duration so that the range slider can be shown
+            m_selTime->setMaxTime((int)probe.mediaDuration());
             show_slider = true;
         }
     }
-    m_selTime->setVisible(show_slider);
     bool show_preview_button = show_slider && m_previewer->available();
     ui->btnPreview->setVisible(show_preview_button);
 
+    TimeRangeEdit *rangeEdit = m_selTime->rangeEditWidget();
     if (param.time_begin > 0) {
-        ui->chkFromBegin->setChecked(false);
-        ui->timeBegin->setTime(QTime().addSecs(param.time_begin));
+        rangeEdit->setBeginTime(param.time_begin);
+        rangeEdit->setFromBegin(false);
     } else {
-        ui->chkFromBegin->setChecked(true);
-        ui->timeBegin->setTime(QTime());
+        rangeEdit->setBeginTime(0);
+        rangeEdit->setFromBegin(true);
     }
-    if (param.time_end > 0) {
-        ui->chkToEnd->setChecked(false);
-        ui->timeEnd->setTime(QTime().addSecs(param.time_end));
+    if (param.time_duration > 0) {
+        rangeEdit->setEndTime(param.time_begin + param.time_duration);
+        rangeEdit->setToEnd(false);
     } else {
-        ui->chkToEnd->setChecked(true);
-        ui->timeEnd->setTime(QTime());
+        rangeEdit->setEndTime(0);
+        rangeEdit->setToEnd(true);
     }
     if (param.speed_scaling)
         ui->spinSpeedFactor->setValue(param.speed_scaling_factor * 100.0);
@@ -275,14 +201,15 @@ void ConversionParameterDialog::write_fields(ConversionParameters& param)
     param.video_crop_right = ui->spinCropRight->value();
 
     // Time Options
-    if (ui->chkFromBegin->isChecked())
+    TimeRangeEdit *rangeEdit = m_selTime->rangeEditWidget();
+    if (rangeEdit->fromBegin())
         param.time_begin = 0;
     else
-        param.time_begin = QTIME_TO_SECS(ui->timeBegin->time());
-    if (ui->chkToEnd->isChecked()) // ffmpeg accepts duration, not end time
-        param.time_end = 0;
-    else
-        param.time_end = QTIME_TO_SECS(ui->timeEnd->time());
+        param.time_begin = rangeEdit->beginTime();
+    if (rangeEdit->toEnd())
+        param.time_duration = 0;
+    else // ffmpeg accepts duration, not end time
+        param.time_duration = rangeEdit->endTime() - param.time_begin;
     double speed_ratio = ui->spinSpeedFactor->value();
     if (!m_enableAudioProcessing || std::abs(speed_ratio - 100.0) <= 0.01) {
         param.speed_scaling = false;

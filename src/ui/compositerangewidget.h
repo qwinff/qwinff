@@ -2,14 +2,13 @@
 #define COMPOSITERANGEWIDGET_H
 
 #include <QWidget>
-
-class RangeSelector;
-class TimeRangeEdit;
+#include "rangeselector.h"
+#include "timerangeedit.h"
 
 /**
  * @brief Combine RangeSelector (visual) and TimeRangeEdit (text).
  *
- * RangeSelector is only shown if the maximum time is explicitly set.
+ * RangeSelector is hidden by default.
  */
 class CompositeRangeWidget : public QWidget
 {
@@ -17,7 +16,21 @@ class CompositeRangeWidget : public QWidget
 public:
     explicit CompositeRangeWidget(QWidget *parent = 0);
 
+    /**
+     * @brief Set the maximum time (duration of media file) and show RangeSelector widget.
+     * @param secs
+     */
+    void setMaxTime(int secs);
+
+    /**
+     * @brief Get the selector widget. The widget is hidden by default.
+     * Set the maximum time with setMaxTime() to make it visible.
+     */
     RangeSelector *selectorWidget();
+
+    /**
+     * @brief Get the TimeRangeEdit widget.
+     */
     TimeRangeEdit *rangeEditWidget();
 
 private slots:
