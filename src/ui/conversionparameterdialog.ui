@@ -25,7 +25,7 @@
      <item>
       <widget class="QTabWidget" name="tabWidget">
        <property name="currentIndex">
-        <number>0</number>
+        <number>2</number>
        </property>
        <widget class="QWidget" name="tab_audio">
         <attribute name="title">
@@ -423,6 +423,13 @@
                  </size>
                 </property>
                </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btnInteractiveCutting">
+                <property name="text">
+                 <string>Interactive Cutting</string>
+                </property>
+               </widget>
               </item>
               <item>
                <widget class="QPushButton" name="btnPreview">

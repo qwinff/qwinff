@@ -19,6 +19,7 @@
 #include "services/ffplaypreviewer.h"
 #include "services/mplayerpreviewer.h"
 #include "compositerangewidget.h"
+#include "interactivecuttingdialog.h"
 #include "ui_conversionparameterdialog.h"
 #include <QLayout>
 #include <cmath>
@@ -47,6 +48,7 @@ ConversionParameterDialog::ConversionParameterDialog(QWidget *parent) :
 
     connect(ui->btnPreview, SIGNAL(clicked()),
             this, SLOT(preview_time_selection()));
+    connect(ui->btnInteractiveCutting, SIGNAL(clicked()), SLOT(interactive_cutting()));
 
     // Hide speed-changing options if sox is not available.
     m_enableAudioProcessing = AudioFilter::available();
@@ -82,6 +84,14 @@ void ConversionParameterDialog::preview_time_selection()
     if (!rangeEdit->toEnd())
         timeEnd = rangeEdit->endTime();
     m_previewer->play(m_param->source, timeBegin, timeEnd);
+}
+
+void ConversionParameterDialog::interactive_cutting()
+{
+    if (m_singleFile) {
+        InteractiveCuttingDialog(this).exec(m_param->source,
+                                            m_selTime->rangeEditWidget());
+    }
 }
 
 AbstractPreviewer *ConversionParameterDialog::create_previewer()
@@ -145,7 +155,9 @@ void ConversionParameterDialog::read_fields(const ConversionParameters& param)
         }
     }
     bool show_preview_button = show_slider && m_previewer->available();
+    bool show_cutting_button = show_slider && InteractiveCuttingDialog::available();
     ui->btnPreview->setVisible(show_preview_button);
+    ui->btnInteractiveCutting->setVisible(show_cutting_button);
 
     TimeRangeEdit *rangeEdit = m_selTime->rangeEditWidget();
     if (param.time_begin > 0) {

@@ -46,6 +46,7 @@ public:
 
 private slots:
     void preview_time_selection();
+    void interactive_cutting();
     AbstractPreviewer *create_previewer();
 
 private:
