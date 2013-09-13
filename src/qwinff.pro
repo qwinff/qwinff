@@ -4,14 +4,10 @@
 #
 #-------------------------------------------------
 
-QT       += core gui network
+QT       += core gui network opengl
 
 TARGET = qwinff
 TEMPLATE = app
-
-# Optional Features
-CONFIG += qmpwidget # embedded mplayer (requires opengl)
-#CONFIG += qmpwidget_pipemode # use yuv pipe in QMPwidget (don't enable it unless it's necessary)
 
 SOURCES += main.cpp \
     ui/progressbar.cpp \
@@ -52,7 +48,11 @@ SOURCES += main.cpp \
     services/settingtimer.cpp \
     services/ffplaypreviewer.cpp \
     services/abstractpreviewer.cpp \
-    services/mplayerpreviewer.cpp
+    services/mplayerpreviewer.cpp \
+    ui/previewdialog.cpp \
+    ui/interactivecuttingdialog.cpp \
+    ui/myqmpwidget.cpp \
+    ui/mediaplayerwidget.cpp
 
 HEADERS  += \
     ui/progressbar.h \
@@ -95,7 +95,11 @@ HEADERS  += \
     services/settingtimer.h \
     services/ffplaypreviewer.h \
     services/abstractpreviewer.h \
-    services/mplayerpreviewer.h
+    services/mplayerpreviewer.h \
+    ui/previewdialog.h \
+    ui/interactivecuttingdialog.h \
+    ui/mediaplayerwidget.h \
+    ui/myqmpwidget.h
 
 FORMS    += \
     ui/conversionparameterdialog.ui \
@@ -105,7 +109,10 @@ FORMS    += \
     ui/optionsdialog.ui \
     ui/aboutdialog.ui \
     ui/poweroffdialog.ui \
-    ui/updatedialog.ui
+    ui/updatedialog.ui \
+    ui/previewdialog.ui \
+    ui/interactivecuttingdialog.ui \
+    ui/mediaplayerwidget.ui
 
 RESOURCES += \
     images.qrc
@@ -166,17 +173,14 @@ DEFINES += VERSION_ID_STRING=$(VERSION_ID_STRING)
 DEFINES += OPERATION_TIMEOUT=30000
 DEFINES += DEFAULT_THREAD_COUNT=1
 
-# Embedded MPlayer (depends on OpenGL)
-qmpwidget {
-    QT += opengl
-    SOURCES += qmpwidget/qmpwidget.cpp
-    HEADERS += qmpwidget/qmpwidget.h
-    INCLUDEPATH += qmpwidget
-    !win32:qmpwidget_pipemode: {
-        HEADERS += qmpwidget/qmpyuvreader.h
-        DEFINES += QMP_USE_YUVPIPE
-    }
-    DEFINES += USE_QMPWIDGET
+# QMPwidget (embedded mplayer)
+SOURCES += qmpwidget/qmpwidget.cpp
+HEADERS += qmpwidget/qmpwidget.h
+INCLUDEPATH += qmpwidget
+#CONFIG += qmpwidget_pipemode
+!win32:qmpwidget_pipemode: {
+    HEADERS += qmpwidget/qmpyuvreader.h
+    DEFINES += QMP_USE_YUVPIPE
 }
 
 OTHER_FILES +=
