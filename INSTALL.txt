@@ -1,8 +1,11 @@
 This document explains how to build and install QWinFF.
 
-QWinFF needs the following programs at runtime:
+QWinFF depends on several external programs at runtime. Currently these
+programs are:
+
   - ffmpeg (required)
   - ffprobe (required)
+  - ffplay (optional, for previewing audio/video cutting)
   - sox (optional, for adjusting audio speed)
 
 1) Generic Compilation and Installation on Unix-like Systems
@@ -98,12 +101,8 @@ If you are using the official QtSDK, the DLLs are probably QtCore4.dll,
 QtGui4.dll, libgcc_s_dw2-1.dll, libstdc++-6.dll and mingwm10.dll.
 These files can be found in <QtSDK>\Desktop\Qt\4.x.x\mingw\bin.
 
-QWinFF depends on several external programs. Currently these programs are:
-  - ffmpeg (required)
-  - ffprobe (required)
-  - ffplay or mplayer (optional, for previewing audio/video cutting)
-  - sox (optional, for scaling audio length)
-Download the executables and put them under windows_release\tools.
+Download runtime dependencies (ffmpeg.exe, ffprobe.exe, etc.) and placed them
+in windows_release\tools.
 
 Now you can execute QWinFF by clicking on the executable file.
 
