@@ -833,7 +833,7 @@
   <!-- ASF -->
   <asfAuto>
     <label>Active Streaming Format - Auto</label>
-    <params></params>
+    <params>-vcodec msmpeg4</params>
     <extension>asf</extension>
     <category>Websites</category>
   </asfAuto>
