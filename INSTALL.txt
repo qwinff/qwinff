@@ -1,6 +1,9 @@
 This document explains how to build and install QWinFF.
 
-QWinFF needs ffmpeg and ffprobe at runtime.
+QWinFF needs the following programs at runtime:
+  - ffmpeg (required)
+  - ffprobe (required)
+  - sox (optional, for adjusting audio speed)
 
 1) Generic Compilation and Installation on Unix-like Systems
 2) Changing Installation Path
@@ -22,12 +25,12 @@ Type "make".
 If everything is ok, you may type "make install" to install it.
 This will install QWinFF in /usr/local.
 
-If "make" fails, it's probably because the Qt3 qmake is used instead of
+If "make" fails, it's probably because the Qt3 toolchain is used instead of
 the Qt4 one.
 Try to type something like this (just examples):
-make QMAKE=qmake-qt4
+make QMAKE=qmake-qt4 LRELEASE=lrelease-qt4
 or
-make QMAKE=/usr/share/qt4/bin/qmake
+make QMAKE=/usr/share/qt4/bin/qmake LRELEASE=/usr/share/qt4/bin/lrelease
 
 ------------------------------
 
