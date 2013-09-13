@@ -9,6 +9,10 @@ QT       += core gui network
 TARGET = qwinff
 TEMPLATE = app
 
+# Optional Features
+CONFIG += qmpwidget # embedded mplayer (requires opengl)
+#CONFIG += qmpwidget_pipemode # use yuv pipe in QMPwidget (don't enable it unless it's necessary)
+
 SOURCES += main.cpp \
     ui/progressbar.cpp \
     ui/mainwindow.cpp \
@@ -162,14 +166,17 @@ DEFINES += VERSION_ID_STRING=$(VERSION_ID_STRING)
 DEFINES += OPERATION_TIMEOUT=30000
 DEFINES += DEFAULT_THREAD_COUNT=1
 
+# Embedded MPlayer (depends on OpenGL)
+qmpwidget {
+    QT += opengl
+    SOURCES += qmpwidget/qmpwidget.cpp
+    HEADERS += qmpwidget/qmpwidget.h
+    INCLUDEPATH += qmpwidget
+    !win32:qmpwidget_pipemode: {
+        HEADERS += qmpwidget/qmpyuvreader.h
+        DEFINES += QMP_USE_YUVPIPE
+    }
+    DEFINES += USE_QMPWIDGET
+}
+
 OTHER_FILES +=
-
-
-
-
-
-
-
-
-
-
