@@ -26,6 +26,12 @@ public:
     static QString getPath(QString program);
 
     /**
+     * @brief Check whether the program can be executed.
+     * @param program the program to test
+     */
+    static bool checkProgramAvailability(QString program);
+
+    /**
      * Save the paths using QSettings
      */
     static void saveSettings();

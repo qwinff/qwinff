@@ -16,6 +16,13 @@
 #include "exepath.h"
 #include <QMap>
 #include <QSettings>
+#include <QProcess>
+
+#ifdef OPERATION_TIMEOUT
+#define TIMEOUT OPERATION_TIMEOUT
+#else
+#define TIMEOUT 30000
+#endif
 
 namespace
 {
@@ -37,6 +44,20 @@ QString ExePath::getPath(QString program)
                    , QString("Program path of '%1' has not been set.")
                    .arg(program).toStdString().c_str());
     return "";
+}
+
+bool ExePath::checkProgramAvailability(QString program)
+{
+    QProcess proc;
+    QStringList param;
+    // try to run the program
+    proc.start(ExePath::getPath(program), param);
+    if (!proc.waitForStarted(TIMEOUT))
+        return false; // failed to start the program
+    // successfully started the program, kill it immediately
+    proc.kill();
+    proc.waitForFinished(TIMEOUT);
+    return true;
 }
 
 void ExePath::saveSettings()
