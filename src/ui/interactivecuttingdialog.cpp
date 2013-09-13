@@ -1,3 +1,4 @@
+#include <QMessageBox>
 #include "interactivecuttingdialog.h"
 #include "ui_interactivecuttingdialog.h"
 #include "mediaplayerwidget.h"
@@ -77,8 +78,13 @@ void InteractiveCuttingDialog::setEndTime(int sec)
 
 int InteractiveCuttingDialog::exec(const QString &filename)
 {
-    player->load(filename);
-    return exec();
+    if (available()) {
+        player->load(filename);
+        return exec();
+    } else {
+        QMessageBox::critical(this, windowTitle(), tr("%1 not found").arg("mplayer"));
+        return QDialog::Rejected;
+    }
 }
 
 int InteractiveCuttingDialog::exec(const QString &filename, TimeRangeEdit *range)

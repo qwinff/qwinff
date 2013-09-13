@@ -1,3 +1,4 @@
+#include <QMessageBox>
 #include "mediaplayerwidget.h"
 #include "previewdialog.h"
 #include "converter/exepath.h"
@@ -39,12 +40,17 @@ int PreviewDialog::exec(const QString &filename,
                                bool from_begin, int begin_sec,
                                bool to_end, int end_sec)
 {
-    m_beginTime = from_begin ? -1 : begin_sec;
-    m_endTime = to_end ? -1 : end_sec;
-    m_player->load(filename);
-    playSelectedRange();
-    refreshRange();
-    return exec();
+    if (available()) {
+        m_beginTime = from_begin ? -1 : begin_sec;
+        m_endTime = to_end ? -1 : end_sec;
+        m_player->load(filename);
+        playSelectedRange();
+        refreshRange();
+        return exec();
+    } else {
+        QMessageBox::critical(this, windowTitle(), tr("%1 not found").arg("mplayer"));
+        return QDialog::Rejected;
+    }
 }
 
 int PreviewDialog::exec()
