@@ -887,7 +887,7 @@
   <!-- MP2 -->
   <mp2Auto>
     <label>MPEG-1 Audio Layer II  - Auto</label>
-    <params>-vn</params>
+    <params>-acodec mp2 -vn</params>
     <extension>mp2</extension>
     <category>Audio</category>
   </mp2Auto>
