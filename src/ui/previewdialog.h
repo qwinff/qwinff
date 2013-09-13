@@ -17,6 +17,8 @@ public:
     explicit PreviewDialog(QWidget *parent = 0);
     ~PreviewDialog();
 
+    static bool available();
+
 public slots:
     int exec(const QString &filename,
              bool from_begin, int begin_sec,

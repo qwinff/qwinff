@@ -1,5 +1,6 @@
 #include "mediaplayerwidget.h"
 #include "previewdialog.h"
+#include "converter/exepath.h"
 #include "ui_previewdialog.h"
 
 namespace {
@@ -27,6 +28,11 @@ PreviewDialog::PreviewDialog(QWidget *parent) :
 PreviewDialog::~PreviewDialog()
 {
     delete ui;
+}
+
+bool PreviewDialog::available()
+{
+    return ExePath::checkProgramAvailability("mplayer");
 }
 
 int PreviewDialog::exec(const QString &filename,

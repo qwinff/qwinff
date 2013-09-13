@@ -4,6 +4,7 @@
 #include "rangeselector.h"
 #include "timerangeedit.h"
 #include "compositerangewidget.h"
+#include "converter/exepath.h"
 
 InteractiveCuttingDialog::InteractiveCuttingDialog(QWidget *parent) :
     QDialog(parent),
@@ -27,6 +28,11 @@ InteractiveCuttingDialog::InteractiveCuttingDialog(QWidget *parent) :
 InteractiveCuttingDialog::~InteractiveCuttingDialog()
 {
     delete ui;
+}
+
+bool InteractiveCuttingDialog::available()
+{
+    return ExePath::checkProgramAvailability("mplayer");
 }
 
 bool InteractiveCuttingDialog::fromBegin() const

@@ -19,6 +19,8 @@ public:
     explicit InteractiveCuttingDialog(QWidget *parent = 0);
     ~InteractiveCuttingDialog();
 
+    static bool available();
+
     bool fromBegin() const;
     bool toEnd() const;
 
