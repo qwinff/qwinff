@@ -619,7 +619,7 @@
   <!-- Flash Video -->
   <flvauto>
     <label>Flash Video (flv) Auto</label>
-    <params></params>
+    <params>-vcodec flv</params>
     <extension>flv</extension>
     <category>Websites</category>
   </flvauto>
@@ -841,7 +841,7 @@
   <!-- ShockWave Flash -->
   <swfauto>
     <label>ShockWave Flash (swf) - Auto</label>
-    <params></params>
+    <params>-vcodec flv</params>
     <extension>swf</extension>
     <category>Websites</category>
   </swfauto>
