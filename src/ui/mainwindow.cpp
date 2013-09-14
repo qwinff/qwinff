@@ -245,6 +245,7 @@ void MainWindow::slotListContextMenu(QPoint /*pos*/)
     menu.addAction(ui->actionChangeOutputFilename);
     menu.addAction(ui->actionChangeOutputDirectory);
     menu.addAction(ui->actionSetParameters);
+    menu.addAction(ui->actionCut);
 
     menu.exec(QCursor::pos());
 }
@@ -753,6 +754,7 @@ void MainWindow::refresh_action_states()
     ui->actionChangeOutputFilename->setDisabled(hide_ChangeOutputFilename);
     ui->actionChangeOutputDirectory->setDisabled(hide_ChangeOutputDirectory);
     ui->actionShowErrorMessage->setDisabled(hide_ShowErrorMessage);
+    ui->actionCut->setEnabled(selected_file_count == 1); // cut only 1 file at a time
 }
 
 void MainWindow::load_settings()
