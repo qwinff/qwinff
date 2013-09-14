@@ -123,6 +123,10 @@ public slots:
      */
     void changeSelectedOutputDirectory();
 
+    /*! Select a time range to convert.
+     */
+    void cutSelectedTask();
+
     /*! Mark selected items as queued so that they will be converted again.
      *  If the converter is idle, start converting those items.
      *  Otherwise, the items are simply marked as queued.

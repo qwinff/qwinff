@@ -224,6 +224,11 @@ void MainWindow::slotShowUpdateDialog()
     }
 }
 
+void MainWindow::slotCut()
+{
+    m_list->cutSelectedTask();
+}
+
 void MainWindow::slotListContextMenu(QPoint /*pos*/)
 {
     refresh_action_states();
@@ -466,6 +471,7 @@ void MainWindow::setup_menus()
             m_list, SLOT(changeSelectedOutputDirectory()));
     connect(ui->actionShowErrorMessage, SIGNAL(triggered()),
             m_list, SLOT(showErrorMessage()));
+    connect(ui->actionCut, SIGNAL(triggered()), SLOT(slotCut()));
 
     // Convert
     connect(ui->menuConvert, SIGNAL(aboutToShow()),

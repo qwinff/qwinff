@@ -127,6 +127,7 @@
     <addaction name="actionChangeOutputFilename"/>
     <addaction name="actionChangeOutputDirectory"/>
     <addaction name="actionShowErrorMessage"/>
+    <addaction name="actionCut"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
@@ -375,6 +376,11 @@
    </property>
    <property name="text">
     <string>Check For &amp;Updates</string>
+   </property>
+  </action>
+  <action name="actionCut">
+   <property name="text">
+    <string extracomment="Cut video file (select a time range to conert)">Cut</string>
    </property>
   </action>
  </widget>

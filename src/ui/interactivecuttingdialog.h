@@ -10,6 +10,7 @@ class InteractiveCuttingDialog;
 class MediaPlayerWidget;
 class CompositeRangeWidget;
 class TimeRangeEdit;
+class ConversionParameters;
 
 class InteractiveCuttingDialog : public QDialog
 {
@@ -43,10 +44,18 @@ public slots:
     /**
      * @brief Start the dialog to cut a file and modify @a range if the user presses OK.
      * @param filename the file to process
-     * @param [in,out] range the range widget to be modified
+     * @param range [in,out] the range widget to be modified
      * @return
      */
     int exec(const QString& filename, TimeRangeEdit *range);
+
+    /**
+     * @brief Start the dialog to cut @c param->source and modify time_begin and time_end
+     *  if the user presses OK.
+     * @param param [in,out] pointer to the ConversionParameters object to be modified
+     * @return
+     */
+    int exec(ConversionParameters *param);
 
 private slots:
     int exec();

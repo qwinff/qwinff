@@ -37,6 +37,7 @@
 #include "services/filepathoperations.h"
 #include "services/constants.h"
 #include "ui/conversionparameterdialog.h"
+#include "ui/interactivecuttingdialog.h"
 #include "addtaskwizard.h"
 
 #define TIMEOUT 3000
@@ -491,6 +492,16 @@ void ConvertList::changeSelectedOutputDirectory()
             change_output_file(get_task(item), file, overwrite, true);
         }
     }
+}
+
+void ConvertList::cutSelectedTask()
+{
+    /* This operation only changes begin time and duration of the parameter,
+       so there is no need to refresh the list */
+    if (selectedCount() != 1 || !InteractiveCuttingDialog::available())
+        return;
+    ConversionParameters *param = &first_selected_task()->param;
+    InteractiveCuttingDialog(this).exec(param);
 }
 
 void ConvertList::retrySelectedItems()
