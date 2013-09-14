@@ -43,14 +43,28 @@
         <item>
          <widget class="QPushButton" name="btnAsBegin">
           <property name="text">
-           <string>As Begin</string>
+           <string>Set Selection Begin</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="btnAsEnd">
           <property name="text">
-           <string>As End</string>
+           <string>Set Selection End</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnToBegin">
+          <property name="text">
+           <string>To Selection Begin</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnToEnd">
+          <property name="text">
+           <string>To Selection End</string>
           </property>
          </widget>
         </item>

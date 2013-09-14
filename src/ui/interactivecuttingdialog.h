@@ -62,6 +62,8 @@ private slots:
     void playerStateChanged();
     void set_as_begin();
     void set_as_end();
+    void seek_to_selection_begin();
+    void seek_to_selection_end();
     void play_selection();
     
 private:

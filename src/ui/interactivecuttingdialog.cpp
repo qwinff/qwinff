@@ -21,6 +21,8 @@ InteractiveCuttingDialog::InteractiveCuttingDialog(QWidget *parent) :
     connect(player, SIGNAL(stateChanged()), SLOT(playerStateChanged()));
     connect(ui->btnAsBegin, SIGNAL(clicked()), SLOT(set_as_begin()));
     connect(ui->btnAsEnd, SIGNAL(clicked()), SLOT(set_as_end()));
+    connect(ui->btnToBegin, SIGNAL(clicked()), SLOT(seek_to_selection_begin()));
+    connect(ui->btnToEnd, SIGNAL(clicked()), SLOT(seek_to_selection_end()));
     connect(ui->btnPlaySelection, SIGNAL(clicked()), SLOT(play_selection()));
 
     setFromBegin(true);
@@ -148,6 +150,18 @@ void InteractiveCuttingDialog::set_as_begin()
 void InteractiveCuttingDialog::set_as_end()
 {
     rangeWidget->rangeEditWidget()->setEndTime(player->position());
+}
+
+void InteractiveCuttingDialog::seek_to_selection_begin()
+{
+    int begin_time = rangeWidget->rangeEditWidget()->beginTime();
+    player->seek_and_pause(begin_time);
+}
+
+void InteractiveCuttingDialog::seek_to_selection_end()
+{
+    int end_time = rangeWidget->rangeEditWidget()->endTime();
+    player->seek_and_pause(end_time);
 }
 
 void InteractiveCuttingDialog::play_selection()
