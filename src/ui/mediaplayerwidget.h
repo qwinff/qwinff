@@ -53,11 +53,17 @@ public slots:
     void playRange(int begin_sec, int end_sec);
 
     /**
-     * @brief Seek to position() and start playing.
+     * @brief Seek to @a sec and start playing.
      *
      * @param sec position in seconds
      */
     void seek(int sec);
+
+    /**
+     * @brief Seek to @a sec and pause.
+     * @param sec
+     */
+    void seek_and_pause(int sec);
 
     /**
      * @brief Pause the media playback.

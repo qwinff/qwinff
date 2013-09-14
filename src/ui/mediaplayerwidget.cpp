@@ -108,6 +108,14 @@ void MediaPlayerWidget::seek(int sec)
     mplayer->seek(sec);
 }
 
+void MediaPlayerWidget::seek_and_pause(int sec)
+{
+    // seek() is asynchrous. If call mplayer->seek(); mplayer->pause(); in a row,
+    // the latter command will be ignored because seek() is not done yet.
+    mplayer->seek(sec);
+    m_playUntil = sec; // seek() is asynchrouse
+}
+
 void MediaPlayerWidget::togglePlayPause()
 {
     switch (mplayer->state()) {
