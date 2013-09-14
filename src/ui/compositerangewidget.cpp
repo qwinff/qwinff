@@ -17,8 +17,11 @@ CompositeRangeWidget::CompositeRangeWidget(QWidget *parent) :
 
 void CompositeRangeWidget::setMaxTime(int secs)
 {
-    m_rangeEdit->setMaxTime(secs);
-    m_selector->setMaxValue(secs);
+    // m_selector should be modified before m_rangeEdit, because m_selector
+    // is inaccurate (unable to determine whether the right edge is the end of video)
+    // and should be updated by m_rangeEdit.
+    m_selector->setMaxValue(secs); // modify m_selector -> sync m_selector to m_rangeEdit
+    m_rangeEdit->setMaxTime(secs); // modify m_rangeEdit -> sync m_rangeEdit to m_selector
     m_selector->setVisible(true);
 }
 
