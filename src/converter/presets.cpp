@@ -246,6 +246,10 @@ bool Presets::getExtensions(QList<QString> &target) const
             target.push_back(extension);
         }
     }
+    // remove duplicate entries
+    target = target.toSet().toList();
+    // sort target
+    qSort(target);
     return true;
 }
 
