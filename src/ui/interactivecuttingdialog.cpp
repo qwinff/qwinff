@@ -142,8 +142,9 @@ void InteractiveCuttingDialog::playerStateChanged()
     int duration = player->duration();
     if (duration > 0 && duration != m_rangeEdit->maxTime()) {
         // get media duration and set limits
-        m_rangeEdit->setMaxTime(duration);
+        // change range edit after visual selection
         m_rangeSel->setMaxValue(duration);
+        m_rangeEdit->setMaxTime(duration);
     }
 }
 
