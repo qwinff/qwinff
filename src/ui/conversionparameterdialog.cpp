@@ -18,7 +18,9 @@
 #include "converter/mediaprobe.h"
 #include "services/ffplaypreviewer.h"
 #include "services/mplayerpreviewer.h"
-#include "compositerangewidget.h"
+#include "rangewidgetbinder.h"
+#include "rangeselector.h"
+#include "timerangeedit.h"
 #include "interactivecuttingdialog.h"
 #include "previewdialog.h"
 #include "ui_conversionparameterdialog.h"
@@ -35,12 +37,17 @@
 ConversionParameterDialog::ConversionParameterDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ConversionParameterDialog),
-    m_selTime(new CompositeRangeWidget(this)),
+    m_timeEdit(new TimeRangeEdit(this)),
+    m_rangeSel(new RangeSelector(this)),
     m_previewer(0)
 {
     ui->setupUi(this);
 
-    ui->layoutTimeSel->addWidget(m_selTime);
+    // bind visual range selection and range edit (auto sync between them)
+    new RangeWidgetBinder(m_rangeSel, m_timeEdit, this);
+
+    ui->layoutTimeSel->addWidget(m_rangeSel);
+    ui->layoutTimeSel->addWidget(m_timeEdit);
 
     // Setup audio sample rate selection
     ui->cbAudioSampleRate->addItem("44100");
@@ -78,19 +85,18 @@ bool ConversionParameterDialog::exec(ConversionParameters& param, bool single_fi
 
 void ConversionParameterDialog::preview_time_selection()
 {
-    TimeRangeEdit *rangeEdit = m_selTime->rangeEditWidget();
     if (PreviewDialog::available()) {
         PreviewDialog(this).exec(m_param->source,
-                                 rangeEdit->fromBegin(),
-                                 rangeEdit->beginTime(),
-                                 rangeEdit->toEnd(),
-                                 rangeEdit->endTime());
+                                 m_timeEdit->fromBegin(),
+                                 m_timeEdit->beginTime(),
+                                 m_timeEdit->toEnd(),
+                                 m_timeEdit->endTime());
     } else {
         int timeBegin = -1, timeEnd = -1;
-        if (!rangeEdit->fromBegin())
-            timeBegin = rangeEdit->beginTime();
-        if (!rangeEdit->toEnd())
-            timeEnd = rangeEdit->endTime();
+        if (!m_timeEdit->fromBegin())
+            timeBegin = m_timeEdit->beginTime();
+        if (!m_timeEdit->toEnd())
+            timeEnd = m_timeEdit->endTime();
         m_previewer->play(m_param->source, timeBegin, timeEnd);
     }
 }
@@ -98,8 +104,7 @@ void ConversionParameterDialog::preview_time_selection()
 void ConversionParameterDialog::interactive_cutting()
 {
     if (m_singleFile) {
-        InteractiveCuttingDialog(this).exec(m_param->source,
-                                            m_selTime->rangeEditWidget());
+        InteractiveCuttingDialog(this).exec(m_param->source, m_timeEdit);
     }
 }
 
@@ -153,13 +158,14 @@ void ConversionParameterDialog::read_fields(const ConversionParameters& param)
 
     // Time Options
     bool show_slider = false;
-    m_selTime->selectorWidget()->setVisible(false); // hide slider if this dialog is reused
+    m_rangeSel->setVisible(false); // hide slider if this dialog is reused
     if (m_singleFile) {
         // time slider: only show in single file mode
         MediaProbe probe;
         if (probe.run(param.source)) { // probe the source file, blocking call
-            // success, set the duration so that the range slider can be shown
-            m_selTime->setMaxTime((int)probe.mediaDuration());
+            // success, set the duration and show the range slider
+            m_rangeSel->setMaxValue((int)probe.mediaDuration());
+            m_rangeSel->setVisible(true);
             show_slider = true;
         }
     }
@@ -168,20 +174,19 @@ void ConversionParameterDialog::read_fields(const ConversionParameters& param)
     ui->btnPreview->setVisible(show_preview_button);
     ui->btnInteractiveCutting->setVisible(show_cutting_button);
 
-    TimeRangeEdit *rangeEdit = m_selTime->rangeEditWidget();
     if (param.time_begin > 0) {
-        rangeEdit->setBeginTime(param.time_begin);
-        rangeEdit->setFromBegin(false);
+        m_timeEdit->setBeginTime(param.time_begin);
+        m_timeEdit->setFromBegin(false);
     } else {
-        rangeEdit->setBeginTime(0);
-        rangeEdit->setFromBegin(true);
+        m_timeEdit->setBeginTime(0);
+        m_timeEdit->setFromBegin(true);
     }
     if (param.time_duration > 0) {
-        rangeEdit->setEndTime(param.time_begin + param.time_duration);
-        rangeEdit->setToEnd(false);
+        m_timeEdit->setEndTime(param.time_begin + param.time_duration);
+        m_timeEdit->setToEnd(false);
     } else {
-        rangeEdit->setEndTime(0);
-        rangeEdit->setToEnd(true);
+        m_timeEdit->setEndTime(0);
+        m_timeEdit->setToEnd(true);
     }
     if (param.speed_scaling)
         ui->spinSpeedFactor->setValue(param.speed_scaling_factor * 100.0);
@@ -222,15 +227,14 @@ void ConversionParameterDialog::write_fields(ConversionParameters& param)
     param.video_crop_right = ui->spinCropRight->value();
 
     // Time Options
-    TimeRangeEdit *rangeEdit = m_selTime->rangeEditWidget();
-    if (rangeEdit->fromBegin())
+    if (m_timeEdit->fromBegin())
         param.time_begin = 0;
     else
-        param.time_begin = rangeEdit->beginTime();
-    if (rangeEdit->toEnd())
+        param.time_begin = m_timeEdit->beginTime();
+    if (m_timeEdit->toEnd())
         param.time_duration = 0;
     else // ffmpeg accepts duration, not end time
-        param.time_duration = rangeEdit->endTime() - param.time_begin;
+        param.time_duration = m_timeEdit->endTime() - param.time_begin;
     double speed_ratio = ui->spinSpeedFactor->value();
     if (!m_enableAudioProcessing || std::abs(speed_ratio - 100.0) <= 0.01) {
         param.speed_scaling = false;

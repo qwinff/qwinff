@@ -23,7 +23,8 @@ namespace Ui {
     class ConversionParameterDialog;
 }
 
-class CompositeRangeWidget;
+class RangeSelector;
+class TimeRangeEdit;
 class AbstractPreviewer;
 
 class ConversionParameterDialog : public QDialog
@@ -55,7 +56,8 @@ private:
     void write_fields(ConversionParameters& param);
     bool m_enableAudioProcessing;
     bool m_singleFile;
-    CompositeRangeWidget *m_selTime;
+    TimeRangeEdit *m_timeEdit;
+    RangeSelector *m_rangeSel;
     ConversionParameters *m_param;
     AbstractPreviewer *m_previewer;
 };
