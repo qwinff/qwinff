@@ -164,7 +164,9 @@ void ConversionParameterDialog::read_fields(const ConversionParameters& param)
         MediaProbe probe;
         if (probe.run(param.source)) { // probe the source file, blocking call
             // success, set the duration and show the range slider
-            m_rangeSel->setMaxValue((int)probe.mediaDuration());
+            int duration = (int)probe.mediaDuration();
+            m_timeEdit->setMaxTime(duration);
+            m_rangeSel->setMaxValue(duration);
             m_rangeSel->setVisible(true);
             show_slider = true;
         }
