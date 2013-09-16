@@ -96,7 +96,7 @@
   </RangeSelector>
 
   <MediaPlayerPositionSlider>
-    <style>
+    <Style>
     QSlider::groove:horizontal {
         border: 0px solid #999999;
         height: 8px;
@@ -122,7 +122,7 @@
         border-radius: 3px;
         margin: 0px;
     }
-    </style>
+    </Style>
   </MediaPlayerPositionSlider>
 
 </QWinFFConstants>

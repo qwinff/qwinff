@@ -7,7 +7,7 @@
 #define DEFAULT_VOLUME 20
 #define MAX_VOLUME 100
 
-#define SLIDER_STYLESHEET Constants::getString("MediaPlayerPositionSlider/style")
+#define SLIDER_STYLESHEET Constants::getString("MediaPlayerPositionSlider/Style")
 
 namespace {
 QString sec2hms(int seconds)
