@@ -64,7 +64,7 @@ install:
 	-install -d $(DESTDIR)$(PREFIX)/share/applications
 	install -m 644 qwinff.desktop $(DESTDIR)$(PREFIX)/share/applications/
 	-install -d $(DESTDIR)$(PREFIX)/share/pixmaps
-	install -m 644 src/icons/qwinff.png $(DESTDIR)$(PREFIX)/share/pixmaps
+	install -m 644 src/icons/qwinff_256x256.png $(DESTDIR)$(PREFIX)/share/pixmaps/qwinff.png
 	gzip -9 -f $(DESTDIR)$(PREFIX)/share/man/man1/qwinff.1
 	
 uninstall:
