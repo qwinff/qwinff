@@ -22,9 +22,12 @@
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout">
+     <layout class="QVBoxLayout" name="verticalLayout">
       <item>
        <layout class="QVBoxLayout" name="layoutPlayer"/>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="layoutRangeSelector"/>
       </item>
      </layout>
     </widget>
@@ -39,36 +42,36 @@
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_3">
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
-        <item>
-         <widget class="QPushButton" name="btnAsBegin">
-          <property name="text">
-           <string>Set Selection Begin</string>
-          </property>
-         </widget>
-        </item>
-        <item>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="2">
          <widget class="QPushButton" name="btnAsEnd">
           <property name="text">
-           <string>Set Selection End</string>
+           <string>Mark as End</string>
           </property>
          </widget>
         </item>
-        <item>
+        <item row="0" column="1">
+         <widget class="QPushButton" name="btnAsBegin">
+          <property name="text">
+           <string>Mark as Begin</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
          <widget class="QPushButton" name="btnToBegin">
           <property name="text">
-           <string>To Selection Begin</string>
+           <string>Seek to Begin</string>
           </property>
          </widget>
         </item>
-        <item>
+        <item row="1" column="2">
          <widget class="QPushButton" name="btnToEnd">
           <property name="text">
-           <string>To Selection End</string>
+           <string>Seek to End</string>
           </property>
          </widget>
         </item>
-        <item>
+        <item row="0" column="0">
          <widget class="QPushButton" name="btnPlaySelection">
           <property name="text">
            <string>Play Selection</string>
@@ -89,9 +92,6 @@
       <enum>QFrame::Raised</enum>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_3">
-      <item>
-       <layout class="QVBoxLayout" name="layoutRangeSelector"/>
-      </item>
       <item>
        <layout class="QVBoxLayout" name="layoutRangeEdit"/>
       </item>
