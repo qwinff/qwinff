@@ -332,10 +332,6 @@
    </property>
   </action>
   <action name="actionAbout">
-   <property name="icon">
-    <iconset resource="../images.qrc">
-     <normaloff>:/app/icons/qwinff_small.png</normaloff>:/app/icons/qwinff_small.png</iconset>
-   </property>
    <property name="text">
     <string>About Q&amp;WinFF</string>
    </property>

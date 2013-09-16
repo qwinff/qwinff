@@ -25,13 +25,15 @@
         <file>icons/qt.png</file>
         <file>icons/ffmpeg.png</file>
         <file>icons/ffmpeg_large.png</file>
-        <file>icons/qwinff.png</file>
-        <file>icons/qwinff_small.png</file>
         <file>icons/banner.png</file>
         <file>icons/qwinff_16x16.png</file>
-        <file>icons/qwinff_24x24.png</file>
+        <file>icons/qwinff_22x22.png</file>
         <file>icons/qwinff_32x32.png</file>
         <file>icons/qwinff_48x48.png</file>
+        <file>icons/qwinff_64x64.png</file>
+        <file>icons/qwinff_72x72.png</file>
+        <file>icons/qwinff_96x96.png</file>
+        <file>icons/qwinff_128x128.png</file>
         <file>icons/qwinff_256x256.png</file>
     </qresource>
     <qresource prefix="/other">
