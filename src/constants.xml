@@ -95,4 +95,34 @@
     </Colors>
   </RangeSelector>
 
+  <MediaPlayerPositionSlider>
+    <style>
+    QSlider::groove:horizontal {
+        border: 0px solid #999999;
+        height: 8px;
+        background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #B1B1B1, stop:1 #c4c4c4);
+        margin: 2px; 
+    }
+    QSlider::handle:horizontal {
+        background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #9cdaef, stop:1 #2e7eb8);
+        border: 1px solid #2f82be;
+        width: 12px;
+        margin: -2px;
+        border-radius: 3px;
+    }
+    QSlider::add-page:horizontal {
+        background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #d2d2d2, stop:1 #ebebeb);
+        border: 1px solid #828282;
+        border-radius: 3px;
+        margin: 0px;
+    }
+    QSlider::sub-page:horizontal {
+        background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #54aae8, stop:1#b6d3e8 );
+        border: 1px solid #2f82be;
+        border-radius: 3px;
+        margin: 0px;
+    }
+    </style>
+  </MediaPlayerPositionSlider>
+
 </QWinFFConstants>

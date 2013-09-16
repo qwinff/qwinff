@@ -2,9 +2,12 @@
 #include "mediaplayerwidget.h"
 #include "ui_mediaplayerwidget.h"
 #include "myqmpwidget.h"
+#include "services/constants.h"
 
 #define DEFAULT_VOLUME 20
 #define MAX_VOLUME 100
+
+#define SLIDER_STYLESHEET Constants::getString("MediaPlayerPositionSlider/style")
 
 namespace {
 QString sec2hms(int seconds)
@@ -31,6 +34,7 @@ MediaPlayerWidget::MediaPlayerWidget(QWidget *parent) :
     mplayer->setSeekSlider(ui->slideSeek);
     mplayer->setVolumeSlider(ui->slideVolume);
     ui->layoutPlayer->addWidget(mplayer);
+    ui->slideSeek->setStyleSheet(SLIDER_STYLESHEET);
 
     connect(mplayer, SIGNAL(stateChanged(int)), SLOT(playerStateChanged()));
     connect(ui->slideSeek, SIGNAL(valueChanged(int)), SLOT(seekSliderChanged()));
