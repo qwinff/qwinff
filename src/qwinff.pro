@@ -52,7 +52,8 @@ SOURCES += main.cpp \
     ui/previewdialog.cpp \
     ui/interactivecuttingdialog.cpp \
     ui/myqmpwidget.cpp \
-    ui/mediaplayerwidget.cpp
+    ui/mediaplayerwidget.cpp \
+    ui/rangewidgetbinder.cpp
 
 HEADERS  += \
     ui/progressbar.h \
@@ -99,7 +100,8 @@ HEADERS  += \
     ui/previewdialog.h \
     ui/interactivecuttingdialog.h \
     ui/mediaplayerwidget.h \
-    ui/myqmpwidget.h
+    ui/myqmpwidget.h \
+    ui/rangewidgetbinder.h
 
 FORMS    += \
     ui/conversionparameterdialog.ui \
