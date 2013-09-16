@@ -20,6 +20,7 @@
 #include "services/mplayerpreviewer.h"
 #include "compositerangewidget.h"
 #include "interactivecuttingdialog.h"
+#include "previewdialog.h"
 #include "ui_conversionparameterdialog.h"
 #include <QLayout>
 #include <cmath>
@@ -78,12 +79,20 @@ bool ConversionParameterDialog::exec(ConversionParameters& param, bool single_fi
 void ConversionParameterDialog::preview_time_selection()
 {
     TimeRangeEdit *rangeEdit = m_selTime->rangeEditWidget();
-    int timeBegin = -1, timeEnd = -1;
-    if (!rangeEdit->fromBegin())
-        timeBegin = rangeEdit->beginTime();
-    if (!rangeEdit->toEnd())
-        timeEnd = rangeEdit->endTime();
-    m_previewer->play(m_param->source, timeBegin, timeEnd);
+    if (PreviewDialog::available()) {
+        PreviewDialog(this).exec(m_param->source,
+                                 rangeEdit->fromBegin(),
+                                 rangeEdit->beginTime(),
+                                 rangeEdit->toEnd(),
+                                 rangeEdit->endTime());
+    } else {
+        int timeBegin = -1, timeEnd = -1;
+        if (!rangeEdit->fromBegin())
+            timeBegin = rangeEdit->beginTime();
+        if (!rangeEdit->toEnd())
+            timeEnd = rangeEdit->endTime();
+        m_previewer->play(m_param->source, timeBegin, timeEnd);
+    }
 }
 
 void ConversionParameterDialog::interactive_cutting()
