@@ -634,11 +634,14 @@ void MainWindow::setup_poweroff_button()
 void MainWindow::setup_appicon()
 {
     QIcon icon;
-    int sizes[] = {16, 24, 32, 48, 256};
-    const int count = sizeof(sizes) / sizeof(int);
-    const char resource_template[] = ":/app/icons/qwinff_%1x%1";
-    for (int i=0; i<count; i++) {
-        icon.addPixmap(QPixmap(QString(resource_template).arg(sizes[i])));
+    QDir iconDir = QDir(":/app/icons/");
+    QStringList fileList = iconDir.entryList();
+    QRegExp pattern("^qwinff_[0-9]+x[0-9]+\.png$");
+    foreach (QString file, fileList) {
+        if (pattern.indexIn(file) >= 0) {
+            qDebug() << QString("file: %1").arg(file);
+            icon.addPixmap(QPixmap(iconDir.absoluteFilePath(file)));
+        }
     }
     setWindowIcon(icon);
     ui->actionAbout->setIcon(icon);
