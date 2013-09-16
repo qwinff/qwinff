@@ -636,7 +636,7 @@ void MainWindow::setup_appicon()
     QIcon icon;
     QDir iconDir = QDir(":/app/icons/");
     QStringList fileList = iconDir.entryList();
-    QRegExp pattern("^qwinff_[0-9]+x[0-9]+\.png$");
+    QRegExp pattern("^qwinff_[0-9]+x[0-9]+\\.png$");
     foreach (QString file, fileList) {
         if (pattern.indexIn(file) >= 0) {
             qDebug() << QString("file: %1").arg(file);
