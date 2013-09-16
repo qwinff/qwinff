@@ -8,8 +8,8 @@ class InteractiveCuttingDialog;
 }
 
 class MediaPlayerWidget;
-class CompositeRangeWidget;
 class TimeRangeEdit;
+class RangeSelector;
 class ConversionParameters;
 
 class InteractiveCuttingDialog : public QDialog
@@ -69,7 +69,8 @@ private slots:
 private:
     Ui::InteractiveCuttingDialog *ui;
     MediaPlayerWidget *player;
-    CompositeRangeWidget *rangeWidget;
+    RangeSelector *m_rangeSel;
+    TimeRangeEdit *m_rangeEdit;
 };
 
 #endif // INTERACTIVECUTTINGDIALOG_H

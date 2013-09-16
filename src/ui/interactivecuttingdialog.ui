@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>857</width>
     <height>600</height>
    </rect>
   </property>
@@ -90,7 +90,10 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
-       <layout class="QVBoxLayout" name="layoutRange"/>
+       <layout class="QVBoxLayout" name="layoutRangeSelector"/>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="layoutRangeEdit"/>
       </item>
      </layout>
     </widget>

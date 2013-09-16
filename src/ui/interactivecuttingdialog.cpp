@@ -4,7 +4,7 @@
 #include "mediaplayerwidget.h"
 #include "rangeselector.h"
 #include "timerangeedit.h"
-#include "compositerangewidget.h"
+#include "rangewidgetbinder.h"
 #include "converter/exepath.h"
 #include "converter/conversionparameters.h"
 
@@ -12,11 +12,16 @@ InteractiveCuttingDialog::InteractiveCuttingDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::InteractiveCuttingDialog),
     player(new MediaPlayerWidget(this)),
-    rangeWidget(new CompositeRangeWidget(this))
+    m_rangeSel(new RangeSelector(this)),
+    m_rangeEdit(new TimeRangeEdit(this))
 {
     ui->setupUi(this);
     ui->layoutPlayer->addWidget(player);
-    ui->layoutRange->addWidget(rangeWidget);
+    ui->layoutRangeSelector->addWidget(m_rangeSel);
+    ui->layoutRangeEdit->addWidget(m_rangeEdit);
+
+    // automatically sync between m_rangeSel and m_rangeEdit
+    new RangeWidgetBinder(m_rangeSel, m_rangeEdit, this);
 
     connect(player, SIGNAL(stateChanged()), SLOT(playerStateChanged()));
     connect(ui->btnAsBegin, SIGNAL(clicked()), SLOT(set_as_begin()));
@@ -41,42 +46,42 @@ bool InteractiveCuttingDialog::available()
 
 bool InteractiveCuttingDialog::fromBegin() const
 {
-    return rangeWidget->rangeEditWidget()->fromBegin();
+    return m_rangeEdit->fromBegin();
 }
 
 bool InteractiveCuttingDialog::toEnd() const
 {
-    return rangeWidget->rangeEditWidget()->toEnd();
+    return m_rangeEdit->toEnd();
 }
 
 int InteractiveCuttingDialog::beginTime() const
 {
-    return rangeWidget->rangeEditWidget()->beginTime();
+    return m_rangeEdit->beginTime();
 }
 
 int InteractiveCuttingDialog::endTime() const
 {
-    return rangeWidget->rangeEditWidget()->endTime();
+    return m_rangeEdit->endTime();
 }
 
 void InteractiveCuttingDialog::setFromBegin(bool from_begin)
 {
-    rangeWidget->rangeEditWidget()->setFromBegin(from_begin);
+    m_rangeEdit->setFromBegin(from_begin);
 }
 
 void InteractiveCuttingDialog::setToEnd(bool to_end)
 {
-    rangeWidget->rangeEditWidget()->setToEnd(to_end);
+    m_rangeEdit->setToEnd(to_end);
 }
 
 void InteractiveCuttingDialog::setBeginTime(int sec)
 {
-    rangeWidget->rangeEditWidget()->setBeginTime(sec);
+    m_rangeEdit->setBeginTime(sec);
 }
 
 void InteractiveCuttingDialog::setEndTime(int sec)
 {
-    rangeWidget->rangeEditWidget()->setEndTime(sec);
+    m_rangeEdit->setEndTime(sec);
 }
 
 int InteractiveCuttingDialog::exec(const QString &filename)
@@ -134,38 +139,37 @@ int InteractiveCuttingDialog::exec()
 
 void InteractiveCuttingDialog::playerStateChanged()
 {
-    TimeRangeEdit *rangeEdit = rangeWidget->rangeEditWidget();
     int duration = player->duration();
-    if (duration > 0 && duration != rangeEdit->maxTime()) {
+    if (duration > 0 && duration != m_rangeEdit->maxTime()) {
         // get media duration and set limits
-        rangeWidget->setMaxTime(duration);
+        m_rangeEdit->setMaxTime(duration);
+        m_rangeSel->setMaxValue(duration);
     }
 }
 
 void InteractiveCuttingDialog::set_as_begin()
 {
-    rangeWidget->rangeEditWidget()->setBeginTime(player->position());
+    m_rangeEdit->setBeginTime(player->position());
 }
 
 void InteractiveCuttingDialog::set_as_end()
 {
-    rangeWidget->rangeEditWidget()->setEndTime(player->position());
+    m_rangeEdit->setEndTime(player->position());
 }
 
 void InteractiveCuttingDialog::seek_to_selection_begin()
 {
-    int begin_time = rangeWidget->rangeEditWidget()->beginTime();
+    int begin_time = m_rangeEdit->beginTime();
     player->seek_and_pause(begin_time);
 }
 
 void InteractiveCuttingDialog::seek_to_selection_end()
 {
-    int end_time = rangeWidget->rangeEditWidget()->endTime();
+    int end_time = m_rangeEdit->endTime();
     player->seek_and_pause(end_time);
 }
 
 void InteractiveCuttingDialog::play_selection()
 {
-    TimeRangeEdit *rangeEdit = rangeWidget->rangeEditWidget();
-    player->playRange(rangeEdit->beginTime(), rangeEdit->endTime());
+    player->playRange(m_rangeEdit->beginTime(), m_rangeEdit->endTime());
 }
