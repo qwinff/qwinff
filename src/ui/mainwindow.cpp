@@ -639,7 +639,6 @@ void MainWindow::setup_appicon()
     QRegExp pattern("^qwinff_[0-9]+x[0-9]+\\.png$");
     foreach (QString file, fileList) {
         if (pattern.indexIn(file) >= 0) {
-            qDebug() << QString("file: %1").arg(file);
             icon.addPixmap(QPixmap(iconDir.absoluteFilePath(file)));
         }
     }
