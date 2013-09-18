@@ -1,0 +1,6 @@
+/src/qwinff.pro.user
+/src/Makefile
+/bin/
+/build/
+*.o
+*.qm

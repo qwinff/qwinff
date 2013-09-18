@@ -1,4 +1,0 @@
-syntax: regexp
-^src/qwinff\.pro\.user
-^bin/
-^build/
