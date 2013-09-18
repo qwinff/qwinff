@@ -1,4 +1,20 @@
 QWinFF, GUI front-end for FFmpeg.
+=================================
+
+Introduction
+------------
+
+QWinFF is a GUI for [FFmpeg](http://ffmpeg.org), a powerful media converter.
+FFmpeg can read audio and video files in various formats and convert them into
+other formats. QWinFF features an intuitive graphical interface and a rich set
+of presets to help you convert media files within a few clicks. Advanced users
+can also adjust conversion parameters in detail.
+
+For compiling and installing QWinFF, please refer to INSTALL.txt.
+
+License
+-------
+
 Copyright (C) 2011 Timothy Lin <lzh9102@gmail.com>
 
 This program is free software; you can redistribute it and/or modify
@@ -10,35 +26,30 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
--------------------------------------------------------------------------------
+Acknowledgements
+----------------
 
-QWinFF aims to be an intuitive yet useful media converting interface.
-It features a rich set of presets that can help average users to convert
-between media formats without having to manually input every parameter; while
-advanced users can still adjust detailed output options to meet their needs.
-
-For compiling and installing QWinFF, please refer to INSTALL.txt.
-
--------------------------------------------------------------------------------
-
-Icons located in src/icons are taken from Oxygen Icons (www.oxygen-icons.org)
+Icons located in src/icons are taken from [Oxygen Icons](www.oxygen-icons.org).
 License: LGPL
 
-This program uses Qt, you can find more information about Qt on its website:
-http://qt.nokia.com/products
+This program uses Qt, you can find more information about Qt on
+[its website](http://qt.nokia.com/products).
 
-This program relies on FFmpeg (ffmpeg.org) to do conversion.
+This program relies on [FFmpeg](ffmpeg.org) to do conversion.
 License: LGPL/GPL
 
-Some audio-processing functionalities depends on SoX, the Swiss Army knife of
-sound processing programs. See http://sox.sourceforge.net/ for details.
+Some audio-processing functionalities depends on
+[SoX](http://sox.sourceforge.net), the Swiss Army knife of
+sound processing programs.
 License: LGPL/GPL
 
-Other open source projects that influenced the development of QWinFF:
-  * WinFF (winff.org) - Presets, Ideas
-  * Sinthgunt (code.google.com/p/sinthgunt) - Presets, Parsing FFmpeg Output
-  * SMPlayer (smplayer.sourceforge.net) - Qt Skills, Project Structure
-  * Clementine (www.clementine-player.org) - Qt Skills
+Other free software projects that influenced the development of QWinFF:
 
-Closed-source project that influenced the development of QWinFF
-  * FormatFactory (www.formatoz.com) - Ideas, Appearance
+  - WinFF (winff.org) - Presets, Ideas
+  - Sinthgunt (code.google.com/p/sinthgunt) - Presets, Parsing FFmpeg Output
+  - SMPlayer (smplayer.sourceforge.net) - Qt Skills, Project Structure
+  - Clementine (www.clementine-player.org) - Qt Skills
+
+Proprietary software that influenced the development of QWinFF
+
+  - FormatFactory (www.formatoz.com) - Ideas, Appearance
