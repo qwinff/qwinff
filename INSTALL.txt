@@ -1,4 +1,9 @@
-This document explains how to build and install QWinFF.
+Building and Installing QWinFF
+==============================
+
+QWinFF uses the Qt Toolkit as its graphical interface. You must install
+QtSDK 4.4.3 or greater to build QWinFF. Currently supported platforms are
+GNU/Linux and Microsoft Windows.
 
 QWinFF depends on several external programs at runtime. Currently these
 programs are:
@@ -8,103 +13,79 @@ programs are:
   - ffplay (optional, for previewing audio/video cutting)
   - sox (optional, for adjusting audio speed)
 
-1) Generic Compilation and Installation on Unix-like Systems
-2) Changing Installation Path
-3) Compiling with libnotify
-4) Build on Windows
+Building on GNU/Linux
+---------------------
 
-------------------------------
+The build dependencies of QWinFF are listed as follows:
 
-1) Generic Compilation and Installation on Unix-like Systems
-
-Be sure you have installed the following libraries in order to build QWinFF:
-	- Qt 4.3 or later
-	- libnotify (only when compiled with USE_LIBNOTIFY=1)
+  - QtSDK 4.4.3 or later
+  - libnotify (only when compiling with `USE_LIBNOTIFY=1`)
 
 Decompress the source code; open a terminal and enter the directory.
 
-Type "make".
+Type `make`.
 
 If everything is ok, you may type "make install" to install it.
-This will install QWinFF in /usr/local.
+This will install QWinFF in `/usr/`.
 
-If "make" fails, it's probably because the Qt3 toolchain is used instead of
+If `make` fails, it's probably because the Qt3 toolchain is used instead of
 the Qt4 one.
 Try to type something like this (just examples):
 make QMAKE=qmake-qt4 LRELEASE=lrelease-qt4
 or
 make QMAKE=/usr/share/qt4/bin/qmake LRELEASE=/usr/share/qt4/bin/lrelease
 
-------------------------------
+### Changing Installation Path
 
-2) Changing Installation Path
+By default, QWinFF will be installed to `/usr/`. You can change it by setting
+`PREFIX`. For example, the following command will install QWinFF in
+`/usr/local/`:
 
-By default, QWinFF will be installed to /usr/local. You can change it by
-using PREFIX.
+	make PREFIX=/usr/local
+	make PREFIX=/usr/local install
 
-Examples:
-make PREFIX=/usr
-make PREFIX=/usr install
+Please make sure that `PREFIX` in `make` and `make install` are the same. 
 
-That would install QWinFF under /usr
+### Compiling with libnotify
 
-Note that the PREFIX used by "make" and "make install" must be the same.
+*libnotify* is a library that sends desktop notifications. Most GNU/Linux
+distributions include it by default, and many applications make use of it to
+notify the user of some events. To compile QWinFF with libnotify, set
+`USE_LIBNOTIFY=1` when invoking `make` like `make USE_LIBNOTIFY=1`. QWinFF will
+use libnotify to send notifications if it has been built like this.
 
-In addition, you must install ffmpeg and ffprobe in order to run QWinFF.
-Some output formats may require additional packages to be installed.
-For example, non-free media formats are not supported by default in
-Debian and Ubuntu. Please search for information about how to enable
-these features by keywords like "ffmpeg non-free" or "ffmpeg mp3".
-
-------------------------------
-
-3) Compiling with libnotify
-
-QWinFF provides 3 kinds of notification types:
-  - libnotify
-  - notify-send command-line utility
-  - Qt MessageBox
-
-If libnotify is enabled, libnotify will be used. Otherwise, QWinFF will
-look for the notify-send utility. If notify-send is available on the
-system, it will be used. If neither of them are available, QWinFF will
-fallback to Qt MessageBox. Qt MessageBox is always available since it only
-requires Qt.
-
-If you want to compile with libnotify, type "make USE_LIBNOTIFY=1"
-instead of "make". Compiling with libnotify also requires gtk2 headers.
+If libnotify is not used at compile-time, QWinFF will try to use *notify-send*,
+which is a command-line interface to libnotify. If notify-send is available on
+the system, it will be used to send notifications. Otherwise, QWinFF will
+fallback to using Qt MessageBox.
 
 Note that libnotify 0.7+ is not compatible with its older versions
 (0.5.x, 0.6.x). QWinFF will compile with both APIs, but if you compile
 it with libnotify 0.7, it will only work with libnotify runtime 0.7,
 and vice versa.
 
-------------------------------
+Building on Windows
+-------------------
 
-4) Build on Windows
+The following packages are required to build QWinFF on Windows.
 
-You must install Qt4 SDK to build QWinFF.
-After installing Qt4, you have to add the paths containing qt tools
-and MinGW executables to PATH.
+  - Qt4 SDK with MinGW
+  - cygwin
 
-Extract the source code to a directory.
-
-Open the directory and click on "windows_build.bat".
-(or "windows_build_portable.bat" which will build QWinFF as a portable
-application)
-
+First, install *Qt4 SDK* and *cygwin*, and add the paths containing executables
+of Qt tools and cygwin executables to `PATH`. Extract the source code to a
+directory and switch to it. Click on `windows_build.bat` to build.  (or
+`windows_build_portable.bat` which will build QWinFF as a portable application)
 If the build was successful,  the output files will be copied to
-windows_release\. (or windows_release_portable\ for portable version)
+`windows_release\`. (or `windows_release_portable\` for portable version)
 
-Copy necessary Qt DLLs to windows_release\
-If you are using the official QtSDK, the DLLs are probably QtCore4.dll,
-QtGui4.dll, libgcc_s_dw2-1.dll, libstdc++-6.dll and mingwm10.dll.
-These files can be found in <QtSDK>\Desktop\Qt\4.x.x\mingw\bin.
-
-Download runtime dependencies (ffmpeg.exe, ffprobe.exe, etc.) and placed them
-in windows_release\tools.
+Copy necessary Qt DLLs to `windows_release\` If you are using the official
+QtSDK, the DLLs are probably `QtCore4.dll`, `QtGui4.dll`, `QtNetwork4.dll`
+`libgcc_s_dw2-1.dll`, `libstdc++-6.dll` and `mingwm10.dll`.  These files can be
+found in `<QtSDK>\Desktop\Qt\4.x.x\mingw\bin`. Download runtime dependencies
+(`ffmpeg.exe`, `ffprobe.exe`, etc.) and placed them in `windows_release\tools`.
 
 Now you can execute QWinFF by clicking on the executable file.
 
-The NSIS script (qwinff.nsi) under windows_release\ can be used to create
-an installer. (see http://nsis.sourceforge.net)
+The NSIS script `qwinff.nsi` in `windows_release\` can be used to create an
+installer. (see http://nsis.sourceforge.net)
