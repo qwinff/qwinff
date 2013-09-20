@@ -95,8 +95,10 @@
     </Colors>
   </RangeSelector>
 
-  <MediaPlayerPositionSlider>
-    <Style>
+  <!-- embedded media player -->
+  <MediaPlayer>
+    <!-- style of the media position slider -->
+    <SliderStyle>
     QSlider::groove:horizontal {
         border: 0px solid #999999;
         height: 8px;
@@ -122,7 +124,7 @@
         border-radius: 3px;
         margin: 0px;
     }
-    </Style>
-  </MediaPlayerPositionSlider>
+    </SliderStyle>
+  </MediaPlayer>
 
 </QWinFFConstants>
