@@ -97,6 +97,8 @@
 
   <!-- embedded media player -->
   <MediaPlayer>
+    <!-- the default audio volume. valid values are integers between 0~100 -->
+    <DefaultVolume>50</DefaultVolume>
     <!-- style of the media position slider -->
     <SliderStyle>
     QSlider::groove:horizontal {

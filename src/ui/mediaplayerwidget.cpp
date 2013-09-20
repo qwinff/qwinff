@@ -22,9 +22,9 @@
 #include "myqmpwidget.h"
 #include "services/constants.h"
 
-#define DEFAULT_VOLUME 20
 #define MAX_VOLUME 100
 
+#define DEFAULT_VOLUME Constants::getInteger("MediaPlayer/DefaultVolume")
 #define SLIDER_STYLESHEET Constants::getString("MediaPlayer/SliderStyle")
 
 namespace {
