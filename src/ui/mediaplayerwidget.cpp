@@ -16,16 +16,18 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include <QSettings>
 #include <cmath>
 #include "mediaplayerwidget.h"
 #include "ui_mediaplayerwidget.h"
 #include "myqmpwidget.h"
 #include "services/constants.h"
 
-#define MAX_VOLUME 100
-
 #define DEFAULT_VOLUME Constants::getInteger("MediaPlayer/DefaultVolume")
 #define SLIDER_STYLESHEET Constants::getString("MediaPlayer/SliderStyle")
+
+#define MAX_VOLUME 100
+#define VOLUME_SETTING_KEY "mediaplayer/volume"
 
 namespace {
 QString sec2hms(int seconds)
@@ -60,10 +62,13 @@ MediaPlayerWidget::MediaPlayerWidget(QWidget *parent) :
     connect(ui->btnBack, SIGNAL(clicked()), SLOT(seekBack()));
     connect(ui->btnForward, SIGNAL(clicked()), SLOT(seekForward()));
     connect(ui->btnReset, SIGNAL(clicked()), SLOT(resetPosition()));
+
+    load_volume();
 }
 
 MediaPlayerWidget::~MediaPlayerWidget()
 {
+    save_volume();
     delete ui;
 }
 
@@ -87,7 +92,7 @@ void MediaPlayerWidget::load(const QString &url)
 {
     m_file = url;
     mplayer->load(url);
-    ui->slideVolume->setValue(DEFAULT_VOLUME);
+    ui->slideVolume->setValue(m_volume);
     mplayer->pause();
 }
 
@@ -228,4 +233,22 @@ void MediaPlayerWidget::seekForward()
 void MediaPlayerWidget::resetPosition()
 {
     mplayer->seek(0);
+}
+
+void MediaPlayerWidget::load_volume()
+{
+    QSettings settings;
+    m_volume = DEFAULT_VOLUME;
+    if (settings.contains(VOLUME_SETTING_KEY))
+        m_volume = settings.value(VOLUME_SETTING_KEY).toInt();
+    if (m_volume < 0)
+        m_volume = 0;
+    if (m_volume > MAX_VOLUME)
+        m_volume = MAX_VOLUME;
+}
+
+void MediaPlayerWidget::save_volume()
+{
+    m_volume = ui->slideVolume->value();
+    QSettings().setValue(VOLUME_SETTING_KEY, m_volume);
 }

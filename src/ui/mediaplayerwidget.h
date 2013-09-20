@@ -109,8 +109,11 @@ private:
 
     // media playback will stop when position() reaches m_playUntil
     int m_playUntil;
+    int m_volume;
 
     Q_DISABLE_COPY(MediaPlayerWidget)
+    void load_volume();
+    void save_volume();
 };
 
 #endif // MEDIAPLAYERWIDGET_H
