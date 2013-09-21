@@ -229,9 +229,9 @@ void ConversionParameterDialog::read_fields(const ConversionParameters& param)
         ui->chkFromBegin->setChecked(true);
         ui->timeBegin->setTime(QTime());
     }
-    if (param.time_duration > 0) {
+    if (param.time_end > 0) {
         ui->chkToEnd->setChecked(false);
-        ui->timeEnd->setTime(QTime().addSecs(param.time_begin + param.time_duration));
+        ui->timeEnd->setTime(QTime().addSecs(param.time_end));
     } else {
         ui->chkToEnd->setChecked(true);
         ui->timeEnd->setTime(QTime());
@@ -280,9 +280,9 @@ void ConversionParameterDialog::write_fields(ConversionParameters& param)
     else
         param.time_begin = QTIME_TO_SECS(ui->timeBegin->time());
     if (ui->chkToEnd->isChecked()) // ffmpeg accepts duration, not end time
-        param.time_duration = 0;
+        param.time_end = 0;
     else
-        param.time_duration = QTIME_TO_SECS(ui->timeEnd->time()) - param.time_begin;
+        param.time_end = QTIME_TO_SECS(ui->timeEnd->time());
     double speed_ratio = ui->spinSpeedFactor->value();
     if (!m_enableAudioProcessing || std::abs(speed_ratio - 100.0) <= 0.01) {
         param.speed_scaling = false;

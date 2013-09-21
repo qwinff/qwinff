@@ -42,7 +42,7 @@ public:
     int video_height;
     int video_crop_top, video_crop_bottom, video_crop_left, video_crop_right;
 
-    unsigned int time_begin, time_duration;
+    unsigned int time_begin, time_end;
 
     /* FFmpeg Specific Options */
     /*! Additional options passed to the ffmpeg transcoder.
@@ -102,7 +102,7 @@ public:
 
         video_width = video_height = 0;
 
-        time_begin = time_duration = 0;
+        time_begin = time_end = 0;
 
         ffmpeg_options.clear();
 

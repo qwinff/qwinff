@@ -490,9 +490,11 @@ QStringList FFmpegInterface::Private::getOptionList(const ConversionParameters &
     }
     /* -t time_duration
         Stop writing the output after its duration reaches time_duration */
-    if (o.time_duration > 0) {
+    if (o.time_end > 0) {
+        Q_ASSERT(o.time_end >= o.time_begin);
+        unsigned int duration = o.time_end - o.time_begin;
         list.append("-t");
-        list.append(QString("%1").arg(o.time_duration));
+        list.append(QString("%1").arg(duration));
     }
 
     // destination file
