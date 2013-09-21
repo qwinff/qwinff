@@ -23,29 +23,36 @@
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
         <widget class="QPushButton" name="btnPlayPause">
-         <property name="text">
-          <string>Play</string>
+         <property name="icon">
+          <iconset resource="../images.qrc">
+           <normaloff>:/actions/icons/media-playback-start.png</normaloff>:/actions/icons/media-playback-start.png</iconset>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QPushButton" name="btnReset">
-         <property name="text">
-          <string notr="true">|&lt;</string>
+         <property name="icon">
+          <iconset resource="../images.qrc">
+           <normaloff>:/actions/icons/media-skip-backward.png</normaloff>:/actions/icons/media-skip-backward.png</iconset>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QPushButton" name="btnBack">
          <property name="text">
-          <string notr="true">&lt;&lt;</string>
+          <string notr="true"/>
+         </property>
+         <property name="icon">
+          <iconset resource="../images.qrc">
+           <normaloff>:/actions/icons/media-seek-backward.png</normaloff>:/actions/icons/media-seek-backward.png</iconset>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QPushButton" name="btnForward">
-         <property name="text">
-          <string notr="true">&gt;&gt;</string>
+         <property name="icon">
+          <iconset resource="../images.qrc">
+           <normaloff>:/actions/icons/media-seek-forward.png</normaloff>:/actions/icons/media-seek-forward.png</iconset>
          </property>
         </widget>
        </item>
@@ -68,8 +75,8 @@
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
         <widget class="QLabel" name="label">
-         <property name="text">
-          <string comment="Audio volume">Volume</string>
+         <property name="pixmap">
+          <pixmap resource="../images.qrc">:/actions/icons/audio_volume.png</pixmap>
          </property>
         </widget>
        </item>
@@ -138,6 +145,8 @@
   <tabstop>slideVolume</tabstop>
   <tabstop>btnPlayPause</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../images.qrc"/>
+ </resources>
  <connections/>
 </ui>
