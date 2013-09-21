@@ -23,6 +23,8 @@
  #include "services/notificationservice-libnotify.h"
 #endif
 
+#define PROJECT_HOMEPAGE "http://qwinff.github.io"
+
 namespace {
 QString url(QString lnk)
 {
@@ -68,7 +70,7 @@ AboutDialog::AboutDialog(QWidget *parent) :
          + tr("This program is free software; you can redistribute it and/or modify it "
               "under the terms of the GNU General Public License version 2 or 3.")
          + "<br><br>"
-         + tr("QWinFF Homepage: %1").arg(url("http://qwinff.blogspot.com"))
+         + tr("QWinFF Homepage: %1").arg(url(PROJECT_HOMEPAGE))
          + "<br><br>"
          + tr("Some audio-processing functionalities are provided by SoX.")
          + " (" + url("http://sox.sourceforge.net/") + ")<br><br>"
