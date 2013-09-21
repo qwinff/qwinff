@@ -23,6 +23,7 @@
 #include <QTextStream>
 #include <QDebug>
 #include <QAtomicInt>
+#include <cmath>
 
 // timeout before force-terminating ffmpeg
 #ifdef OPERATION_TIMEOUT
@@ -263,6 +264,17 @@ namespace inner {
             return "";
     }
 
+    // scale sec with speed_factor if scale == true
+    double scale_time(unsigned int sec, bool scale, double speed_factor)
+    {
+        if (!sec)
+            return 0;
+        else if (scale)
+            return sec / speed_factor; // (speed *= 2) means (time /= 2)
+        else
+            return sec;
+    }
+
 } // anonymous namespace
 
 struct FFmpegInterface::Private
@@ -484,20 +496,28 @@ QStringList FFmpegInterface::Private::getOptionList(const ConversionParameters &
     }
 
     // Time Options
+
+    /* Scale begin time and end time if speed_scaling is on.
+     * scaled_time_begin and scaled_time_end are doubles, so never compare time
+     * (ex. time == 0) by them. Compare using o.time_begin and o.time_end instead.
+     */
+    double scaled_time_begin = scale_time(o.time_begin, o.speed_scaling, o.speed_scaling_factor);
+    double scaled_time_end = scale_time(o.time_end, o.speed_scaling, o.speed_scaling_factor);
+
     /* -ss time_begin
         When used as an output option, ffmpeg decodes but discards input
         until timestamp reaches time_begin */
     if (o.time_begin > 0) {
         list.append("-ss");
-        list.append(QString("%1").arg(o.time_begin));
+        list.append(QString("%1").arg(scaled_time_begin));
     }
     /* -t time_duration
         Stop writing the output after its duration reaches time_duration */
     if (o.time_end > 0) {
         Q_ASSERT(o.time_end >= o.time_begin);
-        unsigned int duration = o.time_end - o.time_begin;
+        double scaled_duration = scaled_time_end - scaled_time_begin;
         list.append("-t");
-        list.append(QString("%1").arg(duration));
+        list.append(QString("%1").arg(scaled_duration));
     }
 
     // destination file
