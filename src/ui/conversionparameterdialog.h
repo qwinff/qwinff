@@ -1,4 +1,4 @@
-/*  QWinFF, a graphical frontend for ffmpeg
+/*  QWinFF - A qt4 gui frontend for ffmpeg
  *
  *  Copyright (C) 2011-2013 Timothy Lin <lzh9102@gmail.com>
  *
