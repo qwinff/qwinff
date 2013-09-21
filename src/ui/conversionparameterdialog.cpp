@@ -186,8 +186,8 @@ void ConversionParameterDialog::read_fields(const ConversionParameters& param)
         m_timeEdit->setBeginTime(0);
         m_timeEdit->setFromBegin(true);
     }
-    if (param.time_duration > 0) {
-        m_timeEdit->setEndTime(param.time_begin + param.time_duration);
+    if (param.time_end > 0) {
+        m_timeEdit->setEndTime(param.time_end);
         m_timeEdit->setToEnd(false);
     } else {
         m_timeEdit->setEndTime(0);
@@ -237,9 +237,9 @@ void ConversionParameterDialog::write_fields(ConversionParameters& param)
     else
         param.time_begin = m_timeEdit->beginTime();
     if (m_timeEdit->toEnd())
-        param.time_duration = 0;
+        param.time_end = 0;
     else // ffmpeg accepts duration, not end time
-        param.time_duration = m_timeEdit->endTime() - param.time_begin;
+        param.time_end = m_timeEdit->endTime();
     double speed_ratio = ui->spinSpeedFactor->value();
     if (!m_enableAudioProcessing || std::abs(speed_ratio - 100.0) <= 0.01) {
         param.speed_scaling = false;

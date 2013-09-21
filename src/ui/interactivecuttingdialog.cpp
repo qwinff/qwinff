@@ -135,8 +135,8 @@ int InteractiveCuttingDialog::exec(ConversionParameters *param)
     // convert begin and duration to begin and end time
     setBeginTime(param->time_begin);
     setFromBegin(param->time_begin == 0);
-    if (param->time_duration > 0) { // duration == 0 means "to end"
-        setEndTime(param->time_begin + param->time_duration);
+    if (param->time_end > 0) { // time_end == 0 means "to end"
+        setEndTime(param->time_end);
         setToEnd(false);
     } else {
         setToEnd(true);
@@ -145,7 +145,7 @@ int InteractiveCuttingDialog::exec(ConversionParameters *param)
     // convert from begin and end time back to begin and duration
     if (status == QDialog::Accepted) {
         param->time_begin = fromBegin() ? 0 : beginTime();
-        param->time_duration = toEnd() ? 0 : endTime() - param->time_begin;
+        param->time_end = toEnd() ? 0 : endTime();
     }
     return status;
 }
