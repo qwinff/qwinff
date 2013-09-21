@@ -48,12 +48,20 @@
           <property name="text">
            <string>Mark as End</string>
           </property>
+          <property name="icon">
+           <iconset resource="../images.qrc">
+            <normaloff>:/actions/icons/mark.png</normaloff>:/actions/icons/mark.png</iconset>
+          </property>
          </widget>
         </item>
         <item row="0" column="1">
          <widget class="QPushButton" name="btnAsBegin">
           <property name="text">
            <string>Mark as Begin</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../images.qrc">
+            <normaloff>:/actions/icons/mark.png</normaloff>:/actions/icons/mark.png</iconset>
           </property>
          </widget>
         </item>
@@ -62,6 +70,10 @@
           <property name="text">
            <string>Seek to Begin</string>
           </property>
+          <property name="icon">
+           <iconset resource="../images.qrc">
+            <normaloff>:/actions/icons/seek_to_begin.png</normaloff>:/actions/icons/seek_to_begin.png</iconset>
+          </property>
          </widget>
         </item>
         <item row="1" column="2">
@@ -69,12 +81,20 @@
           <property name="text">
            <string>Seek to End</string>
           </property>
+          <property name="icon">
+           <iconset resource="../images.qrc">
+            <normaloff>:/actions/icons/seek_to_end.png</normaloff>:/actions/icons/seek_to_end.png</iconset>
+          </property>
          </widget>
         </item>
         <item row="0" column="0">
          <widget class="QPushButton" name="btnPlaySelection">
           <property name="text">
            <string>Play Selection</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../images.qrc">
+            <normaloff>:/actions/icons/preview_play.png</normaloff>:/actions/icons/preview_play.png</iconset>
           </property>
          </widget>
         </item>
@@ -110,7 +130,9 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../images.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonBox</sender>
