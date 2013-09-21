@@ -24,6 +24,10 @@
        <property name="text">
         <string>Play Selected Range</string>
        </property>
+       <property name="icon">
+        <iconset resource="../images.qrc">
+         <normaloff>:/actions/icons/preview_play.png</normaloff>:/actions/icons/preview_play.png</iconset>
+       </property>
       </widget>
      </item>
     </layout>
@@ -40,7 +44,9 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../images.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonBox</sender>
