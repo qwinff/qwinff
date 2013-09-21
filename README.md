@@ -45,11 +45,11 @@ License: LGPL/GPL
 
 Other free software projects that influenced the development of QWinFF:
 
-  - WinFF (winff.org) - Presets, Ideas
-  - Sinthgunt (code.google.com/p/sinthgunt) - Presets, Parsing FFmpeg Output
-  - SMPlayer (smplayer.sourceforge.net) - Qt Skills, Project Structure
-  - Clementine (www.clementine-player.org) - Qt Skills
+  - [WinFF](http://winff.org) - Presets, Ideas
+  - [Sinthgunt](http://code.google.com/p/sinthgunt) - Presets, Parsing FFmpeg Output
+  - [SMPlayer](http://smplayer.sourceforge.net) - Qt Skills, Project Structure
+  - [Clementine](http://www.clementine-player.org) - Qt Skills
 
 Proprietary software that influenced the development of QWinFF
 
-  - FormatFactory (www.formatoz.com) - Ideas, Appearance
+  - [FormatFactory](http://www.formatoz.com) - Ideas, Appearance
