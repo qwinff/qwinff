@@ -33,7 +33,7 @@ Icons located in src/icons are taken from [Oxygen Icons](www.oxygen-icons.org).
 License: LGPL
 
 This program uses Qt, you can find more information about Qt on
-[its website](http://qt.nokia.com/products).
+[its website](http://qt-project.org/).
 
 This program relies on [FFmpeg](ffmpeg.org) to do conversion.
 License: LGPL/GPL
