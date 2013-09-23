@@ -17,6 +17,7 @@
  */
 
 #include <QMessageBox>
+#include <cmath>
 #include "interactivecuttingdialog.h"
 #include "ui_interactivecuttingdialog.h"
 #include "mediaplayerwidget.h"
@@ -168,12 +169,12 @@ void InteractiveCuttingDialog::playerStateChanged()
 
 void InteractiveCuttingDialog::set_as_begin()
 {
-    m_rangeEdit->setBeginTime(player->position());
+    m_rangeEdit->setBeginTime(floor(player->position()));
 }
 
 void InteractiveCuttingDialog::set_as_end()
 {
-    m_rangeEdit->setEndTime(player->position());
+    m_rangeEdit->setEndTime(ceil(player->position()));
 }
 
 void InteractiveCuttingDialog::seek_to_selection_begin()

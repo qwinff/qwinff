@@ -81,9 +81,9 @@ int MediaPlayerWidget::duration() const
         return 0;
 }
 
-int MediaPlayerWidget::position() const
+double MediaPlayerWidget::position() const
 {
-    return floor(mplayer->tell());
+    return mplayer->tell();
 }
 
 // public slots

@@ -36,7 +36,7 @@ public:
     ~MediaPlayerWidget();
 
     int duration() const;
-    int position() const;
+    double position() const;
 
 signals:
     void stateChanged();
