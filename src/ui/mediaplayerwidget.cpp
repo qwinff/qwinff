@@ -17,7 +17,6 @@
  */
 
 #include <QSettings>
-#include <cmath>
 #include "mediaplayerwidget.h"
 #include "ui_mediaplayerwidget.h"
 #include "myqmpwidget.h"
@@ -72,11 +71,17 @@ MediaPlayerWidget::~MediaPlayerWidget()
     delete ui;
 }
 
-int MediaPlayerWidget::duration() const
+bool MediaPlayerWidget::ok() const
+{
+    MyQMPwidget::MediaInfo info = mplayer->mediaInfo();
+    return info.ok;
+}
+
+double MediaPlayerWidget::duration() const
 {
     MyQMPwidget::MediaInfo info = mplayer->mediaInfo();
     if (info.ok)
-        return ceil(info.length);
+        return info.length;
     else
         return 0;
 }

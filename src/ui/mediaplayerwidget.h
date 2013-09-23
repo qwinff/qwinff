@@ -35,7 +35,8 @@ public:
     explicit MediaPlayerWidget(QWidget *parent = 0);
     ~MediaPlayerWidget();
 
-    int duration() const;
+    bool ok() const;
+    double duration() const;
     double position() const;
 
 signals:
