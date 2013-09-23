@@ -88,6 +88,7 @@ int PoweroffDialog::exec(int action)
     m_time = Constants::getInteger("PoweroffTimeout");
     m_timer->start();
     refresh_message();
+    adjustSize();
 
     // center window in screen
     const QRect screen = QApplication::desktop()->screenGeometry();
