@@ -16,6 +16,7 @@
  */
 
 #include <QMessageBox>
+#include <QSettings>
 #include "mediaplayerwidget.h"
 #include "previewdialog.h"
 #include "converter/exepath.h"
@@ -72,7 +73,10 @@ int PreviewDialog::exec(const QString &filename,
 
 int PreviewDialog::exec()
 {
-    return QDialog::exec();
+    load_settings();
+    int status = QDialog::exec();
+    save_settings();
+    return status;
 }
 
 void PreviewDialog::playSelectedRange()
@@ -92,4 +96,16 @@ void PreviewDialog::refreshRange()
         end_time = sec2hms(m_endTime);
     //: play the video from time %1 to time %2. %1 and %2 are time in hh:mm:ss format.
     ui->btnPlayRange->setText(tr("Play %1~%2").arg(begin_time).arg(end_time));
+}
+
+void PreviewDialog::load_settings()
+{
+    QSettings settings;
+    restoreGeometry(settings.value("preview_dialog/geometry").toByteArray());
+}
+
+void PreviewDialog::save_settings()
+{
+    QSettings settings;
+    settings.setValue("preview_dialog/geometry", saveGeometry());
 }
