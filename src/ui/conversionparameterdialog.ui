@@ -410,52 +410,6 @@
              <layout class="QVBoxLayout" name="layoutTimeSel"/>
             </item>
             <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_13">
-              <item>
-               <layout class="QVBoxLayout" name="verticalLayout_12">
-                <item>
-                 <widget class="QCheckBox" name="chkFromBegin">
-                  <property name="text">
-                   <string>From Begin</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QTimeEdit" name="timeBegin">
-                  <property name="currentSection">
-                   <enum>QDateTimeEdit::HourSection</enum>
-                  </property>
-                  <property name="displayFormat">
-                   <string notr="true">hh:mm:ss</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </item>
-              <item>
-               <layout class="QVBoxLayout" name="verticalLayout_13">
-                <item>
-                 <widget class="QCheckBox" name="chkToEnd">
-                  <property name="text">
-                   <string>To End</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QTimeEdit" name="timeEnd">
-                  <property name="currentSection">
-                   <enum>QDateTimeEdit::HourSection</enum>
-                  </property>
-                  <property name="displayFormat">
-                   <string notr="true">hh:mm:ss</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </item>
-             </layout>
-            </item>
-            <item>
              <layout class="QHBoxLayout" name="horizontalLayout_3">
               <item>
                <spacer name="horizontalSpacer">
@@ -469,6 +423,13 @@
                  </size>
                 </property>
                </spacer>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btnInteractiveCutting">
+                <property name="text">
+                 <string>Interactive Cutting</string>
+                </property>
+               </widget>
               </item>
               <item>
                <widget class="QPushButton" name="btnPreview">

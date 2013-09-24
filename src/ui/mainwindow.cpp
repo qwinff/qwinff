@@ -1,17 +1,19 @@
-/*  This file is part of QWinFF, a media converter GUI.
-
-    QWinFF is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 2 or 3 of the License.
-
-    QWinFF is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with QWinFF.  If not, see <http://www.gnu.org/licenses/>.
-*/
+/*  QWinFF - a qt4 gui frontend for ffmpeg
+ *  Copyright (C) 2011-2013 Timothy Lin <lzh9102@gmail.com>
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
@@ -224,6 +226,11 @@ void MainWindow::slotShowUpdateDialog()
     }
 }
 
+void MainWindow::slotCut()
+{
+    m_list->cutSelectedTask();
+}
+
 void MainWindow::slotListContextMenu(QPoint /*pos*/)
 {
     refresh_action_states();
@@ -240,6 +247,7 @@ void MainWindow::slotListContextMenu(QPoint /*pos*/)
     menu.addAction(ui->actionChangeOutputFilename);
     menu.addAction(ui->actionChangeOutputDirectory);
     menu.addAction(ui->actionSetParameters);
+    menu.addAction(ui->actionCut);
 
     menu.exec(QCursor::pos());
 }
@@ -466,6 +474,7 @@ void MainWindow::setup_menus()
             m_list, SLOT(changeSelectedOutputDirectory()));
     connect(ui->actionShowErrorMessage, SIGNAL(triggered()),
             m_list, SLOT(showErrorMessage()));
+    connect(ui->actionCut, SIGNAL(triggered()), SLOT(slotCut()));
 
     // Convert
     connect(ui->menuConvert, SIGNAL(aboutToShow()),
@@ -747,6 +756,7 @@ void MainWindow::refresh_action_states()
     ui->actionChangeOutputFilename->setDisabled(hide_ChangeOutputFilename);
     ui->actionChangeOutputDirectory->setDisabled(hide_ChangeOutputDirectory);
     ui->actionShowErrorMessage->setDisabled(hide_ShowErrorMessage);
+    ui->actionCut->setEnabled(selected_file_count == 1); // cut only 1 file at a time
 }
 
 void MainWindow::load_settings()

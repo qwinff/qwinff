@@ -1,17 +1,19 @@
-/*  This file is part of QWinFF, a media converter GUI.
-
-    QWinFF is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 2 or 3 of the License.
-
-    QWinFF is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with QWinFF.  If not, see <http://www.gnu.org/licenses/>.
-*/
+/*  QWinFF - a qt4 gui frontend for ffmpeg
+ *  Copyright (C) 2011-2013 Timothy Lin <lzh9102@gmail.com>
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
 #include <QTreeWidget>
 #include <QHBoxLayout>
@@ -37,6 +39,7 @@
 #include "services/filepathoperations.h"
 #include "services/constants.h"
 #include "ui/conversionparameterdialog.h"
+#include "ui/interactivecuttingdialog.h"
 #include "addtaskwizard.h"
 
 #define TIMEOUT 3000
@@ -491,6 +494,16 @@ void ConvertList::changeSelectedOutputDirectory()
             change_output_file(get_task(item), file, overwrite, true);
         }
     }
+}
+
+void ConvertList::cutSelectedTask()
+{
+    /* This operation only changes begin time and duration of the parameter,
+       so there is no need to refresh the list */
+    if (selectedCount() != 1 || !InteractiveCuttingDialog::available())
+        return;
+    ConversionParameters *param = &first_selected_task()->param;
+    InteractiveCuttingDialog(this).exec(param);
 }
 
 void ConvertList::retrySelectedItems()

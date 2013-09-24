@@ -20,6 +20,15 @@
         <file>icons/preview_play.png</file>
         <file>icons/check_update.png</file>
         <file>icons/edit_preset.png</file>
+        <file>icons/media-playback-pause.png</file>
+        <file>icons/media-playback-start.png</file>
+        <file>icons/media-seek-backward.png</file>
+        <file>icons/media-seek-forward.png</file>
+        <file>icons/audio_volume.png</file>
+        <file>icons/media-skip-backward.png</file>
+        <file>icons/mark.png</file>
+        <file>icons/seek_to_begin.png</file>
+        <file>icons/seek_to_end.png</file>
     </qresource>
     <qresource prefix="/app">
         <file>icons/qt.png</file>
