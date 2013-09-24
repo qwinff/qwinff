@@ -29,20 +29,27 @@ GNU General Public License for more details.
 Acknowledgements
 ----------------
 
-Icons located in src/icons are taken from [GNOME Project](http://www.gnome.org/)(GPL/LGPL), [Tango Project](http://tango.freedesktop.org/)(Public Domain) and [GNOME Colors](http://code.google.com/p/gnome-colors/)(GPL).
+Icons located in src/icons are taken from
+[GNOME Project](http://www.gnome.org/)(GPL/LGPL),
+[Tango Project](http://tango.freedesktop.org/)(Public Domain), and
+[GNOME Colors](http://code.google.com/p/gnome-colors/)(GPL).
 
-This program uses Qt, you can find more information about Qt on [its website](http://qt-project.org/).
+This program uses Qt, you can find more information about Qt on
+[its website](http://qt-project.org/).
 
 This program relies on [FFmpeg](ffmpeg.org) to do conversion.
 License: LGPL/GPL
 
-Some audio-processing functionalities depends on [SoX](http://sox.sourceforge.net), the Swiss Army knife of sound processing programs.
+Some audio-processing functionalities depends on
+[SoX](http://sox.sourceforge.net),
+the Swiss Army knife of sound processing programs.
 License: LGPL/GPL
 
 Other free software projects that influenced the development of QWinFF:
 
   - [WinFF](http://winff.org) - Presets, Ideas
-  - [Sinthgunt](http://code.google.com/p/sinthgunt) - Presets, Parsing FFmpeg Output
+  - [Sinthgunt](http://code.google.com/p/sinthgunt) - Presets, Parsing FFmpeg
+    Output
   - [SMPlayer](http://smplayer.sourceforge.net) - Qt Skills, Project Structure
   - [Clementine](http://www.clementine-player.org) - Qt Skills
 
