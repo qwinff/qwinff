@@ -379,6 +379,10 @@
    </property>
   </action>
   <action name="actionCut">
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/actions/icons/cut.png</normaloff>:/actions/icons/cut.png</iconset>
+   </property>
    <property name="text">
     <string extracomment="Cut video file (select a time range to conert)">Cut</string>
    </property>

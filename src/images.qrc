@@ -29,6 +29,7 @@
         <file>icons/mark.png</file>
         <file>icons/seek_to_begin.png</file>
         <file>icons/seek_to_end.png</file>
+        <file>icons/cut.png</file>
     </qresource>
     <qresource prefix="/app">
         <file>icons/qt.png</file>

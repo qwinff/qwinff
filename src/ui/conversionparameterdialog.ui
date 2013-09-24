@@ -427,7 +427,11 @@
               <item>
                <widget class="QPushButton" name="btnInteractiveCutting">
                 <property name="text">
-                 <string>Interactive Cutting</string>
+                 <string comment="Cut video; select a range to convert">Cut</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="../images.qrc">
+                  <normaloff>:/actions/icons/cut.png</normaloff>:/actions/icons/cut.png</iconset>
                 </property>
                </widget>
               </item>
