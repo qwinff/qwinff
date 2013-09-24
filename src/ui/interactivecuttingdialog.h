@@ -88,6 +88,8 @@ private:
     MediaPlayerWidget *player;
     RangeSelector *m_rangeSel;
     TimeRangeEdit *m_rangeEdit;
+    void load_settings();
+    void save_settings();
 };
 
 #endif // INTERACTIVECUTTINGDIALOG_H
