@@ -16,6 +16,7 @@
  */
 
 #include <QMessageBox>
+#include <QSettings>
 #include <cmath>
 #include "interactivecuttingdialog.h"
 #include "ui_interactivecuttingdialog.h"
@@ -152,7 +153,10 @@ int InteractiveCuttingDialog::exec(ConversionParameters *param)
 
 int InteractiveCuttingDialog::exec()
 {
-    return QDialog::exec();
+    load_settings();
+    int status = QDialog::exec();
+    save_settings();
+    return status;
 }
 
 void InteractiveCuttingDialog::playerStateChanged()
@@ -191,4 +195,16 @@ void InteractiveCuttingDialog::seek_to_selection_end()
 void InteractiveCuttingDialog::play_selection()
 {
     player->playRange(m_rangeEdit->beginTime(), m_rangeEdit->endTime());
+}
+
+void InteractiveCuttingDialog::load_settings()
+{
+    QSettings settings;
+    restoreGeometry(settings.value("cutting_dialog/geometry").toByteArray());
+}
+
+void InteractiveCuttingDialog::save_settings()
+{
+    QSettings settings;
+    settings.setValue("cutting_dialog/geometry", saveGeometry());
 }

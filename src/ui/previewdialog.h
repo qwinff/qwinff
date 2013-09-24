@@ -51,6 +51,8 @@ private:
     MediaPlayerWidget *m_player;
     int m_beginTime;
     int m_endTime;
+    void load_settings();
+    void save_settings();
 };
 
 #endif // PREVIEWDIALOG_H
