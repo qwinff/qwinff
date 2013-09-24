@@ -23,6 +23,7 @@
 
 #define DEFAULT_VOLUME Constants::getInteger("MediaPlayer/DefaultVolume")
 #define SLIDER_STYLESHEET Constants::getString("MediaPlayer/SliderStyle")
+#define MINIMUM_HEIGHT 210
 
 #define MAX_VOLUME 100
 #define VOLUME_SETTING_KEY "mediaplayer/volume"
@@ -60,6 +61,8 @@ MediaPlayerWidget::MediaPlayerWidget(QWidget *parent) :
     connect(ui->btnBack, SIGNAL(clicked()), SLOT(seekBack()));
     connect(ui->btnForward, SIGNAL(clicked()), SLOT(seekForward()));
     connect(ui->btnReset, SIGNAL(clicked()), SLOT(resetPosition()));
+
+    setMinimumHeight(MINIMUM_HEIGHT);
 
     load_volume();
 }
