@@ -40,21 +40,10 @@
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <layout class="QGridLayout" name="gridLayout">
-        <item row="0" column="2">
-         <widget class="QPushButton" name="btnAsEnd">
-          <property name="text">
-           <string>Mark as End</string>
-          </property>
-          <property name="icon">
-           <iconset resource="../images.qrc">
-            <normaloff>:/actions/icons/mark.png</normaloff>:/actions/icons/mark.png</iconset>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
          <widget class="QPushButton" name="btnAsBegin">
           <property name="text">
            <string>Mark as Begin</string>
@@ -65,7 +54,7 @@
           </property>
          </widget>
         </item>
-        <item row="1" column="1">
+        <item>
          <widget class="QPushButton" name="btnToBegin">
           <property name="text">
            <string>Seek to Begin</string>
@@ -76,7 +65,39 @@
           </property>
          </widget>
         </item>
-        <item row="1" column="2">
+       </layout>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnPlaySelection">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Play Selection</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../images.qrc">
+          <normaloff>:/actions/icons/preview_play.png</normaloff>:/actions/icons/preview_play.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <item>
+         <widget class="QPushButton" name="btnAsEnd">
+          <property name="text">
+           <string>Mark as End</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../images.qrc">
+            <normaloff>:/actions/icons/mark.png</normaloff>:/actions/icons/mark.png</iconset>
+          </property>
+         </widget>
+        </item>
+        <item>
          <widget class="QPushButton" name="btnToEnd">
           <property name="text">
            <string>Seek to End</string>
@@ -87,20 +108,10 @@
           </property>
          </widget>
         </item>
-        <item row="0" column="0">
-         <widget class="QPushButton" name="btnPlaySelection">
-          <property name="text">
-           <string>Play Selection</string>
-          </property>
-          <property name="icon">
-           <iconset resource="../images.qrc">
-            <normaloff>:/actions/icons/preview_play.png</normaloff>:/actions/icons/preview_play.png</iconset>
-          </property>
-         </widget>
-        </item>
        </layout>
       </item>
      </layout>
+     <zorder>btnToBegin</zorder>
     </widget>
    </item>
    <item>
