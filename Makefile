@@ -39,6 +39,8 @@ ifneq ($(USE_LIBNOTIFY),0)
 	QMAKE_DEFS += CONFIG+=libnotify
 endif
 
+all: release
+
 release:
 	+cd $(SRC_DIR) && $(QMAKE) $(QMAKE_DEFS) qwinff.pro && $(DEFS) make
 	-cd src && $(LRELEASE) qwinff.pro
