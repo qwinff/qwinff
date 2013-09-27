@@ -3,7 +3,7 @@
 # You can change these parameters to customize the build.
 
 # Installation Prefix
-PREFIX=/usr
+PREFIX?=/usr
 # Version ID String (displayed after the version string in the about dialog)
 VIDSTR=
 
