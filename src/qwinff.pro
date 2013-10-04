@@ -151,6 +151,16 @@ win32 {
     SOURCES += services/powermanagement-w32.cpp
 }
 
+os2 {
+    # Application Icon
+    RC_FILE = appicon_os2.rc
+    # Shutdown not yet implemented on OS/2 Warp
+    # When it is done, uncomment following lines and do proper modifications
+    #LIBS +=
+    #SOURCES -= services/powermanagement-dummy.cpp
+    #SOURCES += services/powermanagement-os2.cpp
+}
+
 # This string is shown in the about box.
 DEFINES += VERSION_ID_STRING=$(VERSION_ID_STRING)
 
