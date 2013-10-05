@@ -62,3 +62,7 @@ Extensions::Extensions()
 Extensions::~Extensions() {
 }
 
+bool Extensions::contains(const QString &ext) const
+{
+    return _multimedia.contains(ext, Qt::CaseInsensitive);
+}
