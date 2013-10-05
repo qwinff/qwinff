@@ -745,8 +745,9 @@ void ConvertList::list_dropEvent(QDropEvent *event)
         // convert urls into local paths
         foreach (QUrl url, urlList) {
             QString file = url.toLocalFile(); // local file name
-            QString extension = QFileInfo(file).suffix(); // ex: "mp3"
-            if (exts.contains(extension))
+            QFileInfo fileinfo(file);
+            QString extension = fileinfo.suffix(); // ex: "mp3"
+            if (fileinfo.isDir() || exts.contains(extension))
                 files.append(file);
         }
 
