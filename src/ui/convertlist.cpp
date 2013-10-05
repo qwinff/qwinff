@@ -738,13 +738,9 @@ void ConvertList::list_dropEvent(QDropEvent *event)
     if (mimeData && mimeData->hasUrls()) {
         QList<QUrl> urlList = mimeData->urls();
         AddTaskWizard wizard(m_presets, parentWidget());
-
-        // Fill in the filenames and execute the wizard.
-        // The wizard will skip the file-selecting page.
-        wizard.exec(urlList);
-
-        const QList<ConversionParameters> &paramList = wizard.getConversionParameters();
-        addTasks(paramList);
+        if (wizard.exec(urlList) == QWizard::Accepted) {
+            addTasks(wizard.getConversionParameters());
+        }
     }
 }
 
