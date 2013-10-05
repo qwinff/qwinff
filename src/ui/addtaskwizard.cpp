@@ -128,12 +128,7 @@ int AddTaskWizard::exec(QList<QUrl> &files)
         recursively_add_file(url.toLocalFile(), incorrect_files);
     }
 
-    int prev_id = startId();
-    setStartId(PAGEID_PARAMS);
-    int ret = QWizard::exec();
-    setStartId(prev_id);
-
-    return ret;
+    return QWizard::exec();
 }
 
 bool AddTaskWizard::validateCurrentPage()
