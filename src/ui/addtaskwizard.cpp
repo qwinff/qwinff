@@ -488,8 +488,16 @@ void AddTaskWizard::recursively_add_file(
         QStringList &incorrect_files, // output
         int depth)
 {
+    // ignore extensions that are not known as media files when doing
+    // recursive search
+    bool ignore_unknown_extensions = (depth > 0);
+
     QFileInfo fileinfo(file);
     if (fileinfo.isFile()) { // file
+        if (ignore_unknown_extensions
+                && !m_exts->contains(fileinfo.suffix()))
+            return; // ignore unknown extensions
+
         QListWidgetItem *item = new QListWidgetItem(file);
         item->setToolTip(file);
         ui->lstFiles->addItem(item);
