@@ -121,8 +121,9 @@ int AddTaskWizard::exec(QList<QUrl> &files)
 {
     ui->lstFiles->clear();
 
+    QStringList incorrect_files;
     foreach (QUrl url, files) {
-        ui->lstFiles->addItem(url.toLocalFile());
+        recursively_add_file(url.toLocalFile(), incorrect_files);
     }
 
     int prev_id = startId();
@@ -178,20 +179,11 @@ void AddTaskWizard::slotAddFilesToList()
 
     if (!files.isEmpty()) {
         QStringList incorrect_files; // Record files that are not valid for conversion.
-
         foreach (QString file, files) {
-            if (QFileInfo(file).isFile()) {       // The file exists.
-                QListWidgetItem *item = new QListWidgetItem(file);
-                item->setToolTip(file);
-                ui->lstFiles->addItem(item);
-
-                m_prev_path = QFileInfo(file).path(); // save file path
-            } else if (QFileInfo(file).isDir()) { // The filename is a directory.
-                incorrect_files.append(file);
-            } else {                              // The file does not exist.
-                incorrect_files.append(file);
-            }
+            recursively_add_file(file, incorrect_files);
         }
+
+        m_prev_path = QFileInfo(files[0]).path(); // save previous open path
 
         if (!incorrect_files.isEmpty()) {
             QMessageBox msgBox;
@@ -488,4 +480,33 @@ bool AddTaskWizard::create_directory(const QString &dir, bool confirm)
             return false;
         }
     }
+}
+
+void AddTaskWizard::recursively_add_file(
+        const QString &file, // input
+        QStringList &incorrect_files, // output
+        int depth)
+{
+    QFileInfo fileinfo(file);
+    if (fileinfo.isFile()) { // file
+        QListWidgetItem *item = new QListWidgetItem(file);
+        item->setToolTip(file);
+        ui->lstFiles->addItem(item);
+    } else if (fileinfo.isDir()) { // directory
+        QDir dir(file);
+        QStringList children = list_directory(dir);
+        foreach (QString child, children) { // traverse directory
+            recursively_add_file(dir.absoluteFilePath(child),
+                                 incorrect_files,
+                                 depth+1);
+        }
+    } else {
+        incorrect_files.append(file);
+    }
+}
+
+QStringList AddTaskWizard::list_directory(const QDir &dir)
+{
+    QDir::Filters filters = QDir::Files | QDir::Dirs | QDir::NoDotAndDotDot;
+    return dir.entryList(filters);
 }

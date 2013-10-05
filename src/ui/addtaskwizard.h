@@ -23,6 +23,10 @@ namespace Ui {
     class AddTaskWizard;
 }
 
+QT_BEGIN_NAMESPACE
+class QDir;
+QT_END_NAMESPACE
+
 class Presets;
 class ConversionParameters;
 class ConversionParameterDialog;
@@ -78,6 +82,9 @@ private:
     int get_output_path_type();
     QString get_output_path(const QString& input_filename);
     bool create_directory(const QString& dir, bool confirm=true);
+    void recursively_add_file(const QString& file, QStringList& incorrect_files,
+                              int depth=0);
+    QStringList list_directory(const QDir &dir);
 };
 
 #endif // ADDTASKWIZARD_H
