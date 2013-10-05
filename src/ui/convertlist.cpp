@@ -751,7 +751,7 @@ void ConvertList::list_dropEvent(QDropEvent *event)
         }
 
         // show add task wizard
-        if (wizard.exec(files) == QWizard::Accepted) {
+        if (!files.isEmpty() && wizard.exec(files) == QWizard::Accepted) {
             addTasks(wizard.getConversionParameters());
         }
     }
