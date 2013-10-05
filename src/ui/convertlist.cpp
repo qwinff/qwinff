@@ -738,7 +738,15 @@ void ConvertList::list_dropEvent(QDropEvent *event)
     if (mimeData && mimeData->hasUrls()) {
         QList<QUrl> urlList = mimeData->urls();
         AddTaskWizard wizard(m_presets, parentWidget());
-        if (wizard.exec(urlList) == QWizard::Accepted) {
+        QStringList files;
+
+        // convert urls into local paths
+        foreach (QUrl url, urlList) {
+            files.append(url.toLocalFile());
+        }
+
+        // show add task wizard
+        if (wizard.exec(files) == QWizard::Accepted) {
             addTasks(wizard.getConversionParameters());
         }
     }

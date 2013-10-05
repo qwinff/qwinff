@@ -119,13 +119,13 @@ int AddTaskWizard::exec_openfile()
     return QWizard::exec();
 }
 
-int AddTaskWizard::exec(QList<QUrl> &files)
+int AddTaskWizard::exec(const QStringList &files)
 {
     ui->lstFiles->clear();
 
     QStringList incorrect_files;
-    foreach (QUrl url, files) {
-        recursively_add_file(url.toLocalFile(), incorrect_files);
+    foreach (QString file, files) {
+        recursively_add_file(file, incorrect_files);
     }
 
     return QWizard::exec();

@@ -17,7 +17,6 @@
 #define ADDTASKWIZARD_H
 
 #include <QWizard>
-#include <QUrl>
 
 namespace Ui {
     class AddTaskWizard;
@@ -54,7 +53,7 @@ public:
      *  The wizard will skip the file-selecting page.
      *  @param files files to convert
      */
-    int exec(QList<QUrl>& files);
+    int exec(const QStringList& files);
 
 protected:
     bool validateCurrentPage();
