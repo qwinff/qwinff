@@ -38,6 +38,7 @@
 #include "services/constants.h"
 #include "ui/conversionparameterdialog.h"
 #include "addtaskwizard.h"
+#include "services/extensions.h"
 
 #define TIMEOUT 3000
 #define MIN_DURATION 100 // Minimum duration(milliseconds) to show progress dialog.
@@ -739,10 +740,14 @@ void ConvertList::list_dropEvent(QDropEvent *event)
         QList<QUrl> urlList = mimeData->urls();
         AddTaskWizard wizard(m_presets, parentWidget());
         QStringList files;
+        Extensions exts;
 
         // convert urls into local paths
         foreach (QUrl url, urlList) {
-            files.append(url.toLocalFile());
+            QString file = url.toLocalFile(); // local file name
+            QString extension = QFileInfo(file).suffix(); // ex: "mp3"
+            if (exts.contains(extension))
+                files.append(file);
         }
 
         // show add task wizard
