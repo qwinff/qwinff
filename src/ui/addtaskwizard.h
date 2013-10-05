@@ -27,6 +27,7 @@ QT_BEGIN_NAMESPACE
 class QDir;
 QT_END_NAMESPACE
 
+class Extensions;
 class Presets;
 class ConversionParameters;
 class ConversionParameterDialog;
@@ -75,6 +76,7 @@ private:
     ConversionParameters *m_current_param;
     QVector<QVariant> m_ext_preset; //!< the mapping between extension and the last selected preset.
     int m_cbpreset_index; //!< saves the index of the preset combobox
+    Extensions *m_exts; //!< media file extensions
     bool load_extensions();
     void load_settings();
     void save_settings();

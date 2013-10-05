@@ -44,7 +44,8 @@ AddTaskWizard::AddTaskWizard(Presets *presets, QWidget *parent) :
     QWizard(parent),
     ui(new Ui::AddTaskWizard),
     m_presets(presets),
-    m_current_param(new ConversionParameters)
+    m_current_param(new ConversionParameters),
+    m_exts(new Extensions())
 {
     ui->setupUi(this);
 
@@ -97,6 +98,7 @@ AddTaskWizard::~AddTaskWizard()
     settings.setValue("addtaskwizard/geometry", saveGeometry());
     delete ui;
     delete m_current_param;
+    delete m_exts;
 }
 
 const QList<ConversionParameters>&
@@ -167,13 +169,12 @@ bool AddTaskWizard::validateCurrentPage()
 
 void AddTaskWizard::slotAddFilesToList()
 {
-    Extensions exts;
     /*: This text is the title of an openfile dialog. */
     QStringList files = QFileDialog::getOpenFileNames(this, tr("Select Files"),
               m_prev_path,  // default path
-              tr("Multimedia") + exts.multimedia().forFilter() + ";;" +
-              tr("Video") + exts.video().forFilter() + ";;" +
-              tr("Audio") + exts.audio().forFilter() + ";;" +
+              tr("Multimedia") + m_exts->multimedia().forFilter() + ";;" +
+              tr("Video") + m_exts->video().forFilter() + ";;" +
+              tr("Audio") + m_exts->audio().forFilter() + ";;" +
               tr("All files") + "(*)"
               );
 
