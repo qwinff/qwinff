@@ -41,6 +41,7 @@
 #include "ui/conversionparameterdialog.h"
 #include "ui/interactivecuttingdialog.h"
 #include "addtaskwizard.h"
+#include "services/extensions.h"
 
 #define TIMEOUT 3000
 #define MIN_DURATION 100 // Minimum duration(milliseconds) to show progress dialog.
@@ -751,13 +752,19 @@ void ConvertList::list_dropEvent(QDropEvent *event)
     if (mimeData && mimeData->hasUrls()) {
         QList<QUrl> urlList = mimeData->urls();
         AddTaskWizard wizard(m_presets, parentWidget());
+        QStringList files;
+        Extensions exts;
 
-        // Fill in the filenames and execute the wizard.
-        // The wizard will skip the file-selecting page.
-        wizard.exec(urlList);
+        // convert urls into local paths
+        foreach (QUrl url, urlList) {
+            QString file = url.toLocalFile(); // local file name
+            files.append(file);
+        }
 
-        const QList<ConversionParameters> &paramList = wizard.getConversionParameters();
-        addTasks(paramList);
+        // show add task wizard
+        if (!files.isEmpty() && wizard.exec(files) == QWizard::Accepted) {
+            addTasks(wizard.getConversionParameters());
+        }
     }
 }
 

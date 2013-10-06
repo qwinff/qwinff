@@ -28,12 +28,15 @@
 #include <QFileDialog>
 #include <QDebug>
 #include <QSettings>
+#include <QProgressDialog>
 #include <cassert>
 
 #define DEFAULT_OUTPUT_TO_SOURCE_DIR Constants::getBool("OutputToSourceFolder")
 
 #define PAGEID_SELECTFILES 0
 #define PAGEID_PARAMS 1
+
+#define BUSY_INDICATOR_MINIMUM_DURATION 100
 
 enum OutputPathType
 {
@@ -46,7 +49,8 @@ AddTaskWizard::AddTaskWizard(Presets *presets, QWidget *parent) :
     QWizard(parent),
     ui(new Ui::AddTaskWizard),
     m_presets(presets),
-    m_current_param(new ConversionParameters)
+    m_current_param(new ConversionParameters),
+    m_exts(new Extensions())
 {
     ui->setupUi(this);
 
@@ -99,6 +103,7 @@ AddTaskWizard::~AddTaskWizard()
     settings.setValue("addtaskwizard/geometry", saveGeometry());
     delete ui;
     delete m_current_param;
+    delete m_exts;
 }
 
 const QList<ConversionParameters>&
@@ -119,20 +124,11 @@ int AddTaskWizard::exec_openfile()
     return QWizard::exec();
 }
 
-int AddTaskWizard::exec(QList<QUrl> &files)
+int AddTaskWizard::exec(const QStringList &files)
 {
     ui->lstFiles->clear();
-
-    foreach (QUrl url, files) {
-        ui->lstFiles->addItem(url.toLocalFile());
-    }
-
-    int prev_id = startId();
-    setStartId(PAGEID_PARAMS);
-    int ret = QWizard::exec();
-    setStartId(prev_id);
-
-    return ret;
+    addFiles(files);
+    return QWizard::exec();
 }
 
 bool AddTaskWizard::validateCurrentPage()
@@ -168,43 +164,19 @@ bool AddTaskWizard::validateCurrentPage()
 
 void AddTaskWizard::slotAddFilesToList()
 {
-    Extensions exts;
     /*: This text is the title of an openfile dialog. */
     QStringList files = QFileDialog::getOpenFileNames(this, tr("Select Files"),
               m_prev_path,  // default path
-              tr("Multimedia") + exts.multimedia().forFilter() + ";;" +
-              tr("Video") + exts.video().forFilter() + ";;" +
-              tr("Audio") + exts.audio().forFilter() + ";;" +
+              tr("Multimedia") + m_exts->multimedia().forFilter() + ";;" +
+              tr("Video") + m_exts->video().forFilter() + ";;" +
+              tr("Audio") + m_exts->audio().forFilter() + ";;" +
               tr("All files") + "(*)"
               );
 
     if (!files.isEmpty()) {
-        QStringList incorrect_files; // Record files that are not valid for conversion.
-
-        foreach (QString file, files) {
-            if (QFileInfo(file).isFile()) {       // The file exists.
-                QListWidgetItem *item = new QListWidgetItem(file);
-                item->setToolTip(file);
-                ui->lstFiles->addItem(item);
-
-                m_prev_path = QFileInfo(file).path(); // save file path
-            } else if (QFileInfo(file).isDir()) { // The filename is a directory.
-                incorrect_files.append(file);
-            } else {                              // The file does not exist.
-                incorrect_files.append(file);
-            }
-        }
-
-        if (!incorrect_files.isEmpty()) {
-            QMessageBox msgBox;
-            msgBox.setText(tr("Some files could not be found."));
-            msgBox.setDetailedText(incorrect_files.join("\n"));
-            msgBox.setStandardButtons(QMessageBox::Ok);
-            msgBox.setIcon(QMessageBox::Warning);
-            msgBox.exec();
-        }
-
+        addFiles(files);
         // Save open file path.
+        m_prev_path = QFileInfo(files[0]).path(); // save previous open path
         QSettings settings;
         settings.setValue("addtaskwizard/openfilepath", m_prev_path);
 
@@ -314,6 +286,35 @@ void AddTaskWizard::slotFinished()
     }
 
     save_settings();
+}
+
+void AddTaskWizard::addFiles(const QStringList &files)
+{
+    // create a busy-indicator dialog
+    QProgressDialog dlgProgress(this);
+    dlgProgress.setRange(0, 0); // no min/max values, work as busy-indicator
+    dlgProgress.setWindowModality(Qt::WindowModal);
+    dlgProgress.setMinimumDuration(BUSY_INDICATOR_MINIMUM_DURATION);
+    dlgProgress.setAutoClose(false); // don't close when value reaches 0
+    dlgProgress.setLabelText(tr("Searching for files..."));
+    dlgProgress.show();
+
+    // add files to the list
+    QStringList incorrect_files; // Record files that are not valid for conversion.
+    foreach (QString file, files) {
+        recursively_add_file(file, incorrect_files, dlgProgress);
+    }
+    dlgProgress.hide();
+
+    // show error message if a file could not be found
+    if (!incorrect_files.isEmpty()) {
+        QMessageBox msgBox;
+        msgBox.setText(tr("Some files could not be found."));
+        msgBox.setDetailedText(incorrect_files.join("\n"));
+        msgBox.setStandardButtons(QMessageBox::Ok);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.exec();
+    }
 }
 
 bool AddTaskWizard::load_extensions()
@@ -490,4 +491,47 @@ bool AddTaskWizard::create_directory(const QString &dir, bool confirm)
             return false;
         }
     }
+}
+
+void AddTaskWizard::recursively_add_file(
+        const QString &file, // input
+        QStringList &incorrect_files, // output
+        QProgressDialog &dlgProgress,
+        int depth)
+{
+    // ignore extensions that are not known as media files when doing
+    // recursive search
+    bool ignore_unknown_extensions = (depth > 0);
+
+    QFileInfo fileinfo(file);
+    if (fileinfo.isFile()) { // file
+        if (ignore_unknown_extensions
+                && !m_exts->contains(fileinfo.suffix()))
+            return; // ignore unknown extensions
+
+        QListWidgetItem *item = new QListWidgetItem(file);
+        item->setToolTip(file);
+        ui->lstFiles->addItem(item);
+    } else if (fileinfo.isDir()) { // directory
+        QDir dir(file);
+        QStringList children = list_directory(dir);
+        foreach (QString child, children) { // traverse directory
+            // check for cancel events prior to recursion
+            QApplication::processEvents();
+            if (dlgProgress.wasCanceled())
+                return;
+            recursively_add_file(dir.absoluteFilePath(child),
+                                 incorrect_files,
+                                 dlgProgress,
+                                 depth+1);
+        }
+    } else {
+        incorrect_files.append(file);
+    }
+}
+
+QStringList AddTaskWizard::list_directory(const QDir &dir)
+{
+    QDir::Filters filters = QDir::Files | QDir::Dirs | QDir::NoDotAndDotDot;
+    return dir.entryList(filters);
 }

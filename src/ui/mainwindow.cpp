@@ -45,6 +45,7 @@
 #include <QSignalMapper>
 #include <QPushButton>
 #include <QDebug>
+#include <QUrl>
 
 MainWindow::MainWindow(QWidget *parent, const QStringList& fileList) :
     QMainWindow(parent),
@@ -418,15 +419,9 @@ void MainWindow::add_files()
 
 void MainWindow::add_files(const QStringList &fileList)
 {
-    QList<QUrl> urlList;
-
-    foreach (QString file, fileList) {
-        urlList.push_back(QUrl::fromLocalFile(file));
-    }
-
     AddTaskWizard wizard(m_presets, this);
 
-    if (wizard.exec(urlList) == QDialog::Accepted) {
+    if (wizard.exec(fileList) == QDialog::Accepted) {
         // Add all input files to the list.
         const QList<ConversionParameters> &paramList = wizard.getConversionParameters();
         m_list->addTasks(paramList);

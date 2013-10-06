@@ -41,6 +41,8 @@ public:
 	ExtensionList audio() { return _audio; };
 	ExtensionList multimedia() { return _multimedia; };
 
+    bool contains(const QString& ext) const;
+
 protected:
         ExtensionList _video, _audio;
 	ExtensionList _multimedia; //!< video and audio

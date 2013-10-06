@@ -19,12 +19,17 @@
 #define ADDTASKWIZARD_H
 
 #include <QWizard>
-#include <QUrl>
 
 namespace Ui {
     class AddTaskWizard;
 }
 
+QT_BEGIN_NAMESPACE
+class QDir;
+class QProgressDialog;
+QT_END_NAMESPACE
+
+class Extensions;
 class Presets;
 class ConversionParameters;
 class ConversionParameterDialog;
@@ -51,7 +56,7 @@ public:
      *  The wizard will skip the file-selecting page.
      *  @param files files to convert
      */
-    int exec(QList<QUrl>& files);
+    int exec(const QStringList& files);
 
 protected:
     bool validateCurrentPage();
@@ -64,6 +69,7 @@ private slots:
     void slotExtensionSelected(int);
     void slotPresetSelected(int);
     void slotFinished();
+    void addFiles(const QStringList& files);
 
 private:
     Ui::AddTaskWizard *ui;
@@ -73,6 +79,7 @@ private:
     ConversionParameters *m_current_param;
     QVector<QVariant> m_ext_preset; //!< the mapping between extension and the last selected preset.
     int m_cbpreset_index; //!< saves the index of the preset combobox
+    Extensions *m_exts; //!< media file extensions
     bool load_extensions();
     void load_settings();
     void save_settings();
@@ -80,6 +87,9 @@ private:
     int get_output_path_type();
     QString get_output_path(const QString& input_filename);
     bool create_directory(const QString& dir, bool confirm=true);
+    void recursively_add_file(const QString& file, QStringList& incorrect_files, QProgressDialog& dlgProgress,
+                              int depth=0);
+    QStringList list_directory(const QDir &dir);
 };
 
 #endif // ADDTASKWIZARD_H

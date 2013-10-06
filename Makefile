@@ -3,7 +3,7 @@
 # You can change these parameters to customize the build.
 
 # Installation Prefix
-PREFIX=/usr
+PREFIX?=/usr
 # Version ID String (displayed after the version string in the about dialog)
 VIDSTR=
 
@@ -38,6 +38,8 @@ USE_LIBNOTIFY=0
 ifneq ($(USE_LIBNOTIFY),0)
 	QMAKE_DEFS += CONFIG+=libnotify
 endif
+
+all: release
 
 release:
 	+cd $(SRC_DIR) && $(QMAKE) $(QMAKE_DEFS) qwinff.pro && $(DEFS) make

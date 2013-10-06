@@ -3,6 +3,10 @@ Version 0.2.0
 
   - Added a video-cutting dialog with embedded mplayer.
   - Use embedded mplayer to preview video-cutting.
+  - Recursively add files when a folder is dragged in.
+  - Fixed default presets for AVI
+  - Added application icon for OS/2 Warp.
+  - Switched to Tango icon theme.
 
 Version 0.1.9
 -------------

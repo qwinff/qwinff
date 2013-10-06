@@ -511,12 +511,12 @@
   </M4a>
 
   <!-- AVI -->
-  <AVIAuto>
-    <label>AVI Auto</label>
-    <params></params>
+  <divx>
+    <label>MS Compatible AVI</label>
+    <params>-acodec libmp3lame -vcodec msmpeg4 -ab 192kb -b 1000kb -s 640x480 -ar 44100</params>
     <extension>avi</extension>
     <category>AVI</category>
-  </AVIAuto>
+  </divx>
   <XviDAVIFS>
     <label>XviD FullScreen</label>
     <params>-f avi -r 29.97 -vcodec libxvid -vtag XVID -s 640x480 -aspect 4:3 -maxrate 1800kb -b 1500kb -qmin 3 -qmax 5 -bufsize 4096 -mbd 2 -bf 2 -flags +4mv -trellis -aic -cmp 2 -subcmp 2 -g 300 -acodec libmp3lame -ar 48000 -ab 128kb -ac 2</params>
@@ -547,12 +547,6 @@
     <extension>avi</extension>
     <category>Creative Zen</category>
   </XviDAVIZENWS>
-  <divx>
-    <label>MS Compatible AVI</label>
-    <params>-acodec libmp3lame -vcodec msmpeg4 -ab 192kb -b 1000kb -s 640x480 -ar 44100</params>
-    <extension>avi</extension>
-    <category>AVI</category>
-  </divx>
   <N810FS>
     <label>Nokia N810 mplayer 4:3</label>
     <params>-r 29.97 -vcodec libxvid -vtag XVID -s 400x240 -aspect 4:3  -maxrate 1200k -b 1200k -qmin 3 -qmax 5 -bufsize 4096 -mbd 2 -bf 2 -cmp 2 -subcmp 2 -g 300 -acodec libmp3lame -ar 44100 -ab 160k -ac 2 -async 1</params>
