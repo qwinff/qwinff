@@ -1,3 +1,9 @@
+Version 0.2.0
+-------------
+
+  - Added a video-cutting dialog with embedded mplayer.
+  - Use embedded mplayer to preview video-cutting.
+
 Version 0.1.9
 -------------
 (2013-09-10)
