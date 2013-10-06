@@ -1,3 +1,11 @@
+Version 0.2.0
+-------------
+
+  - Recursively add files when a folder is dragged in.
+  - Fixed default presets for AVI
+  - Added application icon for OS/2 Warp.
+  - Switched to Tango icon theme.
+
 Version 0.1.9
 -------------
 (2013-09-10)
