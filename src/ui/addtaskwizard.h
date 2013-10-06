@@ -66,6 +66,7 @@ private slots:
     void slotExtensionSelected(int);
     void slotPresetSelected(int);
     void slotFinished();
+    void addFiles(const QStringList& files);
 
 private:
     Ui::AddTaskWizard *ui;

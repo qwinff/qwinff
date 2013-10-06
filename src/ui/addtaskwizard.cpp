@@ -122,12 +122,7 @@ int AddTaskWizard::exec_openfile()
 int AddTaskWizard::exec(const QStringList &files)
 {
     ui->lstFiles->clear();
-
-    QStringList incorrect_files;
-    foreach (QString file, files) {
-        recursively_add_file(file, incorrect_files);
-    }
-
+    addFiles(files);
     return QWizard::exec();
 }
 
@@ -174,23 +169,9 @@ void AddTaskWizard::slotAddFilesToList()
               );
 
     if (!files.isEmpty()) {
-        QStringList incorrect_files; // Record files that are not valid for conversion.
-        foreach (QString file, files) {
-            recursively_add_file(file, incorrect_files);
-        }
-
-        m_prev_path = QFileInfo(files[0]).path(); // save previous open path
-
-        if (!incorrect_files.isEmpty()) {
-            QMessageBox msgBox;
-            msgBox.setText(tr("Some files could not be found."));
-            msgBox.setDetailedText(incorrect_files.join("\n"));
-            msgBox.setStandardButtons(QMessageBox::Ok);
-            msgBox.setIcon(QMessageBox::Warning);
-            msgBox.exec();
-        }
-
+        addFiles(files);
         // Save open file path.
+        m_prev_path = QFileInfo(files[0]).path(); // save previous open path
         QSettings settings;
         settings.setValue("addtaskwizard/openfilepath", m_prev_path);
 
@@ -300,6 +281,25 @@ void AddTaskWizard::slotFinished()
     }
 
     save_settings();
+}
+
+void AddTaskWizard::addFiles(const QStringList &files)
+{
+    // add files to the list
+    QStringList incorrect_files; // Record files that are not valid for conversion.
+    foreach (QString file, files) {
+        recursively_add_file(file, incorrect_files);
+    }
+
+    // show error message if a file could not be found
+    if (!incorrect_files.isEmpty()) {
+        QMessageBox msgBox;
+        msgBox.setText(tr("Some files could not be found."));
+        msgBox.setDetailedText(incorrect_files.join("\n"));
+        msgBox.setStandardButtons(QMessageBox::Ok);
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.exec();
+    }
 }
 
 bool AddTaskWizard::load_extensions()
