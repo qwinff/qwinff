@@ -24,6 +24,7 @@ namespace Ui {
 
 QT_BEGIN_NAMESPACE
 class QDir;
+class QProgressDialog;
 QT_END_NAMESPACE
 
 class Extensions;
@@ -84,7 +85,7 @@ private:
     int get_output_path_type();
     QString get_output_path(const QString& input_filename);
     bool create_directory(const QString& dir, bool confirm=true);
-    void recursively_add_file(const QString& file, QStringList& incorrect_files,
+    void recursively_add_file(const QString& file, QStringList& incorrect_files, QProgressDialog& dlgProgress,
                               int depth=0);
     QStringList list_directory(const QDir &dir);
 };

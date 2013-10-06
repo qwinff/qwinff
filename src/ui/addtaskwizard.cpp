@@ -26,12 +26,15 @@
 #include <QFileDialog>
 #include <QDebug>
 #include <QSettings>
+#include <QProgressDialog>
 #include <cassert>
 
 #define DEFAULT_OUTPUT_TO_SOURCE_DIR Constants::getBool("OutputToSourceFolder")
 
 #define PAGEID_SELECTFILES 0
 #define PAGEID_PARAMS 1
+
+#define BUSY_INDICATOR_MINIMUM_DURATION 100
 
 enum OutputPathType
 {
@@ -285,11 +288,21 @@ void AddTaskWizard::slotFinished()
 
 void AddTaskWizard::addFiles(const QStringList &files)
 {
+    // create a busy-indicator dialog
+    QProgressDialog dlgProgress(this);
+    dlgProgress.setRange(0, 0); // no min/max values, work as busy-indicator
+    dlgProgress.setWindowModality(Qt::WindowModal);
+    dlgProgress.setMinimumDuration(BUSY_INDICATOR_MINIMUM_DURATION);
+    dlgProgress.setAutoClose(false); // don't close when value reaches 0
+    dlgProgress.setLabelText(tr("Searching for files..."));
+    dlgProgress.show();
+
     // add files to the list
     QStringList incorrect_files; // Record files that are not valid for conversion.
     foreach (QString file, files) {
-        recursively_add_file(file, incorrect_files);
+        recursively_add_file(file, incorrect_files, dlgProgress);
     }
+    dlgProgress.hide();
 
     // show error message if a file could not be found
     if (!incorrect_files.isEmpty()) {
@@ -481,6 +494,7 @@ bool AddTaskWizard::create_directory(const QString &dir, bool confirm)
 void AddTaskWizard::recursively_add_file(
         const QString &file, // input
         QStringList &incorrect_files, // output
+        QProgressDialog &dlgProgress,
         int depth)
 {
     // ignore extensions that are not known as media files when doing
@@ -500,8 +514,13 @@ void AddTaskWizard::recursively_add_file(
         QDir dir(file);
         QStringList children = list_directory(dir);
         foreach (QString child, children) { // traverse directory
+            // check for cancel events prior to recursion
+            QApplication::processEvents();
+            if (dlgProgress.wasCanceled())
+                return;
             recursively_add_file(dir.absoluteFilePath(child),
                                  incorrect_files,
+                                 dlgProgress,
                                  depth+1);
         }
     } else {
