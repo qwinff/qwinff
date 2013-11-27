@@ -32,6 +32,7 @@
 #include "services/updatechecker.h"
 #include "services/constants.h"
 #include "services/settingtimer.h"
+#include "interactivecuttingdialog.h"
 #include <QHBoxLayout>
 #include <QToolButton>
 #include <QMessageBox>
@@ -470,6 +471,7 @@ void MainWindow::setup_menus()
     connect(ui->actionShowErrorMessage, SIGNAL(triggered()),
             m_list, SLOT(showErrorMessage()));
     connect(ui->actionCut, SIGNAL(triggered()), SLOT(slotCut()));
+    ui->actionCut->setVisible(InteractiveCuttingDialog::available());
 
     // Convert
     connect(ui->menuConvert, SIGNAL(aboutToShow()),
