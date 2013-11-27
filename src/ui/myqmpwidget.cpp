@@ -16,11 +16,13 @@
  */
 
 #include "myqmpwidget.h"
+#include "converter/exepath.h"
 
 MyQMPwidget::MyQMPwidget(QWidget *parent) :
     QMPwidget(parent)
 {
-
+    QMPwidget::setMPlayerPath(ExePath::getPath("mplayer"));
+    // disable mouse doubleclick event by not passing it to QMPwidget
 }
 
 MyQMPwidget::~MyQMPwidget()
