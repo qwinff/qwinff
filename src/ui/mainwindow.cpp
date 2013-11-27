@@ -132,7 +132,8 @@ void MainWindow::task_finished(int /*exitcode*/)
 
 void MainWindow::all_tasks_finished()
 {
-    Notification::send("QWinFF", tr("All tasks have finished."), NotifyLevel::INFO);
+    Notification::send(this, "QWinFF",
+                       tr("All tasks have finished."), NotifyLevel::INFO);
     activateWindow(); // notify the user (make taskbar entry blink)
     refresh_action_states();
 

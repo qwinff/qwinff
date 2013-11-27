@@ -27,14 +27,14 @@ NotificationService_qt::~NotificationService_qt()
 
 }
 
-void NotificationService_qt::send(QString title, QString message)
+void NotificationService_qt::send(QWidget *parent, QString title, QString message)
 {
-    send(title, message, NotifyLevel::INFO);
+    send(parent, title, message, NotifyLevel::INFO);
 }
 
-void NotificationService_qt::send(QString title, QString message, int level)
+void NotificationService_qt::send(QWidget *parent, QString title, QString message, int level)
 {
-    QMessageBox *msgbox = new QMessageBox();
+    QMessageBox *msgbox = new QMessageBox(parent);
     msgbox->setAttribute(Qt::WA_DeleteOnClose); // delete itself on close
     msgbox->setWindowFlags(msgbox->windowFlags()
                            | Qt::WindowStaysOnTopHint); // always on top
