@@ -98,11 +98,15 @@ static bool load_constants(QApplication& app)
 // register an external tool for use
 static void register_tool(const char *name)
 {
+    QString exefile = name; // default: use the program in PATH
 #ifdef TOOLS_IN_DATA_PATH // Search external tools in <datapath>/tools
-    ExePath::setPath(name, Paths::dataFileName("tools/%1").arg(name));
-#else // Search external tools in environment variables
-    ExePath::setPath(name, name);
-#endif
+#ifdef Q_OS_WIN32 // executable files must end with .exe on MS Windows
+    exefile = Paths::dataFileName("tools/%1.exe").arg(name);
+#else
+    exefile = Paths::dataFileName("tools/%1").arg(name);
+#endif // Q_OS_WIN32
+#endif // TOOLS_IN_DATA_PATH
+    ExePath::setPath(name, exefile);
 }
 
 int main(int argc, char *argv[])
