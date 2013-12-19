@@ -368,7 +368,8 @@ bool MainWindow::check_execute_conditions()
     return true;
 }
 
-// Be polite. Ask the user before using the internet to check for updates.
+// We should respect the user and ask before connecting to the Internet to
+// check for updates.
 // If the user says yes, remember the decision and don't ask next time.
 // If the user says no, disable checking for updates on startup.
 bool MainWindow::ask_for_update_permission()
