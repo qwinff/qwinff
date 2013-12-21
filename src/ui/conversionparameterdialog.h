@@ -1,17 +1,19 @@
-/*  This file is part of QWinFF, a media converter GUI.
-
-    QWinFF is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 2 or 3 of the License.
-
-    QWinFF is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with QWinFF.  If not, see <http://www.gnu.org/licenses/>.
-*/
+/*  QWinFF - a qt4 gui frontend for ffmpeg
+ *  Copyright (C) 2011-2013 Timothy Lin <lzh9102@gmail.com>
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
 #ifndef CONVERSIONPARAMETERDIALOG_H
 #define CONVERSIONPARAMETERDIALOG_H
@@ -24,6 +26,7 @@ namespace Ui {
 }
 
 class RangeSelector;
+class TimeRangeEdit;
 class AbstractPreviewer;
 
 class ConversionParameterDialog : public QDialog
@@ -45,12 +48,8 @@ public:
     bool exec(ConversionParameters& param, bool single_file=false);
 
 private slots:
-    void update_endtime();
-    void sync_time_view_to_text();
-    void sync_time_text_to_view();
-    void from_begin_toggled(bool);
-    void to_end_toggled(bool);
     void preview_time_selection();
+    void interactive_cutting();
     AbstractPreviewer *create_previewer();
 
 private:
@@ -59,7 +58,8 @@ private:
     void write_fields(ConversionParameters& param);
     bool m_enableAudioProcessing;
     bool m_singleFile;
-    RangeSelector *m_selTime;
+    TimeRangeEdit *m_timeEdit;
+    RangeSelector *m_rangeSel;
     ConversionParameters *m_param;
     AbstractPreviewer *m_previewer;
 };
