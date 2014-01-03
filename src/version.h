@@ -22,6 +22,7 @@
 #define VERSION_STRING "0.1.9"
 
 // machine-readable version id (VersionId)
+// the update-checker compares versions using this integer
 #define VERSION_INTEGER 19
 
 #endif // VERSION_H
