@@ -113,6 +113,11 @@
         <extracomment>Arabic Language</extracomment>
         <translation>Арабский</translation>
     </message>
+    <message>
+        <source>Hungarian</source>
+        <extracomment>Hungarian Langauge</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutFFmpegDialog</name>
@@ -237,13 +242,17 @@
         <translation>Все файлы</translation>
     </message>
     <message>
-        <source>Some files could not be found.</source>
-        <translation>Некоторые файлы не найдены.</translation>
-    </message>
-    <message>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
         <translation>Выбрать папку</translation>
+    </message>
+    <message>
+        <source>Searching for files...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Some files could not be found.</source>
+        <translation>Некоторые файлы не найдены.</translation>
     </message>
     <message>
         <source>Folder does not exist. Create a new folder?</source>
@@ -281,12 +290,20 @@
         <translation>Гц</translation>
     </message>
     <message>
-        <source>Channels</source>
-        <translation>Каналы</translation>
+        <source>Bitrate</source>
+        <translation>Битрейт</translation>
     </message>
     <message>
         <source>(auto)</source>
         <translation>(авто)</translation>
+    </message>
+    <message>
+        <source>kb/s</source>
+        <translation>Кб/с</translation>
+    </message>
+    <message>
+        <source>Channels</source>
+        <translation>Каналы</translation>
     </message>
     <message>
         <source>Volume</source>
@@ -295,14 +312,6 @@
     <message>
         <source>%</source>
         <translation>%</translation>
-    </message>
-    <message>
-        <source>Bitrate</source>
-        <translation>Битрейт</translation>
-    </message>
-    <message>
-        <source>kb/s</source>
-        <translation>Кб/с</translation>
     </message>
     <message>
         <source>Video</source>
@@ -315,6 +324,14 @@
     <message>
         <source>Video Options</source>
         <translation>Настройки видео</translation>
+    </message>
+    <message>
+        <source>Same Quantizer as Source</source>
+        <translation>Такой же квантователь, как у исходного</translation>
+    </message>
+    <message>
+        <source>Deinterlace</source>
+        <translation>Деинтерлейсинг</translation>
     </message>
     <message>
         <source>Width</source>
@@ -333,14 +350,6 @@
         <translation>Кроп</translation>
     </message>
     <message>
-        <source>Same Quantizer as Source</source>
-        <translation>Такой же квантователь, как у исходного</translation>
-    </message>
-    <message>
-        <source>Deinterlace</source>
-        <translation>Деинтерлейсинг</translation>
-    </message>
-    <message>
         <source>Time</source>
         <extracomment>time-related options (speed, length)</extracomment>
         <translation>Время</translation>
@@ -352,11 +361,11 @@
     </message>
     <message>
         <source>From Begin</source>
-        <translation>Начало</translation>
+        <translation type="obsolete">Начало</translation>
     </message>
     <message>
         <source>To End</source>
-        <translation>Конец</translation>
+        <translation type="obsolete">Конец</translation>
     </message>
     <message>
         <source>&amp;Preview</source>
@@ -382,6 +391,11 @@
     <message>
         <source>Additional FFmpeg Options</source>
         <translation>Дополнительные настройки FFmpeg</translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <comment>Cut video; select a range to convert</comment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -566,6 +580,37 @@
     <message>
         <source>Media Converter</source>
         <translation>Медиа-конвертер</translation>
+    </message>
+</context>
+<context>
+    <name>InteractiveCuttingDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mark as Begin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Seek to Begin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mark as End</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Seek to End</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -817,6 +862,11 @@
         <extracomment>Converting the %1-th file in %2 files. %2 is the number of files.</extracomment>
         <translation>Преобразование %1/%2</translation>
     </message>
+    <message>
+        <source>Cut</source>
+        <extracomment>Cut video file (select a time range to conert)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MediaConverter</name>
@@ -824,6 +874,13 @@
         <source>%1 not found.</source>
         <extracomment>%1 is a computer program</extracomment>
         <translation>%1 не найден.</translation>
+    </message>
+</context>
+<context>
+    <name>MediaPlayerWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -936,6 +993,47 @@
     <message>
         <source>Hibernating in &lt;b&gt;%1&lt;/b&gt; seconds</source>
         <translation>Переход в состояние гибернации через &lt;b&gt;%1&lt;/b&gt; c.</translation>
+    </message>
+</context>
+<context>
+    <name>PreviewDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play Selected Range</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Begin</source>
+        <extracomment>noun, the beginning of the video</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End</source>
+        <extracomment>noun, the end of the video</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play %1~%2</source>
+        <extracomment>play the video from time %1 to time %2. %1 and %2 are time in hh:mm:ss format.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TimeRangeEdit</name>
+    <message>
+        <source>From Begin</source>
+        <translation type="unfinished">Начало</translation>
+    </message>
+    <message>
+        <source>To End</source>
+        <translation type="unfinished">Конец</translation>
     </message>
 </context>
 <context>

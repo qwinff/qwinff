@@ -113,6 +113,11 @@
         <extracomment>Arabic Language</extracomment>
         <translation>阿拉伯文</translation>
     </message>
+    <message>
+        <source>Hungarian</source>
+        <extracomment>Hungarian Langauge</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutFFmpegDialog</name>
@@ -237,13 +242,17 @@
         <translation>所有文件</translation>
     </message>
     <message>
-        <source>Some files could not be found.</source>
-        <translation>无法找到其中的一些文件</translation>
-    </message>
-    <message>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
         <translation>选择文件夹</translation>
+    </message>
+    <message>
+        <source>Searching for files...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Some files could not be found.</source>
+        <translation>无法找到其中的一些文件</translation>
     </message>
     <message>
         <source>Folder does not exist. Create a new folder?</source>
@@ -281,12 +290,20 @@
         <translation>Hz</translation>
     </message>
     <message>
-        <source>Channels</source>
-        <translation>声道</translation>
+        <source>Bitrate</source>
+        <translation>比特率</translation>
     </message>
     <message>
         <source>(auto)</source>
         <translation>自动</translation>
+    </message>
+    <message>
+        <source>kb/s</source>
+        <translation>kb/秒</translation>
+    </message>
+    <message>
+        <source>Channels</source>
+        <translation>声道</translation>
     </message>
     <message>
         <source>Volume</source>
@@ -295,14 +312,6 @@
     <message>
         <source>%</source>
         <translation>%</translation>
-    </message>
-    <message>
-        <source>Bitrate</source>
-        <translation>比特率</translation>
-    </message>
-    <message>
-        <source>kb/s</source>
-        <translation>kb/秒</translation>
     </message>
     <message>
         <source>Video</source>
@@ -315,6 +324,14 @@
     <message>
         <source>Video Options</source>
         <translation>影像选项</translation>
+    </message>
+    <message>
+        <source>Same Quantizer as Source</source>
+        <translation>使用与来源相同的量化单位（Quantizer）</translation>
+    </message>
+    <message>
+        <source>Deinterlace</source>
+        <translation>去交错</translation>
     </message>
     <message>
         <source>Width</source>
@@ -333,14 +350,6 @@
         <translation>裁切</translation>
     </message>
     <message>
-        <source>Same Quantizer as Source</source>
-        <translation>使用与来源相同的量化单位（Quantizer）</translation>
-    </message>
-    <message>
-        <source>Deinterlace</source>
-        <translation>去交错</translation>
-    </message>
-    <message>
         <source>Time</source>
         <extracomment>time-related options (speed, length)</extracomment>
         <translation>时间</translation>
@@ -352,11 +361,11 @@
     </message>
     <message>
         <source>From Begin</source>
-        <translation>从文件开头开始</translation>
+        <translation type="obsolete">从文件开头开始</translation>
     </message>
     <message>
         <source>To End</source>
-        <translation>到文件结尾</translation>
+        <translation type="obsolete">到文件结尾</translation>
     </message>
     <message>
         <source>&amp;Preview</source>
@@ -382,6 +391,11 @@
     <message>
         <source>Additional FFmpeg Options</source>
         <translation>其他FFmpeg参数</translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <comment>Cut video; select a range to convert</comment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -565,6 +579,37 @@
     <message>
         <source>Media Converter</source>
         <translation>影音转换器</translation>
+    </message>
+</context>
+<context>
+    <name>InteractiveCuttingDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mark as Begin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Seek to Begin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mark as End</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Seek to End</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -816,6 +861,11 @@
         <extracomment>Converting the %1-th file in %2 files. %2 is the number of files.</extracomment>
         <translation>正在转换 %1/%2</translation>
     </message>
+    <message>
+        <source>Cut</source>
+        <extracomment>Cut video file (select a time range to conert)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MediaConverter</name>
@@ -823,6 +873,13 @@
         <source>%1 not found.</source>
         <extracomment>%1 is a computer program</extracomment>
         <translation>找不到 %1.</translation>
+    </message>
+</context>
+<context>
+    <name>MediaPlayerWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -935,6 +992,47 @@
     <message>
         <source>Hibernating in &lt;b&gt;%1&lt;/b&gt; seconds</source>
         <translation>电脑将于 &lt;b&gt;%1&lt;/b&gt; 秒后休眠</translation>
+    </message>
+</context>
+<context>
+    <name>PreviewDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play Selected Range</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Begin</source>
+        <extracomment>noun, the beginning of the video</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End</source>
+        <extracomment>noun, the end of the video</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play %1~%2</source>
+        <extracomment>play the video from time %1 to time %2. %1 and %2 are time in hh:mm:ss format.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TimeRangeEdit</name>
+    <message>
+        <source>From Begin</source>
+        <translation type="unfinished">从文件开头开始</translation>
+    </message>
+    <message>
+        <source>To End</source>
+        <translation type="unfinished">到文件结尾</translation>
     </message>
 </context>
 <context>

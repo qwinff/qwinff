@@ -13,7 +13,7 @@
     </message>
     <message>
         <source>Translators</source>
-        <translation type="unfinished"></translation>
+        <translation>Fordítók</translation>
     </message>
     <message>
         <source>Version: %1</source>
@@ -49,7 +49,7 @@
     </message>
     <message>
         <source>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License version 2 or 3.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ez a program szabad szoftver: terjeszthető és/vagy módosítható a GNU Általános Nyilvános Licenc (GNU GPL) 2 vagy 3 verziója szerint.</translation>
     </message>
     <message>
         <source>QWinFF Homepage: %1</source>
@@ -86,22 +86,22 @@
     <message>
         <source>Russian</source>
         <extracomment>Russian Language</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Orosz</translation>
     </message>
     <message>
         <source>Spanish (Spain)</source>
         <extracomment>Spanish Language (Spain)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Spanyol</translation>
     </message>
     <message>
         <source>Spanish (Guatemala)</source>
         <extracomment>Spanish Language (Guatemala)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Spanyol (Guatemala)</translation>
     </message>
     <message>
         <source>Romanian</source>
         <extracomment>Romanian Language</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Román</translation>
     </message>
     <message>
         <source>Turkish</source>
@@ -116,7 +116,7 @@
     <message>
         <source>Hungarian</source>
         <extracomment>Hungarian Langauge</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Magyar</translation>
     </message>
 </context>
 <context>
@@ -176,7 +176,7 @@
     </message>
     <message>
         <source>Auto adjust output bitrate to reduce output file size.</source>
-        <translation>A kimeneti bitráta automatikus beállítása a fájlméret csökkentése értdekében</translation>
+        <translation>A kimeneti bitráta automatikus beállítása a fájlméret csökkentése érdekében.</translation>
     </message>
     <message>
         <source>Auto Adjust Audio Bitrate</source>
@@ -184,7 +184,7 @@
     </message>
     <message>
         <source>Preset</source>
-        <translation type="unfinished"></translation>
+        <translation>Előbeállítás</translation>
     </message>
     <message>
         <source>Convert to</source>
@@ -242,13 +242,17 @@
         <translation>Minden fájl</translation>
     </message>
     <message>
-        <source>Some files could not be found.</source>
-        <translation>Néhány fájl nem található</translation>
-    </message>
-    <message>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
         <translation>Válasszon Könyvtárat</translation>
+    </message>
+    <message>
+        <source>Searching for files...</source>
+        <translation>Fájlok keresése...</translation>
+    </message>
+    <message>
+        <source>Some files could not be found.</source>
+        <translation>Néhány fájl nem található</translation>
     </message>
     <message>
         <source>Folder does not exist. Create a new folder?</source>
@@ -257,10 +261,6 @@
     <message>
         <source>Failed to create folder. Please select another output folder.</source>
         <translation>Mappa létrehozása sikertelen. Válasszon másik kimeneti mappát.</translation>
-    </message>
-    <message>
-        <source>Searching for files...</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -290,12 +290,20 @@
         <translation>Hz</translation>
     </message>
     <message>
-        <source>Channels</source>
-        <translation>Csatornák</translation>
+        <source>Bitrate</source>
+        <translation>Bitráta</translation>
     </message>
     <message>
         <source>(auto)</source>
         <translation>(auto)</translation>
+    </message>
+    <message>
+        <source>kb/s</source>
+        <translation>kb/s</translation>
+    </message>
+    <message>
+        <source>Channels</source>
+        <translation>Csatornák</translation>
     </message>
     <message>
         <source>Volume</source>
@@ -304,14 +312,6 @@
     <message>
         <source>%</source>
         <translation>%</translation>
-    </message>
-    <message>
-        <source>Bitrate</source>
-        <translation>Bitráta</translation>
-    </message>
-    <message>
-        <source>kb/s</source>
-        <translation>kb/s</translation>
     </message>
     <message>
         <source>Video</source>
@@ -324,6 +324,14 @@
     <message>
         <source>Video Options</source>
         <translation>Videó lehetőségek</translation>
+    </message>
+    <message>
+        <source>Same Quantizer as Source</source>
+        <translation>A forrásal megegyező kvantáló</translation>
+    </message>
+    <message>
+        <source>Deinterlace</source>
+        <translation>Váltottsorosság megszüntetése</translation>
     </message>
     <message>
         <source>Width</source>
@@ -342,14 +350,6 @@
         <translation>Levágás</translation>
     </message>
     <message>
-        <source>Same Quantizer as Source</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Deinterlace</source>
-        <translation>Váltottsorosság megszüntetése</translation>
-    </message>
-    <message>
         <source>Time</source>
         <extracomment>time-related options (speed, length)</extracomment>
         <translation>Idő</translation>
@@ -361,11 +361,11 @@
     </message>
     <message>
         <source>From Begin</source>
-        <translation>Elejétől</translation>
+        <translation type="obsolete">Elejétől</translation>
     </message>
     <message>
         <source>To End</source>
-        <translation>Végéig</translation>
+        <translation type="obsolete">Végéig</translation>
     </message>
     <message>
         <source>&amp;Preview</source>
@@ -391,6 +391,11 @@
     <message>
         <source>Additional FFmpeg Options</source>
         <translation>További FFmpeg lehetőségek</translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <comment>Cut video; select a range to convert</comment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -476,7 +481,7 @@
     </message>
     <message>
         <source>Dimensions</source>
-        <translation type="unfinished"></translation>
+        <translation>Méret</translation>
     </message>
     <message>
         <source>Video Bitrate</source>
@@ -574,6 +579,37 @@
     <message>
         <source>Media Converter</source>
         <translation>Média átalakító</translation>
+    </message>
+</context>
+<context>
+    <name>InteractiveCuttingDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mark as Begin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Seek to Begin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mark as End</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Seek to End</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -767,7 +803,7 @@
     </message>
     <message>
         <source>Check For &amp;Updates</source>
-        <translation type="unfinished"></translation>
+        <translation>Frissítések ellenőrzése</translation>
     </message>
     <message>
         <source>All tasks have finished.</source>
@@ -818,12 +854,17 @@
     </message>
     <message>
         <source>Elapsed Time: %1 h %2 m %3 s</source>
-        <translation type="unfinished"></translation>
+        <translation>Hátralévő idő: %1 ó %2 p %3 mp</translation>
     </message>
     <message>
         <source>Converting %1/%2</source>
         <extracomment>Converting the %1-th file in %2 files. %2 is the number of files.</extracomment>
         <translation>Átalakítás: %1/%2 összesen</translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <extracomment>Cut video file (select a time range to conert)</extracomment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -831,6 +872,13 @@
     <message>
         <source>%1 not found.</source>
         <extracomment>%1 is a computer program</extracomment>
+        <translation>%1 nem található.</translation>
+    </message>
+</context>
+<context>
+    <name>MediaPlayerWidget</name>
+    <message>
+        <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -874,19 +922,19 @@
     </message>
     <message>
         <source>Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Eszközök</translation>
     </message>
     <message>
         <source>You have to restart QWinFF for the changes to take effect.</source>
-        <translation type="unfinished"></translation>
+        <translation>Újra kell indítania a QWinff-et a változtatások érvényesítéséhez.</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Név</translation>
     </message>
     <message>
         <source>Command</source>
-        <translation type="unfinished"></translation>
+        <translation>Parancs</translation>
     </message>
 </context>
 <context>
@@ -944,6 +992,47 @@
     <message>
         <source>Hibernating in &lt;b&gt;%1&lt;/b&gt; seconds</source>
         <translation>Hibernálás &lt;b&gt;%1 másoperc&lt;/b&gt; múlva</translation>
+    </message>
+</context>
+<context>
+    <name>PreviewDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play Selected Range</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Begin</source>
+        <extracomment>noun, the beginning of the video</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End</source>
+        <extracomment>noun, the end of the video</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play %1~%2</source>
+        <extracomment>play the video from time %1 to time %2. %1 and %2 are time in hh:mm:ss format.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TimeRangeEdit</name>
+    <message>
+        <source>From Begin</source>
+        <translation type="unfinished">Elejétől</translation>
+    </message>
+    <message>
+        <source>To End</source>
+        <translation type="unfinished">Végéig</translation>
     </message>
 </context>
 <context>
