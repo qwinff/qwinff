@@ -118,6 +118,11 @@
         <extracomment>Hungarian Langauge</extracomment>
         <translation>ハンガリー語</translation>
     </message>
+    <message>
+        <source>Polish</source>
+        <extracomment>Polish Language</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutFFmpegDialog</name>
