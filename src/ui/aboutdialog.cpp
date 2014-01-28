@@ -146,6 +146,9 @@ QString AboutDialog::getTranslators()
         //: Hungarian Langauge
         {"hu_HU", trad(tr("Hungarian")
                     , "Andr&#225;s F&#246;ldi")},
+        //: Polish Language
+        {"pl_PL", trad(tr("Polish")
+                    , "Toratora")},
     };
     const int size = sizeof(table) / sizeof(table[0]);
 
