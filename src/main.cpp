@@ -96,7 +96,8 @@ static bool load_constants(QApplication& app)
 }
 
 // register an external tool for use
-static void register_tool(const char *name)
+// returns whether the tool can be successfully invoked
+static bool register_tool(const char *id, const char *name)
 {
     QString exefile = name; // default: use the program in PATH
 #ifdef TOOLS_IN_DATA_PATH // Search external tools in <datapath>/tools
@@ -106,7 +107,17 @@ static void register_tool(const char *name)
     exefile = Paths::dataFileName("tools/%1").arg(name);
 #endif // Q_OS_WIN32
 #endif // TOOLS_IN_DATA_PATH
-    ExePath::setPath(name, exefile);
+    ExePath::setPath(id, exefile);
+    if (ExePath::checkProgramAvailability(id))
+        return true;
+    // failed to invoke the program
+    ExePath::setPath(id, ""); // unset the tool
+    return false;
+}
+
+static bool register_tool(const char *name)
+{
+    return register_tool(name, name);
 }
 
 int main(int argc, char *argv[])
