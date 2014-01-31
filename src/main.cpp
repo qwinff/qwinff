@@ -150,12 +150,18 @@ int main(int argc, char *argv[])
     Paths::setAppPath(app.applicationDirPath());
 
     // register external tools
-    register_tool("ffmpeg");
-    register_tool("ffprobe");
-    register_tool("sox");
-    register_tool("ffplay");
-    register_tool("mplayer");
     ExePath::loadSettings();
+    ExePath::checkProgramAvailability("ffmpeg")
+            || register_tool("ffmpeg")
+            || register_tool("ffmpeg", "avconv");
+    ExePath::checkProgramAvailability("ffprobe")
+            || register_tool("ffprobe")
+            || register_tool("ffprobe", "avprobe");
+    ExePath::checkProgramAvailability("ffplay")
+            || register_tool("ffplay")
+            || register_tool("ffplay", "avplay");
+    register_tool("sox");
+    register_tool("mplayer");
 
     // Construct a string list containing all input filenames.
     QStringList inputFiles(app.arguments());
