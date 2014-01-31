@@ -50,6 +50,8 @@ QString ExePath::getPath(QString program)
 
 bool ExePath::checkProgramAvailability(QString program)
 {
+    if (!program_path.contains(program)) // the program is not set
+        return false;
     QProcess proc;
     QStringList param;
     // try to run the program
