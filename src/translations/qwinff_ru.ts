@@ -365,12 +365,9 @@
         <translation>Обрезка</translation>
     </message>
     <message>
-        <source>From Begin</source>
-        <translation type="obsolete">Начало</translation>
-    </message>
-    <message>
-        <source>To End</source>
-        <translation type="obsolete">Конец</translation>
+        <source>Cut</source>
+        <comment>Cut video; select a range to convert</comment>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Preview</source>
@@ -396,11 +393,6 @@
     <message>
         <source>Additional FFmpeg Options</source>
         <translation>Дополнительные настройки FFmpeg</translation>
-    </message>
-    <message>
-        <source>Cut</source>
-        <comment>Cut video; select a range to convert</comment>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -590,8 +582,9 @@
 <context>
     <name>InteractiveCuttingDialog</name>
     <message>
-        <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <source>Cutting</source>
+        <comment>Cutting as in &quot;cutting video&quot;</comment>
+        <translation>Обрезка</translation>
     </message>
     <message>
         <source>Mark as Begin</source>
@@ -812,6 +805,11 @@
         <translation>Проверить &amp;обновления</translation>
     </message>
     <message>
+        <source>Cut</source>
+        <extracomment>Cut video file (select a time range to conert)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>All tasks have finished.</source>
         <translation>Все задания завершены.</translation>
     </message>
@@ -867,11 +865,6 @@
         <extracomment>Converting the %1-th file in %2 files. %2 is the number of files.</extracomment>
         <translation>Преобразование %1/%2</translation>
     </message>
-    <message>
-        <source>Cut</source>
-        <extracomment>Cut video file (select a time range to conert)</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>MediaConverter</name>
@@ -879,13 +872,6 @@
         <source>%1 not found.</source>
         <extracomment>%1 is a computer program</extracomment>
         <translation>%1 не найден.</translation>
-    </message>
-</context>
-<context>
-    <name>MediaPlayerWidget</name>
-    <message>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1034,11 +1020,11 @@
     <name>TimeRangeEdit</name>
     <message>
         <source>From Begin</source>
-        <translation type="unfinished">Начало</translation>
+        <translation>Начало</translation>
     </message>
     <message>
         <source>To End</source>
-        <translation type="unfinished">Конец</translation>
+        <translation>Конец</translation>
     </message>
 </context>
 <context>

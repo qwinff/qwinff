@@ -365,12 +365,9 @@
         <translation>裁剪</translation>
     </message>
     <message>
-        <source>From Begin</source>
-        <translation type="obsolete">从文件开头开始</translation>
-    </message>
-    <message>
-        <source>To End</source>
-        <translation type="obsolete">到文件结尾</translation>
+        <source>Cut</source>
+        <comment>Cut video; select a range to convert</comment>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Preview</source>
@@ -396,11 +393,6 @@
     <message>
         <source>Additional FFmpeg Options</source>
         <translation>其他FFmpeg参数</translation>
-    </message>
-    <message>
-        <source>Cut</source>
-        <comment>Cut video; select a range to convert</comment>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -589,8 +581,9 @@
 <context>
     <name>InteractiveCuttingDialog</name>
     <message>
-        <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <source>Cutting</source>
+        <comment>Cutting as in &quot;cutting video&quot;</comment>
+        <translation>裁剪</translation>
     </message>
     <message>
         <source>Mark as Begin</source>
@@ -811,6 +804,11 @@
         <translation>检查更新(&amp;U)</translation>
     </message>
     <message>
+        <source>Cut</source>
+        <extracomment>Cut video file (select a time range to conert)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>All tasks have finished.</source>
         <translation>所有的文件都已转换完成</translation>
     </message>
@@ -866,11 +864,6 @@
         <extracomment>Converting the %1-th file in %2 files. %2 is the number of files.</extracomment>
         <translation>正在转换 %1/%2</translation>
     </message>
-    <message>
-        <source>Cut</source>
-        <extracomment>Cut video file (select a time range to conert)</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>MediaConverter</name>
@@ -878,13 +871,6 @@
         <source>%1 not found.</source>
         <extracomment>%1 is a computer program</extracomment>
         <translation>找不到 %1.</translation>
-    </message>
-</context>
-<context>
-    <name>MediaPlayerWidget</name>
-    <message>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1033,11 +1019,11 @@
     <name>TimeRangeEdit</name>
     <message>
         <source>From Begin</source>
-        <translation type="unfinished">从文件开头开始</translation>
+        <translation>从文件开头开始</translation>
     </message>
     <message>
         <source>To End</source>
-        <translation type="unfinished">到文件结尾</translation>
+        <translation>到文件结尾</translation>
     </message>
 </context>
 <context>

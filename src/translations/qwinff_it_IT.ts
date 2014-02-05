@@ -121,7 +121,7 @@
     <message>
         <source>Polish</source>
         <extracomment>Polish Language</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Polacco</translation>
     </message>
 </context>
 <context>
@@ -365,12 +365,9 @@
         <translation>Taglio</translation>
     </message>
     <message>
-        <source>From Begin</source>
-        <translation type="obsolete">Dall&apos;Inizio</translation>
-    </message>
-    <message>
-        <source>To End</source>
-        <translation type="obsolete">Alla Fine</translation>
+        <source>Cut</source>
+        <comment>Cut video; select a range to convert</comment>
+        <translation>Taglia</translation>
     </message>
     <message>
         <source>&amp;Preview</source>
@@ -396,11 +393,6 @@
     <message>
         <source>Additional FFmpeg Options</source>
         <translation>Opzioni FFmpeg Addizionali</translation>
-    </message>
-    <message>
-        <source>Cut</source>
-        <comment>Cut video; select a range to convert</comment>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -591,12 +583,13 @@
 <context>
     <name>InteractiveCuttingDialog</name>
     <message>
-        <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <source>Cutting</source>
+        <comment>Cutting as in &quot;cutting video&quot;</comment>
+        <translation>Taglio</translation>
     </message>
     <message>
         <source>Mark as Begin</source>
-        <translation type="unfinished"></translation>
+        <translation>Marca come inizio</translation>
     </message>
     <message>
         <source>Seek to Begin</source>
@@ -604,11 +597,11 @@
     </message>
     <message>
         <source>Play Selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Riproduci selezione</translation>
     </message>
     <message>
         <source>Mark as End</source>
-        <translation type="unfinished"></translation>
+        <translation>Marca come fine</translation>
     </message>
     <message>
         <source>Seek to End</source>
@@ -616,7 +609,7 @@
     </message>
     <message>
         <source>%1 not found</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 non trovato</translation>
     </message>
 </context>
 <context>
@@ -813,6 +806,11 @@
         <translation>Controlla  gli &amp;aggiornamenti</translation>
     </message>
     <message>
+        <source>Cut</source>
+        <extracomment>Cut video file (select a time range to conert)</extracomment>
+        <translation>Taglia</translation>
+    </message>
+    <message>
         <source>All tasks have finished.</source>
         <translation>Tutti i processi sono completati.</translation>
     </message>
@@ -868,11 +866,6 @@
         <extracomment>Converting the %1-th file in %2 files. %2 is the number of files.</extracomment>
         <translation>Conversione %1/%2</translation>
     </message>
-    <message>
-        <source>Cut</source>
-        <extracomment>Cut video file (select a time range to conert)</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>MediaConverter</name>
@@ -886,7 +879,7 @@
     <name>MediaPlayerWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Campo</translation>
     </message>
 </context>
 <context>
@@ -1005,41 +998,41 @@
     <name>PreviewDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Finestra di dialogo</translation>
     </message>
     <message>
         <source>Play Selected Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Riproduci lo spazio selezionato</translation>
     </message>
     <message>
         <source>%1 not found</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 non trovato</translation>
     </message>
     <message>
         <source>Begin</source>
         <extracomment>noun, the beginning of the video</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Inizio</translation>
     </message>
     <message>
         <source>End</source>
         <extracomment>noun, the end of the video</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Fine</translation>
     </message>
     <message>
         <source>Play %1~%2</source>
         <extracomment>play the video from time %1 to time %2. %1 and %2 are time in hh:mm:ss format.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Riproduci %1~%2</translation>
     </message>
 </context>
 <context>
     <name>TimeRangeEdit</name>
     <message>
         <source>From Begin</source>
-        <translation type="unfinished">Dall&apos;Inizio</translation>
+        <translation>Dall&apos;Inizio</translation>
     </message>
     <message>
         <source>To End</source>
-        <translation type="unfinished">Alla Fine</translation>
+        <translation>Alla Fine</translation>
     </message>
 </context>
 <context>

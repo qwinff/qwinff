@@ -365,12 +365,9 @@
         <translation>Tăiere</translation>
     </message>
     <message>
-        <source>From Begin</source>
-        <translation type="obsolete">De la început</translation>
-    </message>
-    <message>
-        <source>To End</source>
-        <translation type="obsolete">Până la capăt</translation>
+        <source>Cut</source>
+        <comment>Cut video; select a range to convert</comment>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Preview</source>
@@ -396,11 +393,6 @@
     <message>
         <source>Additional FFmpeg Options</source>
         <translation>Opțiuni suplimentare FFmpeg</translation>
-    </message>
-    <message>
-        <source>Cut</source>
-        <comment>Cut video; select a range to convert</comment>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -591,8 +583,9 @@
 <context>
     <name>InteractiveCuttingDialog</name>
     <message>
-        <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <source>Cutting</source>
+        <comment>Cutting as in &quot;cutting video&quot;</comment>
+        <translation>Tăiere</translation>
     </message>
     <message>
         <source>Mark as Begin</source>
@@ -813,6 +806,11 @@
         <translation>Verifică pentru act&amp;ualizări</translation>
     </message>
     <message>
+        <source>Cut</source>
+        <extracomment>Cut video file (select a time range to conert)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>All tasks have finished.</source>
         <translation>Toate sarcinile s-au terminat.</translation>
     </message>
@@ -868,11 +866,6 @@
         <extracomment>Converting the %1-th file in %2 files. %2 is the number of files.</extracomment>
         <translation>Se execută conversia %1/%2</translation>
     </message>
-    <message>
-        <source>Cut</source>
-        <extracomment>Cut video file (select a time range to conert)</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>MediaConverter</name>
@@ -880,13 +873,6 @@
         <source>%1 not found.</source>
         <extracomment>%1 is a computer program</extracomment>
         <translation>%1 nu a fost găsit. </translation>
-    </message>
-</context>
-<context>
-    <name>MediaPlayerWidget</name>
-    <message>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1035,11 +1021,11 @@
     <name>TimeRangeEdit</name>
     <message>
         <source>From Begin</source>
-        <translation type="unfinished">De la început</translation>
+        <translation>De la început</translation>
     </message>
     <message>
         <source>To End</source>
-        <translation type="unfinished">Până la capăt</translation>
+        <translation>Până la capăt</translation>
     </message>
 </context>
 <context>

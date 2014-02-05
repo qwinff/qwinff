@@ -116,6 +116,11 @@
         <extracomment>Hungarian Langauge</extracomment>
         <translation>Węgierski </translation>
     </message>
+    <message>
+        <source>Polish</source>
+        <extracomment>Polish Language</extracomment>
+        <translation>Polski</translation>
+    </message>
 </context>
 <context>
     <name>AboutFFmpegDialog</name>
@@ -360,12 +365,9 @@
         <translation>Cięcie</translation>
     </message>
     <message>
-        <source>From Begin</source>
-        <translation>Od początku - bez opcji cięcia   </translation>
-    </message>
-    <message>
-        <source>To End</source>
-        <translation>Do końca - bez opcji cięcia  </translation>
+        <source>Cut</source>
+        <comment>Cut video; select a range to convert</comment>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&amp;Preview</source>
@@ -578,6 +580,38 @@
     </message>
 </context>
 <context>
+    <name>InteractiveCuttingDialog</name>
+    <message>
+        <source>Cutting</source>
+        <comment>Cutting as in &quot;cutting video&quot;</comment>
+        <translation>Cięcie</translation>
+    </message>
+    <message>
+        <source>Mark as Begin</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Seek to Begin</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Play Selection</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Mark as End</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Seek to End</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
         <source>QWinFF</source>
@@ -771,6 +805,11 @@
         <translation>Sprawdź &amp;aktualizacje</translation>
     </message>
     <message>
+        <source>Cut</source>
+        <extracomment>Cut video file (select a time range to conert)</extracomment>
+        <translation type="unfinished"/>
+    </message>
+    <message>
         <source>All tasks have finished.</source>
         <translation>Wszystkie zadania zostały zakończone. </translation>
     </message>
@@ -833,6 +872,13 @@
         <source>%1 not found.</source>
         <extracomment>%1 is a computer program</extracomment>
         <translation>%1 nie został znaleziony.</translation>
+    </message>
+</context>
+<context>
+    <name>MediaPlayerWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -945,6 +991,47 @@
     <message>
         <source>Hibernating in &lt;b&gt;%1&lt;/b&gt; seconds</source>
         <translation>Hibernacja systemu, za &lt;b&gt;%1&lt;/b&gt; sekund</translation>
+    </message>
+</context>
+<context>
+    <name>PreviewDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Play Selected Range</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Begin</source>
+        <extracomment>noun, the beginning of the video</extracomment>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>End</source>
+        <extracomment>noun, the end of the video</extracomment>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Play %1~%2</source>
+        <extracomment>play the video from time %1 to time %2. %1 and %2 are time in hh:mm:ss format.</extracomment>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
+    <name>TimeRangeEdit</name>
+    <message>
+        <source>From Begin</source>
+        <translation>Od początku - bez opcji cięcia   </translation>
+    </message>
+    <message>
+        <source>To End</source>
+        <translation>Do końca - bez opcji cięcia  </translation>
     </message>
 </context>
 <context>

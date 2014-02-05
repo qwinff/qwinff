@@ -121,7 +121,7 @@
     <message>
         <source>Polish</source>
         <extracomment>Polish Language</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>波蘭語</translation>
     </message>
 </context>
 <context>
@@ -365,12 +365,9 @@
         <translation>剪裁</translation>
     </message>
     <message>
-        <source>From Begin</source>
-        <translation type="obsolete">從檔案開頭開始</translation>
-    </message>
-    <message>
-        <source>To End</source>
-        <translation type="obsolete">到檔案結尾</translation>
+        <source>Cut</source>
+        <comment>Cut video; select a range to convert</comment>
+        <translation>剪裁</translation>
     </message>
     <message>
         <source>&amp;Preview</source>
@@ -396,11 +393,6 @@
     <message>
         <source>Additional FFmpeg Options</source>
         <translation>其他FFmpeg參數</translation>
-    </message>
-    <message>
-        <source>Cut</source>
-        <comment>Cut video; select a range to convert</comment>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -589,32 +581,33 @@
 <context>
     <name>InteractiveCuttingDialog</name>
     <message>
-        <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <source>Cutting</source>
+        <comment>Cutting as in &quot;cutting video&quot;</comment>
+        <translation>剪裁</translation>
     </message>
     <message>
         <source>Mark as Begin</source>
-        <translation type="unfinished"></translation>
+        <translation>標記為開始</translation>
     </message>
     <message>
         <source>Seek to Begin</source>
-        <translation type="unfinished"></translation>
+        <translation>快轉到開始</translation>
     </message>
     <message>
         <source>Play Selection</source>
-        <translation type="unfinished"></translation>
+        <translation>播放選擇區域</translation>
     </message>
     <message>
         <source>Mark as End</source>
-        <translation type="unfinished"></translation>
+        <translation>標記為結束</translation>
     </message>
     <message>
         <source>Seek to End</source>
-        <translation type="unfinished"></translation>
+        <translation>快轉到結束</translation>
     </message>
     <message>
         <source>%1 not found</source>
-        <translation type="unfinished"></translation>
+        <translation>找不到 %1</translation>
     </message>
 </context>
 <context>
@@ -811,6 +804,11 @@
         <translation>檢查更新(&amp;U)</translation>
     </message>
     <message>
+        <source>Cut</source>
+        <extracomment>Cut video file (select a time range to conert)</extracomment>
+        <translation>剪裁</translation>
+    </message>
+    <message>
         <source>All tasks have finished.</source>
         <translation>所有檔案都已轉換完成</translation>
     </message>
@@ -866,11 +864,6 @@
         <extracomment>Converting the %1-th file in %2 files. %2 is the number of files.</extracomment>
         <translation>正在轉換 %1/%2</translation>
     </message>
-    <message>
-        <source>Cut</source>
-        <extracomment>Cut video file (select a time range to conert)</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>MediaConverter</name>
@@ -884,7 +877,7 @@
     <name>MediaPlayerWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">表單</translation>
     </message>
 </context>
 <context>
@@ -1003,41 +996,41 @@
     <name>PreviewDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>對話框</translation>
     </message>
     <message>
         <source>Play Selected Range</source>
-        <translation type="unfinished"></translation>
+        <translation>播放選擇範圍</translation>
     </message>
     <message>
         <source>%1 not found</source>
-        <translation type="unfinished"></translation>
+        <translation>找不到 %1</translation>
     </message>
     <message>
         <source>Begin</source>
         <extracomment>noun, the beginning of the video</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>開始</translation>
     </message>
     <message>
         <source>End</source>
         <extracomment>noun, the end of the video</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>結束</translation>
     </message>
     <message>
         <source>Play %1~%2</source>
         <extracomment>play the video from time %1 to time %2. %1 and %2 are time in hh:mm:ss format.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>播放 %1~%2</translation>
     </message>
 </context>
 <context>
     <name>TimeRangeEdit</name>
     <message>
         <source>From Begin</source>
-        <translation type="unfinished">從檔案開頭開始</translation>
+        <translation>從檔案開頭開始</translation>
     </message>
     <message>
         <source>To End</source>
-        <translation type="unfinished">到檔案結尾</translation>
+        <translation>到檔案結尾</translation>
     </message>
 </context>
 <context>

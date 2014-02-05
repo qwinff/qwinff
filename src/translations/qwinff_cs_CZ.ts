@@ -365,12 +365,9 @@
         <translation>Sřih</translation>
     </message>
     <message>
-        <source>From Begin</source>
-        <translation type="obsolete">Od začátku</translation>
-    </message>
-    <message>
-        <source>To End</source>
-        <translation type="obsolete">Do konce</translation>
+        <source>Cut</source>
+        <comment>Cut video; select a range to convert</comment>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Preview</source>
@@ -396,11 +393,6 @@
     <message>
         <source>Additional FFmpeg Options</source>
         <translation>Další nastavení FFmpeg</translation>
-    </message>
-    <message>
-        <source>Cut</source>
-        <comment>Cut video; select a range to convert</comment>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -591,8 +583,9 @@
 <context>
     <name>InteractiveCuttingDialog</name>
     <message>
-        <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <source>Cutting</source>
+        <comment>Cutting as in &quot;cutting video&quot;</comment>
+        <translation>Sřih</translation>
     </message>
     <message>
         <source>Mark as Begin</source>
@@ -813,6 +806,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Cut</source>
+        <extracomment>Cut video file (select a time range to conert)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>All tasks have finished.</source>
         <translation>Všechny úlohy dokončeny.</translation>
     </message>
@@ -868,24 +866,12 @@
         <extracomment>Converting the %1-th file in %2 files. %2 is the number of files.</extracomment>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Cut</source>
-        <extracomment>Cut video file (select a time range to conert)</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>MediaConverter</name>
     <message>
         <source>%1 not found.</source>
         <extracomment>%1 is a computer program</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>MediaPlayerWidget</name>
-    <message>
-        <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1035,11 +1021,11 @@
     <name>TimeRangeEdit</name>
     <message>
         <source>From Begin</source>
-        <translation type="unfinished">Od začátku</translation>
+        <translation>Od začátku</translation>
     </message>
     <message>
         <source>To End</source>
-        <translation type="unfinished">Do konce</translation>
+        <translation>Do konce</translation>
     </message>
 </context>
 <context>

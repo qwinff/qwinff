@@ -593,10 +593,6 @@
 <context>
     <name>InteractiveCuttingDialog</name>
     <message>
-        <source>Dialog</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Mark as Begin</source>
         <translation type="unfinished"></translation>
     </message>
@@ -619,6 +615,11 @@
     <message>
         <source>%1 not found</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cutting</source>
+        <comment>Cutting as in &quot;cutting video&quot;</comment>
+        <translation type="unfinished">Cortando</translation>
     </message>
 </context>
 <context>
@@ -881,13 +882,6 @@
     <message>
         <source>%1 not found.</source>
         <extracomment>%1 is a computer program</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>MediaPlayerWidget</name>
-    <message>
-        <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

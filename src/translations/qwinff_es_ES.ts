@@ -365,12 +365,9 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>From Begin</source>
-        <translation type="obsolete">Desde el inicio</translation>
-    </message>
-    <message>
-        <source>To End</source>
-        <translation type="obsolete">Al Final</translation>
+        <source>Cut</source>
+        <comment>Cut video; select a range to convert</comment>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Preview</source>
@@ -396,11 +393,6 @@
     <message>
         <source>Additional FFmpeg Options</source>
         <translation>Opciones adicionales de FFmpeg</translation>
-    </message>
-    <message>
-        <source>Cut</source>
-        <comment>Cut video; select a range to convert</comment>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -589,7 +581,8 @@
 <context>
     <name>InteractiveCuttingDialog</name>
     <message>
-        <source>Dialog</source>
+        <source>Cutting</source>
+        <comment>Cutting as in &quot;cutting video&quot;</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -811,6 +804,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Cut</source>
+        <extracomment>Cut video file (select a time range to conert)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>All tasks have finished.</source>
         <translation>Todas las tareas han finalizado.</translation>
     </message>
@@ -866,24 +864,12 @@
         <extracomment>Converting the %1-th file in %2 files. %2 is the number of files.</extracomment>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Cut</source>
-        <extracomment>Cut video file (select a time range to conert)</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>MediaConverter</name>
     <message>
         <source>%1 not found.</source>
         <extracomment>%1 is a computer program</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>MediaPlayerWidget</name>
-    <message>
-        <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1033,11 +1019,11 @@
     <name>TimeRangeEdit</name>
     <message>
         <source>From Begin</source>
-        <translation type="unfinished">Desde el inicio</translation>
+        <translation>Desde el inicio</translation>
     </message>
     <message>
         <source>To End</source>
-        <translation type="unfinished">Al Final</translation>
+        <translation>Al Final</translation>
     </message>
 </context>
 <context>
