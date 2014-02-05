@@ -42,7 +42,7 @@ endif
 all: release
 
 release:
-	+cd $(SRC_DIR) && $(QMAKE) $(QMAKE_DEFS) qwinff.pro && $(DEFS) make
+	+cd $(SRC_DIR) && $(QMAKE) $(QMAKE_DEFS) qwinff.pro && $(DEFS) $(MAKE)
 	-cd src && $(LRELEASE) qwinff.pro
 
 check:
@@ -51,7 +51,7 @@ check:
 clean:
 	rm -rf $(BIN_DIR)/*
 	rm -rf $(BUILD_DIR)/*
-	-cd $(SRC_DIR) && make clean && rm Makefile
+	-cd $(SRC_DIR) && $(MAKE) clean && rm Makefile
 
 install:
 	-install -d $(DESTDIR)$(PREFIX)/bin/
