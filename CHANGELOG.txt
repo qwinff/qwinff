@@ -1,5 +1,6 @@
 Version 0.2.0
 -------------
+(2014-02-09)
 
   - Use avconv if ffmpeg is not available (experimental)
   - Added a video-cutting dialog with embedded mplayer.
