@@ -863,6 +863,10 @@ void ConvertList::init_treewidget_fill_column_titles(QStringList &columnTitle)
     columnTitle[COL_VIDEO_CODEC] = tr("Video Codec");
 
     columnTitle[COL_PROGRESS] = tr("Progress");
+
+    // Check if all columns have titles
+    for (int i=0; i<NUM_COLUMNS; i++)
+        Q_ASSERT(!columnTitle[i].isEmpty() && "every column must have a title");
 }
 
 /* Set the default visibility of each field.
