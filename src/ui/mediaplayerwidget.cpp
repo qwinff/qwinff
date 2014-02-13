@@ -173,6 +173,11 @@ void MediaPlayerWidget::togglePlayPause()
     }
 }
 
+void MediaPlayerWidget::mousePressEvent(QMouseEvent */*event*/)
+{
+    togglePlayPause();
+}
+
 // private slots
 
 void MediaPlayerWidget::refreshTimeDisplay()

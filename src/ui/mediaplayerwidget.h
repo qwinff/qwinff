@@ -93,6 +93,9 @@ public slots:
      */
     void togglePlayPause();
 
+protected:
+    void mousePressEvent(QMouseEvent *);
+
 private slots:
     void refreshTimeDisplay();
     void refreshButtonState();
