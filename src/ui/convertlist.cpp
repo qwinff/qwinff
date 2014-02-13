@@ -61,12 +61,12 @@ public:
 };
 
 /* This enum defines the columns of the list.
-   The last item is always COL_COUNT, which is used to identify
+   The last item is always NUM_COLUMNS, which is used to identify
    how many columns there are. To add a new item, just follow the
    following steps:
 
      (1) Add a new enumeration constant to ConvertListColumns before
-         COL_COUNT.
+         NUM_COLUMNS.
 
      (2) Search for the function "init_treewidget_fill_column_titles"
          and fill in the title of the new field there. Read the
@@ -95,7 +95,7 @@ enum ConvertListColumns
     COL_VIDEO_FRAMERATE,
     COL_VIDEO_CODEC,
     COL_PROGRESS,
-    COL_COUNT
+    NUM_COLUMNS
 };
 
 class ConvertList::ListEventFilter : public QObject
@@ -222,7 +222,7 @@ bool ConvertList::addTask(ConversionParameters param)
     output_filenames_push(param.destination); // Record the filename for future reference.
 
     QStringList columns;
-    for (int i=0; i<COL_COUNT; i++)
+    for (int i=0; i<NUM_COLUMNS; i++)
         columns.append(QString());
 
     fill_list_fields(param, *m_probe, columns);
@@ -820,10 +820,10 @@ void ConvertList::init_treewidget(QTreeWidget *w)
 {
     Q_ASSERT_X(w, "ConvertList::init_treewidget", "w: null pointer");
 
-    w->setColumnCount(COL_COUNT);
+    w->setColumnCount(NUM_COLUMNS);
 
     QStringList columnTitle;
-    for (int i=0; i<COL_COUNT; i++) {
+    for (int i=0; i<NUM_COLUMNS; i++) {
         columnTitle.append(QString());
     }
 
@@ -1170,7 +1170,7 @@ void ConvertList::update_tooltip(QTreeWidgetItem *item)
 
     tip << "<p style='white-space:pre'>"; // prevent automatic linebreak
     int count = 0;
-    for (int i=0; i<COL_COUNT; i++) {
+    for (int i=0; i<NUM_COLUMNS; i++) {
         if (i != COL_PROGRESS
                 && !m_list->isColumnHidden(i)) {
 
@@ -1200,7 +1200,7 @@ void ConvertList::update_tooltip(QTreeWidgetItem *item)
     QString tip_str = tip.join("");
 
     // set tooltip for every column in the row
-    for (int i=0; i<COL_COUNT; i++) {
+    for (int i=0; i<NUM_COLUMNS; i++) {
         if (i != COL_PROGRESS)
             item->setToolTip(i, tip_str);
     }
