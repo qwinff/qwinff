@@ -184,7 +184,14 @@ ConvertList::ConvertList(Presets *presets, QWidget *parent) :
 
     QSettings settings;
     QHeaderView *header = m_list->header();
-    header->restoreState(settings.value("convertlist/header_state").toByteArray());
+
+    /* Only restore header states if the column count of the stored header state
+       is the same as the current column count. Otherwise, the stored state is
+       meaningless and should not be used. */
+    int prev_column_count = settings.value("convertlist/column_count").toInt();
+    if (prev_column_count == NUM_COLUMNS)
+        header->restoreState(settings.value("convertlist/header_state").toByteArray());
+
     header->setContextMenuPolicy(Qt::CustomContextMenu);
     connect(header, SIGNAL(customContextMenuRequested(QPoint)),
             this, SLOT(slotHeaderContextMenu(QPoint)));
@@ -196,7 +203,10 @@ ConvertList::ConvertList(Presets *presets, QWidget *parent) :
 ConvertList::~ConvertList()
 {
     QSettings settings;
+    /* must store column count along with header state, because saved header
+       state is meaningless if the column count changes. */
     settings.setValue("convertlist/header_state", m_list->header()->saveState());
+    settings.setValue("convertlist/column_count", NUM_COLUMNS);
 }
 
 bool ConvertList::addTask(ConversionParameters param)
