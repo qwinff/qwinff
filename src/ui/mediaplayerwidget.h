@@ -98,7 +98,7 @@ private slots:
     void refreshButtonState();
     void playerStateChanged();
     void seekSliderChanged();
-    void seekBack();
+    void seekBackward();
     void seekForward();
     void resetPosition();
     

@@ -222,7 +222,7 @@ void MediaPlayerWidget::seekSliderChanged()
     }
 }
 
-void MediaPlayerWidget::seekBack()
+void MediaPlayerWidget::seekBackward()
 {
     mplayer->seek(-3, MyQMPwidget::RelativeSeek);
 }
