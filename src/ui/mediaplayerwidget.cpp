@@ -16,6 +16,7 @@
  */
 
 #include <QSettings>
+#include <QWheelEvent>
 #include "mediaplayerwidget.h"
 #include "ui_mediaplayerwidget.h"
 #include "myqmpwidget.h"
@@ -170,6 +171,20 @@ void MediaPlayerWidget::togglePlayPause()
         break;
     default:
         break;
+    }
+}
+
+// events
+
+void MediaPlayerWidget::wheelEvent(QWheelEvent *event)
+{
+    int numDegrees = event->delta() / 8; // delta is in eighths of a degree
+    if (event->orientation() == Qt::Vertical) {
+        if (numDegrees >= 0) {
+            seekForward();
+        } else {
+            seekBackward();
+        }
     }
 }
 

@@ -94,6 +94,7 @@ public slots:
     void togglePlayPause();
 
 protected:
+    void wheelEvent(QWheelEvent *);
     void mousePressEvent(QMouseEvent *);
 
 private slots:
