@@ -54,10 +54,13 @@ private:
     int pos_to_val(int pos);
     void drawContainer(QPainter& painter, QPen& pen);
     void drawRange(QPainter& painter, QPen& pen);
+    void drawCursorPosition(QPainter& painter, QPen& pen);
     void paintEvent(QPaintEvent *);
     void mousePressEvent(QMouseEvent *);
     void mouseReleaseEvent(QMouseEvent *);
     void mouseMoveEvent(QMouseEvent *);
+    void enterEvent(QEvent *);
+    void leaveEvent(QEvent *);
 
     int m_max;
     int m_min;
@@ -65,7 +68,9 @@ private:
     int m_val_end;
     enum {EDGE_BEGIN, EDGE_END} m_dragEdge;
     bool m_mouseDown;
+    bool m_mouseIsInsideWidget;
     QPoint m_mouseDownPos;
+    QPoint m_mousePos;
 };
 
 #endif // RANGESELECTOR_H

@@ -38,10 +38,12 @@
 
 RangeSelector::RangeSelector(QWidget *parent) :
     QWidget(parent), m_max(255), m_min(0), m_val_begin(0), m_val_end(128),
-    m_mouseDown(false)
+    m_mouseDown(false), m_mouseIsInsideWidget(false)
 {
     setMinimumSize(20, 20);
     setMaximumHeight(20);
+    setMouseTracking(true); // receive mouse events when no button is pressed
+    setCursor(Qt::SplitHCursor);
     emit beginValueChanged(m_val_begin);
     emit endValueChanged(m_val_end);
 }
@@ -216,12 +218,21 @@ void RangeSelector::drawRange(QPainter &painter, QPen &pen)
     painter.drawRoundedRect(inner_border_region, ROUNDRECT_RADIUS, ROUNDRECT_RADIUS);
 }
 
+void RangeSelector::drawCursorPosition(QPainter &painter, QPen &pen)
+{
+    pen.setColor(QColor(0,0,0));
+    painter.setPen(pen);
+    painter.drawLine(m_mousePos.x(), 0, m_mousePos.x(), height());
+}
+
 void RangeSelector::paintEvent(QPaintEvent *)
 {
     QPainter painter(this);
     QPen pen;
     drawContainer(painter, pen);
     drawRange(painter, pen);
+    if (m_mouseIsInsideWidget)
+        drawCursorPosition(painter, pen);
 }
 
 void RangeSelector::mousePressEvent(QMouseEvent *e)
@@ -240,7 +251,22 @@ void RangeSelector::mouseReleaseEvent(QMouseEvent *e)
 
 void RangeSelector::mouseMoveEvent(QMouseEvent *e)
 {
+    m_mousePos = e->pos();
     if (m_mouseDown) {
+        // NOTE: mouseDrag() triggers repaint(), so don't call repaint() again
         mouseDrag(e->pos());
+    } else {
+        repaint();
     }
+}
+
+void RangeSelector::enterEvent(QEvent *)
+{
+    m_mouseIsInsideWidget = true;
+}
+
+void RangeSelector::leaveEvent(QEvent *)
+{
+    m_mouseIsInsideWidget = false;
+    repaint(); // repaint to overwrite the cursor
 }
