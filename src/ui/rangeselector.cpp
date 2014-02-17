@@ -43,7 +43,7 @@ RangeSelector::RangeSelector(QWidget *parent) :
     setMinimumSize(20, 20);
     setMaximumHeight(20);
     setMouseTracking(true); // receive mouse events when no button is pressed
-    setCursor(Qt::SplitHCursor);
+    setCursor(Qt::CrossCursor);
     emit beginValueChanged(m_val_begin);
     emit endValueChanged(m_val_end);
 }
