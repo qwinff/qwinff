@@ -65,7 +65,7 @@ private:
     int m_val_end;
     enum {EDGE_BEGIN, EDGE_END} m_dragEdge;
     bool m_mouseDown;
-    QPoint m_mousePos;
+    QPoint m_mouseDownPos;
 };
 
 #endif // RANGESELECTOR_H
