@@ -256,7 +256,7 @@ void RangeSelector::paintEvent(QPaintEvent *)
     QPen pen;
     drawContainer(painter, pen);
     drawRange(painter, pen);
-    if (m_mouseIsInsideWidget)
+    if (m_mouseIsInsideWidget && !m_mouseDown)
         drawCursorPosition(painter, pen);
 }
 
