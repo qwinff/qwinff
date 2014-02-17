@@ -49,9 +49,11 @@ private slots:
 
 private:
     Q_DISABLE_COPY(RangeSelector)
+    enum Edge {EDGE_BEGIN, EDGE_END};
     int pos_begin();
     int pos_end();
     int pos_to_val(int pos);
+    Edge edgeToMove(const QPoint &pos);
     void drawContainer(QPainter& painter, QPen& pen);
     void drawRange(QPainter& painter, QPen& pen);
     void drawCursorPosition(QPainter& painter, QPen& pen);
@@ -66,7 +68,7 @@ private:
     int m_min;
     int m_val_begin;
     int m_val_end;
-    enum {EDGE_BEGIN, EDGE_END} m_dragEdge;
+    Edge m_dragEdge;
     bool m_mouseDown;
     bool m_mouseIsInsideWidget;
     QPoint m_mouseDownPos;

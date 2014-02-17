@@ -108,25 +108,12 @@ void RangeSelector::setMaxValue(int maxValue)
 
 void RangeSelector::mouseDown(QPoint pos)
 {
-    const int newval = pos_to_val(pos.x());
-    if (newval < m_val_begin) {
-        setBeginValue(newval);
-        m_dragEdge = EDGE_BEGIN;
-    } else if (newval > m_val_end) {
-        setEndValue(newval);
-        m_dragEdge = EDGE_END;
-    } else {
-        // mouse position is within the range
-        if (newval - m_val_begin < m_val_end - newval) {
-            // mouse position is closer to begin
-            setBeginValue(newval);
-            m_dragEdge = EDGE_BEGIN;
-        } else {
-            // mouse position is closer to end
-            setEndValue(newval);
-            m_dragEdge = EDGE_END;
-        }
-    }
+    int newValue = pos_to_val(pos.x());
+    m_dragEdge = edgeToMove(pos);
+    if (m_dragEdge == EDGE_BEGIN)
+        setBeginValue(newValue);
+    else
+        setEndValue(newValue);
 }
 
 void RangeSelector::mouseDrag(QPoint newpos)
@@ -165,6 +152,26 @@ int RangeSelector::pos_to_val(int pos)
         return pos * (m_max - m_min) / width();
     else
         return 0;
+}
+
+// which edge to be moved if the user clicks at pos
+// returns EDGE_BEGIN or EDGE_END
+RangeSelector::Edge RangeSelector::edgeToMove(const QPoint &pos)
+{
+    const int newval = pos_to_val(pos.x());
+    if (newval < m_val_begin) {
+        // position is before the begin edge
+        return EDGE_BEGIN;
+    } else if (newval > m_val_end) {
+        // position is after the end edge
+        return EDGE_END;
+    } else if (newval - m_val_begin < m_val_end - newval) {
+        // position is within the range and closer to the begin edge
+        return EDGE_BEGIN;
+    } else {
+        // position is within the range and closer to the end edge
+        return EDGE_END;
+    }
 }
 
 void RangeSelector::drawContainer(QPainter &painter, QPen &pen)
