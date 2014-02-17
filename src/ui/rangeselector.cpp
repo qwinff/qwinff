@@ -159,19 +159,12 @@ int RangeSelector::pos_to_val(int pos)
 RangeSelector::Edge RangeSelector::edgeToMove(const QPoint &pos)
 {
     const int newval = pos_to_val(pos.x());
-    if (newval < m_val_begin) {
-        // position is before the begin edge
-        return EDGE_BEGIN;
-    } else if (newval > m_val_end) {
-        // position is after the end edge
-        return EDGE_END;
-    } else if (newval - m_val_begin < m_val_end - newval) {
-        // position is within the range and closer to the begin edge
-        return EDGE_BEGIN;
-    } else {
-        // position is within the range and closer to the end edge
-        return EDGE_END;
-    }
+    const int distance_to_begin = abs(newval - m_val_begin);
+    const int distance_to_end = abs(newval - m_val_end);
+    if (distance_to_begin < distance_to_end)
+        return EDGE_BEGIN; // pos is closer to the begin edge
+    else
+        return EDGE_END;   // pos is closer to the end edge
 }
 
 void RangeSelector::drawContainer(QPainter &painter, QPen &pen)
