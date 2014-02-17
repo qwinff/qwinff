@@ -57,6 +57,7 @@ private:
     void drawContainer(QPainter& painter, QPen& pen);
     void drawRange(QPainter& painter, QPen& pen);
     void drawCursorPosition(QPainter& painter, QPen& pen);
+    void drawHorizontalArrow(int beginX, int endX, QPainter& painter, QPen& pen);
     void paintEvent(QPaintEvent *);
     void mousePressEvent(QMouseEvent *);
     void mouseReleaseEvent(QMouseEvent *);

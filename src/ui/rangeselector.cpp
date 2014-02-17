@@ -223,6 +223,31 @@ void RangeSelector::drawCursorPosition(QPainter &painter, QPen &pen)
     pen.setColor(QColor(0,0,0));
     painter.setPen(pen);
     painter.drawLine(m_mousePos.x(), 0, m_mousePos.x(), height());
+
+    Edge edge = edgeToMove(m_mousePos);
+    int edgePos = 0;
+    if (edge == EDGE_BEGIN)
+        edgePos = pos_begin();
+    else
+        edgePos = pos_end();
+    drawHorizontalArrow(/* begin */ edgePos, /* end */ m_mousePos.x(), painter, pen);
+}
+
+void RangeSelector::drawHorizontalArrow(int beginX, int endX, QPainter& painter, QPen& pen)
+{
+    double arrow_ratio = 0.5; // percentage of the arrow height relative to widget
+    int arrow_size = height() * arrow_ratio;
+    int arrow_y = height() / 2; // y position of the axis of the arrow
+    QVector<QLine> lines;
+    if (beginX < endX) { // pointing to the right
+        lines += QLine(endX, arrow_y, endX-arrow_size/2, arrow_y-arrow_size/2);
+        lines += QLine(endX, arrow_y, endX-arrow_size/2, arrow_y+arrow_size/2);
+    } else { // pointing to the left
+        lines += QLine(endX, arrow_y, endX+arrow_size/2, arrow_y-arrow_size/2);
+        lines += QLine(endX, arrow_y, endX+arrow_size/2, arrow_y+arrow_size/2);
+    }
+    lines += QLine(beginX, arrow_y, endX, arrow_y);
+    painter.drawLines(lines);
 }
 
 void RangeSelector::paintEvent(QPaintEvent *)
