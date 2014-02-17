@@ -226,15 +226,15 @@ void RangeSelector::paintEvent(QPaintEvent *)
 
 void RangeSelector::mousePressEvent(QMouseEvent *e)
 {
-    m_mousePos = e->pos();
+    m_mouseDownPos = e->pos();
     m_mouseDown = true;
-    mouseDown(m_mousePos);
+    mouseDown(m_mouseDownPos);
 }
 
 void RangeSelector::mouseReleaseEvent(QMouseEvent *e)
 {
-    if (m_mouseDown && m_mousePos == e->pos()) {
-        mouseClick(m_mousePos); // click event
+    if (m_mouseDown && m_mouseDownPos == e->pos()) {
+        mouseClick(m_mouseDownPos); // click event
     }
 }
 
