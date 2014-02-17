@@ -9,11 +9,11 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>Informații </translation>
+        <translation>Informații</translation>
     </message>
     <message>
         <source>Translators</source>
-        <translation>Traducători </translation>
+        <translation>Traducători</translation>
     </message>
     <message>
         <source>Version: %1</source>
@@ -45,15 +45,15 @@
     <message>
         <source>Logo Design: %1</source>
         <extracomment>%1 is the name and email of the logo designer</extracomment>
-        <translation>Logo Design: %1</translation>
+        <translation>Design logo: %1</translation>
     </message>
     <message>
         <source>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License version 2 or 3.</source>
-        <translation>Acest program este software liber; îl puteți redistribui și/sau modifica în conformitate cu termenii GNU General Public License versiunea 2 sau 3.</translation>
+        <translation>Acest program este software liber; îl poți redistribui și/sau modifica în conformitate cu termenii Licenței Publice Generale GNU versiunea 2 sau 3.</translation>
     </message>
     <message>
         <source>QWinFF Homepage: %1</source>
-        <translation>QWinFF Homepage: %1</translation>
+        <translation>Pagina acasă QWinFF: %1</translation>
     </message>
     <message>
         <source>Some audio-processing functionalities are provided by SoX.</source>
@@ -113,6 +113,16 @@
         <extracomment>Arabic Language</extracomment>
         <translation>Arabă</translation>
     </message>
+    <message>
+        <source>Hungarian</source>
+        <extracomment>Hungarian Langauge</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Polish</source>
+        <extracomment>Polish Language</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutFFmpegDialog</name>
@@ -147,7 +157,7 @@
     <name>AddTaskWizard</name>
     <message>
         <source>Add Tasks</source>
-        <translation>Adaugă sarcini </translation>
+        <translation>Adaugă sarcini</translation>
     </message>
     <message>
         <source>Files to be converted</source>
@@ -171,7 +181,7 @@
     </message>
     <message>
         <source>Auto adjust output bitrate to reduce output file size.</source>
-        <translation>Ajustare automată rată de biți de ieșire pentru a reduce dimensiunea fișierului rezultat.</translation>
+        <translation>Ajustare automată a ratei de biți de ieșire pentru a reduce dimensiunea fișierului rezultat.</translation>
     </message>
     <message>
         <source>Auto Adjust Audio Bitrate</source>
@@ -200,7 +210,7 @@
     <message>
         <source>Create &amp;new folder in source folder</source>
         <extracomment>Create a new folder (e.g. qwinff_output) in the folder containing the input files. Put the output files in the newly created folder.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Creează un nou dosar în dosarul sursă</translation>
     </message>
     <message>
         <source>Folder Name</source>
@@ -209,7 +219,7 @@
     <message>
         <source>Output to &amp;source folder</source>
         <extracomment>put the output files in the same folder as the input files</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Scrie în dosarul &amp;sursă</translation>
     </message>
     <message>
         <source>Please select at least one file.</source>
@@ -237,13 +247,17 @@
         <translation>Toate fișierele</translation>
     </message>
     <message>
-        <source>Some files could not be found.</source>
-        <translation>Unele fișiere nu au putut fi găsite.</translation>
-    </message>
-    <message>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
         <translation>Selectează dosarul</translation>
+    </message>
+    <message>
+        <source>Searching for files...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Some files could not be found.</source>
+        <translation>Unele fișiere nu au putut fi găsite.</translation>
     </message>
     <message>
         <source>Folder does not exist. Create a new folder?</source>
@@ -281,12 +295,20 @@
         <translation>Hz</translation>
     </message>
     <message>
-        <source>Channels</source>
-        <translation>Canale</translation>
+        <source>Bitrate</source>
+        <translation>Rată de biți</translation>
     </message>
     <message>
         <source>(auto)</source>
         <translation>(auto)</translation>
+    </message>
+    <message>
+        <source>kb/s</source>
+        <translation>kb/s</translation>
+    </message>
+    <message>
+        <source>Channels</source>
+        <translation>Canale</translation>
     </message>
     <message>
         <source>Volume</source>
@@ -295,14 +317,6 @@
     <message>
         <source>%</source>
         <translation>%</translation>
-    </message>
-    <message>
-        <source>Bitrate</source>
-        <translation>Rată de biți</translation>
-    </message>
-    <message>
-        <source>kb/s</source>
-        <translation>kb/s</translation>
     </message>
     <message>
         <source>Video</source>
@@ -315,6 +329,14 @@
     <message>
         <source>Video Options</source>
         <translation>Opțiuni video</translation>
+    </message>
+    <message>
+        <source>Same Quantizer as Source</source>
+        <translation>Quantizer Identic cu al Sursei </translation>
+    </message>
+    <message>
+        <source>Deinterlace</source>
+        <translation>Deinterlace</translation>
     </message>
     <message>
         <source>Width</source>
@@ -333,14 +355,6 @@
         <translation>Decupează</translation>
     </message>
     <message>
-        <source>Same Quantizer as Source</source>
-        <translation>Quantizer Identic cu al Sursei </translation>
-    </message>
-    <message>
-        <source>Deinterlace</source>
-        <translation>Deinterlace</translation>
-    </message>
-    <message>
         <source>Time</source>
         <extracomment>time-related options (speed, length)</extracomment>
         <translation>Timp</translation>
@@ -351,12 +365,9 @@
         <translation>Tăiere</translation>
     </message>
     <message>
-        <source>From Begin</source>
-        <translation>De la început</translation>
-    </message>
-    <message>
-        <source>To End</source>
-        <translation>Până la capăt</translation>
+        <source>Cut</source>
+        <comment>Cut video; select a range to convert</comment>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Preview</source>
@@ -570,6 +581,38 @@
     </message>
 </context>
 <context>
+    <name>InteractiveCuttingDialog</name>
+    <message>
+        <source>Cutting</source>
+        <comment>Cutting as in &quot;cutting video&quot;</comment>
+        <translation>Tăiere</translation>
+    </message>
+    <message>
+        <source>Mark as Begin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Seek to Begin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mark as End</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Seek to End</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
         <source>QWinFF</source>
@@ -658,7 +701,7 @@
     </message>
     <message>
         <source>Open output folder of the selected file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Deschide dosarul de ieșire al fișierului selectat.</translation>
     </message>
     <message>
         <source>About &amp;FFmpeg</source>
@@ -763,6 +806,11 @@
         <translation>Verifică pentru act&amp;ualizări</translation>
     </message>
     <message>
+        <source>Cut</source>
+        <extracomment>Cut video file (select a time range to conert)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>All tasks have finished.</source>
         <translation>Toate sarcinile s-au terminat.</translation>
     </message>
@@ -803,7 +851,7 @@
     </message>
     <message>
         <source>This program is going to check for updates online. Do you allow this program to use the Internet to check for updates?</source>
-        <translation type="unfinished"></translation>
+        <translation>Acest program va căuta actualizări pe internet. Îi permiți acestui program să folosească internetul pentru a verifica dacă există actualizări?</translation>
     </message>
     <message>
         <source>Failed to load preset file. The application will quit now.</source>
@@ -816,7 +864,7 @@
     <message>
         <source>Converting %1/%2</source>
         <extracomment>Converting the %1-th file in %2 files. %2 is the number of files.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Se execută conversia %1/%2</translation>
     </message>
 </context>
 <context>
@@ -843,7 +891,7 @@
     </message>
     <message>
         <source>Automatically start conversion after adding files to the list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pornește automat conversia după adăugarea fișierelor în listă.</translation>
     </message>
     <message>
         <source>Start conversion automatically</source>
@@ -940,10 +988,51 @@
     </message>
 </context>
 <context>
+    <name>PreviewDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play Selected Range</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Begin</source>
+        <extracomment>noun, the beginning of the video</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End</source>
+        <extracomment>noun, the end of the video</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play %1~%2</source>
+        <extracomment>play the video from time %1 to time %2. %1 and %2 are time in hh:mm:ss format.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TimeRangeEdit</name>
+    <message>
+        <source>From Begin</source>
+        <translation>De la început</translation>
+    </message>
+    <message>
+        <source>To End</source>
+        <translation>Până la capăt</translation>
+    </message>
+</context>
+<context>
     <name>UpdateDialog</name>
     <message>
         <source>Show &amp;Release Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>A&amp;rată notele de lansare</translation>
     </message>
     <message>
         <source>Check for updates on program startup</source>
@@ -955,15 +1044,15 @@
     </message>
     <message>
         <source>Cannot connect to server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nu se poate efectua conectarea la server.</translation>
     </message>
     <message>
         <source>Failed to parse the received data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Interpretarea datelor primite a eșuat.</translation>
     </message>
     <message>
         <source>You are already using the latest version of QWinFF.</source>
-        <translation type="unfinished"></translation>
+        <translation>Deja folosești ultima versiune de QWinFF.</translation>
     </message>
     <message>
         <source>An unknown error has occurred.</source>
@@ -971,7 +1060,7 @@
     </message>
     <message>
         <source>A new version of QWinFF has been released!</source>
-        <translation type="unfinished"></translation>
+        <translation>A apărut o nouă versiune de QWinFF!</translation>
     </message>
     <message>
         <source>Version &lt;b&gt;%1&lt;/b&gt; is available at %2.</source>

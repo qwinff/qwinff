@@ -1,122 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ja_JP">
+<TS version="2.0" language="hu_HU">
 <context>
     <name>AboutDialog</name>
     <message>
         <source>About QWinFF</source>
-        <translation>QWinFF について</translation>
+        <translation>A QWinFF-ről</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>情報</translation>
+        <translation>Információ</translation>
     </message>
     <message>
         <source>Translators</source>
-        <translation>翻訳者</translation>
+        <translation>Fordítók</translation>
     </message>
     <message>
         <source>Version: %1</source>
-        <translation>バージョン: %1</translation>
+        <translation>Verzió: %1</translation>
     </message>
     <message>
         <source>Portable</source>
         <extracomment>Portable version (no installation, no writing registry)</extracomment>
-        <translation>ポータブル</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Compiled with Qt %1</source>
         <extracomment>Qt version</extracomment>
-        <translation>コンパイルに使用された Qt ：%1</translation>
+        <translation>Fordítva Qt %1 verzióval</translation>
     </message>
     <message>
         <source>Compiled with libnotify %1</source>
-        <translation>コンパイルに使用された libnotify: %1</translation>
+        <translation>Fordítva libnotify %1 verzióval</translation>
     </message>
     <message>
         <source>QWinFF is a gui frontend for FFmpeg.</source>
-        <translation>QWinFF は FFmpeg のGUI フロントエンドツールです.</translation>
+        <translation>QWinFF: Grafikus előtétprogram az FFmpeg-hez.</translation>
     </message>
     <message>
         <source>Programming: %1</source>
         <extracomment>%1 is the name and email of the programmer</extracomment>
-        <translation>プログラミング：%1</translation>
+        <translation>A program készítője: %1</translation>
     </message>
     <message>
         <source>Logo Design: %1</source>
         <extracomment>%1 is the name and email of the logo designer</extracomment>
-        <translation>ロゴデザイン：%1</translation>
+        <translation>Logo terv: %1</translation>
     </message>
     <message>
         <source>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License version 2 or 3.</source>
-        <translation>このプログラムはフリーウェアです。 GNU一般共有使用許諾第2版(または 第3版)に基づき、ソフトウェアの変更、再配布は許可されます。</translation>
+        <translation>Ez a program szabad szoftver: terjeszthető és/vagy módosítható a GNU Általános Nyilvános Licenc (GNU GPL) 2 vagy 3 verziója szerint.</translation>
     </message>
     <message>
         <source>QWinFF Homepage: %1</source>
-        <translation>QWinFF 公式サイト: %1</translation>
+        <translation>QWinFF honlap: %1</translation>
     </message>
     <message>
         <source>Some audio-processing functionalities are provided by SoX.</source>
-        <translation>いくつかの音声処理機能は SoX により提供されています.</translation>
+        <translation>Néhány audió feldolgozó funkciót a SoX biztosít.</translation>
     </message>
     <message>
         <source>FFmpeg presets were taken from WinFF.</source>
-        <translation>WinFFの FFmpeg プリセットを使用しています.</translation>
+        <translation>Az FFmpeg alapbeállításai a WinFF-ből valók.</translation>
     </message>
     <message>
         <source>Japanese</source>
         <extracomment>Japanese Language</extracomment>
-        <translation>日本語</translation>
+        <translation>Japán</translation>
     </message>
     <message>
         <source>Italian</source>
         <extracomment>Italian Language</extracomment>
-        <translation>イタリア語</translation>
+        <translation>Olasz</translation>
     </message>
     <message>
         <source>Czech</source>
         <extracomment>Czech Language</extracomment>
-        <translation>チェコ語</translation>
+        <translation>Cseh</translation>
     </message>
     <message>
         <source>Simplified Chinese</source>
         <extracomment>Chinese character set used in China</extracomment>
-        <translation>中国語(簡体字)</translation>
+        <translation>Egyszerűsített kínai</translation>
     </message>
     <message>
         <source>Russian</source>
         <extracomment>Russian Language</extracomment>
-        <translation>ロシア語</translation>
+        <translation>Orosz</translation>
     </message>
     <message>
         <source>Spanish (Spain)</source>
         <extracomment>Spanish Language (Spain)</extracomment>
-        <translation>スペイン語 (スペイン)</translation>
+        <translation>Spanyol</translation>
     </message>
     <message>
         <source>Spanish (Guatemala)</source>
         <extracomment>Spanish Language (Guatemala)</extracomment>
-        <translation>スペイン語 (グアテマラ)</translation>
+        <translation>Spanyol (Guatemala)</translation>
     </message>
     <message>
         <source>Romanian</source>
         <extracomment>Romanian Language</extracomment>
-        <translation>ルーマニア語</translation>
+        <translation>Román</translation>
     </message>
     <message>
         <source>Turkish</source>
         <extracomment>Turkish Language</extracomment>
-        <translation>トルコ語</translation>
+        <translation>Török</translation>
     </message>
     <message>
         <source>Arabic</source>
         <extracomment>Arabic Language</extracomment>
-        <translation>アラビア語</translation>
+        <translation>Arab</translation>
     </message>
     <message>
         <source>Hungarian</source>
         <extracomment>Hungarian Langauge</extracomment>
-        <translation>ハンガリー語</translation>
+        <translation>Magyar</translation>
     </message>
     <message>
         <source>Polish</source>
@@ -128,7 +128,7 @@
     <name>AboutFFmpegDialog</name>
     <message>
         <source>About FFmpeg</source>
-        <translation>FFmpeg について</translation>
+        <translation>Az FFmpeg-ről:</translation>
     </message>
     <message>
         <source>FFmpeg</source>
@@ -136,159 +136,159 @@
     </message>
     <message>
         <source>Available Codecs</source>
-        <translation>利用可能なコーデック</translation>
+        <translation>Elérhető kodekek</translation>
     </message>
     <message>
         <source>FFmpeg is a complete, cross-platform solution to record, convert and stream audio and video. It includes libavcodec - the leading audio/video codec library.</source>
         <extracomment>ffmpeg description</extracomment>
-        <translation>FFmpeg は完全なクロスプラットフォームに対応した、音声、映像ストリームの変換ツールで、主要な音声/ 映像コーデック・ライブラリが含まれています。</translation>
+        <translation>Az FFmpeg teljes körű, keresztplatfomos megoldás videó- és hangfájlok felvételére, átalakítására és továbbítására, mely tartalmazza a vezető audio/video könytárat, a libavcodec-et. </translation>
     </message>
     <message>
         <source>FFmpeg is free software licensed under the LGPL or GPL.</source>
-        <translation>FFmpeg は、LGPL / GPL ライセンスに基づき公開されているフリーソフトウェアです.</translation>
+        <translation>Az FFmpeg szabad szoftver. Licensze: LGPL vagy GPL</translation>
     </message>
     <message>
         <source>Please visit %1 for more information.</source>
         <extracomment>visit ffmpeg website</extracomment>
-        <translation>FFmpeg に関する情報: %1.</translation>
+        <translation>További információért látogassa meg a honlapot: %1</translation>
     </message>
 </context>
 <context>
     <name>AddTaskWizard</name>
     <message>
         <source>Add Tasks</source>
-        <translation>タスクを追加</translation>
+        <translation>Feladat hozzáadása</translation>
     </message>
     <message>
         <source>Files to be converted</source>
-        <translation>変換対象のファイル</translation>
+        <translation>Átalakítandó fájlok</translation>
     </message>
     <message>
         <source>Add files.</source>
-        <translation>ファイルを追加.</translation>
+        <translation>Fájlok hozzáadása</translation>
     </message>
     <message>
         <source>Remove selected files.</source>
-        <translation>選択されたファイルを除去.</translation>
+        <translation>Kiválasztott fájlok eltávolítása</translation>
     </message>
     <message>
         <source>Output Settings</source>
-        <translation>出力設定</translation>
+        <translation>Kimeneti beállítások</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>編集</translation>
+        <translation>Szerkesztés</translation>
     </message>
     <message>
         <source>Auto adjust output bitrate to reduce output file size.</source>
-        <translation>出力ファイルサイズが軽減するように出力ビットレートを自動調整.</translation>
+        <translation>A kimeneti bitráta automatikus beállítása a fájlméret csökkentése érdekében.</translation>
     </message>
     <message>
         <source>Auto Adjust Audio Bitrate</source>
-        <translation>音声ビットレートを自動調整</translation>
+        <translation>Audio bitráta automatikus beállítása</translation>
     </message>
     <message>
         <source>Preset</source>
-        <translation>プリセット</translation>
+        <translation>Előbeállítás</translation>
     </message>
     <message>
         <source>Convert to</source>
-        <translation>変換形式</translation>
+        <translation>Átalakítás ebbe: </translation>
     </message>
     <message>
         <source>Output Path</source>
-        <translation>出力パス</translation>
+        <translation>Kimeneti elérési út</translation>
     </message>
     <message>
         <source>Select &amp;folder</source>
-        <translation>ファイルを選択(&amp;F)</translation>
+        <translation>Mappa kiválasztása</translation>
     </message>
     <message>
         <source>Browse</source>
-        <translation>参照</translation>
+        <translation>Böngészés</translation>
     </message>
     <message>
         <source>Create &amp;new folder in source folder</source>
         <extracomment>Create a new folder (e.g. qwinff_output) in the folder containing the input files. Put the output files in the newly created folder.</extracomment>
-        <translation>ソースフォルダに新規フォルダを作成(&amp;N)</translation>
+        <translation>Új mappa létrehozása a bemeneti fájlok mappájában</translation>
     </message>
     <message>
         <source>Folder Name</source>
-        <translation>フォルダ名</translation>
+        <translation>Mappa neve</translation>
     </message>
     <message>
         <source>Output to &amp;source folder</source>
         <extracomment>put the output files in the same folder as the input files</extracomment>
-        <translation>ソースフォルダに出力(&amp;S)</translation>
+        <translation>Kimeneti fájlok a forrás mappába</translation>
     </message>
     <message>
         <source>Please select at least one file.</source>
-        <translation>ファイルを選択してください.</translation>
+        <translation>Legalább egy fájlt válasszon ki</translation>
     </message>
     <message>
         <source>Select Files</source>
         <extracomment>This text is the title of an openfile dialog.</extracomment>
-        <translation>ファイルを選択</translation>
+        <translation>Fájlok kiválasztása</translation>
     </message>
     <message>
         <source>Multimedia</source>
-        <translation>マルチメディア</translation>
+        <translation>Multimédia</translation>
     </message>
     <message>
         <source>Video</source>
-        <translation>映像</translation>
+        <translation>Videó</translation>
     </message>
     <message>
         <source>Audio</source>
-        <translation>音声</translation>
+        <translation>Audió</translation>
     </message>
     <message>
         <source>All files</source>
-        <translation>すべてのファイル</translation>
+        <translation>Minden fájl</translation>
     </message>
     <message>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
-        <translation>ディレクトリを選択</translation>
+        <translation>Válasszon Könyvtárat</translation>
     </message>
     <message>
         <source>Searching for files...</source>
-        <translation>ファイルを検索中...</translation>
+        <translation>Fájlok keresése...</translation>
     </message>
     <message>
         <source>Some files could not be found.</source>
-        <translation>いくつかのファイルが見つかりません.</translation>
+        <translation>Néhány fájl nem található</translation>
     </message>
     <message>
         <source>Folder does not exist. Create a new folder?</source>
-        <translation>フォルダが存在しません、新たに作成しますか?</translation>
+        <translation>A mappa nem létezik. Létrehozza?</translation>
     </message>
     <message>
         <source>Failed to create folder. Please select another output folder.</source>
-        <translation>フォルダ作成に失敗、別の出力フォルダを選択してください.</translation>
+        <translation>Mappa létrehozása sikertelen. Válasszon másik kimeneti mappát.</translation>
     </message>
 </context>
 <context>
     <name>ConversionParameterDialog</name>
     <message>
         <source>Conversion Parameters</source>
-        <translation>変換パラメータ</translation>
+        <translation>Átalakítási paraméterek</translation>
     </message>
     <message>
         <source>Audio</source>
-        <translation>音声</translation>
+        <translation>Audió</translation>
     </message>
     <message>
         <source>Disable Audio</source>
-        <translation>音声を無効</translation>
+        <translation>Audió inaktív</translation>
     </message>
     <message>
         <source>Audio Options</source>
-        <translation>音声設定</translation>
+        <translation>Audió lehetőségek</translation>
     </message>
     <message>
         <source>Sample Rate</source>
-        <translation>サンプルレート</translation>
+        <translation>MIntavételezési ráta</translation>
     </message>
     <message>
         <source>Hz</source>
@@ -296,23 +296,23 @@
     </message>
     <message>
         <source>Bitrate</source>
-        <translation>ビットレート</translation>
+        <translation>Bitráta</translation>
     </message>
     <message>
         <source>(auto)</source>
-        <translation>自動</translation>
+        <translation>(auto)</translation>
     </message>
     <message>
         <source>kb/s</source>
-        <translation>kb/秒</translation>
+        <translation>kb/s</translation>
     </message>
     <message>
         <source>Channels</source>
-        <translation>チャンネル</translation>
+        <translation>Csatornák</translation>
     </message>
     <message>
         <source>Volume</source>
-        <translation>音量</translation>
+        <translation>Hangerő</translation>
     </message>
     <message>
         <source>%</source>
@@ -320,49 +320,49 @@
     </message>
     <message>
         <source>Video</source>
-        <translation>映像</translation>
+        <translation>Videó</translation>
     </message>
     <message>
         <source>Disable Video</source>
-        <translation>映像を無効</translation>
+        <translation>Inaktív videó</translation>
     </message>
     <message>
         <source>Video Options</source>
-        <translation>映像設定</translation>
+        <translation>Videó lehetőségek</translation>
     </message>
     <message>
         <source>Same Quantizer as Source</source>
-        <translation>ソースと同じ量子化</translation>
+        <translation>A forrásal megegyező kvantáló</translation>
     </message>
     <message>
         <source>Deinterlace</source>
-        <translation>インターレース解除</translation>
+        <translation>Váltottsorosság megszüntetése</translation>
     </message>
     <message>
         <source>Width</source>
-        <translation>幅</translation>
+        <translation>Szélesség</translation>
     </message>
     <message>
         <source> px</source>
-        <translation> px</translation>
+        <translation>px</translation>
     </message>
     <message>
         <source>Height</source>
-        <translation>高さ</translation>
+        <translation>Magasság</translation>
     </message>
     <message>
         <source>Crop</source>
-        <translation>クロップ</translation>
+        <translation>Levágás</translation>
     </message>
     <message>
         <source>Time</source>
         <extracomment>time-related options (speed, length)</extracomment>
-        <translation>時間</translation>
+        <translation>Idő</translation>
     </message>
     <message>
         <source>Cutting</source>
         <extracomment>video time cutting: options for begin time and end time</extracomment>
-        <translation>動画のカット</translation>
+        <translation>Vágás</translation>
     </message>
     <message>
         <source>Cut</source>
@@ -371,28 +371,28 @@
     </message>
     <message>
         <source>&amp;Preview</source>
-        <translation>プレビュー(&amp;P)</translation>
+        <translation>&amp;Előnézet</translation>
     </message>
     <message>
         <source>Scaling</source>
         <extracomment>time scaling, changing the speed of the output file</extracomment>
-        <translation>スケーリング</translation>
+        <translation>Méretezés</translation>
     </message>
     <message>
         <source>Speed</source>
-        <translation>速度</translation>
+        <translation>Sebesség</translation>
     </message>
     <message>
         <source>Advanced</source>
-        <translation>拡張</translation>
+        <translation>Haladó</translation>
     </message>
     <message>
         <source>FFmpeg</source>
-        <translation>FFMpeg</translation>
+        <translation>FFmpeg</translation>
     </message>
     <message>
         <source>Additional FFmpeg Options</source>
-        <translation>FFmpeg 追加オプション</translation>
+        <translation>További FFmpeg lehetőségek</translation>
     </message>
 </context>
 <context>
@@ -400,102 +400,102 @@
     <message>
         <source>Cancel</source>
         <extracomment>Cancel the operation of adding new tasks</extracomment>
-        <translation>キャンセル</translation>
+        <translation>Mégsem</translation>
     </message>
     <message>
         <source>Adding files (%1/%2)</source>
         <extracomment>This text is the progress indicator of adding multiple tasks. %1 is the number of files that are already added. %2 is the total number of files.</extracomment>
-        <translation>ファイルを追加 (%1/%2)</translation>
+        <translation>Fájlok hozzáadása (%1/%2)</translation>
     </message>
     <message>
         <source>Some files are not recognized by the converter.</source>
-        <translation>いくつかのファイルは認識できません.</translation>
+        <translation>Néhány fájl az átalakító számára nem felismerhető.</translation>
     </message>
     <message>
         <source>New File Name</source>
-        <translation>新しいファイル名</translation>
+        <translation>Új fájlnév</translation>
     </message>
     <message>
         <source>Please input the new name for the output file.</source>
-        <translation>出力ファイルの名前を入力してください.</translation>
+        <translation>Adjon meg új nevet a kimeneti fájlnak.</translation>
     </message>
     <message>
         <source>Output Directory</source>
-        <translation>出力ディレクトリ</translation>
+        <translation>Kimeneti könyvtár</translation>
     </message>
     <message>
         <source>Error Message from FFmpeg:
 
 </source>
-        <translation>FFmpegからのエラーメッセージ:</translation>
+        <translation>FFmpeg hibaüzenet:</translation>
     </message>
     <message>
         <source>Drag and drop files here to add tasks.</source>
-        <translation>ファイルをここにドロップでタスクを追加.</translation>
+        <translation>Húzzon ide fájlokat a feladatok hozzáadásához.</translation>
     </message>
     <message>
         <source>Hide &quot;%1&quot;</source>
         <extracomment>Hide a column in the list. For example, the text maybe &apos;Hide &quot;Duration&quot;&apos;. The two &quot; are quotation marks in English, you may replace it with local quotation marks.</extracomment>
-        <translation>&quot;%1&quot; を隠す</translation>
+        <translation>&quot;%1&quot; elrejtése</translation>
     </message>
     <message>
         <source>Restore All Columns</source>
-        <translation>すべての列を復元</translation>
+        <translation>Összes oszlop visszaállítása</translation>
     </message>
     <message>
         <source>Source</source>
-        <translation>ソース</translation>
+        <translation>Forrás</translation>
     </message>
     <message>
         <source>Destination</source>
-        <translation>対象</translation>
+        <translation>Cél</translation>
     </message>
     <message>
         <source>Duration</source>
-        <translation>再生時間</translation>
+        <translation>Időtartam</translation>
     </message>
     <message>
         <source>File Size</source>
-        <translation>ファイルサイズ</translation>
+        <translation>Fájl mérete</translation>
     </message>
     <message>
         <source>Sample Rate</source>
         <extracomment>Audio</extracomment>
-        <translation>サンプルレート</translation>
+        <translation>MIntavételezési ráta</translation>
     </message>
     <message>
         <source>Audio Bitrate</source>
-        <translation>音声ビットレート</translation>
+        <translation>Audió bitráta</translation>
     </message>
     <message>
         <source>Channels</source>
         <extracomment>Audio</extracomment>
-        <translation>チャンネル</translation>
+        <translation>Csatornák</translation>
     </message>
     <message>
         <source>Audio Codec</source>
-        <translation>音声コーデック</translation>
+        <translation>Audió kodek</translation>
     </message>
     <message>
         <source>Dimensions</source>
-        <translation>映像の寸法</translation>
+        <translation>Méret</translation>
     </message>
     <message>
         <source>Video Bitrate</source>
-        <translation>映像ビットレート</translation>
+        <translation>Videó bitráta</translation>
     </message>
     <message>
         <source>Framerate</source>
         <extracomment>Video</extracomment>
-        <translation>フレームレート</translation>
+        <translation>Képkockák</translation>
     </message>
     <message>
         <source>Video Codec</source>
-        <translation>映像コーデック</translation>
+        <translation>Videó kodek</translation>
     </message>
     <message>
         <source>Progress</source>
-        <translation>進捗状況</translation>
+        <translation>Folyamat</translation>
     </message>
     <message>
         <source>%1 Hz</source>
@@ -512,7 +512,7 @@
     <message>
         <source>Removing tasks...</source>
         <extracomment>Remove files from the tasklist</extracomment>
-        <translation>タスクを除去中...</translation>
+        <translation>Feladat eltávolítása...</translation>
     </message>
     <message>
         <source>KiB</source>
@@ -537,45 +537,45 @@
     </message>
     <message>
         <source>File Exists</source>
-        <translation>ファイルが存在します</translation>
+        <translation>Létező fájl</translation>
     </message>
     <message>
         <source>%1 already exists on disk or in the task list. Still use this name as the output filename?</source>
-        <translation>%1 と同名のファイルがディスク上、またはタスク一覧に存在します. 本当にこの名前でファイルを出力しますか?</translation>
+        <translation>A(z) %1 már létezik a lemezen vagy a feladatlistában.  Továbbra is ezt használjha kimeneti fájlnévként?</translation>
     </message>
     <message>
         <source>Remove Task</source>
-        <translation>タスクを除去</translation>
+        <translation>Feladat eltávolítása</translation>
     </message>
     <message>
         <source>Cannot remove a task while it is in progress.</source>
-        <translation>処理中のタスクは除去できません.</translation>
+        <translation>Folyamatban lévő feladat nem távolítható el!</translation>
     </message>
     <message>
         <source>Finished</source>
         <extracomment>The text to be displayed on the progress bar when a conversion finishes</extracomment>
-        <translation>完了</translation>
+        <translation>Befejezve</translation>
     </message>
     <message>
         <source>Failed</source>
         <extracomment>The text to be displayed on the progress bar when a conversion fails</extracomment>
-        <translation>失敗</translation>
+        <translation>Sikertelen</translation>
     </message>
     <message>
         <source>Error: %1</source>
         <extracomment>%1 is the error message</extracomment>
-        <translation>エラー: %1</translation>
+        <translation>Hiba :%1</translation>
     </message>
 </context>
 <context>
     <name>ExtraTranslations</name>
     <message>
         <source>Convert between media file formats</source>
-        <translation>音声とビデオファイルの変換</translation>
+        <translation>Média fájlformátumok átalakítása</translation>
     </message>
     <message>
         <source>Media Converter</source>
-        <translation>メディア変換</translation>
+        <translation>Média átalakító</translation>
     </message>
 </context>
 <context>
@@ -583,7 +583,7 @@
     <message>
         <source>Cutting</source>
         <comment>Cutting as in &quot;cutting video&quot;</comment>
-        <translation>動画のカット</translation>
+        <translation>Vágás</translation>
     </message>
     <message>
         <source>Mark as Begin</source>
@@ -618,35 +618,35 @@
     </message>
     <message>
         <source>Start conversion process.</source>
-        <translation>変換を開始.</translation>
+        <translation>Átalakítás indítása.</translation>
     </message>
     <message>
         <source>&amp;Start</source>
-        <translation>開始(&amp;S)</translation>
+        <translation>&amp;Indítás</translation>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation>ファイル(&amp;F)</translation>
+        <translation>&amp;Fájl</translation>
     </message>
     <message>
         <source>&amp;Convert</source>
-        <translation>変換(&amp;C)</translation>
+        <translation>&amp;Átalakítás</translation>
     </message>
     <message>
         <source>&amp;About</source>
-        <translation>情報(&amp;A)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation>編集(&amp;E)</translation>
+        <translation>&amp;Szerkesztés</translation>
     </message>
     <message>
         <source>&amp;Add Files</source>
-        <translation>ファイルを追加(&amp;A)</translation>
+        <translation>&amp;Fájlok Hozzáadása</translation>
     </message>
     <message>
         <source>Add files for conversion.</source>
-        <translation>変換するファイルを追加.</translation>
+        <translation>Fájlok hozzáadása átalakításhoz.</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
@@ -654,11 +654,11 @@
     </message>
     <message>
         <source>E&amp;xit</source>
-        <translation>終了(&amp;E)</translation>
+        <translation>Kilépés</translation>
     </message>
     <message>
         <source>Exit the program.</source>
-        <translation>プログラムを終了.</translation>
+        <translation>Kilépés a programból</translation>
     </message>
     <message>
         <source>F9</source>
@@ -666,142 +666,142 @@
     </message>
     <message>
         <source>S&amp;top</source>
-        <translation>停止(&amp;T)</translation>
+        <translation>Állj</translation>
     </message>
     <message>
         <source>Stop conversion process.</source>
-        <translation>変換処理を停止.</translation>
+        <translation>Átalakításai folymat megállítása.</translation>
     </message>
     <message>
         <source>Set &amp;Parameters</source>
-        <translation>パラメータを設定(&amp;P)</translation>
+        <translation>Változók beállítása</translation>
     </message>
     <message>
         <source>Set Parameters</source>
         <extracomment>Edit output file parameters.</extracomment>
-        <translation>パラメータを設定</translation>
+        <translation>Kimeneti változók beállítása</translation>
     </message>
     <message>
         <source>Edit conversion parameters of selected files.</source>
-        <translation>選択されたファイルの変換パラメータを編集.</translation>
+        <translation>A kiválasztott fájlok átalakítási változóinak beállítása.</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
-        <translation>&amp;Qt について</translation>
+        <translation>A Qt-ről</translation>
     </message>
     <message>
         <source>About Qt</source>
-        <translation>Qt について</translation>
+        <translation>A Qt-ről</translation>
     </message>
     <message>
         <source>&amp;Open Output Folder</source>
-        <translation>出力先を開く(&amp;O)</translation>
+        <translation>&amp;Kimeneti könyvtár megnyitása</translation>
     </message>
     <message>
         <source>Open output folder of the selected file.</source>
-        <translation>選択されたファイルの出力先を開く.</translation>
+        <translation>A kiválasztott fájl kimeneti mappájának megnyitása.</translation>
     </message>
     <message>
         <source>About &amp;FFmpeg</source>
-        <translation>&amp;FFmpeg について</translation>
+        <translation>Az FFmpeg-ről</translation>
     </message>
     <message>
         <source>About FFmpeg</source>
-        <translation>FFmpeg について</translation>
+        <translation>Az FFmpeg-ről:</translation>
     </message>
     <message>
         <source>&amp;Remove Selected</source>
         <extracomment>remove selected (tasks, items)</extracomment>
-        <translation>選択された項目を除去(&amp;R)</translation>
+        <translation>&amp;Kiválasztottak eltávolítása</translation>
     </message>
     <message>
         <source>Remove all selected items in the list.</source>
-        <translation>すべての選択された項目を一覧から除去.</translation>
+        <translation>Minden kiválasztott elem eltávolítása a listáról.</translation>
     </message>
     <message>
         <source>R&amp;emove Completed</source>
         <extracomment>remove completed (task, items)</extracomment>
-        <translation>完了済みの項目を除去(&amp;E)</translation>
+        <translation>Eltávolítás befejezve</translation>
     </message>
     <message>
         <source>Remove Completed Items</source>
-        <translation>完了済の項目を除去</translation>
+        <translation>Elkemek eltávolítása befejezve</translation>
     </message>
     <message>
         <source>Remove all completed items in the list.</source>
-        <translation>すべての完了済項目を一覧から除去.</translation>
+        <translation>Az összes elkészült elem eltávolítása a listáról.</translation>
     </message>
     <message>
         <source>&amp;Clear List</source>
-        <translation>リストをクリア(&amp;C)</translation>
+        <translation>Lista ürítése</translation>
     </message>
     <message>
         <source>Clear List</source>
-        <translation>一覧をクリア</translation>
+        <translation>Lista ürítése</translation>
     </message>
     <message>
         <source>Remove all items in the list.</source>
-        <translation>すべての項目を一覧から除去.</translation>
+        <translation>Minden listán lévő elem eltávolítása</translation>
     </message>
     <message>
         <source>&amp;Retry</source>
-        <translation>再試行(&amp;R)</translation>
+        <translation>&amp;Újra</translation>
     </message>
     <message>
         <source>Retry</source>
-        <translation>再試行</translation>
+        <translation>Újra</translation>
     </message>
     <message>
         <source>Retry selected tasks.</source>
-        <translation>選択されたタスクを再試行.</translation>
+        <translation>Kiválasztott feladatok újrapróbálása.</translation>
     </message>
     <message>
         <source>Retry &amp;All</source>
-        <translation>すべてを再試行(&amp;A)</translation>
+        <translation>Újra &amp;mindet</translation>
     </message>
     <message>
         <source>Retry all tasks.</source>
-        <translation>すべてのタスクを再試行.</translation>
+        <translation>Minden feladat újrapróbálása.</translation>
     </message>
     <message>
         <source>&amp;Options</source>
-        <translation>設定(&amp;O)</translation>
+        <translation>&amp;Opciók</translation>
     </message>
     <message>
         <source>Options</source>
-        <translation>設定</translation>
+        <translation>Opciók</translation>
     </message>
     <message>
         <source>About Q&amp;WinFF</source>
-        <translation>Q&amp;WinFF について</translation>
+        <translation>A QWinFF-ről</translation>
     </message>
     <message>
         <source>About This Program</source>
-        <translation>このプログラムについて</translation>
+        <translation>Erről a programról</translation>
     </message>
     <message>
         <source>Change Output &amp;Filename</source>
-        <translation>出力ファイル名を変更(&amp;F)</translation>
+        <translation>Kimeneti fájlnév megváltoztatása</translation>
     </message>
     <message>
         <source>Change the output filename of the selected item.</source>
-        <translation>選択された項目の出力ファイル名を変更.</translation>
+        <translation>Kiválasztott elemek kimeneti fájlnevének megváltoztatása.</translation>
     </message>
     <message>
         <source>Change Output &amp;Directory</source>
-        <translation>出力ディレクトリを変更(&amp;D)</translation>
+        <translation>Kimeneti könyvtár megváltoztatása</translation>
     </message>
     <message>
         <source>Change the output directory of the selected items.</source>
-        <translation>選択された項目の出力ディレクトリを変更.</translation>
+        <translation>Kiválasztott elemek kimeneti könytárának megváltoztatása</translation>
     </message>
     <message>
         <source>Show Error &amp;Message</source>
-        <translation>エラーメッセージを表示(&amp;M)</translation>
+        <translation>Hibaüzenetek megjelenítése</translation>
     </message>
     <message>
         <source>Check For &amp;Updates</source>
-        <translation>更新のチェック(&amp;U)</translation>
+        <translation>Frissítések ellenőrzése</translation>
     </message>
     <message>
         <source>Cut</source>
@@ -810,59 +810,59 @@
     </message>
     <message>
         <source>All tasks have finished.</source>
-        <translation>すべてのタスクが完了しました.</translation>
+        <translation>Minden feladat befejeződött.</translation>
     </message>
     <message>
         <source>Nothing to convert.</source>
-        <translation>変換されていません.</translation>
+        <translation>Nincs mit átalakítani.</translation>
     </message>
     <message>
         <source>Conversion is still in progress. Abort?</source>
-        <translation>変換処理を実行中です、中断しますか?</translation>
+        <translation>Átalakítás folymatban. Megszakítja?</translation>
     </message>
     <message>
         <source>Shutdown</source>
         <extracomment>Shutdown the computer (completely poweroff)</extracomment>
-        <translation>シャットダウン</translation>
+        <translation>Leállítás</translation>
     </message>
     <message>
         <source>Shutdown when all tasks are done.</source>
-        <translation>全タスク完了後にシャットダウン.</translation>
+        <translation>Leállítás ha minden feladat befejeződött.</translation>
     </message>
     <message>
         <source>Suspend</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
-        <translation>サスペンド</translation>
+        <translation>Felfüggesztés</translation>
     </message>
     <message>
         <source>Suspend when all tasks are done.</source>
-        <translation>全タスク完了後にスリープ.</translation>
+        <translation>Felfüggesztés ha minden feladat befejeződött.</translation>
     </message>
     <message>
         <source>Hibernate</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
-        <translation>休止状態</translation>
+        <translation>Hibernálás</translation>
     </message>
     <message>
         <source>Hibernate when all tasks are done.</source>
-        <translation>全タスク完了後に休止状態.</translation>
+        <translation>Hibernálás ha minden feladat befejeződött.</translation>
     </message>
     <message>
         <source>This program is going to check for updates online. Do you allow this program to use the Internet to check for updates?</source>
-        <translation>アップデートの確認にはオンライン接続が必要です、このプログラムのインターネットへの接続を許可しますか?</translation>
+        <translation>A program ellenőrzi a frissítéseket, ehhez az internet kapcsolatot használja. Engedélyezi az internet hozzáférést a program számára?</translation>
     </message>
     <message>
         <source>Failed to load preset file. The application will quit now.</source>
-        <translation>プリセットの読み込みに失敗、アプリケーションを終了します.</translation>
+        <translation>Nem sikerült betölteni az előbeállító fájlt. Az alkalmazás most kilép.</translation>
     </message>
     <message>
         <source>Elapsed Time: %1 h %2 m %3 s</source>
-        <translation>経過時間: %1 時 %2 分 %3 秒</translation>
+        <translation>Hátralévő idő: %1 ó %2 p %3 mp</translation>
     </message>
     <message>
         <source>Converting %1/%2</source>
         <extracomment>Converting the %1-th file in %2 files. %2 is the number of files.</extracomment>
-        <translation>変換中 %1/%2</translation>
+        <translation>Átalakítás: %1/%2 összesen</translation>
     </message>
 </context>
 <context>
@@ -870,30 +870,30 @@
     <message>
         <source>%1 not found.</source>
         <extracomment>%1 is a computer program</extracomment>
-        <translation>%1 が見つかりません。</translation>
+        <translation>%1 nem található.</translation>
     </message>
 </context>
 <context>
     <name>OptionsDialog</name>
     <message>
         <source>Options</source>
-        <translation>設定</translation>
+        <translation>Opciók</translation>
     </message>
     <message>
         <source>General</source>
-        <translation>一般</translation>
+        <translation>Általános</translation>
     </message>
     <message>
         <source>Check for updates on program startup</source>
-        <translation>起動時にアップデートの有無を確認</translation>
+        <translation>Frissítések keresése a program indulásakor</translation>
     </message>
     <message>
         <source>Automatically start conversion after adding files to the list.</source>
-        <translation>リストにファイルが追加されたら、自動的に変換を開始する.</translation>
+        <translation>Átalakítás automatikus indítása a fájlok hozzáadása után.</translation>
     </message>
     <message>
         <source>Start conversion automatically</source>
-        <translation>変換を自動的に開始</translation>
+        <translation>Átalakítás automatikus indítása</translation>
     </message>
     <message>
         <source>FFmpeg</source>
@@ -901,31 +901,31 @@
     </message>
     <message>
         <source>Number of threads to use in conversion</source>
-        <translation>変換時に使用するスレッド数</translation>
+        <translation>Konvertálási szálak száma</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hide output formats that are not available in the current ffmpeg installation. It is recommended to turn this option on unless you are sure that QWinFF has failed to detect available formats. (requires restarting QWinFF to take effect)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;現在インストールされている ffmpeg では利用できない出力形式を非表示にします。QWinFF による利用可能な形式の検出があきらかに失敗している場合を除き、このオプションは有効にしておくことをお勧めします。(設定の変更には QWinFF の再起動が必要)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Elrejti az FFmpeg jelenlegi telepítésében nem elérhető kimeneti fájlokat. Ajánlott ezt a lehetőséget bekapcsolni, kivéve, ha biztos benne, hogy a QWinFF nem ismerte fel a kimeneti formátumokat. (A QWinFF újraindítása szükséges a változtatás érvényesítéséhez)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Hide unavailable formats (requires restarting)</source>
-        <translation>利用できない形式は隠す (再起動が必要)</translation>
+        <translation>Nem elérhető formátumok elrejtése (újraindítást igényel)</translation>
     </message>
     <message>
         <source>Tools</source>
-        <translation>ツール</translation>
+        <translation>Eszközök</translation>
     </message>
     <message>
         <source>You have to restart QWinFF for the changes to take effect.</source>
-        <translation>ここでの変更は QWinFF の再起動後に適用されます.</translation>
+        <translation>Újra kell indítania a QWinff-et a változtatások érvényesítéséhez.</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>名前</translation>
+        <translation>Név</translation>
     </message>
     <message>
         <source>Command</source>
-        <translation>コマンド</translation>
+        <translation>Parancs</translation>
     </message>
 </context>
 <context>
@@ -936,53 +936,53 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation>キャンセル</translation>
+        <translation>Mégsem</translation>
     </message>
     <message>
         <source>Shutdown immediately</source>
         <extracomment>Shutdown the computer</extracomment>
-        <translation>すぐにシャットダウン</translation>
+        <translation>Azonnali leállítás</translation>
     </message>
     <message>
         <source>Suspend immediately</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
-        <translation>すぐにスリープ</translation>
+        <translation>Azonnali felfüggesztés</translation>
     </message>
     <message>
         <source>Hibernate immediately</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
-        <translation>すぐに休止状態</translation>
+        <translation>Azonnali hibernálás</translation>
     </message>
     <message>
         <source>Shutdown</source>
         <extracomment>Shutdown the computer</extracomment>
-        <translation>シャットダウン</translation>
+        <translation>Leállítás</translation>
     </message>
     <message>
         <source>Suspend</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
-        <translation>スリープ</translation>
+        <translation>Felfüggesztés</translation>
     </message>
     <message>
         <source>Hibernate</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
-        <translation>ハイバネート</translation>
+        <translation>Hibernálás</translation>
     </message>
     <message>
         <source>Operation Failed: %1</source>
-        <translation>処理に失敗: %1</translation>
+        <translation>%1 művelet sikertelen</translation>
     </message>
     <message>
         <source>Shutting down in &lt;b&gt;%1&lt;/b&gt; seconds</source>
-        <translation>シャットダウンまで &lt;b&gt;%1&lt;/b&gt; 秒</translation>
+        <translation>Leállítás  &lt;b&gt;%1 másoperc&lt;/b&gt; múlva</translation>
     </message>
     <message>
         <source>Suspending in &lt;b&gt;%1&lt;/b&gt; seconds</source>
-        <translation>スリープまで &lt;b&gt;%1&lt;/b&gt; 秒</translation>
+        <translation>Felfüggesztés &lt;b&gt;%1 másoperc&lt;/b&gt; múlva</translation>
     </message>
     <message>
         <source>Hibernating in &lt;b&gt;%1&lt;/b&gt; seconds</source>
-        <translation>休止状態まで &lt;b&gt;%1&lt;/b&gt; 秒</translation>
+        <translation>Hibernálás &lt;b&gt;%1 másoperc&lt;/b&gt; múlva</translation>
     </message>
 </context>
 <context>
@@ -1019,55 +1019,55 @@
     <name>TimeRangeEdit</name>
     <message>
         <source>From Begin</source>
-        <translation>最初から</translation>
+        <translation>Elejétől</translation>
     </message>
     <message>
         <source>To End</source>
-        <translation>最後まで</translation>
+        <translation>Végéig</translation>
     </message>
 </context>
 <context>
     <name>UpdateDialog</name>
     <message>
         <source>Show &amp;Release Notes</source>
-        <translation>更新履歴を表示(&amp;R)</translation>
+        <translation>Kiadási megjegyzések</translation>
     </message>
     <message>
         <source>Check for updates on program startup</source>
-        <translation>起動時にアップデートを確認</translation>
+        <translation>Frissítések keresése a program indításakor</translation>
     </message>
     <message>
         <source>Downloading update information...</source>
-        <translation>更新情報をダウンロード中...</translation>
+        <translation>Frissítési információk letöltése...</translation>
     </message>
     <message>
         <source>Cannot connect to server.</source>
-        <translation>サーバに接続できません.</translation>
+        <translation>Nem lehet kapcsolódni a kiszolgálóhoz</translation>
     </message>
     <message>
         <source>Failed to parse the received data.</source>
-        <translation>受信データの解析に失敗.</translation>
+        <translation>A fogadott adatok elemzése sikertelen.</translation>
     </message>
     <message>
         <source>You are already using the latest version of QWinFF.</source>
-        <translation>あなたは最新の QWinFF を使用中です.</translation>
+        <translation>Már a QWinFF legújabb kiadását használja.</translation>
     </message>
     <message>
         <source>An unknown error has occurred.</source>
-        <translation>不明なエラーが発生.</translation>
+        <translation>Ismeretlen hiba!</translation>
     </message>
     <message>
         <source>A new version of QWinFF has been released!</source>
-        <translation>QWinFF の新バージョンが公開されています!</translation>
+        <translation>A QWinFF új kiadása elérhető!</translation>
     </message>
     <message>
         <source>Version &lt;b&gt;%1&lt;/b&gt; is available at %2.</source>
         <extracomment>%1 is version number, %2 is the project homepage</extracomment>
-        <translation>バージョン &lt;b&gt;%1&lt;/b&gt; %2 が利用可能.</translation>
+        <translation>A &lt;b&gt;%1&lt;/b&gt; kiadás elérhető itt: %2</translation>
     </message>
     <message>
         <source>You can download this version using the link:</source>
-        <translation>このリンクからダウンロード可能です:</translation>
+        <translation>Ezt a kiadást letöltheti az alábbi linken:</translation>
     </message>
 </context>
 </TS>

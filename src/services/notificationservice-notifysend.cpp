@@ -30,12 +30,12 @@ NotificationService_NotifySend::~NotificationService_NotifySend()
 
 }
 
-void NotificationService_NotifySend::send(QString title, QString message)
+void NotificationService_NotifySend::send(QWidget *parent, QString title, QString message)
 {
-    send(title, message, NotifyLevel::INFO);
+    send(parent, title, message, NotifyLevel::INFO);
 }
 
-void NotificationService_NotifySend::send(QString title, QString message, int level)
+void NotificationService_NotifySend::send(QWidget */*parent*/, QString title, QString message, int level)
 {
     /* notify-send usage:
         notify-send [OPTION...] <SUMMARY> [BODY] - create a notification

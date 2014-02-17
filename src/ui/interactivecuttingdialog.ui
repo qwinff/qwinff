@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string comment="Cutting as in &quot;cutting video&quot;">Cutting</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
@@ -111,7 +111,6 @@
        </layout>
       </item>
      </layout>
-     <zorder>btnToBegin</zorder>
     </widget>
    </item>
    <item>

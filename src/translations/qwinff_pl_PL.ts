@@ -1,294 +1,292 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.0" language="ja_JP">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="pl_PL" version="2.0">
 <context>
     <name>AboutDialog</name>
     <message>
         <source>About QWinFF</source>
-        <translation>QWinFF について</translation>
+        <translation>Informacje o: QWinFF </translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>情報</translation>
+        <translation>Informacja </translation>
     </message>
     <message>
         <source>Translators</source>
-        <translation>翻訳者</translation>
+        <translation>Tłumaczenia</translation>
     </message>
     <message>
         <source>Version: %1</source>
-        <translation>バージョン: %1</translation>
+        <translation>Wersja: %1 </translation>
     </message>
     <message>
         <source>Portable</source>
         <extracomment>Portable version (no installation, no writing registry)</extracomment>
-        <translation>ポータブル</translation>
+        <translation>Portable</translation>
     </message>
     <message>
         <source>Compiled with Qt %1</source>
         <extracomment>Qt version</extracomment>
-        <translation>コンパイルに使用された Qt ：%1</translation>
+        <translation>Skompilowany z Qt %1</translation>
     </message>
     <message>
         <source>Compiled with libnotify %1</source>
-        <translation>コンパイルに使用された libnotify: %1</translation>
+        <translation>Skompilowany z libnotify %1 </translation>
     </message>
     <message>
         <source>QWinFF is a gui frontend for FFmpeg.</source>
-        <translation>QWinFF は FFmpeg のGUI フロントエンドツールです.</translation>
+        <translation>QWinFF ,to nakładką gui dla FFmpeg.</translation>
     </message>
     <message>
         <source>Programming: %1</source>
         <extracomment>%1 is the name and email of the programmer</extracomment>
-        <translation>プログラミング：%1</translation>
+        <translation>Programista: %1 </translation>
     </message>
     <message>
         <source>Logo Design: %1</source>
         <extracomment>%1 is the name and email of the logo designer</extracomment>
-        <translation>ロゴデザイン：%1</translation>
+        <translation>Logo projektu: %1 </translation>
     </message>
     <message>
         <source>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License version 2 or 3.</source>
-        <translation>このプログラムはフリーウェアです。 GNU一般共有使用許諾第2版(または 第3版)に基づき、ソフトウェアの変更、再配布は許可されます。</translation>
+        <translation>Ten program jest wolnym oprogramowaniem,  możesz go rozprowadzać dalej , lub modyfikować zgodnie z warunkami licencji GNU GPL w wersji 2 lub 3.</translation>
     </message>
     <message>
         <source>QWinFF Homepage: %1</source>
-        <translation>QWinFF 公式サイト: %1</translation>
+        <translation>Strona domowa QWinFF : %1</translation>
     </message>
     <message>
         <source>Some audio-processing functionalities are provided by SoX.</source>
-        <translation>いくつかの音声処理機能は SoX により提供されています.</translation>
+        <translation>Niektóre funkcje przetwarzania dźwięku są dostarczane przez: SoX.</translation>
     </message>
     <message>
         <source>FFmpeg presets were taken from WinFF.</source>
-        <translation>WinFFの FFmpeg プリセットを使用しています.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Japanese</source>
         <extracomment>Japanese Language</extracomment>
-        <translation>日本語</translation>
+        <translation>Japoński</translation>
     </message>
     <message>
         <source>Italian</source>
         <extracomment>Italian Language</extracomment>
-        <translation>イタリア語</translation>
+        <translation>Włoski </translation>
     </message>
     <message>
         <source>Czech</source>
         <extracomment>Czech Language</extracomment>
-        <translation>チェコ語</translation>
+        <translation>Czeski</translation>
     </message>
     <message>
         <source>Simplified Chinese</source>
         <extracomment>Chinese character set used in China</extracomment>
-        <translation>中国語(簡体字)</translation>
+        <translation>Chiński uproszczony</translation>
     </message>
     <message>
         <source>Russian</source>
         <extracomment>Russian Language</extracomment>
-        <translation>ロシア語</translation>
+        <translation>Rosyjski</translation>
     </message>
     <message>
         <source>Spanish (Spain)</source>
         <extracomment>Spanish Language (Spain)</extracomment>
-        <translation>スペイン語 (スペイン)</translation>
+        <translation>Hiszpański (Hiszpania) </translation>
     </message>
     <message>
         <source>Spanish (Guatemala)</source>
         <extracomment>Spanish Language (Guatemala)</extracomment>
-        <translation>スペイン語 (グアテマラ)</translation>
+        <translation>Hiszpański (Gwatemala) </translation>
     </message>
     <message>
         <source>Romanian</source>
         <extracomment>Romanian Language</extracomment>
-        <translation>ルーマニア語</translation>
+        <translation>Rumuński </translation>
     </message>
     <message>
         <source>Turkish</source>
         <extracomment>Turkish Language</extracomment>
-        <translation>トルコ語</translation>
+        <translation>Turecki</translation>
     </message>
     <message>
         <source>Arabic</source>
         <extracomment>Arabic Language</extracomment>
-        <translation>アラビア語</translation>
+        <translation>Arabski </translation>
     </message>
     <message>
         <source>Hungarian</source>
         <extracomment>Hungarian Langauge</extracomment>
-        <translation>ハンガリー語</translation>
+        <translation>Węgierski </translation>
     </message>
     <message>
         <source>Polish</source>
         <extracomment>Polish Language</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Polski</translation>
     </message>
 </context>
 <context>
     <name>AboutFFmpegDialog</name>
     <message>
         <source>About FFmpeg</source>
-        <translation>FFmpeg について</translation>
+        <translation>Informacje o: FFmpeg </translation>
     </message>
     <message>
         <source>FFmpeg</source>
-        <translation>FFmpeg</translation>
+        <translation>FFmpeg  </translation>
     </message>
     <message>
         <source>Available Codecs</source>
-        <translation>利用可能なコーデック</translation>
+        <translation>Dostępne kodeki </translation>
     </message>
     <message>
         <source>FFmpeg is a complete, cross-platform solution to record, convert and stream audio and video. It includes libavcodec - the leading audio/video codec library.</source>
         <extracomment>ffmpeg description</extracomment>
-        <translation>FFmpeg は完全なクロスプラットフォームに対応した、音声、映像ストリームの変換ツールで、主要な音声/ 映像コーデック・ライブラリが含まれています。</translation>
+        <translation>FFmpeg  to kompletne, wielosystemowe rozwiązanie do nagrywania i konwersji strumieni audio i wideo. Obejmuje libavcodec - wiodącą bibliotekę kodeków audio / wideo.</translation>
     </message>
     <message>
         <source>FFmpeg is free software licensed under the LGPL or GPL.</source>
-        <translation>FFmpeg は、LGPL / GPL ライセンスに基づき公開されているフリーソフトウェアです.</translation>
+        <translation>FFmpeg to wolne oprogramowanie na licencji LGPL lub GPL. </translation>
     </message>
     <message>
         <source>Please visit %1 for more information.</source>
         <extracomment>visit ffmpeg website</extracomment>
-        <translation>FFmpeg に関する情報: %1.</translation>
+        <translation>Odwiedź %1 aby uzyskać więcej informacji.</translation>
     </message>
 </context>
 <context>
     <name>AddTaskWizard</name>
     <message>
         <source>Add Tasks</source>
-        <translation>タスクを追加</translation>
+        <translation>Dodaj zadania </translation>
     </message>
     <message>
         <source>Files to be converted</source>
-        <translation>変換対象のファイル</translation>
+        <translation>Pliki do konwersji </translation>
     </message>
     <message>
         <source>Add files.</source>
-        <translation>ファイルを追加.</translation>
+        <translation>Dodaj pliki </translation>
     </message>
     <message>
         <source>Remove selected files.</source>
-        <translation>選択されたファイルを除去.</translation>
+        <translation>Usuń wybrane pliki.</translation>
     </message>
     <message>
         <source>Output Settings</source>
-        <translation>出力設定</translation>
+        <translation>Ustawienia wyjściowe</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>編集</translation>
+        <translation>Edytuj </translation>
     </message>
     <message>
         <source>Auto adjust output bitrate to reduce output file size.</source>
-        <translation>出力ファイルサイズが軽減するように出力ビットレートを自動調整.</translation>
+        <translation>Automatyczna regulacja przepustowości, w celu zmniejszenia rozmiaru pliku wyjściowego.</translation>
     </message>
     <message>
         <source>Auto Adjust Audio Bitrate</source>
-        <translation>音声ビットレートを自動調整</translation>
+        <translation>Automatyczna regulacja przepustowości audio</translation>
     </message>
     <message>
         <source>Preset</source>
-        <translation>プリセット</translation>
+        <translation>Ustawienia domyślne  </translation>
     </message>
     <message>
         <source>Convert to</source>
-        <translation>変換形式</translation>
+        <translation>Konwersja do </translation>
     </message>
     <message>
         <source>Output Path</source>
-        <translation>出力パス</translation>
+        <translation>Ścieżka wyjścia </translation>
     </message>
     <message>
         <source>Select &amp;folder</source>
-        <translation>ファイルを選択(&amp;F)</translation>
+        <translation>Wybierz &amp;folder </translation>
     </message>
     <message>
         <source>Browse</source>
-        <translation>参照</translation>
+        <translation>Przeglądaj </translation>
     </message>
     <message>
         <source>Create &amp;new folder in source folder</source>
         <extracomment>Create a new folder (e.g. qwinff_output) in the folder containing the input files. Put the output files in the newly created folder.</extracomment>
-        <translation>ソースフォルダに新規フォルダを作成(&amp;N)</translation>
+        <translation>Utwórz  &amp;nowy folder w folderze źródłowym </translation>
     </message>
     <message>
         <source>Folder Name</source>
-        <translation>フォルダ名</translation>
+        <translation>Nazwa folderu </translation>
     </message>
     <message>
         <source>Output to &amp;source folder</source>
         <extracomment>put the output files in the same folder as the input files</extracomment>
-        <translation>ソースフォルダに出力(&amp;S)</translation>
+        <translation>Zapisz w &amp;folderze źródłowym </translation>
     </message>
     <message>
         <source>Please select at least one file.</source>
-        <translation>ファイルを選択してください.</translation>
+        <translation>Proszę wybrać co najmniej jeden plik. </translation>
     </message>
     <message>
         <source>Select Files</source>
         <extracomment>This text is the title of an openfile dialog.</extracomment>
-        <translation>ファイルを選択</translation>
+        <translation>Wybierz pliki </translation>
     </message>
     <message>
         <source>Multimedia</source>
-        <translation>マルチメディア</translation>
+        <translation>Multimedia </translation>
     </message>
     <message>
         <source>Video</source>
-        <translation>映像</translation>
+        <translation>Wideo</translation>
     </message>
     <message>
         <source>Audio</source>
-        <translation>音声</translation>
+        <translation>Audio </translation>
     </message>
     <message>
         <source>All files</source>
-        <translation>すべてのファイル</translation>
+        <translation>Wszystkie pliki </translation>
     </message>
     <message>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
-        <translation>ディレクトリを選択</translation>
+        <translation>Wybierz katalog </translation>
     </message>
     <message>
         <source>Searching for files...</source>
-        <translation>ファイルを検索中...</translation>
+        <translation>Wyszukiwanie plików... </translation>
     </message>
     <message>
         <source>Some files could not be found.</source>
-        <translation>いくつかのファイルが見つかりません.</translation>
+        <translation>Niektórych plików nie można znaleźć. </translation>
     </message>
     <message>
         <source>Folder does not exist. Create a new folder?</source>
-        <translation>フォルダが存在しません、新たに作成しますか?</translation>
+        <translation>Folder nie istnieje. Utworzyć nowy folder? </translation>
     </message>
     <message>
         <source>Failed to create folder. Please select another output folder.</source>
-        <translation>フォルダ作成に失敗、別の出力フォルダを選択してください.</translation>
+        <translation>Nie udało się utworzyć folderu. Proszę wybrać inny folder wyjściowy. </translation>
     </message>
 </context>
 <context>
     <name>ConversionParameterDialog</name>
     <message>
         <source>Conversion Parameters</source>
-        <translation>変換パラメータ</translation>
+        <translation>Parametry konwersji </translation>
     </message>
     <message>
         <source>Audio</source>
-        <translation>音声</translation>
+        <translation>Audio </translation>
     </message>
     <message>
         <source>Disable Audio</source>
-        <translation>音声を無効</translation>
+        <translation>Wyłącz audio </translation>
     </message>
     <message>
         <source>Audio Options</source>
-        <translation>音声設定</translation>
+        <translation>Opcje audio </translation>
     </message>
     <message>
         <source>Sample Rate</source>
-        <translation>サンプルレート</translation>
+        <translation>Częstotliwość próbkowania</translation>
     </message>
     <message>
         <source>Hz</source>
@@ -296,103 +294,105 @@
     </message>
     <message>
         <source>Bitrate</source>
-        <translation>ビットレート</translation>
+        <translation>Przepustowość</translation>
     </message>
     <message>
         <source>(auto)</source>
-        <translation>自動</translation>
+        <translation>(auto)</translation>
     </message>
     <message>
         <source>kb/s</source>
-        <translation>kb/秒</translation>
+        <translation>kb/s</translation>
     </message>
     <message>
         <source>Channels</source>
-        <translation>チャンネル</translation>
+        <translation>Kanały </translation>
     </message>
     <message>
         <source>Volume</source>
-        <translation>音量</translation>
+        <translation>Głośność
+	
+</translation>
     </message>
     <message>
         <source>%</source>
-        <translation>%</translation>
+        <translation>% </translation>
     </message>
     <message>
         <source>Video</source>
-        <translation>映像</translation>
+        <translation>Wideo</translation>
     </message>
     <message>
         <source>Disable Video</source>
-        <translation>映像を無効</translation>
+        <translation>Wyłącz wideo </translation>
     </message>
     <message>
         <source>Video Options</source>
-        <translation>映像設定</translation>
+        <translation>Opcje wideo </translation>
     </message>
     <message>
         <source>Same Quantizer as Source</source>
-        <translation>ソースと同じ量子化</translation>
+        <translation>Przetwarzanie sygnału, podobnie jako źródło </translation>
     </message>
     <message>
         <source>Deinterlace</source>
-        <translation>インターレース解除</translation>
+        <translation>Przeplot </translation>
     </message>
     <message>
         <source>Width</source>
-        <translation>幅</translation>
+        <translation>Szerokość </translation>
     </message>
     <message>
         <source> px</source>
-        <translation> px</translation>
+        <translation> pikseli </translation>
     </message>
     <message>
         <source>Height</source>
-        <translation>高さ</translation>
+        <translation>Wysokość </translation>
     </message>
     <message>
         <source>Crop</source>
-        <translation>クロップ</translation>
+        <translation>Crop</translation>
     </message>
     <message>
         <source>Time</source>
         <extracomment>time-related options (speed, length)</extracomment>
-        <translation>時間</translation>
+        <translation>Czas</translation>
     </message>
     <message>
         <source>Cutting</source>
         <extracomment>video time cutting: options for begin time and end time</extracomment>
-        <translation>動画のカット</translation>
+        <translation>Cięcie</translation>
     </message>
     <message>
         <source>Cut</source>
         <comment>Cut video; select a range to convert</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&amp;Preview</source>
-        <translation>プレビュー(&amp;P)</translation>
+        <translation>&amp;Podgląd </translation>
     </message>
     <message>
         <source>Scaling</source>
         <extracomment>time scaling, changing the speed of the output file</extracomment>
-        <translation>スケーリング</translation>
+        <translation>Skalowanie </translation>
     </message>
     <message>
         <source>Speed</source>
-        <translation>速度</translation>
+        <translation>Prędkość </translation>
     </message>
     <message>
         <source>Advanced</source>
-        <translation>拡張</translation>
+        <translation>Zaawansowane</translation>
     </message>
     <message>
         <source>FFmpeg</source>
-        <translation>FFMpeg</translation>
+        <translation>FFmpeg </translation>
     </message>
     <message>
         <source>Additional FFmpeg Options</source>
-        <translation>FFmpeg 追加オプション</translation>
+        <translation>Dodatkowe opcje FFmpeg </translation>
     </message>
 </context>
 <context>
@@ -400,135 +400,136 @@
     <message>
         <source>Cancel</source>
         <extracomment>Cancel the operation of adding new tasks</extracomment>
-        <translation>キャンセル</translation>
+        <translation>Anuluj   </translation>
     </message>
     <message>
         <source>Adding files (%1/%2)</source>
         <extracomment>This text is the progress indicator of adding multiple tasks. %1 is the number of files that are already added. %2 is the total number of files.</extracomment>
-        <translation>ファイルを追加 (%1/%2)</translation>
+        <translation>Dodawanie plików (%1/%2) </translation>
     </message>
     <message>
         <source>Some files are not recognized by the converter.</source>
-        <translation>いくつかのファイルは認識できません.</translation>
+        <translation>Niektóre pliki nie są rozpoznawane przez konwerter. </translation>
     </message>
     <message>
         <source>New File Name</source>
-        <translation>新しいファイル名</translation>
+        <translation>Nowa nazwa pliku </translation>
     </message>
     <message>
         <source>Please input the new name for the output file.</source>
-        <translation>出力ファイルの名前を入力してください.</translation>
+        <translation>Proszę wpisać nową nazwę, dla pliku wyjściowego. </translation>
     </message>
     <message>
         <source>Output Directory</source>
-        <translation>出力ディレクトリ</translation>
+        <translation>Katalog wyjściowy </translation>
     </message>
     <message>
         <source>Error Message from FFmpeg:
 
 </source>
-        <translation>FFmpegからのエラーメッセージ:</translation>
+        <translation>Komunikat o błędzie z FFmpeg:
+</translation>
     </message>
     <message>
         <source>Drag and drop files here to add tasks.</source>
-        <translation>ファイルをここにドロップでタスクを追加.</translation>
+        <translation>Przeciągnij i upuść pliki tutaj, następnie ustaw parametry konwersji. </translation>
     </message>
     <message>
         <source>Hide &quot;%1&quot;</source>
-        <extracomment>Hide a column in the list. For example, the text maybe &apos;Hide &quot;Duration&quot;&apos;. The two &quot; are quotation marks in English, you may replace it with local quotation marks.</extracomment>
-        <translation>&quot;%1&quot; を隠す</translation>
+        <extracomment>Hide a column in the list. For example, the text maybe 'Hide &quot;Duration&quot;'. The two &quot; are quotation marks in English, you may replace it with local quotation marks.</extracomment>
+        <translation>Ukryj &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Restore All Columns</source>
-        <translation>すべての列を復元</translation>
+        <translation>Przywróć wszystkie kolumny</translation>
     </message>
     <message>
         <source>Source</source>
-        <translation>ソース</translation>
+        <translation>Źródło </translation>
     </message>
     <message>
         <source>Destination</source>
-        <translation>対象</translation>
+        <translation>Miejsce docelowe </translation>
     </message>
     <message>
         <source>Duration</source>
-        <translation>再生時間</translation>
+        <translation>Czas nagrania </translation>
     </message>
     <message>
         <source>File Size</source>
-        <translation>ファイルサイズ</translation>
+        <translation>Wielkość pliku </translation>
     </message>
     <message>
         <source>Sample Rate</source>
         <extracomment>Audio</extracomment>
-        <translation>サンプルレート</translation>
+        <translation>Częstotliwość próbkowania</translation>
     </message>
     <message>
         <source>Audio Bitrate</source>
-        <translation>音声ビットレート</translation>
+        <translation>Przepustowość audio</translation>
     </message>
     <message>
         <source>Channels</source>
         <extracomment>Audio</extracomment>
-        <translation>チャンネル</translation>
+        <translation>Kanały </translation>
     </message>
     <message>
         <source>Audio Codec</source>
-        <translation>音声コーデック</translation>
+        <translation>Audio kodek</translation>
     </message>
     <message>
         <source>Dimensions</source>
-        <translation>映像の寸法</translation>
+        <translation>Wymiar</translation>
     </message>
     <message>
         <source>Video Bitrate</source>
-        <translation>映像ビットレート</translation>
+        <translation>Wideo przepustowość </translation>
     </message>
     <message>
         <source>Framerate</source>
         <extracomment>Video</extracomment>
-        <translation>フレームレート</translation>
+        <translation>Częstotliwość wyświetlania klatek </translation>
     </message>
     <message>
         <source>Video Codec</source>
-        <translation>映像コーデック</translation>
+        <translation>Video kodek</translation>
     </message>
     <message>
         <source>Progress</source>
-        <translation>進捗状況</translation>
+        <translation>Postęp</translation>
     </message>
     <message>
         <source>%1 Hz</source>
-        <translation>%1 Hz</translation>
+        <translation>%1 Hz </translation>
     </message>
     <message>
         <source>%1 kb/s</source>
-        <translation>%1 kb/s</translation>
+        <translation>%1 kb/s </translation>
     </message>
     <message>
         <source>%1 fps</source>
-        <translation>%1 fps</translation>
+        <translation>%1 fps </translation>
     </message>
     <message>
         <source>Removing tasks...</source>
         <extracomment>Remove files from the tasklist</extracomment>
-        <translation>タスクを除去中...</translation>
+        <translation>Usuwanie zadań... </translation>
     </message>
     <message>
         <source>KiB</source>
-        <translation>KiB</translation>
+        <translation>kB </translation>
     </message>
     <message>
         <source>MiB</source>
-        <translation>MiB</translation>
+        <translation>MB		</translation>
     </message>
     <message>
         <source>GiB</source>
-        <translation>GiB</translation>
+        <translation>GB </translation>
     </message>
     <message>
         <source>TiB</source>
-        <translation>TiB</translation>
+        <translation>TB </translation>
     </message>
     <message>
         <source>B</source>
@@ -537,45 +538,45 @@
     </message>
     <message>
         <source>File Exists</source>
-        <translation>ファイルが存在します</translation>
+        <translation>Plik istnieje </translation>
     </message>
     <message>
         <source>%1 already exists on disk or in the task list. Still use this name as the output filename?</source>
-        <translation>%1 と同名のファイルがディスク上、またはタスク一覧に存在します. 本当にこの名前でファイルを出力しますか?</translation>
+        <translation>%1 już istnieje na dysku lub na liście zadań. Nadal używać tej nazwy jako nazwy pliku wyjściowego?</translation>
     </message>
     <message>
         <source>Remove Task</source>
-        <translation>タスクを除去</translation>
+        <translation>Usuń zadanie </translation>
     </message>
     <message>
         <source>Cannot remove a task while it is in progress.</source>
-        <translation>処理中のタスクは除去できません.</translation>
+        <translation>Nie można usunąć zadanie, gdy jest w toku. </translation>
     </message>
     <message>
         <source>Finished</source>
         <extracomment>The text to be displayed on the progress bar when a conversion finishes</extracomment>
-        <translation>完了</translation>
+        <translation>Zakończono </translation>
     </message>
     <message>
         <source>Failed</source>
         <extracomment>The text to be displayed on the progress bar when a conversion fails</extracomment>
-        <translation>失敗</translation>
+        <translation>Nie udało się </translation>
     </message>
     <message>
         <source>Error: %1</source>
         <extracomment>%1 is the error message</extracomment>
-        <translation>エラー: %1</translation>
+        <translation>Błąd: %1 </translation>
     </message>
 </context>
 <context>
     <name>ExtraTranslations</name>
     <message>
         <source>Convert between media file formats</source>
-        <translation>音声とビデオファイルの変換</translation>
+        <translation>Konwersja plików multimedialnych, pomiędzy różnymi formatami</translation>
     </message>
     <message>
         <source>Media Converter</source>
-        <translation>メディア変換</translation>
+        <translation>Konwerter mediów </translation>
     </message>
 </context>
 <context>
@@ -583,286 +584,286 @@
     <message>
         <source>Cutting</source>
         <comment>Cutting as in &quot;cutting video&quot;</comment>
-        <translation>動画のカット</translation>
+        <translation>Cięcie</translation>
     </message>
     <message>
         <source>Mark as Begin</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Seek to Begin</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Play Selection</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Mark as End</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Seek to End</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>%1 not found</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
         <source>QWinFF</source>
-        <translation>QWinFF</translation>
+        <translation>QWinFF </translation>
     </message>
     <message>
         <source>Start conversion process.</source>
-        <translation>変換を開始.</translation>
+        <translation>Rozpoczyna proces konwersji. </translation>
     </message>
     <message>
         <source>&amp;Start</source>
-        <translation>開始(&amp;S)</translation>
+        <translation>&amp;Start </translation>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation>ファイル(&amp;F)</translation>
+        <translation>&amp;Plik</translation>
     </message>
     <message>
         <source>&amp;Convert</source>
-        <translation>変換(&amp;C)</translation>
+        <translation>&amp;Konwersja </translation>
     </message>
     <message>
         <source>&amp;About</source>
-        <translation>情報(&amp;A)</translation>
+        <translation>&amp;Informacje o:</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation>編集(&amp;E)</translation>
+        <translation>&amp;Edytuj </translation>
     </message>
     <message>
         <source>&amp;Add Files</source>
-        <translation>ファイルを追加(&amp;A)</translation>
+        <translation>&amp;Dodaj pliki </translation>
     </message>
     <message>
         <source>Add files for conversion.</source>
-        <translation>変換するファイルを追加.</translation>
+        <translation>Dodaj pliki do konwersji. </translation>
     </message>
     <message>
         <source>Ctrl+N</source>
-        <translation>Ctrl+N</translation>
+        <translation>Ctrl+N </translation>
     </message>
     <message>
         <source>E&amp;xit</source>
-        <translation>終了(&amp;E)</translation>
+        <translation>W&amp;yjście </translation>
     </message>
     <message>
         <source>Exit the program.</source>
-        <translation>プログラムを終了.</translation>
+        <translation>Wyjście z programu.</translation>
     </message>
     <message>
         <source>F9</source>
-        <translation>F9</translation>
+        <translation>F9 </translation>
     </message>
     <message>
         <source>S&amp;top</source>
-        <translation>停止(&amp;T)</translation>
+        <translation>S&amp;top </translation>
     </message>
     <message>
         <source>Stop conversion process.</source>
-        <translation>変換処理を停止.</translation>
+        <translation>Zatrzymaj proces konwersji.</translation>
     </message>
     <message>
         <source>Set &amp;Parameters</source>
-        <translation>パラメータを設定(&amp;P)</translation>
+        <translation>Ustawienia &amp;parametrów  </translation>
     </message>
     <message>
         <source>Set Parameters</source>
         <extracomment>Edit output file parameters.</extracomment>
-        <translation>パラメータを設定</translation>
+        <translation>Ustawienia parametrów </translation>
     </message>
     <message>
         <source>Edit conversion parameters of selected files.</source>
-        <translation>選択されたファイルの変換パラメータを編集.</translation>
+        <translation>Parametry edycji konwersji, wybranych plików.</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
-        <translation>&amp;Qt について</translation>
+        <translation>Informacje o: &amp;Qt</translation>
     </message>
     <message>
         <source>About Qt</source>
-        <translation>Qt について</translation>
+        <translation>Informacje o: Qt</translation>
     </message>
     <message>
         <source>&amp;Open Output Folder</source>
-        <translation>出力先を開く(&amp;O)</translation>
+        <translation>&amp;Otwórz folder zapisu </translation>
     </message>
     <message>
         <source>Open output folder of the selected file.</source>
-        <translation>選択されたファイルの出力先を開く.</translation>
+        <translation>Otwórz folder zapisu, wybranego pliku. </translation>
     </message>
     <message>
         <source>About &amp;FFmpeg</source>
-        <translation>&amp;FFmpeg について</translation>
+        <translation>Informacje o: &amp;FFmpeg</translation>
     </message>
     <message>
         <source>About FFmpeg</source>
-        <translation>FFmpeg について</translation>
+        <translation>Informacje o: FFmpeg</translation>
     </message>
     <message>
         <source>&amp;Remove Selected</source>
         <extracomment>remove selected (tasks, items)</extracomment>
-        <translation>選択された項目を除去(&amp;R)</translation>
+        <translation>&amp;Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Remove all selected items in the list.</source>
-        <translation>すべての選択された項目を一覧から除去.</translation>
+        <translation>Usuń wszystkie wybrane pozycje na liście. </translation>
     </message>
     <message>
         <source>R&amp;emove Completed</source>
         <extracomment>remove completed (task, items)</extracomment>
-        <translation>完了済みの項目を除去(&amp;E)</translation>
+        <translation>U&amp;suń wykonane </translation>
     </message>
     <message>
         <source>Remove Completed Items</source>
-        <translation>完了済の項目を除去</translation>
+        <translation>Usuń wykonane zadania</translation>
     </message>
     <message>
         <source>Remove all completed items in the list.</source>
-        <translation>すべての完了済項目を一覧から除去.</translation>
+        <translation>Usuń wszystkie zaznaczone pozycje na liście. </translation>
     </message>
     <message>
         <source>&amp;Clear List</source>
-        <translation>リストをクリア(&amp;C)</translation>
+        <translation>&amp;Wyczyść listę</translation>
     </message>
     <message>
         <source>Clear List</source>
-        <translation>一覧をクリア</translation>
+        <translation>Wyczyść listę </translation>
     </message>
     <message>
         <source>Remove all items in the list.</source>
-        <translation>すべての項目を一覧から除去.</translation>
+        <translation>Usuń wszystkie przedmioty z listy.</translation>
     </message>
     <message>
         <source>&amp;Retry</source>
-        <translation>再試行(&amp;R)</translation>
+        <translation>&amp;Spróbuj ponownie </translation>
     </message>
     <message>
         <source>Retry</source>
-        <translation>再試行</translation>
+        <translation>Spróbuj ponownie </translation>
     </message>
     <message>
         <source>Retry selected tasks.</source>
-        <translation>選択されたタスクを再試行.</translation>
+        <translation>Ponów wybrane zadania. </translation>
     </message>
     <message>
         <source>Retry &amp;All</source>
-        <translation>すべてを再試行(&amp;A)</translation>
+        <translation>Ponów &amp;wszystko</translation>
     </message>
     <message>
         <source>Retry all tasks.</source>
-        <translation>すべてのタスクを再試行.</translation>
+        <translation>Ponów wszystkie zadania. </translation>
     </message>
     <message>
         <source>&amp;Options</source>
-        <translation>設定(&amp;O)</translation>
+        <translation>&amp;Opcje </translation>
     </message>
     <message>
         <source>Options</source>
-        <translation>設定</translation>
+        <translation>Opcje </translation>
     </message>
     <message>
         <source>About Q&amp;WinFF</source>
-        <translation>Q&amp;WinFF について</translation>
+        <translation>Informacje o: Q&amp;WinFF</translation>
     </message>
     <message>
         <source>About This Program</source>
-        <translation>このプログラムについて</translation>
+        <translation>Informacje o: programie</translation>
     </message>
     <message>
         <source>Change Output &amp;Filename</source>
-        <translation>出力ファイル名を変更(&amp;F)</translation>
+        <translation>Zmień nazwę pliku  &amp;na wyjściu</translation>
     </message>
     <message>
         <source>Change the output filename of the selected item.</source>
-        <translation>選択された項目の出力ファイル名を変更.</translation>
+        <translation>Zmień nazwę pliku wyjściowego wybranego elementu. </translation>
     </message>
     <message>
         <source>Change Output &amp;Directory</source>
-        <translation>出力ディレクトリを変更(&amp;D)</translation>
+        <translation>Zmień lokalizację  &amp;zapisu</translation>
     </message>
     <message>
         <source>Change the output directory of the selected items.</source>
-        <translation>選択された項目の出力ディレクトリを変更.</translation>
+        <translation>Zmień katalog docelowy, wybranych plików.</translation>
     </message>
     <message>
         <source>Show Error &amp;Message</source>
-        <translation>エラーメッセージを表示(&amp;M)</translation>
+        <translation>Wyświetl informację o błędzie </translation>
     </message>
     <message>
         <source>Check For &amp;Updates</source>
-        <translation>更新のチェック(&amp;U)</translation>
+        <translation>Sprawdź &amp;aktualizacje</translation>
     </message>
     <message>
         <source>Cut</source>
         <extracomment>Cut video file (select a time range to conert)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>All tasks have finished.</source>
-        <translation>すべてのタスクが完了しました.</translation>
+        <translation>Wszystkie zadania zostały zakończone. </translation>
     </message>
     <message>
         <source>Nothing to convert.</source>
-        <translation>変換されていません.</translation>
+        <translation>Nic do konwersji. </translation>
     </message>
     <message>
         <source>Conversion is still in progress. Abort?</source>
-        <translation>変換処理を実行中です、中断しますか?</translation>
+        <translation>Konwersja jest nadal w toku, przerwać? </translation>
     </message>
     <message>
         <source>Shutdown</source>
         <extracomment>Shutdown the computer (completely poweroff)</extracomment>
-        <translation>シャットダウン</translation>
+        <translation>Zamyka komputer </translation>
     </message>
     <message>
         <source>Shutdown when all tasks are done.</source>
-        <translation>全タスク完了後にシャットダウン.</translation>
+        <translation>Zamyka komputer, gdy wszystkie zadania są wykonywane.</translation>
     </message>
     <message>
         <source>Suspend</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
-        <translation>サスペンド</translation>
+        <translation>Zawiesza system.</translation>
     </message>
     <message>
         <source>Suspend when all tasks are done.</source>
-        <translation>全タスク完了後にスリープ.</translation>
+        <translation>Zawiesza system, gdy wszystkie zadania są wykonywane.</translation>
     </message>
     <message>
         <source>Hibernate</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
-        <translation>休止状態</translation>
+        <translation>Hibernuje system.</translation>
     </message>
     <message>
         <source>Hibernate when all tasks are done.</source>
-        <translation>全タスク完了後に休止状態.</translation>
+        <translation>Hibernuje system,  gdy wszystkie zadania są wykonywane. </translation>
     </message>
     <message>
         <source>This program is going to check for updates online. Do you allow this program to use the Internet to check for updates?</source>
-        <translation>アップデートの確認にはオンライン接続が必要です、このプログラムのインターネットへの接続を許可しますか?</translation>
+        <translation>Ten program, będzie sprawdzać  dostępność aktualizacji po przez łączenie się z Internetem. Czy wyrażasz zgodę na to? </translation>
     </message>
     <message>
         <source>Failed to load preset file. The application will quit now.</source>
-        <translation>プリセットの読み込みに失敗、アプリケーションを終了します.</translation>
+        <translation>Nie udało się załadować żadnego pliku . Aplikacja zostanie  teraz zamknięta.</translation>
     </message>
     <message>
         <source>Elapsed Time: %1 h %2 m %3 s</source>
-        <translation>経過時間: %1 時 %2 分 %3 秒</translation>
+        <translation>Czas trwania konwersji :  %1 h %2 m %3 s</translation>
     </message>
     <message>
         <source>Converting %1/%2</source>
         <extracomment>Converting the %1-th file in %2 files. %2 is the number of files.</extracomment>
-        <translation>変換中 %1/%2</translation>
+        <translation>Konwersja %1/%2 </translation>
     </message>
 </context>
 <context>
@@ -870,204 +871,211 @@
     <message>
         <source>%1 not found.</source>
         <extracomment>%1 is a computer program</extracomment>
-        <translation>%1 が見つかりません。</translation>
+        <translation>%1 nie został znaleziony.</translation>
+    </message>
+</context>
+<context>
+    <name>MediaPlayerWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>OptionsDialog</name>
     <message>
         <source>Options</source>
-        <translation>設定</translation>
+        <translation>Opcje </translation>
     </message>
     <message>
         <source>General</source>
-        <translation>一般</translation>
+        <translation>Ogólne</translation>
     </message>
     <message>
         <source>Check for updates on program startup</source>
-        <translation>起動時にアップデートの有無を確認</translation>
+        <translation>Sprawdź aktualizacje, przy starcie programu</translation>
     </message>
     <message>
         <source>Automatically start conversion after adding files to the list.</source>
-        <translation>リストにファイルが追加されたら、自動的に変換を開始する.</translation>
+        <translation>Automatycznie rozpoczyna konwersję, po dodaniu plików do listy. </translation>
     </message>
     <message>
         <source>Start conversion automatically</source>
-        <translation>変換を自動的に開始</translation>
+        <translation>Automatycznie rozpoczyna konwersję   </translation>
     </message>
     <message>
         <source>FFmpeg</source>
-        <translation>FFmpeg</translation>
+        <translation>FFmpeg </translation>
     </message>
     <message>
         <source>Number of threads to use in conversion</source>
-        <translation>変換時に使用するスレッド数</translation>
+        <translation>Liczba wątków do wykorzystania w konwersji </translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hide output formats that are not available in the current ffmpeg installation. It is recommended to turn this option on unless you are sure that QWinFF has failed to detect available formats. (requires restarting QWinFF to take effect)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;現在インストールされている ffmpeg では利用できない出力形式を非表示にします。QWinFF による利用可能な形式の検出があきらかに失敗している場合を除き、このオプションは有効にしておくことをお勧めします。(設定の変更には QWinFF の再起動が必要)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ukryj formaty wyjściowe, które są niedostępne w bieżącej instalacji ffmpeg. Zaleca się, aby włączyć tę opcję, w przypadku gdy są podejrzenia, że WinFF nie wykrywa prawidłowo dostępne formaty. (wymaga ponownego uruchomienia WinFF, po to aby zmiany zaczęły obowiązywać)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Hide unavailable formats (requires restarting)</source>
-        <translation>利用できない形式は隠す (再起動が必要)</translation>
+        <translation>Ukrywanie niedostępnych formatów (wymaga ponownego uruchomienia) </translation>
     </message>
     <message>
         <source>Tools</source>
-        <translation>ツール</translation>
+        <translation>Narzędzia </translation>
     </message>
     <message>
         <source>You have to restart QWinFF for the changes to take effect.</source>
-        <translation>ここでの変更は QWinFF の再起動後に適用されます.</translation>
+        <translation>Należy ponownie uruchomić QWinFF , aby zmiany odniosły skutek. </translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>名前</translation>
+        <translation>Nazwa</translation>
     </message>
     <message>
         <source>Command</source>
-        <translation>コマンド</translation>
+        <translation>Komenda</translation>
     </message>
 </context>
 <context>
     <name>PoweroffDialog</name>
     <message>
         <source>QWinFF</source>
-        <translation>QWinFF</translation>
+        <translation>QWinFF </translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>キャンセル</translation>
+        <translation>Anuluj  </translation>
     </message>
     <message>
         <source>Shutdown immediately</source>
         <extracomment>Shutdown the computer</extracomment>
-        <translation>すぐにシャットダウン</translation>
+        <translation>Zamknij komputer,  natychmiast.</translation>
     </message>
     <message>
         <source>Suspend immediately</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
-        <translation>すぐにスリープ</translation>
+        <translation>Włącz zawieszenie natychmiast</translation>
     </message>
     <message>
         <source>Hibernate immediately</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
-        <translation>すぐに休止状態</translation>
+        <translation>Włącz hibernacje, natychmiast </translation>
     </message>
     <message>
         <source>Shutdown</source>
         <extracomment>Shutdown the computer</extracomment>
-        <translation>シャットダウン</translation>
+        <translation>Zamyka komputer</translation>
     </message>
     <message>
         <source>Suspend</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
-        <translation>スリープ</translation>
+        <translation>Zawiesza system</translation>
     </message>
     <message>
         <source>Hibernate</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
-        <translation>ハイバネート</translation>
+        <translation>Hibernuje system </translation>
     </message>
     <message>
         <source>Operation Failed: %1</source>
-        <translation>処理に失敗: %1</translation>
+        <translation>Operacja nie powiodła się: %1 </translation>
     </message>
     <message>
         <source>Shutting down in &lt;b&gt;%1&lt;/b&gt; seconds</source>
-        <translation>シャットダウンまで &lt;b&gt;%1&lt;/b&gt; 秒</translation>
+        <translation>Zamknięcie komputera, za &lt;b&gt;%1&lt;/b&gt; sekund</translation>
     </message>
     <message>
         <source>Suspending in &lt;b&gt;%1&lt;/b&gt; seconds</source>
-        <translation>スリープまで &lt;b&gt;%1&lt;/b&gt; 秒</translation>
+        <translation>Zawieszenie systemu, za &lt;b&gt;%1&lt;/b&gt; sekund</translation>
     </message>
     <message>
         <source>Hibernating in &lt;b&gt;%1&lt;/b&gt; seconds</source>
-        <translation>休止状態まで &lt;b&gt;%1&lt;/b&gt; 秒</translation>
+        <translation>Hibernacja systemu, za &lt;b&gt;%1&lt;/b&gt; sekund</translation>
     </message>
 </context>
 <context>
     <name>PreviewDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Play Selected Range</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>%1 not found</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Begin</source>
         <extracomment>noun, the beginning of the video</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>End</source>
         <extracomment>noun, the end of the video</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Play %1~%2</source>
         <extracomment>play the video from time %1 to time %2. %1 and %2 are time in hh:mm:ss format.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>TimeRangeEdit</name>
     <message>
         <source>From Begin</source>
-        <translation>最初から</translation>
+        <translation>Od początku - bez opcji cięcia   </translation>
     </message>
     <message>
         <source>To End</source>
-        <translation>最後まで</translation>
+        <translation>Do końca - bez opcji cięcia  </translation>
     </message>
 </context>
 <context>
     <name>UpdateDialog</name>
     <message>
         <source>Show &amp;Release Notes</source>
-        <translation>更新履歴を表示(&amp;R)</translation>
+        <translation>Pokarz &amp;Informacje o wydaniu </translation>
     </message>
     <message>
         <source>Check for updates on program startup</source>
-        <translation>起動時にアップデートを確認</translation>
+        <translation>Sprawdź aktualizacje przy starcie programu.</translation>
     </message>
     <message>
         <source>Downloading update information...</source>
-        <translation>更新情報をダウンロード中...</translation>
+        <translation>Pobieranie informacji o aktualizacji ... </translation>
     </message>
     <message>
         <source>Cannot connect to server.</source>
-        <translation>サーバに接続できません.</translation>
+        <translation>Nie można połączyć się z serwerem. </translation>
     </message>
     <message>
         <source>Failed to parse the received data.</source>
-        <translation>受信データの解析に失敗.</translation>
+        <translation>Nie udało się przetworzyć dane. </translation>
     </message>
     <message>
         <source>You are already using the latest version of QWinFF.</source>
-        <translation>あなたは最新の QWinFF を使用中です.</translation>
+        <translation>Używasz najnowszej wersji QWinFF.</translation>
     </message>
     <message>
         <source>An unknown error has occurred.</source>
-        <translation>不明なエラーが発生.</translation>
+        <translation>Wystąpił nieznany błąd. </translation>
     </message>
     <message>
         <source>A new version of QWinFF has been released!</source>
-        <translation>QWinFF の新バージョンが公開されています!</translation>
+        <translation>Nowa wersja QWinFF,  została wydana!</translation>
     </message>
     <message>
         <source>Version &lt;b&gt;%1&lt;/b&gt; is available at %2.</source>
         <extracomment>%1 is version number, %2 is the project homepage</extracomment>
-        <translation>バージョン &lt;b&gt;%1&lt;/b&gt; %2 が利用可能.</translation>
+        <translation>Wersja &lt;b&gt;%1&lt;/b&gt; jest dostępna w %2.</translation>
     </message>
     <message>
         <source>You can download this version using the link:</source>
-        <translation>このリンクからダウンロード可能です:</translation>
+        <translation>Możesz pobrać tą wersję, za pomocą linku: </translation>
     </message>
 </context>
 </TS>

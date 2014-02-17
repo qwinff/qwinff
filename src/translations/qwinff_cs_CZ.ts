@@ -113,6 +113,16 @@
         <extracomment>Arabic Language</extracomment>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Hungarian</source>
+        <extracomment>Hungarian Langauge</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Polish</source>
+        <extracomment>Polish Language</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutFFmpegDialog</name>
@@ -237,13 +247,17 @@
         <translation>Všechny soubory</translation>
     </message>
     <message>
-        <source>Some files could not be found.</source>
-        <translation>Některé soubory nebyli nalezeny.</translation>
-    </message>
-    <message>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
         <translation>Vyberte prosím andresář</translation>
+    </message>
+    <message>
+        <source>Searching for files...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Some files could not be found.</source>
+        <translation>Některé soubory nebyli nalezeny.</translation>
     </message>
     <message>
         <source>Folder does not exist. Create a new folder?</source>
@@ -281,12 +295,20 @@
         <translation>Hz</translation>
     </message>
     <message>
-        <source>Channels</source>
-        <translation>Počet kánálů</translation>
+        <source>Bitrate</source>
+        <translation>Bitrate</translation>
     </message>
     <message>
         <source>(auto)</source>
         <translation>(automaticky)</translation>
+    </message>
+    <message>
+        <source>kb/s</source>
+        <translation>kb/s</translation>
+    </message>
+    <message>
+        <source>Channels</source>
+        <translation>Počet kánálů</translation>
     </message>
     <message>
         <source>Volume</source>
@@ -295,14 +317,6 @@
     <message>
         <source>%</source>
         <translation>%</translation>
-    </message>
-    <message>
-        <source>Bitrate</source>
-        <translation>Bitrate</translation>
-    </message>
-    <message>
-        <source>kb/s</source>
-        <translation>kb/s</translation>
     </message>
     <message>
         <source>Video</source>
@@ -315,6 +329,14 @@
     <message>
         <source>Video Options</source>
         <translation>Nastavení videa</translation>
+    </message>
+    <message>
+        <source>Same Quantizer as Source</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deinterlace</source>
+        <translation>Bez prokládání</translation>
     </message>
     <message>
         <source>Width</source>
@@ -333,14 +355,6 @@
         <translation>Oříznout</translation>
     </message>
     <message>
-        <source>Same Quantizer as Source</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Deinterlace</source>
-        <translation>Bez prokládání</translation>
-    </message>
-    <message>
         <source>Time</source>
         <extracomment>time-related options (speed, length)</extracomment>
         <translation>Čas</translation>
@@ -351,12 +365,9 @@
         <translation>Sřih</translation>
     </message>
     <message>
-        <source>From Begin</source>
-        <translation>Od začátku</translation>
-    </message>
-    <message>
-        <source>To End</source>
-        <translation>Do konce</translation>
+        <source>Cut</source>
+        <comment>Cut video; select a range to convert</comment>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Preview</source>
@@ -570,6 +581,38 @@
     </message>
 </context>
 <context>
+    <name>InteractiveCuttingDialog</name>
+    <message>
+        <source>Cutting</source>
+        <comment>Cutting as in &quot;cutting video&quot;</comment>
+        <translation>Sřih</translation>
+    </message>
+    <message>
+        <source>Mark as Begin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Seek to Begin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mark as End</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Seek to End</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
         <source>QWinFF</source>
@@ -763,6 +806,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Cut</source>
+        <extracomment>Cut video file (select a time range to conert)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>All tasks have finished.</source>
         <translation>Všechny úlohy dokončeny.</translation>
     </message>
@@ -937,6 +985,47 @@
     <message>
         <source>Hibernating in &lt;b&gt;%1&lt;/b&gt; seconds</source>
         <translation>Hibernuji za &lt;b&gt;%1&lt;/b&gt; sekund</translation>
+    </message>
+</context>
+<context>
+    <name>PreviewDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play Selected Range</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Begin</source>
+        <extracomment>noun, the beginning of the video</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End</source>
+        <extracomment>noun, the end of the video</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play %1~%2</source>
+        <extracomment>play the video from time %1 to time %2. %1 and %2 are time in hh:mm:ss format.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TimeRangeEdit</name>
+    <message>
+        <source>From Begin</source>
+        <translation>Od začátku</translation>
+    </message>
+    <message>
+        <source>To End</source>
+        <translation>Do konce</translation>
     </message>
 </context>
 <context>

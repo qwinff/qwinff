@@ -96,7 +96,8 @@ static bool load_constants(QApplication& app)
 }
 
 // register an external tool for use
-static void register_tool(const char *name)
+// returns whether the tool can be successfully invoked
+static bool register_tool(const char *id, const char *name)
 {
     QString exefile = name; // default: use the program in PATH
 #ifdef TOOLS_IN_DATA_PATH // Search external tools in <datapath>/tools
@@ -106,7 +107,39 @@ static void register_tool(const char *name)
     exefile = Paths::dataFileName("tools/%1").arg(name);
 #endif // Q_OS_WIN32
 #endif // TOOLS_IN_DATA_PATH
-    ExePath::setPath(name, exefile);
+    ExePath::setPath(id, exefile);
+    if (ExePath::checkProgramAvailability(id))
+        return true;
+    // failed to invoke the program
+    ExePath::setPath(id, ""); // unset the tool
+    return false;
+}
+
+static bool register_tool(const char *name)
+{
+    return register_tool(name, name);
+}
+
+static void register_external_tools()
+{
+    // load user settings for the tools
+    ExePath::loadSettings();
+    // If the setting of ffmpeg is not available, register it again.
+    // If "ffmpeg" doesn't exist on the system, try "avconv" instead.
+    ExePath::checkProgramAvailability("ffmpeg")
+            || register_tool("ffmpeg")
+            || register_tool("ffmpeg", "avconv");
+    // same as "ffmpeg" (try "avprobe" if "ffprobe" not available)
+    ExePath::checkProgramAvailability("ffprobe")
+            || register_tool("ffprobe")
+            || register_tool("ffprobe", "avprobe");
+    // same as above
+    ExePath::checkProgramAvailability("ffplay")
+            || register_tool("ffplay")
+            || register_tool("ffplay", "avplay");
+    // these tools have no alternative names
+    register_tool("sox");
+    register_tool("mplayer");
 }
 
 int main(int argc, char *argv[])
@@ -138,13 +171,7 @@ int main(int argc, char *argv[])
 
     Paths::setAppPath(app.applicationDirPath());
 
-    // register external tools
-    register_tool("ffmpeg");
-    register_tool("ffprobe");
-    register_tool("sox");
-    register_tool("ffplay");
-    register_tool("mplayer");
-    ExePath::loadSettings();
+    register_external_tools();
 
     // Construct a string list containing all input filenames.
     QStringList inputFiles(app.arguments());

@@ -5,19 +5,19 @@
     <name>AboutDialog</name>
     <message>
         <source>About QWinFF</source>
-        <translation>عن QWinFF</translation>
+        <translation>نبذة عن QWinFF</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>معلومات</translation>
+        <translation>المعلومات</translation>
     </message>
     <message>
         <source>Translators</source>
-        <translation>مترجمين</translation>
+        <translation>المترجمون</translation>
     </message>
     <message>
         <source>Version: %1</source>
-        <translation>النسخة : %1</translation>
+        <translation>الإصدار: %1</translation>
     </message>
     <message>
         <source>Portable</source>
@@ -27,41 +27,41 @@
     <message>
         <source>Compiled with Qt %1</source>
         <extracomment>Qt version</extracomment>
-        <translation>تٌورجم بواسطة منصة Qt %1</translation>
+        <translation>جُمِّع بواسطة منصة Qt %1</translation>
     </message>
     <message>
         <source>Compiled with libnotify %1</source>
-        <translation>تٌورجم بواسطة libnotify %1</translation>
+        <translation>جُمِّع بواسطة libnotify %1</translation>
     </message>
     <message>
         <source>QWinFF is a gui frontend for FFmpeg.</source>
-        <translation>(QWinFF) هو الواجهة الرسومية لبرنامج (FFmpeg)</translation>
+        <translation>QWinFF هو نهاية أمامية ذات واجهة رسومية لـFFmpeg.</translation>
     </message>
     <message>
         <source>Programming: %1</source>
         <extracomment>%1 is the name and email of the programmer</extracomment>
-        <translation>من برمجة : %1</translation>
+        <translation>برمجه: %1</translation>
     </message>
     <message>
         <source>Logo Design: %1</source>
         <extracomment>%1 is the name and email of the logo designer</extracomment>
-        <translation>صمم الشعار : %1</translation>
+        <translation>صمم شعاره: %1</translation>
     </message>
     <message>
         <source>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License version 2 or 3.</source>
-        <translation>هذا البرنامج هو برنامج حر، ويمكنك إعادة توزيعه أو تعديله تحت شروط إصدار رخصة جنو العمومية العامة 2 او 3.</translation>
+        <translation>هذا برنامج حرّ، بإمكانك توزيعه و/أو تعديله بما يوافق أحكام رخصة GPL الإصدار الثاني أو الثالث.</translation>
     </message>
     <message>
         <source>QWinFF Homepage: %1</source>
-        <translation>الصفحة الرئيسية للبرنامج : %1</translation>
+        <translation>موقع البرنامج: %1</translation>
     </message>
     <message>
         <source>Some audio-processing functionalities are provided by SoX.</source>
-        <translation>يتم توفير بعض الوظائف السمعية ومعالجتها من قبل SOX.</translation>
+        <translation>توفّر SoX بعض وظائف معالجة الصوت.</translation>
     </message>
     <message>
         <source>FFmpeg presets were taken from WinFF.</source>
-        <translation>WinFF اخذت من FFmpeg .</translation>
+        <translation>أُخذت وصفات التحويل الجاهزة لـFFmpeg من WinFF.</translation>
     </message>
     <message>
         <source>Japanese</source>
@@ -71,17 +71,17 @@
     <message>
         <source>Italian</source>
         <extracomment>Italian Language</extracomment>
-        <translation>الايطالية</translation>
+        <translation>الإيطالية</translation>
     </message>
     <message>
         <source>Czech</source>
         <extracomment>Czech Language</extracomment>
-        <translation>الكازخاستانية</translation>
+        <translation>التشيكية</translation>
     </message>
     <message>
         <source>Simplified Chinese</source>
         <extracomment>Chinese character set used in China</extracomment>
-        <translation>الصينية البسيطة</translation>
+        <translation>الصينية المبسطة</translation>
     </message>
     <message>
         <source>Russian</source>
@@ -101,24 +101,34 @@
     <message>
         <source>Romanian</source>
         <extracomment>Romanian Language</extracomment>
-        <translation>رومانيا</translation>
+        <translation>الرومانية</translation>
     </message>
     <message>
         <source>Turkish</source>
         <extracomment>Turkish Language</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>التركية</translation>
     </message>
     <message>
         <source>Arabic</source>
         <extracomment>Arabic Language</extracomment>
-        <translation>اللغة العربية</translation>
+        <translation>العربية</translation>
+    </message>
+    <message>
+        <source>Hungarian</source>
+        <extracomment>Hungarian Langauge</extracomment>
+        <translation>هنجاريه</translation>
+    </message>
+    <message>
+        <source>Polish</source>
+        <extracomment>Polish Language</extracomment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>AboutFFmpegDialog</name>
     <message>
         <source>About FFmpeg</source>
-        <translation>حول FFmpeg</translation>
+        <translation>نبذة عن FFmpeg</translation>
     </message>
     <message>
         <source>FFmpeg</source>
@@ -131,94 +141,94 @@
     <message>
         <source>FFmpeg is a complete, cross-platform solution to record, convert and stream audio and video. It includes libavcodec - the leading audio/video codec library.</source>
         <extracomment>ffmpeg description</extracomment>
-        <translation>FFmpeg is a complete, cross-platform solution to record, convert and stream audio and video. It includes libavcodec - the leading audio/video codec library.</translation>
+        <translation>FFmpeg حلّ متكامل وعابر للأنظمة لتسجيل الصوت والفيديو وتحويلهما ودَفقهما. يضم libavcodec: مكتبة ترميز الصوت والفيديو الرائدة.</translation>
     </message>
     <message>
         <source>FFmpeg is free software licensed under the LGPL or GPL.</source>
-        <translation>FFMPEG هي البرمجيات الحرة المرخص لها بموجب LGPL أو GPL.</translation>
+        <translation>FFmpeg برنامج حرّ يرخص وفق LGPL أو GPL.</translation>
     </message>
     <message>
         <source>Please visit %1 for more information.</source>
         <extracomment>visit ffmpeg website</extracomment>
-        <translation>الرجاء زيارة  %1 لمزيد من المعلومات .</translation>
+        <translation>زُر %1 لمعلومات أكثر.</translation>
     </message>
 </context>
 <context>
     <name>AddTaskWizard</name>
     <message>
         <source>Add Tasks</source>
-        <translation>اضافة المهام</translation>
+        <translation>إضافة مَهامَ</translation>
     </message>
     <message>
         <source>Files to be converted</source>
-        <translation>الملفات التي يتم تحويلها</translation>
+        <translation>الملفات المُراد تحويلها</translation>
     </message>
     <message>
         <source>Add files.</source>
-        <translation>اضافة ملفات</translation>
+        <translation>أضف ملفات.</translation>
     </message>
     <message>
         <source>Remove selected files.</source>
-        <translation>الغاء تحديد الملفات</translation>
+        <translation>أزِل الملفات المحددة.</translation>
     </message>
     <message>
         <source>Output Settings</source>
-        <translation>ضبط الاخرأج</translation>
+        <translation>ضبط الخرج</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>تعديل</translation>
+        <translation>تحرير</translation>
     </message>
     <message>
         <source>Auto adjust output bitrate to reduce output file size.</source>
-        <translation>ضبط معدل بت الإخراج اتوماتيك لتقليل حجم الملف الناتج.</translation>
+        <translation>اضبط معدل البِتّات تلقائيًّا للإقلال من حجم الملف الناتج.</translation>
     </message>
     <message>
         <source>Auto Adjust Audio Bitrate</source>
-        <translation>الضبط التلقائي لمعدل بت الصوت</translation>
+        <translation>الضبط التلقائي لمعدل بتات الصوت</translation>
     </message>
     <message>
         <source>Preset</source>
-        <translation>الإعداد المسبق</translation>
+        <translation>الوصفة الجاهزة</translation>
     </message>
     <message>
         <source>Convert to</source>
-        <translation>تحويل الى </translation>
+        <translation>حوّل إلى</translation>
     </message>
     <message>
         <source>Output Path</source>
-        <translation>مجلد الاخرأج</translation>
+        <translation>مسار الخرج</translation>
     </message>
     <message>
         <source>Select &amp;folder</source>
-        <translation type="unfinished"></translation>
+        <translation>ا&amp;ختر مجلداً</translation>
     </message>
     <message>
         <source>Browse</source>
-        <translation>أستعراض</translation>
+        <translation>استعرض</translation>
     </message>
     <message>
         <source>Create &amp;new folder in source folder</source>
         <extracomment>Create a new folder (e.g. qwinff_output) in the folder containing the input files. Put the output files in the newly created folder.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>أنشئ مجلداً &amp;جديداً في مجلد الدَخل</translation>
     </message>
     <message>
         <source>Folder Name</source>
-        <translation type="unfinished"></translation>
+        <translation>اسم المجلد</translation>
     </message>
     <message>
         <source>Output to &amp;source folder</source>
         <extracomment>put the output files in the same folder as the input files</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>أخرج إلى مجلد الد&amp;خل</translation>
     </message>
     <message>
         <source>Please select at least one file.</source>
-        <translation>الرجاء اختيار ملف او اكثر </translation>
+        <translation>رجاءً اختر ملفاً واحداً أو أكثر.</translation>
     </message>
     <message>
         <source>Select Files</source>
         <extracomment>This text is the title of an openfile dialog.</extracomment>
-        <translation>حدد ملفات</translation>
+        <translation>اختر ملفات</translation>
     </message>
     <message>
         <source>Multimedia</source>
@@ -234,31 +244,35 @@
     </message>
     <message>
         <source>All files</source>
-        <translation>جميع الملفات</translation>
-    </message>
-    <message>
-        <source>Some files could not be found.</source>
-        <translation>لم يتم العثور على بعض الملفات .</translation>
+        <translation>كل الملفات</translation>
     </message>
     <message>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
-        <translation>اختيار مجلد</translation>
+        <translation>اختر مجلداً</translation>
+    </message>
+    <message>
+        <source>Searching for files...</source>
+        <translation>يبحث عن الملفات ...</translation>
+    </message>
+    <message>
+        <source>Some files could not be found.</source>
+        <translation>لم تُوجد بعض الملفات.</translation>
     </message>
     <message>
         <source>Folder does not exist. Create a new folder?</source>
-        <translation>المجلد غير موجود. إنشاء مجلد جديد ؟</translation>
+        <translation>لم يُوجد المجلد. أتريد إنشاء واحدٍ جديد؟</translation>
     </message>
     <message>
         <source>Failed to create folder. Please select another output folder.</source>
-        <translation>فشل في إنشاء المجلد. الرجاء اختيار مجلد آخر للإخراج</translation>
+        <translation>غير قادر على إنشاء المجلد. رجاء اختر مجلداً آخر للخرج.</translation>
     </message>
 </context>
 <context>
     <name>ConversionParameterDialog</name>
     <message>
         <source>Conversion Parameters</source>
-        <translation>معلمات التحويل</translation>
+        <translation>معاملات التحويل</translation>
     </message>
     <message>
         <source>Audio</source>
@@ -266,27 +280,35 @@
     </message>
     <message>
         <source>Disable Audio</source>
-        <translation>الغاء الصوت</translation>
+        <translation>أزل الصوت</translation>
     </message>
     <message>
         <source>Audio Options</source>
-        <translation>خياات الصوت</translation>
+        <translation>خيارات الصوت</translation>
     </message>
     <message>
         <source>Sample Rate</source>
-        <translation>معدل العينة</translation>
+        <translation>نسبة التردد</translation>
     </message>
     <message>
         <source>Hz</source>
-        <translation>هيرتز</translation>
+        <translation>هرتز</translation>
     </message>
     <message>
-        <source>Channels</source>
-        <translation>قنوات</translation>
+        <source>Bitrate</source>
+        <translation>معدل البتات</translation>
     </message>
     <message>
         <source>(auto)</source>
         <translation>( تلقائي)</translation>
+    </message>
+    <message>
+        <source>kb/s</source>
+        <translation>ك.ب/ثا</translation>
+    </message>
+    <message>
+        <source>Channels</source>
+        <translation>القنوات</translation>
     </message>
     <message>
         <source>Volume</source>
@@ -297,24 +319,24 @@
         <translation>%</translation>
     </message>
     <message>
-        <source>Bitrate</source>
-        <translation>معدل البت</translation>
-    </message>
-    <message>
-        <source>kb/s</source>
-        <translation>ك.ب/ ث</translation>
-    </message>
-    <message>
         <source>Video</source>
         <translation>الفيديو</translation>
     </message>
     <message>
         <source>Disable Video</source>
-        <translation>الغاء الفيديو</translation>
+        <translation>أزل الفيديو</translation>
     </message>
     <message>
         <source>Video Options</source>
         <translation>خيارات الفيديو</translation>
+    </message>
+    <message>
+        <source>Same Quantizer as Source</source>
+        <translation>المعامل الكمّي كما في المصدر</translation>
+    </message>
+    <message>
+        <source>Deinterlace</source>
+        <translation>فك التشابك</translation>
     </message>
     <message>
         <source>Width</source>
@@ -330,15 +352,7 @@
     </message>
     <message>
         <source>Crop</source>
-        <translation>محصول</translation>
-    </message>
-    <message>
-        <source>Same Quantizer as Source</source>
-        <translation>نفس المصدر والمقسم الى كميات</translation>
-    </message>
-    <message>
-        <source>Deinterlace</source>
-        <translation>فك التشابك</translation>
+        <translation>قصّ</translation>
     </message>
     <message>
         <source>Time</source>
@@ -348,24 +362,21 @@
     <message>
         <source>Cutting</source>
         <extracomment>video time cutting: options for begin time and end time</extracomment>
-        <translation>تقطيع</translation>
+        <translation>التقطيع</translation>
     </message>
     <message>
-        <source>From Begin</source>
-        <translation>من البداية</translation>
-    </message>
-    <message>
-        <source>To End</source>
-        <translation>الى النهاية</translation>
+        <source>Cut</source>
+        <comment>Cut video; select a range to convert</comment>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Preview</source>
-        <translation>&amp;مشاهدة</translation>
+        <translation>م&amp;عاينة</translation>
     </message>
     <message>
         <source>Scaling</source>
         <extracomment>time scaling, changing the speed of the output file</extracomment>
-        <translation>تحجيم</translation>
+        <translation>التمديد والتقليص</translation>
     </message>
     <message>
         <source>Speed</source>
@@ -373,7 +384,7 @@
     </message>
     <message>
         <source>Advanced</source>
-        <translation>متقدم</translation>
+        <translation>متقدمة</translation>
     </message>
     <message>
         <source>FFmpeg</source>
@@ -381,7 +392,7 @@
     </message>
     <message>
         <source>Additional FFmpeg Options</source>
-        <translation>خيارات FFMPEG الإضافية</translation>
+        <translation>مزيدٌ من خيارات FFmpeg</translation>
     </message>
 </context>
 <context>
@@ -389,16 +400,16 @@
     <message>
         <source>Cancel</source>
         <extracomment>Cancel the operation of adding new tasks</extracomment>
-        <translation>خروج</translation>
+        <translation>ألغِ</translation>
     </message>
     <message>
         <source>Adding files (%1/%2)</source>
         <extracomment>This text is the progress indicator of adding multiple tasks. %1 is the number of files that are already added. %2 is the total number of files.</extracomment>
-        <translation>اضافة الملفات (%1/%2)</translation>
+        <translation>يضيف الملفات (%1/%2)</translation>
     </message>
     <message>
         <source>Some files are not recognized by the converter.</source>
-        <translation>لم يتم التعرف على بعض الملفات من قبل المحول.</translation>
+        <translation>لم يتعرف المُحوِّل على بعض الملفات.</translation>
     </message>
     <message>
         <source>New File Name</source>
@@ -406,39 +417,40 @@
     </message>
     <message>
         <source>Please input the new name for the output file.</source>
-        <translation>الرجاء إدخال اسم جديد لملف الإخراج.</translation>
+        <translation>رجاءً أدخل اسماً جديداً لملف الخرج.</translation>
     </message>
     <message>
         <source>Output Directory</source>
-        <translation>مجلد الاخراج</translation>
+        <translation>مجلد الخرج</translation>
     </message>
     <message>
         <source>Error Message from FFmpeg:
 
 </source>
-        <translation>رسالة خطأ من FFMPEG :
+        <translation>رسالة خطأ من FFmpeg
+:
 </translation>
     </message>
     <message>
         <source>Drag and drop files here to add tasks.</source>
-        <translation type="unfinished"></translation>
+        <translation>اسحب وأسقط الملفات لإضافة مَهمّات.</translation>
     </message>
     <message>
         <source>Hide &quot;%1&quot;</source>
         <extracomment>Hide a column in the list. For example, the text maybe &apos;Hide &quot;Duration&quot;&apos;. The two &quot; are quotation marks in English, you may replace it with local quotation marks.</extracomment>
-        <translation>اخفاء &quot;%1&quot;</translation>
+        <translation>أخفِ &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Restore All Columns</source>
-        <translation>استعادة كافة الأعمدة</translation>
+        <translation>استعد كل الأعمدة</translation>
     </message>
     <message>
         <source>Source</source>
-        <translation>المصدر</translation>
+        <translation>المُنطَلق</translation>
     </message>
     <message>
         <source>Destination</source>
-        <translation>الوجهة</translation>
+        <translation>المُستقَر</translation>
     </message>
     <message>
         <source>Duration</source>
@@ -451,20 +463,20 @@
     <message>
         <source>Sample Rate</source>
         <extracomment>Audio</extracomment>
-        <translation>معدل العينة</translation>
+        <translation>نسبة التردد</translation>
     </message>
     <message>
         <source>Audio Bitrate</source>
-        <translation>معدل البت للصوت</translation>
+        <translation>معدل بتات الصوت</translation>
     </message>
     <message>
         <source>Channels</source>
         <extracomment>Audio</extracomment>
-        <translation>قنوات</translation>
+        <translation>القنوات</translation>
     </message>
     <message>
         <source>Audio Codec</source>
-        <translation>مرمزات الصوت</translation>
+        <translation>مُرمِّز الصوت</translation>
     </message>
     <message>
         <source>Dimensions</source>
@@ -472,16 +484,16 @@
     </message>
     <message>
         <source>Video Bitrate</source>
-        <translation>معدل البت للفيديو</translation>
+        <translation>معدل بتات الفيديو</translation>
     </message>
     <message>
         <source>Framerate</source>
         <extracomment>Video</extracomment>
-        <translation>عدد الاطارات</translation>
+        <translation>معدّل الإطارات</translation>
     </message>
     <message>
         <source>Video Codec</source>
-        <translation>مرمزات الفيديو</translation>
+        <translation>مُرمِّز الفيديو</translation>
     </message>
     <message>
         <source>Progress</source>
@@ -489,20 +501,20 @@
     </message>
     <message>
         <source>%1 Hz</source>
-        <translation>%1 هيرتز</translation>
+        <translation>%1 هرتز</translation>
     </message>
     <message>
         <source>%1 kb/s</source>
-        <translation>%1 ك.ب/ ث</translation>
+        <translation>%1 ك.ب/ثا</translation>
     </message>
     <message>
         <source>%1 fps</source>
-        <translation>%1 اطار/ ثانية</translation>
+        <translation>%1 إطار/ثا</translation>
     </message>
     <message>
         <source>Removing tasks...</source>
         <extracomment>Remove files from the tasklist</extracomment>
-        <translation>إزالة المهام ...</translation>
+        <translation>يحذف المهام...</translation>
     </message>
     <message>
         <source>KiB</source>
@@ -527,45 +539,77 @@
     </message>
     <message>
         <source>File Exists</source>
-        <translation>الملف موجود</translation>
+        <translation>الملف مُوجَد من قبل</translation>
     </message>
     <message>
         <source>%1 already exists on disk or in the task list. Still use this name as the output filename?</source>
-        <translation>%1 بالفعل موجود على القرص أو في قائمة المهام. لا تزال تستخدم هذا الاسم كما الإخراج اسم الملف؟</translation>
+        <translation>الملف &quot;%1&quot; موجَد على القرص أو في قائمة المهام. أما زلت راغباً في استخدام هذا الاسم لملف الخرج؟</translation>
     </message>
     <message>
         <source>Remove Task</source>
-        <translation>خذف المهمة</translation>
+        <translation>احذف المهمة</translation>
     </message>
     <message>
         <source>Cannot remove a task while it is in progress.</source>
-        <translation>لا يمكن إزالة مهمة عندما يكون في التقدم.</translation>
+        <translation>غير قادر على حذف مهمة وهي جارية.</translation>
     </message>
     <message>
         <source>Finished</source>
         <extracomment>The text to be displayed on the progress bar when a conversion finishes</extracomment>
-        <translation>تم التحويل بنجاح</translation>
+        <translation>تمّت</translation>
     </message>
     <message>
         <source>Failed</source>
         <extracomment>The text to be displayed on the progress bar when a conversion fails</extracomment>
-        <translation>فشل</translation>
+        <translation>فشِلت</translation>
     </message>
     <message>
         <source>Error: %1</source>
         <extracomment>%1 is the error message</extracomment>
-        <translation>خطأ : %1</translation>
+        <translation>خطأ: %1</translation>
     </message>
 </context>
 <context>
     <name>ExtraTranslations</name>
     <message>
         <source>Convert between media file formats</source>
-        <translation>تحويل بين صيغ ملفات الوسائط</translation>
+        <translation>حوّل ملفات الوسائط المتعددة من صيغة إلى أخرى</translation>
     </message>
     <message>
         <source>Media Converter</source>
         <translation>محول الوسائط</translation>
+    </message>
+</context>
+<context>
+    <name>InteractiveCuttingDialog</name>
+    <message>
+        <source>Cutting</source>
+        <comment>Cutting as in &quot;cutting video&quot;</comment>
+        <translation>التقطيع</translation>
+    </message>
+    <message>
+        <source>Mark as Begin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Seek to Begin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mark as End</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Seek to End</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -576,11 +620,11 @@
     </message>
     <message>
         <source>Start conversion process.</source>
-        <translation>بدء عملية التحويل.</translation>
+        <translation>ابدأ عملية التحويل.</translation>
     </message>
     <message>
         <source>&amp;Start</source>
-        <translation>&amp;بدء</translation>
+        <translation>ا&amp;بدأ</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -588,35 +632,35 @@
     </message>
     <message>
         <source>&amp;Convert</source>
-        <translation>&amp;تحويل</translation>
+        <translation>ت&amp;حويل</translation>
     </message>
     <message>
         <source>&amp;About</source>
-        <translation>&amp;حول</translation>
+        <translation>&amp;نبذة</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation>&amp;تعديل</translation>
+        <translation>تح&amp;رير</translation>
     </message>
     <message>
         <source>&amp;Add Files</source>
-        <translation>&amp;اضافة ملفات</translation>
+        <translation>أ&amp;ضف ملفات</translation>
     </message>
     <message>
         <source>Add files for conversion.</source>
-        <translation>إضافة ملفات للتحويل.</translation>
+        <translation>أضف ملفات تريد تحويلها.</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
-        <translation>Ctrl+N</translation>
+        <translation>تحكّم+N</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
-        <translation>خروج</translation>
+        <translation>أن&amp;ه</translation>
     </message>
     <message>
         <source>Exit the program.</source>
-        <translation>الخروج من البرنامج</translation>
+        <translation>أنهِ البرنامج.</translation>
     </message>
     <message>
         <source>F9</source>
@@ -624,198 +668,203 @@
     </message>
     <message>
         <source>S&amp;top</source>
-        <translation>ايقاف</translation>
+        <translation>أو&amp;قف</translation>
     </message>
     <message>
         <source>Stop conversion process.</source>
-        <translation>إيقاف عملية التحويل.</translation>
+        <translation>أوقف عملية التحويل.</translation>
     </message>
     <message>
         <source>Set &amp;Parameters</source>
-        <translation>ضبط المعلمات</translation>
+        <translation>اضبط المُ&amp;عامِلات</translation>
     </message>
     <message>
         <source>Set Parameters</source>
         <extracomment>Edit output file parameters.</extracomment>
-        <translation>ضبط المعلمات</translation>
+        <translation>اضبط المعاملات</translation>
     </message>
     <message>
         <source>Edit conversion parameters of selected files.</source>
-        <translation>تحرير معلمات تحويل الملفات المحددة.</translation>
+        <translation>عدّل معاملات تحويل الملفات المُختارة.</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
-        <translation>حول &amp;Qt</translation>
+        <translation>عن &amp;Qt</translation>
     </message>
     <message>
         <source>About Qt</source>
-        <translation>حول Qt</translation>
+        <translation>نبذة عن Qt</translation>
     </message>
     <message>
         <source>&amp;Open Output Folder</source>
-        <translation>فتح مجلد الاخراج</translation>
+        <translation>افتح مجلد ال&amp;خرج</translation>
     </message>
     <message>
         <source>Open output folder of the selected file.</source>
-        <translation type="unfinished"></translation>
+        <translation>افتح المجلد المحتوي على ناتج الملف المحدد.</translation>
     </message>
     <message>
         <source>About &amp;FFmpeg</source>
-        <translation>حول FFmpeg</translation>
+        <translation>عن &amp;FFmpeg</translation>
     </message>
     <message>
         <source>About FFmpeg</source>
-        <translation>حول FFmpeg</translation>
+        <translation>نبذة عن FFmpeg</translation>
     </message>
     <message>
         <source>&amp;Remove Selected</source>
         <extracomment>remove selected (tasks, items)</extracomment>
-        <translation>الغاء التحديد</translation>
+        <translation>أ&amp;زل المُختارة</translation>
     </message>
     <message>
         <source>Remove all selected items in the list.</source>
-        <translation>إزالة كافة العناصر المحددة في القائمة.</translation>
+        <translation>أزل كل العناصر المختارة في القائمة.</translation>
     </message>
     <message>
         <source>R&amp;emove Completed</source>
         <extracomment>remove completed (task, items)</extracomment>
-        <translation>ازالة المكتملة</translation>
+        <translation>أزل ال&amp;تامّة</translation>
     </message>
     <message>
         <source>Remove Completed Items</source>
-        <translation>ازالة الملفات المكتملة</translation>
+        <translation>أزل العناصر التامة</translation>
     </message>
     <message>
         <source>Remove all completed items in the list.</source>
-        <translation>إزالة كافة العناصر المحددة في القائمة.</translation>
+        <translation>أزل كل العناصر التامّة في القائمة.</translation>
     </message>
     <message>
         <source>&amp;Clear List</source>
-        <translation>ازالة القائمة</translation>
+        <translation>ن&amp;ظّف القائمة</translation>
     </message>
     <message>
         <source>Clear List</source>
-        <translation>ازالة القائمة</translation>
+        <translation>نظف القائمة</translation>
     </message>
     <message>
         <source>Remove all items in the list.</source>
-        <translation>إزالة كافة العناصر الموجودة في القائمة.</translation>
+        <translation>أزل كل العناصر في القائمة.</translation>
     </message>
     <message>
         <source>&amp;Retry</source>
-        <translation>اعادة المحاولة</translation>
+        <translation>حاول &amp;ثانيةً</translation>
     </message>
     <message>
         <source>Retry</source>
-        <translation>اعادة المحاولة</translation>
+        <translation>حاول ثانيةً</translation>
     </message>
     <message>
         <source>Retry selected tasks.</source>
-        <translation>اعادة تحدبد المهام</translation>
+        <translation>حاول إتمام المهمات المختارة.</translation>
     </message>
     <message>
         <source>Retry &amp;All</source>
-        <translation>اعادة الكل</translation>
+        <translation>حاول إتمام ال&amp;كلّ</translation>
     </message>
     <message>
         <source>Retry all tasks.</source>
-        <translation>اعادة جميع المهام</translation>
+        <translation>حاول إتمام كل المهمات.</translation>
     </message>
     <message>
         <source>&amp;Options</source>
-        <translation>خيارات</translation>
+        <translation>ال&amp;خيارات</translation>
     </message>
     <message>
         <source>Options</source>
-        <translation>خيارات</translation>
+        <translation>الخيارات</translation>
     </message>
     <message>
         <source>About Q&amp;WinFF</source>
-        <translation>عن QWinFF</translation>
+        <translation>عن Q&amp;WinFF</translation>
     </message>
     <message>
         <source>About This Program</source>
-        <translation>عن هذا البرنامج</translation>
+        <translation>نبذة عن هذا البرنامج</translation>
     </message>
     <message>
         <source>Change Output &amp;Filename</source>
-        <translation>تغيير اسم ملف الاخراج</translation>
+        <translation>غيّر اسم ملف ال&amp;خرج</translation>
     </message>
     <message>
         <source>Change the output filename of the selected item.</source>
-        <translation>تغيير اسم ملف الإخراج من العنصر المحدد.</translation>
+        <translation>غير اسم ملف الخرج للعنصر المختار.</translation>
     </message>
     <message>
         <source>Change Output &amp;Directory</source>
-        <translation>تغيير مجلد الاخراج</translation>
+        <translation>غيّر م&amp;جلد الخرج</translation>
     </message>
     <message>
         <source>Change the output directory of the selected items.</source>
-        <translation>تغيير مجلد الإخراج للعناصر المحددة.</translation>
+        <translation>غير مجلد الخرج للعناصر المختارة.</translation>
     </message>
     <message>
         <source>Show Error &amp;Message</source>
-        <translation>اظهار رسالة الخطأ</translation>
+        <translation>أظهر ر&amp;سالة الخطأ</translation>
     </message>
     <message>
         <source>Check For &amp;Updates</source>
+        <translation>التم&amp;س التحديثات</translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <extracomment>Cut video file (select a time range to conert)</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>All tasks have finished.</source>
-        <translation>تم الانتهاء من جميع المهام</translation>
+        <translation>تمّت كل المهمات.</translation>
     </message>
     <message>
         <source>Nothing to convert.</source>
-        <translation>لا شيء للتحويل.</translation>
+        <translation>لا شيء يُحوَّل.</translation>
     </message>
     <message>
         <source>Conversion is still in progress. Abort?</source>
-        <translation>التحويل لا يزال قيد التقدم. إيقاف؟</translation>
+        <translation>التحويل جارٍ. أتريد إيقافه قسراً؟</translation>
     </message>
     <message>
         <source>Shutdown</source>
         <extracomment>Shutdown the computer (completely poweroff)</extracomment>
-        <translation>ايقاف التشغيل</translation>
+        <translation>أوقف تشغيل الجهاز</translation>
     </message>
     <message>
         <source>Shutdown when all tasks are done.</source>
-        <translation>ايقاف تشغيل الكمبيوتر عند الانتهاء من جميع المهام</translation>
+        <translation>أوقف تشغيل الحاسوب عند إتمام كل المهمات.</translation>
     </message>
     <message>
         <source>Suspend</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
-        <translation>تعليق</translation>
+        <translation>علّق الجهاز</translation>
     </message>
     <message>
         <source>Suspend when all tasks are done.</source>
-        <translation>تعليق الكمبيوتر عند الانتهاء من جميع المهام</translation>
+        <translation>علّق الحاسوب عند إتمام كل المهمات.</translation>
     </message>
     <message>
         <source>Hibernate</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
-        <translation>الإسبات</translation>
+        <translation>أسبِت الجهاز</translation>
     </message>
     <message>
         <source>Hibernate when all tasks are done.</source>
-        <translation>اسبات الكمبيوتر عند الانتهاء من جميع المهام</translation>
+        <translation>أَسبِت الجهاز عند إتمام كل المهمات.</translation>
     </message>
     <message>
         <source>This program is going to check for updates online. Do you allow this program to use the Internet to check for updates?</source>
-        <translation type="unfinished"></translation>
+        <translation>سيلتمس هذا البرنامج التحديثات من الإنترنت. أتسمح له باستخدامها؟ </translation>
     </message>
     <message>
         <source>Failed to load preset file. The application will quit now.</source>
-        <translation>فشل تحميل ملف معين. سوف يتم إنهاء التطبيق الآن.</translation>
+        <translation>فشلَ في تحميل ملف الوصفات. سيُنهى التطبيق الآن.</translation>
     </message>
     <message>
         <source>Elapsed Time: %1 h %2 m %3 s</source>
-        <translation>الوقت المنقضي: %1 س %2 د %3 ث</translation>
+        <translation>الوقت المُنقضي: %1 سا و%2 د و%3 ثا</translation>
     </message>
     <message>
         <source>Converting %1/%2</source>
         <extracomment>Converting the %1-th file in %2 files. %2 is the number of files.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>يحوّل %1 من %2</translation>
     </message>
 </context>
 <context>
@@ -823,7 +872,7 @@
     <message>
         <source>%1 not found.</source>
         <extracomment>%1 is a computer program</extracomment>
-        <translation>%1 لم يتم العثور</translation>
+        <translation>لم يُوجد البرنامج &quot;%1&quot;.</translation>
     </message>
 </context>
 <context>
@@ -834,19 +883,19 @@
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>عامّة</translation>
     </message>
     <message>
         <source>Check for updates on program startup</source>
-        <translation type="unfinished"></translation>
+        <translation>التمس التحديثات عند بدء البرنامج</translation>
     </message>
     <message>
         <source>Automatically start conversion after adding files to the list.</source>
-        <translation type="unfinished"></translation>
+        <translation>ابدأ التحويل مباشرة بعد إضافة الملفات إلى القائمة.</translation>
     </message>
     <message>
         <source>Start conversion automatically</source>
-        <translation type="unfinished"></translation>
+        <translation>ابدأ التحويل تلقائياً</translation>
     </message>
     <message>
         <source>FFmpeg</source>
@@ -854,19 +903,19 @@
     </message>
     <message>
         <source>Number of threads to use in conversion</source>
-        <translation>عدد الخيوط للاستخدام في التحويل</translation>
+        <translation>عدد الخيوط المستخدمة في التحويل</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hide output formats that are not available in the current ffmpeg installation. It is recommended to turn this option on unless you are sure that QWinFF has failed to detect available formats. (requires restarting QWinFF to take effect)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;إخفاء تنسيقات الإخراج التي لا تتوفر في تركيب FFMPEG الحالي. فمن المستحسن لتشغيل هذا الخيار إلا إذا كنت متأكدا من أن QWinFF فشلت في الكشف عن الأشكال المتاحة. (يتطلب إعادة تشغيل QWinFF نافذة المفعول)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;أخفِ صيغ الخرج التي لا تتوفر في التثبيت الحالي لـFFmpeg. يُفضّل تفعيل هذا الخيار إلا إن كنت على يقين من أن QWinFF فَشِل في اكتشاف الصيغ المتوفّرة. (يتطلب هذا إعادة تشغيل QWinFF ليصبح نافذ المفعول)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Hide unavailable formats (requires restarting)</source>
-        <translation>إخفاء تنسيقات غير متوفرة (يتطلب إعادة تشغيل)</translation>
+        <translation>أخفِ الصيغ غير المتوفرة (يتطلب إعادة تشغيل البرنامج)</translation>
     </message>
     <message>
         <source>Tools</source>
-        <translation>ادوات</translation>
+        <translation>أدوات</translation>
     </message>
     <message>
         <source>You have to restart QWinFF for the changes to take effect.</source>
@@ -878,7 +927,7 @@
     </message>
     <message>
         <source>Command</source>
-        <translation>أمر</translation>
+        <translation>الأمر</translation>
     </message>
 </context>
 <context>
@@ -889,97 +938,138 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation>خروج</translation>
+        <translation>ألغِ</translation>
     </message>
     <message>
         <source>Shutdown immediately</source>
         <extracomment>Shutdown the computer</extracomment>
-        <translation>إيقاف التشغيل مباشرة</translation>
+        <translation>أوقف تشغيل الجهاز فوراً</translation>
     </message>
     <message>
         <source>Suspend immediately</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
-        <translation>تعليق مباشرة</translation>
+        <translation>علّق الجهاز فوراً</translation>
     </message>
     <message>
         <source>Hibernate immediately</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
-        <translation>الإسبات مباشرة</translation>
+        <translation>أسبت الجهاز فوراً</translation>
     </message>
     <message>
         <source>Shutdown</source>
         <extracomment>Shutdown the computer</extracomment>
-        <translation>ايقاف التشغيل</translation>
+        <translation>أوقف تشغيل الجهاز</translation>
     </message>
     <message>
         <source>Suspend</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
-        <translation>تعليق</translation>
+        <translation>علّق الجهاز</translation>
     </message>
     <message>
         <source>Hibernate</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
-        <translation>الإسبات</translation>
+        <translation>أسبِت الجهاز</translation>
     </message>
     <message>
         <source>Operation Failed: %1</source>
-        <translation>عملية فاشلة: %1</translation>
+        <translation>فشلت العملية: %1</translation>
     </message>
     <message>
         <source>Shutting down in &lt;b&gt;%1&lt;/b&gt; seconds</source>
-        <translation>سيتم ايقاف التشغيل بعد &lt;b&gt;%1&lt;/b&gt; ثانية</translation>
+        <translation>سيوقف تشغيل الجهاز خلال &lt;b&gt;%1&lt;/b&gt; ثا</translation>
     </message>
     <message>
         <source>Suspending in &lt;b&gt;%1&lt;/b&gt; seconds</source>
-        <translation>سيتم التعليق بعد &lt;b&gt;%1&lt;/b&gt; ثانية</translation>
+        <translation>سيعلق الجهاز خلال &lt;b&gt;%1&lt;/b&gt; ثا</translation>
     </message>
     <message>
         <source>Hibernating in &lt;b&gt;%1&lt;/b&gt; seconds</source>
-        <translation>سيتم الاسبات بعد &lt;b&gt;%1&lt;/b&gt; ثانية</translation>
+        <translation>سيُسَبتُ الجهاز خلال &lt;b&gt;%1&lt;/b&gt; ثا</translation>
+    </message>
+</context>
+<context>
+    <name>PreviewDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play Selected Range</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Begin</source>
+        <extracomment>noun, the beginning of the video</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End</source>
+        <extracomment>noun, the end of the video</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play %1~%2</source>
+        <extracomment>play the video from time %1 to time %2. %1 and %2 are time in hh:mm:ss format.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TimeRangeEdit</name>
+    <message>
+        <source>From Begin</source>
+        <translation>من البداية</translation>
+    </message>
+    <message>
+        <source>To End</source>
+        <translation>إلى النهاية</translation>
     </message>
 </context>
 <context>
     <name>UpdateDialog</name>
     <message>
         <source>Show &amp;Release Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>اعرض ملاحظات الإ&amp;صدار</translation>
     </message>
     <message>
         <source>Check for updates on program startup</source>
-        <translation type="unfinished"></translation>
+        <translation>التمس التحديثات عند بدء البرنامج</translation>
     </message>
     <message>
         <source>Downloading update information...</source>
-        <translation type="unfinished"></translation>
+        <translation>يُنزل معلومات التحديث...</translation>
     </message>
     <message>
         <source>Cannot connect to server.</source>
-        <translation type="unfinished"></translation>
+        <translation>غير قادر على الاتصال بالخادوم.</translation>
     </message>
     <message>
         <source>Failed to parse the received data.</source>
-        <translation type="unfinished"></translation>
+        <translation>فشلَ في تفسير البيانات المستقبَلة.</translation>
     </message>
     <message>
         <source>You are already using the latest version of QWinFF.</source>
-        <translation type="unfinished"></translation>
+        <translation>تستخدم أحدث نسخة من QWinFF.</translation>
     </message>
     <message>
         <source>An unknown error has occurred.</source>
-        <translation type="unfinished"></translation>
+        <translation>وقع خطأ غير معروف.</translation>
     </message>
     <message>
         <source>A new version of QWinFF has been released!</source>
-        <translation type="unfinished"></translation>
+        <translation>أُصدرت نسخة جديدة من QWinFF!</translation>
     </message>
     <message>
         <source>Version &lt;b&gt;%1&lt;/b&gt; is available at %2.</source>
         <extracomment>%1 is version number, %2 is the project homepage</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>يتوفر الإصدار &lt;b&gt;%1&lt;/b&gt;  على %2.  </translation>
     </message>
     <message>
         <source>You can download this version using the link:</source>
-        <translation type="unfinished"></translation>
+        <translation>بإمكانك تنزيل هذه النسخة من الرابط:</translation>
     </message>
 </context>
 </TS>

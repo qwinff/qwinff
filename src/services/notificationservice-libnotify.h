@@ -29,9 +29,9 @@ public:
     NotificationService_libnotify();
     ~NotificationService_libnotify();
 
-    virtual void send(QString titie, QString message);
+    virtual void send(QWidget *parent, QString titie, QString message);
 
-    virtual void send(QString title, QString message, int level);
+    virtual void send(QWidget *parent, QString title, QString message, int level);
 
     virtual bool serviceAvailable() const;
 

@@ -30,12 +30,12 @@ NotificationService_libnotify::~NotificationService_libnotify()
        of this class may be still using the notification system. */
 }
 
-void NotificationService_libnotify::send(QString title, QString message)
+void NotificationService_libnotify::send(QWidget *parent, QString title, QString message)
 {
-    send(title, message, NotifyLevel::INFO);
+    send(parent, title, message, NotifyLevel::INFO);
 }
 
-void NotificationService_libnotify::send(QString title, QString message, int level)
+void NotificationService_libnotify::send(QWidget */*parent*/, QString title, QString message, int level)
 {
     const char *icon;
 

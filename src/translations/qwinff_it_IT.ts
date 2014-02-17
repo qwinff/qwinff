@@ -106,12 +106,22 @@
     <message>
         <source>Turkish</source>
         <extracomment>Turkish Language</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Turco</translation>
     </message>
     <message>
         <source>Arabic</source>
         <extracomment>Arabic Language</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Arabo</translation>
+    </message>
+    <message>
+        <source>Hungarian</source>
+        <extracomment>Hungarian Langauge</extracomment>
+        <translation>Ungherese</translation>
+    </message>
+    <message>
+        <source>Polish</source>
+        <extracomment>Polish Language</extracomment>
+        <translation>Polacco</translation>
     </message>
 </context>
 <context>
@@ -191,7 +201,7 @@
     </message>
     <message>
         <source>Select &amp;folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleziona &amp;cartella</translation>
     </message>
     <message>
         <source>Browse</source>
@@ -200,16 +210,16 @@
     <message>
         <source>Create &amp;new folder in source folder</source>
         <extracomment>Create a new folder (e.g. qwinff_output) in the folder containing the input files. Put the output files in the newly created folder.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Crea una &amp;nuova cartella nella cartella di origine</translation>
     </message>
     <message>
         <source>Folder Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome cartella</translation>
     </message>
     <message>
         <source>Output to &amp;source folder</source>
         <extracomment>put the output files in the same folder as the input files</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Salva nella cartella di &amp;origine</translation>
     </message>
     <message>
         <source>Please select at least one file.</source>
@@ -237,13 +247,17 @@
         <translation>Tutti i file</translation>
     </message>
     <message>
-        <source>Some files could not be found.</source>
-        <translation>Alcuni file non possono essere trovati.</translation>
-    </message>
-    <message>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
         <translation>Seleziona Directory</translation>
+    </message>
+    <message>
+        <source>Searching for files...</source>
+        <translation>Ricerca dei file...</translation>
+    </message>
+    <message>
+        <source>Some files could not be found.</source>
+        <translation>Alcuni file non possono essere trovati.</translation>
     </message>
     <message>
         <source>Folder does not exist. Create a new folder?</source>
@@ -281,12 +295,20 @@
         <translation>Hz</translation>
     </message>
     <message>
-        <source>Channels</source>
-        <translation>Canali</translation>
+        <source>Bitrate</source>
+        <translation>Bitrate</translation>
     </message>
     <message>
         <source>(auto)</source>
         <translation>(auto)</translation>
+    </message>
+    <message>
+        <source>kb/s</source>
+        <translation>kb/s</translation>
+    </message>
+    <message>
+        <source>Channels</source>
+        <translation>Canali</translation>
     </message>
     <message>
         <source>Volume</source>
@@ -295,14 +317,6 @@
     <message>
         <source>%</source>
         <translation>%</translation>
-    </message>
-    <message>
-        <source>Bitrate</source>
-        <translation>Bitrate</translation>
-    </message>
-    <message>
-        <source>kb/s</source>
-        <translation>kb/s</translation>
     </message>
     <message>
         <source>Video</source>
@@ -315,6 +329,14 @@
     <message>
         <source>Video Options</source>
         <translation>Opzioni Video</translation>
+    </message>
+    <message>
+        <source>Same Quantizer as Source</source>
+        <translation>Stesso Quantizzatore della Sorgente</translation>
+    </message>
+    <message>
+        <source>Deinterlace</source>
+        <translation>Deinterlaccia</translation>
     </message>
     <message>
         <source>Width</source>
@@ -333,14 +355,6 @@
         <translation>Taglia</translation>
     </message>
     <message>
-        <source>Same Quantizer as Source</source>
-        <translation>Stesso Quantizzatore della Sorgente</translation>
-    </message>
-    <message>
-        <source>Deinterlace</source>
-        <translation>Deinterlaccia</translation>
-    </message>
-    <message>
         <source>Time</source>
         <extracomment>time-related options (speed, length)</extracomment>
         <translation>Tempo</translation>
@@ -351,12 +365,9 @@
         <translation>Taglio</translation>
     </message>
     <message>
-        <source>From Begin</source>
-        <translation>Dall&apos;Inizio</translation>
-    </message>
-    <message>
-        <source>To End</source>
-        <translation>Alla Fine</translation>
+        <source>Cut</source>
+        <comment>Cut video; select a range to convert</comment>
+        <translation>Taglia</translation>
     </message>
     <message>
         <source>&amp;Preview</source>
@@ -422,7 +433,7 @@
     </message>
     <message>
         <source>Drag and drop files here to add tasks.</source>
-        <translation type="unfinished"></translation>
+        <translation>Trascina qui i file per aggiungere operazioni.</translation>
     </message>
     <message>
         <source>Hide &quot;%1&quot;</source>
@@ -570,6 +581,38 @@
     </message>
 </context>
 <context>
+    <name>InteractiveCuttingDialog</name>
+    <message>
+        <source>Cutting</source>
+        <comment>Cutting as in &quot;cutting video&quot;</comment>
+        <translation>Taglio</translation>
+    </message>
+    <message>
+        <source>Mark as Begin</source>
+        <translation>Marca come inizio</translation>
+    </message>
+    <message>
+        <source>Seek to Begin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play Selection</source>
+        <translation>Riproduci selezione</translation>
+    </message>
+    <message>
+        <source>Mark as End</source>
+        <translation>Marca come fine</translation>
+    </message>
+    <message>
+        <source>Seek to End</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation>%1 non trovato</translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
         <source>QWinFF</source>
@@ -658,7 +701,7 @@
     </message>
     <message>
         <source>Open output folder of the selected file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Apri la cartella di destinazione del file selezionato.</translation>
     </message>
     <message>
         <source>About &amp;FFmpeg</source>
@@ -763,6 +806,11 @@
         <translation>Controlla  gli &amp;aggiornamenti</translation>
     </message>
     <message>
+        <source>Cut</source>
+        <extracomment>Cut video file (select a time range to conert)</extracomment>
+        <translation>Taglia</translation>
+    </message>
+    <message>
         <source>All tasks have finished.</source>
         <translation>Tutti i processi sono completati.</translation>
     </message>
@@ -803,7 +851,7 @@
     </message>
     <message>
         <source>This program is going to check for updates online. Do you allow this program to use the Internet to check for updates?</source>
-        <translation type="unfinished"></translation>
+        <translation>Questo programma controllerà gli aggiornamenti online. Consentire al programma di accedere ad Internet per controllare gli aggiornamenti?</translation>
     </message>
     <message>
         <source>Failed to load preset file. The application will quit now.</source>
@@ -816,7 +864,7 @@
     <message>
         <source>Converting %1/%2</source>
         <extracomment>Converting the %1-th file in %2 files. %2 is the number of files.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Conversione %1/%2</translation>
     </message>
 </context>
 <context>
@@ -825,6 +873,13 @@
         <source>%1 not found.</source>
         <extracomment>%1 is a computer program</extracomment>
         <translation>%1 non trovato. </translation>
+    </message>
+</context>
+<context>
+    <name>MediaPlayerWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="obsolete">Campo</translation>
     </message>
 </context>
 <context>
@@ -843,11 +898,11 @@
     </message>
     <message>
         <source>Automatically start conversion after adding files to the list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Avvia automaticamente la conversione dopo aver aggiunto i file all&apos;elenco.</translation>
     </message>
     <message>
         <source>Start conversion automatically</source>
-        <translation type="unfinished"></translation>
+        <translation>Inizia la conversione automaticamente.</translation>
     </message>
     <message>
         <source>FFmpeg</source>
@@ -940,6 +995,47 @@
     </message>
 </context>
 <context>
+    <name>PreviewDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>Finestra di dialogo</translation>
+    </message>
+    <message>
+        <source>Play Selected Range</source>
+        <translation>Riproduci lo spazio selezionato</translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation>%1 non trovato</translation>
+    </message>
+    <message>
+        <source>Begin</source>
+        <extracomment>noun, the beginning of the video</extracomment>
+        <translation>Inizio</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <extracomment>noun, the end of the video</extracomment>
+        <translation>Fine</translation>
+    </message>
+    <message>
+        <source>Play %1~%2</source>
+        <extracomment>play the video from time %1 to time %2. %1 and %2 are time in hh:mm:ss format.</extracomment>
+        <translation>Riproduci %1~%2</translation>
+    </message>
+</context>
+<context>
+    <name>TimeRangeEdit</name>
+    <message>
+        <source>From Begin</source>
+        <translation>Dall&apos;Inizio</translation>
+    </message>
+    <message>
+        <source>To End</source>
+        <translation>Alla Fine</translation>
+    </message>
+</context>
+<context>
     <name>UpdateDialog</name>
     <message>
         <source>Show &amp;Release Notes</source>
@@ -959,7 +1055,7 @@
     </message>
     <message>
         <source>Failed to parse the received data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile analizzare i dati ricevuti.</translation>
     </message>
     <message>
         <source>You are already using the latest version of QWinFF.</source>
@@ -980,7 +1076,7 @@
     </message>
     <message>
         <source>You can download this version using the link:</source>
-        <translation type="unfinished"></translation>
+        <translation>Puoi scaricare questa versione usando il collegamento:</translation>
     </message>
 </context>
 </TS>

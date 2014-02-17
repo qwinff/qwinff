@@ -113,6 +113,16 @@
         <extracomment>Arabic Language</extracomment>
         <translation>阿拉伯文</translation>
     </message>
+    <message>
+        <source>Hungarian</source>
+        <extracomment>Hungarian Langauge</extracomment>
+        <translation>匈牙利語</translation>
+    </message>
+    <message>
+        <source>Polish</source>
+        <extracomment>Polish Language</extracomment>
+        <translation>波蘭語</translation>
+    </message>
 </context>
 <context>
     <name>AboutFFmpegDialog</name>
@@ -237,13 +247,17 @@
         <translation>所有檔案</translation>
     </message>
     <message>
-        <source>Some files could not be found.</source>
-        <translation>無法找到其中的一些檔案</translation>
-    </message>
-    <message>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
         <translation>選擇資料夾</translation>
+    </message>
+    <message>
+        <source>Searching for files...</source>
+        <translation>正在搜尋檔案...</translation>
+    </message>
+    <message>
+        <source>Some files could not be found.</source>
+        <translation>無法找到其中的一些檔案</translation>
     </message>
     <message>
         <source>Folder does not exist. Create a new folder?</source>
@@ -281,12 +295,20 @@
         <translation>Hz</translation>
     </message>
     <message>
-        <source>Channels</source>
-        <translation>聲道</translation>
+        <source>Bitrate</source>
+        <translation>位元率</translation>
     </message>
     <message>
         <source>(auto)</source>
         <translation>自動</translation>
+    </message>
+    <message>
+        <source>kb/s</source>
+        <translation>kb/s</translation>
+    </message>
+    <message>
+        <source>Channels</source>
+        <translation>聲道</translation>
     </message>
     <message>
         <source>Volume</source>
@@ -295,14 +317,6 @@
     <message>
         <source>%</source>
         <translation>%</translation>
-    </message>
-    <message>
-        <source>Bitrate</source>
-        <translation>位元率</translation>
-    </message>
-    <message>
-        <source>kb/s</source>
-        <translation>kb/s</translation>
     </message>
     <message>
         <source>Video</source>
@@ -315,6 +329,14 @@
     <message>
         <source>Video Options</source>
         <translation>影像選項</translation>
+    </message>
+    <message>
+        <source>Same Quantizer as Source</source>
+        <translation>與來源使用相同的量化單位（Quantizer）</translation>
+    </message>
+    <message>
+        <source>Deinterlace</source>
+        <translation>去交錯</translation>
     </message>
     <message>
         <source>Width</source>
@@ -333,14 +355,6 @@
         <translation>裁切</translation>
     </message>
     <message>
-        <source>Same Quantizer as Source</source>
-        <translation>與來源使用相同的量化單位（Quantizer）</translation>
-    </message>
-    <message>
-        <source>Deinterlace</source>
-        <translation>去交錯</translation>
-    </message>
-    <message>
         <source>Time</source>
         <extracomment>time-related options (speed, length)</extracomment>
         <translation>時間</translation>
@@ -351,12 +365,9 @@
         <translation>剪裁</translation>
     </message>
     <message>
-        <source>From Begin</source>
-        <translation>從檔案開頭開始</translation>
-    </message>
-    <message>
-        <source>To End</source>
-        <translation>到檔案結尾</translation>
+        <source>Cut</source>
+        <comment>Cut video; select a range to convert</comment>
+        <translation>剪裁</translation>
     </message>
     <message>
         <source>&amp;Preview</source>
@@ -568,6 +579,38 @@
     </message>
 </context>
 <context>
+    <name>InteractiveCuttingDialog</name>
+    <message>
+        <source>Cutting</source>
+        <comment>Cutting as in &quot;cutting video&quot;</comment>
+        <translation>剪裁</translation>
+    </message>
+    <message>
+        <source>Mark as Begin</source>
+        <translation>標記為開始</translation>
+    </message>
+    <message>
+        <source>Seek to Begin</source>
+        <translation>快轉到開始</translation>
+    </message>
+    <message>
+        <source>Play Selection</source>
+        <translation>播放選擇區域</translation>
+    </message>
+    <message>
+        <source>Mark as End</source>
+        <translation>標記為結束</translation>
+    </message>
+    <message>
+        <source>Seek to End</source>
+        <translation>快轉到結束</translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation>找不到 %1</translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
         <source>QWinFF</source>
@@ -761,6 +804,11 @@
         <translation>檢查更新(&amp;U)</translation>
     </message>
     <message>
+        <source>Cut</source>
+        <extracomment>Cut video file (select a time range to conert)</extracomment>
+        <translation>剪裁</translation>
+    </message>
+    <message>
         <source>All tasks have finished.</source>
         <translation>所有檔案都已轉換完成</translation>
     </message>
@@ -823,6 +871,13 @@
         <source>%1 not found.</source>
         <extracomment>%1 is a computer program</extracomment>
         <translation>找不到 %1.</translation>
+    </message>
+</context>
+<context>
+    <name>MediaPlayerWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="obsolete">表單</translation>
     </message>
 </context>
 <context>
@@ -935,6 +990,47 @@
     <message>
         <source>Hibernating in &lt;b&gt;%1&lt;/b&gt; seconds</source>
         <translation>電腦將於 &lt;b&gt;%1&lt;/b&gt; 秒後休眠</translation>
+    </message>
+</context>
+<context>
+    <name>PreviewDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>對話框</translation>
+    </message>
+    <message>
+        <source>Play Selected Range</source>
+        <translation>播放選擇範圍</translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation>找不到 %1</translation>
+    </message>
+    <message>
+        <source>Begin</source>
+        <extracomment>noun, the beginning of the video</extracomment>
+        <translation>開始</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <extracomment>noun, the end of the video</extracomment>
+        <translation>結束</translation>
+    </message>
+    <message>
+        <source>Play %1~%2</source>
+        <extracomment>play the video from time %1 to time %2. %1 and %2 are time in hh:mm:ss format.</extracomment>
+        <translation>播放 %1~%2</translation>
+    </message>
+</context>
+<context>
+    <name>TimeRangeEdit</name>
+    <message>
+        <source>From Begin</source>
+        <translation>從檔案開頭開始</translation>
+    </message>
+    <message>
+        <source>To End</source>
+        <translation>到檔案結尾</translation>
     </message>
 </context>
 <context>

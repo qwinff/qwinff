@@ -21,6 +21,10 @@
 #include <QString>
 #include "notificationservice.h"
 
+QT_BEGIN_NAMESPACE
+class QWidget;
+QT_END_NAMESPACE
+
 class Notification
 {
 public:
@@ -51,9 +55,9 @@ public:
      */
     static bool setType(NotificationType type);
 
-    static void send(QString title, QString message);
+    static void send(QWidget *parent, QString title, QString message);
 
-    static void send(QString title, QString message, int level);
+    static void send(QWidget *parent, QString title, QString message, int level);
 private:
     static NotificationType m_type;
 };

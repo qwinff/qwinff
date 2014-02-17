@@ -113,6 +113,16 @@
         <extracomment>Arabic Language</extracomment>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Hungarian</source>
+        <extracomment>Hungarian Langauge</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Polish</source>
+        <extracomment>Polish Language</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutFFmpegDialog</name>
@@ -237,13 +247,17 @@
         <translation>Todos los archivos</translation>
     </message>
     <message>
-        <source>Some files could not be found.</source>
-        <translation>Algunos archivos no puedieron ser encontrados.</translation>
-    </message>
-    <message>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
         <translation>Seleccione un directorio</translation>
+    </message>
+    <message>
+        <source>Searching for files...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Some files could not be found.</source>
+        <translation>Algunos archivos no puedieron ser encontrados.</translation>
     </message>
     <message>
         <source>Folder does not exist. Create a new folder?</source>
@@ -281,12 +295,20 @@
         <translation>Hz</translation>
     </message>
     <message>
-        <source>Channels</source>
-        <translation>Canales</translation>
+        <source>Bitrate</source>
+        <translation>Bitrate</translation>
     </message>
     <message>
         <source>(auto)</source>
         <translation>(auto)</translation>
+    </message>
+    <message>
+        <source>kb/s</source>
+        <translation>kb/s</translation>
+    </message>
+    <message>
+        <source>Channels</source>
+        <translation>Canales</translation>
     </message>
     <message>
         <source>Volume</source>
@@ -295,14 +317,6 @@
     <message>
         <source>%</source>
         <translation>%</translation>
-    </message>
-    <message>
-        <source>Bitrate</source>
-        <translation>Bitrate</translation>
-    </message>
-    <message>
-        <source>kb/s</source>
-        <translation>kb/s</translation>
     </message>
     <message>
         <source>Video</source>
@@ -315,6 +329,14 @@
     <message>
         <source>Video Options</source>
         <translation>Opciones de video</translation>
+    </message>
+    <message>
+        <source>Same Quantizer as Source</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deinterlace</source>
+        <translation>Desentrelazar</translation>
     </message>
     <message>
         <source>Width</source>
@@ -333,14 +355,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Same Quantizer as Source</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Deinterlace</source>
-        <translation>Desentrelazar</translation>
-    </message>
-    <message>
         <source>Time</source>
         <extracomment>time-related options (speed, length)</extracomment>
         <translation>Tiempo</translation>
@@ -351,12 +365,9 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>From Begin</source>
-        <translation>Desde el inicio</translation>
-    </message>
-    <message>
-        <source>To End</source>
-        <translation>Al Final</translation>
+        <source>Cut</source>
+        <comment>Cut video; select a range to convert</comment>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Preview</source>
@@ -568,6 +579,38 @@
     </message>
 </context>
 <context>
+    <name>InteractiveCuttingDialog</name>
+    <message>
+        <source>Cutting</source>
+        <comment>Cutting as in &quot;cutting video&quot;</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mark as Begin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Seek to Begin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mark as End</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Seek to End</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
         <source>QWinFF</source>
@@ -761,6 +804,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Cut</source>
+        <extracomment>Cut video file (select a time range to conert)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>All tasks have finished.</source>
         <translation>Todas las tareas han finalizado.</translation>
     </message>
@@ -935,6 +983,47 @@
     <message>
         <source>Hibernating in &lt;b&gt;%1&lt;/b&gt; seconds</source>
         <translation>Hibernar en &lt;b&gt;%1&lt;/b&gt; segundos</translation>
+    </message>
+</context>
+<context>
+    <name>PreviewDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play Selected Range</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 not found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Begin</source>
+        <extracomment>noun, the beginning of the video</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End</source>
+        <extracomment>noun, the end of the video</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play %1~%2</source>
+        <extracomment>play the video from time %1 to time %2. %1 and %2 are time in hh:mm:ss format.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TimeRangeEdit</name>
+    <message>
+        <source>From Begin</source>
+        <translation>Desde el inicio</translation>
+    </message>
+    <message>
+        <source>To End</source>
+        <translation>Al Final</translation>
     </message>
 </context>
 <context>

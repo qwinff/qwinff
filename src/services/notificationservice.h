@@ -20,6 +20,10 @@
 
 #include <QString>
 
+QT_BEGIN_NAMESPACE
+class QWidget;
+QT_END_NAMESPACE
+
 class NotifyLevel
 {
 public:
@@ -39,12 +43,12 @@ public:
     /** Send notification
      *  @note Any implementation of this function should not block.
      */
-    virtual void send(QString title, QString message) = 0;
+    virtual void send(QWidget *parent, QString title, QString message) = 0;
 
     /** Send notification with an image
      *  @note Any implementation of this function should not block.
      */
-    virtual void send(QString title, QString message, int level) = 0;
+    virtual void send(QWidget *parent, QString title, QString message, int level) = 0;
 
     /** Determine whether the notification service is available.
      */

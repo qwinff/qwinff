@@ -70,16 +70,16 @@ bool Notification::setType(NotificationType type)
     }
 }
 
-void Notification::send(QString title, QString message)
+void Notification::send(QWidget *parent, QString title, QString message)
 {
     if (m_type < 0 || m_type >= END_OF_TYPE)
         return;
-    notify_service[m_type]->send(title, message);
+    notify_service[m_type]->send(parent, title, message);
 }
 
-void Notification::send(QString title, QString message, int level)
+void Notification::send(QWidget *parent, QString title, QString message, int level)
 {
     if (m_type < 0 || m_type >= END_OF_TYPE)
         return;
-    notify_service[m_type]->send(title, message, level);
+    notify_service[m_type]->send(parent, title, message, level);
 }
