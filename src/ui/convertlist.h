@@ -206,6 +206,7 @@ private:
     void refresh_progressbar(Task*);
     void update_tooltip(QTreeWidgetItem *item);
     QList<QTreeWidgetItem*> finished_items() const;
+    QString generate_conversion_string(const QString& src, const QString& dest);
 };
 
 #endif // CONVERTLIST_H

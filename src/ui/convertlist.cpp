@@ -84,6 +84,7 @@ enum ConvertListColumns
 {
     COL_SOURCE,
     COL_DESTINATION,
+    COL_CONVERSION,
     COL_DURATION,
     COL_FILE_SIZE,
     COL_AUDIO_SAMPLE_RATE,
@@ -857,6 +858,7 @@ void ConvertList::init_treewidget_fill_column_titles(QStringList &columnTitle)
 {
     columnTitle[COL_SOURCE] = tr("Source");
     columnTitle[COL_DESTINATION] = tr("Destination");
+    columnTitle[COL_CONVERSION] = tr("Conversion");
     columnTitle[COL_DURATION] = tr("Duration");
     columnTitle[COL_FILE_SIZE] = tr("File Size");
 
@@ -886,6 +888,7 @@ void ConvertList::init_treewidget_fill_column_titles(QStringList &columnTitle)
 */
 void ConvertList::init_treewidget_columns_visibility(QTreeWidget *w)
 {
+    w->hideColumn(COL_DESTINATION);
     w->hideColumn(COL_FILE_SIZE);
     // Audio Information
     w->hideColumn(COL_AUDIO_SAMPLE_RATE);
@@ -942,6 +945,7 @@ void ConvertList::fill_list_fields(ConversionParameters &param, MediaProbe &prob
 {
     columns[COL_SOURCE] = QFileInfo(param.source).fileName(); // source file
     columns[COL_DESTINATION] = QFileInfo(param.destination).fileName(); // destination file
+    columns[COL_CONVERSION] = generate_conversion_string(param.source, param.destination);
     columns[COL_DURATION] = QString().sprintf("%02d:%02d:%02.0f"   // duration
                   , probe.hours()              //    hours
                   , probe.minutes()            //    minutes
@@ -1231,4 +1235,15 @@ QList<QTreeWidgetItem*> ConvertList::finished_items() const
         }
     }
     return itemList;
+}
+
+QString ConvertList::generate_conversion_string(
+        const QString &src, const QString &dest)
+{
+    QString from = QFileInfo(src).suffix();
+    QString to = QFileInfo(dest).suffix();
+    /*: Convert format %1 to format %2, %1 and %2 are file extensions.
+        The only function of the ">" sign is to point out the direction
+        of conversion; feel free to replace it with other characters. */
+    return tr("%1>%2").arg(from, to);
 }
