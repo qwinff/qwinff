@@ -236,6 +236,7 @@ void RangeSelector::mouseReleaseEvent(QMouseEvent *e)
     if (m_mouseDown && m_mouseDownPos == e->pos()) {
         mouseClick(m_mouseDownPos); // click event
     }
+    m_mouseDown = false;
 }
 
 void RangeSelector::mouseMoveEvent(QMouseEvent *e)
