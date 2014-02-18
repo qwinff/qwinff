@@ -93,12 +93,16 @@ public slots:
      */
     void togglePlayPause();
 
+protected:
+    void wheelEvent(QWheelEvent *);
+    void mousePressEvent(QMouseEvent *);
+
 private slots:
     void refreshTimeDisplay();
     void refreshButtonState();
     void playerStateChanged();
     void seekSliderChanged();
-    void seekBack();
+    void seekBackward();
     void seekForward();
     void resetPosition();
     
