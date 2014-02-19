@@ -79,3 +79,5 @@ uninstall:
 	-rm -f $(DESTDIR)$(PREFIX)/share/applications/qwinff.desktop
 	-rm -f $(DESTDIR)$(PREFIX)/share/pixmaps/qwinff.png
 	-rm -f $(DESTDIR)$(PREFIX)/share/man/man1/qwinff.1.gz
+
+.PHONY: all release check clean install uninstall
