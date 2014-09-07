@@ -120,6 +120,9 @@ QString AboutDialog::getTranslators()
         {"it_IT",trad(tr("Italian"), QStringList()
                << "TheJoe (http://thejoe.it/)"
                << "Francesco Marinucci <framarinucci@gmail.com>")},
+        //: French Language
+        {"fr_FR", trad(tr("French")
+                    , "Thomas Debesse <dev@illwieckz.net>")},
         //: Czech Language
         {"cs_CZ", trad(tr("Czech"), "Petr Ga&#271;orek <hahihula@gmail.com>")},
         //: Chinese character set used in China
