@@ -5,6 +5,11 @@ set(DEFAULT_THREAD_COUNT 1 CACHE STRING
     )
 add_definitions(-DDEFAULT_THREAD_COUNT=${DEFAULT_THREAD_COUNT})
 
+# find dependencies
+find_package(Qt4 REQUIRED COMPONENTS QtCore QtGui QtNetwork)
+set(CMAKE_AUTOMOC TRUE)
+include(${QT_USE_FILE})
+
 # source files
 
 set(qwinff_SOURCES
