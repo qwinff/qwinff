@@ -93,10 +93,13 @@ set(qwinff_TRANSLATIONS
 # qmpwidget (embedded mplayer)
 set(qwinff_SOURCES ${qwinff_SOURCES} qmpwidget/qmpwidget.cpp)
 
+# resource files
+qt4_add_resources(qwinff_RCC_SRCS images.qrc)
+
 # .ui -> .cxx
 qt4_wrap_ui(UI_SRCS ${qwinff_FORMS})
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR})
 
-add_executable(qwinff ${qwinff_SOURCES} ${UI_SRCS})
+add_executable(qwinff ${qwinff_SOURCES} ${UI_SRCS} ${qwinff_RCC_SRCS})
 target_link_libraries(qwinff ${QT_LIBRARIES})
