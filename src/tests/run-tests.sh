@@ -11,7 +11,7 @@
 TMP_OUTPUT=tmp-output.txt
 
 run_command() {
-	"$@" 2>&1 1> $TMP_OUTPUT
+	"$@"
 	STATUS=$?
 	if [ $STATUS -ne 0 ]; then
 		cat $TMP_OUTPUT
