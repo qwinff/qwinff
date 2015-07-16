@@ -32,8 +32,8 @@ public:
     explicit OptionsDialog(QWidget *parent = 0);
     ~OptionsDialog();
 
-    bool exec();
-    bool exec_tools();
+    int exec();
+    int exec_tools();
 
 private:
     Ui::OptionsDialog *ui;

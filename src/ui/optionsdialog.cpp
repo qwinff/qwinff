@@ -54,7 +54,7 @@ OptionsDialog::~OptionsDialog()
     delete ui;
 }
 
-bool OptionsDialog::exec()
+int OptionsDialog::exec()
 {
     read_fields();
     bool accepted = (QDialog::exec() == QDialog::Accepted);
@@ -64,7 +64,7 @@ bool OptionsDialog::exec()
     return accepted;
 }
 
-bool OptionsDialog::exec_tools()
+int OptionsDialog::exec_tools()
 {
     ui->tabWidget->setCurrentIndex(ui->tabWidget->indexOf(ui->tabTools));
     return exec();

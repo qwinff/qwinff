@@ -30,6 +30,7 @@
 #include <QInputDialog>
 #include <QDesktopServices>
 #include <QTextDocument>
+#include <QMimeData>
 #include <cassert>
 
 #include "convertlist.h"
@@ -46,6 +47,15 @@
 #define TIMEOUT 3000
 #define MIN_DURATION 100 // Minimum duration(milliseconds) to show progress dialog.
 
+namespace {
+QString htmlEscape(QString s) {
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+    return s.toHtmlEscaped();
+#else // Qt4
+    return Qt::escape(s);
+#endif
+}
+}
 
 class Task : public QObject
 {
@@ -1205,7 +1215,7 @@ void ConvertList::update_tooltip(QTreeWidgetItem *item)
             tip << "<b>"
                    + m_list->headerItem()->text(i) // column title
                    + ":</b> "
-                   + Qt::escape(content) // column content
+                   + htmlEscape(content) // column content
                    ;
         }
     }
