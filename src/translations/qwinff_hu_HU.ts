@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="hu_HU">
+<TS version="2.1" language="hu_HU">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -21,12 +21,10 @@
     </message>
     <message>
         <source>Portable</source>
-        <extracomment>Portable version (no installation, no writing registry)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hordozható</translation>
     </message>
     <message>
         <source>Compiled with Qt %1</source>
-        <extracomment>Qt version</extracomment>
         <translation>Fordítva Qt %1 verzióval</translation>
     </message>
     <message>
@@ -35,21 +33,19 @@
     </message>
     <message>
         <source>QWinFF is a gui frontend for FFmpeg.</source>
-        <translation>QWinFF: Grafikus előtétprogram az FFmpeg-hez.</translation>
+        <translation>QWinFF egy grafikus előtétprogram az FFmpeg-hez.</translation>
     </message>
     <message>
         <source>Programming: %1</source>
-        <extracomment>%1 is the name and email of the programmer</extracomment>
         <translation>A program készítője: %1</translation>
     </message>
     <message>
         <source>Logo Design: %1</source>
-        <extracomment>%1 is the name and email of the logo designer</extracomment>
         <translation>Logo terv: %1</translation>
     </message>
     <message>
         <source>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License version 2 or 3.</source>
-        <translation>Ez a program szabad szoftver: terjeszthető és/vagy módosítható a GNU Általános Nyilvános Licenc (GNU GPL) 2 vagy 3 verziója szerint.</translation>
+        <translation>Ez a program szabad szoftver: terjeszthető és/vagy módosítható a GNU Általános Nyilvános Licenc (GNU GPLv2 / GPLv3) szerint.</translation>
     </message>
     <message>
         <source>QWinFF Homepage: %1</source>
@@ -61,7 +57,7 @@
     </message>
     <message>
         <source>FFmpeg presets were taken from WinFF.</source>
-        <translation>Az FFmpeg alapbeállításai a WinFF-ből valók.</translation>
+        <translation>Az FFmpeg alapbeállításai a WinFF-ből származnak.</translation>
     </message>
     <message>
         <source>Japanese</source>
@@ -123,6 +119,11 @@
         <extracomment>Polish Language</extracomment>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>French</source>
+        <extracomment>French Language</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutFFmpegDialog</name>
@@ -141,7 +142,7 @@
     <message>
         <source>FFmpeg is a complete, cross-platform solution to record, convert and stream audio and video. It includes libavcodec - the leading audio/video codec library.</source>
         <extracomment>ffmpeg description</extracomment>
-        <translation>Az FFmpeg teljes körű, keresztplatfomos megoldás videó- és hangfájlok felvételére, átalakítására és továbbítására, mely tartalmazza a vezető audio/video könytárat, a libavcodec-et. </translation>
+        <translation>Az FFmpeg teljes körű, keresztplatfomos megoldás videó- és hangfájlok felvételére, átalakítására és továbbítására. Ez tartalmazza a vezető audio/video könytárat, a libavcodec-et. </translation>
     </message>
     <message>
         <source>FFmpeg is free software licensed under the LGPL or GPL.</source>
@@ -149,7 +150,6 @@
     </message>
     <message>
         <source>Please visit %1 for more information.</source>
-        <extracomment>visit ffmpeg website</extracomment>
         <translation>További információért látogassa meg a honlapot: %1</translation>
     </message>
 </context>

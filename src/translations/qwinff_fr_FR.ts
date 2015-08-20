@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.0" language="fr_FR">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="fr" version="2.0">
 <context>
     <name>AboutDialog</name>
     <message>
         <source>About QWinFF</source>
-        <translation>À propos de QWinFF</translation>
+        <translation>A propos de QWinFF</translation>
     </message>
     <message>
         <source>Information</source>
@@ -17,7 +15,7 @@
     </message>
     <message>
         <source>Version: %1</source>
-        <translation>Version : %1</translation>
+        <translation>Version: %1</translation>
     </message>
     <message>
         <source>Portable</source>
@@ -40,28 +38,28 @@
     <message>
         <source>Programming: %1</source>
         <extracomment>%1 is the name and email of the programmer</extracomment>
-        <translation>Programmation : %1</translation>
+        <translation>Programmeur : %1</translation>
     </message>
     <message>
         <source>Logo Design: %1</source>
         <extracomment>%1 is the name and email of the logo designer</extracomment>
-        <translation>Style du logo: %1</translation>
+        <translation>Auteur du logo : %1</translation>
     </message>
     <message>
         <source>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License version 2 or 3.</source>
-        <translation>Ce programme est un logiciel libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la License Publique Générale GNU 2 ou 3.</translation>
+        <translation>Ce programme est un logiciel libre. Vous pouvez le redistribuer et/ou le modifier, sous les termes de la licence GNU General Public License version 2 ou 3.</translation>
     </message>
     <message>
         <source>QWinFF Homepage: %1</source>
-        <translation>Page web de QWinFF : %1</translation>
+        <translation>Site web de QWinFF : %1</translation>
     </message>
     <message>
         <source>Some audio-processing functionalities are provided by SoX.</source>
-        <translation>Certaines fonctionnalités de traitement audio sont fourniées par SoX.</translation>
+        <translation>Certaines fonctionnalités du traitement audio sont fournis par SOX.</translation>
     </message>
     <message>
         <source>FFmpeg presets were taken from WinFF.</source>
-        <translation>Les préconfigurations de FFmepg proviennent de WinFF.</translation>
+        <translation>Les présélections pour FFmpeg sont tirées de WinFF.</translation>
     </message>
     <message>
         <source>Japanese</source>
@@ -72,11 +70,6 @@
         <source>Italian</source>
         <extracomment>Italian Language</extracomment>
         <translation>Italien</translation>
-    </message>
-    <message>
-        <source>French</source>
-        <extracomment>French Language</extracomment>
-        <translation>French</translation>
     </message>
     <message>
         <source>Czech</source>
@@ -101,7 +94,7 @@
     <message>
         <source>Spanish (Guatemala)</source>
         <extracomment>Spanish Language (Guatemala)</extracomment>
-        <translation>Espagnol (Guatémala)</translation>
+        <translation>Espagnol (Guatemala)</translation>
     </message>
     <message>
         <source>Romanian</source>
@@ -133,7 +126,7 @@
     <name>AboutFFmpegDialog</name>
     <message>
         <source>About FFmpeg</source>
-        <translation>À propos de FFmpeg</translation>
+        <translation>A propos de FFmpeg</translation>
     </message>
     <message>
         <source>FFmpeg</source>
@@ -146,27 +139,27 @@
     <message>
         <source>FFmpeg is a complete, cross-platform solution to record, convert and stream audio and video. It includes libavcodec - the leading audio/video codec library.</source>
         <extracomment>ffmpeg description</extracomment>
-        <translation>FFmpeg est une solution multi-plateforme complète pour enregistrer, transformer et diffuser de l’audio et de la vidéo. Il inclut libavcodec - la bibliothèque audio/vidéo de référence.</translation>
+        <translation>FFmpeg est une solution complète et multi-plateforme, pour enregistrer, convertir et diffuser de l&apos;audio et de la vidéo. Il comprend libavcodec - la principale bibliothèque de codec audio/vidéo.</translation>
     </message>
     <message>
         <source>FFmpeg is free software licensed under the LGPL or GPL.</source>
-        <translation>FFmpeg est un logiciel libre couvert par la license LGPL ou GPL.</translation>
+        <translation>FFmpeg est un logiciel libre sous licence LGPL ou GPL.</translation>
     </message>
     <message>
         <source>Please visit %1 for more information.</source>
         <extracomment>visit ffmpeg website</extracomment>
-        <translation>Veuillez visiter %1 pour plus d’information.</translation>
+        <translation>Pour plus d&apos;informations visitez : %1.</translation>
     </message>
 </context>
 <context>
     <name>AddTaskWizard</name>
     <message>
         <source>Add Tasks</source>
-        <translation>Ajouter des tâches</translation>
+        <translation>Nouvelle conversion</translation>
     </message>
     <message>
         <source>Files to be converted</source>
-        <translation>Fichiers à convertir</translation>
+        <translation>Les fichiers à convertir</translation>
     </message>
     <message>
         <source>Add files.</source>
@@ -174,39 +167,39 @@
     </message>
     <message>
         <source>Remove selected files.</source>
-        <translation>Retirer les fichiers sélectionnés.</translation>
+        <translation>Enlever les fichiers sélectionnés.</translation>
     </message>
     <message>
         <source>Output Settings</source>
-        <translation>Configuration de la sortie</translation>
+        <translation>Options de conversion</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Éditer</translation>
+        <translation>Modifier</translation>
     </message>
     <message>
         <source>Auto adjust output bitrate to reduce output file size.</source>
-        <translation>Ajuster automatiquement le débit de sortie pour réduire la taille du fichier de sortie.</translation>
+        <translation>Ajuster automatiquement le qualité pour réduire le poids du fichier.</translation>
     </message>
     <message>
         <source>Auto Adjust Audio Bitrate</source>
-        <translation>Ajuster automatiquement le débit audio</translation>
+        <translation>Ajustement automatique de la qualité audio</translation>
     </message>
     <message>
         <source>Preset</source>
-        <translation>Préconfiguration</translation>
+        <translation>Présélection</translation>
     </message>
     <message>
         <source>Convert to</source>
-        <translation>Convertir vers</translation>
+        <translation>Convertir en</translation>
     </message>
     <message>
         <source>Output Path</source>
-        <translation>Chemin de destination</translation>
+        <translation>Dossier de sortie</translation>
     </message>
     <message>
         <source>Select &amp;folder</source>
-        <translation>Choisir le dossier</translation>
+        <translation>Sélectionner un &amp;dossier</translation>
     </message>
     <message>
         <source>Browse</source>
@@ -215,7 +208,7 @@
     <message>
         <source>Create &amp;new folder in source folder</source>
         <extracomment>Create a new folder (e.g. qwinff_output) in the folder containing the input files. Put the output files in the newly created folder.</extracomment>
-        <translation>Créer un &amp;nouveau dossier dans le dossier source</translation>
+        <translation>Créer un &amp;nouveau dossier à côté du fichier d&apos;origine</translation>
     </message>
     <message>
         <source>Folder Name</source>
@@ -224,16 +217,16 @@
     <message>
         <source>Output to &amp;source folder</source>
         <extracomment>put the output files in the same folder as the input files</extracomment>
-        <translation>Destination dans le dossier &amp;source</translation>
+        <translation>Enregistrer dans le dossier d&apos;&amp;origine</translation>
     </message>
     <message>
         <source>Please select at least one file.</source>
-        <translation>Veuillez sélectionner au moins un fichier.</translation>
+        <translation>Sélectionnez au moins un fichier.</translation>
     </message>
     <message>
         <source>Select Files</source>
         <extracomment>This text is the title of an openfile dialog.</extracomment>
-        <translation>Sélection des fichiers</translation>
+        <translation>Sélectionner un fichier</translation>
     </message>
     <message>
         <source>Multimedia</source>
@@ -254,23 +247,23 @@
     <message>
         <source>Select Directory</source>
         <extracomment>This text is the title of an open directory dialog.</extracomment>
-        <translation>Sélectionner le dossier</translation>
+        <translation>Sélectionner un dossier</translation>
     </message>
     <message>
         <source>Searching for files...</source>
-        <translation>Recherche de fichiers…</translation>
+        <translation>Recherche de fichiers en cours...</translation>
     </message>
     <message>
         <source>Some files could not be found.</source>
-        <translation>Certains fichiers n’ont pas pu être trouvés.</translation>
+        <translation>Certains fichiers sont introuvable.</translation>
     </message>
     <message>
         <source>Folder does not exist. Create a new folder?</source>
-        <translation>Le dossier n’existe pas. Créer un nouveau dossier ?</translation>
+        <translation>Ce dossier n&apos;existe pas. Voulez-vous le créer ?</translation>
     </message>
     <message>
         <source>Failed to create folder. Please select another output folder.</source>
-        <translation>Échec de création du dossier. Veuillez sélectionner un autre dossier de destination.</translation>
+        <translation>Impossible de créer le dossier. Sélectionnez-en un autre.</translation>
     </message>
 </context>
 <context>
@@ -285,15 +278,15 @@
     </message>
     <message>
         <source>Disable Audio</source>
-        <translation>Désactiver l’audio</translation>
+        <translation>Désactiver le son</translation>
     </message>
     <message>
         <source>Audio Options</source>
-        <translation>Options audio</translation>
+        <translation>Options pour le son</translation>
     </message>
     <message>
         <source>Sample Rate</source>
-        <translation>Fréquence d’échantillonnage</translation>
+        <translation>Taux d&apos;échantillonnage</translation>
     </message>
     <message>
         <source>Hz</source>
@@ -301,11 +294,11 @@
     </message>
     <message>
         <source>Bitrate</source>
-        <translation>Débit</translation>
+        <translation>Qualité</translation>
     </message>
     <message>
         <source>(auto)</source>
-        <translation>(auto)</translation>
+        <translation>(automatique)</translation>
     </message>
     <message>
         <source>kb/s</source>
@@ -329,15 +322,15 @@
     </message>
     <message>
         <source>Disable Video</source>
-        <translation>Désactiver la video</translation>
+        <translation>Désactiver la vidéo</translation>
     </message>
     <message>
         <source>Video Options</source>
-        <translation>Options vidéo</translation>
+        <translation>Options pour la vidéo</translation>
     </message>
     <message>
         <source>Same Quantizer as Source</source>
-        <translation>Même quantification que la source</translation>
+        <translation>Même quantificateur que la source</translation>
     </message>
     <message>
         <source>Deinterlace</source>
@@ -362,12 +355,12 @@
     <message>
         <source>Time</source>
         <extracomment>time-related options (speed, length)</extracomment>
-        <translation>Temps</translation>
+        <translation>Durée</translation>
     </message>
     <message>
         <source>Cutting</source>
         <extracomment>video time cutting: options for begin time and end time</extracomment>
-        <translation>Coupe</translation>
+        <translation>Couper</translation>
     </message>
     <message>
         <source>Cut</source>
@@ -381,7 +374,7 @@
     <message>
         <source>Scaling</source>
         <extracomment>time scaling, changing the speed of the output file</extracomment>
-        <translation>mise à l’échelle</translation>
+        <translation>Ajuster la durée</translation>
     </message>
     <message>
         <source>Speed</source>
@@ -397,7 +390,7 @@
     </message>
     <message>
         <source>Additional FFmpeg Options</source>
-        <translation>Options supplémentaires de FFmpeg</translation>
+        <translation>Paramètres transmis à FFmpeg</translation>
     </message>
 </context>
 <context>
@@ -410,7 +403,7 @@
     <message>
         <source>Adding files (%1/%2)</source>
         <extracomment>This text is the progress indicator of adding multiple tasks. %1 is the number of files that are already added. %2 is the total number of files.</extracomment>
-        <translation>Ajout de fichiers (%1/%2)</translation>
+        <translation>Ajout en cours du fichier (%1/%2)</translation>
     </message>
     <message>
         <source>Some files are not recognized by the converter.</source>
@@ -422,28 +415,28 @@
     </message>
     <message>
         <source>Please input the new name for the output file.</source>
-        <translation>Veuillez saisir le nouveau nom pour le fichier de destination.</translation>
+        <translation>Insérez le nouveau nom du fichier de sortie.</translation>
     </message>
     <message>
         <source>Output Directory</source>
-        <translation>Dossier de destination</translation>
+        <translation>Dossier de sortie</translation>
     </message>
     <message>
         <source>Error Message from FFmpeg:
 
 </source>
-        <translation>Message d’erreur provenant de FFmpeg :
+        <translation>Message d&apos;erreur de FFmpeg :
 
 </translation>
     </message>
     <message>
         <source>Drag and drop files here to add tasks.</source>
-        <translation>Glisser-déposer les fichiers ici pour ajouter des tâches.</translation>
+        <translation>Glisser et déposer ici les fichiers à ajouter à la liste.</translation>
     </message>
     <message>
         <source>Hide &quot;%1&quot;</source>
-        <extracomment>Hide a column in the list. For example, the text maybe &apos;Hide &quot;Duration&quot;&apos;. The two &quot; are quotation marks in English, you may replace it with local quotation marks.</extracomment>
-        <translation>Cacher « %1 »</translation>
+        <extracomment>Hide a column in the list. For example, the text maybe 'Hide &quot;Duration&quot;'. The two &quot; are quotation marks in English, you may replace it with local quotation marks.</extracomment>
+        <translation>Cacher &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Restore All Columns</source>
@@ -468,11 +461,11 @@
     <message>
         <source>Sample Rate</source>
         <extracomment>Audio</extracomment>
-        <translation>Fréquence d’échantillonage</translation>
+        <translation>Taux d&apos;échantillonage</translation>
     </message>
     <message>
         <source>Audio Bitrate</source>
-        <translation>Débit audio</translation>
+        <translation>Qualité audio</translation>
     </message>
     <message>
         <source>Channels</source>
@@ -489,12 +482,12 @@
     </message>
     <message>
         <source>Video Bitrate</source>
-        <translation>Débit vidéo</translation>
+        <translation>Qualité vidéo</translation>
     </message>
     <message>
         <source>Framerate</source>
         <extracomment>Video</extracomment>
-        <translation>Fréquence d’image</translation>
+        <translation>Nombre d&apos;image par seconde</translation>
     </message>
     <message>
         <source>Video Codec</source>
@@ -519,7 +512,7 @@
     <message>
         <source>Removing tasks...</source>
         <extracomment>Remove files from the tasklist</extracomment>
-        <translation>Retrait des tâches…</translation>
+        <translation>Suppresion des tâches de la liste...</translation>
     </message>
     <message>
         <source>KiB</source>
@@ -544,19 +537,19 @@
     </message>
     <message>
         <source>File Exists</source>
-        <translation>Le fichier existe</translation>
+        <translation>Fichier existant</translation>
     </message>
     <message>
         <source>%1 already exists on disk or in the task list. Still use this name as the output filename?</source>
-        <translation>%1 existe déjà sur le disque ou dans une liste de tâches. Utiliser tout de même ce nom comme nom de fichier de destination ?</translation>
+        <translation>%1 existe déjà sur le disque ou bien il est déjà dans le liste des tâches. Utiliser encore ce nom comme nom de ficher de sortie ?</translation>
     </message>
     <message>
         <source>Remove Task</source>
-        <translation>Retirer la tâche</translation>
+        <translation>Supprimer une tâche</translation>
     </message>
     <message>
         <source>Cannot remove a task while it is in progress.</source>
-        <translation>Ne peut retirer une tâche lorsqu’elle est en cours.</translation>
+        <translation>Impossibled&apos;enlever une tâche quand elle se convertie.</translation>
     </message>
     <message>
         <source>Finished</source>
@@ -566,23 +559,23 @@
     <message>
         <source>Failed</source>
         <extracomment>The text to be displayed on the progress bar when a conversion fails</extracomment>
-        <translation>Échec</translation>
+        <translation>Erreur</translation>
     </message>
     <message>
         <source>Error: %1</source>
         <extracomment>%1 is the error message</extracomment>
-        <translation>Erreur : %1</translation>
+        <translation>Erreur : %1</translation>
     </message>
 </context>
 <context>
     <name>ExtraTranslations</name>
     <message>
         <source>Convert between media file formats</source>
-        <translation>Convertir entre formats de fichier</translation>
+        <translation>Convertir en différents format de fichier média</translation>
     </message>
     <message>
         <source>Media Converter</source>
-        <translation>Convertisseur de formats</translation>
+        <translation>Convertir un média</translation>
     </message>
 </context>
 <context>
@@ -590,15 +583,15 @@
     <message>
         <source>Cutting</source>
         <comment>Cutting as in &quot;cutting video&quot;</comment>
-        <translation>Coupe</translation>
+        <translation>Couper le début et la fin</translation>
     </message>
     <message>
         <source>Mark as Begin</source>
-        <translation>Marquer comme début</translation>
+        <translation>Indiquer comme nouveau début</translation>
     </message>
     <message>
         <source>Seek to Begin</source>
-        <translation>Aller au début</translation>
+        <translation>Positionner le curseur au début</translation>
     </message>
     <message>
         <source>Play Selection</source>
@@ -606,15 +599,15 @@
     </message>
     <message>
         <source>Mark as End</source>
-        <translation>Marquer comme fin</translation>
+        <translation>Indiquer comme nouvelle fin</translation>
     </message>
     <message>
         <source>Seek to End</source>
-        <translation>Aller à la fin</translation>
+        <translation>Positionner le curseur à la fin</translation>
     </message>
     <message>
         <source>%1 not found</source>
-        <translation>%1 non trouvé</translation>
+        <translation>%1 introuvable</translation>
     </message>
 </context>
 <context>
@@ -625,11 +618,11 @@
     </message>
     <message>
         <source>Start conversion process.</source>
-        <translation>Commencer la procédure de conversion.</translation>
+        <translation>Démarrer le processus de conversion.</translation>
     </message>
     <message>
         <source>&amp;Start</source>
-        <translation>Commencer</translation>
+        <translation>&amp;Convertir</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -641,11 +634,11 @@
     </message>
     <message>
         <source>&amp;About</source>
-        <translation>À propos</translation>
+        <translation>A &amp;propos de</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation>Éditer</translation>
+        <translation>&amp;Modifier</translation>
     </message>
     <message>
         <source>&amp;Add Files</source>
@@ -653,7 +646,7 @@
     </message>
     <message>
         <source>Add files for conversion.</source>
-        <translation>Ajouter des fichiers à convertir.</translation>
+        <translation>Ajouter des fichiers pour la conversion.</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
@@ -661,7 +654,7 @@
     </message>
     <message>
         <source>E&amp;xit</source>
-        <translation>Quitter</translation>
+        <translation>&amp;Quitter</translation>
     </message>
     <message>
         <source>Exit the program.</source>
@@ -673,11 +666,11 @@
     </message>
     <message>
         <source>S&amp;top</source>
-        <translation>In&amp;terrompre</translation>
+        <translation>Arrê&amp;ter</translation>
     </message>
     <message>
         <source>Stop conversion process.</source>
-        <translation>Interrompre la procédure de conversion.</translation>
+        <translation>Stopper le processus de conversion.</translation>
     </message>
     <message>
         <source>Set &amp;Parameters</source>
@@ -686,69 +679,69 @@
     <message>
         <source>Set Parameters</source>
         <extracomment>Edit output file parameters.</extracomment>
-        <translation>Configurer les paramètres</translation>
+        <translation>Configurer des paramètres</translation>
     </message>
     <message>
         <source>Edit conversion parameters of selected files.</source>
-        <translation>Éditer les paramètres de conversion pour les fichiers sélectionnés.</translation>
+        <translation>Modifier les paramètres de conversion des fichiers sélectionnés.</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
-        <translation>À propos de &amp;Qt</translation>
+        <translation>A propos de &amp;Qt</translation>
     </message>
     <message>
         <source>About Qt</source>
-        <translation>À propos de Qt</translation>
+        <translation>A propos de Qt</translation>
     </message>
     <message>
         <source>&amp;Open Output Folder</source>
-        <translation>&amp;Ouvrir le dossier de destination</translation>
+        <translation>&amp;Ouvrir le dossier de sortie</translation>
     </message>
     <message>
         <source>Open output folder of the selected file.</source>
-        <translation>Ouvrir le dossier de destination du fichier sélectionné</translation>
+        <translation>Ouvrir le dossier de sortie du fichier sélectionné.</translation>
     </message>
     <message>
         <source>About &amp;FFmpeg</source>
-        <translation>À propos de &amp;FFmpeg</translation>
+        <translation>A propos de &amp;FFmpeg</translation>
     </message>
     <message>
         <source>About FFmpeg</source>
-        <translation>À propos de FFmpeg</translation>
+        <translation>A propos de FFmpeg</translation>
     </message>
     <message>
         <source>&amp;Remove Selected</source>
         <extracomment>remove selected (tasks, items)</extracomment>
-        <translation>&amp;Retirer la sélection</translation>
+        <translation>&amp;Enlever la sélection</translation>
     </message>
     <message>
         <source>Remove all selected items in the list.</source>
-        <translation>Retirer tous les fichiers sélectionnés.</translation>
+        <translation>Enlever tous les éléments sélectionnés de la liste.</translation>
     </message>
     <message>
         <source>R&amp;emove Completed</source>
         <extracomment>remove completed (task, items)</extracomment>
-        <translation>R&amp;etirer complètement</translation>
+        <translation>Enl&amp;ever les conversions terminés</translation>
     </message>
     <message>
         <source>Remove Completed Items</source>
-        <translation>Retirer les éléments complétés</translation>
+        <translation>Enlever les éléments terminés</translation>
     </message>
     <message>
         <source>Remove all completed items in the list.</source>
-        <translation>Retirer tous les éléments complétés de la liste.</translation>
+        <translation>Enlever tous les éléments convertis de la liste.</translation>
     </message>
     <message>
         <source>&amp;Clear List</source>
-        <translation>Vider la liste</translation>
+        <translation>Effa&amp;cer la liste</translation>
     </message>
     <message>
         <source>Clear List</source>
-        <translation>Vider la liste</translation>
+        <translation>Effacer la liste</translation>
     </message>
     <message>
         <source>Remove all items in the list.</source>
-        <translation>Retirer tous les éléments de la liste.</translation>
+        <translation>Enlever tous les éléments de la liste.</translation>
     </message>
     <message>
         <source>&amp;Retry</source>
@@ -760,15 +753,15 @@
     </message>
     <message>
         <source>Retry selected tasks.</source>
-        <translation>Réessayer les tâches sélectionnées.</translation>
+        <translation>Réessayer les tâches sélectionnés.</translation>
     </message>
     <message>
         <source>Retry &amp;All</source>
-        <translation>Réess&amp;ayer tout</translation>
+        <translation>Tout réess&amp;ayer</translation>
     </message>
     <message>
         <source>Retry all tasks.</source>
-        <translation>Réessayer toutes les tâches.</translation>
+        <translation>Tout réessayer.</translation>
     </message>
     <message>
         <source>&amp;Options</source>
@@ -780,35 +773,35 @@
     </message>
     <message>
         <source>About Q&amp;WinFF</source>
-        <translation>À propos de Q&amp;WinFF</translation>
+        <translation>A propos de Q&amp;WinFF</translation>
     </message>
     <message>
         <source>About This Program</source>
-        <translation>À propos de ce programme</translation>
+        <translation>A propos de ce programme</translation>
     </message>
     <message>
         <source>Change Output &amp;Filename</source>
-        <translation>Changer le nom de &amp;fichier de destination</translation>
+        <translation>Changer le nom de l&apos;élé&amp;ment à la conversion</translation>
     </message>
     <message>
         <source>Change the output filename of the selected item.</source>
-        <translation>Changer le nom de fichier de destination de l’élément sélectionné.</translation>
+        <translation>Changer le nom de l&apos;élément sélectionné, à la conversion.</translation>
     </message>
     <message>
         <source>Change Output &amp;Directory</source>
-        <translation>Changer le &amp;dossier de destination</translation>
+        <translation>Changer le &amp;dossier de sortie</translation>
     </message>
     <message>
         <source>Change the output directory of the selected items.</source>
-        <translation>Changer le dossier de destination des éléments sélectionnés.</translation>
+        <translation>Changer le dossier de sortie des titres sélectionnés.</translation>
     </message>
     <message>
         <source>Show Error &amp;Message</source>
-        <translation>Montrer le &amp;message d’erreur</translation>
+        <translation>Montrer les &amp;messages d&apos;erreurs</translation>
     </message>
     <message>
         <source>Check For &amp;Updates</source>
-        <translation>Rechercher des mises à jo&amp;ur</translation>
+        <translation>&amp;Vérifier les mises à jours</translation>
     </message>
     <message>
         <source>Cut</source>
@@ -817,7 +810,7 @@
     </message>
     <message>
         <source>All tasks have finished.</source>
-        <translation>Toutes les tâches sont terminées.</translation>
+        <translation>Toutes les tâches sont terminés.</translation>
     </message>
     <message>
         <source>Nothing to convert.</source>
@@ -825,16 +818,16 @@
     </message>
     <message>
         <source>Conversion is still in progress. Abort?</source>
-        <translation>Conversion en cours. Interrompre ?</translation>
+        <translation>Conversion en cours... Annuler ?</translation>
     </message>
     <message>
         <source>Shutdown</source>
         <extracomment>Shutdown the computer (completely poweroff)</extracomment>
-        <translation>Éteindre</translation>
+        <translation>Eteindre</translation>
     </message>
     <message>
         <source>Shutdown when all tasks are done.</source>
-        <translation>Éteindre quand toutes les tâches sont terminées.</translation>
+        <translation>Eteindre quand toutes les tâches seront terminés.</translation>
     </message>
     <message>
         <source>Suspend</source>
@@ -843,7 +836,7 @@
     </message>
     <message>
         <source>Suspend when all tasks are done.</source>
-        <translation>Mettre en veille quand toutes les tâches sont terminées.</translation>
+        <translation>Mettre en veille quand toutes les tâches seront terminés.</translation>
     </message>
     <message>
         <source>Hibernate</source>
@@ -852,19 +845,19 @@
     </message>
     <message>
         <source>Hibernate when all tasks are done.</source>
-        <translation>Hiberner quand toutes les tâches sont terminées.</translation>
+        <translation>Hiberner quand toutes les tâches seront terminés.</translation>
     </message>
     <message>
         <source>This program is going to check for updates online. Do you allow this program to use the Internet to check for updates?</source>
-        <translation>Ce programme va rechercher en ligne des mises à jour. Autorisez-vous ce programme à utiliser Internet pour chercher des mises à jour ?</translation>
+        <translation>Ce programme va vérifier les mises à jour en ligne. Voulez-vous permettre à ce programme d&apos;utiliser Internet pour vérifier les mises à jour ?</translation>
     </message>
     <message>
         <source>Failed to load preset file. The application will quit now.</source>
-        <translation>Échec de chargement d’un fichier de préconfiguration. L’application va s’arrêter maintenant.</translation>
+        <translation>Impossible d&apos;ouvrir le fichier des préselections. L&apos;application va se terminer.</translation>
     </message>
     <message>
         <source>Elapsed Time: %1 h %2 m %3 s</source>
-        <translation>Temps estimé : %1 h %2 m %3 s</translation>
+        <translation>Durée restante : %1h %2m %3s</translation>
     </message>
     <message>
         <source>Converting %1/%2</source>
@@ -877,7 +870,7 @@
     <message>
         <source>%1 not found.</source>
         <extracomment>%1 is a computer program</extracomment>
-        <translation>%1 non trouvé.</translation>
+        <translation>%1 introuvable.</translation>
     </message>
 </context>
 <context>
@@ -892,11 +885,11 @@
     </message>
     <message>
         <source>Check for updates on program startup</source>
-        <translation>Chercher des mises à jour au démarrage du programme</translation>
+        <translation>Vérifier les mises à jour au démarrage du programme</translation>
     </message>
     <message>
         <source>Automatically start conversion after adding files to the list.</source>
-        <translation>Démarrer automatiquement la conversion après l’ajout d’un fichier à la liste.</translation>
+        <translation>Conversion automatique des fichiers après leurs ajout à la liste.</translation>
     </message>
     <message>
         <source>Start conversion automatically</source>
@@ -908,23 +901,23 @@
     </message>
     <message>
         <source>Number of threads to use in conversion</source>
-        <translation>Nombres de threads à utiliser pendant la conversion</translation>
+        <translation>Nombre de processus à utiliser pour la conversion</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hide output formats that are not available in the current ffmpeg installation. It is recommended to turn this option on unless you are sure that QWinFF has failed to detect available formats. (requires restarting QWinFF to take effect)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Cacher les formats de destination qui ne sont pas disponibles dans l’installation actuelle de FFmpeg. Il est recommandé d’activer cette option à moins d’être certain que QWinFF a échoué à détecter les formats disponibles (il est nécessaire de redémarrer QWinFF pour que la configuration prenne effet)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Masquer les formats de sortie qui ne sont pas disponibles dans l&apos;installation actuelle de FFmpeg. Il est recommandé d&apos;activer cette option seulement si vous êtes sûr que QWinFF n&apos;a pas réussi à  détecter les formats disponibles. (nécessite le redémarrage QWinFF pour être effectif)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Hide unavailable formats (requires restarting)</source>
-        <translation>Cacher les formats indisponibles (nécessite un redémarrage)</translation>
+        <translation>Cacher les formats indisponibles (nécessite le redémarrage)</translation>
     </message>
     <message>
         <source>Tools</source>
-        <translation>Outils</translation>
+        <translation>outils</translation>
     </message>
     <message>
         <source>You have to restart QWinFF for the changes to take effect.</source>
-        <translation>Vous devez redémarrer QWinFF pour que les changements prennent effet.</translation>
+        <translation>Vous devez redémarrer QWinFF pour que les changements soit effectifs.</translation>
     </message>
     <message>
         <source>Name</source>
@@ -948,27 +941,27 @@
     <message>
         <source>Shutdown immediately</source>
         <extracomment>Shutdown the computer</extracomment>
-        <translation>Éteindre immédiatement</translation>
+        <translation>Eteindre tout de suite</translation>
     </message>
     <message>
         <source>Suspend immediately</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
-        <translation>Mettre en veille immédiatement</translation>
+        <translation>Mise en veille tout de suite</translation>
     </message>
     <message>
         <source>Hibernate immediately</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
-        <translation>Hiberner immédiatement</translation>
+        <translation>Hiberner tout de suite</translation>
     </message>
     <message>
         <source>Shutdown</source>
         <extracomment>Shutdown the computer</extracomment>
-        <translation>Éteindre</translation>
+        <translation>Eteindre</translation>
     </message>
     <message>
         <source>Suspend</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
-        <translation>Mettre en veille</translation>
+        <translation>Mise en veille</translation>
     </message>
     <message>
         <source>Hibernate</source>
@@ -977,15 +970,15 @@
     </message>
     <message>
         <source>Operation Failed: %1</source>
-        <translation>Opération échouée: %1</translation>
+        <translation>Opération annulé : %1</translation>
     </message>
     <message>
         <source>Shutting down in &lt;b&gt;%1&lt;/b&gt; seconds</source>
-        <translation>Éteindre dans &lt;b&gt;%1&lt;/b&gt; secondes</translation>
+        <translation>Extinction dans &lt;b&gt;%1&lt;/b&gt; secondes</translation>
     </message>
     <message>
         <source>Suspending in &lt;b&gt;%1&lt;/b&gt; seconds</source>
-        <translation>Mettre en veille dans &lt;b&gt;%1&lt;/b&gt; secondes</translation>
+        <translation>Mise en veille dans &lt;b&gt;%1&lt;/b&gt; secondes</translation>
     </message>
     <message>
         <source>Hibernating in &lt;b&gt;%1&lt;/b&gt; seconds</source>
@@ -1000,11 +993,11 @@
     </message>
     <message>
         <source>Play Selected Range</source>
-        <translation>Lire la partie sélectionnée</translation>
+        <translation>Lire la zone sélectionné</translation>
     </message>
     <message>
         <source>%1 not found</source>
-        <translation>%1 non trouvé</translation>
+        <translation>%1 introuvable</translation>
     </message>
     <message>
         <source>Begin</source>
@@ -1019,41 +1012,41 @@
     <message>
         <source>Play %1~%2</source>
         <extracomment>play the video from time %1 to time %2. %1 and %2 are time in hh:mm:ss format.</extracomment>
-        <translation>Lire %1~%2</translation>
+        <translation>Lire de %1 jusqu&apos;à %2</translation>
     </message>
 </context>
 <context>
     <name>TimeRangeEdit</name>
     <message>
         <source>From Begin</source>
-        <translation>Depuis le début</translation>
+        <translation>Début à</translation>
     </message>
     <message>
         <source>To End</source>
-        <translation>Jusqu’à la fin</translation>
+        <translation>Fin à</translation>
     </message>
 </context>
 <context>
     <name>UpdateDialog</name>
     <message>
         <source>Show &amp;Release Notes</source>
-        <translation>Montrer les notes de ve&amp;rsion</translation>
+        <translation>Montrer les notes des &amp;sorties</translation>
     </message>
     <message>
         <source>Check for updates on program startup</source>
-        <translation>Rechercher des mises à jour au démarrage du programme</translation>
+        <translation>Vérifier les mises à jours au démarrage du programme</translation>
     </message>
     <message>
         <source>Downloading update information...</source>
-        <translation>Téléchargement des informations de mise à jour…</translation>
+        <translation>Télécharger les dernières informations...</translation>
     </message>
     <message>
         <source>Cannot connect to server.</source>
-        <translation>Ne peut pas se connecter au serveur.</translation>
+        <translation>Impossible de se connecter au serveur.</translation>
     </message>
     <message>
         <source>Failed to parse the received data.</source>
-        <translation>Échec de l’analyse des données reçues.</translation>
+        <translation>Impossible de découper les données reçus.</translation>
     </message>
     <message>
         <source>You are already using the latest version of QWinFF.</source>
@@ -1061,11 +1054,11 @@
     </message>
     <message>
         <source>An unknown error has occurred.</source>
-        <translation>Une erreur inconnue s’est produite.</translation>
+        <translation>Une erreur inconnue est apparue.</translation>
     </message>
     <message>
         <source>A new version of QWinFF has been released!</source>
-        <translation>Une nouvelle version de QWinFF a été publiée !</translation>
+        <translation>Une nouvelle version de QWinFF est sortie !</translation>
     </message>
     <message>
         <source>Version &lt;b&gt;%1&lt;/b&gt; is available at %2.</source>
@@ -1074,7 +1067,7 @@
     </message>
     <message>
         <source>You can download this version using the link:</source>
-        <translation>Vous pouvez télécharger cette version en utilisant le lien :</translation>
+        <translation>Vous pouvez télécharger cette version depuis le lien :</translation>
     </message>
 </context>
 </TS>

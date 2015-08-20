@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="zh_TW">
+<TS version="2.1" language="zh_TW">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -21,12 +21,10 @@
     </message>
     <message>
         <source>Portable</source>
-        <extracomment>Portable version (no installation, no writing registry)</extracomment>
         <translation>綠色版</translation>
     </message>
     <message>
         <source>Compiled with Qt %1</source>
-        <extracomment>Qt version</extracomment>
         <translation>Qt 編譯版本：%1</translation>
     </message>
     <message>
@@ -39,12 +37,10 @@
     </message>
     <message>
         <source>Programming: %1</source>
-        <extracomment>%1 is the name and email of the programmer</extracomment>
         <translation>程式設計：%1</translation>
     </message>
     <message>
         <source>Logo Design: %1</source>
-        <extracomment>%1 is the name and email of the logo designer</extracomment>
         <translation>Logo 設計：%1</translation>
     </message>
     <message>
@@ -123,6 +119,11 @@
         <extracomment>Polish Language</extracomment>
         <translation>波蘭語</translation>
     </message>
+    <message>
+        <source>French</source>
+        <extracomment>French Language</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutFFmpegDialog</name>
@@ -149,7 +150,6 @@
     </message>
     <message>
         <source>Please visit %1 for more information.</source>
-        <extracomment>visit ffmpeg website</extracomment>
         <translation>造訪FFmpeg網站以獲得更多資訊: %1</translation>
     </message>
 </context>
@@ -871,13 +871,6 @@
         <source>%1 not found.</source>
         <extracomment>%1 is a computer program</extracomment>
         <translation>找不到 %1.</translation>
-    </message>
-</context>
-<context>
-    <name>MediaPlayerWidget</name>
-    <message>
-        <source>Form</source>
-        <translation type="obsolete">表單</translation>
     </message>
 </context>
 <context>

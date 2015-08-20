@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="cs_CZ">
+<TS version="2.1" language="cs_CZ">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -21,12 +21,10 @@
     </message>
     <message>
         <source>Portable</source>
-        <extracomment>Portable version (no installation, no writing registry)</extracomment>
         <translation>Přenosný</translation>
     </message>
     <message>
         <source>Compiled with Qt %1</source>
-        <extracomment>Qt version</extracomment>
         <translation>Zkompilováno pomocí Qt %1</translation>
     </message>
     <message>
@@ -39,12 +37,10 @@
     </message>
     <message>
         <source>Programming: %1</source>
-        <extracomment>%1 is the name and email of the programmer</extracomment>
         <translation>Programátor: %1</translation>
     </message>
     <message>
         <source>Logo Design: %1</source>
-        <extracomment>%1 is the name and email of the logo designer</extracomment>
         <translation>Autor Loga: %1</translation>
     </message>
     <message>
@@ -123,6 +119,11 @@
         <extracomment>Polish Language</extracomment>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>French</source>
+        <extracomment>French Language</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutFFmpegDialog</name>
@@ -149,7 +150,6 @@
     </message>
     <message>
         <source>Please visit %1 for more information.</source>
-        <extracomment>visit ffmpeg website</extracomment>
         <translation>Chcete-li získat další informace, prosím navštivte %1 .</translation>
     </message>
 </context>
