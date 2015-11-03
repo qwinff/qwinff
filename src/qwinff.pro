@@ -132,8 +132,8 @@ TRANSLATIONS += \
     translations/qwinff_ar.ts \
     translations/qwinff_hu_HU.ts \
     translations/qwinff_pl_PL.ts \
-    translations/qwinff_fr_FR.ts \
-    translations/qwinff_pt_BR.ts
+    translations/qwinff_pt_BR.ts \
+    translations/qwinff_fr.ts
 
 INCLUDEPATH += .
 

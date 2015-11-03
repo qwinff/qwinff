@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="fr" version="2.0">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="fr">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -19,12 +21,10 @@
     </message>
     <message>
         <source>Portable</source>
-        <extracomment>Portable version (no installation, no writing registry)</extracomment>
         <translation>Portable</translation>
     </message>
     <message>
         <source>Compiled with Qt %1</source>
-        <extracomment>Qt version</extracomment>
         <translation>Compilé avec Qt %1</translation>
     </message>
     <message>
@@ -37,12 +37,10 @@
     </message>
     <message>
         <source>Programming: %1</source>
-        <extracomment>%1 is the name and email of the programmer</extracomment>
         <translation>Programmeur : %1</translation>
     </message>
     <message>
         <source>Logo Design: %1</source>
-        <extracomment>%1 is the name and email of the logo designer</extracomment>
         <translation>Auteur du logo : %1</translation>
     </message>
     <message>
@@ -121,6 +119,11 @@
         <extracomment>Polish Language</extracomment>
         <translation>Polonais</translation>
     </message>
+    <message>
+        <source>French</source>
+        <extracomment>French Language</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AboutFFmpegDialog</name>
@@ -147,7 +150,6 @@
     </message>
     <message>
         <source>Please visit %1 for more information.</source>
-        <extracomment>visit ffmpeg website</extracomment>
         <translation>Pour plus d&apos;informations visitez : %1.</translation>
     </message>
 </context>
@@ -435,7 +437,7 @@
     </message>
     <message>
         <source>Hide &quot;%1&quot;</source>
-        <extracomment>Hide a column in the list. For example, the text maybe 'Hide &quot;Duration&quot;'. The two &quot; are quotation marks in English, you may replace it with local quotation marks.</extracomment>
+        <extracomment>Hide a column in the list. For example, the text maybe &apos;Hide &quot;Duration&quot;&apos;. The two &quot; are quotation marks in English, you may replace it with local quotation marks.</extracomment>
         <translation>Cacher &quot;%1&quot;</translation>
     </message>
     <message>

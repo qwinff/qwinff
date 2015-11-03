@@ -9,7 +9,7 @@
     </message>
     <message>
         <source>Information</source>
-        <translation>Informacja </translation>
+        <translation>Informacje</translation>
     </message>
     <message>
         <source>Translators</source>
@@ -57,7 +57,7 @@
     </message>
     <message>
         <source>FFmpeg presets were taken from WinFF.</source>
-        <translation type="unfinished"></translation>
+        <translation>Domyślne ustawienia FFmpeg pochodzą z WinFF.</translation>
     </message>
     <message>
         <source>Japanese</source>
@@ -197,7 +197,7 @@
     </message>
     <message>
         <source>Output Path</source>
-        <translation>Ścieżka wyjścia </translation>
+        <translation>Ścieżka zapisu konwersji </translation>
     </message>
     <message>
         <source>Select &amp;folder</source>
@@ -312,9 +312,7 @@
     </message>
     <message>
         <source>Volume</source>
-        <translation>Głośność
-	
-</translation>
+        <translation>Głośność</translation>
     </message>
     <message>
         <source>%</source>
@@ -346,7 +344,7 @@
     </message>
     <message>
         <source> px</source>
-        <translation> pikseli </translation>
+        <translation> Pikseli </translation>
     </message>
     <message>
         <source>Height</source>
@@ -354,7 +352,7 @@
     </message>
     <message>
         <source>Crop</source>
-        <translation>Crop</translation>
+        <translation>Przytnij</translation>
     </message>
     <message>
         <source>Time</source>
@@ -369,7 +367,7 @@
     <message>
         <source>Cut</source>
         <comment>Cut video; select a range to convert</comment>
-        <translation type="unfinished"></translation>
+        <translation>Cięcie</translation>
     </message>
     <message>
         <source>&amp;Preview</source>
@@ -430,6 +428,7 @@
 
 </source>
         <translation>Komunikat o błędzie z FFmpeg:
+
 </translation>
     </message>
     <message>
@@ -494,7 +493,7 @@
     </message>
     <message>
         <source>Video Codec</source>
-        <translation>Video kodek</translation>
+        <translation>Wideo kodek</translation>
     </message>
     <message>
         <source>Progress</source>
@@ -519,11 +518,11 @@
     </message>
     <message>
         <source>KiB</source>
-        <translation>kB </translation>
+        <translation>KB </translation>
     </message>
     <message>
         <source>MiB</source>
-        <translation>MB		</translation>
+        <translation>MB</translation>
     </message>
     <message>
         <source>GiB</source>
@@ -574,7 +573,7 @@
     <name>ExtraTranslations</name>
     <message>
         <source>Convert between media file formats</source>
-        <translation>Konwersja plików multimedialnych, pomiędzy różnymi formatami</translation>
+        <translation>Konwersja plików multimedialnych pomiędzy różnymi formatami.</translation>
     </message>
     <message>
         <source>Media Converter</source>
@@ -590,27 +589,27 @@
     </message>
     <message>
         <source>Mark as Begin</source>
-        <translation type="unfinished"></translation>
+        <translation>Wskaż jako nowy początek</translation>
     </message>
     <message>
         <source>Seek to Begin</source>
-        <translation type="unfinished"></translation>
+        <translation>Skocz do nowego początku</translation>
     </message>
     <message>
         <source>Play Selection</source>
-        <translation type="unfinished"></translation>
+        <translation>Odtwórz wybrany materiał </translation>
     </message>
     <message>
         <source>Mark as End</source>
-        <translation type="unfinished"></translation>
+        <translation>Wskaż jako nowy koniec </translation>
     </message>
     <message>
         <source>Seek to End</source>
-        <translation type="unfinished"></translation>
+        <translation>Skocz do nowego końca</translation>
     </message>
     <message>
         <source>%1 not found</source>
-        <translation type="unfinished"></translation>
+        <translation>% 1 nie został znaleziony</translation>
     </message>
 </context>
 <context>
@@ -809,7 +808,7 @@
     <message>
         <source>Cut</source>
         <extracomment>Cut video file (select a time range to conert)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Cięcie</translation>
     </message>
     <message>
         <source>All tasks have finished.</source>
@@ -992,30 +991,30 @@
     <name>PreviewDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <source>Play Selected Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Odtwórz zaznaczony materiał </translation>
     </message>
     <message>
         <source>%1 not found</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 nie znaleziono</translation>
     </message>
     <message>
         <source>Begin</source>
         <extracomment>noun, the beginning of the video</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Początek</translation>
     </message>
     <message>
         <source>End</source>
         <extracomment>noun, the end of the video</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Koniec</translation>
     </message>
     <message>
         <source>Play %1~%2</source>
         <extracomment>play the video from time %1 to time %2. %1 and %2 are time in hh:mm:ss format.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Odtwarzanie %1~%2</translation>
     </message>
 </context>
 <context>

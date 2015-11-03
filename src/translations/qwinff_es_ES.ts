@@ -201,7 +201,7 @@
     </message>
     <message>
         <source>Select &amp;folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar &amp;Carpeta</translation>
     </message>
     <message>
         <source>Browse</source>
@@ -210,16 +210,16 @@
     <message>
         <source>Create &amp;new folder in source folder</source>
         <extracomment>Create a new folder (e.g. qwinff_output) in the folder containing the input files. Put the output files in the newly created folder.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Crear un nuevo folder en el folder de origen</translation>
     </message>
     <message>
         <source>Folder Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre de la carpeta</translation>
     </message>
     <message>
         <source>Output to &amp;source folder</source>
         <extracomment>put the output files in the same folder as the input files</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Salida a la carpeta de origen</translation>
     </message>
     <message>
         <source>Please select at least one file.</source>
@@ -253,7 +253,7 @@
     </message>
     <message>
         <source>Searching for files...</source>
-        <translation type="unfinished"></translation>
+        <translation>Buscando archivos...</translation>
     </message>
     <message>
         <source>Some files could not be found.</source>
@@ -431,7 +431,7 @@
     </message>
     <message>
         <source>Drag and drop files here to add tasks.</source>
-        <translation type="unfinished"></translation>
+        <translation>Arrastre y suelte los archivos aquí para añadir tareas.</translation>
     </message>
     <message>
         <source>Hide &quot;%1&quot;</source>
@@ -607,7 +607,7 @@
     </message>
     <message>
         <source>%1 not found</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no encontrado</translation>
     </message>
 </context>
 <context>
@@ -699,7 +699,7 @@
     </message>
     <message>
         <source>Open output folder of the selected file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir carpeta de salida del archivo seleccionado.</translation>
     </message>
     <message>
         <source>About &amp;FFmpeg</source>
@@ -801,7 +801,7 @@
     </message>
     <message>
         <source>Check For &amp;Updates</source>
-        <translation type="unfinished"></translation>
+        <translation>Buscar &amp;actualizaciones</translation>
     </message>
     <message>
         <source>Cut</source>
@@ -849,7 +849,7 @@
     </message>
     <message>
         <source>This program is going to check for updates online. Do you allow this program to use the Internet to check for updates?</source>
-        <translation type="unfinished"></translation>
+        <translation>Este programa va a comprobar si hay actualizaciones en línea. ¿Quiere dar permite a este programa a utilizar Internet para buscar actualizaciones?</translation>
     </message>
     <message>
         <source>Failed to load preset file. The application will quit now.</source>
@@ -862,7 +862,7 @@
     <message>
         <source>Converting %1/%2</source>
         <extracomment>Converting the %1-th file in %2 files. %2 is the number of files.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Convirtiendo %1/%2</translation>
     </message>
 </context>
 <context>
@@ -870,7 +870,7 @@
     <message>
         <source>%1 not found.</source>
         <extracomment>%1 is a computer program</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>%1 no encontrado.</translation>
     </message>
 </context>
 <context>
@@ -881,19 +881,19 @@
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>General</translation>
     </message>
     <message>
         <source>Check for updates on program startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Buscar actualizaciones al iniciar el programa</translation>
     </message>
     <message>
         <source>Automatically start conversion after adding files to the list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Iniciar automáticamente la conversión después de añadir archivos a la lista.</translation>
     </message>
     <message>
         <source>Start conversion automatically</source>
-        <translation type="unfinished"></translation>
+        <translation>Iniciar conversión automáticamente</translation>
     </message>
     <message>
         <source>FFmpeg</source>
@@ -925,7 +925,7 @@
     </message>
     <message>
         <source>Command</source>
-        <translation type="unfinished"></translation>
+        <translation>Comando</translation>
     </message>
 </context>
 <context>
@@ -989,30 +989,30 @@
     <name>PreviewDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Diálogo</translation>
     </message>
     <message>
         <source>Play Selected Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Reproducir Rango Seleccionado</translation>
     </message>
     <message>
         <source>%1 not found</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 no encontrado</translation>
     </message>
     <message>
         <source>Begin</source>
         <extracomment>noun, the beginning of the video</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Inicio</translation>
     </message>
     <message>
         <source>End</source>
         <extracomment>noun, the end of the video</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Final</translation>
     </message>
     <message>
         <source>Play %1~%2</source>
         <extracomment>play the video from time %1 to time %2. %1 and %2 are time in hh:mm:ss format.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Reprodución %1~%2</translation>
     </message>
 </context>
 <context>
@@ -1030,11 +1030,11 @@
     <name>UpdateDialog</name>
     <message>
         <source>Show &amp;Release Notes</source>
-        <translation type="unfinished"></translation>
+        <translation>Ver Notas del lanzamiento.</translation>
     </message>
     <message>
         <source>Check for updates on program startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Buscar actualizaciones al iniciar el programa</translation>
     </message>
     <message>
         <source>Downloading update information...</source>
@@ -1042,23 +1042,23 @@
     </message>
     <message>
         <source>Cannot connect to server.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se puede conectar al servidor.</translation>
     </message>
     <message>
         <source>Failed to parse the received data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al analizar los datos recibidos.</translation>
     </message>
     <message>
         <source>You are already using the latest version of QWinFF.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ya está usando la versión mas reciente de QWinFF.</translation>
     </message>
     <message>
         <source>An unknown error has occurred.</source>
-        <translation type="unfinished"></translation>
+        <translation>Un error desconocido ha ocurrido.</translation>
     </message>
     <message>
         <source>A new version of QWinFF has been released!</source>
-        <translation type="unfinished"></translation>
+        <translation>¡Una nueva versión de QWinFF ha sido lanzada!</translation>
     </message>
     <message>
         <source>Version &lt;b&gt;%1&lt;/b&gt; is available at %2.</source>
@@ -1067,7 +1067,7 @@
     </message>
     <message>
         <source>You can download this version using the link:</source>
-        <translation type="unfinished"></translation>
+        <translation>Puede descargar esta versión usando el enlace:</translation>
     </message>
 </context>
 </TS>
