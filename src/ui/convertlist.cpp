@@ -105,6 +105,8 @@ enum ConvertListColumns
     COL_VIDEO_FRAMERATE,
     COL_VIDEO_CODEC,
     COL_PROGRESS,
+    COL_FROM_FORMAT,
+    COL_TO_FORMAT,
     NUM_COLUMNS
 };
 
@@ -883,6 +885,8 @@ void ConvertList::init_treewidget_fill_column_titles(QStringList &columnTitle)
     columnTitle[COL_VIDEO_CODEC] = tr("Video Codec");
 
     columnTitle[COL_PROGRESS] = tr("Progress");
+    columnTitle[COL_FROM_FORMAT] = tr("From");
+    columnTitle[COL_TO_FORMAT] = tr("To");
 
     // Check if all columns have titles
     for (int i=0; i<NUM_COLUMNS; i++)
@@ -896,6 +900,7 @@ void ConvertList::init_treewidget_fill_column_titles(QStringList &columnTitle)
 */
 void ConvertList::init_treewidget_columns_visibility(QTreeWidget *w)
 {
+    w->hideColumn(COL_DESTINATION);
     w->hideColumn(COL_FILE_SIZE);
     // Audio Information
     w->hideColumn(COL_AUDIO_SAMPLE_RATE);
@@ -950,6 +955,8 @@ void ConvertList::fill_list_fields(ConversionParameters &param, MediaProbe &prob
                                     QStringList &columns)
 
 {
+    columns[COL_FROM_FORMAT] = QFileInfo(param.source).suffix();
+    columns[COL_TO_FORMAT] = QFileInfo(param.destination).suffix();
     columns[COL_SOURCE] = QFileInfo(param.source).fileName(); // source file
     columns[COL_DESTINATION] = QFileInfo(param.destination).fileName(); // destination file
     columns[COL_DURATION] = QString().sprintf("%02d:%02d:%02.0f"   // duration
