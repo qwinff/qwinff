@@ -197,6 +197,7 @@ private:
     void reset_task(Task *task);
     void remove_items(const QList<QTreeWidgetItem*>&);
     ProgressBar* progressBar(Task*);
+    void addFormatLabel(Task *task, QString fromExt, QString toExt);
     QString to_human_readable_size_1024(qint64 nBytes);
     bool change_output_file(Task *task, const QString& new_file
             , QMessageBox::StandardButtons &overwrite, bool show_all_buttons);

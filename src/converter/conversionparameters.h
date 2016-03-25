@@ -27,6 +27,8 @@ public:
     /* Generic Options */
     QString source;       ///< name of source file
     QString destination;  ///< name of destination file
+    QString sourceExt(bool upperCase = true);
+    QString destinationExt(bool upperCase = true);
     int threads; ///< how many threads to use in conversion
 
     bool disable_audio;
