@@ -41,6 +41,7 @@
 #include "services/constants.h"
 #include "ui/conversionparameterdialog.h"
 #include "ui/interactivecuttingdialog.h"
+#include "ui/formatlabel.h"
 #include "addtaskwizard.h"
 #include "services/extensions.h"
 
@@ -271,6 +272,7 @@ bool ConvertList::addTask(ConversionParameters param)
     m_list->addTopLevelItem(item);
 
     progressBar(task)->adjustSize();
+    add_format_label(task, param.sourceExt(), param.destinationExt());
 
     update_tooltip(item);
     hide_background_image();
@@ -1018,6 +1020,13 @@ void ConvertList::remove_items(const QList<QTreeWidgetItem *>& itemList)
     }
 
     dlgProgress.setValue(itemList.size());
+}
+void ConvertList::add_format_label(Task *task, QString fromExt, QString toExt)
+{
+    FormatLabel *from_label = new FormatLabel(fromExt);
+    FormatLabel *to_label = new FormatLabel(toExt);
+    m_list->setItemWidget(task->listitem, COL_FROM_FORMAT, from_label);
+    m_list->setItemWidget(task->listitem, COL_TO_FORMAT, to_label);
 }
 
 /**

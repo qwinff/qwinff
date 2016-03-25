@@ -73,6 +73,9 @@ public:
      */
     void copyConfigurationFrom(const ConversionParameters& src);
 
+    QString sourceExt(bool upperCase = true);
+    QString destinationExt(bool upperCase = true);
+
     /*! Generate a ConversionParameters from ffmpeg command line options.
         This function ignores input and output file options. */
     static ConversionParameters fromFFmpegParameters(const QString& params_str);

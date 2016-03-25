@@ -18,6 +18,7 @@
 #include "conversionparameters.h"
 #include "mediaprobe.h"
 #include <QStringList>
+#include <QFileInfo>
 #include <QDebug>
 #include <cassert>
 
@@ -158,3 +159,22 @@ ConversionParameters::fromFFmpegParameters(const char *params_str)
 {
     return fromFFmpegParameters(QString(params_str));
 }
+
+QString ConversionParameters::sourceExt(bool upperCase)
+{
+    QFileInfo file = QFileInfo(source);
+    QString ext = file.suffix();
+    if (upperCase)
+        return ext.toUpper();
+    return ext;
+}
+
+QString ConversionParameters::destinationExt(bool upperCase)
+{
+    QFileInfo file = QFileInfo(destination);
+    QString ext = file.suffix();
+    if (upperCase)
+        return ext.toUpper();
+    return ext;
+}
+
