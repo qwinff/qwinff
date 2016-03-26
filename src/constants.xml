@@ -63,54 +63,53 @@
        the stability and security of your system.
        Bytes exceeding the limit will be discarded. -->
   <UpdateInfoSizeLimit type="integer">4096</UpdateInfoSizeLimit>
-  <FormatLabel>
-    <Format> <Title>ac3</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>ape</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>asf</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>avi</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>bin</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>dat</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>divx</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>dv</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>dvr-ms</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>flac</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>flv</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>iso</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>m1v</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>m2t</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>m2ts</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>m2v</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>m4v</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>mkv</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>mov</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>mp2</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>mp3</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>mp4</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>mpeg</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>mpg</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>mpv</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>mqv</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>mts</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>nsv</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>ogg</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>ogg</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>ogm</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>ogv</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>ra</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>ram</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>rec</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>rm</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>rmvb</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>swf</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>ts</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>vcd</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>vfw</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>vob</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>wav</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>webm</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>wma</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>wmv</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
-    <Format> <Title>3gp</Title> <Background>#</Background><Foreground>#</Foreground> </Format>
+  
+  <FormatLabel> 
+    <Format title="ac3" background="#" foreground="#ffffff" border="#"/>
+    <Format title="ape" background="#" foreground="#ffffff" border="#"/>
+    <Format title="asf" background="#" foreground="#ffffff" border="#"/>
+    <Format title="avi" background="#" foreground="#ffffff" border="#"/>
+    <Format title="bin" background="#" foreground="#ffffff" border="#"/>
+    <Format title="dat" background="#" foreground="#ffffff" border="#"/>
+    <Format title="divx" background="#" foreground="#ffffff" border="#"/>
+    <Format title="dv" background="#" foreground="#ffffff" border="#"/>
+    <Format title="dvr-ms" background="#" foreground="#ffffff" border="#"/>
+    <Format title="flac" background="#" foreground="#ffffff" border="#"/>
+    <Format title="flv" background="#" foreground="#ffffff" border="#"/>
+    <Format title="iso" background="#" foreground="#ffffff" border="#"/>
+    <Format title="m1v" background="#" foreground="#ffffff" border="#"/>
+    <Format title="m2t" background="#" foreground="#ffffff" border="#"/>
+    <Format title="m2ts" background="#" foreground="#ffffff" border="#"/>
+    <Format title="m2v" background="#" foreground="#ffffff" border="#"/>
+    <Format title="m4v" background="#" foreground="#ffffff" border="#"/>
+    <Format title="mkv" background="#" foreground="#ffffff" border="#"/>
+    <Format title="mov" background="#" foreground="#ffffff" border="#"/>
+    <Format title="mp2" background="#" foreground="#ffffff" border="#"/>
+    <Format title="mp3" background="#" foreground="#ffffff" border="#"/>
+    <Format title="mp4" background="#afd7ff" foreground="#005f87" border="#005f87"/>
+    <Format title="mpeg" background="#" foreground="#ffffff" border="#"/>
+    <Format title="mpg" background="#" foreground="#ffffff" border="#"/>
+    <Format title="mpv" background="#" foreground="#ffffff" border="#"/>
+    <Format title="mqv" background="#" foreground="#ffffff" border="#"/>
+    <Format title="mts" background="#" foreground="#ffffff" border="#"/>
+    <Format title="nsv" background="#" foreground="#ffffff" border="#"/>
+    <Format title="ogg" background="#" foreground="#ffffff" border="#"/>
+    <Format title="ogg" background="#" foreground="#ffffff" border="#"/>
+    <Format title="ogm" background="#" foreground="#ffffff" border="#"/>
+    <Format title="ogv" background="#" foreground="#ffffff" border="#"/>
+    <Format title="ra" background="#" foreground="#ffffff" border="#"/>
+    <Format title="rm" background="#" foreground="#ffffff" border="#"/>
+    <Format title="rmvb" background="#" foreground="#ffffff" border="#"/>
+    <Format title="swf" background="#" foreground="#ffffff" border="#"/>
+    <Format title="ts" background="#" foreground="#ffffff" border="#"/>
+    <Format title="vcd" background="#" foreground="#ffffff" border="#"/>
+    <Format title="vfw" background="#" foreground="#ffffff" border="#"/>
+    <Format title="vob" background="#" foreground="#ffffff" border="#"/>
+    <Format title="wav" background="#" foreground="#ffffff" border="#"/>
+    <Format title="webm" background="#" foreground="#ffffff" border="#"/>
+    <Format title="wma" background="#" foreground="#ffffff" border="#"/>
+    <Format title="wmv" background="#" foreground="#ffffff" border="#"/>
+    <Format title="3gp" background="#" foreground="#ffffff" border="#"/>
   </FormatLabel>
   <!-- progressbar of the conversion list -->
   <ProgressBar>
