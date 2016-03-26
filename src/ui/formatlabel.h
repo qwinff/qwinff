@@ -9,8 +9,6 @@ class FormatLabel : public QLabel
     Q_OBJECT
 public:
     explicit FormatLabel(const QString &fileExt, QWidget *parent = 0);
-private:
-    QStringList getColorSet(const QString &fileExt);
 };
 
 
