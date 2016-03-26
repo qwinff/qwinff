@@ -90,7 +90,7 @@ public:
      *
      * @see lookup()
      */
-    QString attribute(QString path, QString attr) const;
+    QMap<QString, QString> attributes(QString path) const;
 
     /**
      * @brief Clear all xml data.
