@@ -90,6 +90,22 @@ QString XmlLookupTable::lookup(const QString &path, bool *ok) const
         return QString(); // default
 }
 
+QMap<QString, QString> XmlLookupTable::lookupAttributes(const QString &path, bool *ok) const
+{
+    QHash<QString, Entry>::ConstIterator it = m_data.find(full_path(path));
+    bool found = (it != m_data.end());
+    if (ok)
+        *ok = found;
+    if (found)
+        return it->attributes;
+    else
+    {
+        QMap<QString, QString> empty_map;
+        empty_map[""] = "";
+        return empty_map; // default
+    }
+}
+
 QString XmlLookupTable::operator [](const QString& path) const
 {
     return m_data[full_path(path)].data;
