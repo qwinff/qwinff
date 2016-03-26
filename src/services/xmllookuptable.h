@@ -79,6 +79,10 @@ public:
      *
      * @see lookup()
      */
+
+    QMap<QString, QString> lookupAttributes(const QString &path, bool *ok) const;
+
+
     QString operator [](const QString &path) const;
 
     /**
