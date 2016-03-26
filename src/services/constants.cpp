@@ -25,13 +25,13 @@
 namespace
 {
     bool constants_initialized = false;
-    XmlLookupTable constants;
+    XmlLookupTable constants_table;
     QString color_pattern(QString("#(%1%1)(%1%1)(%1%1)(%1%1)?").arg(REGEXP_HEXDIGIT));
 
     QString lookup_constant(const QString& key)
     {
         bool ok;
-        QString result = constants.lookup(key, &ok);
+        QString result = constants_table.lookup(key, &ok);
         if (!ok)
             qWarning() << "Constants: lookup undefined key " << key;
         return result;
@@ -67,11 +67,11 @@ namespace
 
 bool Constants::readFile(QFile &file)
 {
-    constants.clear();
+    constants_table.clear();
     constants_initialized = false;
-    if (constants.readFile(file)) {
+    if (constants_table.readFile(file)) {
         constants_initialized = true;
-        constants.setPrefix("QWinFFConstants");
+        constants_table.setPrefix("QWinFFConstants");
     }
     return constants_initialized;
 }
