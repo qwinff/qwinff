@@ -95,10 +95,10 @@ QString XmlLookupTable::operator [](const QString& path) const
     return m_data[full_path(path)].data;
 }
 
-QString XmlLookupTable::attribute(QString path, QString attr) const
+QMap<QString, QString> XmlLookupTable::attributes(QString path) const
 {
     const QMap<QString, QString> &attributes = m_data[full_path(path)].attributes;
-    return attributes[attr];
+    return attributes;
 }
 
 void XmlLookupTable::clear()
