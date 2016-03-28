@@ -99,11 +99,7 @@ QMap<QString, QString> XmlLookupTable::lookupAttributes(const QString &path, boo
     if (found)
         return it->attributes;
     else
-    {
-        QMap<QString, QString> empty_map;
-        empty_map[""] = "";
-        return empty_map; // default
-    }
+        return  QMap<QString, QString>(); // default
 }
 
 QString XmlLookupTable::operator [](const QString& path) const
