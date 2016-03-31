@@ -65,8 +65,8 @@ void ProgressBar::paintEvent(QPaintEvent*)
 {
     QPainter painter(this);
     QPen pen;
-    QColor color_margin = Constants::getColor("ProgressBar/Colors/Margin");
-    QColor color_center = Constants::getColor("ProgressBar/Colors/Center");
+    QColor color_top = Constants::getColor("ProgressBar/Colors/Top");
+    QColor color_bottom = Constants::getColor("ProgressBar/Colors/Bottom");
     QColor color_border = Constants::getColor("ProgressBar/Colors/Border");
     QColor color_text = Constants::getColor("ProgressBar/Colors/Text");
     QColor color_background = Constants::getColor("ProgressBar/Colors/Background");
@@ -85,9 +85,8 @@ void ProgressBar::paintEvent(QPaintEvent*)
             // draw progress bar
             QRect rect_progress(0, 0, (width()*m_percentage/100)-1, height()-1);
             QLinearGradient gradient(0, 0, 0, rect_progress.bottom());
-            gradient.setColorAt(0, color_margin);
-            gradient.setColorAt(0.5, color_center);
-            gradient.setColorAt(1, color_margin);
+            gradient.setColorAt(0, color_top);
+            gradient.setColorAt(1, color_bottom);
             painter.setBrush(gradient);
             painter.setPen(Qt::NoPen);  // Don't draw the border.
             painter.drawRect(rect_progress);

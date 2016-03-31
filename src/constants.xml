@@ -90,10 +90,10 @@
   <!-- progressbar of the conversion list -->
   <ProgressBar>
     <Colors>
-      <Margin type="color">#C8DCFF</Margin>
-      <Center type="color">#96C8DC</Center>
-      <Border type="color">#6496A0</Border>
-      <Text type="color">#000000</Text>
+      <Top type="color">#d7ff5f</Top>
+      <Bottom type="color">#a1db00</Bottom>
+      <Border type="color">#225f22</Border>
+      <Text type="color">#ffffff</Text>
       <Background type="color">#FFFFFF5F</Background>
     </Colors>
   </ProgressBar>
