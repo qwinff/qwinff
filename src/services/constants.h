@@ -33,7 +33,7 @@ public:
     static QString getString(const char *key);
     static QStringList getSpaceSeparatedList(const char *key);
     static QColor getColor(const char *key);
-
+    static QMap<QString, QString> getEntryAttributesMap(const char *key);
 private:
     Constants();
     ~Constants();
