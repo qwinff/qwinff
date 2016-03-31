@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <QWinFFConstants>
   <!-- Options may contain an optional attribute "type" to indicate its data
        type. Options without the type attributes are considered strings. -->
@@ -91,10 +91,12 @@
   <ProgressBar>
     <Colors>
       <Top type="color">#d7ff5f</Top>
-      <Bottom type="color">#a1db00</Bottom>
+      <Bottom type="color">#a1cb00</Bottom>
       <Border type="color">#225f22</Border>
-      <Text type="color">#ffffff</Text>
-      <Background type="color">#FFFFFF5F</Background>
+      <Light type="color">#d8f4a6</Light>
+      <TextLight type="color">#ffffff</TextLight>
+      <TextDark type="color">#005f00</TextDark>
+      <Background type="color">#888888</Background>
     </Colors>
   </ProgressBar>
 

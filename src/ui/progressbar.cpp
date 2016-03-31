@@ -68,8 +68,10 @@ void ProgressBar::paintEvent(QPaintEvent*)
     QColor color_top = Constants::getColor("ProgressBar/Colors/Top");
     QColor color_bottom = Constants::getColor("ProgressBar/Colors/Bottom");
     QColor color_border = Constants::getColor("ProgressBar/Colors/Border");
-    QColor color_text = Constants::getColor("ProgressBar/Colors/Text");
+    QColor color_text_light = Constants::getColor("ProgressBar/Colors/TextLight");
+    QColor color_text_dark = Constants::getColor("ProgressBar/Colors/TextDark");
     QColor color_background = Constants::getColor("ProgressBar/Colors/Background");
+    QColor color_light = Constants::getColor("ProgressBar/Colors/Light");
 
     //if (m_percentage >= 0)
     {
@@ -83,17 +85,27 @@ void ProgressBar::paintEvent(QPaintEvent*)
 
         if (m_percentage > 0) {
             // draw progress bar
-            QRect rect_progress(0, 0, (width()*m_percentage/100)-1, height()-1);
+            int x = (width()*m_percentage/100)-1;
+            int y = height()-1;
+            QRect rect_progress(0, 0, x, y);
             QLinearGradient gradient(0, 0, 0, rect_progress.bottom());
             gradient.setColorAt(0, color_top);
             gradient.setColorAt(1, color_bottom);
             painter.setBrush(gradient);
             painter.setPen(Qt::NoPen);  // Don't draw the border.
             painter.drawRect(rect_progress);
+            // Draw light outline (Tagno)
+            QRect _light_outline(1, 1, x-1, y-1);
+            painter.setPen(color_light);
+            painter.drawRect(_light_outline);
         }
 
         // Restore the pen such that the text can be rendered.
-        pen.setColor(color_text);
+        if (m_percentage > 50) {
+            pen.setColor(color_text_dark);
+        } else {
+            pen.setColor(color_text_light);
+        }
         painter.setPen(pen);
 
         if (!m_show_text) { // show percentage
