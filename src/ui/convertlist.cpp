@@ -93,6 +93,8 @@ public:
  */
 enum ConvertListColumns
 {
+    COL_FROM_FORMAT,
+    COL_TO_FORMAT,
     COL_SOURCE,
     COL_DESTINATION,
     COL_DURATION,
@@ -106,8 +108,6 @@ enum ConvertListColumns
     COL_VIDEO_FRAMERATE,
     COL_VIDEO_CODEC,
     COL_PROGRESS,
-    COL_FROM_FORMAT,
-    COL_TO_FORMAT,
     NUM_COLUMNS
 };
 
