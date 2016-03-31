@@ -37,6 +37,15 @@ namespace
         return result;
     }
 
+    QMap<QString, QString> lookup_attributes_constant(const QString& key) //[FIXME] rename the function
+    {
+        bool ok;
+        QMap<QString, QString> result = constants_table.lookupAttributes(key, &ok);
+        if (!ok)
+            qWarning() << "Constants: lookup undefined key " << key;
+        return result;
+    }
+
     int hex2int(const QString& hex_str)
     {
         QString qualified_str = QString("0x%1").arg(hex_str);
@@ -115,4 +124,9 @@ QColor Constants::getColor(const char *key)
 {
     Q_ASSERT(constants_initialized);
     return str2color(lookup_constant(key));
+}
+
+QMap<QString, QString> Constants::getEntryAttributesMap(const char *key){
+    Q_ASSERT(constants_initialized);
+    return lookup_attributes_constant(key);
 }
