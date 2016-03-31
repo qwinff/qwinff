@@ -64,52 +64,28 @@
        Bytes exceeding the limit will be discarded. -->
   <UpdateInfoSizeLimit type="integer">4096</UpdateInfoSizeLimit>
   
-  <FormatLabel> 
-    <Format title="ac3" background="#" foreground="#ffffff" border="#"/>
-    <Format title="ape" background="#" foreground="#ffffff" border="#"/>
-    <Format title="asf" background="#" foreground="#ffffff" border="#"/>
-    <Format title="avi" background="#" foreground="#ffffff" border="#"/>
-    <Format title="bin" background="#" foreground="#ffffff" border="#"/>
-    <Format title="dat" background="#" foreground="#ffffff" border="#"/>
-    <Format title="divx" background="#" foreground="#ffffff" border="#"/>
-    <Format title="dv" background="#" foreground="#ffffff" border="#"/>
-    <Format title="dvr-ms" background="#" foreground="#ffffff" border="#"/>
-    <Format title="flac" background="#" foreground="#ffffff" border="#"/>
-    <Format title="flv" background="#" foreground="#ffffff" border="#"/>
-    <Format title="iso" background="#" foreground="#ffffff" border="#"/>
-    <Format title="m1v" background="#" foreground="#ffffff" border="#"/>
-    <Format title="m2t" background="#" foreground="#ffffff" border="#"/>
-    <Format title="m2ts" background="#" foreground="#ffffff" border="#"/>
-    <Format title="m2v" background="#" foreground="#ffffff" border="#"/>
-    <Format title="m4v" background="#" foreground="#ffffff" border="#"/>
-    <Format title="mkv" background="#" foreground="#ffffff" border="#"/>
-    <Format title="mov" background="#" foreground="#ffffff" border="#"/>
-    <Format title="mp2" background="#" foreground="#ffffff" border="#"/>
-    <Format title="mp3" background="#" foreground="#ffffff" border="#"/>
-    <Format title="mp4" background="#afd7ff" foreground="#005f87" border="#005f87"/>
-    <Format title="mpeg" background="#" foreground="#ffffff" border="#"/>
-    <Format title="mpg" background="#" foreground="#ffffff" border="#"/>
-    <Format title="mpv" background="#" foreground="#ffffff" border="#"/>
-    <Format title="mqv" background="#" foreground="#ffffff" border="#"/>
-    <Format title="mts" background="#" foreground="#ffffff" border="#"/>
-    <Format title="nsv" background="#" foreground="#ffffff" border="#"/>
-    <Format title="ogg" background="#" foreground="#ffffff" border="#"/>
-    <Format title="ogg" background="#" foreground="#ffffff" border="#"/>
-    <Format title="ogm" background="#" foreground="#ffffff" border="#"/>
-    <Format title="ogv" background="#" foreground="#ffffff" border="#"/>
-    <Format title="ra" background="#" foreground="#ffffff" border="#"/>
-    <Format title="rm" background="#" foreground="#ffffff" border="#"/>
-    <Format title="rmvb" background="#" foreground="#ffffff" border="#"/>
-    <Format title="swf" background="#" foreground="#ffffff" border="#"/>
-    <Format title="ts" background="#" foreground="#ffffff" border="#"/>
-    <Format title="vcd" background="#" foreground="#ffffff" border="#"/>
-    <Format title="vfw" background="#" foreground="#ffffff" border="#"/>
-    <Format title="vob" background="#" foreground="#ffffff" border="#"/>
-    <Format title="wav" background="#" foreground="#ffffff" border="#"/>
-    <Format title="webm" background="#" foreground="#ffffff" border="#"/>
-    <Format title="wma" background="#" foreground="#ffffff" border="#"/>
-    <Format title="wmv" background="#" foreground="#ffffff" border="#"/>
-    <Format title="3gp" background="#" foreground="#ffffff" border="#"/>
+  <FormatLabel>  <!--[FIXME] use Format instead of Format_AC3 -->
+    <Format_AC3 title="ac3" background="#ff4ea3" foreground="#ffffff" border="#ff1f8b"/>
+    <Format_APE title="ape" background="#87875f" foreground="#d7d7af" border="#d7d7af"/>
+    <Format_AVI title="avi" background="#ffffff" foreground="#ff4ea3" border="#ff1f8b"/>
+    <Format_FLAC title="flac" background="#fdfde7" foreground="#87875f" border="#87875f"/>
+    <Format_FLV title="flv" background="#ffffff" foreground="#cc0000" border="#cc0000"/>
+    <Format_MKV title="mkv" background="#87d7af" foreground="#005f5f" border="#005f5f"/>
+    <Format_MOV title="mov" background="#e6a8df" foreground="#6c0099" border="#6c0099"/>
+    <Format_MP3 title="mp3" background="#ff8700" foreground="#ffffff" border="#ffffff"/>
+    <Format_MP4 title="mp4" background="#afd7ff" foreground="#005f87" border="#005f87"/>
+    <Format_MPEG title="mpeg" background="#00d7af" foreground="#ffffff" border="#00d7af"/>
+    <Format_MPG title="mpg" background="#00d7af" foreground="#ffffff" border="#00d7af"/>
+    <Format_OGG title="ogg" background="#d7ff5f" foreground="#005f00" border="#00af00"/>
+    <Format_OGV title="ogv" background="#008700" foreground="#d7ff87" border="#008700"/>
+    <Format_RM title="rm" background="#ffffff" foreground="#005f87" border="#005f87"/>
+    <Format_RMVB title="rmvb" background="#ffffff" foreground="#005f87" border="#005f87"/>
+    <Format_SWF title="swf" background="#a40000" foreground="#ffffff" border="#ffafaf"/>
+    <Format_WAV title="wav" background="#3333af" foreground="#afd7ff" border="#afd7ff"/>
+    <Format_WEBM title="webm" background="#ffd7af" foreground="#ff8700" border="#ff8700"/>
+    <Format_WMA title="wma" background="#5fafd7" foreground="#ffffff" border="#005f87"/>
+    <Format_WMV title="wmv" background="#ffffff" foreground="#1f5bff" border="#1f5bff"/>
+    <Format_3GP title="3gp" background="#b218b2" foreground="#ffffff" border="#b218b2"/>
   </FormatLabel>
   <!-- progressbar of the conversion list -->
   <ProgressBar>
