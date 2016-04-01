@@ -90,13 +90,22 @@
   <!-- progressbar of the conversion list -->
   <ProgressBar>
     <Colors>
-      <Top type="color">#d7ff5f</Top>
-      <Bottom type="color">#a1cb00</Bottom>
-      <Border type="color">#225f22</Border>
-      <Light type="color">#d8f4a6</Light>
-      <TextLight type="color">#ffffff</TextLight>
-      <TextDark type="color">#005f00</TextDark>
-      <Background type="color">#888888</Background>
+      <Text>
+        <Light type="color">#ffffff</Light>
+        <Dark type="color">#005f00</Dark>
+      </Text>
+      <Foreground>
+        <Gradient1 type="color">#d7ff5f</Gradient1>
+        <Gradient2 type="color">#a1cb00</Gradient2>
+        <OuterBorder type="color">#225f22</OuterBorder>
+        <InnerBorder type="color">#e8f4b6</InnerBorder>
+      </Foreground>
+      <Background>
+        <Gradient1 type="color">#888888</Gradient1>
+        <Gradient2 type="color">#adadad</Gradient2>
+        <OuterBorder type="color">#333333</OuterBorder>
+        <InnerBorder type="color">#bababa</InnerBorder>
+      </Background>
     </Colors>
   </ProgressBar>
 

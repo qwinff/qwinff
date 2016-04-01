@@ -65,39 +65,63 @@ void ProgressBar::paintEvent(QPaintEvent*)
 {
     QPainter painter(this);
     QPen pen;
-    QColor color_top = Constants::getColor("ProgressBar/Colors/Top");
-    QColor color_bottom = Constants::getColor("ProgressBar/Colors/Bottom");
-    QColor color_border = Constants::getColor("ProgressBar/Colors/Border");
-    QColor color_text_light = Constants::getColor("ProgressBar/Colors/TextLight");
-    QColor color_text_dark = Constants::getColor("ProgressBar/Colors/TextDark");
-    QColor color_background = Constants::getColor("ProgressBar/Colors/Background");
-    QColor color_light = Constants::getColor("ProgressBar/Colors/Light");
+    QColor color_fg_gradient_1 = Constants::getColor("ProgressBar/Colors/Foreground/Gradient1");
+    QColor color_fg_gradient_2 = Constants::getColor("ProgressBar/Colors/Foreground/Gradient2");
+    QColor color_fg_outer_border = Constants::getColor("ProgressBar/Colors/Foreground/OuterBorder");
+    QColor color_fg_inner_border = Constants::getColor("ProgressBar/Colors/Foreground/InnerBorder");
+
+    QColor color_text_light = Constants::getColor("ProgressBar/Colors/Text/Light");
+    QColor color_text_dark = Constants::getColor("ProgressBar/Colors/Text/Dark");
+
+    QColor color_bg_gradient_1 = Constants::getColor("ProgressBar/Colors/Background/Gradient1");
+    QColor color_bg_gradient_2 = Constants::getColor("ProgressBar/Colors/Background/Gradient2");
+    QColor color_bg_outer_border = Constants::getColor("ProgressBar/Colors/Background/OuterBorder");
+    QColor color_bg_inner_border = Constants::getColor("ProgressBar/Colors/Background/InnerBorder");
 
     //if (m_percentage >= 0)
     {
-        QRect rect_region(0, 0, width()-1, height()-1);
-
-        // draw background
-        QBrush background_brush(color_background);
-        painter.setPen(Qt::NoPen);
-        painter.setBrush(background_brush);
-        painter.drawRect(rect_region);
+        // ===================================================
+        // background
+        // ===================================================
+        QRect background_rect(0, 0, width(), height());
+        QLinearGradient background_gradient(0, 0, 0, background_rect.bottom());
+        background_gradient.setColorAt(0.0, color_bg_gradient_1);
+        background_gradient.setColorAt(1.0, color_bg_gradient_2);
+        painter.setBrush(background_gradient);
+        painter.setPen(Qt::NoPen);  // !!! Don't draw the border.
+        painter.drawRect(background_rect);
+        // outer border
+        QRect outer_border_rect(0, 0, width()-1, height()-1);
+        pen.setColor(color_bg_outer_border);
+        painter.setPen(pen);
+        painter.drawRect(outer_border_rect);
+        // inner border
+        QRect inner_border_rect (1, 1, width()-3, height()-3);
+        pen.setColor(color_bg_inner_border);
+        painter.setPen(pen);
+        painter.drawRect(inner_border_rect);
 
         if (m_percentage > 0) {
             // draw progress bar
-            int x = (width()*m_percentage/100)-1;
-            int y = height()-1;
-            QRect rect_progress(0, 0, x, y);
-            QLinearGradient gradient(0, 0, 0, rect_progress.bottom());
-            gradient.setColorAt(0, color_top);
-            gradient.setColorAt(1, color_bottom);
+            int w = (width()*m_percentage/100)-1;
+            int h = height();
+            QRect progress_rect(0, 0, w, h);
+            QLinearGradient gradient(0, 0, 0, progress_rect.bottom());
+            gradient.setColorAt(0, color_fg_gradient_1);
+            gradient.setColorAt(1, color_fg_gradient_2);
             painter.setBrush(gradient);
-            painter.setPen(Qt::NoPen);  // Don't draw the border.
-            painter.drawRect(rect_progress);
-            // Draw light outline (Tagno)
-            QRect _light_outline(1, 1, x-1, y-1);
-            painter.setPen(color_light);
-            painter.drawRect(_light_outline);
+            painter.setPen(Qt::NoPen);  // !!! Don't draw the border.
+            painter.drawRect(progress_rect);
+            // outer border
+            QRect outer_border_rect(0, 0, w-1, h-1);
+            pen.setColor(color_fg_outer_border);
+            painter.setPen(pen);
+            painter.drawRect(outer_border_rect);
+            // inner border
+            QRect inner_border_rect (1, 1, w-3, w-3);
+            pen.setColor(color_fg_inner_border);
+            painter.setPen(pen);
+            painter.drawRect(inner_border_rect);
         }
 
         // Restore the pen such that the text can be rendered.
@@ -109,14 +133,14 @@ void ProgressBar::paintEvent(QPaintEvent*)
         painter.setPen(pen);
 
         if (!m_show_text) { // show percentage
-            painter.drawText(rect_region, QString("%1\%").arg(m_percentage)
+            painter.drawText(background_rect, QString("%1\%").arg(m_percentage)
                              , QTextOption(Qt::AlignCenter));
         } else { // show custom text
-            painter.drawText(rect_region, m_text, QTextOption(Qt::AlignCenter));
+            painter.drawText(background_rect, m_text, QTextOption(Qt::AlignCenter));
         }
 
         if (m_active) {
-            pen.setColor(color_border);
+            pen.setColor(color_fg_outer_border);
             painter.setPen(pen);
             painter.setBrush(Qt::NoBrush); // disable filling
             painter.drawRect(0, 0, width()-1, height()-1);
