@@ -5,6 +5,11 @@ before_install:
   - sh -e /etc/init.d/xvfb start
   - sleep 3 # give xvfb some time to start
 
+env:
+  matrix:
+    - USE_LIBNOTIFY=0
+    - USE_LIBNOTIFY=1
+
 script:
-  - make
+  - make USE_LIBNOTIFY=$USE_LIBNOTIFY
   - make check
