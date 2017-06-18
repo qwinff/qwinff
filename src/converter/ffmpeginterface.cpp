@@ -403,6 +403,9 @@ QStringList FFmpegInterface::Private::getOptionList(const ConversionParameters &
     // Audio Options
     if (o.disable_audio) {
         list.append("-an"); // no audio
+    } else if (o.copy_audio) { // copy audio data (no re-encode)
+        list.append("-acodec");
+        list.append("copy");
     } else { // audio enabled
 
         // audio bitrate in kb/s
@@ -444,6 +447,9 @@ QStringList FFmpegInterface::Private::getOptionList(const ConversionParameters &
     // Video Options
     if (o.disable_video || !probe.hasVideo()) {
         list.append("-vn"); // no video
+    } else if (o.copy_video) { // copy video data (no re-encode)
+        list.append("-vcodec");
+        list.append("copy");
     } else { // video enabled
 
         // same video quality as source

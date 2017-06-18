@@ -59,6 +59,10 @@ ConversionParameterDialog::ConversionParameterDialog(QWidget *parent) :
     connect(ui->btnPreview, SIGNAL(clicked()),
             this, SLOT(preview_time_selection()));
     connect(ui->btnInteractiveCutting, SIGNAL(clicked()), SLOT(interactive_cutting()));
+    connect(ui->chkDisableAudio, SIGNAL(toggled(bool)), SLOT(audio_tab_update_enabled_widgets()));
+    connect(ui->chkCopyAudio, SIGNAL(toggled(bool)), SLOT(audio_tab_update_enabled_widgets()));
+    connect(ui->chkDisableVideo, SIGNAL(toggled(bool)), SLOT(video_tab_update_enabled_widgets()));
+    connect(ui->chkCopyVideo, SIGNAL(toggled(bool)), SLOT(video_tab_update_enabled_widgets()));
 
     // Hide speed-changing options if sox is not available.
     m_enableAudioProcessing = AudioFilter::available();
@@ -211,6 +215,7 @@ void ConversionParameterDialog::write_fields(ConversionParameters& param)
 
     // Audio Options
     param.disable_audio = ui->chkDisableAudio->isChecked();
+    param.copy_audio = ui->chkCopyAudio->isChecked();
     param.audio_sample_rate = ui->cbAudioSampleRate->currentText().toInt();
     param.audio_bitrate = ui->spinAudioBitrate->value();
     param.audio_channels = ui->spinChannels->value();
@@ -218,6 +223,7 @@ void ConversionParameterDialog::write_fields(ConversionParameters& param)
 
     // Video Options
     param.disable_video = ui->chkDisableVideo->isChecked();
+    param.copy_video = ui->chkCopyVideo->isChecked();
     param.video_bitrate = ui->spinVideoBitrate->value();
     param.video_same_quality = ui->chkVideoSameQuality->isChecked();
     param.video_deinterlace = ui->chkDeinterlace->isChecked();
@@ -248,4 +254,24 @@ void ConversionParameterDialog::write_fields(ConversionParameters& param)
         param.speed_scaling_factor = speed_ratio / 100.0;
     }
 
+}
+
+void ConversionParameterDialog::audio_tab_update_enabled_widgets()
+{
+    bool disable_audio = ui->chkDisableAudio->isChecked();
+    bool copy_audio = ui->chkCopyAudio->isChecked();
+
+    ui->chkDisableAudio->setEnabled(true); // always enabled
+    ui->chkCopyAudio->setEnabled(!disable_audio);
+    ui->groupAudioOptions->setEnabled(!disable_audio && !copy_audio);
+}
+
+void ConversionParameterDialog::video_tab_update_enabled_widgets()
+{
+    bool disable_video= ui->chkDisableVideo->isChecked();
+    bool copy_video = ui->chkCopyVideo->isChecked();
+
+    ui->chkDisableVideo->setEnabled(true); // always enabled
+    ui->chkCopyVideo->setEnabled(!disable_video);
+    ui->groupVideoOptions->setEnabled(!disable_video && !copy_video);
 }

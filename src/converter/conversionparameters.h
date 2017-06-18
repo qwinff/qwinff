@@ -30,6 +30,7 @@ public:
     int threads; ///< how many threads to use in conversion
 
     bool disable_audio;
+    bool copy_audio;
     int audio_bitrate;
     int audio_sample_rate;
     bool audio_keep_sample_rate; ///< whether to keep original audio sample rate
@@ -37,6 +38,7 @@ public:
     int audio_volume; ///< output volume in binary percent (256 is normal, 512 is double)
 
     bool disable_video;
+    bool copy_video;
     bool video_same_quality; ///< whether to keep all video quality (-sameq option in ffmpeg)
     bool video_deinterlace;
     int video_bitrate;
@@ -81,12 +83,14 @@ public:
     ConversionParameters()
         : threads(0),
           disable_audio(false),
+          copy_audio(false),
           audio_bitrate(0),
           audio_sample_rate(0),
           audio_keep_sample_rate(false),
           audio_channels(0),
           audio_volume(0),
           disable_video(false),
+          copy_video(false),
           video_same_quality(false),
           video_deinterlace(false),
           video_bitrate(0),

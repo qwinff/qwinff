@@ -33,11 +33,22 @@
         </attribute>
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
-          <widget class="QCheckBox" name="chkDisableAudio">
-           <property name="text">
-            <string>Disable Audio</string>
-           </property>
-          </widget>
+          <layout class="QHBoxLayout" name="horizontalLayout_11">
+           <item>
+            <widget class="QCheckBox" name="chkDisableAudio">
+             <property name="text">
+              <string>Disable Audio</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="chkCopyAudio">
+             <property name="text">
+              <string>Copy Audio (Do not re-encode)</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QGroupBox" name="groupAudioOptions">
@@ -173,11 +184,22 @@
         </attribute>
         <layout class="QVBoxLayout" name="verticalLayout_3">
          <item>
-          <widget class="QCheckBox" name="chkDisableVideo">
-           <property name="text">
-            <string>Disable Video</string>
-           </property>
-          </widget>
+          <layout class="QHBoxLayout" name="horizontalLayout_13">
+           <item>
+            <widget class="QCheckBox" name="chkDisableVideo">
+             <property name="text">
+              <string>Disable Video</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="chkCopyVideo">
+             <property name="text">
+              <string>Copy Video (Do not re-encode)</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <widget class="QGroupBox" name="groupVideoOptions">
@@ -533,7 +555,6 @@
   </layout>
  </widget>
  <tabstops>
-  <tabstop>chkDisableAudio</tabstop>
   <tabstop>cbAudioSampleRate</tabstop>
   <tabstop>spinAudioBitrate</tabstop>
   <tabstop>spinChannels</tabstop>
@@ -547,7 +568,6 @@
   <tabstop>spinCropBottom</tabstop>
   <tabstop>txtFFmpegOptions</tabstop>
   <tabstop>buttonBox</tabstop>
-  <tabstop>chkDisableVideo</tabstop>
  </tabstops>
  <resources>
   <include location="../images.qrc"/>
@@ -582,38 +602,6 @@
     <hint type="destinationlabel">
      <x>286</x>
      <y>274</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>chkDisableAudio</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>groupAudioOptions</receiver>
-   <slot>setDisabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>113</x>
-     <y>56</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>229</x>
-     <y>266</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>chkDisableVideo</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>groupVideoOptions</receiver>
-   <slot>setDisabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>236</x>
-     <y>56</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>227</x>
-     <y>270</y>
     </hint>
    </hints>
   </connection>

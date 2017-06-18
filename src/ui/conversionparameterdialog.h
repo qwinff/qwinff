@@ -51,6 +51,8 @@ private slots:
     void preview_time_selection();
     void interactive_cutting();
     AbstractPreviewer *create_previewer();
+    void audio_tab_update_enabled_widgets();
+    void video_tab_update_enabled_widgets();
 
 private:
     Ui::ConversionParameterDialog *ui;
