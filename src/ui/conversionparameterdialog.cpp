@@ -134,6 +134,7 @@ void ConversionParameterDialog::read_fields(const ConversionParameters& param)
 
     // Audio Options
     ui->chkDisableAudio->setChecked(param.disable_audio);
+    ui->chkCopyAudio->setChecked(param.copy_audio);
 
     ui->spinAudioBitrate->setValue(param.audio_bitrate);
 
@@ -148,6 +149,7 @@ void ConversionParameterDialog::read_fields(const ConversionParameters& param)
 
     // Video Options
     ui->chkDisableVideo->setChecked(param.disable_video);
+    ui->chkCopyVideo->setChecked(param.copy_video);
 
     ui->spinVideoBitrate->setValue(param.video_bitrate);
 
