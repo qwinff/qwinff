@@ -79,39 +79,23 @@ public:
     static ConversionParameters fromFFmpegParameters(const char *params_str);
 
     ConversionParameters()
-    {
-        clear();
-    }
-
-    void clear()
-    {
-        source.clear();
-        destination.clear();
-        threads = 0;
-
-        disable_audio = false;
-        audio_keep_sample_rate = false;
-        audio_bitrate = 0;
-        audio_sample_rate = 0;
-        audio_channels = 0;
-        audio_volume = 0;
-
-        disable_video = false;
-        video_same_quality = false;
-        video_deinterlace = false;
-        video_bitrate = 0;
-        video_crop_top = video_crop_bottom = video_crop_left = video_crop_right = 0;
-
-        video_width = video_height = 0;
-
-        time_begin = time_end = 0;
-
-        ffmpeg_options.clear();
-
-        speed_scaling = false;
-        speed_scaling_factor = 1.0;
-    }
-
+        : threads(0),
+          disable_audio(false),
+          audio_bitrate(0),
+          audio_sample_rate(0),
+          audio_keep_sample_rate(false),
+          audio_channels(0),
+          audio_volume(0),
+          disable_video(false),
+          video_same_quality(false),
+          video_deinterlace(false),
+          video_bitrate(0),
+          video_width(0), video_height(0),
+          video_crop_top(0), video_crop_bottom(0),
+          video_crop_left(0), video_crop_right(0),
+          time_begin(0), time_end(0),
+          speed_scaling(false), speed_scaling_factor(1.0)
+    { }
 };
 
 #endif // CONVERSIONPARAMETERS_H
