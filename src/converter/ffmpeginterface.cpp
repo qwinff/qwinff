@@ -130,6 +130,9 @@ namespace inner {
         const int CODEC_DESC = 3;
 
         ffmpeg_codec_info.clear();
+        audio_encoders.push_back("copy");
+        video_encoders.push_back("copy");
+        subtitle_encoders.push_back("copy");
         while (ffmpeg_process.canReadLine()) {
             QString line(ffmpeg_process.readLine());
             ffmpeg_codec_info.append(line);
