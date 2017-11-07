@@ -128,6 +128,12 @@ bool Presets::Private::readElementData(QXmlStreamReader &xml, Preset& target)
 
     if (property_name == "label") {
         target.label = property_value;
+    } else if (property_name == "globals") {
+        Version ffmpegVersion(FFmpegInterface::getFFmpegVersionInfo());
+        if (versionrange_str.isEmpty()
+                || VersionRange(versionrange_str).containsVersion(ffmpegVersion)) {
+            target.globals = property_value;
+        }
     } else if (property_name == "params") {
         Version ffmpegVersion(FFmpegInterface::getFFmpegVersionInfo());
         if (versionrange_str.isEmpty()

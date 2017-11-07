@@ -132,7 +132,7 @@ void ConversionParameters::copyConfigurationFrom(const ConversionParameters &src
 }
 
 ConversionParameters
-ConversionParameters::fromFFmpegParameters(const QString &params_str)
+ConversionParameters::fromFFmpegParameters(const QString &globals_str, const QString &params_str)
 {
     ConversionParameters result;
     QStringList args = params_str.split(" ", QString::SkipEmptyParts);
@@ -148,13 +148,14 @@ ConversionParameters::fromFFmpegParameters(const QString &params_str)
         }
     }
 
+    result.ffmpeg_globals = globals_str;
     result.ffmpeg_options = args.join(" "); // unrecognized arguments
 
     return result;
 }
 
 ConversionParameters
-ConversionParameters::fromFFmpegParameters(const char *params_str)
+ConversionParameters::fromFFmpegParameters(const char *globals_str, const char *params_str)
 {
-    return fromFFmpegParameters(QString(params_str));
+    return fromFFmpegParameters(QString(globals_str), QString(params_str));
 }

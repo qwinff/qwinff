@@ -361,6 +361,8 @@ QStringList FFmpegInterface::Private::getOptionList(const ConversionParameters &
     // overwrite if file exists
     list.append("-y");
 
+    list.append(o.ffmpeg_globals);
+
     if (!bNeedsAudioFilter) {
         /* in this configuration, input is read from file
            arguments: -i <infile>

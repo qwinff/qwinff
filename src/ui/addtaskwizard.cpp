@@ -256,7 +256,7 @@ void AddTaskWizard::slotPresetSelected(int index)
     if (!m_presets->findPresetById(id, preset)) {
         return; // assert false
     }
-    *m_current_param = ConversionParameters::fromFFmpegParameters(preset.parameters);
+    *m_current_param = ConversionParameters::fromFFmpegParameters(preset.globals, preset.parameters);
 }
 
 // This function is executed when the users presses "Finish"

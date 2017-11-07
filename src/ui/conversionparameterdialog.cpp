@@ -130,6 +130,7 @@ AbstractPreviewer *ConversionParameterDialog::create_previewer()
 void ConversionParameterDialog::read_fields(const ConversionParameters& param)
 {
     // Additional Options
+    ui->txtFFmpegGlobals->setPlainText(param.ffmpeg_globals);
     ui->txtFFmpegOptions->setPlainText(param.ffmpeg_options);
 
     // Audio Options
@@ -213,7 +214,8 @@ void ConversionParameterDialog::read_fields(const ConversionParameters& param)
 void ConversionParameterDialog::write_fields(ConversionParameters& param)
 {
     // Additional Options
-    param = param.fromFFmpegParameters(ui->txtFFmpegOptions->toPlainText());
+    param = param.fromFFmpegParameters(ui->txtFFmpegGlobals->toPlainText(),
+                                       ui->txtFFmpegOptions->toPlainText());
 
     // Audio Options
     param.disable_audio = ui->chkDisableAudio->isChecked();
