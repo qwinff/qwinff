@@ -1,6 +1,36 @@
 <?xml version="1.0"?>
 <presets>
 
+  <!-- Matroska -->
+  <MKVCopy>
+    <label>MKV Copy (cutting)</label>
+    <globals>-strict strict</globals>
+    <params>-map 0 -vcodec copy -acodec copy -scodec copy</params>
+    <extension>mkv</extension>
+    <category>Matroska</category>
+  </MKVCopy>
+  <MKVWideLR264>
+    <label>MKV H.264 Widescreen 896x504</label>
+    <globals>-strict strict</globals>
+    <params>-map 0 -q:v 2 -c:v libx264 -preset slow -s 896:504 -c:a copy -scodec copy</params>
+    <extension>mkv</extension>
+    <category>Matroska</category>
+  </MKVWideLR264>
+  <MKVWideHD264>
+    <label>MKV H.264 Widescreen 1280x720</label>
+    <globals>-strict strict</globals>
+    <params>-map 0 -q:v 2 -c:v libx264 -preset slow -s 1280:720 -c:a copy -scodec copy</params>
+    <extension>mkv</extension>
+    <category>Matroska</category>
+  </MKVWideHD264>
+  <MKVWideFHD264>
+    <label>MKV H.264 Widescreen 1920x1080</label>
+    <globals>-strict strict</globals>
+    <params>-map 0 -q:v 2 -c:v libx264 -preset slow -s 1920:1080 -c:a copy -scodec copy</params>
+    <extension>mkv</extension>
+    <category>Matroska</category>
+  </MKVWideFHD264>
+
   <!-- MPEG4 -->
   <MPEG4Auto>
     <label>MPEG-4 Auto</label>
