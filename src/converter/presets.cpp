@@ -154,9 +154,9 @@ void Presets::Private::removeUnavailablePresets()
     if (!FFmpegInterface::getSubtitleEncoders(subtitle_encoders))
         Q_ASSERT(subtitle_encoders.isEmpty());
 
-    QRegExp audio_codec_pattern("-acodec\\s+([^ ]+)");
-    QRegExp video_codec_pattern("-vcodec\\s+([^ ]+)");
-    QRegExp subtitle_codec_pattern("-scodec\\s+([^ ]+)");
+    QRegExp audio_codec_pattern("-(c:a|codec:a|acodec)\\s+([^ ]+)");
+    QRegExp video_codec_pattern("-(c:v|codec:v|vcodec)\\s+([^ ]+)");
+    QRegExp subtitle_codec_pattern("-(c:s|codec:s|scodec)\\s+([^ ]+)");
 
     QMultiMap<QString, Preset>::iterator it = presets.begin();
     while (it!=presets.end()) {
@@ -165,21 +165,21 @@ void Presets::Private::removeUnavailablePresets()
 
         // Check unavailable audio presets
         if (audio_codec_pattern.indexIn(params) != -1) {
-            if (!audio_encoders.contains(audio_codec_pattern.cap(1))) {
+            if (!audio_encoders.contains(audio_codec_pattern.cap(2))) {
                 remove = true;
             }
         }
 
         // Check unavailable video presets
         if (!remove && video_codec_pattern.indexIn(params) != -1) {
-            if (!video_encoders.contains(video_codec_pattern.cap(1))) {
+            if (!video_encoders.contains(video_codec_pattern.cap(2))) {
                 remove = true;
             }
         }
 
         // Check unavailable subtitle presets
         if (!remove && subtitle_codec_pattern.indexIn(params) != -1) {
-            if (!subtitle_encoders.contains(subtitle_codec_pattern.cap(1))) {
+            if (!subtitle_encoders.contains(subtitle_codec_pattern.cap(2))) {
                 remove = true;
             }
         }
