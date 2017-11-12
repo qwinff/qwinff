@@ -154,20 +154,15 @@ int main(int argc, char *argv[])
 
     // Register QSettings information.
     app.setOrganizationName("qwinff");
+    QSettings::setDefaultFormat(QSettings::IniFormat);
     if (Constants::getBool("Portable")) {
         // Portable App: Save settings in <exepath>/qwinff.ini.
-        QSettings::setDefaultFormat(QSettings::IniFormat);
         QSettings::setPath(QSettings::IniFormat, QSettings::UserScope
                            , app.applicationDirPath());
-        qDebug() << "Setting path: " + app.applicationDirPath();
     } else {
-        // Save settings in <home>/.qwinff/qwinff.ini
-        QString settings_dir = QDir(QDir::homePath()).absoluteFilePath(".qwinff");
-        QDir().mkpath(settings_dir);
-        QSettings::setDefaultFormat(QSettings::IniFormat);
-        QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, settings_dir);
-        qDebug() << "Setting path: " + settings_dir;
+        // Save settings to the default Qt location
     }
+    qDebug() << "Settings filename: " + QSettings().fileName();
 
     Paths::setAppPath(app.applicationDirPath());
 
