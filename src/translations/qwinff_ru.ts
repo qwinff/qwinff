@@ -112,17 +112,17 @@
     <message>
         <source>Hungarian</source>
         <extracomment>Hungarian Langauge</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Болгарский</translation>
     </message>
     <message>
         <source>Polish</source>
         <extracomment>Polish Language</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Польский</translation>
     </message>
     <message>
         <source>French</source>
         <extracomment>French Language</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Французский</translation>
     </message>
 </context>
 <context>
@@ -253,7 +253,7 @@
     </message>
     <message>
         <source>Searching for files...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Поиск файлов...</translation>
     </message>
     <message>
         <source>Some files could not be found.</source>
@@ -352,7 +352,7 @@
     </message>
     <message>
         <source>Crop</source>
-        <translation>Кроп</translation>
+        <translation type="unfinished">Кадрирование</translation>
     </message>
     <message>
         <source>Time</source>
@@ -367,7 +367,7 @@
     <message>
         <source>Cut</source>
         <comment>Cut video; select a range to convert</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Вырезать</translation>
     </message>
     <message>
         <source>&amp;Preview</source>
@@ -550,7 +550,7 @@
     </message>
     <message>
         <source>Cannot remove a task while it is in progress.</source>
-        <translation>Нельзя удалить задание, пока оно выполняется</translation>
+        <translation type="unfinished">Нельзя удалить задание, пока оно выполняется.</translation>
     </message>
     <message>
         <source>Finished</source>
@@ -588,27 +588,27 @@
     </message>
     <message>
         <source>Mark as Begin</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Отметить начало</translation>
     </message>
     <message>
         <source>Seek to Begin</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Перейти в конец</translation>
     </message>
     <message>
         <source>Play Selection</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Воспроизвести выделенное</translation>
     </message>
     <message>
         <source>Mark as End</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Отметить конец</translation>
     </message>
     <message>
         <source>Seek to End</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Перейти в начало</translation>
     </message>
     <message>
         <source>%1 not found</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 не найден</translation>
     </message>
 </context>
 <context>
@@ -704,7 +704,7 @@
     </message>
     <message>
         <source>About &amp;FFmpeg</source>
-        <translation>Об &amp;FFmpeg</translation>
+        <translation type="unfinished">О &amp;FFmpeg</translation>
     </message>
     <message>
         <source>About FFmpeg</source>
@@ -807,7 +807,7 @@
     <message>
         <source>Cut</source>
         <extracomment>Cut video file (select a time range to conert)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Вырезать</translation>
     </message>
     <message>
         <source>All tasks have finished.</source>
@@ -990,30 +990,30 @@
     <name>PreviewDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Предпросмотр</translation>
     </message>
     <message>
         <source>Play Selected Range</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Воспроизвести выбранный участок</translation>
     </message>
     <message>
         <source>%1 not found</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 не найден</translation>
     </message>
     <message>
         <source>Begin</source>
         <extracomment>noun, the beginning of the video</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Начало</translation>
     </message>
     <message>
         <source>End</source>
         <extracomment>noun, the end of the video</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Конец</translation>
     </message>
     <message>
         <source>Play %1~%2</source>
         <extracomment>play the video from time %1 to time %2. %1 and %2 are time in hh:mm:ss format.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Воспроизвести %1~%2</translation>
     </message>
 </context>
 <context>
