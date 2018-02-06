@@ -800,7 +800,7 @@
         <translation>エラーメッセージを表示(&amp;M)</translation>
     </message>
     <message>
-        <source>Check For &amp;Updates</source>
+        <source>Check for &amp;Updates</source>
         <translation>更新のチェック(&amp;U)</translation>
     </message>
     <message>

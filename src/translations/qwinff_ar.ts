@@ -802,7 +802,7 @@
         <translation>أظهر ر&amp;سالة الخطأ</translation>
     </message>
     <message>
-        <source>Check For &amp;Updates</source>
+        <source>Check for &amp;Updates</source>
         <translation>التم&amp;س التحديثات</translation>
     </message>
     <message>

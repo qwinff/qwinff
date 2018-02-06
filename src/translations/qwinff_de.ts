@@ -802,7 +802,7 @@
         <translation>Zeige &amp;Fehlermeldung</translation>
     </message>
     <message>
-        <source>Check For &amp;Updates</source>
+        <source>Check for &amp;Updates</source>
         <translation>Suche nach &amp;Updates</translation>
     </message>
     <message>

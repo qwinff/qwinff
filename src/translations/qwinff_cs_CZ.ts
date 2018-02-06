@@ -802,7 +802,7 @@
         <translation>Zobrazit Chybovou &amp;Hlášku</translation>
     </message>
     <message>
-        <source>Check For &amp;Updates</source>
+        <source>Check for &amp;Updates</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

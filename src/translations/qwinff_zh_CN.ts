@@ -800,7 +800,7 @@
         <translation>显示错误信息(&amp;M)</translation>
     </message>
     <message>
-        <source>Check For &amp;Updates</source>
+        <source>Check for &amp;Updates</source>
         <translation>检查更新(&amp;U)</translation>
     </message>
     <message>
