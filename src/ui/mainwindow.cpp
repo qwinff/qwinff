@@ -500,6 +500,10 @@ void MainWindow::setup_menus()
             this, SLOT(slotAbout()));
     connect(ui->actionCheckUpdate, SIGNAL(triggered()),
             this, SLOT(slotShowUpdateDialog()));
+
+#ifdef Q_OS_LINUX
+    ui->actionCheckUpdate->setVisible(false);
+#endif
 }
 
 void MainWindow::setup_toolbar(const QStringList &entries)
