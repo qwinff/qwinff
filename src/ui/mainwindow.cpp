@@ -36,6 +36,7 @@
 #include <QHBoxLayout>
 #include <QToolButton>
 #include <QMessageBox>
+#include <QInputDialog>
 #include <QLabel>
 #include <QFileDialog>
 #include <QDesktopServices>
@@ -153,6 +154,11 @@ void MainWindow::all_tasks_finished()
 void MainWindow::slotAddFiles()
 {
     add_files();
+}
+
+void MainWindow::slotAddUrl()
+{
+    add_url();
 }
 
 void MainWindow::slotOptions()
@@ -431,6 +437,33 @@ void MainWindow::add_files(const QStringList &fileList)
     }
 }
 
+void MainWindow::add_url()
+{
+    bool ok;
+
+    QString url = QInputDialog::getText(
+        this,
+        tr("Add Url"),
+        tr("Please enter a network Url:"),
+        QLineEdit::Normal,
+        "",
+        &ok
+    );
+
+    if (ok && !url.isEmpty() && QUrl(url).isValid()) {
+        QStringList fileList;
+        fileList << url;
+
+        AddTaskWizard wizard(m_presets, this);
+
+        if (wizard.exec(fileList) == QDialog::Accepted) {
+            // Add all input files to the list.
+            const QList<ConversionParameters> &paramList = wizard.getConversionParameters();
+            m_list->addTasks(paramList);
+        }
+    }
+}
+
 void MainWindow::setup_widgets()
 {
     // list
@@ -448,6 +481,8 @@ void MainWindow::setup_menus()
     // File
     connect(ui->actionAddFiles, SIGNAL(triggered()),
             this, SLOT(slotAddFiles()));
+    connect(ui->actionAddUrl, SIGNAL(triggered()),
+            this, SLOT(slotAddUrl()));
     connect(ui->actionOptions, SIGNAL(triggered()),
             this, SLOT(slotOptions()));
     connect(ui->actionExit, SIGNAL(triggered()),
@@ -511,6 +546,7 @@ void MainWindow::setup_toolbar(const QStringList &entries)
     QMap<QString, QAction*> toolbar_table;
 #define ADD_ACTION(name) toolbar_table[QString(#name).toUpper()] = ui->action ## name
     ADD_ACTION(AddFiles);
+    ADD_ACTION(AddUrl);
     ADD_ACTION(Options);
     ADD_ACTION(Exit);
     ADD_ACTION(RemoveSelectedItems);

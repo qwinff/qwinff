@@ -512,6 +512,10 @@ void AddTaskWizard::recursively_add_file(
         QListWidgetItem *item = new QListWidgetItem(file);
         item->setToolTip(file);
         ui->lstFiles->addItem(item);
+    } else if (QUrl(file).isValid()) { // url
+        QListWidgetItem *item = new QListWidgetItem(file);
+        item->setToolTip(file);
+        ui->lstFiles->addItem(item);
     } else if (fileinfo.isDir()) { // directory
         QDir dir(file);
         QStringList children = list_directory(dir);

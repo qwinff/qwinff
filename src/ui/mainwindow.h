@@ -20,6 +20,7 @@
 
 #include <QMainWindow>
 #include <QTime>
+#include <QUrl>
 
 class ConvertList;
 
@@ -55,6 +56,7 @@ private slots:
 
     // Menu Events
     void slotAddFiles();
+    void slotAddUrl();
     void slotOptions();
     void slotSetTools();
     void slotExit();
@@ -95,6 +97,7 @@ private:
     bool ask_for_update_permission();
     void add_files();
     void add_files(const QStringList& files);
+    void add_url();
     void setup_widgets();
     void setup_menus();
     void setup_toolbar(const QStringList& entries);

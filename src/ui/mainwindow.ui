@@ -82,7 +82,7 @@
      <x>0</x>
      <y>0</y>
      <width>491</width>
-     <height>27</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -90,6 +90,7 @@
      <string>&amp;File</string>
     </property>
     <addaction name="actionAddFiles"/>
+    <addaction name="actionAddUrl"/>
     <addaction name="actionOptions"/>
     <addaction name="separator"/>
     <addaction name="actionExit"/>
@@ -385,6 +386,15 @@
    </property>
    <property name="text">
     <string extracomment="Cut video file (select a time range to conert)">Cut</string>
+   </property>
+  </action>
+  <action name="actionAddUrl">
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/actions/icons/web.png</normaloff>:/actions/icons/web.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add &amp;Url</string>
    </property>
   </action>
  </widget>
