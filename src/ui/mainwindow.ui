@@ -391,7 +391,7 @@
   <action name="actionAddUrl">
    <property name="icon">
     <iconset resource="../images.qrc">
-     <normaloff>:/actions/icons/web.png</normaloff>:/actions/icons/web.png</iconset>
+     <normaloff>:/actions/icons/add_url.png</normaloff>:/actions/icons/add_url.png</iconset>
    </property>
    <property name="text">
     <string>Add &amp;Url</string>
