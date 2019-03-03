@@ -24,6 +24,7 @@
 #include "aboutdialog.h"
 #include "poweroffdialog.h"
 #include "updatedialog.h"
+#include "addurldialog.h"
 #include "services/paths.h"
 #include "services/notification.h"
 #include "services/powermanagement.h"
@@ -441,14 +442,9 @@ void MainWindow::add_url()
 {
     bool ok;
 
-    QString url = QInputDialog::getText(
-        this,
-        tr("Add Url"),
-        tr("Please enter a network Url:"),
-        QLineEdit::Normal,
-        "",
-        &ok
-    );
+    AddUrlDialog *addUrlDialog = new AddUrlDialog(this);
+    QString url = addUrlDialog->getUrl(&ok);
+    addUrlDialog->deleteLater();
 
     if (ok && !url.isEmpty() && QUrl(url).isValid()) {
         QStringList fileList;

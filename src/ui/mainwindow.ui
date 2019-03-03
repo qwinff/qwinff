@@ -396,6 +396,9 @@
    <property name="text">
     <string>Add &amp;Url</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+U</string>
+   </property>
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
