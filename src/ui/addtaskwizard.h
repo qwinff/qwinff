@@ -63,6 +63,7 @@ protected:
 
 private slots:
     void slotAddFilesToList();
+    void slotAddUrlToList();
     void slotRemoveFilesFromList();
     void slotEditPresetButton();
     void slotBrowseOutputPathButton();
