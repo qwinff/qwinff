@@ -37,7 +37,6 @@
 #include <QHBoxLayout>
 #include <QToolButton>
 #include <QMessageBox>
-#include <QInputDialog>
 #include <QLabel>
 #include <QFileDialog>
 #include <QDesktopServices>

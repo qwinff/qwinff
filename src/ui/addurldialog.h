@@ -2,7 +2,6 @@
 #define ADDURLDIALOG_H
 
 #include <QDialog>
-#include <QInputDialog>
 #include <QLineEdit>
 #include <QString>
 
