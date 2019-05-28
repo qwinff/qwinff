@@ -11,12 +11,16 @@ VIDSTR=
 # Variables here are not meant to be changed.
 
 # Paths
-PROJECT_ROOT=$(PWD)
+PROJECT_ROOT=$(shell pwd)
 SRC_DIR=$(PROJECT_ROOT)/src
 BUILD_DIR=$(PROJECT_ROOT)/build
 BIN_DIR=$(PROJECT_ROOT)/bin
 DATA_PATH=$(PREFIX)/share/qwinff
 TRANSLATION_PATH=$(DATA_PATH)/translations
+
+ifeq ($(PROJECT_ROOT),)
+$(error "PROJECT_ROOT is not set properly")
+endif
 
 # Tools
 QMAKE=qmake
@@ -49,8 +53,9 @@ check:
 	cd $(SRC_DIR)/tests && sh run-tests.sh
 
 clean:
-	rm -rf $(BIN_DIR)/*
-	rm -rf $(BUILD_DIR)/*
+	test -n "$(PROJECT_ROOT)" # ensure we don't accidentally remove /bin if $(PROJECT_ROOT) is empty
+	rm -rf $(BIN_DIR)
+	rm -rf $(BUILD_DIR)
 	-cd $(SRC_DIR) && $(MAKE) clean && rm Makefile
 
 install:
