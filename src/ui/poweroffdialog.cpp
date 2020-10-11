@@ -19,6 +19,7 @@
 #include <QTimer>
 #include <QApplication>
 #include <QDesktopWidget>
+#include <QScreen>
 #include "poweroffdialog.h"
 #include "ui_poweroffdialog.h"
 #include "services/powermanagement.h"
@@ -93,8 +94,10 @@ int PoweroffDialog::exec(int action)
     adjustSize();
 
     // center window in screen
-    const QRect screen = QApplication::desktop()->screenGeometry();
-    move(screen.center() - this->rect().center());
+    if (!QGuiApplication::screens().isEmpty()) {
+        const QRect screen = QGuiApplication::screens().first()->geometry();
+        move(screen.center() - this->rect().center());
+    }
 
     return QDialog::exec();
 }

@@ -35,9 +35,7 @@ QString sec2hms(int seconds)
     int h = seconds / 3600;
     int m = (seconds % 3600) / 60;
     int s = (seconds % 60);
-    QString result;
-    result.sprintf("%02d:%02d:%02d", h, m, s);
-    return result;
+    return QString::asprintf("%02d:%02d:%02d", h, m, s);
 }
 }
 
@@ -178,13 +176,11 @@ void MediaPlayerWidget::togglePlayPause()
 
 void MediaPlayerWidget::wheelEvent(QWheelEvent *event)
 {
-    int numDegrees = event->delta() / 8; // delta is in eighths of a degree
-    if (event->orientation() == Qt::Vertical) {
-        if (numDegrees >= 0) {
-            seekForward();
-        } else {
-            seekBackward();
-        }
+    int numDegrees = event->angleDelta().x() / 8; // delta is in eighths of a degree
+    if (numDegrees >= 0) {
+        seekForward();
+    } else {
+        seekBackward();
     }
 }
 

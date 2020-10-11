@@ -382,7 +382,7 @@ class QMPProcess : public QProcess
 	private slots:
 		void readStdout()
 		{
-			QStringList lines = QString::fromLocal8Bit(readAllStandardOutput()).split("\n", QString::SkipEmptyParts);
+			QStringList lines = QString::fromLocal8Bit(readAllStandardOutput()).split("\n", Qt::SkipEmptyParts);
 			for (int i = 0; i < lines.count(); i++) {
 				lines[i].remove("\r");
 #ifdef QMP_DEBUG_OUTPUT
@@ -395,7 +395,7 @@ class QMPProcess : public QProcess
 
 		void readStderr()
 		{
-			QStringList lines = QString::fromLocal8Bit(readAllStandardError()).split("\n", QString::SkipEmptyParts);
+			QStringList lines = QString::fromLocal8Bit(readAllStandardError()).split("\n", Qt::SkipEmptyParts);
 			for (int i = 0; i < lines.count(); i++) {
 				lines[i].remove("\r");
 #ifdef QMP_DEBUG_OUTPUT
@@ -492,7 +492,7 @@ class QMPProcess : public QProcess
 		void parsePosition(const QString &line)
 		{
 			static QRegExp rx("[ :]");
-			QStringList info = line.split(rx, QString::SkipEmptyParts);
+			QStringList info = line.split(rx, Qt::SkipEmptyParts);
 
 			double oldpos = m_streamPosition;
 			for (int i = 0; i < info.count(); i++) {
@@ -566,13 +566,13 @@ class QMPProcess : public QProcess
 			if (!p.waitForFinished()) {
 				return;
 			}
-			QStringList keys = QString(p.readAll()).split("\n", QString::SkipEmptyParts);
+			QStringList keys = QString(p.readAll()).split("\n", Qt::SkipEmptyParts);
 
 			// Write dummy command for each key
 			QTextStream out(device);
 			for (int i = 0; i < keys.count(); i++) {
 				keys[i].remove("\r");
-				out << keys[i] << " " << "ignored" << endl;
+				out << keys[i] << " " << "ignored" << Qt::endl;
 			}
 		}
 

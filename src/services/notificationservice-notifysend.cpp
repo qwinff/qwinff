@@ -78,7 +78,7 @@ bool NotificationService_NotifySend::serviceAvailable() const
 {
     QProcess proc;
     bool ret;
-    proc.start(NOTIFY_SEND_EXECUTABLE);
+    proc.start(NOTIFY_SEND_EXECUTABLE, /*no args*/QStringList());
     ret = proc.waitForStarted(1000);
     proc.kill();
     proc.waitForFinished(1000);

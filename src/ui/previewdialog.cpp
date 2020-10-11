@@ -28,9 +28,7 @@ QString sec2hms(int seconds)
     int h = seconds / 3600;
     int m = (seconds % 3600) / 60;
     int s = (seconds % 60);
-    QString result;
-    result.sprintf("%02d:%02d:%02d", h, m, s);
-    return result;
+    return QString::asprintf("%02d:%02d:%02d", h, m, s);
 }
 }
 

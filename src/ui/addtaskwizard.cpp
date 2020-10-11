@@ -231,7 +231,7 @@ void AddTaskWizard::slotExtensionSelected(int ext_index)
 
     ui->cbPreset->clear();
     if (m_presets->getPresets(extension, presetList)) {
-        qSort(presetList);  // Sort the presets by the order in the xml file.
+        std::sort(presetList.begin(), presetList.end());  // Sort the presets by the order in the xml file.
         foreach (Preset preset, presetList) {
             ui->cbPreset->addItem(preset.label, preset.id);
         }

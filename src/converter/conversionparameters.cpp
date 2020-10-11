@@ -135,7 +135,7 @@ ConversionParameters
 ConversionParameters::fromFFmpegParameters(const QString &params_str)
 {
     ConversionParameters result;
-    QStringList args = params_str.split(" ", QString::SkipEmptyParts);
+    QStringList args = params_str.split(" ", Qt::SkipEmptyParts);
 
     for (int i=0; i<args.size();) {
         int used_arg_count = parseFFmpegArguments(args, i, result);

@@ -261,7 +261,7 @@ bool ConvertList::addTask(ConversionParameters param)
     task->id = ++prev_index;
     task->listitem = item;
 
-    QVariant task_var = qVariantFromValue((void*)task);
+    QVariant task_var = QVariant::fromValue((void*)task);
     item->setData(0, Qt::UserRole, task_var);
 
     // Prevent dropping directly on an item
@@ -952,7 +952,7 @@ void ConvertList::fill_list_fields(ConversionParameters &param, MediaProbe &prob
 {
     columns[COL_SOURCE] = QFileInfo(param.source).fileName(); // source file
     columns[COL_DESTINATION] = QFileInfo(param.destination).fileName(); // destination file
-    columns[COL_DURATION] = QString().sprintf("%02d:%02d:%02.0f"   // duration
+    columns[COL_DURATION] = QString::asprintf("%02d:%02d:%02.0f"   // duration
                   , probe.hours()              //    hours
                   , probe.minutes()            //    minutes
                   , probe.seconds());          //    seconds

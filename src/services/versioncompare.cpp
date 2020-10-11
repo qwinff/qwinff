@@ -108,7 +108,7 @@ bool Version::operator >=(const Version& other) const
 VersionRange::VersionRange(const QString &s)
 {
     if (!s.isEmpty()) {
-        QStringList lst = s.split(",", QString::SkipEmptyParts);
+        QStringList lst = s.split(",", Qt::SkipEmptyParts);
         foreach (QString range, lst) {
             m_range.push_back(range.trimmed());
         }

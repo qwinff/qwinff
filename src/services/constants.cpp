@@ -108,7 +108,7 @@ QStringList Constants::getSpaceSeparatedList(const char *key)
 {
     Q_ASSERT(constants_initialized);
     QString collapsed_string = lookup_constant(key).replace(QRegExp("[\n\t ]"), " ");
-    return collapsed_string.split(" ", QString::SkipEmptyParts);
+    return collapsed_string.split(" ", Qt::SkipEmptyParts);
 }
 
 QColor Constants::getColor(const char *key)

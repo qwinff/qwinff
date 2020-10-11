@@ -89,7 +89,7 @@ namespace inner {
         QString encoders_str = s.mid(begin, length);
 
         // split encoder_str into encoder names and skip whitespaces
-        QStringList encoders = encoders_str.split(' ', QString::SkipEmptyParts);
+        QStringList encoders = encoders_str.split(' ', Qt::SkipEmptyParts);
         foreach (QString s, encoders) {
             target.push_back(s); // fill codec names into the list
         }
@@ -388,7 +388,7 @@ QStringList FFmpegInterface::Private::getOptionList(const ConversionParameters &
     /* ==== Additional Options ==== */
     if (!o.ffmpeg_options.isEmpty()) {
         QList<QString> additional_options =
-                o.ffmpeg_options.split(" ", QString::SkipEmptyParts);
+                o.ffmpeg_options.split(" ", Qt::SkipEmptyParts);
         foreach (QString opt, additional_options)
             list.append(opt);
     }
@@ -586,7 +586,7 @@ void FFmpegInterface::parseProcessOutput(const QString &data)
     //qDebug() << data;
 
     // split incoming data by [end of line] or [carriage return]
-    QStringList lines(data.split(QRegExp("[\r\n]"), QString::KeepEmptyParts));
+    QStringList lines(data.split(QRegExp("[\r\n]"), Qt::KeepEmptyParts));
 
     if (!p->stringBuffer.isEmpty()) { // prepend buffered data
         lines.front().prepend(p->stringBuffer);
@@ -634,7 +634,7 @@ bool FFmpegInterface::getAudioEncoders(QSet<QString> &target)
     QList<QString> encoder_list;
     if (!getAudioEncoders(encoder_list))
         return false;
-    target = QSet<QString>::fromList(encoder_list);
+    target = QSet<QString>(encoder_list.begin(), encoder_list.end());
     return true;
 }
 
@@ -652,7 +652,7 @@ bool FFmpegInterface::getVideoEncoders(QSet<QString> &target)
     QList<QString> encoder_list;
     if (!getVideoEncoders(encoder_list))
         return false;
-    target = QSet<QString>::fromList(encoder_list);
+    target = QSet<QString>(encoder_list.begin(), encoder_list.end());
     return true;
 }
 
@@ -688,7 +688,7 @@ bool FFmpegInterface::getSupportedMuxingFormats(QSet<QString> &target)
     info::read_ffmpeg_info();
     if (!info::ffmpeg_exist) return false;
 
-    target = QSet<QString>::fromList(info::muxing_formats);
+    target = QSet<QString>(info::muxing_formats.begin(), info::muxing_formats.end());
     return true;
 }
 
@@ -697,7 +697,7 @@ bool FFmpegInterface::getSupportedDemuxingFormats(QSet<QString> &target)
     info::read_ffmpeg_info();
     if (!info::ffmpeg_exist) return false;
 
-    target = QSet<QString>::fromList(info::demuxing_formats);
+    target = QSet<QString>(info::demuxing_formats.begin(), info::demuxing_formats.end());
     return true;
 }
 
@@ -718,6 +718,6 @@ bool FFmpegInterface::getSubtitleEncoders(QSet<QString> &target)
     QList<QString> encoder_list;
     if (!getSubtitleEncoders(encoder_list))
         return false;
-    target = QSet<QString>::fromList(encoder_list);
+    target = QSet<QString>(encoder_list.begin(), encoder_list.end());
     return true;
 }
