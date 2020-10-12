@@ -1,4 +1,5 @@
 add_subdirectory(qmpwidget)
+add_subdirectory(translations)
 
 set(qwinff_source_files
   main.cpp
