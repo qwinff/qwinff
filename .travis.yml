@@ -2,7 +2,7 @@ language: cpp
 
 before_install:
   - sudo apt-get update
-  - sudo apt-get install libqt4-dev xvfb
+  - sudo apt-get install libqt4-dev libqt4-opengl-dev xvfb
   - if [ "$USE_LIBNOTIFY" == 1 ]; then sudo apt-get install libnotify-dev; fi
 
 env:
