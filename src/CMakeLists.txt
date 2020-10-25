@@ -77,3 +77,7 @@ add_definitions(
 add_executable(qwinff ${qwinff_source_files} ${qwinff_ui_files} ${qwinff_rc_files})
 target_link_libraries(qwinff qmpwidget Qt5::Widgets Qt5::Network)
 target_include_directories(qwinff PRIVATE .)
+
+install(TARGETS qwinff DESTINATION bin)
+install(FILES presets.xml constants.xml DESTINATION share/qwinff)
+install(FILES icons/qwinff_256x256.png DESTINATION share/pixmaps RENAME qwinff.png)

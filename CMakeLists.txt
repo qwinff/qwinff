@@ -14,3 +14,5 @@ find_package(Qt5 COMPONENTS Widgets LinguistTools REQUIRED)
 find_package(Qt5Network REQUIRED)
 
 add_subdirectory(src)
+
+install(FILES qwinff.desktop DESTINATION share/applications)
