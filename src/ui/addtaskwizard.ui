@@ -60,6 +60,20 @@
          </widget>
         </item>
         <item>
+         <widget class="QPushButton" name="btnUrl">
+          <property name="toolTip">
+           <string>Add URL.</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="../images.qrc">
+            <normaloff>:/actions/icons/add_url.png</normaloff>:/actions/icons/add_url.png</iconset>
+          </property>
+         </widget>
+        </item>
+        <item>
          <widget class="QPushButton" name="btnRemove">
           <property name="toolTip">
            <string>Remove selected files.</string>

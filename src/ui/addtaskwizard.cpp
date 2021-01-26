@@ -23,6 +23,7 @@
 #include "services/extensions.h"
 #include "services/paths.h"
 #include "services/constants.h"
+#include "ui/addurldialog.h"
 
 #include <QMessageBox>
 #include <QFileDialog>
@@ -57,6 +58,8 @@ AddTaskWizard::AddTaskWizard(Presets *presets, QWidget *parent) :
     // setup signals/slots
     connect(ui->btnAdd, SIGNAL(clicked())
             , this, SLOT(slotAddFilesToList()));
+    connect(ui->btnUrl, SIGNAL(clicked())
+            , this, SLOT(slotAddUrlToList()));
     connect(ui->btnRemove, SIGNAL(clicked())
             , this, SLOT(slotRemoveFilesFromList()));
     connect(ui->cbExtension, SIGNAL(currentIndexChanged(int))
@@ -182,6 +185,21 @@ void AddTaskWizard::slotAddFilesToList()
 
     } else {
         // no file selected
+    }
+}
+
+void AddTaskWizard::slotAddUrlToList()
+{
+    bool ok;
+
+    AddUrlDialog *addUrlDialog = new AddUrlDialog(this);
+    QString url = addUrlDialog->getUrl(&ok);
+    addUrlDialog->deleteLater();
+
+    if (ok && !url.isEmpty() && QUrl(url).isValid()) {
+        QStringList fileList;
+        fileList << url;
+        addFiles(fileList);
     }
 }
 
@@ -509,6 +527,10 @@ void AddTaskWizard::recursively_add_file(
                 && !m_exts->contains(fileinfo.suffix()))
             return; // ignore unknown extensions
 
+        QListWidgetItem *item = new QListWidgetItem(file);
+        item->setToolTip(file);
+        ui->lstFiles->addItem(item);
+    } else if (QUrl(file).isValid()) { // url
         QListWidgetItem *item = new QListWidgetItem(file);
         item->setToolTip(file);
         ui->lstFiles->addItem(item);
