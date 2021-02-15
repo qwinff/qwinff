@@ -801,7 +801,7 @@
         <translation>Показать &amp;сообщение об ошибке</translation>
     </message>
     <message>
-        <source>Check For &amp;Updates</source>
+        <source>Check for &amp;Updates</source>
         <translation>Проверить &amp;обновления</translation>
     </message>
     <message>

@@ -800,7 +800,7 @@
         <translation>&amp;Mostrar mensage de error</translation>
     </message>
     <message>
-        <source>Check For &amp;Updates</source>
+        <source>Check for &amp;Updates</source>
         <translation>Buscar &amp;actualizaciones</translation>
     </message>
     <message>

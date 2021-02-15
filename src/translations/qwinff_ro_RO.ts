@@ -802,7 +802,7 @@
         <translation>Afişează &amp;Mesajul de Eroare</translation>
     </message>
     <message>
-        <source>Check For &amp;Updates</source>
+        <source>Check for &amp;Updates</source>
         <translation>Verifică pentru act&amp;ualizări</translation>
     </message>
     <message>
