@@ -520,6 +520,20 @@
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_5">
             <item>
+             <layout class="QVBoxLayout" name="verticalLayout_10">
+              <item>
+               <widget class="QLabel" name="lblFFmpegGlobals">
+                <property name="text">
+                 <string>Additional FFmpeg Global Options</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPlainTextEdit" name="txtFFmpegGlobals"/>
+              </item>
+             </layout>
+            </item>
+            <item>
              <layout class="QVBoxLayout" name="verticalLayout_4">
               <item>
                <widget class="QLabel" name="lblFFmpegOptions">

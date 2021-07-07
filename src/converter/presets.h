@@ -28,6 +28,7 @@ public:
     QString extension;
     QString label;
     QString category;
+    QString globals;
     QString parameters;
 
     /*! Sorting requires less-than operator.

@@ -51,6 +51,7 @@ public:
     /* FFmpeg Specific Options */
     /*! Additional options passed to the ffmpeg transcoder.
         These options will be overriden by other specific options. */
+    QString ffmpeg_globals;
     QString ffmpeg_options;
 
     /* MEncoder Specific Options */
@@ -77,8 +78,8 @@ public:
 
     /*! Generate a ConversionParameters from ffmpeg command line options.
         This function ignores input and output file options. */
-    static ConversionParameters fromFFmpegParameters(const QString& params_str);
-    static ConversionParameters fromFFmpegParameters(const char *params_str);
+    static ConversionParameters fromFFmpegParameters(const QString& globals_str, const QString& params_str);
+    static ConversionParameters fromFFmpegParameters(const char *globals_str, const char *params_str);
 
     ConversionParameters()
         : threads(0),
