@@ -61,13 +61,12 @@ static QString find_translation_file()
  * @brief Load program constants from constants.xml.
  * @return true on success, false on failure
  */
-static bool load_constants(QApplication& app)
+static bool load_constants()
 {
 #ifdef DATA_PATH
     QString app_path = QString(DATA_PATH);
-    (void)app; // eliminate "variable not used" warning
 #else
-    QString app_path = app.applicationDirPath();
+    QString app_path = qApp()->applicationDirPath();
 #endif
     QString constant_xml_filename = QDir(app_path).absoluteFilePath("constants.xml");
 
@@ -147,7 +146,7 @@ int main(int argc, char *argv[])
     // Create Application.
     QApplication app(argc, argv);
 
-    if (!load_constants(app)) {
+    if (!load_constants()) {
         app.exec();
         return EXIT_FAILURE;
     }
