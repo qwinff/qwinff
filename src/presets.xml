@@ -886,4 +886,54 @@
     <category>Audio</category>
   </mp2Auto>
 
+<!-- AMR -->
+  <amr_4750>
+    <label>AMR - 4.75k</label>
+    <params>-ac 1 -ar 8000 -b:a 4.75k -acodec libopencore_amrnb -vn</params>
+    <extension>amr</extension>
+    <category>Audio</category>
+  </amr_4750>
+  <amr_5150>
+    <label>AMR - 5.15k</label>
+    <params>-ac 1 -ar 8000 -b:a 5.15k -acodec libopencore_amrnb -vn</params>
+    <extension>amr</extension>
+    <category>Audio</category>
+  </amr_5150>
+  <amr_5900>
+    <label>AMR - 5.90k</label>
+    <params>-ac 1 -ar 8000 -b:a 5.90k -acodec libopencore_amrnb -vn</params>
+    <extension>amr</extension>
+    <category>Audio</category>
+  </amr_5900>
+  <amr_6700>
+    <label>AMR - 6.70k</label>
+    <params>-ac 1 -ar 8000 -b:a 6.70k -acodec libopencore_amrnb -vn</params>
+    <extension>amr</extension>
+    <category>Audio</category>
+  </amr_6700>
+  <amr_7400>
+    <label>AMR - 7.40k</label>
+    <params>-ac 1 -ar 8000 -b:a 7.40k -acodec libopencore_amrnb -vn</params>
+    <extension>amr</extension>
+    <category>Audio</category>
+  </amr_7400>
+  <amr_7950>
+    <label>AMR - 7.95k</label>
+    <params>-ac 1 -ar 8000 -b:a 7.95k -acodec libopencore_amrnb -vn</params>
+    <extension>amr</extension>
+    <category>Audio</category>
+  </amr_7950>
+  <amr_10200>
+    <label>AMR - 10.20k</label>
+    <params>-ac 1 -ar 8000 -b:a 10.20k -acodec libopencore_amrnb -vn</params>
+    <extension>amr</extension>
+    <category>Audio</category>
+  </amr_10200>
+  <amr_12200>
+    <label>AMR - 12.20k</label>
+    <params>-ac 1 -ar 8000 -b:a 12.20k -acodec libopencore_amrnb -vn</params>
+    <extension>amr</extension>
+    <category>Audio</category>
+  </amr_12200>
+
 </presets>
