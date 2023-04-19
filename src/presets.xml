@@ -250,6 +250,12 @@
   </CDWavStereo>
 
   <!-- MPEG Layer 3 -->
+  <mp3_320k>
+    <label>MP3 (Ultra Quality)</label>
+    <params>-acodec libmp3lame -ab 320kb -ac 2 -ar 44100 -vn</params>
+    <extension>mp3</extension>
+    <category>Audio</category>
+  </mp3_320k>
   <mp3_192k>
     <label>MP3 (Very Good Quality)</label>
     <params>-acodec libmp3lame -ab 192kb -ac 2 -ar 44100 -vn</params>
